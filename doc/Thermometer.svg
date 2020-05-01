@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="115.25 185 100 424.5" width="100" height="424.5">
+  <defs/>
+  <metadata> Produced by OmniGraffle 7.15.1 
+    <dc:date>2020-05-01 16:28:17 +0000</dc:date>
+  </metadata>
+  <g id="Canvas_1" stroke-opacity="1" fill-opacity="1" stroke="none" stroke-dasharray="none" fill="none">
+    <title>Canvas 1</title>
+    <rect fill="white" x="115.25" y="185" width="100" height="424.5"/>
+    <g id="Canvas_1: Layer 1">
+      <title>Layer 1</title>
+      <g id="Graphic_2">
+        <circle cx="165" cy="215" r="30.0000479370569" fill="#d1d3d4"/>
+      </g>
+      <g id="Graphic_3">
+        <rect x="135" y="219.5" width="60" height="307.5" fill="#d1d3d4"/>
+      </g>
+      <g id="Graphic_4">
+        <circle cx="165.25" cy="559.5" r="50.0000798950949" fill="#d1d3d4"/>
+      </g>
+      <g id="Graphic_5">
+        <circle cx="165.25" cy="559.5" r="45.0000719055854" fill="white"/>
+      </g>
+      <g id="Graphic_6">
+        <rect x="140" y="219.5" width="50" height="307.5" fill="white"/>
+      </g>
+      <g id="Graphic_7">
+        <circle cx="165" cy="215" r="25.0000399475474" fill="white"/>
+      </g>
+      <g id="Graphic_8">
+        <circle cx="165.25" cy="559.5" r="27.5000439423022" fill="#ee3a43"/>
+      </g>
+      <g id="Graphic_9">
+        <rect x="154" y="219.5" width="22.5" height="307.5" fill="#e6e7e8"/>
+      </g>
+      <g id="Graphic_10">
+        <circle cx="165.25" cy="215" r="11.2500179763964" fill="#e6e7e8"/>
+      </g>
+      <g id="Graphic_12">
+        <rect x="153.75" y="462.5" width="22.5" height="83" fill="#ee3a43"/>
+      </g>
+    </g>
+  </g>
+</svg>
