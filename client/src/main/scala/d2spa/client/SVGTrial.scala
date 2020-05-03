@@ -91,48 +91,6 @@ object SVGTrial {
 
 
 
-    private val Thermometer = ScalaComponent.builder[(Int)]("Thermometer")
-      .render_P { case (heat) =>
-        val tx = 500 - (10 * heat)
-        svg.<.svg(
-          svg.^.width := 100.asInstanceOf[JsNumber],
-          svg.^.height := 424.5.asInstanceOf[JsNumber],
-          svg.^.viewBox := "115.25 185 100 424.5",
-          svg.<.g(
-            // gray background
-            svg.<.path(
-              svg.^.d := "M552 3.5c-17.4 0-34.1 6.7-46 19.7H44.8c-22.5 0-41.3 17.3-41.3 39.3v4.8c0 10.7 4.7 21.4 12.5 29 7.7 7.6 18.1 12 28.8 12h461.7c11.8 11 28.2 18.2 45.5 18.2 35 0 63.5-27.6 63.5-61.4S587 3.5 552 3.5z",
-              ^.className:="st0"
-            ),
-            // red rectangle for temperature
-            svg.<.rect(
-              ^.id:="thermometerLineBody",
-              ^.`class` := "st1",
-              svg.^.x := tx.asInstanceOf[JsNumber],
-              svg.^.y := 42.asInstanceOf[JsNumber],
-              svg.^.width := 500.asInstanceOf[JsNumber],
-              svg.^.height := 42.asInstanceOf[JsNumber]
-            ),
-            // red circle at top
-            svg.<.circle(^.id:= "thermometerLineHead",
-              svg.^.cx := 40.asInstanceOf[JsNumber],
-              svg.^.cy := 64.9.asInstanceOf[JsNumber],
-              svg.^.r := 20.asInstanceOf[JsNumber],
-              ^.`class` := "st1"
-            ),
-            // big white around
-            svg.<.path(
-              svg.^.d := "M552 3.3c-17.4 0-34.1 6.7-46 19.7H44.8C22.3 23 3.5 40.3 3.5 62.3v4.8c0 10.7 4.7 21.4 12.5 29 7.7 7.6 18.1 12 28.8 12h461.7c11.8 11 28.2 18.2 45.5 18.2 35 0 63.5-27.6 63.5-61.4S587 3.3 552 3.3zm0 98.1c-14.4 0-27-7.5-33.6-18.5H44.8c-8.4 0-15.8-7.1-15.8-15.5v-4.8c0-8.3 7.4-14.8 15.8-14.8H518c6.5-11 19.3-19.4 33.9-19.4 21.3 0 38.5 16.3 38.5 36.4.1 20.3-17.2 36.6-38.4 36.6z",
-              ^.className:="st2"
-            ),
-            // glass tube (small grey stroke around)
-            svg.<.path(
-              svg.^.d := "M552 3.5c-17.4 0-34.1 6.7-46 19.7H44.8c-22.5 0-41.3 17.3-41.3 39.3v4.8c0 10.7 4.7 21.4 12.5 29 7.7 7.6 18.1 12 28.8 12h461.7c11.8 11 28.2 18.2 45.5 18.2 35 0 63.5-27.6 63.5-61.4S587 3.5 552 3.5z",
-              ^.className:="st3"
-            )
-          )
-        )
-      }.build
 
     def simpleTextSvg() = {
 /*
@@ -158,7 +116,7 @@ object SVGTrial {
     }
     def changeTemperature() = {
       //Callback.log(s"Import") >>
-      $.props >>= (_.proxy.dispatchCB(ChangeTemperature))
+      $.props >>= (_.proxy.dispatchCB(d2spa.client.SetTemperature(4)))
     }
 
     def render(p: Props):VdomElement  = {
@@ -173,7 +131,7 @@ object SVGTrial {
       //renderBarChar()
       //renderSimpleSvg()
         <.div(^.className := "svgCont",
-          Thermometer(p.proxy.value.temperature)
+          d2spa.client.components.Thermometer(p.proxy.value.temperature)
         )
       )
     }

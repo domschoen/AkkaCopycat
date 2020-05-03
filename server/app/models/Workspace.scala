@@ -18,34 +18,28 @@ import scala.concurrent.Future
 import scala.concurrent.duration._
 import play.api.Play.current
 import javax.inject._
-import models.NodeActor.SetItUp
 import play.api.Configuration
 import play.api.libs.concurrent.InjectedActorSupport
 
 
 
 
-object NodeActor {
+object Workspace {
+  def props(): Props = Props(new Workspace())
 
-  case object SetItUp
+  case class Run(initialString: String, modifiedString: String, targetString: String)
 
 }
 
 
-class NodeActor  @Inject() (configuration: Configuration, ws: WSClient) extends Actor with ActorLogging with InjectedActorSupport {
-  val timeout = 10.seconds
-  val d2spaServerBaseUrl = configuration.getString("d2spa.woappURL")
-
+class Workspace extends Actor with ActorLogging with InjectedActorSupport {
+  import Workspace.Run
   var woAppActor: Option[ActorRef] = None
 
   def receive = LoggingReceive {
     // to the browser
-    case SetItUp => {
-      println("Set it up")
-      if (woAppActor.isEmpty) {
-        woAppActor = Some(context.actorOf(WOAppActor.props(ws), "woApp"))
-        println("EOModel actor path " + woAppActor.get.path)
-      }
+    case Run(initialString, modifiedString, targetString) => {
+      println("Run")
     }
   }
 

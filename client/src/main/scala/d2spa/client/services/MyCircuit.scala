@@ -9,7 +9,6 @@ import diode.ActionResult.ModelUpdate
 import diode.ActionResult.ModelUpdateEffect
 import d2spa.shared._
 import boopickle.Default._
-import d2spa.client.EOCacheUtils.updatedMemCacheByRemovingEO
 
 import scala.scalajs.concurrent.JSExecutionContext.Implicits.queue
 import japgolly.scalajs.react.extra.router.RouterCtl
@@ -24,7 +23,6 @@ import japgolly.scalajs.react.extra.router._*/
 
 import d2spa.client.AppModel
 
-import d2spa.shared.{Menus, EntityMetaData, PropertyMetaInfo, EO, EOValue}
 
 object MyCircuit extends Circuit[AppModel] with ReactConnector[AppModel] {
   // define initial value for the application model
@@ -40,12 +38,15 @@ class InstancesHandler[M](modelRW: ModelRW[M, Int]) extends ActionHandler(modelR
 
   override def handle = {
 
-    case ChangeTemperature =>
-      val newValue = value + 1
-      println("new temperature " + newValue)
-      updated(newValue)
+    case SetTemperature(temperature) =>
+      println("new temperature " + temperature)
+      updated(temperature)
+
+    case Run(initialString, modifiedString, targetString) =>
+      WebSocketClient.send(WebSocketMessages.Run(initialString, modifiedString, targetString))
+      noChange
 
 
-   }
+  }
 }
 

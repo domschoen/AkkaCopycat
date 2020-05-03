@@ -35,7 +35,7 @@ object SPAMain   extends  js.JSApp {
       (emptyRule
         | staticRoute(root, Home) ~> renderR(ctl => {
         menusConnection(p =>
-          SVGTrial(p)
+          SimulationScreen(p)
         )
       }
       )

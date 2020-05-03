@@ -96,20 +96,7 @@ object WebSocketClient {
         reader.result match {
           case buf: ArrayBuffer =>
             Unpickle[WebSocketMsgOut].fromBytes(TypedArrayBuffer.wrap(buf)) match {
-              case InstancesResponseMsg(app, instances) => MyCircuit.dispatch(RegisterInstances(app, instances))
-              case FetchedMenus(menus, d2wContext) => MyCircuit.dispatch(SetMenus(menus, d2wContext))
-              case RuleResults(ruleResults) => MyCircuit.dispatch(client.SetJustRuleResults(ruleResults))
-              case RuleRequestResponseMsg(d2wContext, ruleResults) => MyCircuit.dispatch(client.SetJustRuleResults(ruleResults.get))
-              case RuleRequestForAppInitResponseMsg(d2wContext, ruleResults, eoOpt) => MyCircuit.dispatch(client.SetRulesForPrepareEO(d2wContext, ruleResults, eoOpt))
-              case RulesForSearchResultResponseMsgOut(fs,eos,ruleResultsOpt) => MyCircuit.dispatch(client.SearchResultWithRuleResults(fs,eos,ruleResultsOpt))
-
-              case CompletedEOMsgOut(d2wContextOpt, hydration, eos, ruleResultsOpt) => MyCircuit.dispatch(client.CompletedEO(d2wContextOpt, hydration, eos,ruleResultsOpt))
-              case FetchedObjectsMsgOut(entityName, eos, ruleResultsOpt) => MyCircuit.dispatch(client.FetchedObjectsForEntity(entityName,eos,ruleResultsOpt))
-              //CompletedEOMsgOutcase FetchedObjectsForListMsgOut(fs, eos) => MyCircuit.dispatch(client.SearchResult(fs, eos))
-              case SavingResponseMsgOut(d2wContext: D2WContext, eos: List[EOContaining], ruleResults: Option[List[RuleResult]]) =>
-                MyCircuit.dispatch(client.SavingEO(d2wContext, eos.head, ruleResults))
-              case DeletingResponseMsgOut(eo) => MyCircuit.dispatch(client.DeletingEO(eo))
-              case DebugConfMsg(showDebugButton, d2wContext) => MyCircuit.dispatch(SetDebugConfiguration(DebugConf(showDebugButton), d2wContext))
+              case TemperatureMsg(temperature) => MyCircuit.dispatch(SetTemperature(temperature))
             }
           case _ => // ignored
         }

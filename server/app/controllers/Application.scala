@@ -16,18 +16,16 @@ import play.api.http.websocket.{BinaryMessage, CloseCodes, CloseMessage, Message
 import play.api.libs.streams.{ActorFlow, AkkaStreams}
 import play.api.mvc.WebSocket.MessageFlowTransformer
 import play.api.mvc._
-import services.ApiService
-import d2spa.shared.{Api, FrontendResponse}
 import play.api.libs.ws._
 import play.api.Logger
 
 import scala.util.{Failure, Success}
 
 
-class Application @Inject()(@Named("node-actor") nodeActor: ActorRef)
-                           (implicit config: Configuration, system: ActorSystem,
-
-                                                                                  environment: Environment, ws: WSClient) extends Controller {
+class Application @Inject()()(implicit config: Configuration,
+                   system: ActorSystem,
+                   environment: Environment
+                   ) extends Controller {
   implicit val webSocketTransformer = new MessageFlowTransformer[WebSocketMsgIn, WebSocketMsgOut] {
     override def transform(flow: Flow[WebSocketMsgIn, WebSocketMsgOut, _]): Flow[Message, Message, _] = {
       AkkaStreams.bypassWith[Message, WebSocketMsgIn, Message](Flow[Message] collect {
@@ -42,7 +40,6 @@ class Application @Inject()(@Named("node-actor") nodeActor: ActorRef)
       })
     }
   }
-  val apiService = new ApiService(config,ws)
   val UID = "uid"
   var counter = 0;
   implicit val materializer = ActorMaterializer()
@@ -65,7 +62,7 @@ class Application @Inject()(@Named("node-actor") nodeActor: ActorRef)
 
 
   def ws = WebSocket.accept[WebSocketMsgIn, WebSocketMsgOut] { request =>
-    ActorFlow.actorRef(out => WebSocketActor.props(out, nodeActor))
+    ActorFlow.actorRef(out => WebSocketActor.props(out))
   }
 
 
