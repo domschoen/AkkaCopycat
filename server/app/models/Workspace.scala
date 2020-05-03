@@ -39,7 +39,7 @@ class Workspace extends Actor with ActorLogging with InjectedActorSupport {
   def receive = LoggingReceive {
     // to the browser
     case Run(initialString, modifiedString, targetString) => {
-      println("Run")
+      println(s"Run with initial $initialString, modified: $modifiedString and target: $targetString")
     }
   }
 

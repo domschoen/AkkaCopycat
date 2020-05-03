@@ -13,6 +13,7 @@ case class MegaContent(
 
 case class Run(initialString: String, modifiedString: String, targetString: String) extends Action
 case class SetTemperature(temparature: Int) extends Action
+case object InitClient extends Action
 
 object AppModel {
   val bootingModel = AppModel(

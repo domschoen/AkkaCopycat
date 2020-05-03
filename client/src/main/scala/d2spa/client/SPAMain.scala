@@ -65,7 +65,7 @@ object SPAMain   extends  js.JSApp {
     // create stylesheet
     GlobalStyles.addToDocument()
 
-    //MyCircuit.dispatch(InitClient)
+    MyCircuit.dispatch(InitClient)
 
     val router = Router(BaseUrl.until_#, routerConfig)
 
