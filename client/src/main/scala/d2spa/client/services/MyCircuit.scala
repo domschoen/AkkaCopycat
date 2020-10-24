@@ -45,7 +45,7 @@ class InstancesHandler[M](modelRW: ModelRW[M, Int]) extends ActionHandler(modelR
     case Run(initialString, modifiedString, targetString) =>
       WebSocketClient.send(WebSocketMessages.Run(initialString, modifiedString, targetString))
       noChange
-      
+
     case InitClient =>
       WebSocketClient.setSocket()
       noChange

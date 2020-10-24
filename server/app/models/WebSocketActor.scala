@@ -15,23 +15,24 @@ import ExecutionContext.Implicits.global
 
 class WebSocketActor (out: ActorRef) extends Actor with ActorLogging {
   val config = ConfigFactory.load()
-  var workspace: Option[ActorRef] = None
+  var run: Option[ActorRef] = None
 
 
   def receive = {
     /*case InstancesResponse(app, instances: Option[List[Instance]]) =>
-      println("Receive InstancesResponse ---> sending InstancesResponse")
+      log.debug("Receive InstancesResponse ---> sending InstancesResponse")
       out ! InstancesResponseMsg(app, instances)*/
 
     case msg: WebSocketMsgIn => msg match {
+
       case Run(initialString,modifiedString,targetString) =>
-        println("Websocket received Run")
-        if (workspace.isDefined) {
-          println("Workspace exists => Poinson pill it !")
-          workspace.get ! PoisonPill
+        log.info("Websocket received Run")
+        if (run.isDefined) {
+          log.debug("Run exists => Poinson pill it !")
+          run.get ! PoisonPill
         }
-        workspace = Some(context.actorOf(Workspace.props()))
-        workspace.get ! Workspace.Run(initialString,modifiedString,targetString)
+        run = Some(context.actorOf(ExecutionRun.props(), "ExecutionRun"))
+        run.get ! ExecutionRun.Run(initialString,modifiedString,targetString)
     }
   }
 }
