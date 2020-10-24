@@ -9,8 +9,8 @@ class BottomUpCorrespondenceScout(urgency: Int, workspace: ActorRef) extends Cod
 
   def receive = LoggingReceive {
     // to the browser
-    case Run(initialString, modifiedString, targetString,runTemperature) => {
-      log.debug(s"Run with initial $initialString, modified: $modifiedString and target: $targetString")
+    case Run(initialString, modifiedString, targetString, runTemperature) => {
+      log.debug(s"BottomUpCorrespondenceScout. Run with initial $initialString, modified: $modifiedString and target: $targetString")
     }
   }
 

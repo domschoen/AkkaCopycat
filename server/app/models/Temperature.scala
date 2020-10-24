@@ -52,7 +52,7 @@ class Temperature extends Actor with ActorLogging with InjectedActorSupport {
     }
 
     case GetTemperature =>
-      sender ! temperature
+      sender ! TemperatureResponse(temperature)
 
     case SetClamped(value) =>
       clamped = value

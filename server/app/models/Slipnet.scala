@@ -28,14 +28,17 @@ import scala.collection.mutable.ListBuffer
 class SlipNode(x: Int, y: Int, val conceptual_depth: Double, val name: String, shortName: String) {
   var codelets = ListBuffer.empty[String]
   var lateral_nonslip_links = ListBuffer.empty[SlipnetLink]
+  var lateral_slip_links = ListBuffer.empty[SlipnetLink]
   var incoming_links = ListBuffer.empty[SlipnetLink]
   val outgoing_links = ListBuffer.empty[SlipnetLink]
   val instance_links = ListBuffer.empty[SlipnetLink]
   val category_links = ListBuffer.empty[SlipnetLink]
+  val has_property_links = ListBuffer.empty[SlipnetLink]
 
   var clamp = false
 }
-class SlipnetLink(from_node: SlipNode, to_node: SlipNode, label: SlipNode, fixed_length: Double) {
+class SlipnetLink(from_node: SlipNode, to_node: SlipNode, label: SlipNode, var fixed_length: Double) {
+  var slip_link = false;
 
   def this(fr: SlipNode, to: SlipNode, lab: SlipNode) = {
     this(fr, to, lab, 0.0)
@@ -74,9 +77,9 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
   var slipnet_letters = chars.map(c => new SlipNode(0,0, 10.0, c, c)).to[ListBuffer]
 
   var numbers = (0 to 4).map(i => (i+49).toChar.toString)
-  var slipnetNumbers = numbers.map(c => new SlipNode(0,0, 30.0, c, c)).to[ListBuffer]
+  var slipnet_numbers = numbers.map(c => new SlipNode(0,0, 30.0, c, c)).to[ListBuffer]
 
-  var slipNodes = slipnet_letters ++ slipnetNumbers
+  var slipNodes = slipnet_letters ++ slipnet_numbers
 
 
 
@@ -155,18 +158,142 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
   var sliplinks = ListBuffer.empty[SlipnetLink]
   // letters
   linkSuccessiveSlipNodes(slipnet_letters)
-  linkSuccessiveSlipNodes(slipnetNumbers)
+  linkSuccessiveSlipNodes(slipnet_numbers)
   // ************** letter category links
+  linkWith(slipnet_letters, letter_category, 97.0)
   for (i <- 0 to slipnet_letters.size - 1) {
     add_category_link(slipnet_letters(i), letter_category, letter_category.conceptual_depth-slipnet_letters(i).conceptual_depth);
     add_instance_link(letter_category, slipnet_letters(i), 97.0);
   }
+  add_category_link(samegrp,letter_category,50.0);
+
+  // *************** length links
+  linkWith(slipnet_numbers, length, 100.0)
+
+  add_nonslip_link(predgrp, length, 95.0);
+  add_nonslip_link(succgrp, length, 95.0);
+  add_nonslip_link(samegrp, length, 95.0);
+
+  // *************** opposite links
+  add_slip_link(first, last, opposite);
+  add_slip_link(last, first, opposite);
+  add_slip_link(leftmost, rightmost, opposite);
+  add_slip_link(rightmost,leftmost, opposite);
+  add_slip_link(left,right, opposite);
+  add_slip_link(right,left, opposite);
+  add_slip_link(successor,predecessor, opposite);
+  add_slip_link(predecessor,successor, opposite);
+  add_slip_link(succgrp,predgrp, opposite);
+  add_slip_link(predgrp,succgrp, opposite);
+
+  // ***************** has property links
+  add_property_link(slipnet_letters(0),first, 75.0)
+  add_property_link(slipnet_letters(25),last, 75.0)
+
+  // ******************* object category links
+  add_category_link(letter,object_category, object_category.conceptual_depth-letter.conceptual_depth)
+  add_instance_link(object_category, letter, 100.0)
+  add_category_link(group,object_category, object_category.conceptual_depth-group.conceptual_depth)
+  add_instance_link(object_category, group, 100.0)
+
+  // string position links
+  add_category_link(leftmost, string_position_category,string_position_category.conceptual_depth-leftmost.conceptual_depth)
+  add_instance_link(string_position_category, leftmost,100.0)
+  add_category_link(rightmost, string_position_category,string_position_category.conceptual_depth-rightmost.conceptual_depth)
+  add_instance_link(string_position_category, rightmost,100.0)
+  add_category_link(middle, string_position_category,string_position_category.conceptual_depth-middle.conceptual_depth);
+  add_instance_link(string_position_category, middle,100.0);
+  add_category_link(single, string_position_category,string_position_category.conceptual_depth-single.conceptual_depth);
+  add_instance_link(string_position_category, single,100.0);
+  add_category_link(whole, string_position_category,string_position_category.conceptual_depth-whole.conceptual_depth);
+  add_instance_link(string_position_category, whole,100.0);
+
+  // alphabetic position category
+  add_category_link(first, alphabetic_position_category,alphabetic_position_category.conceptual_depth-first.conceptual_depth);
+  add_instance_link(alphabetic_position_category,first,100.0);
+  add_category_link(last, alphabetic_position_category,alphabetic_position_category.conceptual_depth-last.conceptual_depth);
+  add_instance_link(alphabetic_position_category,last,100.0);
+
+  // direction-category links
+  add_category_link(left, direction_category,direction_category.conceptual_depth-left.conceptual_depth);
+  add_instance_link(direction_category,left,100.0);
+  add_category_link(right, direction_category,direction_category.conceptual_depth-right.conceptual_depth);
+  add_instance_link(direction_category,right,100.0);
+
+  // bond-category links
+  add_category_link(predecessor, bond_category,bond_category.conceptual_depth-predecessor.conceptual_depth);
+  add_instance_link(bond_category,predecessor,100.0);
+  add_category_link(successor, bond_category,bond_category.conceptual_depth-successor.conceptual_depth);
+  add_instance_link(bond_category,successor,100.0);
+  add_category_link(sameness, bond_category,bond_category.conceptual_depth-sameness.conceptual_depth);
+  add_instance_link(bond_category,sameness,100.0);
+
+  // group-category links
+  add_category_link(predgrp, group_category,group_category.conceptual_depth-predgrp.conceptual_depth);
+  add_instance_link(group_category,predgrp,100.0);
+  add_category_link(succgrp, group_category,group_category.conceptual_depth-succgrp.conceptual_depth);
+  add_instance_link(group_category,succgrp,100.0);
+  add_category_link(samegrp, group_category,group_category.conceptual_depth-samegrp.conceptual_depth);
+  add_instance_link(group_category,samegrp,100.0);
+
+  // associated-group links
+  add_nonslip_link(sameness,samegrp,group_category).fixed_length = 30.0
+  add_nonslip_link(successor,succgrp,group_category).fixed_length = 60.0
+  add_nonslip_link(predecessor,predgrp,group_category).fixed_length = 60.0
+
+  // associated bond links
+  add_nonslip_link(samegrp,sameness,bond_category).fixed_length = 90.0
+  add_nonslip_link(succgrp,successor,bond_category).fixed_length = 90.0
+  add_nonslip_link(predgrp,predecessor,bond_category).fixed_length = 90.0
+
+  // bond facet links
+  add_category_link(letter_category,bond_facet,bond_facet.conceptual_depth-letter_category.conceptual_depth);
+  add_instance_link(bond_facet,letter_category,100.0);
+  add_category_link(length,bond_facet,bond_facet.conceptual_depth-length.conceptual_depth);
+  add_instance_link(bond_facet,length,100.0);
+
+  // letter category links
+  add_slip_link(letter_category,length,95.0);
+  add_slip_link(length,letter_category,95.0);
+
+  // letter group links
+  add_slip_link(letter,group,90.0);
+  add_slip_link(group,letter,90.0);
+
+  // direction-position, direction-neighbor, position-neghbor links
+  add_nonslip_link(left,leftmost,90.0);
+  add_nonslip_link(leftmost,left,90.0);
+  add_nonslip_link(right,leftmost,100.0);
+  add_nonslip_link(leftmost,right,100.0);
+  add_nonslip_link(right,rightmost,90.0);
+  add_nonslip_link(rightmost,right,90.0);
+  add_nonslip_link(left,rightmost,100.0);
+  add_nonslip_link(rightmost,left,100.0);
+  add_nonslip_link(leftmost,first,100.0);
+  add_nonslip_link(first,leftmost,100.0);
+  add_nonslip_link(rightmost,first,100.0);
+  add_nonslip_link(first,rightmost,100.0);
+  add_nonslip_link(leftmost,last,100.0);
+  add_nonslip_link(last,leftmost,100.0);
+  add_nonslip_link(rightmost,last,100.0);
+  add_nonslip_link(last,rightmost,100.0);
+
+  // other links
+  add_slip_link(single,whole,90.0);
+  add_slip_link(whole, single,90.0);
 
 
+
+
+  // help methods
 
   def linkSuccessiveSlipNodes(nodes: ListBuffer[SlipNode]) = for (i <- 0 to nodes.size - 2) {
     add_nonslip_link(nodes(i), nodes(i+1), successor);
     add_nonslip_link(nodes(i+1), nodes(i), predecessor);
+  }
+  def linkWith(nodes: ListBuffer[SlipNode], withSplipNode: SlipNode, len: Double) = for (i <- 0 to nodes.size - 1) {
+    add_category_link(nodes(i), withSplipNode, withSplipNode.conceptual_depth-nodes(i).conceptual_depth);
+    add_instance_link(withSplipNode, nodes(i), len);
   }
 
 
@@ -194,6 +321,16 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
   }
 
 
+  def add_property_link(fr: SlipNode, to: SlipNode, lab: Double): SlipnetLink = {
+    val nl = new SlipnetLink(fr,to,lab);
+    sliplinks += nl
+    fr.has_property_links += nl
+    to.incoming_links += nl
+    nl;
+  }
+
+
+
   def add_nonslip_link(fr: SlipNode, to: SlipNode, lab: SlipNode): SlipnetLink = {
     val nl = new SlipnetLink(fr,to,lab);
     sliplinks += nl
@@ -201,6 +338,34 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
     to.incoming_links += nl
     nl;
   }
+  def add_nonslip_link(fr: SlipNode, to: SlipNode, lab: Double): SlipnetLink = {
+    val nl = new SlipnetLink(fr,to,lab);
+    sliplinks += nl
+    fr.lateral_nonslip_links += nl
+    to.incoming_links += nl
+    nl;
+  }
+
+
+  def add_slip_link(fr: SlipNode, to: SlipNode, lab: SlipNode): SlipnetLink = {
+    val nl = new SlipnetLink(fr,to,lab);
+    nl.slip_link = true;
+
+    sliplinks += nl
+    fr.lateral_slip_links += nl
+    to.incoming_links += nl
+    nl;
+  }
+  def add_slip_link(fr: SlipNode, to: SlipNode, lab: Double): SlipnetLink = {
+    val nl = new SlipnetLink(fr,to,lab);
+    nl.slip_link = true;
+
+    sliplinks += nl
+    fr.lateral_slip_links += nl
+    to.incoming_links += nl
+    nl;
+  }
+
 
 
   def add_slipnode(x: Int, y: Int, cd: Double, pn: String, sn: String) : SlipNode = {

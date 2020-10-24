@@ -10,7 +10,7 @@ class ReplacementFinder(urgency: Int, workspace: ActorRef) extends Codelet(urgen
   def receive = LoggingReceive {
     // to the browser
     case Run(initialString, modifiedString, targetString,runTemperature) => {
-      log.debug(s"Run with initial $initialString, modified: $modifiedString and target: $targetString")
+      log.debug(s"ReplacementFinder. Run with initial $initialString, modified: $modifiedString and target: $targetString")
     }
   }
 

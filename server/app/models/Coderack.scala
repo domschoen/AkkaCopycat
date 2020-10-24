@@ -54,16 +54,21 @@ class Coderack(workspace: ActorRef, temperature: ActorRef, executionRun: ActorRe
   var runTemperature: Double = 100.0
   var codeletsUrgency = Map.empty[ActorRef, Int]
   val r = scala.util.Random
-
+  var initialString = ""
+  var modifiedString =""
+  var targetString = ""
 
   protected def createCodelet(codeletType: CodeletType, urgency: Int) =
     context.actorOf(Codelet.props(codeletType, urgency, workspace))
 
   def receive = LoggingReceive {
     // to the browser
-    case Run(initialString, modifiedString, targetString) => {
+    case Run(initialS, modifiedS, targetS) => {
       log.debug(s"Run with initial $initialString, modified: $modifiedString and target: $targetString")
       // TODO init
+      initialString = initialS
+      modifiedString = modifiedS
+      targetString = targetS
 
       context.become(initializing)
       self ! Initializing
@@ -74,10 +79,12 @@ class Coderack(workspace: ActorRef, temperature: ActorRef, executionRun: ActorRe
 
   private def initializing: Receive = {
     case Initializing => {
+      log.debug("Initializing")
       temperature ! Temperature.GetTemperature
     }
 
     case Temperature.TemperatureResponse(t) =>
+      log.debug("TemperatureResponse " + t)
       runTemperature = t
       // At beginning we post initial codelets because anyway codelets is empty
       context.become(startingRun)
@@ -141,7 +148,9 @@ class Coderack(workspace: ActorRef, temperature: ActorRef, executionRun: ActorRe
 
             // we remove this codelet from codelets and we run it
             codelets = codelets.filter(e => e != chosenCodelet)
-            chosenCodelet ! Run
+            log.debug("ChooseAndRun: codelets found " + chosenCodelet)
+
+            chosenCodelet ! Codelet.Run(initialString, modifiedString, targetString, runTemperature)
           }
 
         }
