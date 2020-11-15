@@ -1,8 +1,20 @@
 # Akka Copycat
 
-This tool will configure the JavaMonitor in a state which ensure that a defined number of instances are running on each host for an application.
+Based on JavaCopycat, it is a translation in Scala using Akka. For the moment the actors are:
 
-We can do a bounce followed by a ensure as described above.
+- WebSocketActor: to communicate with UI
+- ExecutionRun
+- Coderack
+- Workspace
+- Slipnet
+- Temperature
+- All Codelets: BondBuilder, BottomeUpcorrespondenceScout, ....
+
+Codelet execution goes like this:
+
+1. Bunch of message to Workspace or Slipnet with for each a response to codelet who decide for the follow up.
+2. Codelet receive a Finished message
+3. Codelet a ChooseAndRun to the Coderack 
 
 ## References
 
