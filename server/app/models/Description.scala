@@ -1,8 +1,16 @@
 package models
 
-import models.Slipnet.DescriptionRep
+import models.SlipNode.SlipNodeRep
 
-case class SlipNodeRep(id: String, activation: Double)
+
+object Description {
+  case class DescriptionRep(
+                             uuid :String,
+                             descriptionTypeSlipNodeID: String,
+                             descriptorSlipNodeID: Option[String]
+                           )
+
+}
 
 case class Description (
                          var wObject: WorkspaceObject,
@@ -10,6 +18,7 @@ case class Description (
                          var descriptor : Option[SlipNodeRep]
                        ) extends WorkspaceStructure {
   //val descriptionTypeSlipNodeIDOpt = Option.empty[String]
+  import Description.DescriptionRep
 
   // this is for GUI
   var visible = false

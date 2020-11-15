@@ -172,31 +172,8 @@ object WorkspaceFormulas {
     }
     return (slipnode)bond_facets.elementAt(select_list_position(object_probs));
   }
-
-  static slipnode get_descriptor(workspace_object wo, slipnode dt){
-    for (int i=0; i<wo.descriptions.size(); i++){
-      description d = (description) wo.descriptions.elementAt(i);
-      if (d.description_type==dt) return d.descriptor;
-    }
-    return null;
-  }*/
+*/
 /*
-  def local_description_type_support(slipnode description_type, workspace_string s): Double = {
-    // returns the proportion of objects in the string that have
-    // a description with this description_type
-    double number_of_objects = 0.0, total_number_of_objects = 0.0;
-    for (int i=0; i<workspace.workspace_objects.size(); i++){
-      workspace_object ob = (workspace_object)workspace.workspace_objects.elementAt(i);
-      if (ob.string==s){
-        total_number_of_objects+=1.0;
-        for (int x=0; x<ob.descriptions.size(); x++){
-          description d = (description)ob.descriptions.elementAt(x);
-          if (d.description_type == description_type) number_of_objects+=1.0;
-        }
-      }
-    }
-    return number_of_objects/total_number_of_objects;
-  }
 
   def total_description_type_support(slipnode description, workspace_string s): Double = {
     return (description.activation+local_description_type_support(description,s))/2.0;

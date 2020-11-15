@@ -1,7 +1,9 @@
 package models
 
 import akka.actor.ActorRef
-import models.Slipnet.{DescriptionRep, WorkspaceStructureRep}
+import models.Description.DescriptionRep
+import models.SlipNode.SlipNodeRep
+import models.Slipnet.WorkspaceStructureRep
 
 import scala.collection.mutable.ListBuffer
 
@@ -26,7 +28,7 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
   var inter_string_salience: Double = 0.0
   var total_salience: Double = 0.0
 
-  var descriptions = List.empty[Description]
+  var descriptions = ListBuffer.empty[Description]
   var spans_string = false; // true if it spans the whole string
 
   var bonds = ListBuffer.empty[Bond]  // used in calculating intra string happiness
@@ -53,7 +55,7 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
 
 
   def relevant_descriptions(): List[Description] = {
-    descriptions.filter(d => d.descriptionType.activation==100.0)
+    descriptions.toList.filter(d => d.descriptionType.activation==100.0)
   }
 
 
@@ -64,14 +66,14 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
       s"group ($left_string_position-$right_string_position)"
   }
 
-  def descriptionReps(): List[DescriptionRep] = descriptions.map(d => d.descriptionRep())
+  def descriptionReps(): List[DescriptionRep] = descriptions.toList.map(d => d.descriptionRep())
   def workspaceStructureRep(): WorkspaceStructureRep = {
     WorkspaceStructureRep(uuid,descriptionReps(),letterOrGroupCompanionReps(), spans_string, None)
   }
 
   def add_description(descriptionType: SlipNodeRep, descriptor: Option[SlipNodeRep]) = {
     val description = new Description(this, wString, descriptionType, descriptor)
-    descriptions = description :: descriptions
+    descriptions += description
   }
 
 
@@ -84,6 +86,17 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
         description.descriptor.get.equals(d.descriptor.get.id)
     ).isDefined
   }
+
+  // What is not seen is that in found a description same dt, it can still return None (because descriptor is an option)
+  def get_descriptor(dt: SlipNodeRep): Option[SlipNodeRep] = {
+    val descriptionWithDescriptionType = descriptions.find(d => d.descriptionType.id == dt.id)
+    descriptionWithDescriptionType match {
+      case Some(d) => d.descriptor
+      case None => None
+    }
+  }
+
+
 
   def letterOrGroupCompanions(): List[WorkspaceObject] = {
     workspaceString() match {

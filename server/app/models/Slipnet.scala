@@ -22,54 +22,12 @@ import models.Workspace.GoWithBottomUpCorrespondenceScout2
 import models.codelet.BottomUpCorrespondenceScout.ProposeAnyCorrespondenceSlipnetResponse
 import play.api.Configuration
 import play.api.libs.concurrent.InjectedActorSupport
+import Description.DescriptionRep
+import models.Bond.BondRep
+import models.SlipNode.{SlipNodeRep, SlipnetInfo}
 
 import scala.collection.mutable.ListBuffer
 
-case class SlipnetInfo(
-                        slipnetOpposite: SlipNode,
-                        slipnetSameness: SlipNode,
-                        slipnetIdentity: SlipNode,
-                        slipnetLetter: SlipNode,
-                        slipnetGroup: SlipNode,
-                        slipnetWhole: SlipNode,
-                        slipnet_numbers: List[SlipNode]
-                      )
-
-class SlipNode(x: Int, y: Int, val conceptual_depth: Double, val name: String, val shortName: String) {
-  var codelets = ListBuffer.empty[String]
-  var lateral_nonslip_links = ListBuffer.empty[SlipnetLink]
-  var lateral_slip_links = ListBuffer.empty[SlipnetLink]
-  var incoming_links = ListBuffer.empty[SlipnetLink]
-  val outgoing_links = ListBuffer.empty[SlipnetLink]
-  val instance_links = ListBuffer.empty[SlipnetLink]
-  val category_links = ListBuffer.empty[SlipnetLink]
-  val has_property_links = ListBuffer.empty[SlipnetLink]
-
-  var activation: Double = 0.0
-  var buffer: Double = 0.0
-  var old_activation: Double = 0.0
-
-
-  var clamp = false
-  var oldclamp = false
-
-  var intrinsic_link_length = 0.0
-  var shrunk_link_length = 0.0
-
-  def this(x: Int, y: Int, conceptual_depth: Double, name: String, len: Double) = {
-    this(x, y, conceptual_depth, name, name)
-    intrinsic_link_length = len;
-    shrunk_link_length = len*0.4;
-  }
-
-  def id() = shortName
-
-  def degree_of_association(): Double = {
-    // used in calculating link lengths
-    val dof = if (activation==100.0) shrunk_link_length else intrinsic_link_length
-    100.0-dof
-  }
-}
 class SlipnetLink(var from_node: SlipNode, var to_node: SlipNode, var label: SlipNode, var fixed_length: Double) {
 
   var slip_link = false;
@@ -92,12 +50,19 @@ class SlipnetLink(var from_node: SlipNode, var to_node: SlipNode, var label: Sli
 }
 
 object Slipnet {
+
   def props(): Props = Props(new Slipnet())
 
   case class Run(initialString: String, modifiedString: String, targetString: String)
   case class InitializeSlipnet(coderack: ActorRef, workspace: ActorRef)
 
-  case class BondFromTo(from: WorkspaceStructureRep, to: WorkspaceStructureRep, codelet: ActorRef)
+  case class BondFromTo(from: WorkspaceStructureRep, to: WorkspaceStructureRep)
+  case class BondFromTo2(
+                          from: WorkspaceStructureRep,
+                          to: WorkspaceStructureRep,
+                          fromDescriptor: SlipNodeRep,
+                          toDescriptor: SlipNodeRep)
+
   case class ProposeAnyCorrespondence(
                                        obj1 :WorkspaceStructureRep,
                                        obj2: WorkspaceStructureRep,
@@ -118,11 +83,6 @@ object Slipnet {
                                     spans_string: Boolean,
                                     groupRep: Option[GroupRep]
                                   )
-  case class DescriptionRep(
-                             uuid :String,
-                             descriptionTypeSlipNodeID: String,
-                             descriptorSlipNodeID: Option[String]
-                           )
   case class InflatedDescriptionRep(uuid :String, descriptionTypeSlipNode: SlipNode, descriptorSlipNode: Option[SlipNode]) {
     //def descriptionType(mapping: Map[String, SlipNode]) = mapping()
   }
@@ -132,12 +92,6 @@ object Slipnet {
                                     bondFacetSlipNodeID: String,
                                     bond_list: List[BondRep]
                      )
-  case class BondRep(from_obj: String,
-                     to_obj: String,
-                     bondCategorySlipNodeID: String,
-                     bondFacetSlipNodeID: String,
-                     from_obj_descriptorSlipNodeID: String,
-                     to_obj_descriptorSlipNodeID: String)
 
 
   val time_step_length = 15
@@ -155,6 +109,7 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
   import Coderack.{ Run, ProposeCorrespondence}
   import Slipnet._
   import models.codelet.Codelet.Finished
+  import models.codelet.BottomUpBondScout.{ BondFromToSlipnetResponse, BondFromTo2Response }
 
   var woAppActor: Option[ActorRef] = None
   var coderack: ActorRef = null
@@ -533,38 +488,39 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
     case SetSlipNodeBufferValue(slipNodeID: String, bufferValue: Double) =>
       slipNodeRefs(slipNodeID).buffer = bufferValue
 
-/*
-    case BondFromTo(from, to, codelet) =>
-      val bondFacetOpt = chooseBondFacet(from, to)
-      bondFacetOpt match {
+    // bottom-up-bond-scout codelet.java.255
+    case BondFromTo(from, to) =>
+
+      // choose_bond_facet, workspace_formulas.java.191
+      val fromDescriptionFacets: List[SlipNode] = facetsOfAndPartOf(from, bondFacets)
+      val toDescriptionFacets: List[SlipNode] = facetsOfAndPartOf(to, fromDescriptionFacets)
+
+      val fromFacetSlipNodeReps = fromDescriptionFacets.map(_.slipNodeRep())
+      val toFacetSlipNodeReps = fromDescriptionFacets.map(_.slipNodeRep())
+
+      sender() ! BondFromToSlipnetResponse(fromFacetSlipNodeReps, toFacetSlipNodeReps)
+
+    // bottom-up-bond-scout codelet.java.267
+    case BondFromTo2(from,to,fromDescriptor,toDescriptor) =>
+      val from_descriptor = slipNodeRefs(fromDescriptor.id)
+      val to_descriptor = slipNodeRefs(toDescriptor.id)
+      val bondCategoryOpt = SlipnetFormulas.get_bond_category(from_descriptor, to_descriptor, identity)
+      bondCategoryOpt match {
         case None =>
-          log.debug(s" no possible bond-facet - fizzle")
-          codelet ! Finished
+          log.debug(" no suitable link - fizzle")
+          sender() ! Finished
+        case Some(bondCategory) =>
+          val adaptedBondCategory = if (bondCategory==identity) sameness else bondCategory
+          // there is a possible bond, so propose it
+          log.info(s"proposing ${adaptedBondCategory.name} bond ")
+          // coderack.propose_bond(fromob,toob,bond_category,bond_facet,from_descriptor, to_descriptor,this);
+          // coderack.java.274
+          bond_facet.buffer=100.0;
+          from_descriptor.buffer=100.0;
+          to_descriptor.buffer=100.0;
 
-        case Some(bondFacet) =>
-          log.debug(s"chosen bond facet: ${bondFacet.name}")
-          val fromDescriptorOpt = getDescriptor(from, bondFacet)
-          val toDescriptorOpt = getDescriptor(to, bondFacet)
-          if ((fromDescriptorOpt.isEmpty) || (toDescriptorOpt.isEmpty)) {
-            log.debug(" no possible bond-facet - fizzle")
-            codelet ! Finished
-
-          } else {
-            val fromDescriptor = fromDescriptorOpt.get
-            val toDescriptor = toDescriptorOpt.get
-            log.debug(s"from object descriptor: ${fromDescriptor.name}")
-            log.debug(s"to object descriptor: ${toDescriptor.name}")
-            val bondCategoryOpt = getBondCategory(fromDescriptor, toDescriptor)
-            bondCategoryOpt match {
-              case None =>
-                log.debug(" no suitable link - fizzle")
-              case Some(bondCategory) =>
-            }
-
-            codelet ! Finished
-
-          }
-      }*/
+          sender() ! BondFromTo2Response(adaptedBondCategory.slipNodeRep(), adaptedBondCategory.bond_degree_of_association())
+      }
 
     // codelet.java.1233
     case ProposeAnyCorrespondence(obj1, obj2, temperature) =>
@@ -708,31 +664,15 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
   def getDescriptor(workspaceObject: WorkspaceObject, node: SlipNode): Option[SlipNode] = ???
   def getBondCategory(fromDescriptor: SlipNode, toDescriptor: SlipNode): Option[SlipNode] = ???
 
-  /*
-  def chooseBondFacet(from: WorkspaceStructureRep, to: WorkspaceStructureRep): Option[SlipNode] = {
-    val fromDescriptionFacets = facetsOfAndPartOf(from, bondFacets)
-    val toDescriptionFacets = facetsOfAndPartOf(to, fromDescriptionFacets)
-    if (toDescriptionFacets.isEmpty) {
-      Option.empty[SlipNode]
-    } else {
-      val probs = toDescriptionFacets.map(sn => {
-        total_description_type_support(sn, from.workspaceString().get)
-      })
-      val index = Utilities.valueProportionalRandomIndexInValueList(probs)
-      Some(toDescriptionFacets(index))
-    }
+
+
+
+
+  def facetsOfAndPartOf(wo: WorkspaceStructureRep, facets: List[SlipNode]): List[SlipNode] = {
+    val woDescriptions = wo.descriptions.toList.map(dt => slipNodeRefs(dt.descriptionTypeSlipNodeID))
+    woDescriptions.filter(dt => {
+      facets.contains(dt)
+    })
   }
-
-  def total_description_type_support(slipNode: SlipNode, workspaceString: WorkspaceString): Double = {
-    0.0
-  }
-
-
-  def facetsOfAndPartOf(wo: WorkspaceObject, facets: List[SlipNode]): List[SlipNode] = {
-    wo.descriptions.filter(d => {
-      val dTypeOpt = d.descriptionType
-      dTypeOpt.isDefined && facets.contains(dTypeOpt)
-    }).map(d => d.descriptionType).flatten
-  }*/
 }
 

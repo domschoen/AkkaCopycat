@@ -2,6 +2,7 @@ package models
 
 import java.util.UUID
 
+import models.SlipNode.SlipnetInfo
 import models.Slipnet.{InflatedDescriptionRep, WorkspaceStructureRep}
 
 // It is more a object living in Slipnet

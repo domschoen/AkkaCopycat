@@ -13,6 +13,7 @@ class BondStrengthTester(urgency: Int,
   import models.Coderack.ChooseAndRun
   import models.Coderack.ProposeCorrespondence
   import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
+  import models.Workspace.GoWithBondStrengthTester
 
   def receive = LoggingReceive {
     // to the browser
@@ -20,6 +21,7 @@ class BondStrengthTester(urgency: Int,
       log.debug(s"Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
       temperature ! Register(self)
+      workspace ! GoWithBondStrengthTester(runTemperature, arguments.get.asInstanceOf[String])
 
 
       case TemperatureResponse(value) =>

@@ -19,11 +19,15 @@ import scala.concurrent.Future
 import scala.concurrent.duration._
 import play.api.Play.current
 import javax.inject._
+import models.SlipNode.SlipNodeRep
+import models.Slipnet.WorkspaceStructureRep
 import models.Workspace.Initialize
 import models.codelet.CodeletType
 import models.codelet.Codelet
 import play.api.Configuration
 import play.api.libs.concurrent.InjectedActorSupport
+
+import scala.collection.mutable.ListBuffer
 
 
 
@@ -43,6 +47,8 @@ object Coderack {
                                     distiguishingConceptMappingSize: Int,
                                     distiguishingConceptMappingTotalStrength: Double
                                   )
+  case class ProposeBond(bondID: String,
+                         d: Double)
 }
 
 
@@ -52,7 +58,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
   var woAppActor: Option[ActorRef] = None
   var codeletRuns = 0
   var lastUpdate = 0
-  var codelets = List.empty[ActorRef]
+  var codelets = ListBuffer.empty[ActorRef]
   var initialCodelets : List[CodeletType] = List(
     CodeletType.BottomUpBondScout,
     CodeletType.ReplacementFinder,
@@ -96,6 +102,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
   private def initializing: Receive = {
     case Initializing => {
       log.debug("Initializing")
+      reset()
       temperature ! Temperature.GetTemperature
     }
 
@@ -117,10 +124,11 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
         case PostInitialCodelets =>
           log.debug("PostInitialCodelets")
           val urgency: Int = 1
-          codelets = for (codeletType <- initialCodelets;
+          codelets = (for (codeletType <- initialCodelets;
                                  x <- (0 to workspaceNumElements);
                                  y <- (0 to 2)
-                                 ) yield createCodelet(codeletType, urgency, None)
+                                 ) yield createCodelet(codeletType, urgency, None)).to[ListBuffer]
+
           codeletsUrgency = codelets.zip(List.fill(codelets.size)(urgency)).toMap
           for (newCodelet <- codelets) {
             self ! Post(newCodelet)
@@ -158,7 +166,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
             val urgencies = codelets.map(c => Math.pow(codeletsUrgency(c),scale))
             // then we choose a random number in the urgency sum and we choose the codelet at this random number looking
             // from first codelet up to this random number in terms of urgency
-            val index = Utilities.valueProportionalRandomIndexInValueList(urgencies)
+            val index = Utilities.valueProportionalRandomIndexInValueList(urgencies.toList)
 
             val chosenCodelet = codelets(index)
 
@@ -183,10 +191,18 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
           self ! Post(newCodelet)
           sender() ! Finished
 
+        case ProposeBond(bondID, bond_degree_of_association) =>
+          val urgency = bond_degree_of_association
+          val newCodelet = createCodelet(CodeletType.BondStrengthTester, get_urgency_bin(urgency), Some(bondID))
+          self ! Post(newCodelet)
+          sender() ! Finished
+
+
   }
 
 
-
+  def reset() = {
+  }
 
 
 
@@ -209,7 +225,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
     codelets(0)
   }
   private def removeCodelet(nc: ActorRef) = {
-    //TODO
+    codelets -= nc
   }
 
 }

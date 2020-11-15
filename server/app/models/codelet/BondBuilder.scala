@@ -20,7 +20,7 @@ class BondBuilder(urgency: Int, workspace: ActorRef,
       coderack = sender()
       temperature ! Register(self)
 
-      workspace ! GoWithBondBuilder(runTemperature, self)
+      workspace ! GoWithBondBuilder(runTemperature)
     }
     case TemperatureResponse(value) =>
       t = value

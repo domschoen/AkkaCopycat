@@ -12,6 +12,7 @@ object CodeletType {
   case object ReplacementFinder extends CodeletType
   case object BottomUpCorrespondenceScout extends CodeletType
   case object CorrespondenceStrengthTester extends CodeletType
+  case object BondStrengthTester extends CodeletType
 }
 object Codelet {
   case class Run(initialString: String, modifiedString: String, targetString: String, runTemperature: Double)
@@ -41,6 +42,7 @@ object Codelet {
       case CodeletType.ReplacementFinder => new ReplacementFinder(urgency,  workspace, slipnet, temperature, arguments)
       case CodeletType.BottomUpCorrespondenceScout => new BottomUpCorrespondenceScout(urgency,  workspace, slipnet, temperature, arguments)
       case CodeletType.CorrespondenceStrengthTester => new CorrespondenceStrengthTester(urgency,  workspace, slipnet, temperature, arguments)
+      case CodeletType.BondStrengthTester => new BondStrengthTester(urgency,  workspace, slipnet, temperature, arguments)
     }
 
 }
@@ -58,6 +60,6 @@ abstract class Codelet(u: Int,
   var t = 100.0
 
 
-
+  override def toString: String = getClass.getName
 }
 

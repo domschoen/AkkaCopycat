@@ -21,7 +21,7 @@ class CorrespondenceStrengthTester(urgency: Int,              workspace: ActorRe
       coderack = sender()
       temperature ! Register(self)
 
-      workspace ! GoWithDescriptionStrengthTester(runTemperature, arguments.get.asInstanceOf[String], self)
+      workspace ! GoWithDescriptionStrengthTester(runTemperature, arguments.get.asInstanceOf[String])
 
     case TemperatureResponse(value) =>
       t = value

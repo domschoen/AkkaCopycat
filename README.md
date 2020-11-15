@@ -68,3 +68,21 @@ where are they created ?
 Workspace modify the slipnet. 
 
 We can query the slipnet for influencing the workspace.
+
+# Execution Debugging
+
+## Execution 1
+
+Codelets executed:
+
+1. ReplacementFinder
+2. ReplacementFinder
+3. BottomUpCorrespondenceScout
+4. BottomUpBondScout
+5. BottomUpBondScout
+6. BottomUpBondScout
+7. ReplacementFinder
+
+ChooseAndRun: codelets is empty => stop
+
+Why is it stopping ? Probably because not all codelets are implemented
