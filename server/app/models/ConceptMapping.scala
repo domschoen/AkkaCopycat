@@ -158,7 +158,9 @@ class ConceptMapping(val description_type1: SlipNode,
     if (slipnetInfo.slipnet_numbers.find(sn => sn == descriptor).isDefined) {
       false
     } else {
-      !obj.letterOrGroupCompanionReps.find(lgc => lgc.descriptions.find(d => d.descriptorSlipNodeID.equals(descriptor.id)).isDefined).isDefined
+      !obj.letterOrGroupCompanionReps.find(lgc => lgc.descriptions.find(d =>
+        d.descriptor.isDefined &&
+        d.descriptor.get.id.equals(descriptor.id)).isDefined).isDefined
     }
   }
 

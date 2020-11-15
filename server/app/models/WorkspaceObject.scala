@@ -67,6 +67,7 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
   }
 
   def descriptionReps(): List[DescriptionRep] = descriptions.toList.map(d => d.descriptionRep())
+
   def workspaceStructureRep(): WorkspaceStructureRep = {
     WorkspaceStructureRep(uuid,descriptionReps(),letterOrGroupCompanionReps(), spans_string, None)
   }

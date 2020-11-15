@@ -71,17 +71,17 @@ We can query the slipnet for influencing the workspace.
 
 # Execution Debugging
 
-## Execution 1
+## Codelet executed
 
-Codelets executed:
-
-1. ReplacementFinder
-2. ReplacementFinder
-3. BottomUpCorrespondenceScout
-4. BottomUpBondScout
-5. BottomUpBondScout
-6. BottomUpBondScout
-7. ReplacementFinder
+1. ReplacementFinder (e, initial)
+2. BottomUpCorrespondenceScout (i, initial)
+3. BottomUpBondScout (a, initial)
+4. BottomUpCorrespondenceScout (created)
+5. BottomUpBondScout (b, initial)
+6. BottomUpBondScout (c, initial)
+7. ReplacementFinder (f, initial)
+8. BottomUpCorrespondenceScout (g, initial)
+9. ReplacementFinder (d, initial)
 
 ChooseAndRun: codelets is empty => stop
 

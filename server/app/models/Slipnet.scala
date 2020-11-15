@@ -18,12 +18,13 @@ import scala.concurrent.Future
 import scala.concurrent.duration._
 import play.api.Play.current
 import javax.inject._
-import models.Workspace.GoWithBottomUpCorrespondenceScout2
+import models.Workspace.{GoWithBottomUpCorrespondenceScout2, InitializeWorkspaceStringsResponse}
 import models.codelet.BottomUpCorrespondenceScout.ProposeAnyCorrespondenceSlipnetResponse
 import play.api.Configuration
 import play.api.libs.concurrent.InjectedActorSupport
 import Description.DescriptionRep
 import models.Bond.BondRep
+import models.Letter.LetterSlipnetComplement
 import models.SlipNode.{SlipNodeRep, SlipnetInfo}
 
 import scala.collection.mutable.ListBuffer
@@ -55,6 +56,9 @@ object Slipnet {
 
   case class Run(initialString: String, modifiedString: String, targetString: String)
   case class InitializeSlipnet(coderack: ActorRef, workspace: ActorRef)
+  case class InitializeWorkspaceStrings(initialWos: List[LetterSlipnetComplement],
+                                        modifiedWos: List[LetterSlipnetComplement],
+                                        targetWos: List[LetterSlipnetComplement])
 
   case class BondFromTo(from: WorkspaceStructureRep, to: WorkspaceStructureRep)
   case class BondFromTo2(
@@ -431,9 +435,9 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
   }
 
   def inflatedDescriptionRep(rep: DescriptionRep): InflatedDescriptionRep = {
-    val descriptionTypeSlipNode = slipNodeRefs(rep.descriptionTypeSlipNodeID)
-    val descriptorSlipNode = rep.descriptorSlipNodeID match {
-      case Some(id) => Some(slipNodeRefs(id))
+    val descriptionTypeSlipNode = slipNodeRefs(rep.descriptionType.id)
+    val descriptorSlipNode = rep.descriptor match {
+      case Some(rep) => Some(slipNodeRefs(rep.id))
       case None => None
     }
     InflatedDescriptionRep(rep.uuid, descriptionTypeSlipNode, descriptorSlipNode)
@@ -476,6 +480,25 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
 
 
 
+  def letterDescriptionReps(wos: List[LetterSlipnetComplement]) = {
+    wos.map(l => {
+      var descriptions = ListBuffer.empty[DescriptionRep]
+      descriptions += DescriptionRep("NotYes", object_category.slipNodeRep(),Some(letter.slipNodeRep()))
+      descriptions += DescriptionRep("NotYes",letter_category.slipNodeRep(),Some(slipnet_letters(l.letval).slipNodeRep()))
+
+      val x = l.x
+      val len = l.len
+      if ((x==0)&&(len==1)) descriptions += DescriptionRep("NotYes",string_position_category.slipNodeRep(),Some(single.slipNodeRep()))
+      if ((x==0)&&(len>1)) descriptions += DescriptionRep("NotYes",string_position_category.slipNodeRep(),Some(leftmost.slipNodeRep()))
+      if ((x==(len-1))&&(len>1)) descriptions += DescriptionRep("NotYes",string_position_category.slipNodeRep(),Some(rightmost.slipNodeRep()))
+      if ((len>2)&&((x*2)==(len-1))) descriptions += DescriptionRep("NotYes",string_position_category.slipNodeRep(),Some(middle.slipNodeRep()))
+      WorkspaceStructureRep(l.uuid, descriptions.toList, List(), false, None)
+    })
+
+
+  }
+
+
   def receive = LoggingReceive {
     // to the browser
     case Run(initialString, modifiedString, targetString) => {
@@ -484,6 +507,13 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
     case InitializeSlipnet(cr, ws) =>
       coderack = cr
       workspace = ws
+
+    case InitializeWorkspaceStrings(initialWos, modifiedWos, targetWos) =>
+      val initialDescriptions = letterDescriptionReps(initialWos)
+      val modifiedDescriptions = letterDescriptionReps(modifiedWos)
+      val targetDescriptions = letterDescriptionReps(targetWos)
+      workspace ! InitializeWorkspaceStringsResponse(initialDescriptions, modifiedDescriptions, targetDescriptions)
+
 
     case SetSlipNodeBufferValue(slipNodeID: String, bufferValue: Double) =>
       slipNodeRefs(slipNodeID).buffer = bufferValue
@@ -519,7 +549,12 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
           from_descriptor.buffer=100.0;
           to_descriptor.buffer=100.0;
 
-          sender() ! BondFromTo2Response(adaptedBondCategory.slipNodeRep(), adaptedBondCategory.bond_degree_of_association())
+          sender() ! BondFromTo2Response(
+            adaptedBondCategory.slipNodeRep(),
+            adaptedBondCategory.bond_degree_of_association(),
+            left.slipNodeRep(),
+            right.slipNodeRep()
+          )
       }
 
     // codelet.java.1233
@@ -661,15 +696,15 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
     concept_mapping_list.filter(cm => cm.distinguishing())
   }
 
-  def getDescriptor(workspaceObject: WorkspaceObject, node: SlipNode): Option[SlipNode] = ???
-  def getBondCategory(fromDescriptor: SlipNode, toDescriptor: SlipNode): Option[SlipNode] = ???
+  //def getDescriptor(workspaceObject: WorkspaceObject, node: SlipNode): Option[SlipNode] = ???
+  //def getBondCategory(fromDescriptor: SlipNode, toDescriptor: SlipNode): Option[SlipNode] = ???
 
 
 
 
 
   def facetsOfAndPartOf(wo: WorkspaceStructureRep, facets: List[SlipNode]): List[SlipNode] = {
-    val woDescriptions = wo.descriptions.toList.map(dt => slipNodeRefs(dt.descriptionTypeSlipNodeID))
+    val woDescriptions = wo.descriptions.toList.map(dt => slipNodeRefs(dt.descriptionType.id))
     woDescriptions.filter(dt => {
       facets.contains(dt)
     })

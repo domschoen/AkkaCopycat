@@ -13,7 +13,10 @@ object BottomUpBondScout {
   case class GoWithBottomUpBondScoutResponse(from: WorkspaceStructureRep, to: WorkspaceStructureRep)
   case class BondFromToSlipnetResponse(fromFacets: List[SlipNodeRep], toFacets: List[SlipNodeRep])
   case class GoWithBottomUpBondScout2Response(bondFacet: SlipNodeRep, fromDescriptor: SlipNodeRep, toDescriptor: SlipNodeRep)
-  case class BondFromTo2Response(bondCategory: SlipNodeRep, bondCategoryDegreeOfAssociation: Double)
+  case class BondFromTo2Response(bondCategory: SlipNodeRep,
+                                 bondCategoryDegreeOfAssociation: Double,
+                                 slipnetLeft: SlipNodeRep,
+                                 slipnetRight: SlipNodeRep)
   case class GoWithBottomUpBondScout3Response(bondID: String)
 }
 
@@ -66,9 +69,19 @@ class BottomUpBondScout(urgency: Int,              workspace: ActorRef,
       toDescriptor = td
       slipnet ! BondFromTo2(bondFrom, bondTo, fromDescriptor, toDescriptor)
 
-    case BondFromTo2Response(bondCategory: SlipNodeRep, bcda) =>
+    case BondFromTo2Response(bondCategory: SlipNodeRep, bcda, slipnetLeft, slipnetRight) =>
       bondCategoryDegreeOfAssociation = bcda
-      workspace ! GoWithBottomUpBondScout3(bondFrom, bondTo, bondCategory, bondFacet, fromDescriptor, toDescriptor, bondCategoryDegreeOfAssociation)
+      workspace ! GoWithBottomUpBondScout3(
+        bondFrom,
+        bondTo,
+        bondCategory,
+        bondFacet,
+        fromDescriptor,
+        toDescriptor,
+        bondCategoryDegreeOfAssociation,
+        slipnetLeft,
+        slipnetRight
+      )
 
     case GoWithBottomUpBondScout3Response(bondID: String) =>
       coderack ! ProposeBond(bondID, bondCategoryDegreeOfAssociation)

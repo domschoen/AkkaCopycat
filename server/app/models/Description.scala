@@ -5,9 +5,9 @@ import models.SlipNode.SlipNodeRep
 
 object Description {
   case class DescriptionRep(
-                             uuid :String,
-                             descriptionTypeSlipNodeID: String,
-                             descriptorSlipNodeID: Option[String]
+                             uuid:String,
+                             descriptionType: SlipNodeRep,
+                             descriptor: Option[SlipNodeRep]
                            )
 
 }
@@ -31,7 +31,7 @@ case class Description (
 
 
 
-  def descriptionRep(): DescriptionRep = DescriptionRep(uuid, descriptionType.id, if(descriptor.isEmpty) None else Some(descriptor.get.id))
+  def descriptionRep(): DescriptionRep = DescriptionRep(uuid, descriptionType, descriptor)
 
 
 }

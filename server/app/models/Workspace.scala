@@ -23,6 +23,7 @@ import javax.inject._
 import models.ConceptMapping.ConceptMappingRep
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.{GroupRep, WorkspaceStructureRep}
+import models.Workspace.InitializeWorkspaceStringsResponse
 import models.codelet.BottomUpBondScout.{GoWithBottomUpBondScout2Response, GoWithBottomUpBondScoutResponse}
 import models.codelet.Codelet.Finished
 import models.codelet.{Codelet, CodeletType}
@@ -34,15 +35,6 @@ import scala.collection.mutable.ListBuffer
 
 
 
-class WorkspaceString (val s: String, x1: Int, y1: Int, x2: Int, y2: Int) {
-  def length() = s.length
-  // Graphics var ratio = 100.0;  // every letter is 100 long unless >(x2-x1)/len
-  println("WorkspaceString " + s)
-
-  var objects: ListBuffer[WorkspaceObject] = (for (i <- 0 to s.length -1) yield {
-    new Letter(this, i+1, i+1).asInstanceOf[WorkspaceObject]
-  }).to[ListBuffer]
-}
 
 
 object Workspace {
@@ -50,6 +42,10 @@ object Workspace {
 
   case class Run(executionRun: ActorRef, initialString: String, modifiedString: String, targetString: String)
   case class Initialize(initialS: String, modifiedS: String, targetS: String)
+  case class InitializeWorkspaceStringsResponse(
+                                                 initialDescriptions: List[WorkspaceStructureRep],
+                                                 modifiedDescriptions: List[WorkspaceStructureRep],
+                                                 targetDescriptions: List[WorkspaceStructureRep])
   case object Step
   case object Found
   case object ChooseRandomStructure
@@ -61,7 +57,9 @@ object Workspace {
                                       bondFacet: SlipNodeRep,
                                       fromDescriptor: SlipNodeRep,
                                       toDescriptor: SlipNodeRep,
-                                      bondCategoryDegreeOfAssociation: Double
+                                      bondCategoryDegreeOfAssociation: Double,
+                                      slipnetLeft: SlipNodeRep,
+                                      slipnetRight: SlipNodeRep
                                      )
 
   case object GoWithReplacementFinder
@@ -110,6 +108,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
   import models.codelet.BottomUpBondScout.{
     GoWithBottomUpBondScout3Response
   }
+  import models.codelet.BondStrengthTester.GoWithBondStrengthTesterResponse
 
   var executionRunActor: ActorRef = null
   var coderack: ActorRef = null
@@ -138,11 +137,33 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
   var temperature_values = ListBuffer.empty[Double]
   var clamp_temperature = false;  // external clamp
 
+  def updateWorkspaceStringWithDescriptionReps(ws: WorkspaceString, wosToUpdate: List[WorkspaceStructureRep]) = {
+    val letterRefs = ws.objects.map(_.uuid).zip(ws.objects).toMap
+    for(woRep <- wosToUpdate) {
+      val letter = letterRefs(woRep.uuid)
+      for(d <- woRep.descriptions) {
+        letter.add_description(d.descriptionType, d.descriptor)
+      }
+      build_descriptions(letter)
+    }
+  }
+
+
   def receive = LoggingReceive {
 
     case Initialize(initialS, modifiedS, targetS) =>
       coderack = sender()
       reset(initialS, modifiedS, targetS)
+      slipnet ! InitializeWorkspaceStrings(
+        initial.letterSlipnetComplements(),
+        modified.letterSlipnetComplements(),
+        target.letterSlipnetComplements()
+      )
+
+    case InitializeWorkspaceStringsResponse(initialDescriptions, modifiedDescriptions, targetDescriptions) =>
+      updateWorkspaceStringWithDescriptionReps(initial, initialDescriptions)
+      updateWorkspaceStringWithDescriptionReps(modified, modifiedDescriptions)
+      updateWorkspaceStringWithDescriptionReps(target, targetDescriptions)
 
     case Found =>
       found_answer = true
@@ -220,10 +241,10 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
           sender() ! GoWithBottomUpBondScout2Response(bondFacet, fromDescriptor, toDescriptor)
         }
       }
-    case GoWithBottomUpBondScout3(bondFromRep, bondToRep, bondCategory, bondFacet, fromDescriptor, toDescriptor, bondCategoryDegreeOfAssociation) =>
+    case GoWithBottomUpBondScout3(bondFromRep, bondToRep, bondCategory, bondFacet, fromDescriptor, toDescriptor, bondCategoryDegreeOfAssociation, slipnetLeft, slipnetRight) =>
       val bondFrom = objectRefs(bondFromRep.uuid)
       val bondTo = objectRefs(bondToRep.uuid)
-      val nb = new Bond(bondFrom,bondTo,bondCategory,bondFacet,fromDescriptor,toDescriptor)
+      val nb = new Bond(bondFrom,bondTo,bondCategory,bondFacet,fromDescriptor,toDescriptor, slipnetLeft, slipnetRight)
       // if (!remove_terraced_scan) workspace.WorkspaceArea.AddObject(nb,1);
 
       sender ! GoWithBottomUpBondScout3Response(nb.uuid)
@@ -355,8 +376,30 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     case GoWithDescriptionStrengthTester(temperature, correspondenceID) =>
       sender() ! Finished
 
+    // codelet.java.395
     case GoWithBondStrengthTester(temperature, bondID) =>
-      sender() ! Finished
+      val b = objectRefs(bondID).asInstanceOf[Bond]
+      b.update_strength_value()
+      val strength = b.total_strength;
+      val workingString = if (b.left_obj.wString == initial) "initial" else "target"
+      log.info(s"bond = ${bondID} in ${workingString} string")
+
+      val prob = WorkspaceFormulas.temperature_adjusted_probability(strength/100.0, temperature)
+      log.info("bond strength = "+strength)
+      if (!WorkspaceFormulas.flip_coin(prob)){
+        print("not strong enough: Fizzle!");
+        sender() ! Finished
+      }
+      // it is strong enough - post builder  & activate nodes
+      slipnet ! SetSlipNodeBufferValue(b.bond_facet.id, 100.0)
+      slipnet ! SetSlipNodeBufferValue(b.from_obj_descriptor.id, 100.0)
+      slipnet ! SetSlipNodeBufferValue(b.to_obj_descriptor.id, 100.0)
+
+      log.info("succeeded: will post bond-builder");
+      sender() ! GoWithBondStrengthTesterResponse(strength)
+
+
+
 
 
     case GoWithBondBuilder(temperature) =>
@@ -382,10 +425,18 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 
   def reset(initial_string: String, modified_string: String, target_string: String) = {
     initial = new WorkspaceString(initial_string,50,200,350,300)
+    updateWorkspaceObjectRefs(initial)
     modified = new WorkspaceString(modified_string,650,200,950,300)
+    updateWorkspaceObjectRefs(modified)
     target = new WorkspaceString(target_string,50,610,450,710)
+    updateWorkspaceObjectRefs(target)
   }
 
+  def updateWorkspaceObjectRefs(ws: WorkspaceString) = {
+    for (l <- ws.objects) {
+      objectRefs += (l.uuid -> l)
+    }
+  }
 
   // Add new description similar to those in argument
   def addDescriptionsToWorkspaceObject(wo: WorkspaceObject, descriptions: List[Description]) = {
@@ -496,7 +547,11 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
   def workspaceObjects(): List[WorkspaceObject] = structures.toList.filter(s => s.isInstanceOf[WorkspaceObject]).asInstanceOf[List[WorkspaceObject]]
 
   def chooseObject(variable: String, temperature: Double) : Option[WorkspaceObject] = {
-    val nonModifieds = workspaceObjects().filter(wo => wo.workspaceString != modified)
+    val nonModifieds = workspaceObjects().filter(wo =>
+      {
+        println("chooseObject " + wo.workspaceString + " modified " + modified)
+        wo.workspaceString != modified
+      })
     chooseObjectFromList(nonModifieds, variable)
   }
   def chooseNeighbor(from: WorkspaceObject, temperature: Double) : Option[WorkspaceObject] = {

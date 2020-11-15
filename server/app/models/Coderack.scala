@@ -49,6 +49,7 @@ object Coderack {
                                   )
   case class ProposeBond(bondID: String,
                          d: Double)
+  case class PostBondBuilder(bondID: String, strength: Double)
 }
 
 
@@ -92,6 +93,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
       modifiedString = modifiedS
       targetString = targetS
       workspace ! Initialize(initialS, modifiedS, targetS)
+
       context.become(initializing)
       self ! Initializing
 
@@ -194,6 +196,14 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
         case ProposeBond(bondID, bond_degree_of_association) =>
           val urgency = bond_degree_of_association
           val newCodelet = createCodelet(CodeletType.BondStrengthTester, get_urgency_bin(urgency), Some(bondID))
+          self ! Post(newCodelet)
+          sender() ! Finished
+
+        case PostBondBuilder(bondID, strength) =>
+          val urgency = get_urgency_bin(strength)
+
+          // Pressure_Type argument is missing
+          val newCodelet = createCodelet(CodeletType.BondBuilder, get_urgency_bin(urgency), Some(bondID))
           self ! Post(newCodelet)
           sender() ! Finished
 
