@@ -5,18 +5,21 @@ import akka.event.LoggingReceive
 import models.Workspace
 
 
-object Breaker {
-  def props(urgency: Int, workspace: ActorRef): Props = Props(new Breaker(urgency, workspace))
 
-
-}
-class Breaker(urgency: Int, workspace: ActorRef) extends Codelet(urgency, workspace)  {
-  import Codelet.Run
+class Breaker(urgency: Int,
+              workspace: ActorRef,
+              slipnet: ActorRef,
+              temperature: ActorRef,
+              arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet, temperature)  {
+  import Codelet.{ Run, Finished }
+  import models.Coderack.ChooseAndRun
+  import models.Coderack.ProposeCorrespondence
+  import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
   import Workspace.ChooseRandomStructure
 
   def receive = LoggingReceive {
     // to the browser
-    case Run(initialString, modifiedString, targetString,runTemperature) => {
+    case Run(initialString, modifiedString, targetString,runTemperature) =>
       log.debug(s"Run with initial $initialString, modified: $modifiedString and target: $targetString")
       val probability = (100.0 - runTemperature) / 100.0
       log.debug("deciding whether or not to fizzle.")
@@ -26,10 +29,21 @@ class Breaker(urgency: Int, workspace: ActorRef) extends Codelet(urgency, worksp
         log.debug("decided to fizzle!")
       } else {
         log.debug("did not fizzle")
+        coderack = sender()
+        temperature ! Register(self)
+
         // choose a structure at random
         workspace ! ChooseRandomStructure
       }
-    }
+    case TemperatureResponse(value) =>
+      t = value
+
+    case TemperatureChanged(value) =>
+      t = value
+
+    case Finished =>
+      coderack ! ChooseAndRun
+
   }
 
 

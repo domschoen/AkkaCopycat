@@ -22,7 +22,8 @@ object ExecutionRun {
 
 class ExecutionRun extends Actor with ActorLogging  { //with InjectedActorSupport
   import ExecutionRun._
-  import Slipnet.SetCoderack
+  import Slipnet.InitializeSlipnet
+  import Workspace.Initialize
   var workspace: ActorRef = null
   var slipnet: ActorRef = null
   var coderack: ActorRef = null
@@ -33,10 +34,12 @@ class ExecutionRun extends Actor with ActorLogging  { //with InjectedActorSuppor
     case Run(initialString, modifiedString, targetString) => {
       log.debug(s"ExecutionRun: Run with initial $initialString, modified: $modifiedString and target: $targetString")
       slipnet = context.actorOf(Slipnet.props(),"Slipnet")
-      workspace = context.actorOf(Workspace.props(slipnet),"Workspace")
+
       temperature = context.actorOf(Temperature.props(),"Temperature")
-      coderack = context.actorOf(Coderack.props(workspace, temperature, self),"Coderack")
-      slipnet ! SetCoderack(coderack)
+      workspace = context.actorOf(Workspace.props(slipnet, temperature),"Workspace")
+      coderack = context.actorOf(Coderack.props(workspace, slipnet, temperature, self),"Coderack")
+      slipnet ! InitializeSlipnet(coderack, workspace)
+      workspace ! Initialize(coderack)
       coderack ! Coderack.Run(initialString, modifiedString, targetString)
     }
 

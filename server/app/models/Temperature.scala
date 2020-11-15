@@ -21,6 +21,8 @@ import javax.inject._
 import play.api.Configuration
 import play.api.libs.concurrent.InjectedActorSupport
 
+import scala.collection.mutable.ListBuffer
+
 
 
 
@@ -32,9 +34,13 @@ object Temperature {
   case object GetClampTime
   case class ClampTime(value: Int)
   case object GetTemperature
+  case class SetTemperature(value: Double)
+
+  case class Register(subscriber: ActorRef)
 
   // To be implemented in actor asking for temperature
   case class TemperatureResponse(temperature: Double)
+  case class TemperatureChanged(temperature: Double)
 }
 
 
@@ -44,12 +50,22 @@ class Temperature extends Actor with ActorLogging with InjectedActorSupport {
   var clamp_time = 30
   var clamped = true
   var temperature: Double = 100.0
+  var subscribers = ListBuffer.empty[ActorRef]
 
   def receive = LoggingReceive {
     // to the browser
     case Run(initialString, modifiedString, targetString) => {
       log.debug(s"Run with initial $initialString, modified: $modifiedString and target: $targetString")
     }
+
+    case Register =>
+      subscribers += sender()
+      sender() ! TemperatureResponse(temperature)
+
+    case SetTemperature(value) =>
+      temperature = value
+      subscribers.map(s => s ! TemperatureChanged(value))
+
 
     case GetTemperature =>
       sender ! TemperatureResponse(temperature)

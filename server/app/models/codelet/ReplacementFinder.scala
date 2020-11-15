@@ -2,17 +2,36 @@ package models.codelet
 
 import akka.event.LoggingReceive
 import akka.actor.ActorRef
+import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
+import models.Workspace.GoWithReplacementFinder
 
+// see codelet.java.994
+class ReplacementFinder(urgency: Int,              workspace: ActorRef,
+                        slipnet: ActorRef,
+                        temperature: ActorRef,
+                        arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet, temperature)  {
+  import Codelet.{ Run, Finished }
+  import models.Coderack.ChooseAndRun
 
-class ReplacementFinder(urgency: Int, workspace: ActorRef) extends Codelet(urgency, workspace)  {
-  import Codelet.Run
 
   def receive = LoggingReceive {
     // to the browser
-    case Run(initialString, modifiedString, targetString,runTemperature) => {
+    case Run(initialString, modifiedString, targetString,runTemperature) =>
       log.debug(s"ReplacementFinder. Run with initial $initialString, modified: $modifiedString and target: $targetString")
+      coderack = sender()
+      temperature ! Register(self)
+
+      workspace ! GoWithReplacementFinder
+    case TemperatureResponse(value) =>
+      t = value
+
+    case TemperatureChanged(value) =>
+      t = value
+
+    case Finished =>
+      coderack ! ChooseAndRun
+
     }
-  }
 
 
 }

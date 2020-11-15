@@ -14,7 +14,7 @@ We can do a bounce followed by a ensure as described above.
 | CopyCat gentle overview          | [file:///Users/dschoen/Documents/gitlab/copycat/JavaCopyCat/doc/Tutorial/overvw.htm](file:///Users/dschoen/Documents/gitlab/copycat/JavaCopyCat/doc/Tutorial/overvw.htm) |
 | Monitoring                       | https://kamon.io/apm/pricing/<br />https://sematext.com/pricing/#logsene |
 | Synch tasks from mutliple actors | https://stackoverflow.com/questions/22770927/waiting-for-multiple-results-in-akka |
-|                                  |                                                              |
+|                                  | https://www.scientificamerican.com/article/experts-short-term-memory-to-long-term/ |
 
 ## SVG Library for Scala.js
 
@@ -41,3 +41,18 @@ Analogies relies on 2 mental processes:
 - Coderack: Information on all the workers (=Codelet) in the WorkSpace. A codelet execute a piece of code that corresponds with the job that they have been assigned.
 - Temperature: how globally consistent is the structure build. Used to dertermine when the program should stop 
 
+# Concept Mapping
+
+where are they created ?
+
+| Where (class)   |                          | Remark          |
+| --------------- | ------------------------ | --------------- |
+| Correspondence  | get_incompatible_bond    | created locally |
+| Concept_mapping | get_concept_mapping_list |                 |
+|                 |                          |                 |
+
+# Slipnet
+
+Workspace modify the slipnet. 
+
+We can query the slipnet for influencing the workspace.

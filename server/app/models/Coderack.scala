@@ -28,7 +28,7 @@ import play.api.libs.concurrent.InjectedActorSupport
 
 
 object Coderack {
-  def props(workspace: ActorRef, temperatureActor: ActorRef, executionRun: ActorRef): Props = Props(new Coderack(workspace, temperatureActor, executionRun))
+  def props(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, executionRun: ActorRef): Props = Props(new Coderack(workspace, slipnet, temperature, executionRun))
 
   case class Run(initialString: String, modifiedString: String, targetString: String)
   case object PostInitialCodelets
@@ -37,11 +37,17 @@ object Coderack {
   case object Step
   case object Initializing
   case class Post(codelet: ActorRef)
+  case class ProposeCorrespondence(
+                                    correspondenceID: String,
+                                    distiguishingConceptMappingSize: Int,
+                                    distiguishingConceptMappingTotalStrength: Double
+                                  )
 }
 
 
-class Coderack(workspace: ActorRef, temperature: ActorRef, executionRun: ActorRef) extends Actor with ActorLogging with InjectedActorSupport {
+class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, executionRun: ActorRef) extends Actor with ActorLogging with InjectedActorSupport {
   import Coderack._
+  import Codelet.Finished
   var woAppActor: Option[ActorRef] = None
   var codeletRuns = 0
   var lastUpdate = 0
@@ -57,9 +63,18 @@ class Coderack(workspace: ActorRef, temperature: ActorRef, executionRun: ActorRe
   var initialString = ""
   var modifiedString =""
   var targetString = ""
+  var number_of_bins = 7
 
-  protected def createCodelet(codeletType: CodeletType, urgency: Int) =
-    context.actorOf(Codelet.props(codeletType, urgency, workspace))
+  // define the codelet types
+  def get_urgency_bin(urgency: Double): Int = {
+    //int bin = (int)(urgency*random.rnd());
+    val bin = ((urgency.toInt * number_of_bins) / 100).toInt
+    val udjustedBin = if (bin>=number_of_bins) number_of_bins-1 else bin
+    udjustedBin + 1
+  }
+
+  protected def createCodelet(codeletType: CodeletType, urgency: Int, arguments: Option[Any]) =
+    context.actorOf(Codelet.props(codeletType, urgency, workspace, slipnet, temperature, arguments))
 
   def receive = LoggingReceive {
     // to the browser
@@ -104,7 +119,7 @@ class Coderack(workspace: ActorRef, temperature: ActorRef, executionRun: ActorRe
           codelets = for (codeletType <- initialCodelets;
                                  x <- (0 to workspaceNumElements);
                                  y <- (0 to 2)
-                                 ) yield createCodelet(codeletType, urgency)
+                                 ) yield createCodelet(codeletType, urgency, None)
           codeletsUrgency = codelets.zip(List.fill(codelets.size)(urgency)).toMap
           for (newCodelet <- codelets) {
             self ! Post(newCodelet)
@@ -127,7 +142,7 @@ class Coderack(workspace: ActorRef, temperature: ActorRef, executionRun: ActorRe
           // if (CoderackArea.Visible) update_captions();
         }
 
-        case ChooseAndRun => {
+        case ChooseAndRun =>
           log.debug("ChooseAndRun")
           if (codelets.size == 0) {
             log.debug("ChooseAndRun: codelets is empty => stop")
@@ -153,8 +168,21 @@ class Coderack(workspace: ActorRef, temperature: ActorRef, executionRun: ActorRe
             chosenCodelet ! Codelet.Run(initialString, modifiedString, targetString, runTemperature)
           }
 
-        }
-      }
+        case ProposeCorrespondence(
+          correspondenceID,
+          distiguishingConceptMappingSize,
+          distiguishingConceptMappingTotalStrength
+        ) =>
+          val dv = distiguishingConceptMappingSize.toDouble
+          val urgency = if (dv > 0.0) distiguishingConceptMappingTotalStrength / dv else distiguishingConceptMappingTotalStrength
+
+          // this is GUI ncd.Pressure_Type = orig.Pressure_Type;
+
+          val newCodelet = createCodelet(CodeletType.CorrespondenceStrengthTester, get_urgency_bin(urgency), Some(correspondenceID))
+          self ! Post(newCodelet)
+          sender() ! Finished
+
+  }
 
 
 
