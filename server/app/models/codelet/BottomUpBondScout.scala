@@ -23,7 +23,7 @@ class BottomUpBondScout(urgency: Int,              workspace: ActorRef,
       coderack = sender()
       temperature ! Register(self)
 
-      workspace ! BondWithNeighbor(runTemperature, self)
+      workspace ! BondWithNeighbor(runTemperature)
     case TemperatureResponse(value) =>
       t = value
 

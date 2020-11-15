@@ -39,7 +39,7 @@ class ExecutionRun extends Actor with ActorLogging  { //with InjectedActorSuppor
       workspace = context.actorOf(Workspace.props(slipnet, temperature),"Workspace")
       coderack = context.actorOf(Coderack.props(workspace, slipnet, temperature, self),"Coderack")
       slipnet ! InitializeSlipnet(coderack, workspace)
-      workspace ! Initialize(coderack)
+
       coderack ! Coderack.Run(initialString, modifiedString, targetString)
     }
 

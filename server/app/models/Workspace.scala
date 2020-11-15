@@ -35,6 +35,7 @@ import scala.collection.mutable.ListBuffer
 class WorkspaceString (val s: String, x1: Int, y1: Int, x2: Int, y2: Int) {
   def length() = s.length
   // Graphics var ratio = 100.0;  // every letter is 100 long unless >(x2-x1)/len
+  println("WorkspaceString " + s)
 
   var objects: ListBuffer[WorkspaceObject] = (for (i <- 0 to s.length -1) yield {
     new Letter(this, i+1, i+1).asInstanceOf[WorkspaceObject]
@@ -46,11 +47,11 @@ object Workspace {
   def props(slipnet: ActorRef, temperature: ActorRef): Props = Props(new Workspace(slipnet, temperature))
 
   case class Run(executionRun: ActorRef, initialString: String, modifiedString: String, targetString: String)
-  case class Initialize(coderack: ActorRef)
+  case class Initialize(initialS: String, modifiedS: String, targetS: String)
   case object Step
   case object Found
   case object ChooseRandomStructure
-  case class BondWithNeighbor(temperature: Double, codelet: ActorRef)
+  case class BondWithNeighbor(temperature: Double)
   case object GoWithReplacementFinder
   case class GoWithBottomUpCorrespondenceScout(temperature: Double, codelet: ActorRef)
   case class GoWithBottomUpCorrespondenceScout2(
@@ -77,7 +78,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     GoWithBondBuilder,
     GoWithGroupBuilder,
     GoWithDescriptionStrengthTester,
-    //BondWithNeighbor,
+    BondWithNeighbor,
     ChooseRandomStructure
   }
 
@@ -114,8 +115,9 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 
   def receive = LoggingReceive {
 
-    case Initialize(cr) =>
-      coderack = cr
+    case Initialize(initialS, modifiedS, targetS) =>
+      coderack = sender()
+      reset(initialS, modifiedS, targetS)
 
     case Found =>
       found_answer = true
@@ -135,9 +137,9 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
         log.debug("There are no structures built: fizzle")
 
       }
-    /*case BondWithNeighbor(temperature, codelet) =>
+    case BondWithNeighbor(temperature) =>
       //          workspace_object fromob = workspace_formulas.choose_object("intra_string_salience",workspace.workspace_objects);
-      val fromOpt = chooseObject(TemperatureAjustmentVariable.Intra_string_salience, temperature)
+      /*val fromOpt = chooseObject(TemperatureAjustmentVariable.Intra_string_salience, temperature)
       fromOpt match {
         case None =>
           log.debug("BondWithNeighbor | failed with empty from")
@@ -156,6 +158,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
               slipnet ! BondFromTo(from, to, codelet)
           }
       }*/
+      sender() ! Finished
       // codelet.java.994
     case GoWithReplacementFinder =>
       val initialLetters = lettersOf(initial)
@@ -287,6 +290,14 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 
   }
 
+
+  def reset(initial_string: String, modified_string: String, target_string: String) = {
+    initial = new WorkspaceString(initial_string,50,200,350,300)
+    modified = new WorkspaceString(modified_string,650,200,950,300)
+    target = new WorkspaceString(target_string,50,610,450,710)
+  }
+
+
   // Add new description similar to those in argument
   def addDescriptionsToWorkspaceObject(wo: WorkspaceObject, descriptions: List[Description]) = {
     descriptions.filter(d => !wo.has_description(d)).map(d => {
@@ -388,10 +399,12 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     val description = new Description(wObject,descriptionTypeSlipNodeID,descriptorSlipNodeID)
     description
   }*/
-  def lettersOf(ws: WorkspaceString): List[Letter] = ws.objects.filter(s => s.isInstanceOf[Letter]).asInstanceOf[List[Letter]]
+  def lettersOf(ws: WorkspaceString): List[Letter] = {
+    ws.objects.toList.filter(s => s.isInstanceOf[Letter]).asInstanceOf[List[Letter]]
+  }
 
 
-  def workspaceObjects(): List[WorkspaceObject] = structures.filter(s => s.isInstanceOf[WorkspaceObject]).asInstanceOf[List[WorkspaceObject]]
+  def workspaceObjects(): List[WorkspaceObject] = structures.toList.filter(s => s.isInstanceOf[WorkspaceObject]).asInstanceOf[List[WorkspaceObject]]
 
   def chooseObject(variable: String, temperature: Double) : Option[WorkspaceObject] = {
     val nonModifieds = workspaceObjects().filter(wo => wo.workspaceString != modified)

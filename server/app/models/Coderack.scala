@@ -19,6 +19,7 @@ import scala.concurrent.Future
 import scala.concurrent.duration._
 import play.api.Play.current
 import javax.inject._
+import models.Workspace.Initialize
 import models.codelet.CodeletType
 import models.codelet.Codelet
 import play.api.Configuration
@@ -84,7 +85,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
       initialString = initialS
       modifiedString = modifiedS
       targetString = targetS
-
+      workspace ! Initialize(initialS, modifiedS, targetS)
       context.become(initializing)
       self ! Initializing
 
