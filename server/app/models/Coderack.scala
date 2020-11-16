@@ -36,6 +36,7 @@ object Coderack {
   def props(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, executionRun: ActorRef): Props = Props(new Coderack(workspace, slipnet, temperature, executionRun))
 
   case class Run(initialString: String, modifiedString: String, targetString: String)
+  case object FinishInitilizingWorkspaceStrings
   case object PostInitialCodelets
   case object ChooseAndRun
   case object Finish
@@ -86,7 +87,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
 
   def receive = LoggingReceive {
     // to the browser
-    case Run(initialS, modifiedS, targetS) => {
+    case Run(initialS, modifiedS, targetS) =>
       log.debug(s"Run with initial $initialString, modified: $modifiedString and target: $targetString")
       // TODO init
       initialString = initialS
@@ -94,10 +95,10 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
       targetString = targetS
       workspace ! Initialize(initialS, modifiedS, targetS)
 
+    case FinishInitilizingWorkspaceStrings =>
       context.become(initializing)
       self ! Initializing
 
-    }
   }
 
 

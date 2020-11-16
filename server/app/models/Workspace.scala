@@ -114,7 +114,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
   var coderack: ActorRef = null
 
   var found_answer = false;
-  var structures = ListBuffer.empty[WorkspaceStructure]
+  // var structures = ListBuffer.empty[WorkspaceStructure]
   // initial ---> target
   // modified ----> ?
   var initial: WorkspaceString = null
@@ -122,20 +122,28 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
   var modified: WorkspaceString = null
   val r = scala.util.Random
   var changed_object = Option.empty[WorkspaceObject]
-  var objectRefs = Map.empty[String, WorkspaceObject]
+  var structureRefs = Map.empty[String, WorkspaceStructure]
+  //var objectRefs = Map.empty[String, WorkspaceObject]
   var rule = Option.empty[Rule]
 
   var total_unhappiness = 0.0;
   var intra_string_unhappiness = 0.0;
   var inter_string_unhappiness = 0.0;
 
-
-
   var chaleur = 100.0;
   var actual_temperature = 100.0;
   var total_happiness_values = ListBuffer.empty[Double]
   var temperature_values = ListBuffer.empty[Double]
   var clamp_temperature = false;  // external clamp
+
+
+  def structures(): List[WorkspaceStructure] = structureRefs.values.toList
+  def objectRefs(): Map[String, WorkspaceObject] = {
+    val subset = structureRefs.filter { case (k,v) => v.isInstanceOf[WorkspaceObject] }
+    subset.asInstanceOf[Map[String, WorkspaceObject]]
+  }
+
+
 
   def updateWorkspaceStringWithDescriptionReps(ws: WorkspaceString, wosToUpdate: List[WorkspaceStructureRep]) = {
     val letterRefs = ws.objects.map(_.uuid).zip(ws.objects).toMap
@@ -164,6 +172,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       updateWorkspaceStringWithDescriptionReps(initial, initialDescriptions)
       updateWorkspaceStringWithDescriptionReps(modified, modifiedDescriptions)
       updateWorkspaceStringWithDescriptionReps(target, targetDescriptions)
+      coderack ! FinishInitilizingWorkspaceStrings
 
     case Found =>
       found_answer = true
@@ -215,8 +224,8 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
         sender() ! Finished
 
       } else {
-        val from = objectRefs(fromRep.uuid)
-        val to = objectRefs(toRep.uuid)
+        val from = objectRefs()(fromRep.uuid)
+        val to = objectRefs()(toRep.uuid)
         val probs = toFacets.map(sn => {
           total_description_type_support(sn, from.workspaceString().get)
         })
@@ -242,8 +251,8 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
         }
       }
     case GoWithBottomUpBondScout3(bondFromRep, bondToRep, bondCategory, bondFacet, fromDescriptor, toDescriptor, bondCategoryDegreeOfAssociation, slipnetLeft, slipnetRight) =>
-      val bondFrom = objectRefs(bondFromRep.uuid)
-      val bondTo = objectRefs(bondToRep.uuid)
+      val bondFrom = objectRefs()(bondFromRep.uuid)
+      val bondTo = objectRefs()(bondToRep.uuid)
       val nb = new Bond(bondFrom,bondTo,bondCategory,bondFacet,fromDescriptor,toDescriptor, slipnetLeft, slipnetRight)
       // if (!remove_terraced_scan) workspace.WorkspaceArea.AddObject(nb,1);
 
@@ -345,8 +354,8 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       distiguishingConceptMappingTotalStrength,
       temperature
     ) =>
-      val obj1 = objectRefs(obj1Rep.uuid)
-      val obj2 = objectRefs(obj2Rep.uuid)
+      val obj1 = objectRefs()(obj1Rep.uuid)
+      val obj2 = objectRefs()(obj2Rep.uuid)
 
       val nc = new Correspondence(obj1,obj2,concept_mapping_list,flip_obj2);
       // TODO if (!remove_terraced_scan) WorkspaceArea.AddObject(nc,1);
@@ -378,7 +387,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 
     // codelet.java.395
     case GoWithBondStrengthTester(temperature, bondID) =>
-      val b = objectRefs(bondID).asInstanceOf[Bond]
+      val b = objectRefs()(bondID).asInstanceOf[Bond]
       b.update_strength_value()
       val strength = b.total_strength;
       val workingString = if (b.left_obj.wString == initial) "initial" else "target"
@@ -434,7 +443,8 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 
   def updateWorkspaceObjectRefs(ws: WorkspaceString) = {
     for (l <- ws.objects) {
-      objectRefs += (l.uuid -> l)
+      //objectRefs += (l.uuid -> l)
+      structureRefs += (l.uuid -> l)
     }
   }
 
@@ -468,6 +478,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
   }*/
   // called by codelet "group-builder"
   def build_descriptions(wo: WorkspaceObject) = {
+    //log.debug("build_descriptions " + wo)
     for (description <- wo.descriptions) {
       slipnet ! SetSlipNodeBufferValue(description.descriptionType.id, 100.0)
       if (description.descriptor.isEmpty) {
@@ -476,7 +487,9 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
         slipnet ! SetSlipNodeBufferValue(description.descriptor.get.id, 100.0)
         if (!structures.contains(description)) {
           // GUI area.AddObject(d);
-          structures += description
+          //log.debug("add description " + description)
+
+          structureRefs += (description.uuid -> description)
         }
       }
     }
@@ -525,9 +538,9 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 
   def build_rule(r: Rule){
     // GUI workspace.Workspace_Rule.Change_Caption("rule : " +this.toString());
-    if (rule.isDefined) { structures -= rule.asInstanceOf[WorkspaceStructure] }
+    if (rule.isDefined) { structureRefs = structureRefs.-(rule.get.uuid) }
     rule= Some(r);
-    structures += r
+    structureRefs += (r.uuid -> r)
     r.activate_rule_descriptions()
   }
 
@@ -544,14 +557,17 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
   }
 
 
-  def workspaceObjects(): List[WorkspaceObject] = structures.toList.filter(s => s.isInstanceOf[WorkspaceObject]).asInstanceOf[List[WorkspaceObject]]
+  def workspaceObjects(): List[WorkspaceObject] = structures.filter(s => s.isInstanceOf[WorkspaceObject]).asInstanceOf[List[WorkspaceObject]]
 
   def chooseObject(variable: String, temperature: Double) : Option[WorkspaceObject] = {
+    //log.debug("workspaceObjects() " + workspaceObjects())
     val nonModifieds = workspaceObjects().filter(wo =>
       {
-        println("chooseObject " + wo.workspaceString + " modified " + modified)
+        //println("chooseObject " + wo.workspaceString + " modified " + modified)
         wo.workspaceString != modified
       })
+    //log.debug("nonModifieds " + nonModifieds)
+
     chooseObjectFromList(nonModifieds, variable)
   }
   def chooseNeighbor(from: WorkspaceObject, temperature: Double) : Option[WorkspaceObject] = {
