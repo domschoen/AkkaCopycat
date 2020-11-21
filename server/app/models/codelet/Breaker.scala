@@ -15,7 +15,7 @@ class Breaker(urgency: Int,
   import models.Coderack.ChooseAndRun
   import models.Coderack.ProposeCorrespondence
   import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
-  import Workspace.ChooseRandomStructure
+  import Workspace.GoWithBreaker
 
   def receive = LoggingReceive {
     // to the browser
@@ -33,7 +33,8 @@ class Breaker(urgency: Int,
         temperature ! Register(self)
 
         // choose a structure at random
-        workspace ! ChooseRandomStructure
+        // Codelet.java.68
+        workspace ! GoWithBreaker(runTemperature)
       }
     case TemperatureResponse(value) =>
       t = value

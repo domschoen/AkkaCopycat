@@ -49,7 +49,7 @@ object Workspace {
                                                  targetDescriptions: List[WorkspaceStructureRep])
   case object Step
   case object Found
-  case object ChooseRandomStructure
+  case class GoWithBreaker(temperature: Double)
   case class BondWithNeighbor(temperature: Double)
   case class GoWithBottomUpBondScout2(from: WorkspaceStructureRep, to:WorkspaceStructureRep, fromFacets: List[SlipNodeRep], toFacets: List [SlipNodeRep])
   case class GoWithBottomUpBondScout3(bondFrom: WorkspaceStructureRep,
@@ -97,7 +97,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     BondWithNeighbor,
     GoWithBottomUpBondScout2,
     GoWithBottomUpBondScout3,
-    ChooseRandomStructure
+    GoWithBreaker
   }
 
   import Slipnet._
@@ -124,6 +124,8 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
   val r = scala.util.Random
   var changed_object = Option.empty[WorkspaceObject]
   var structureRefs = Map.empty[String, WorkspaceStructure]
+  // Because a Map doesn't garantee the order, we need also an array
+  var structures = ListBuffer.empty[WorkspaceStructure]
   //var objectRefs = Map.empty[String, WorkspaceObject]
   var rule = Option.empty[Rule]
 
@@ -138,7 +140,6 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
   var clamp_temperature = false;  // external clamp
 
 
-  def structures(): List[WorkspaceStructure] = structureRefs.values.toList
   def objectRefs(): Map[String, WorkspaceObject] = {
     val subset = structureRefs.filter { case (k,v) => v.isInstanceOf[WorkspaceObject] }
     subset.asInstanceOf[Map[String, WorkspaceObject]]
@@ -157,15 +158,24 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     }
   }
 
+  def addStructure(ws: WorkspaceStructure): Unit = {
+    structureRefs += (ws.uuid -> ws)
+    structures += ws
+  }
+  def removeStructure(ws: WorkspaceStructure): Unit = {
+    structureRefs -= ws.uuid
+    structures -= ws
+
+  }
 
   def addBond(b: Bond) = {
-    structureRefs += (b.uuid -> b)
+    addStructure(b)
     b.build_bond()
   }
   def break_bond(b: Bond) = {
     // GUI WorkspaceArea.DeleteObject(this);
     // GUI WorkspaceSmall.DeleteObject(this);
-    structureRefs -= b.uuid
+    removeStructure(b)
     b.break_bond()
   }
   def break_group(gr: Group): Unit = {
@@ -177,8 +187,9 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     }
 //   GUI  workspace.WorkspaceArea.DeleteObject(this);
 //   GUI  workspace.WorkspaceSmall.DeleteObject(this);
-    structureRefs -= gr.uuid
-// Now calculated    workspace.workspace_objects.removeElement(this);
+    removeStructure(gr)
+
+    // Now calculated    workspace.workspace_objects.removeElement(this);
     if (gr.correspondence.isDefined) break_correspondence(gr.correspondence.get)
 
     // check_visibility();
@@ -193,13 +204,13 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
   def break_correspondence(c: Correspondence) = {
 //  GUI  WorkspaceArea.DeleteObject(this);
 //  GUI  WorkspaceSmall.DeleteObject(this);
-    structureRefs -= c.uuid
+    removeStructure(c)
     c.break_correspondence()
 // GUI   workspace.WorkspaceArea.Redraw = true;
   }
 
   def break_description(d: Description) = {
-    structureRefs -= d.uuid
+    removeStructure(d)
     d.break_description()
 
 // GUI   workspace.WorkspaceArea.DeleteObject(this);
@@ -235,15 +246,55 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       } else {
         self ! Step
       }
-    case ChooseRandomStructure =>
+
+    // GoWithBreaker, see Codelet.java.68
+    case GoWithBreaker(t) =>
       val candidateStructures = structures.filter(s => s.isInstanceOf[Group] ||
         s.isInstanceOf[Bond] ||
         s.isInstanceOf[Correspondence]
       )
       if (candidateStructures.isEmpty) {
         log.debug("There are no structures built: fizzle")
+        sender() ! Finished
+      } else {
+        val wsize = candidateStructures.size
+        // Codelet.java.84
+        val p = (r.nextDouble()*wsize).toInt
+        val pos =  if (p >= wsize) 0 else p
+        val ws = structures(pos);
 
+        val probability = 1.0 - WorkspaceFormulas.temperature_adjusted_probability(ws.total_strength/100.0, t)
+        val st = if (ws.isInstanceOf[WorkspaceObject]) {
+          val wo = ws.asInstanceOf[WorkspaceObject]
+          if (wo.workspaceString().equals(initial)) " from initial string" else " from target string"
+        } else ""
+        log.debug(s"object chosen = ${ws}${st} break probability = ${probability}")
+
+
+        val grOpt: Option[Group] = if (ws.isInstanceOf[Bond]){
+          val b = ws.asInstanceOf[Bond]
+          val ob = b.from_obj
+          val g = ob.group
+          if (g == b.to_obj.group) {
+            if (g.isDefined) g else None
+          } else None
+        } else None
+        val break_objects = List(Some(ws), grOpt).flatten
+        // break all objects
+        for (w <- break_objects) {
+          if (w.isInstanceOf[Bond]) {
+            break_bond(w.asInstanceOf[Bond])
+          };
+          if (w.isInstanceOf[Group]) {
+            break_group(w.asInstanceOf[Group])
+          }
+          if (w.isInstanceOf[Correspondence]) {
+            break_correspondence(w.asInstanceOf[Correspondence])
+          }
+        }
+        sender() ! Finished
       }
+
     // bottom-up-bond-scout in codelet.java.240
     case BondWithNeighbor(temperature) =>
       //          workspace_object fromob = workspace_formulas.choose_object("intra_string_salience",workspace.workspace_objects);
@@ -541,8 +592,11 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
                   }
                   print("building bond");
                   addBond(b)
+                  sender() ! Finished
                 }
               }
+            } else {
+              sender() ! Finished
             }
           }
         }
@@ -633,7 +687,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
   def updateWorkspaceObjectRefs(ws: WorkspaceString) = {
     for (l <- ws.objects) {
       //objectRefs += (l.uuid -> l)
-      structureRefs += (l.uuid -> l)
+      addStructure(l)
     }
   }
 
@@ -678,7 +732,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
           // GUI area.AddObject(d);
           //log.debug("add description " + description)
 
-          structureRefs += (description.uuid -> description)
+          addStructure(description)
         }
       }
     }
@@ -728,9 +782,11 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 
   def build_rule(r: Rule){
     // GUI workspace.Workspace_Rule.Change_Caption("rule : " +this.toString());
-    if (rule.isDefined) { structureRefs = structureRefs.-(rule.get.uuid) }
-    rule= Some(r);
-    structureRefs += (r.uuid -> r)
+    if (rule.isDefined) {
+      removeStructure(rule.get)
+    }
+    rule= Some(r)
+    addStructure(r)
     r.activate_rule_descriptions()
   }
 
