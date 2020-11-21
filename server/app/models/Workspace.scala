@@ -803,7 +803,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
   }
 
 
-  def workspaceObjects(): List[WorkspaceObject] = structures.filter(s => s.isInstanceOf[WorkspaceObject]).asInstanceOf[List[WorkspaceObject]]
+  def workspaceObjects(): List[WorkspaceObject] = structures.toList.filter(s => s.isInstanceOf[WorkspaceObject]).asInstanceOf[List[WorkspaceObject]]
 
   def chooseObject(variable: String, temperature: Double) : Option[WorkspaceObject] = {
     //log.debug("workspaceObjects() " + workspaceObjects())
