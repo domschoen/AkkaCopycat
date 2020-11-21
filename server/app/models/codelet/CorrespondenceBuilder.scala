@@ -14,6 +14,8 @@ class CorrespondenceBuilder(urgency: Int,
   import models.Coderack.ProposeCorrespondence
   import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
 
+  def correponsdenceID() = arguments.get.asInstanceOf[String]
+
   def receive = LoggingReceive {
     // to the browser
     case Run(initialString, modifiedString, targetString, runTemperature) =>

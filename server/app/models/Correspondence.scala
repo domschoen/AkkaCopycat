@@ -25,6 +25,11 @@ case class Correspondence (
      ).isDefined
    }*/
 
+  // partially moved to Workspace.break_correspondence
+  def break_correspondence() = {
+    obj1.correspondence = None
+    obj2.correspondence = None
+  }
 }
 
 

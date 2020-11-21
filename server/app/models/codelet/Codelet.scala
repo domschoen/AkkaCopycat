@@ -8,6 +8,7 @@ sealed trait CodeletType
 object CodeletType {
 
   case object BondBuilder extends CodeletType
+  case object DescriptionBuilder extends CodeletType
   case object BottomUpBondScout extends CodeletType
   case object ReplacementFinder extends CodeletType
   case object BottomUpCorrespondenceScout extends CodeletType
@@ -38,6 +39,7 @@ object Codelet {
            ): Codelet =
     codeletType match {
       case CodeletType.BondBuilder => new BondBuilder(urgency, workspace, slipnet, temperature, arguments)
+      case CodeletType.DescriptionBuilder => new DescriptionBuilder(urgency, workspace, slipnet, temperature, arguments)
       case CodeletType.BottomUpBondScout => new BottomUpBondScout(urgency,  workspace, slipnet, temperature, arguments)
       case CodeletType.ReplacementFinder => new ReplacementFinder(urgency,  workspace, slipnet, temperature, arguments)
       case CodeletType.BottomUpCorrespondenceScout => new BottomUpCorrespondenceScout(urgency,  workspace, slipnet, temperature, arguments)

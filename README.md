@@ -73,16 +73,16 @@ We can query the slipnet for influencing the workspace.
 
 ## Codelet executed
 
-1. ReplacementFinder (e, initial)
-2. BottomUpCorrespondenceScout (i, initial)
-3. BottomUpBondScout (a, initial)
-4. BottomUpCorrespondenceScout (created)
-5. BottomUpBondScout (b, initial)
-6. BottomUpBondScout (c, initial)
-7. ReplacementFinder (f, initial)
-8. BottomUpCorrespondenceScout (g, initial)
-9. ReplacementFinder (d, initial)
+| Execution 1                                                  | Execution 2                              |
+| ------------------------------------------------------------ | ---------------------------------------- |
+| ReplacementFinder (e, initial)                               | BottomUpCorrespondenceScout (g, initial) |
+| BottomUpCorrespondenceScout (i, initial)                     | BottomUpCorrespondenceScout (i, created) |
+| BottomUpBondScout (a, initial)                               | BottomUpBondScout (a, initial)           |
+| BottomUpCorrespondenceScout (created)                        | ReplacementFinder(d, initial)            |
+| BottomUpBondScout (b, initial)                               | ReplacementFinder (f, created)           |
+| BottomUpBondScout (c, initial)                               | ReplacementFinder(e, initial)            |
+| ReplacementFinder (f, initial)                               | BottomUpBondScout(c, initial)            |
+| BottomUpCorrespondenceScout (g, initial)                     | BottomUpBondScout(b, initial)            |
+| ReplacementFinder (d, initial)                               | BottomUpCorrespondenceScout(h, initial)  |
+| ChooseAndRun: codelets is empty => stop<br />Why is it stopping ? Probably because not all codelets are implemented |                                          |
 
-ChooseAndRun: codelets is empty => stop
-
-Why is it stopping ? Probably because not all codelets are implemented

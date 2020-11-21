@@ -14,6 +14,8 @@ class GroupBuilder(urgency: Int,
   import models.Coderack.ChooseAndRun
   import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
 
+  def groupID() = arguments.get.asInstanceOf[String]
+
   def receive = LoggingReceive {
     // to the browser
     case Run(initialString, modifiedString, targetString,runTemperature) =>
@@ -22,7 +24,7 @@ class GroupBuilder(urgency: Int,
       coderack = sender()
       temperature ! Register(self)
 
-      workspace ! GoWithGroupBuilder(runTemperature, arguments.get.asInstanceOf[String])
+      workspace ! GoWithGroupBuilder(runTemperature, groupID)
 
     case TemperatureResponse(value) =>
       t = value

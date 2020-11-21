@@ -1,6 +1,7 @@
 package models
 
 import akka.actor.ActorRef
+import akka.protobuf.DescriptorProtos.DescriptorProto
 import models.Description.DescriptionRep
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.WorkspaceStructureRep
@@ -30,6 +31,9 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
 
   var descriptions = ListBuffer.empty[Description]
   var spans_string = false; // true if it spans the whole string
+
+  var left_bond = Option.empty[Bond]
+  var right_bond = Option.empty[Bond]
 
   var bonds = ListBuffer.empty[Bond]  // used in calculating intra string happiness
   // = number of bonds attached to the object
@@ -111,5 +115,13 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
   }
   def letterOrGroupCompanionReps(): List[WorkspaceStructureRep] = letterOrGroupCompanions().map(_.workspaceStructureRep())
 
-
+  def addBond(b: Bond): Unit = {
+    bonds += b
+  }
+  def break_bond(b: Bond): Unit = {
+    bonds -= b
+  }
+  def break_description(d: Description): Unit = {
+    descriptions -= d
+  }
 }

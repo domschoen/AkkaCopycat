@@ -13,6 +13,8 @@ class BondBuilder(urgency: Int, workspace: ActorRef,
   import Codelet.{ Run, Finished }
   import models.Coderack.ChooseAndRun
 
+  def bondID() = arguments.get.asInstanceOf[String]
+
   def receive = LoggingReceive {
     // to the browser
     case Run(initialString, modifiedString, targetString, runTemperature) => {
@@ -20,7 +22,7 @@ class BondBuilder(urgency: Int, workspace: ActorRef,
       coderack = sender()
       temperature ! Register(self)
 
-      workspace ! GoWithBondBuilder(runTemperature)
+      workspace ! GoWithBondBuilder(runTemperature, bondID)
     }
     case TemperatureResponse(value) =>
       t = value

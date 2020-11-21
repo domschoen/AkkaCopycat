@@ -26,6 +26,7 @@ import models.Slipnet.{GroupRep, WorkspaceStructureRep}
 import models.Workspace.InitializeWorkspaceStringsResponse
 import models.codelet.BottomUpBondScout.{GoWithBottomUpBondScout2Response, GoWithBottomUpBondScoutResponse}
 import models.codelet.Codelet.Finished
+import models.codelet.DescriptionStrengthTester.GoWithDescriptionStrengthTesterResponse
 import models.codelet.{Codelet, CodeletType}
 import play.api.Configuration
 import play.api.libs.concurrent.InjectedActorSupport
@@ -75,11 +76,11 @@ object Workspace {
                                                )
 
   case class GoWithGroupBuilder(temperature: Double, groupID: String)
-  case class GoWithDescriptionStrengthTester(temperature: Double, correspondenceID: String)
+  case class GoWithDescriptionStrengthTester(temperature: Double, descriptionID: String)
   case class GoWithBondStrengthTester(temperature: Double, bondID: String)
 
 
-  case class GoWithBondBuilder(temperature: Double)
+  case class GoWithBondBuilder(temperature: Double, bondID: String)
 }
 
 class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with ActorLogging with InjectedActorSupport {
@@ -154,6 +155,57 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       }
       build_descriptions(letter)
     }
+  }
+
+
+  def addBond(b: Bond) = {
+    structureRefs += (b.uuid -> b)
+    b.build_bond()
+  }
+  def break_bond(b: Bond) = {
+    // GUI WorkspaceArea.DeleteObject(this);
+    // GUI WorkspaceSmall.DeleteObject(this);
+    structureRefs -= b.uuid
+    b.break_bond()
+  }
+  def break_group(gr: Group): Unit = {
+    for(d <- gr.descriptions) {
+      break_description(d)
+    }
+    if (gr.group.isDefined) {
+      break_group(gr.group.get)
+    }
+//   GUI  workspace.WorkspaceArea.DeleteObject(this);
+//   GUI  workspace.WorkspaceSmall.DeleteObject(this);
+    structureRefs -= gr.uuid
+// Now calculated    workspace.workspace_objects.removeElement(this);
+    if (gr.correspondence.isDefined) break_correspondence(gr.correspondence.get)
+
+    // check_visibility();
+    if (gr.left_bond.isDefined) break_bond(gr.left_bond.get)
+    if (gr.right_bond.isDefined) break_bond(gr.right_bond.get)
+
+    // GUI workspace.WorkspaceArea.Redraw = true;
+
+    gr.break_group()
+  }
+
+  def break_correspondence(c: Correspondence) = {
+//  GUI  WorkspaceArea.DeleteObject(this);
+//  GUI  WorkspaceSmall.DeleteObject(this);
+    structureRefs -= c.uuid
+    c.break_correspondence()
+// GUI   workspace.WorkspaceArea.Redraw = true;
+  }
+
+  def break_description(d: Description) = {
+    structureRefs -= d.uuid
+    d.break_description()
+
+// GUI   workspace.WorkspaceArea.DeleteObject(this);
+// GUI   workspace.check_visibility();
+// GUI   workspace.WorkspaceArea.Redraw=true;
+
   }
 
 
@@ -253,7 +305,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     case GoWithBottomUpBondScout3(bondFromRep, bondToRep, bondCategory, bondFacet, fromDescriptor, toDescriptor, bondCategoryDegreeOfAssociation, slipnetLeft, slipnetRight) =>
       val bondFrom = objectRefs()(bondFromRep.uuid)
       val bondTo = objectRefs()(bondToRep.uuid)
-      val nb = new Bond(bondFrom,bondTo,bondCategory,bondFacet,fromDescriptor,toDescriptor, slipnetLeft, slipnetRight)
+      val nb = new Bond(bondFrom,bondTo,bondCategory,bondFacet,fromDescriptor,toDescriptor, slipnetLeft, slipnetRight, slipnet)
       // if (!remove_terraced_scan) workspace.WorkspaceArea.AddObject(nb,1);
 
       sender ! GoWithBottomUpBondScout3Response(nb.uuid)
@@ -367,23 +419,158 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
         )
 
 
+    // codelet.java.880
     case GoWithGroupBuilder(temperature, groupID) =>
-      /*val group = objectRefs(groupID).asInstanceOf[Group]
-      val st = group.toString()
-      val stringType = if (group.workspaceString().equals(initial)) "initial" else "target"
-      log.debug(s"trying to build ${group.toString()} in ${stringType} string")
+      val group = objectRefs()(groupID).asInstanceOf[Group]
+      logTrying(group, group)
+
       if (WorkspaceFormulas.group_present(group)){
         print("already exists...activate descriptors & fizzle");
         group.activate_descriptions();
-        val wo = WorkspaceFormulas.equivalent_group(group)
-        addDescriptionsToWorkspaceObject(wo, group.descriptions)
-        return false;
+        val woOpt = WorkspaceFormulas.equivalent_group(group)
+        woOpt match {
+          case Some(wo) => addDescriptionsToWorkspaceObject(wo, group.descriptions.toList)
+          case None =>
+            log.debug("GoWithGroupBuilder stop with no equivalent group")
+        }
+      }
 
-      }*/
+
+      // TODO to be completed !!
+
+
       sender() ! Finished
 
-    case GoWithDescriptionStrengthTester(temperature, correspondenceID) =>
-      sender() ! Finished
+
+      // Codelet.java.425
+    case GoWithBondBuilder(temperature, bondID) =>
+      val b = objectRefs()(bondID).asInstanceOf[Bond]
+      logTrying(b, b.left_obj)
+
+      b.update_strength_value();
+      print("strength = "+b.total_strength);
+      //val competitors = b.get_incompatible_bonds();
+
+      if ((workspaceObjects().contains(b.from_obj))&&
+        (workspaceObjects().contains(b.to_obj))) {
+        val existingBonds: List[Bond] = b.workspaceString() match {
+            case Some(wstring) =>
+              wstring.bonds().filter(b2 =>
+                (
+                  (b.left_obj == b2.left_obj) && (b.right_obj == b2.right_obj)
+                  ) &&
+                  // check to see if this is the same bond
+                  (b.direction_category == b2.direction_category) &&
+                  (b.bond_category == b2.bond_category)
+              )
+            case None => List.empty[Bond]
+        }
+
+        if (!existingBonds.isEmpty) {
+          // bond already exists
+          b.activateDescriptor()
+          print("already exists: activate descriptors & Fizzle!");
+          sender() ! Finished
+        } else {
+          // check for incompatible structures
+          val incb = b.get_incompatible_bonds();
+          val brokeIncb = if (!incb.isEmpty) {
+            log.debug("trying to break incompatible bonds");
+            // try to break all incompatible bonds
+            // Side-effect !
+            if (fight_it_out(b,1.0,incb,1.0)) {
+              // beat all competing bonds
+              log.debug("won, beat all competing bonds");
+              true
+            } else {
+              log.debug("failed: Fizzle!");
+              false;
+            }
+          } else {
+            print("no incompatible bonds!")
+            true
+          }
+          if (!brokeIncb) {
+            sender() ! Finished
+          } else {
+            // fight all incompatible correspondences
+            var incc: List[Correspondence] = if (b.left_obj.leftmost || b.right_obj.rightmost) {
+              // ignore if (b.direction_category!=null) {
+              //System.out.println("looking for incompatible correspondences")
+              b.get_incompatible_correspondences(initial)
+            } else List.empty[Correspondence]
+
+            if (!incc.isEmpty) {
+              log.debug("trying to break incompatible correspondences")
+              if (!fight_it_out(b, 2.0, incc, 3.0)) {
+                log.debug("lost the fight: Fizzle!")
+                sender() ! Finished
+              } else {
+                log.debug("won")
+
+                // fight all groups containing these objects
+                val incg = WorkspaceFormulas.get_common_groups(b.from_obj,b.to_obj);
+                if (incg.isEmpty) {
+                  log.debug("no incompatible groups!")
+                }
+                val failedFight = if (incg.isEmpty) false else {
+                  log.debug("trying to break incompatible groups")
+                  // try to break all incompatible groups
+                  if (fight_it_out(b,1.0,incg,1.0)){
+                    // beat all competing groups
+                    log.debug("won");
+                    false
+                  }
+                  else {
+                    print("failed: Fizzle!");
+                    true
+                  }
+                }
+                if (failedFight) {
+                  sender() ! Finished
+                } else {
+
+                  for (br <- incb) {
+                    break_bond(br)
+                  }
+                  for (gr <- incg) {
+                    break_group(gr)
+                  }
+                  for (c <- incc) {
+                    break_correspondence(c)
+                  }
+                  print("building bond");
+                  addBond(b)
+                }
+              }
+            }
+          }
+        }
+      } else {
+        log.debug("objects do no longer exists: Fizzle!");
+        sender() ! Finished
+      }
+
+    case GoWithDescriptionStrengthTester(temperature, descriptionID) =>
+      slipnet ! SetSlipNodeBufferValue(descriptionID, 100.0)
+      val d = objectRefs()(descriptionID).asInstanceOf[Description]
+      d.update_strength_value()
+
+      val strength = d.total_strength
+      log.debug("GoWithDescriptionStrengthTester" + d.toString())
+
+      val prob = WorkspaceFormulas.temperature_adjusted_probability(strength/100.0, temperature)
+      log.debug("GoWithDescriptionStrengthTester description strength = " + strength);
+
+      if (!WorkspaceFormulas.flip_coin(prob)){
+        log.debug("not strong enough: Fizzle!");
+        sender() ! Finished
+      }
+      // it is strong enough - post builder  & activate nodes
+
+      log.debug("succeeded: posting description-builder")
+      sender() ! GoWithDescriptionStrengthTesterResponse(strength)
+
 
     // codelet.java.395
     case GoWithBondStrengthTester(temperature, bondID) =>
@@ -396,7 +583,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       val prob = WorkspaceFormulas.temperature_adjusted_probability(strength/100.0, temperature)
       log.info("bond strength = "+strength)
       if (!WorkspaceFormulas.flip_coin(prob)){
-        print("not strong enough: Fizzle!");
+        log.debug("not strong enough: Fizzle!");
         sender() ! Finished
       }
       // it is strong enough - post builder  & activate nodes
@@ -409,11 +596,13 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 
 
 
+  }
 
 
-    case GoWithBondBuilder(temperature) =>
-      sender() ! Finished
 
+  def logTrying(wo: WorkspaceStructure, typeSource: WorkspaceStructure) = {
+    val stringType = if (typeSource.workspaceString().equals(initial)) "initial" else "target"
+    log.debug(s"trying to build ${wo.toString()} in ${stringType} string")
   }
 
   def total_description_type_support(description: SlipNodeRep, workspaceString: WorkspaceString): Double = {
@@ -496,6 +685,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     // GUI check_visibility()
   }
 
+  // GUI
   def check_visibility() = {
     // checks the visibility of all descriptions attached to objects in the
     // workspace.  if the object is part of a group - the description is invisible
@@ -605,6 +795,29 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       Option(list(index))
     }
   }
+
+
+  def structure_vs_structure(s1: WorkspaceStructure,
+                             w1: Double,
+                             s2: WorkspaceStructure,
+                             w2: Double): Boolean = {
+    s1.update_strength_value();
+    s2.update_strength_value();
+    val vs1 = s1.total_strength*w1;
+    val vs2 = s2.total_strength*w2;
+    val v1 = temperatureAdjustedValue(vs1, chaleur)
+    val v2 = temperatureAdjustedValue(vs2, chaleur)
+    !(((v1+v2) * r.nextDouble())>v1)
+  }
+
+  def fight_it_out(wo: WorkspaceStructure, v1: Double, structs: List[WorkspaceStructure], v2: Double): Boolean = {
+    if (structs.isEmpty) {
+      true
+    } else {
+      !structs.find(ws => (!structure_vs_structure(wo,v1,ws,v2))).isDefined
+    }
+  }
+
 
 
   def temperatureAdjustedValue(value: Double, temperature: Double) = Math.pow(value,((100.0-temperature)/30.0)+0.5)

@@ -36,10 +36,10 @@ object WorkspaceFormulas {
     return v;
   }*/
 
-  /* t of ws or t
-  def temperature_adjusted_value(value: Double): Double = {
-    return Math.pow(value,((100.0-formulas.temperature)/30.0)+0.5);
-  }*/
+  // See workspace.temperatureAdjustedValue
+//  def temperature_adjusted_value(value: Double): Double = {
+//    return Math.pow(value,((100.0-formulas.temperature)/30.0)+0.5);
+//  }
 
 /* t of ws or t
   def choose_object_from_list(wos: List[WorkspaceObject], variable: String): Option[WorkspaceObject] = {
@@ -178,30 +178,32 @@ object WorkspaceFormulas {
   def total_description_type_support(slipnode description, workspace_string s): Double = {
     return (description.activation+local_description_type_support(description,s))/2.0;
   }
+*/
 
-  def structure_vs_structure(workspace_structure s1, double w1,
-    workspace_structure s2, double w2): Boolean = {
+  // See workspace
+/*  def structure_vs_structure(s1: WorkspaceStructure,
+                             w1: Double,
+                             s2: WorkspaceStructure,
+                             w2: Double): Boolean = {
     s1.update_strength_value();
     s2.update_strength_value();
-    double v1=s1.total_strength*w1;
-    double v2=s2.total_strength*w2;
+    val v1 = s1.total_strength*w1;
+    val v2 = s2.total_strength*w2;
     v1=temperature_adjusted_value(v1);
     v2=temperature_adjusted_value(v2);
-    if (((v1+v2)*random.rnd())>v1) return false;
-    return true;
-
+    !(((v1+v2) * r.nextDouble())>v1)
   }
+  // See workspace
 
-  def fight_it_out(workspace_structure wo,double v1, Vector structs, double v2): Boolean = {
-    if (structs.size()==0) return true;
-    for (int i=0; i<structs.size(); i++){
-      workspace_structure ws = (workspace_structure)structs.elementAt(i);
-      if (!structure_vs_structure(wo,v1,ws,v2)) return false;
+  def fight_it_out(wo: WorkspaceStructure, v1: Double, structs: List[WorkspaceStructure], v2: Double): Boolean = {
+    if (structs.isEmpty) {
+      true
+    } else {
+      !structs.find(ws => (!structure_vs_structure(wo,v1,ws,v2))).isDefined
     }
-
-    return true;
   }
-
+  */
+/*
 
   def local_bond_category_relevance(workspace_string string, slipnode cat): Double = {
     // is a function of how many bonds in the string have this bond category
@@ -232,22 +234,21 @@ object WorkspaceFormulas {
     return 100.0*bc/(oll-1.0);
   }
 
-
-  def get_common_groups(workspace_object from_obj,workspace_object to_obj): List[WorkspaceObject] = {
-    workspace_string st = from_obj.string;
-    Vector v = new Vector();
-
-    for (int i=0; i<st.objects.size(); i++){
-      workspace_object wo = (workspace_object)st.objects.elementAt(i);
-      if ((from_obj.left_string_position>=wo.left_string_position)&&
-        (from_obj.right_string_position<=wo.right_string_position)&&
-        (to_obj.left_string_position>=wo.left_string_position)&&
-        (to_obj.right_string_position<=wo.right_string_position))
-        v.addElement(wo);
+*/
+  def get_common_groups(from_obj: WorkspaceObject, to_obj: WorkspaceObject): List[Group] = {
+    val stOpt = from_obj.workspaceString()
+    stOpt match {
+      case Some(st) =>
+        st.objects.filter(wo =>
+          ((from_obj.left_string_position>=wo.left_string_position)&&
+          (from_obj.right_string_position<=wo.right_string_position)&&
+          (to_obj.left_string_position>=wo.left_string_position)&&
+          (to_obj.right_string_position<=wo.right_string_position))
+        ).toList.asInstanceOf[List[Group]]
+      case None => List.empty[Group]
     }
-    return v;
   }
-
+/*
   def get_incompatible_groups(group obj): List[WorkspaceObject] = {
     Vector v = new Vector();
 
@@ -261,40 +262,35 @@ object WorkspaceFormulas {
     return v;
   }
 
-
-  def same_group(group gp1, group gp2): Boolean = {
+*/
+  def same_group(gp1: Group, gp2: Group): Boolean = {
     if (gp1.left_string_position!=gp2.left_string_position) return false;
     if (gp1.right_string_position!=gp2.right_string_position) return false;
-    if (gp1.group_category!=gp2.group_category) return false;
-    if (gp1.direction_category!=gp2.direction_category) return false;
-    if (gp1.bond_facet!=gp2.bond_facet) return false;
+    if (gp1.groupCategorySlipNodeID != gp2.groupCategorySlipNodeID) return false;
+    if (gp1.directionCategorySlipNodeID != gp2.directionCategorySlipNodeID) return false;
+    if (gp1.bondFacetSlipNodeID != gp2.bondFacetSlipNodeID) return false;
     return true;
-
   }
 
-  def group_present(group proposed): Boolean = {
+  def group_present(proposed: Group): Boolean = {
     // returns true if a group matching this description already exists
-    workspace_string st = proposed.string;
-    for (int i=0; i<st.objects.size(); i++){
-      workspace_object wo = (workspace_object)st.objects.elementAt(i);
-      if (wo instanceof group)
-        if (same_group(proposed,(group)wo)) return true;
-    }
-    return false;
+    equivalent_group(proposed).isDefined
   }
 
-  def equivalent_group(group proposed): WorkspaceObject = {
+  def equivalent_group(proposed: Group): Option[WorkspaceObject] = {
     // returns true if a group matching this description already exists
-    workspace_string st = proposed.string;
-    for (int i=0; i<st.objects.size(); i++){
-      workspace_object wo = (workspace_object)st.objects.elementAt(i);
-      if (wo instanceof group)
-        if (same_group(proposed,(group)wo)) return wo;
+    val stOpt: Option[WorkspaceString] = proposed.wString
+    stOpt match {
+      case Some(st) =>
+        st.objects.find(wo => wo.isInstanceOf[Group] && same_group(proposed,wo.asInstanceOf[Group]))
+      case None =>
+        // Should not happen ? let's return false
+        println("Oups proposed group has no workspace string")
+        None
     }
-    return null;
   }
 
-
+/*
   def unrelated_objects(): List[WorkspaceObject] = {
     // returns a list of all objects in the workspace that have at least
     // one bond slot open
