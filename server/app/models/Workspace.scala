@@ -23,9 +23,9 @@ import javax.inject._
 import models.ConceptMapping.ConceptMappingRep
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.{DescriptionTypeInstanceLinksToNodeInfo, GroupRep, WorkspaceStructureRep}
-import models.Workspace.{GoWithTopDownDescriptionScout2, GoWithTopDownDescriptionScout3, InitializeWorkspaceStringsResponse}
+import models.Workspace.{GoWithDescriptionBuilder, GoWithTopDownDescriptionScout2, InitializeWorkspaceStringsResponse}
 import models.codelet.BottomUpBondScout.{GoWithBottomUpBondScout2Response, GoWithBottomUpBondScoutResponse}
-import models.codelet.BottomUpDescriptionScout.{GoWithBottomUpDescriptionScoutResponse}
+import models.codelet.BottomUpDescriptionScout.GoWithBottomUpDescriptionScoutResponse
 import models.codelet.Codelet.{Finished, PrepareDescriptionResponse}
 import models.codelet.DescriptionStrengthTester.GoWithDescriptionStrengthTesterResponse
 import models.codelet.TopDownDescriptionScout.GoWithTopDownDescriptionScoutResponse
@@ -70,7 +70,6 @@ object Workspace {
   case class GoWithBottomUpDescriptionScout(temperature: Double)
   case class GoWithTopDownDescriptionScout(descriptionTypeID: String, temperature: Double)
   case class GoWithTopDownDescriptionScout2(chosen_object: WorkspaceStructureRep, i: DescriptionTypeInstanceLinksToNodeInfo)
-  case class GoWithTopDownDescriptionScout3(chosen_object: WorkspaceStructureRep, chosen_property_category: SlipNodeRep, chosen_property: SlipNodeRep)
 
   case class PrepareDescription(chosen_object: WorkspaceStructureRep,
                                 chosen_propertyRep: SlipNodeRep,
@@ -85,6 +84,8 @@ object Workspace {
                                                  distiguishingConceptMappingTotalStrength: Double,
                                                  temperature: Double
                                                )
+
+  case class GoWithDescriptionBuilder(descriptionID: String, temperature: Double)
 
   case class GoWithGroupBuilder(temperature: Double, groupID: String)
   case class GoWithDescriptionStrengthTester(temperature: Double, descriptionID: String)
@@ -490,7 +491,30 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
         sender() ! GoWithTopDownDescriptionScoutResponse2(chosen_property)
       }
 
-    case GoWithTopDownDescriptionScout3(chosen_object, chosen_property_category, chosen_property) =>
+    case GoWithDescriptionBuilder(descriptionID, t) =>
+      val d = structureRefs(descriptionID).asInstanceOf[Description]
+      log.debug(d.toString());
+      if (!workspaceObjects().contains(d.wObject)) {
+        log.debug("object no longer exists: Fizzle!");
+        sender() ! Finished
+      } else {
+        d.descriptor match {
+          case Some(descriptor) =>
+            if (d.wObject.has_slipnode_description(descriptor)) {
+              print("description already exists: Fizzle!");
+
+              slipnet ! SetSlipNodeBufferValue(d.descriptionType.id, 100.0)
+              slipnet ! SetSlipNodeBufferValue(descriptor.id, 100.0)
+              sender() ! Finished
+            } else {
+              log.info("building description");
+              build_description(d)
+            }
+          case None =>
+            log.debug("GoWithDescriptionBuilder descriptor is empty: Fizzle!");
+            sender() ! Finished
+        }
+      }
 
     // codelet.java.1233
     case GoWithBottomUpCorrespondenceScout(t) =>
@@ -803,13 +827,21 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
   }*/
   // called by codelet "group-builder"
   def build_descriptions(wo: WorkspaceObject) = {
-    //log.debug("build_descriptions " + wo)
+    log.debug("build_descriptions " + wo)
     for (description <- wo.descriptions) {
+      build_description(description)
+    }
+    // GUI check_visibility()
+  }
+  def build_description(description: Description) = {
+    if (description.descriptor.isEmpty) {
+      log.info("oups d.descriptor is null");
+    } else {
+      val descriptor = description.descriptor.get
       slipnet ! SetSlipNodeBufferValue(description.descriptionType.id, 100.0)
-      if (description.descriptor.isEmpty) {
-        log.info("oups d.descriptor is null");
-      } else {
-        slipnet ! SetSlipNodeBufferValue(description.descriptor.get.id, 100.0)
+      slipnet ! SetSlipNodeBufferValue(descriptor.id, 100.0)
+
+      if (!description.wObject.has_slipnode_description(descriptor)) {
         if (!structures.contains(description)) {
           // GUI area.AddObject(d);
           //log.debug("add description " + description)
@@ -818,7 +850,6 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
         }
       }
     }
-    // GUI check_visibility()
   }
 
   // GUI
@@ -862,7 +893,9 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     }
   }
 
-  def build_rule(r: Rule){
+
+
+  def build_rule(r: Rule) = {
     // GUI workspace.Workspace_Rule.Change_Caption("rule : " +this.toString());
     if (rule.isDefined) {
       removeStructure(rule.get)

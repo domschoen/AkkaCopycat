@@ -2,8 +2,16 @@ package models.codelet
 
 import akka.event.LoggingReceive
 import akka.actor.ActorRef
+import models.SlipNode.SlipNodeRep
+import models.Slipnet.WorkspaceStructureRep
+import models.Workspace.GoWithDescriptionBuilder
 
 
+object DescriptionBuilder {
+
+}
+
+// Codelet.java.219
 class DescriptionBuilder(urgency: Int,
                          workspace: ActorRef,
                          slipnet: ActorRef,
@@ -14,12 +22,19 @@ class DescriptionBuilder(urgency: Int,
   import models.Coderack.ProposeCorrespondence
   import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
 
+  var chosen_object: WorkspaceStructureRep = null
+  var runTemperature : Double = 0.0
+  var chosen_property : SlipNodeRep = null
+
+  def descriptionTypeID() = arguments.get.asInstanceOf[String]
+
   def receive = LoggingReceive {
     // to the browser
-    case Run(initialString, modifiedString, targetString,runTemperature) =>
+    case Run(initialString, modifiedString, targetString,t) =>
       log.debug(s"Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
       temperature ! Register(self)
+      workspace ! GoWithDescriptionBuilder(descriptionTypeID, t)
 
 
     case TemperatureResponse(value) =>
