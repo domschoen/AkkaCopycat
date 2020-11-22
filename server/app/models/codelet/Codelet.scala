@@ -13,6 +13,7 @@ object CodeletType {
   case object ReplacementFinder extends CodeletType
   case object BottomUpCorrespondenceScout extends CodeletType
   case object CorrespondenceStrengthTester extends CodeletType
+  case object DescriptionStrengthTester extends CodeletType
   case object BondStrengthTester extends CodeletType
 }
 object Codelet {
@@ -44,6 +45,7 @@ object Codelet {
       case CodeletType.ReplacementFinder => new ReplacementFinder(urgency,  workspace, slipnet, temperature, arguments)
       case CodeletType.BottomUpCorrespondenceScout => new BottomUpCorrespondenceScout(urgency,  workspace, slipnet, temperature, arguments)
       case CodeletType.CorrespondenceStrengthTester => new CorrespondenceStrengthTester(urgency,  workspace, slipnet, temperature, arguments)
+      case CodeletType.DescriptionStrengthTester => new DescriptionStrengthTester(urgency,  workspace, slipnet, temperature, arguments)
       case CodeletType.BondStrengthTester => new BondStrengthTester(urgency,  workspace, slipnet, temperature, arguments)
     }
 

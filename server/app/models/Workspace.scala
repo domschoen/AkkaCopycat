@@ -25,6 +25,7 @@ import models.SlipNode.SlipNodeRep
 import models.Slipnet.{GroupRep, WorkspaceStructureRep}
 import models.Workspace.InitializeWorkspaceStringsResponse
 import models.codelet.BottomUpBondScout.{GoWithBottomUpBondScout2Response, GoWithBottomUpBondScoutResponse}
+import models.codelet.BottomUpDescriptionScout.{GoWithBottomUpDescriptionScoutResponse, PrepareDescriptionResponse}
 import models.codelet.Codelet.Finished
 import models.codelet.DescriptionStrengthTester.GoWithDescriptionStrengthTesterResponse
 import models.codelet.{Codelet, CodeletType}
@@ -64,7 +65,12 @@ object Workspace {
                                      )
 
   case object GoWithReplacementFinder
-  case class GoWithBottomUpCorrespondenceScout(temperature: Double, codelet: ActorRef)
+
+  case class GoWithBottomUpDescriptionScout(temperature: Double)
+  case class PrepareDescription(chosen_object: WorkspaceStructureRep,
+                                chosen_propertyRep: SlipNodeRep,
+                                description_typeRep: SlipNodeRep)
+  case class GoWithBottomUpCorrespondenceScout(temperature: Double)
   case class GoWithBottomUpCorrespondenceScout2(
                                                  obj1: WorkspaceStructureRep,
                                                  obj2: WorkspaceStructureRep,
@@ -89,6 +95,8 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     Found,
     GoWithBottomUpCorrespondenceScout,
     GoWithBottomUpCorrespondenceScout2,
+    GoWithBottomUpDescriptionScout,
+    PrepareDescription,
     GoWithReplacementFinder,
     GoWithBondBuilder,
     GoWithGroupBuilder,
@@ -407,23 +415,62 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 
         }
       }
+
+
+    // codelet.java.127
+    case GoWithBottomUpDescriptionScout(t) =>
+      val chosen_objectOpt: Option[WorkspaceObject] = chooseObjectFromList(workspaceObjects(), TemperatureAjustmentVariable.Total_salience)
+      chosen_objectOpt match {
+        case None =>
+          log.debug("GoWithBottomUpDescriptionScout | failed with empty chosen object")
+          sender() ! Finished
+
+        case Some(chosen_object) =>
+          log.debug(s"chosen object: ${chosen_object} from ${initialOrTargetText(chosen_object)} string")
+
+          val dOpt = WorkspaceFormulas.choose_relevant_description_by_activation(chosen_object)
+          dOpt match {
+            case Some(d) =>
+              val chosen_descriptorOpt = d.descriptor
+              chosen_descriptorOpt match {
+                case Some(chosen_descriptor) =>
+                  log.debug("chosen descriptor = "+ chosen_descriptor.id);
+                  sender() ! GoWithBottomUpDescriptionScoutResponse(chosen_object.workspaceStructureRep(), chosen_descriptor)
+
+                case None =>
+                  log.debug(s"GoWithBottomUpDescriptionScout | Oups choosen description is not defined")
+                  sender() ! Finished
+              }
+
+            case None =>
+              log.debug("no relevant descriptions: Fizzle");
+              sender()  ! Finished
+          }
+      }
+    case PrepareDescription(chosen_object, chosen_propertyRep, description_typeRep) =>
+      val ob = objectRefs()(chosen_object.uuid)
+
+      val descriptor = chosen_propertyRep
+      val d = new models.Description(ob,description_typeRep, Some(descriptor))
+      slipnet ! SetSlipNodeBufferValue(descriptor.id, 100.0)
+      val urgency = description_typeRep.activation
+      sender() ! PrepareDescriptionResponse(d.uuid, urgency)
+
+
     // codelet.java.1233
-    case GoWithBottomUpCorrespondenceScout(
-      temperature,
-      codelet
-    ) =>
+    case GoWithBottomUpCorrespondenceScout(t) =>
       val obj1Opt: Option[WorkspaceObject] = chooseObjectFromList(initial.objects.toList, TemperatureAjustmentVariable.Inter_string_salience)
       obj1Opt match {
         case None =>
           log.debug("GoWithBottomUpCorrespondenceScout | failed with empty obj1")
-          codelet ! Finished
+          sender() ! Finished
 
         case Some(obj1) =>
           val obj2Opt = chooseObjectFromList(target.objects.toList,TemperatureAjustmentVariable.Inter_string_salience)
           obj2Opt match {
             case None =>
               log.debug("GoWithBottomUpCorrespondenceScout | failed with empty obj2")
-              codelet ! Finished
+              sender() ! Finished
 
             case Some(obj2) =>
               log.debug(s"GoWithBottomUpCorrespondenceScout | trying a correspondence between $obj1 and $obj2")
@@ -431,17 +478,16 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
               if (obj1.spans_string != obj2.spans_string) {
                 // fizzle
                 log.debug("GoWithBottomUpCorrespondenceScout | only one object spans the string: fizzle");
-                codelet ! Finished
+                sender() ! Finished
 
               } else {
                 // He we continue in the slipnet
                 // then the slipnet will potentially tell the workspace to create a Correspondence
                 // then workspace tell the coderack to post a "correspondence-strength-tester" codelet
 
-                codelet ! GoWithBottomUpCorrespondenceScoutWorkspaceReponse(
+                sender() ! GoWithBottomUpCorrespondenceScoutWorkspaceReponse(
                   obj1.workspaceStructureRep(),
-                  obj2.workspaceStructureRep(),
-                  codelet
+                  obj2.workspaceStructureRep()
                 )
               }
           }
@@ -653,9 +699,10 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
   }
 
 
+  def initialOrTargetText(ws: WorkspaceStructure) = if (ws.workspaceString().equals(initial)) "initial" else "target"
 
   def logTrying(wo: WorkspaceStructure, typeSource: WorkspaceStructure) = {
-    val stringType = if (typeSource.workspaceString().equals(initial)) "initial" else "target"
+    val stringType = initialOrTargetText(typeSource)
     log.debug(s"trying to build ${wo.toString()} in ${stringType} string")
   }
 

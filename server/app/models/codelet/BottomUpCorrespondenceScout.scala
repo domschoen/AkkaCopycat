@@ -13,8 +13,7 @@ object BottomUpCorrespondenceScout{
 
   case class GoWithBottomUpCorrespondenceScoutWorkspaceReponse(
                                      obj1 :WorkspaceStructureRep,
-                                     obj2: WorkspaceStructureRep,
-                                     codelet: ActorRef
+                                     obj2: WorkspaceStructureRep
                                    )
   case class ProposeAnyCorrespondenceSlipnetResponse(
                                                       obj1: WorkspaceStructureRep,
@@ -54,13 +53,12 @@ class BottomUpCorrespondenceScout(urgency: Int,
       coderack = sender()
       temperature ! Register(self)
 
-      workspace ! GoWithBottomUpCorrespondenceScout(runTemperature, self)
+      workspace ! GoWithBottomUpCorrespondenceScout(runTemperature)
 
 
     case GoWithBottomUpCorrespondenceScoutWorkspaceReponse(
       obj1 :WorkspaceStructureRep,
-      obj2: WorkspaceStructureRep,
-      codelet: ActorRef
+      obj2: WorkspaceStructureRep
     ) =>
       slipnet ! ProposeAnyCorrespondence(
         obj1,

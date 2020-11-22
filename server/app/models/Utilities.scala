@@ -3,6 +3,7 @@ package models
 object Utilities {
   val r = scala.util.Random
 
+  // Same as WorkspaceFormulas.select_list_position
   def valueProportionalRandomIndexInValueList(values: List[Double]): Int = {
     val sum = values.sum
     val chosen = r.nextDouble() * sum

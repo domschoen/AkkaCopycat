@@ -51,6 +51,14 @@ class SlipNode(x: Int, y: Int, val conceptual_depth: Double, val name: String, v
 
   def slipNodeRep() = SlipNodeRep(id(), activation)
 
+  def category(): Option[SlipNode] = {
+    if (category_links.isEmpty) None else {
+      val sl = category_links(0)
+      Some(sl.to_node)
+    }
+  }
+
+
   def degree_of_association(): Double = {
     // used in calculating link lengths
     val dof = if (activation==100.0) shrunk_link_length else intrinsic_link_length

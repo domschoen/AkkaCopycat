@@ -41,6 +41,28 @@ object WorkspaceFormulas {
 //    return Math.pow(value,((100.0-formulas.temperature)/30.0)+0.5);
 //  }
 
+  /* see
+    static int select_list_position(Vector list){
+     double totalval=0.0;
+     for (int i=0; i<list.size(); i++){
+        totalval+=((double)list.elementAt(i));
+     }
+
+     double pos = totalval*random.rnd();
+     int listpos = -1;
+     totalval=0.0;
+     for (int i=0; i<list.size(); i++){
+        totalval+=((double)list.elementAt(i));
+        if ((listpos==-1)&&(totalval>=pos))
+          listpos=i;
+     }
+     if (listpos==-1) return 0;
+     return listpos;
+  }
+
+   */
+
+
 /* t of ws or t
   def choose_object_from_list(wos: List[WorkspaceObject], variable: String): Option[WorkspaceObject] = {
     // chooses an object from the the list by a variable

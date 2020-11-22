@@ -26,6 +26,7 @@ import Description.DescriptionRep
 import models.Bond.BondRep
 import models.Letter.LetterSlipnetComplement
 import models.SlipNode.{SlipNodeRep, SlipnetInfo}
+import models.codelet.BottomUpDescriptionScout.SlipnetGoWithBottomUpDescriptionScoutResponse
 
 import scala.collection.mutable.ListBuffer
 
@@ -79,6 +80,7 @@ object Slipnet {
                                        codelet: ActorRef
                                       )*/
   case class SetSlipNodeBufferValue(slipNodeID: String, bufferValue: Double)
+  case class SlipnetGoWithBottomUpDescriptionScout(slipNodeRep: SlipNodeRep, temperature: Double)
 
   case class WorkspaceStructureRep(
                                     uuid :String,
@@ -689,7 +691,36 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
 
 
       coderack ! ProposeCorrespondence2(obj1,obj2,concept_mapping_list,flip_obj2,this);*/
+    case SlipnetGoWithBottomUpDescriptionScout(d, t) =>
+      val chosen_descriptor = slipNodeRefs(d.id)
+      val hpl = similar_has_property_links(chosen_descriptor, t)
+      if (hpl.isEmpty) {
+        // no has property links
+        log.debug("has no property links: Fizzle!");
+        sender() ! Finished
 
+      } else {
+        val v = hpl.map(sl => sl.degree_of_association() * sl.to_node.activation )
+        val chosen: SlipnetLink = hpl(Utilities.valueProportionalRandomIndexInValueList(v))
+        val chosen_property = chosen.to_node
+
+        val chosen_propertyRep = chosen_property.slipNodeRep()
+        val dtOpt = chosen_property.category()
+        dtOpt match {
+          case Some(cat) =>
+            sender() ! SlipnetGoWithBottomUpDescriptionScoutResponse(chosen_propertyRep, cat.slipNodeRep())
+
+          case None =>
+            sender() ! Finished
+        }
+      }
+  }
+
+  def similar_has_property_links(s: SlipNode, t: Double): List[SlipnetLink] ={
+    s.has_property_links.toList.filter(sl => WorkspaceFormulas.flip_coin(
+        Formulas.temperature_adjusted_probability(sl.degree_of_association()/100.0,t)
+      )
+    )
   }
 
   def distinguishing_concept_mappings(concept_mapping_list: List[ConceptMapping]): List[ConceptMapping] = {
