@@ -27,6 +27,7 @@ import models.Bond.BondRep
 import models.Letter.LetterSlipnetComplement
 import models.SlipNode.{SlipNodeRep, SlipnetInfo}
 import models.codelet.BottomUpDescriptionScout.SlipnetGoWithBottomUpDescriptionScoutResponse
+import models.codelet.TopDownDescriptionScout.{SlipnetGoWithTopDownDescriptionScoutResponse, SlipnetGoWithTopDownDescriptionScoutResponse2}
 
 import scala.collection.mutable.ListBuffer
 
@@ -79,8 +80,19 @@ object Slipnet {
                                        //temperature: Double,
                                        codelet: ActorRef
                                       )*/
+  case class SlipnetGoWithTopDownDescriptionScout(chosen_object: WorkspaceStructureRep, descriptionTypeID: String)
+  case class GoWithTopDownDescriptionScoutResponse2(chosen_property: SlipNodeRep)
+
   case class SetSlipNodeBufferValue(slipNodeID: String, bufferValue: Double)
   case class SlipnetGoWithBottomUpDescriptionScout(slipNodeRep: SlipNodeRep, temperature: Double)
+
+  case class TosInfo(slipNodeRef: SlipNodeRep, tos: List[SlipNodeRep])
+  case class DescriptionTypeInstanceLinksToNodeInfo(
+                                                     firstTos: TosInfo,
+                                                     lastTos: TosInfo,
+                                                     numbersTos: Map[Int, TosInfo],
+                                                     middleTos: List[SlipNodeRep]
+                                                   )
 
   case class WorkspaceStructureRep(
                                     uuid :String,
@@ -714,7 +726,39 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
             sender() ! Finished
         }
       }
+
+    case SlipnetGoWithTopDownDescriptionScout(chosen_object, descriptonTypeID) =>
+      val description_type = slipNodeRefs(descriptonTypeID)
+      val info = get_description_type_instance_links_to_node_info(description_type);
+      sender() ! SlipnetGoWithTopDownDescriptionScoutResponse(info)
+
+    case GoWithTopDownDescriptionScoutResponse2(cp) =>
+      val chosen_property = slipNodeRefs(cp.id)
+      chosen_property.category() match {
+        case Some(cat) =>
+          sender() ! SlipnetGoWithTopDownDescriptionScoutResponse2(cat.slipNodeRep())
+
+        case None => sender() ! Finished
+      }
+
   }
+
+
+  def get_description_type_instance_links_to_node_info(description_type: SlipNode): DescriptionTypeInstanceLinksToNodeInfo = {
+    val firstTos = description_type.instance_links.toList.filter(sl => sl.to_node == first).map(_.to_node.slipNodeRep())
+    val lastTos = description_type.instance_links.toList.filter(sl => sl.to_node == last).map(_.to_node.slipNodeRep())
+    val numbersTos = (0 to 4).map(y => {
+      val yTos = description_type.instance_links.toList.filter(sl => (sl.to_node == slipnet_numbers(y))).map(_.to_node.slipNodeRep())
+      (y, TosInfo(slipnet_numbers(y).slipNodeRep(), yTos))
+    }).toMap
+    val middleTos = description_type.instance_links.toList.filter(sl => sl.to_node == middle).map(_.to_node.slipNodeRep())
+    DescriptionTypeInstanceLinksToNodeInfo(
+      TosInfo(slipnet_letters(0).slipNodeRep(), firstTos),
+      TosInfo(slipnet_letters(25).slipNodeRep(), lastTos),
+      numbersTos,
+      middleTos)
+  }
+
 
   def similar_has_property_links(s: SlipNode, t: Double): List[SlipnetLink] ={
     s.has_property_links.toList.filter(sl => WorkspaceFormulas.flip_coin(

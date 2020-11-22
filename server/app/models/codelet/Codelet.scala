@@ -18,6 +18,8 @@ object CodeletType {
 }
 object Codelet {
   case class Run(initialString: String, modifiedString: String, targetString: String, runTemperature: Double)
+  case class PrepareDescriptionResponse(descriptionID: String, urgency: Double)
+
   case object Finished
 
   def props(codeletType: CodeletType, urgency: Int, workspace: ActorRef,  slipnet: ActorRef,  temperature: ActorRef, arguments: Option[Any]): Props =

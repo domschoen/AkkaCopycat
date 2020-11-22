@@ -22,12 +22,13 @@ import play.api.Play.current
 import javax.inject._
 import models.ConceptMapping.ConceptMappingRep
 import models.SlipNode.SlipNodeRep
-import models.Slipnet.{GroupRep, WorkspaceStructureRep}
-import models.Workspace.InitializeWorkspaceStringsResponse
+import models.Slipnet.{DescriptionTypeInstanceLinksToNodeInfo, GroupRep, WorkspaceStructureRep}
+import models.Workspace.{GoWithTopDownDescriptionScout2, GoWithTopDownDescriptionScout3, InitializeWorkspaceStringsResponse}
 import models.codelet.BottomUpBondScout.{GoWithBottomUpBondScout2Response, GoWithBottomUpBondScoutResponse}
-import models.codelet.BottomUpDescriptionScout.{GoWithBottomUpDescriptionScoutResponse, PrepareDescriptionResponse}
-import models.codelet.Codelet.Finished
+import models.codelet.BottomUpDescriptionScout.{GoWithBottomUpDescriptionScoutResponse}
+import models.codelet.Codelet.{Finished, PrepareDescriptionResponse}
 import models.codelet.DescriptionStrengthTester.GoWithDescriptionStrengthTesterResponse
+import models.codelet.TopDownDescriptionScout.GoWithTopDownDescriptionScoutResponse
 import models.codelet.{Codelet, CodeletType}
 import play.api.Configuration
 import play.api.libs.concurrent.InjectedActorSupport
@@ -67,6 +68,10 @@ object Workspace {
   case object GoWithReplacementFinder
 
   case class GoWithBottomUpDescriptionScout(temperature: Double)
+  case class GoWithTopDownDescriptionScout(descriptionTypeID: String, temperature: Double)
+  case class GoWithTopDownDescriptionScout2(chosen_object: WorkspaceStructureRep, i: DescriptionTypeInstanceLinksToNodeInfo)
+  case class GoWithTopDownDescriptionScout3(chosen_object: WorkspaceStructureRep, chosen_property_category: SlipNodeRep, chosen_property: SlipNodeRep)
+
   case class PrepareDescription(chosen_object: WorkspaceStructureRep,
                                 chosen_propertyRep: SlipNodeRep,
                                 description_typeRep: SlipNodeRep)
@@ -96,6 +101,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     GoWithBottomUpCorrespondenceScout,
     GoWithBottomUpCorrespondenceScout2,
     GoWithBottomUpDescriptionScout,
+    GoWithTopDownDescriptionScout,
     PrepareDescription,
     GoWithReplacementFinder,
     GoWithBondBuilder,
@@ -456,6 +462,35 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       val urgency = description_typeRep.activation
       sender() ! PrepareDescriptionResponse(d.uuid, urgency)
 
+
+    // codelet.java.165
+    case GoWithTopDownDescriptionScout(descriptionTypeID, t) =>
+      val chosen_objectOpt: Option[WorkspaceObject] = chooseObjectFromList(workspaceObjects(), TemperatureAjustmentVariable.Total_salience)
+      chosen_objectOpt match {
+        case None =>
+          log.debug("GoWithTopDownDescriptionScout | failed with empty chosen_object")
+          sender() ! Finished
+        case Some(chosen_object) =>
+          log.debug(s"chosen object: ${chosen_object} from ${initialOrTargetText(chosen_object)} string. looking for ${descriptionTypeID} descriptor")
+          sender() ! GoWithTopDownDescriptionScoutResponse(chosen_object.workspaceStructureRep())
+      }
+
+
+    // codelet.java.173
+    //
+    case GoWithTopDownDescriptionScout2(chosen_objectRep, i: DescriptionTypeInstanceLinksToNodeInfo) =>
+      val chosen_object = objectRefs()(chosen_objectRep.uuid)
+      val v = chosen_object.get_possible_descriptions(i)
+      if (v.isEmpty) {
+        log.debug("couldn't find any descriptions");
+        sender() ! Finished
+      } else {
+        val act = v.map(sn => sn.activation)
+        val chosen_property = v(Utilities.valueProportionalRandomIndexInValueList(act))
+        sender() ! GoWithTopDownDescriptionScoutResponse2(chosen_property)
+      }
+
+    case GoWithTopDownDescriptionScout3(chosen_object, chosen_property_category, chosen_property) =>
 
     // codelet.java.1233
     case GoWithBottomUpCorrespondenceScout(t) =>

@@ -4,7 +4,7 @@ import akka.actor.ActorRef
 import akka.protobuf.DescriptorProtos.DescriptorProto
 import models.Description.DescriptionRep
 import models.SlipNode.SlipNodeRep
-import models.Slipnet.WorkspaceStructureRep
+import models.Slipnet.{DescriptionTypeInstanceLinksToNodeInfo, WorkspaceStructureRep}
 
 import scala.collection.mutable.ListBuffer
 
@@ -81,6 +81,36 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
     descriptions += description
   }
 
+
+  /*
+    case class TosInfo(slipNodeRef: SlipNodeRep, tos: List[SlipNodeRep])
+  case class DescriptionTypeInstanceLinksToNodeInfo(
+                                                     firstTos: TosInfo,
+                                                     lastTos: TosInfo,
+                                                     numbersTos: Map[Int, TosInfo],
+                                                     middleTos: List[SlipNodeRep]
+                                                   )
+   */
+
+  // move partially to slipnet
+  def get_possible_descriptions(info: DescriptionTypeInstanceLinksToNodeInfo): List[SlipNodeRep] = {
+    val firstTos = if (has_slipnode_description(info.firstTos.slipNodeRef)) info.firstTos.tos else List.empty[SlipNodeRep]
+    val lastTos = if (has_slipnode_description(info.lastTos.slipNodeRef)) info.lastTos.tos else List.empty[SlipNodeRep]
+    val numbersTos =
+      (0 to 4).toList.map(
+        y => if (this.isInstanceOf[Group] && this.asInstanceOf[Group].object_list.size == y+1) info.numbersTos(y).tos else List.empty[SlipNodeRep]
+      ).flatten
+    val middleTos = if (middle_object()) info.middleTos else List.empty[SlipNodeRep]
+    firstTos ::: lastTos ::: numbersTos ::: middleTos
+  }
+
+
+  def has_slipnode_description(ds: SlipNodeRep): Boolean = {
+    descriptions.find(d =>
+        d.descriptor.isDefined &&
+        d.descriptor.get.equals(ds.id)
+    ).isDefined
+  }
 
 
   def has_description(description: Description): Boolean = {

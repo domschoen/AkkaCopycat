@@ -11,7 +11,6 @@ import models.Slipnet.{SlipnetGoWithBottomUpDescriptionScout, WorkspaceStructure
 object BottomUpDescriptionScout{
   case class GoWithBottomUpDescriptionScoutResponse(chosen_object: WorkspaceStructureRep, d: SlipNodeRep)
   case class SlipnetGoWithBottomUpDescriptionScoutResponse(chosen_propertyRep: SlipNodeRep, description_typeRep: SlipNodeRep)
-  case class PrepareDescriptionResponse(descriptionID: String, urgency: Double)
 }
 class BottomUpDescriptionScout(urgency: Int,
                                workspace: ActorRef,
@@ -22,10 +21,10 @@ class BottomUpDescriptionScout(urgency: Int,
   import models.Coderack.ChooseAndRun
   import models.Coderack.ProposeCorrespondence
   import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
+  import Codelet.PrepareDescriptionResponse
   import BottomUpDescriptionScout.{
     GoWithBottomUpDescriptionScoutResponse,
-    SlipnetGoWithBottomUpDescriptionScoutResponse,
-    PrepareDescriptionResponse
+    SlipnetGoWithBottomUpDescriptionScoutResponse
   }
 
   var chosen_object: WorkspaceStructureRep = null
