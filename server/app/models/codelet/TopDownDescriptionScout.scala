@@ -72,7 +72,7 @@ class TopDownDescriptionScout(urgency: Int,
       t = value
 
     case Finished =>
-      coderack ! ChooseAndRun
+      workspace ! models.Workspace.Step
 
   }
 

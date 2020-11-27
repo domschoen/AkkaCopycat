@@ -2,10 +2,12 @@ package models.codelet
 
 import akka.actor.ActorRef
 import akka.event.LoggingReceive
+import com.sun.org.apache.xerces.internal.impl.xpath.XPath.Step
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.{BondFromTo, BondFromTo2, WorkspaceStructureRep}
 import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
 import models.Workspace
+import models.Workspace.{WorkspaceProposeBond ,WorkspaceProposeBondResponse}
 import models.codelet.BottomUpBondScout.BondFromToSlipnetResponse
 import models.codelet.Codelet.Finished
 
@@ -17,7 +19,6 @@ object BottomUpBondScout {
                                  bondCategoryDegreeOfAssociation: Double,
                                  slipnetLeft: SlipNodeRep,
                                  slipnetRight: SlipNodeRep)
-  case class GoWithBottomUpBondScout3Response(bondID: String)
 }
 
 
@@ -33,10 +34,9 @@ class BottomUpBondScout(urgency: Int,              workspace: ActorRef,
     GoWithBottomUpBondScoutResponse,
     BondFromToSlipnetResponse,
     GoWithBottomUpBondScout2Response,
-    BondFromTo2Response,
-    GoWithBottomUpBondScout3Response
+    BondFromTo2Response
   }
-  import models.Workspace.{GoWithBottomUpBondScout2, GoWithBottomUpBondScout3}
+  import models.Workspace.{GoWithBottomUpBondScout2}
 
   var bondFrom: WorkspaceStructureRep = null
   var bondTo: WorkspaceStructureRep = null
@@ -71,19 +71,18 @@ class BottomUpBondScout(urgency: Int,              workspace: ActorRef,
 
     case BondFromTo2Response(bondCategory: SlipNodeRep, bcda, slipnetLeft, slipnetRight) =>
       bondCategoryDegreeOfAssociation = bcda
-      workspace ! GoWithBottomUpBondScout3(
+      workspace ! WorkspaceProposeBond(
         bondFrom,
         bondTo,
         bondCategory,
         bondFacet,
         fromDescriptor,
         toDescriptor,
-        bondCategoryDegreeOfAssociation,
         slipnetLeft,
         slipnetRight
       )
 
-    case GoWithBottomUpBondScout3Response(bondID: String) =>
+    case WorkspaceProposeBondResponse(bondID: String) =>
       coderack ! ProposeBond(bondID, bondCategoryDegreeOfAssociation)
 
 
@@ -94,7 +93,7 @@ class BottomUpBondScout(urgency: Int,              workspace: ActorRef,
       t = value
 
     case Finished =>
-      coderack ! ChooseAndRun
+      workspace ! models.Workspace.Step
 
   }
 

@@ -41,6 +41,7 @@ object Temperature {
   // To be implemented in actor asking for temperature
   case class TemperatureResponse(temperature: Double)
   case class TemperatureChanged(temperature: Double)
+  case class CheckClamped(codeletRuns: Int)
 }
 
 
@@ -74,6 +75,11 @@ class Temperature extends Actor with ActorLogging with InjectedActorSupport {
       clamped = value
     case GetClampTime =>
       sender() ! ClampTime(clamp_time)
+
+    case CheckClamped(codeletRuns) =>
+      if (codeletRuns >= clamp_time)
+        clamped = false
+
   }
 
 

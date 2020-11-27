@@ -29,7 +29,7 @@ class ReplacementFinder(urgency: Int,              workspace: ActorRef,
       t = value
 
     case Finished =>
-      coderack ! ChooseAndRun
+      workspace ! models.Workspace.Step
 
     }
 

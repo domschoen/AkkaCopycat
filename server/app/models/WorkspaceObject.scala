@@ -82,15 +82,6 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
   }
 
 
-  /*
-    case class TosInfo(slipNodeRef: SlipNodeRep, tos: List[SlipNodeRep])
-  case class DescriptionTypeInstanceLinksToNodeInfo(
-                                                     firstTos: TosInfo,
-                                                     lastTos: TosInfo,
-                                                     numbersTos: Map[Int, TosInfo],
-                                                     middleTos: List[SlipNodeRep]
-                                                   )
-   */
 
   // move partially to slipnet
   def get_possible_descriptions(info: DescriptionTypeInstanceLinksToNodeInfo): List[SlipNodeRep] = {
@@ -131,6 +122,70 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
     }
   }
 
+  def update_object_value() = {
+    // calculate the raw importance of the object
+    // = sum of all relevant descriptions
+    val rawSum = descriptions.filter(d => d.descriptor.isDefined).map(d => {
+      val descriptorActivation = d.descriptor.get.activation
+      if (d.descriptionType.activation==100.0) {
+        descriptorActivation
+      } else {
+        descriptorActivation / 20.0
+      }
+    }).sum
+
+    val groupAdaptedSum = if (group.isDefined) rawSum * 2.0 / 3.0 else rawSum
+    val sum = if (changed) groupAdaptedSum * 2.0 else groupAdaptedSum
+    raw_importance = sum;
+
+    // calculate the intra-string-happiness of the object
+    val result = if (spans_string) {
+      100.0
+    } else {
+      if (group.isDefined) {
+        group.get.total_strength
+      } else {
+        val bondstrengthRaw = bonds.map(b => b.total_strength).sum
+        if (spans_string) bondstrengthRaw / 3.0 else bondstrengthRaw / 6.0
+      }
+    }
+    intra_string_happiness = result;
+
+
+    // calculate intra-string-unhappiness
+    intra_string_unhappiness = 100.0-intra_string_happiness;
+
+    // calculate inter-string-happiness
+    inter_string_happiness = 0.0;
+    if (correspondence.isDefined) inter_string_happiness = correspondence.get.total_strength
+
+    // calculate inter-string-unhappiness
+    inter_string_unhappiness = 100.0-inter_string_happiness;
+
+    // calculate total-happienss
+    total_happiness = (inter_string_happiness+intra_string_happiness)/2.0;
+
+    // calculate total-unhappiness
+    total_unhappiness = 100.0-total_happiness;
+
+    // calculate intra_string_salience
+    if (clamp_salience) intra_string_salience = 100.0;
+    else intra_string_salience = Formulas.weighted_average(
+      relative_importance,0.2,intra_string_unhappiness,0.8);
+
+    // calculate inter_string_salience
+    if (clamp_salience) inter_string_salience = 100.0;
+    else inter_string_salience = Formulas.weighted_average(
+      relative_importance,0.8,inter_string_unhappiness,0.2);
+
+    // calculate total salience
+    total_salience = (intra_string_salience+inter_string_salience)/2;
+    //System.out.println(this+" salience:"+total_salience+" raw importance:"+raw_importance+" relative importance:"+relative_importance+" intra string salience:"+intra_string_salience+" inter string salience:"+inter_string_salience+" intra su:"+intra_st
+
+    //ring_unhappiness+" inter su:"+inter_string_unhappiness+"
+    //total_unhappiness:"+total_unhappiness );
+
+  }
 
 
   def letterOrGroupCompanions(): List[WorkspaceObject] = {

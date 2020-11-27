@@ -15,6 +15,27 @@ object WorkspaceFormulas {
     Utilities.valueProportionalRandomIndexInValueList(vals) + 1
   }
 
+/* See Workspace
+  static void update_temperature(){
+    workspace.calculate_intra_string_unhappiness();
+    workspace.calculate_inter_string_unhappiness();
+    workspace.calculate_total_unhappiness();
+
+    double rule_weakness=100.0;
+    if (workspace.rule!=null){
+      (workspace.rule).update_strength_value();
+      rule_weakness=100.0-(workspace.rule).total_strength;
+    }
+
+    formulas.actual_temperature = formulas.weighted_average(workspace.total_unhappiness,0.8, rule_weakness,0.2);
+    if (Temperature.clamped) formulas.actual_temperature = 100.0;
+    Temperature.Update(formulas.actual_temperature);
+    if (!clamp_temperature) formulas.temperature =formulas.actual_temperature;
+    Temperature.Update(formulas.temperature);
+    workspace.tvh.Values.addElement(new Double(100.0-workspace.total_unhappiness));
+    workspace.temp.Values.addElement(new Double(formulas.actual_temperature));
+  }
+*/
 
   def temperature_adjusted_probability(value: Double, temperature: Double): Double = {
     Formulas.temperature_adjusted_probability(value, temperature)
@@ -166,7 +187,7 @@ object WorkspaceFormulas {
     return choose_object_from_list(objects,"intra_string_salience");
   }
 */
-/*
+/* moved to Workspace and slipnet
   static slipnode choose_bond_facet(workspace_object fromob,workspace_object toob){
     Vector fromob_facets = new Vector();
     Vector bond_facets = new Vector();
@@ -195,6 +216,17 @@ object WorkspaceFormulas {
     return (slipnode)bond_facets.elementAt(select_list_position(object_probs));
   }
 */
+
+  /* Moved to WorkspaceObject.get_descriptor
+    static slipnode get_descriptor(workspace_object wo, slipnode dt){
+     for (int i=0; i<wo.descriptions.size(); i++){
+        description d = (description) wo.descriptions.elementAt(i);
+        if (d.description_type==dt) return d.descriptor;
+     }
+     return null;
+  }
+
+   */
 /*
 
   def total_description_type_support(slipnode description, workspace_string s): Double = {
@@ -225,23 +257,21 @@ object WorkspaceFormulas {
     }
   }
   */
-/*
 
-  def local_bond_category_relevance(workspace_string string, slipnode cat): Double = {
+
+  def local_bond_category_relevance(wString: WorkspaceString, categoryID: String): Double =
     // is a function of how many bonds in the string have this bond category
-    double oll=0.0, bc=0.0;
-    if (string.objects.size()==1) return 0.0;
-    for (int i=0; i<string.objects.size(); i++){
-      workspace_object wo = (workspace_object) string.objects.elementAt(i);
-      if (!wo.spans_string){
-        oll+=1.0;
-        if (wo.right_bond!=null)
-          if (wo.right_bond.bond_category==cat) bc+=1.0;
-      }
-    }
-    return 100.0*bc/(oll-1.0);
-  }
 
+    if (wString.objects.size == 1) 0.0 else {
+      val oll = wString.objects.filter(wo => !wo.spans_string).size
+      val bc = wString.objects.filter(wo =>
+        !wo.spans_string &&
+        wo.right_bond.isDefined &&
+        wo.right_bond.get.bond_category.id == categoryID).size
+        100.0 * bc / (oll-1.0)
+    }
+
+/*
   def local_direction_category_relevance(workspace_string string, slipnode dir): Double = {
     // is a function of how many bonds in the string have this bond category
     double oll=0.0, bc=0.0;

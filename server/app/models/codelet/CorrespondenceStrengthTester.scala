@@ -31,7 +31,7 @@ class CorrespondenceStrengthTester(urgency: Int,              workspace: ActorRe
       t = value
 
     case Finished =>
-        coderack ! ChooseAndRun
+      workspace ! models.Workspace.Step
 
     }
 

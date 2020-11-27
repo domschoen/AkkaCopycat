@@ -2,8 +2,9 @@ package models.codelet
 
 import akka.actor.ActorRef
 import akka.event.LoggingReceive
+import models.Coderack.Step
 import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
-import models.Workspace.GoWithBondBuilder
+import models.Workspace.{GoWithBondBuilder}
 
 
 class BondBuilder(urgency: Int, workspace: ActorRef,
@@ -31,7 +32,7 @@ class BondBuilder(urgency: Int, workspace: ActorRef,
       t = value
 
     case Finished =>
-      coderack ! ChooseAndRun
+      workspace ! models.Workspace.Step
 
   }
 

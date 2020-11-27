@@ -97,7 +97,7 @@ class BottomUpCorrespondenceScout(urgency: Int,
       t = value
 
     case Finished =>
-      coderack ! ChooseAndRun
+      workspace ! models.Workspace.Step
 
   }
 

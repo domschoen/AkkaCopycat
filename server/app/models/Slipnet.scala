@@ -27,42 +27,28 @@ import models.Bond.BondRep
 import models.Letter.LetterSlipnetComplement
 import models.SlipNode.{SlipNodeRep, SlipnetInfo}
 import models.codelet.BottomUpDescriptionScout.SlipnetGoWithBottomUpDescriptionScoutResponse
+import models.codelet.TopDownBondScoutCategory.{SlipnetTopDownBondScoutCategory2Response, SlipnetTopDownBondScoutCategoryResponse}
 import models.codelet.TopDownDescriptionScout.{SlipnetGoWithTopDownDescriptionScoutResponse, SlipnetGoWithTopDownDescriptionScoutResponse2}
 
 import scala.collection.mutable.ListBuffer
 
-class SlipnetLink(var from_node: SlipNode, var to_node: SlipNode, var label: SlipNode, var fixed_length: Double) {
-
-  var slip_link = false;
-  def this(fr: SlipNode, to: SlipNode, lab: SlipNode) = {
-    this(fr, to, lab, 0.0)
-  }
-  def this(fr: SlipNode, to: SlipNode, len: Double) = {
-    this(fr, to, null, len)
-    fr.outgoing_links += this
-  }
-  def degree_of_association(): Double = {
-    if ((fixed_length>0.0)||(label==null)) {
-      100.0-fixed_length
-    } else {
-      label.degree_of_association()
-    }
-  }
-
-
-}
 
 object Slipnet {
+  val r = scala.util.Random
 
   def props(): Props = Props(new Slipnet())
 
   case class Run(initialString: String, modifiedString: String, targetString: String)
   case class InitializeSlipnet(coderack: ActorRef, workspace: ActorRef)
+  case object UpdateEverything
   case class InitializeWorkspaceStrings(initialWos: List[LetterSlipnetComplement],
                                         modifiedWos: List[LetterSlipnetComplement],
                                         targetWos: List[LetterSlipnetComplement])
 
   case class BondFromTo(from: WorkspaceStructureRep, to: WorkspaceStructureRep)
+  case class SlipnetTopDownBondScoutCategory(fromdtypes: List[SlipNodeRep], todtypes: List[SlipNodeRep])
+  case class SlipnetTopDownBondScoutCategory2(bondCategory: String, from_descriptor: SlipNodeRep, to_descriptor: SlipNodeRep)
+
   case class BondFromTo2(
                           from: WorkspaceStructureRep,
                           to: WorkspaceStructureRep,
@@ -112,13 +98,14 @@ object Slipnet {
                      )
 
 
-  val time_step_length = 15
 
   object RelationType {
     val Sameness = "Sameness"
     val Successor = "Successor"
     val Predecessor = "Predecessor"
   }
+  val time_step_length = 15
+
 }
 
 
@@ -132,10 +119,14 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
   var woAppActor: Option[ActorRef] = None
   var coderack: ActorRef = null
   var workspace: ActorRef = null
+
+
+  var remove_spreading_activation = false
+  var remove_activation_jump = false
+
   var bondFacets = List.empty[SlipNode]
   var slipNodeRefs = Map.empty[String, SlipNode]
-
-  def slipNodes() = slipNodeRefs.values.toList
+  var slipNodes = ListBuffer.empty[SlipNode]
 
   //var sameness = Option.empty[SlipNode]
   //var opposite = Option.empty[SlipNode]
@@ -148,6 +139,9 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
   var numbers = (0 to 4).map(i => (i + 49).toChar.toString)
   var slipnet_numbers: ListBuffer[SlipNode] = numbers.map(c => addBasicSlipNode(0, 0, 30.0, c, c)).to[ListBuffer]
 
+  // moved to singleton
+  // val time_step_length = 15
+  var number_of_updates = 0
 
   // string positions
   val leftmost = add_slipnode(17, 18, 40.0, "leftmost", "lm")
@@ -437,6 +431,7 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
   def addBasicSlipNode(x: Int, y: Int, cd: Double, pn: String, sn: String): SlipNode = {
     val slipNode = new SlipNode(x, y, cd, pn, sn)
     slipNodeRefs += (slipNode.id() -> slipNode)
+    slipNodes += slipNode
     slipNode
   }
 
@@ -522,6 +517,9 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
       coderack = cr
       workspace = ws
 
+    case UpdateEverything =>
+      update()
+
     case InitializeWorkspaceStrings(initialWos, modifiedWos, targetWos) =>
       val initialDescriptions = letterDescriptionReps(initialWos)
       val modifiedDescriptions = letterDescriptionReps(modifiedWos)
@@ -543,6 +541,62 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
       val toFacetSlipNodeReps = fromDescriptionFacets.map(_.slipNodeRep())
 
       sender() ! BondFromToSlipnetResponse(fromFacetSlipNodeReps, toFacetSlipNodeReps)
+
+    case SlipnetTopDownBondScoutCategory(fromdtypes, todtypes) =>
+      // Partial code of WorkspaceFormulas.choose_bond_facet
+      val fromob_facets = fromdtypes.map(snrep => slipNodeRefs(snrep.id)).filter(dt => bond_facets.contains(dt))
+      val local_bond_facets = todtypes.map(snrep => slipNodeRefs(snrep.id)).filter(dt => fromob_facets.contains(dt))
+
+      if (local_bond_facets.isEmpty) {
+        print("no possible bond facet: Fizzle")
+        sender() ! Finished
+      } else {
+        // We are in the middle of WorkspaceFormulas.choose_bond_facet but we need to go back to workspace
+        sender() ! SlipnetTopDownBondScoutCategoryResponse(
+          fromob_facets.map(sn => sn.slipNodeRep()),
+          local_bond_facets.map(sn => sn.slipNodeRep()),
+        )
+      }
+    case SlipnetTopDownBondScoutCategory2(bondCategory, fromDescriptor, toDescriptor) =>
+      val from_descriptor = slipNodeRefs(fromDescriptor.id)
+      val to_descriptor = slipNodeRefs(toDescriptor.id)
+
+
+      val bc1 = SlipnetFormulas.get_bond_category(from_descriptor,to_descriptor, identity)
+      val bc2 = SlipnetFormulas.get_bond_category(to_descriptor,from_descriptor, identity)
+
+      // Added test  compare to JavaCopycat
+      if (bc1.isEmpty || bc2.isEmpty) {
+        print("Oups Bond category empty: Fizzle")
+        sender() ! Finished
+      } else {
+        val b1r = bc1.get
+        val b2r = bc2.get
+
+        val b1 = if (b1r == identity) sameness else b1r
+        val b2 = if (b1r == identity) sameness else b2r
+
+        val bond_category = slipNodeRefs(bondCategory)
+
+        if ((bond_category!=b1)&&(bond_category!=b2)){
+          print("no suitable link: Fizzle!");
+          sender() ! Finished
+        } else {
+          val isFromTo = bond_category==b1
+          val urgency = bond_category.bond_degree_of_association();
+
+          bond_facet.buffer=100.0;
+          from_descriptor.buffer=100.0;
+          to_descriptor.buffer=100.0;
+
+          sender() ! SlipnetTopDownBondScoutCategory2Response(isFromTo,urgency, bond_category.slipNodeRep(),
+            left.slipNodeRep(),
+            right.slipNodeRep()
+          )
+        }
+      }
+
+
 
     // bottom-up-bond-scout codelet.java.267
     case BondFromTo2(from,to,fromDescriptor,toDescriptor) =>
@@ -743,6 +797,78 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
 
   }
 
+  def update() = {
+    // this procedure updates the slipnet
+    number_of_updates += 1
+    // unclamp initially clamped slipnodes if #of updates = 50
+
+    if (number_of_updates==50){
+      for (s <- initially_clamped_slipnodes) {
+        s.clamp=false;
+        // GUIs.Redraw = true;
+      }
+    }
+
+    // for all nodes set old_activation to activation
+    for (ob <- slipNodes) {
+      ob.old_activation=ob.activation;
+      ob.buffer-=ob.activation*((100.0-ob.conceptual_depth)/100.0);
+      if (ob==successor){
+        //System.out.println("activation ="+ob.activation+" buffer="+ob.buffer);
+        //System.out.println("number of nodes = "+slipnodes.size());
+      }
+    }
+
+
+    // spreading activation
+    // for all incomming links, if the activation of the sending node = 100
+    // add the percentage of its activation to activation buffer
+    if (!remove_spreading_activation){
+      for (ob <- slipNodes) {
+        for (sl <- ob.outgoing_links) {
+          if (ob.activation == 100.0){
+            (sl.to_node).buffer += sl.intrinsic_degree_of_association()
+          }
+        }
+      }
+    }
+    // for all nodes add the activation activation_buffer
+    // if activation>100 or clamp=true, activation=100
+    for (ob <- slipNodes) {
+      if (!(ob.clamp)) ob.activation+=ob.buffer;
+      if (ob.activation>100.0) ob.activation=100.0;
+      if (ob.activation<0.0) ob.activation = 0.0;
+    }
+
+
+    // check for probabablistic jump to 100%
+    var act : Double = 0.0
+    if (!remove_activation_jump){
+      for (ob <- slipNodes) {
+        act=ob.activation/100.0
+        act=act*act*act
+
+        if ((ob.activation>55.0)&& ( Slipnet.r.nextDouble() < act) &&
+          (!(ob.clamp))) {
+          ob.activation=100.0
+        };
+      }
+    }
+
+
+    // check for redraw; and reset buffer values to 0
+    for (ob <- slipNodes) {
+      ob.buffer = 0.0;
+      val obActAsInt = (ob.activation/10.0).toInt
+      if ((ob.activation/10.0).toInt != (ob.old_activation/10.0).toInt ) {
+        // GUI ob.Redraw=true;
+        // GUI ob.child.Redraw = true;
+      }
+      // From GraphicsObject (GUI)
+      // ob.Values.addElement(new Double(ob.activation));
+
+    }
+  }
 
   def get_description_type_instance_links_to_node_info(description_type: SlipNode): DescriptionTypeInstanceLinksToNodeInfo = {
     val firstTos = description_type.instance_links.toList.filter(sl => sl.to_node == first).map(_.to_node.slipNodeRep())
@@ -773,8 +899,6 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
 
   //def getDescriptor(workspaceObject: WorkspaceObject, node: SlipNode): Option[SlipNode] = ???
   //def getBondCategory(fromDescriptor: SlipNode, toDescriptor: SlipNode): Option[SlipNode] = ???
-
-
 
 
 

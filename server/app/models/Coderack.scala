@@ -21,6 +21,7 @@ import play.api.Play.current
 import javax.inject._
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.WorkspaceStructureRep
+import models.Temperature.CheckClamped
 import models.Workspace.Initialize
 import models.codelet.CodeletType
 import models.codelet.Codelet
@@ -61,9 +62,22 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
   import Coderack._
   import Codelet.Finished
   var woAppActor: Option[ActorRef] = None
-  var codeletRuns = 0
-  var lastUpdate = 0
+
+  var speed_up_bonds = false
+//  static Area CoderackArea,CoderackSmall,CoderackInfoArea;
+//  static Frames MaximiseCoderack,MinimiseInfoArea;
+//  static Caption[] Codelet_Captions;
+//  static Caption[] CodeletInfo_Captions;
+//  static Caption Codelet_Run;
   var codelets = ListBuffer.empty[ActorRef]
+
+  var codelets_run = 0
+  var number_of_bins = 7
+  var last_update = 0
+  var remove_breaker_codelets = false
+  var remove_terraced_scan = false
+
+
   var initialCodelets : List[CodeletType] = List(
     CodeletType.BottomUpBondScout,
     CodeletType.ReplacementFinder,
@@ -75,7 +89,6 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
   var initialString = ""
   var modifiedString =""
   var targetString = ""
-  var number_of_bins = 7
 
   // define the codelet types
   def get_urgency_bin(urgency: Double): Int = {
@@ -87,6 +100,27 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
 
   protected def createCodelet(codeletType: CodeletType, urgency: Int, arguments: Option[Any]) =
     context.actorOf(Codelet.props(codeletType, urgency, workspace, slipnet, temperature, arguments))
+
+
+  def update_Everything() = {
+//  GUI  Graph.GraphFrame.Redraw = true;
+//  GUI  Graph.GraphMinFrame.Redraw = true;
+    // update the strength values of all structures in the workspace
+    workspace ! models.Workspace.UpdateEverything
+
+    // Done in PostInitialCodelets
+//    if (codelets_run > 0) {
+//      post_top_down_codelets();
+//      coderack.post_bottom_up_codelets();
+//    }
+    slipnet ! models.Slipnet.UpdateEverything
+
+    // See Workspace
+    // WorkspaceFormulas.update_temperature();
+
+    // GUI Coderack_Pressure.calculate_Pressures()
+  }
+
 
   def receive = LoggingReceive {
     // to the browser
@@ -166,6 +200,19 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
             // https://medium.com/kenshoos-engineering-blog/assembling-requests-from-multiple-actors-44434c18e69d
             // => ask patter is a solution
 
+            temperature ! CheckClamped(codelets_run)
+            if (((codelets_run - last_update) >= Slipnet.time_step_length )|| (codelets_run==0)) {
+              update_Everything();
+              last_update = codelets_run
+            }
+            // if coderack is empty, clamp initially clamped slipnodes and
+            // post initial_codelets;
+            if (total_num_of_codelets()==0){
+              self ! PostInitialCodelets
+            }
+
+
+            // From Coderack.choose().java.60
             // let's change the view point: The urgency of a codelet is only in the context of a coderack => not a property of the codelet
             val scale: Double = (100.0 - runTemperature + 10.0) / 15.0
 
@@ -226,6 +273,9 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
 
   }
 
+  def total_num_of_codelets() = {
+    codelets.size
+  }
 
   def reset() = {
   }
@@ -234,12 +284,12 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
 
   private  def finishRun: Receive = {
     case Temperature.ClampTime(clampTime) =>
-      if (codeletRuns >= clampTime) {
+      if (codelets_run >= clampTime) {
         temperature ! Temperature.SetClamped(false)
       }
-      if ((codeletRuns-lastUpdate)>= Slipnet.time_step_length) {
+      if ((codelets_run-last_update)>= Slipnet.time_step_length) {
         executionRun ! ExecutionRun.UpdateEverything
-        lastUpdate = codeletRuns
+        last_update = codelets_run
       }
       if (codelets.size == 0) {
         self ! PostInitialCodelets

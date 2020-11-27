@@ -2,6 +2,7 @@ package models.codelet
 
 import akka.actor.ActorRef
 import akka.event.LoggingReceive
+import com.sun.org.apache.xerces.internal.impl.xpath.XPath.Step
 
 
 object BondStrengthTester {
@@ -41,7 +42,7 @@ class BondStrengthTester(urgency: Int,
     t = value
 
     case Finished =>
-      coderack ! ChooseAndRun
+      workspace ! models.Workspace.Step
 
   }
 
