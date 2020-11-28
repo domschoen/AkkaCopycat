@@ -27,9 +27,10 @@ import models.Bond.BondRep
 import models.Letter.LetterSlipnetComplement
 import models.SlipNode.{SlipNodeRep, SlipnetInfo}
 import models.codelet.BottomUpDescriptionScout.SlipnetGoWithBottomUpDescriptionScoutResponse
-import models.codelet.TopDownBondScoutCategory.{SlipnetTopDownBondScoutCategory2Response}
+import models.codelet.TopDownBondScoutCategory.SlipnetTopDownBondScoutCategory2Response
 import models.codelet.TopDownBondScoutDirection.SlipnetTopDownBondScoutDirection2Response
 import models.codelet.TopDownDescriptionScout.{SlipnetGoWithTopDownDescriptionScoutResponse, SlipnetGoWithTopDownDescriptionScoutResponse2}
+import models.codelet.TopDownGroupScoutCategory.{SlipnetGoWithTopDownGroupScoutCategory2Response, SlipnetGoWithTopDownGroupScoutCategoryResponse}
 
 import scala.collection.mutable.ListBuffer
 
@@ -38,6 +39,12 @@ object Slipnet {
   val r = scala.util.Random
 
   def props(): Props = Props(new Slipnet())
+
+  object DirValue extends Enumeration {
+    type DirValue = Value
+    val Left, Right, None = Value
+  }
+
 
   case class Run(initialString: String, modifiedString: String, targetString: String)
   case class InitializeSlipnet(coderack: ActorRef, workspace: ActorRef)
@@ -68,6 +75,9 @@ object Slipnet {
                                        //temperature: Double,
                                        codelet: ActorRef
                                       )*/
+  case class CompleteProposeGroup(grCategoryID: String, dirCategoryID: Option[String])
+  case class CompleteProposeGroupResponse(urgency: Double)
+
   case class SlipnetGoWithTopDownDescriptionScout(chosen_object: WorkspaceStructureRep, descriptionTypeID: String)
   case class GoWithTopDownDescriptionScoutResponse2(chosen_property: SlipNodeRep)
   case class GoWithTopDownBondScout2Response(bond_facet: SlipNodeRep, from_descriptor: SlipNodeRep, to_descriptor: SlipNodeRep)
@@ -84,6 +94,8 @@ object Slipnet {
                                                      numbersTos: Map[Int, TosInfo],
                                                      middleTos: List[SlipNodeRep]
                                                    )
+  case class SlipnetGoWithTopDownGroupScoutCategory(groupID: String, temperature: Double)
+  case class SlipnetGoWithTopDownGroupScoutCategory2(dir: DirValue.DirValue)
 
   case class WorkspaceStructureRep(
                                     uuid :String,
@@ -97,7 +109,7 @@ object Slipnet {
   }
 
   case class GroupRep(              groupCategorySlipNodeID: String,
-                                    directionCategorySlipNodeID: String,
+                                    directionCategorySlipNodeID: Option[String],
                                     bondFacetSlipNodeID: String,
                                     bond_list: List[BondRep]
                      )
@@ -456,24 +468,33 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
     }
     InflatedDescriptionRep(rep.uuid, descriptionTypeSlipNode, descriptorSlipNode)
   }
-  def groupFlipped_version(obj: WorkspaceStructureRep): WorkspaceStructureRep = {
+  def groupFlipped_version(obj: WorkspaceStructureRep): Option[WorkspaceStructureRep] = {
     val groupRep = obj.groupRep.get
     val bond_list = groupRep.bond_list
 
     // returns a flipped version of this group
     val new_bond_list = bond_list.map(b => bondFlipped_version(b))
     val group_category = slipNodeRefs(groupRep.groupCategorySlipNodeID)
-    val direction_category = slipNodeRefs(groupRep.directionCategorySlipNodeID)
+    if (groupRep.directionCategorySlipNodeID.isDefined) {
+      val direction_category = slipNodeRefs(groupRep.directionCategorySlipNodeID.get)
+      val relatedGroup_category = SlipnetFormulas.get_related_node(group_category, opposite, identity).get
+      val relatedDirection_categoryOpt = SlipnetFormulas.get_related_node(direction_category, opposite, identity)
+      val relatedDirection_categoryID = relatedDirection_categoryOpt match {
+        case Some(relatedDirection_category) => Some(relatedDirection_category.id())
+        case None => None
+      }
 
-    val relatedGroup_category = SlipnetFormulas.get_related_node(group_category, opposite, identity).get
-    val relatedDirection_category = SlipnetFormulas.get_related_node(direction_category, opposite, identity).get
+      val flippedGroup = GroupRep(
+        relatedGroup_category.id(),
+        relatedDirection_categoryID,
+        groupRep.bondFacetSlipNodeID, new_bond_list)
 
-    val flippedGroup = GroupRep(
-      relatedGroup_category.id(),
-      relatedDirection_category.id(),
-      groupRep.bondFacetSlipNodeID, new_bond_list)
+      Some(obj.copy(groupRep = Some(flippedGroup)))
 
-    obj.copy(groupRep = Some(flippedGroup))
+    } else {
+      None
+    }
+
   }
 
 
@@ -726,44 +747,52 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
               allOppositeMappings &&
               opposite.activation != 100.0
 
-            val newObj2 = if (flip_obj2) groupFlipped_version(obj2) else obj2
+            val newObj2Opt = if (flip_obj2) groupFlipped_version(obj2) else Some(obj2)
+            newObj2Opt match {
+              case None =>
+                print("no groupFlipped_version found: fizzle");
+                sender() ! Finished
 
-            val newconcept_mapping_list = if (flip_obj2) {
-              val newObj2Descriptions = newObj2.descriptions.map(inflatedDescriptionRep)
-              val newObj2Relevant_descriptions = relevant_descriptions(newObj2Descriptions)
+              case Some(newObj2) =>
+                val newconcept_mapping_list = if (flip_obj2) {
+                  val newObj2Descriptions = newObj2.descriptions.map(inflatedDescriptionRep)
+                  val newObj2Relevant_descriptions = relevant_descriptions(newObj2Descriptions)
 
-              ConceptMapping.get_concept_mapping_list(
-                obj1, newObj2,
-                obj2Relevant_descriptions, newObj2Relevant_descriptions, slipnetInfo);
-            } else concept_mapping_list
+                  ConceptMapping.get_concept_mapping_list(
+                    obj1, newObj2,
+                    obj2Relevant_descriptions, newObj2Relevant_descriptions, slipnetInfo);
+                } else concept_mapping_list
 
-            println("Proposing correspondence with concept mappings:");
-            for(cm <- newconcept_mapping_list) {
-              println(cm.toString())
+                println("Proposing correspondence with concept mappings:");
+                for(cm <- newconcept_mapping_list) {
+                  println(cm.toString())
+                }
+
+                // Coderack.java.323 (propose_correspondence)
+
+                // activate some descriptions
+                for (cm <- newconcept_mapping_list) {
+                  cm.description_type1.buffer=100.0
+                  cm.descriptor1.buffer=100.0
+                  cm.description_type2.buffer=100.0
+                  cm.descriptor2.buffer=100.0
+                }
+
+                val dcm = distinguishing_concept_mappings(newconcept_mapping_list)
+                val totalStrength = dcm.map(_.strength()).sum
+
+                val conceptMappingReps = concept_mapping_list.map(cm => cm.conceptMappingRep())
+                sender() ! ProposeAnyCorrespondenceSlipnetResponse(
+                  obj1,
+                  newObj2,
+                  conceptMappingReps,
+                  flip_obj2,
+                  dcm.size,
+                  totalStrength
+                )
+
             }
 
-            // Coderack.java.323 (propose_correspondence)
-
-            // activate some descriptions
-            for (cm <- newconcept_mapping_list) {
-              cm.description_type1.buffer=100.0
-              cm.descriptor1.buffer=100.0
-              cm.description_type2.buffer=100.0
-              cm.descriptor2.buffer=100.0
-            }
-
-            val dcm = distinguishing_concept_mappings(newconcept_mapping_list)
-            val totalStrength = dcm.map(_.strength()).sum
-
-            val conceptMappingReps = concept_mapping_list.map(cm => cm.conceptMappingRep())
-            sender() ! ProposeAnyCorrespondenceSlipnetResponse(
-              obj1,
-              newObj2,
-              conceptMappingReps,
-              flip_obj2,
-              dcm.size,
-              totalStrength
-              )
           }
         }
       }
@@ -826,9 +855,55 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
         case Some(cat) =>
           sender() ! SlipnetGoWithTopDownDescriptionScoutResponse2(cat.slipNodeRep())
 
-        case None => sender() ! Finished
+        case None =>
+          sender() ! Finished
       }
 
+    case SlipnetGoWithTopDownGroupScoutCategory(groupID, temperature) =>
+      val group_cat = slipNodeRefs(groupID)
+      val bond_categoryOpt = SlipnetFormulas.get_related_node(group_cat, bond_category, identity)
+      bond_categoryOpt match {
+        case Some(bond_category) =>
+          sender() ! SlipnetGoWithTopDownGroupScoutCategoryResponse(bond_category.slipNodeRep())
+        case None =>
+          log.debug("<c> no bond-category found")
+          sender() ! Finished
+
+      }
+    case SlipnetGoWithTopDownGroupScoutCategory2(dir) =>
+      val direction = dir match {
+        case DirValue.Right =>
+          DirValue.Left
+        case DirValue.Left =>
+          DirValue.Right
+        case DirValue.None =>
+          val v = List(left.activation, right.activation)
+          if (Utilities.valueProportionalRandomIndexInValueList(v) == 0) DirValue.Left else DirValue.Right
+      }
+      //print("trying from "+fromob+" "+bond_category.pname+" checking to "+direction.pname+" first");
+      sender() ! SlipnetGoWithTopDownGroupScoutCategory2Response(direction, length.activation)
+
+    case CompleteProposeGroup(grCategoryID: String, dirCategoryIDOpt: Option[String]) =>
+      val grCategory = slipNodeRefs(grCategoryID)
+      val bond_categoryOpt = SlipnetFormulas.get_related_node(grCategory,bond_category, identity)
+      // match added compare to JavaCopycat
+      bond_categoryOpt match {
+        case Some(bond_category) =>
+          bond_category.buffer=100.0;
+          dirCategoryIDOpt match {
+            case Some(dirCategoryID) =>
+              val dirCategory = slipNodeRefs(dirCategoryID)
+              dirCategory.buffer=100.0
+            case None =>
+          }
+          val urgency = bond_category.bond_degree_of_association()
+
+          sender() ! CompleteProposeGroupResponse(urgency)
+
+        case None =>
+          log.debug("<c> no bond-category found")
+          sender() ! Finished
+      }
   }
 
   def update() = {

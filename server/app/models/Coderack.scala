@@ -49,8 +49,9 @@ object Coderack {
                                     distiguishingConceptMappingSize: Int,
                                     distiguishingConceptMappingTotalStrength: Double
                                   )
-  case class ProposeBond(bondID: String,
-                         d: Double)
+  case class ProposeBond(bondID: String, d: Double)
+  case class ProposeGroup(groupID: String, d: Double)
+
   case class ProposeDescription(descriptionID: String, urgency: Double)
   case class PostBondBuilder(bondID: String, strength: Double)
   case class PostDescriptionBuilder(descriptionID: String, strength: Double)
@@ -249,6 +250,12 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
           val newCodelet = createCodelet(CodeletType.BondStrengthTester, get_urgency_bin(urgency), Some(bondID))
           self ! Post(newCodelet)
           sender() ! Finished
+
+        case ProposeGroup(groupID, urgency) =>
+          val newCodelet = createCodelet(CodeletType.GroupStrengthTester, get_urgency_bin(urgency), Some(groupID))
+          self ! Post(newCodelet)
+          sender() ! Finished
+
 
         case PostBondBuilder(bondID, strength) =>
           val urgency = get_urgency_bin(strength)

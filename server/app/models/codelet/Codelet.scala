@@ -15,6 +15,8 @@ object CodeletType {
   case object CorrespondenceStrengthTester extends CodeletType
   case object DescriptionStrengthTester extends CodeletType
   case object BondStrengthTester extends CodeletType
+  case object GroupStrengthTester extends CodeletType
+
 }
 object Codelet {
   case class Run(initialString: String, modifiedString: String, targetString: String, runTemperature: Double)
@@ -49,6 +51,9 @@ object Codelet {
       case CodeletType.CorrespondenceStrengthTester => new CorrespondenceStrengthTester(urgency,  workspace, slipnet, temperature, arguments)
       case CodeletType.DescriptionStrengthTester => new DescriptionStrengthTester(urgency,  workspace, slipnet, temperature, arguments)
       case CodeletType.BondStrengthTester => new BondStrengthTester(urgency,  workspace, slipnet, temperature, arguments)
+      case CodeletType.GroupStrengthTester => new GroupStrengthTester(urgency,  workspace, slipnet, temperature, arguments)
+
+
     }
 
 }
