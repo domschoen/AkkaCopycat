@@ -1,5 +1,7 @@
 package models
 
+import models.SlipNode.SlipNodeRep
+
 object WorkspaceFormulas {
 
   val very_low_distribution = List(5.0,150.0,5.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0)
@@ -147,6 +149,7 @@ object WorkspaceFormulas {
 
   }*/
 /*
+  Moved to Workspace.chooseNeighbor
   def choose_neighbor(fromob: WorkspaceObject): WorkspaceObject = {
     Vector objects = new Vector();
 
@@ -160,7 +163,7 @@ object WorkspaceFormulas {
     }
     return choose_object_from_list(objects,"intra_string_salience");
   }
-
+  Moved to Workspace.chooseNeighbor
   def choose_left_neighbor(workspace_object fromob): WorkspaceObject = {
     Vector objects = new Vector();
 
@@ -174,6 +177,7 @@ object WorkspaceFormulas {
     return choose_object_from_list(objects,"intra_string_salience");
   }
 
+  Moved to Workspace.chooseNeighbor
   def choose_right_neighbor(workspace_object fromob): WorkspaceObject = {
     Vector objects = new Vector();
 
@@ -259,7 +263,7 @@ object WorkspaceFormulas {
   */
 
 
-  def local_bond_category_relevance(wString: WorkspaceString, categoryID: String): Double =
+  def local_relevance(wString: WorkspaceString, categoryID: String, bondFlavor: Bond => SlipNodeRep): Double =
     // is a function of how many bonds in the string have this bond category
 
     if (wString.objects.size == 1) 0.0 else {
@@ -267,12 +271,27 @@ object WorkspaceFormulas {
       val bc = wString.objects.filter(wo =>
         !wo.spans_string &&
         wo.right_bond.isDefined &&
-        wo.right_bond.get.bond_category.id == categoryID).size
+          bondFlavor(wo.right_bond.get).id == categoryID).size
         100.0 * bc / (oll-1.0)
     }
 
-/*
-  def local_direction_category_relevance(workspace_string string, slipnode dir): Double = {
+/* Merge into 1 method
+  static double local_bond_category_relevance(workspace_string string, slipnode cat){
+    // is a function of how many bonds in the string have this bond category
+    double oll=0.0, bc=0.0;
+    if (string.objects.size()==1) return 0.0;
+    for (int i=0; i<string.objects.size(); i++){
+      workspace_object wo = (workspace_object) string.objects.elementAt(i);
+      if (!wo.spans_string){
+        oll+=1.0;
+        if (wo.right_bond!=null)
+          if (wo.right_bond.bond_category==cat) bc+=1.0;
+      }
+    }
+    return 100.0*bc/(oll-1.0);
+  }
+
+  static double local_direction_category_relevance(workspace_string string, slipnode dir){
     // is a function of how many bonds in the string have this bond category
     double oll=0.0, bc=0.0;
     for (int i=0; i<string.objects.size(); i++){
@@ -285,8 +304,8 @@ object WorkspaceFormulas {
     }
     return 100.0*bc/(oll-1.0);
   }
-
 */
+
   def get_common_groups(from_obj: WorkspaceObject, to_obj: WorkspaceObject): List[Group] = {
     val stOpt = from_obj.workspaceString()
     stOpt match {

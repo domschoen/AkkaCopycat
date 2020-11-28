@@ -4,13 +4,9 @@ import akka.event.LoggingReceive
 import akka.actor.ActorRef
 import models.Coderack.ProposeBond
 import models.SlipNode.SlipNodeRep
-import models.Slipnet.{BondFromTo, SlipnetTopDownBondScoutCategory, SlipnetTopDownBondScoutCategory2, WorkspaceStructureRep}
-import models.Workspace.{GoWithTopDownBondScoutCategory, GoWithTopDownBondScoutCategory2, WorkspaceProposeBond, WorkspaceProposeBondResponse}
+import models.Workspace.{GoWithTopDownBondScout2, GoWithTopDownBondScoutCategory, GoWithTopDownBondScoutWithResponse, WorkspaceProposeBond, WorkspaceProposeBondResponse}
 
 object TopDownBondScoutCategory {
-  case class GoWithTopDownBondScoutCategoryResponse(from: WorkspaceStructureRep, to: WorkspaceStructureRep, fromdtypes: List[SlipNodeRep], todtypes: List[SlipNodeRep])
-  case class SlipnetTopDownBondScoutCategoryResponse(fromdtypes: List[SlipNodeRep], todtypes: List[SlipNodeRep])
-  case class GoWithTopDownBondScoutCategory2Response(bond_facet: SlipNodeRep, from_descriptor: SlipNodeRep, to_descriptor: SlipNodeRep)
   case class SlipnetTopDownBondScoutCategory2Response(isFromTo: Boolean,
                                                       urgency: Double,
                                                       bond_category: SlipNodeRep,
@@ -29,11 +25,9 @@ class TopDownBondScoutCategory(urgency: Int,
   import models.Coderack.ProposeCorrespondence
   import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
   import TopDownBondScoutCategory.{
-    GoWithTopDownBondScoutCategoryResponse,
-    SlipnetTopDownBondScoutCategoryResponse,
-    GoWithTopDownBondScoutCategory2Response,
     SlipnetTopDownBondScoutCategory2Response
   }
+  import models.Slipnet.{SlipnetTopDownBondScoutResponse, GoWithTopDownBondScout2Response, SlipnetTopDownBondScout, SlipnetTopDownBondScoutCategory2, WorkspaceStructureRep}
 
   var bondFrom: WorkspaceStructureRep = null
   var bondTo: WorkspaceStructureRep = null
@@ -52,17 +46,17 @@ class TopDownBondScoutCategory(urgency: Int,
       temperature ! Register(self)
       workspace ! GoWithTopDownBondScoutCategory(bondCategoryID, t)
 
-    case GoWithTopDownBondScoutCategoryResponse(from, to, fromdtypes, todtypes) =>
+    case GoWithTopDownBondScoutWithResponse(from, to, fromdtypes, todtypes) =>
       bondFrom = from
       bondTo = to
       // continue in slipnet with codelet.java.255
-      slipnet ! SlipnetTopDownBondScoutCategory(fromdtypes, todtypes)
+      slipnet ! SlipnetTopDownBondScout(fromdtypes, todtypes)
 
-    case SlipnetTopDownBondScoutCategoryResponse(fromdtypes, todtypes) =>
-      workspace ! GoWithTopDownBondScoutCategory2(bondFrom, bondTo, todtypes)
+    case SlipnetTopDownBondScoutResponse(fromdtypes, todtypes) =>
+      workspace ! GoWithTopDownBondScout2(bondFrom, bondTo, todtypes)
 
 
-    case GoWithTopDownBondScoutCategory2Response(bf, from_d, to_d) =>
+    case GoWithTopDownBondScout2Response(bf, from_d, to_d) =>
       from_descriptor = from_d
       to_descriptor = to_d
       bond_facet = bf

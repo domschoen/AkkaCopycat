@@ -1,0 +1,13 @@
+  def choose_neighbor(fromob: WorkspaceObject): WorkspaceObject = {
+    Vector objects = new Vector();
+
+    for (int i=0; i<workspace.workspace_objects.size(); i++){
+      workspace_object ob = (workspace_object)workspace.workspace_objects.elementAt(i);
+      if (ob.string==fromob.string){
+        if ((ob.left_string_position==(fromob.right_string_position+1))||
+          (fromob.left_string_position==(ob.right_string_position+1)))
+          objects.addElement(ob);
+      }
+    }
+    return choose_object_from_list(objects,"intra_string_salience");
+  }

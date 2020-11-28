@@ -23,12 +23,11 @@ import javax.inject._
 import models.ConceptMapping.ConceptMappingRep
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.{DescriptionTypeInstanceLinksToNodeInfo, GroupRep, WorkspaceStructureRep}
-import models.Workspace.{GoWithDescriptionBuilder, GoWithTopDownBondScoutCategory, GoWithTopDownBondScoutCategory2, GoWithTopDownDescriptionScout2, InitializeWorkspaceStringsResponse, UpdateEverything, WorkspaceProposeBondResponse}
+import models.Workspace.{GoWithDescriptionBuilder, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, InitializeWorkspaceStringsResponse, UpdateEverything, WorkspaceProposeBondResponse}
 import models.codelet.BottomUpBondScout.{GoWithBottomUpBondScout2Response, GoWithBottomUpBondScoutResponse}
 import models.codelet.BottomUpDescriptionScout.GoWithBottomUpDescriptionScoutResponse
 import models.codelet.Codelet.{Finished, PrepareDescriptionResponse}
 import models.codelet.DescriptionStrengthTester.GoWithDescriptionStrengthTesterResponse
-import models.codelet.TopDownBondScoutCategory.{GoWithTopDownBondScoutCategory2Response, GoWithTopDownBondScoutCategoryResponse}
 import models.codelet.TopDownDescriptionScout.GoWithTopDownDescriptionScoutResponse
 import models.codelet.{Codelet, CodeletType}
 import play.api.Configuration
@@ -68,6 +67,7 @@ object Workspace {
 
   case object GoWithReplacementFinder
 
+
   case class GoWithBottomUpDescriptionScout(temperature: Double)
   case class GoWithTopDownDescriptionScout(descriptionTypeID: String, temperature: Double)
   case class GoWithTopDownDescriptionScout2(chosen_object: WorkspaceStructureRep, i: DescriptionTypeInstanceLinksToNodeInfo)
@@ -85,10 +85,13 @@ object Workspace {
                                                  distiguishingConceptMappingTotalStrength: Double,
                                                  temperature: Double
                                                )
+  case class GoWithTopDownBondScoutCategory(slipNodeID: String, temperature: Double)
+  case class GoWithTopDownBondScout2(fromob: WorkspaceStructureRep, toob: WorkspaceStructureRep, todtypes: List[SlipNodeRep])
+  case class GoWithTopDownBondScoutDirection(slipNodeID: String, temperature: Double)
+
+  case class GoWithTopDownBondScoutWithResponse(from: WorkspaceStructureRep, to: WorkspaceStructureRep, fromdtypes: List[SlipNodeRep], todtypes: List[SlipNodeRep])
 
   case class GoWithDescriptionBuilder(descriptionID: String, temperature: Double)
-  case class GoWithTopDownBondScoutCategory(bondCategoryID: String, temperature: Double)
-  case class GoWithTopDownBondScoutCategory2(fromob: WorkspaceStructureRep, toob: WorkspaceStructureRep, todtypes: List[SlipNodeRep])
 
   case class GoWithGroupBuilder(temperature: Double, groupID: String)
   case class GoWithDescriptionStrengthTester(temperature: Double, descriptionID: String)
@@ -107,6 +110,8 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     GoWithBottomUpCorrespondenceScout2,
     GoWithBottomUpDescriptionScout,
     GoWithTopDownDescriptionScout,
+    GoWithTopDownBondScoutCategory,
+    GoWithTopDownBondScoutDirection,
     PrepareDescription,
     GoWithReplacementFinder,
     GoWithBondBuilder,
@@ -341,7 +346,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
           log.debug("BondWithNeighbor | failed with empty from")
           sender() ! Finished
         case Some(from) =>
-          val toOpt = chooseNeighbor(from, temperature)
+          val toOpt = chooseNeighbor(from, conditionalNeighbor)
           toOpt match {
             case None =>
               log.debug("BondWithNeighbor | object has no neighbour - fizzle")
@@ -775,32 +780,23 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       log.info("succeeded: will post bond-builder");
       sender() ! GoWithBondStrengthTesterResponse(strength)
 
+
     // codelet.java.278
-    case GoWithTopDownBondScoutCategory(bondCategoryID, temperature) =>
+    case GoWithTopDownBondScoutCategory(bondCategoryID: String, temperature) =>
       log.info("searching for " + bondCategoryID);
+      val i_relevance = WorkspaceFormulas.local_relevance(initial, bondCategoryID, (b: Bond) => b.bond_category)
+      val t_relevance = WorkspaceFormulas.local_relevance(target, bondCategoryID, (b: Bond) => b.bond_category)
 
-      val i_relevance = WorkspaceFormulas.local_bond_category_relevance(initial, bondCategoryID)
-      val t_relevance = WorkspaceFormulas.local_bond_category_relevance(target, bondCategoryID)
-      val i_unhappiness = initial.intra_string_unhappiness;
-      val t_unhappiness = target.intra_string_unhappiness;
-
-      val str = if (
-        (r.nextDouble() * (i_relevance + i_unhappiness + t_relevance + t_unhappiness)) >
-          (i_relevance + i_unhappiness)) target else initial
-
-      if (str == initial) print("initial string selected");
-      else print("target string selected");
-
-      val fromOpt = chooseObject(str.objects.toList, TemperatureAjustmentVariable.Intra_string_salience, temperature)
+      val fromOpt = chooseObjectWith(bondCategoryID, i_relevance, t_relevance, temperature)
       fromOpt match {
         case None =>
-          log.debug("GoWithTopDownBondScoutCategory | failed with empty from")
+          log.debug("GoWithTopDownBondScoutWith | failed with empty from")
           sender() ! Finished
         case Some(fromob) =>
           // choose neighbour
           print("initial object: " + fromob);
 
-          val toOpt = chooseNeighbor(fromob, temperature)
+          val toOpt = chooseNeighbor(fromob, conditionalNeighbor)
           toOpt match {
             case None =>
               log.debug("GoWithTopDownBondScoutCategory | object has no neighbour - fizzle")
@@ -815,16 +811,16 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
               val fromdtypes = fromob.descriptions.toList.map(d => d.descriptionType)
               val todtypes = toob.descriptions.toList.map(d => d.descriptionType)
 
-              sender() ! GoWithTopDownBondScoutCategoryResponse(
+              sender() ! GoWithTopDownBondScoutWithResponse(
                 fromob.workspaceStructureRep(),
                 toob.workspaceStructureRep(),
-          fromdtypes,
-          todtypes)
-
+                fromdtypes,
+                todtypes
+              )
           }
       }
 
-    case GoWithTopDownBondScoutCategory2(fromobrep, toobrep, bond_facets) =>
+    case GoWithTopDownBondScout2(fromobrep, toobrep, bond_facets) =>
       val fromob = objectRefs()(fromobrep.uuid)
       fromob.wString match {
         case Some(fromobString) =>
@@ -847,17 +843,83 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 
             log.debug("from object descriptor: "+from_descriptor.id)
             log.debug("to object descriptor: "+to_descriptor.id)
-            sender() ! GoWithTopDownBondScoutCategory2Response(bond_facet, from_descriptor, to_descriptor)
+            sender() ! GoWithTopDownBondScout2Response(bond_facet, from_descriptor, to_descriptor)
 
           }
 
         case None =>
           sender() ! Finished
       }
+    // codelet.java.340
+    case GoWithTopDownBondScoutDirection(directionID: String, temperature) =>
+      log.info("searching for " + directionID);
+      val i_relevance = WorkspaceFormulas.local_relevance(initial, directionID, (b: Bond) => b.direction_category)
+      val t_relevance = WorkspaceFormulas.local_relevance(target, directionID, (b: Bond) => b.direction_category)
 
+      val fromOpt = chooseObjectWith(directionID, i_relevance, t_relevance, temperature)
+      fromOpt match {
+        case None =>
+          log.debug("GoWithTopDownBondScoutWith | failed with empty from")
+          sender() ! Finished
+        case Some(fromob) =>
+          // choose neighbour
+          print("initial object: " + fromob);
+          val conditional = if (directionID=="lf") conditionalLeftNeighbor else conditionalRightNeighbor
+          val toOpt = chooseNeighbor(fromob, conditional)
+          toOpt match {
+            case None =>
+              log.debug("GoWithTopDownBondScoutCategory | object has no neighbour - fizzle")
+              sender() ! Finished
+
+            case Some(toob) =>
+              //log.debug(s"initial object chosen: $from in ${if (from.workspaceString() == initial) "initial" else "target"} string")
+              // log.debug(s"ito object: $to")
+              log.debug("to object : " + toob);
+
+              // workspace_formulas.choose_bond_facet
+              val fromdtypes = fromob.descriptions.toList.map(d => d.descriptionType)
+              val todtypes = toob.descriptions.toList.map(d => d.descriptionType)
+
+              sender() ! GoWithTopDownBondScoutWithResponse(
+                fromob.workspaceStructureRep(),
+                toob.workspaceStructureRep(),
+                fromdtypes,
+                todtypes
+              )
+          }
+      }
 
   }
 
+  val conditionalNeighbor = (from: WorkspaceObject, wo: WorkspaceObject) => (
+    (wo.left_string_position == from.right_string_position + 1) ||
+      (from.left_string_position== wo.right_string_position+1)
+    )
+  val conditionalRightNeighbor = (from: WorkspaceObject, wo: WorkspaceObject) => wo.left_string_position == (from.right_string_position+1)
+  val conditionalLeftNeighbor = (from: WorkspaceObject, wo: WorkspaceObject) => from.left_string_position == (wo.right_string_position+1)
+
+
+  def chooseObjectWith(slipNodeID: String,i_relevance: Double, t_relevance: Double, t: Double) : Option[WorkspaceObject] = {
+    val i_unhappiness = initial.intra_string_unhappiness
+    val t_unhappiness = target.intra_string_unhappiness
+
+
+    val str = workspaceStringBasedOnRelevanceAndUnhappiness(i_relevance, i_unhappiness, t_relevance, t_unhappiness)
+
+    if (str == initial) print("initial string selected");
+    else print("target string selected");
+
+    chooseObject(str.objects.toList, TemperatureAjustmentVariable.Intra_string_salience, t)
+  }
+
+  def workspaceStringBasedOnRelevanceAndUnhappiness(
+                                         i_relevance: Double,
+                                         i_unhappiness: Double,
+                                         t_relevance: Double,
+                                         t_unhappiness:Double
+                                       ): WorkspaceString = if (
+    (r.nextDouble() * (i_relevance + i_unhappiness + t_relevance + t_unhappiness)) >
+      (i_relevance + i_unhappiness)) target else initial
 
   def choose_bond_facet(fromob: WorkspaceObject, toob: WorkspaceObject) = {
     val fromdtypes = fromob.descriptions.toList.map(d => d.descriptionType)
@@ -1040,16 +1102,14 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 
     chooseObjectFromList(nonModifieds, variable)
   }
-  def chooseNeighbor(from: WorkspaceObject, temperature: Double) : Option[WorkspaceObject] = {
+  def chooseNeighbor(from: WorkspaceObject, conditional: (WorkspaceObject,WorkspaceObject) => Boolean ) : Option[WorkspaceObject] = {
     val nonModifieds = workspaceObjects().filter(wo => (
-      wo.workspaceString() == from.workspaceString()) &&
-      (
-        (wo.left_string_position == from.right_string_position + 1) ||
-        (from.left_string_position== wo.right_string_position+1)
-      )
+      wo.workspaceString() == from.workspaceString()) && conditional(from, wo)
     )
     chooseObjectFromList(nonModifieds, TemperatureAjustmentVariable.Intra_string_salience)
   }
+
+
 
   object TemperatureAjustmentVariable {
     val Intra_string_salience = "intra_string_salience"

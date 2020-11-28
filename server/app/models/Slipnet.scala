@@ -27,7 +27,8 @@ import models.Bond.BondRep
 import models.Letter.LetterSlipnetComplement
 import models.SlipNode.{SlipNodeRep, SlipnetInfo}
 import models.codelet.BottomUpDescriptionScout.SlipnetGoWithBottomUpDescriptionScoutResponse
-import models.codelet.TopDownBondScoutCategory.{SlipnetTopDownBondScoutCategory2Response, SlipnetTopDownBondScoutCategoryResponse}
+import models.codelet.TopDownBondScoutCategory.{SlipnetTopDownBondScoutCategory2Response}
+import models.codelet.TopDownBondScoutDirection.SlipnetTopDownBondScoutDirection2Response
 import models.codelet.TopDownDescriptionScout.{SlipnetGoWithTopDownDescriptionScoutResponse, SlipnetGoWithTopDownDescriptionScoutResponse2}
 
 import scala.collection.mutable.ListBuffer
@@ -46,8 +47,9 @@ object Slipnet {
                                         targetWos: List[LetterSlipnetComplement])
 
   case class BondFromTo(from: WorkspaceStructureRep, to: WorkspaceStructureRep)
-  case class SlipnetTopDownBondScoutCategory(fromdtypes: List[SlipNodeRep], todtypes: List[SlipNodeRep])
+  case class SlipnetTopDownBondScout(fromdtypes: List[SlipNodeRep], todtypes: List[SlipNodeRep])
   case class SlipnetTopDownBondScoutCategory2(bondCategory: String, from_descriptor: SlipNodeRep, to_descriptor: SlipNodeRep)
+  case class SlipnetTopDownBondScoutDirection2(bondCategory: String, from_descriptor: SlipNodeRep, to_descriptor: SlipNodeRep)
 
   case class BondFromTo2(
                           from: WorkspaceStructureRep,
@@ -68,9 +70,12 @@ object Slipnet {
                                       )*/
   case class SlipnetGoWithTopDownDescriptionScout(chosen_object: WorkspaceStructureRep, descriptionTypeID: String)
   case class GoWithTopDownDescriptionScoutResponse2(chosen_property: SlipNodeRep)
+  case class GoWithTopDownBondScout2Response(bond_facet: SlipNodeRep, from_descriptor: SlipNodeRep, to_descriptor: SlipNodeRep)
 
   case class SetSlipNodeBufferValue(slipNodeID: String, bufferValue: Double)
   case class SlipnetGoWithBottomUpDescriptionScout(slipNodeRep: SlipNodeRep, temperature: Double)
+
+  case class SlipnetTopDownBondScoutResponse(fromdtypes: List[SlipNodeRep], todtypes: List[SlipNodeRep])
 
   case class TosInfo(slipNodeRef: SlipNodeRep, tos: List[SlipNodeRep])
   case class DescriptionTypeInstanceLinksToNodeInfo(
@@ -542,7 +547,7 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
 
       sender() ! BondFromToSlipnetResponse(fromFacetSlipNodeReps, toFacetSlipNodeReps)
 
-    case SlipnetTopDownBondScoutCategory(fromdtypes, todtypes) =>
+    case SlipnetTopDownBondScout(fromdtypes, todtypes) =>
       // Partial code of WorkspaceFormulas.choose_bond_facet
       val fromob_facets = fromdtypes.map(snrep => slipNodeRefs(snrep.id)).filter(dt => bond_facets.contains(dt))
       val local_bond_facets = todtypes.map(snrep => slipNodeRefs(snrep.id)).filter(dt => fromob_facets.contains(dt))
@@ -552,7 +557,7 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
         sender() ! Finished
       } else {
         // We are in the middle of WorkspaceFormulas.choose_bond_facet but we need to go back to workspace
-        sender() ! SlipnetTopDownBondScoutCategoryResponse(
+        sender() ! SlipnetTopDownBondScoutResponse(
           fromob_facets.map(sn => sn.slipNodeRep()),
           local_bond_facets.map(sn => sn.slipNodeRep()),
         )
@@ -595,6 +600,35 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
           )
         }
       }
+    case SlipnetTopDownBondScoutDirection2(bondCategory, fromDescriptor, toDescriptor) =>
+      val from_descriptor = slipNodeRefs(fromDescriptor.id)
+      val to_descriptor = slipNodeRefs(toDescriptor.id)
+
+
+      val bond_categoryOpt = SlipnetFormulas.get_bond_category(from_descriptor,to_descriptor, identity)
+
+      // Added test  compare to JavaCopycat
+      if (bond_categoryOpt.isEmpty) {
+        print("Oups Bond category empty: Fizzle")
+        sender() ! Finished
+      } else {
+        val bc = bond_categoryOpt.get
+
+        val bond_category = if (bc == identity) sameness else bc
+
+
+          val urgency = bond_category.bond_degree_of_association();
+
+          bond_facet.buffer=100.0;
+          from_descriptor.buffer=100.0;
+          to_descriptor.buffer=100.0;
+
+          sender() ! SlipnetTopDownBondScoutDirection2Response(urgency, bond_category.slipNodeRep(),
+            left.slipNodeRep(),
+            right.slipNodeRep()
+          )
+      }
+
 
 
 
