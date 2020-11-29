@@ -3,7 +3,8 @@ package models
 import java.util.UUID
 
 import models.SlipNode.SlipnetInfo
-import models.Slipnet.{InflatedDescriptionRep, WorkspaceStructureRep}
+import models.Slipnet.InflatedDescriptionRep
+import models.WorkspaceObject.WorkspaceObjectRep
 
 // It is more a object living in Slipnet
 // w1 and w2 are going to be references, just an ID that could be then used in the workspace
@@ -11,16 +12,16 @@ import models.Slipnet.{InflatedDescriptionRep, WorkspaceStructureRep}
 // A description has description type = slipnode
 object ConceptMapping {
   case class ConceptMappingRep(description_type1SlipNodeID: String,
-                          description_type2SlipNodeID: String,
-                          descriptor1SlipNodeID: String,
-                          descriptor2SlipNodeID: String,
-                          obj1: WorkspaceStructureRep,
-                          obj2: WorkspaceStructureRep
+                               description_type2SlipNodeID: String,
+                               descriptor1SlipNodeID: String,
+                               descriptor2SlipNodeID: String,
+                               obj1: WorkspaceObjectRep,
+                               obj2: WorkspaceObjectRep
                          )
 
   def get_concept_mapping_list(
-                                w1 : WorkspaceStructureRep,
-                                w2 : WorkspaceStructureRep,
+                                w1 : WorkspaceObjectRep,
+                                w2 : WorkspaceObjectRep,
                                 ds1: List[InflatedDescriptionRep],
                                 ds2: List[InflatedDescriptionRep],
                                 slipnetInfo: SlipnetInfo
@@ -61,8 +62,8 @@ class ConceptMapping(val description_type1: SlipNode,
                      val description_type2: SlipNode,
                      val descriptor1: SlipNode,
                      val descriptor2: SlipNode,
-                     val obj1: WorkspaceStructureRep,
-                     val obj2: WorkspaceStructureRep,
+                     val obj1: WorkspaceObjectRep,
+                     val obj2: WorkspaceObjectRep,
                      slipnetInfo: SlipnetInfo
                     ) {
   import ConceptMapping.ConceptMappingRep
@@ -151,7 +152,7 @@ class ConceptMapping(val description_type1: SlipNode,
     }
   }
 
-  def distinguishing_descriptor(obj: WorkspaceStructureRep, descriptor: SlipNode): Boolean = {
+  def distinguishing_descriptor(obj: WorkspaceObjectRep, descriptor: SlipNode): Boolean = {
     if (descriptor== slipnetInfo.slipnetLetter) return false;
     if (descriptor== slipnetInfo.slipnetGroup) return false;
 

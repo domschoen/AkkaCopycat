@@ -2,11 +2,27 @@ package models
 
 import akka.actor.ActorRef
 import akka.protobuf.DescriptorProtos.DescriptorProto
+import models.Bond.BondRep
 import models.Description.DescriptionRep
+import models.Group.GroupRep
 import models.SlipNode.SlipNodeRep
-import models.Slipnet.{DescriptionTypeInstanceLinksToNodeInfo, WorkspaceStructureRep}
+import models.Slipnet.DescriptionTypeInstanceLinksToNodeInfo
+import models.WorkspaceObject.WorkspaceObjectRep
 
 import scala.collection.mutable.ListBuffer
+
+object WorkspaceObject {
+  case class WorkspaceObjectRep(
+                                 uuid: String,
+                                 descriptions: List[DescriptionRep],
+                                 letterOrGroupCompanionReps: List[WorkspaceObjectRep],
+                                 spans_string: Boolean,
+                                 groupRep: Option[GroupRep],
+                                 left_bond: Option[BondRep],
+                                 right_bond: Option[BondRep]
+                               )
+}
+
 
 abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStructure {
 
@@ -45,6 +61,15 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
   var clamp_salience = false
   var name = ""
 
+  def workspaceObjectRep(): WorkspaceObjectRep = WorkspaceObjectRep(
+    uuid,descriptionReps(),
+    letterOrGroupCompanionReps(),
+    spans_string,
+    group.map(_.groupRep()),
+    left_bond.map(_.bondRep()),
+    right_bond.map(_.bondRep())
+  )
+
 
   def middle_object(): Boolean = {
     // returns true if this is the middle object in the string
@@ -72,9 +97,6 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
 
   def descriptionReps(): List[DescriptionRep] = descriptions.toList.map(d => d.descriptionRep())
 
-  def workspaceStructureRep(): WorkspaceStructureRep = {
-    WorkspaceStructureRep(uuid,descriptionReps(),letterOrGroupCompanionReps(), spans_string, None)
-  }
 
   def add_description(descriptionType: SlipNodeRep, descriptor: Option[SlipNodeRep]) = {
     val description = new Description(this, wString, descriptionType, descriptor)
@@ -198,7 +220,7 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
       case None => List.empty[WorkspaceObject]
     }
   }
-  def letterOrGroupCompanionReps(): List[WorkspaceStructureRep] = letterOrGroupCompanions().map(_.workspaceStructureRep())
+  def letterOrGroupCompanionReps(): List[WorkspaceObjectRep] = letterOrGroupCompanions().map(_.workspaceObjectRep())
 
   def addBond(b: Bond): Unit = {
     bonds += b

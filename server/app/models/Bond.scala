@@ -5,7 +5,9 @@ import models.SlipNode.SlipNodeRep
 import models.Slipnet.SetSlipNodeBufferValue
 
 object Bond {
-  case class BondRep(from_obj: String,
+  case class BondRep(
+                      uuid: String,
+                      from_obj: String,
                      to_obj: String,
                      bondCategorySlipNodeID: String,
                      bondFacetSlipNodeID: String,
@@ -32,14 +34,18 @@ class Bond (
   val left_obj: WorkspaceObject = if (leftGreater) to_obj else from_obj
   val right_obj: WorkspaceObject = if (leftGreater) from_obj else to_obj
 
-  val direction_category: SlipNodeRep = if (leftGreater) slipnetLeft else slipnetRight
   val bidirectional = from_obj_descriptor == to_obj_descriptor // true if sameness bond
+
+  val direction_category: Option[SlipNodeRep] = if (bidirectional) None else {
+    Some(if (leftGreater) slipnetLeft else slipnetRight)
+  }
   val right = to_obj == right_obj // true if to_obj is on the right
 
   wString = from_obj.wString
 
 
   def bondRep(): BondRep = BondRep(
+    uuid,
     from_obj.uuid,
     to_obj.uuid,
     bond_category.id,
@@ -78,8 +84,9 @@ class Bond (
 
   def activateDescriptor() = {
     slipnet ! SetSlipNodeBufferValue(bond_category.id, 100.0)
-    // ??? if (direction_category.is) direction_category.buffer=100.0;
-    slipnet ! SetSlipNodeBufferValue(direction_category.id, 100.0)
+    if (direction_category.isDefined) {
+      slipnet ! SetSlipNodeBufferValue(direction_category.get.id, 100.0)
+    }
   }
 
   def correspondenceInDirection(

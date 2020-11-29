@@ -1,9 +1,22 @@
 package models
 
 import akka.actor.ActorRef
-import models.Slipnet.{GroupRep, WorkspaceStructureRep}
+import models.Bond.BondRep
+import models.Group.GroupRep
+import models.WorkspaceStructure.WorkspaceStructureRep
 
 import scala.collection.mutable.ListBuffer
+
+object Group {
+  case class GroupRep(
+                       groupCategorySlipNodeID: String,
+                       directionCategorySlipNodeID: Option[String],
+                       bondFacetSlipNodeID: String,
+                       bond_list: List[BondRep]
+                     )
+
+
+}
 
 class Group (
               wString: WorkspaceString,
@@ -16,12 +29,12 @@ class Group (
             ) extends WorkspaceObject(wString) {
   import Slipnet.SetSlipNodeBufferValue
 
-  override  def workspaceStructureRep(): WorkspaceStructureRep = {
-    val bondReps = bond_list.toList.map(b => b.bondRep())
-    val groupRep = GroupRep(groupCategorySlipNodeID, directionCategorySlipNodeID, bondFacetSlipNodeID, bondReps)
 
-    WorkspaceStructureRep(uuid,descriptionReps(),letterOrGroupCompanionReps(), spans_string, None)
-  }
+  def bondReps(): List[BondRep] = bond_list.toList.map(_.bondRep())
+
+  def groupRep(): GroupRep = GroupRep(
+    groupCategorySlipNodeID, directionCategorySlipNodeID, bondFacetSlipNodeID, bondReps)
+
 
   def single_letter_group_probability(lengthActivation: Double, temperature: Double): Double = {
     val loc = number_of_local_supporting_groups()

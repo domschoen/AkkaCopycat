@@ -263,7 +263,7 @@ object WorkspaceFormulas {
   */
 
 
-  def local_relevance(wString: WorkspaceString, categoryID: String, bondFlavor: Bond => SlipNodeRep): Double =
+  def local_relevance(wString: WorkspaceString, categoryID: Option[String], bondFlavor: Bond => Option[SlipNodeRep]): Double =
     // is a function of how many bonds in the string have this bond category
 
     if (wString.objects.size == 1) 0.0 else {
@@ -271,7 +271,7 @@ object WorkspaceFormulas {
       val bc = wString.objects.filter(wo =>
         !wo.spans_string &&
         wo.right_bond.isDefined &&
-          bondFlavor(wo.right_bond.get).id == categoryID).size
+          bondFlavor(wo.right_bond.get).map(_.id) == categoryID).size
         100.0 * bc / (oll-1.0)
     }
 

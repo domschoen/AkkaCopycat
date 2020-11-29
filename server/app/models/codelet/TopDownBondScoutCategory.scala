@@ -5,6 +5,7 @@ import akka.actor.ActorRef
 import models.Coderack.ProposeBond
 import models.SlipNode.SlipNodeRep
 import models.Workspace.{GoWithTopDownBondScout2, GoWithTopDownBondScoutCategory, GoWithTopDownBondScoutWithResponse, WorkspaceProposeBond, WorkspaceProposeBondResponse}
+import models.WorkspaceObject.WorkspaceObjectRep
 
 object TopDownBondScoutCategory {
   case class SlipnetTopDownBondScoutCategory2Response(isFromTo: Boolean,
@@ -13,6 +14,7 @@ object TopDownBondScoutCategory {
                                                       slipnetLeft: SlipNodeRep,
                                                       slipnetRight: SlipNodeRep
                                                      )
+
 }
 // Codelet.java.278
 class TopDownBondScoutCategory(urgency: Int,
@@ -27,10 +29,10 @@ class TopDownBondScoutCategory(urgency: Int,
   import TopDownBondScoutCategory.{
     SlipnetTopDownBondScoutCategory2Response
   }
-  import models.Slipnet.{SlipnetTopDownBondScoutResponse, GoWithTopDownBondScout2Response, SlipnetTopDownBondScout, SlipnetTopDownBondScoutCategory2, WorkspaceStructureRep}
+  import models.Slipnet.{SlipnetTopDownBondScoutResponse, GoWithTopDownBondScout2Response, SlipnetTopDownBondScout, SlipnetTopDownBondScoutCategory2}
 
-  var bondFrom: WorkspaceStructureRep = null
-  var bondTo: WorkspaceStructureRep = null
+  var bondFrom: WorkspaceObjectRep = null
+  var bondTo: WorkspaceObjectRep = null
   var from_descriptor: SlipNodeRep = null
   var to_descriptor: SlipNodeRep = null
   var bond_facet: SlipNodeRep = null

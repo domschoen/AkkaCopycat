@@ -20,7 +20,6 @@ import scala.concurrent.duration._
 import play.api.Play.current
 import javax.inject._
 import models.SlipNode.SlipNodeRep
-import models.Slipnet.WorkspaceStructureRep
 import models.Temperature.CheckClamped
 import models.Workspace.Initialize
 import models.codelet.CodeletType

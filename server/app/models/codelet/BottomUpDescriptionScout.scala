@@ -6,10 +6,11 @@ import models.Coderack.ProposeDescription
 import models.Workspace.{GoWithBottomUpDescriptionScout, PrepareDescription}
 import models.Description.DescriptionRep
 import models.SlipNode.SlipNodeRep
-import models.Slipnet.{SlipnetGoWithBottomUpDescriptionScout, WorkspaceStructureRep}
+import models.Slipnet.SlipnetGoWithBottomUpDescriptionScout
+import models.WorkspaceObject.WorkspaceObjectRep
 
 object BottomUpDescriptionScout{
-  case class GoWithBottomUpDescriptionScoutResponse(chosen_object: WorkspaceStructureRep, d: SlipNodeRep)
+  case class GoWithBottomUpDescriptionScoutResponse(chosen_object: WorkspaceObjectRep, d: SlipNodeRep)
   case class SlipnetGoWithBottomUpDescriptionScoutResponse(chosen_propertyRep: SlipNodeRep, description_typeRep: SlipNodeRep)
 }
 class BottomUpDescriptionScout(urgency: Int,
@@ -27,7 +28,7 @@ class BottomUpDescriptionScout(urgency: Int,
     SlipnetGoWithBottomUpDescriptionScoutResponse
   }
 
-  var chosen_object: WorkspaceStructureRep = null
+  var chosen_object: WorkspaceObjectRep = null
   var runTemperature : Double = 0.0
   var chosen_property : SlipNodeRep = null
 

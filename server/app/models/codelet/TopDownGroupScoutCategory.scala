@@ -2,22 +2,23 @@ package models.codelet
 
 import akka.event.LoggingReceive
 import akka.actor.ActorRef
+import models.Bond.BondRep
 import models.Slipnet.DirValue.DirValue
 import models.SlipNode.SlipNodeRep
-import models.Slipnet.{CompleteProposeGroupResponse, SlipnetGoWithTopDownGroupScoutCategory, SlipnetGoWithTopDownGroupScoutCategory2, WorkspaceStructureRep}
+import models.Slipnet.{CompleteProposeGroupResponse, SlipnetGoWithTopDownGroupScoutCategory, SlipnetGoWithTopDownGroupScoutCategory2, SlipnetGoWithTopDownGroupScoutCategory3}
 import models.Workspace.WorkspaceProposeGroup
+import models.WorkspaceObject.WorkspaceObjectRep
 
 object TopDownGroupScoutCategory {
   case class SlipnetGoWithTopDownGroupScoutCategoryResponse(bond_category: SlipNodeRep)
-  case class GoWithTopDownGroupScoutCategoryResponse(direction: DirValue, fromob: WorkspaceStructureRep)
+  case class GoWithTopDownGroupScoutCategoryResponse(direction: DirValue, fromob: WorkspaceObjectRep)
   case class SlipnetGoWithTopDownGroupScoutCategory2Response(direction: DirValue, lengthActivation: Double)
   case class GoWithTopDownGroupScoutCategory2Response(
-                                                       wStringFromWo: WorkspaceStructureRep,
                                                        group_category: String,
                                                        direction_category: Option[String],
                                                        bond_facet: String,
-                                                       object_list: List[WorkspaceStructureRep],
-                                                       bond_list: List[WorkspaceStructureRep]
+                                                       object_list: List[WorkspaceObjectRep],
+                                                       bond_list: List[BondRep]
                                                      )
 }
 class TopDownGroupScoutCategory(urgency: Int,
@@ -44,15 +45,14 @@ class TopDownGroupScoutCategory(urgency: Int,
     CompleteProposeGroup
   }
 
-  var fromob: WorkspaceStructureRep = null
+  var fromob: WorkspaceObjectRep = null
   var bond_category: SlipNodeRep = null
   var runTemperature: Double = 0.0
-  var wStringFromWo: WorkspaceStructureRep = null
   var group_category: String = null
   var direction_category: Option[String] = None
   var bond_facet: String = null
-  var object_list =  List.empty[WorkspaceStructureRep]
-  var bond_list = List.empty[WorkspaceStructureRep]
+  var object_list =  List.empty[WorkspaceObjectRep]
+  var bond_list = List.empty[BondRep]
   var groupUrgency = 0.0
 
   def groupID() = arguments.get.asInstanceOf[String]
@@ -77,10 +77,9 @@ class TopDownGroupScoutCategory(urgency: Int,
       slipnet ! SlipnetGoWithTopDownGroupScoutCategory2(direction)
 
     case SlipnetGoWithTopDownGroupScoutCategory2Response(direction, lengthActivation) =>
-      workspace ! GoWithTopDownGroupScoutCategory2(direction, fromob, bond_category, runTemperature, lengthActivation)
+      workspace ! GoWithTopDownGroupScoutCategory2(groupID, direction, fromob, bond_category, runTemperature, lengthActivation)
 
-    case GoWithTopDownGroupScoutCategory2Response(ws, gc, dc, bf, ol, bl) =>
-      wStringFromWo = ws
+    case GoWithTopDownGroupScoutCategory2Response(gc, dc, bf, ol, bl) =>
       group_category = gc
       direction_category = dc
       bond_facet = bf
@@ -91,7 +90,7 @@ class TopDownGroupScoutCategory(urgency: Int,
 
     case CompleteProposeGroupResponse(u) =>
       groupUrgency = u
-      workspace ! WorkspaceProposeGroup(wStringFromWo, group_category, direction_category, bond_facet, object_list, bond_list)
+      workspace ! WorkspaceProposeGroup(object_list, bond_list, group_category, direction_category, bond_facet)
 
 
     case WorkspaceProposeGroupResponse(groupID) =>

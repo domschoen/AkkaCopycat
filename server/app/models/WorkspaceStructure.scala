@@ -2,6 +2,16 @@ package models
 
 import java.util.UUID
 
+import models.WorkspaceStructure.WorkspaceStructureRep
+
+object WorkspaceStructure {
+  case class WorkspaceStructureRep(
+                                  uuid :String
+                                )
+
+}
+
+
 // Bond, Correspondence, Description, Replacement, Rule, WorkSpaceObject (Group, Letter)
 abstract class WorkspaceStructure {
   var wString = Option.empty[WorkspaceString]
@@ -13,6 +23,11 @@ abstract class WorkspaceStructure {
   var total_strength = 0.0
 
   def workspaceString() = wString
+
+
+  def workspaceStructureRep(): WorkspaceStructureRep = {
+    WorkspaceStructureRep(uuid)
+  }
 
 
   def update_strength_value() = {

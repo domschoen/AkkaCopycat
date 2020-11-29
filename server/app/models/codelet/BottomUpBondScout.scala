@@ -4,15 +4,17 @@ import akka.actor.ActorRef
 import akka.event.LoggingReceive
 import com.sun.org.apache.xerces.internal.impl.xpath.XPath.Step
 import models.SlipNode.SlipNodeRep
-import models.Slipnet.{BondFromTo, BondFromTo2, WorkspaceStructureRep}
+import models.Slipnet.{BondFromTo, BondFromTo2}
 import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
 import models.Workspace
-import models.Workspace.{WorkspaceProposeBond ,WorkspaceProposeBondResponse}
+import models.Workspace.{WorkspaceProposeBond, WorkspaceProposeBondResponse}
+import models.WorkspaceObject.WorkspaceObjectRep
+import models.WorkspaceStructure.WorkspaceStructureRep
 import models.codelet.BottomUpBondScout.BondFromToSlipnetResponse
 import models.codelet.Codelet.Finished
 
 object BottomUpBondScout {
-  case class GoWithBottomUpBondScoutResponse(from: WorkspaceStructureRep, to: WorkspaceStructureRep)
+  case class GoWithBottomUpBondScoutResponse(from: WorkspaceObjectRep, to: WorkspaceObjectRep)
   case class BondFromToSlipnetResponse(fromFacets: List[SlipNodeRep], toFacets: List[SlipNodeRep])
   case class GoWithBottomUpBondScout2Response(bondFacet: SlipNodeRep, fromDescriptor: SlipNodeRep, toDescriptor: SlipNodeRep)
   case class BondFromTo2Response(bondCategory: SlipNodeRep,
@@ -38,8 +40,8 @@ class BottomUpBondScout(urgency: Int,              workspace: ActorRef,
   }
   import models.Workspace.{GoWithBottomUpBondScout2}
 
-  var bondFrom: WorkspaceStructureRep = null
-  var bondTo: WorkspaceStructureRep = null
+  var bondFrom: WorkspaceObjectRep = null
+  var bondTo: WorkspaceObjectRep = null
   var bondFacet: SlipNodeRep = null
   var fromDescriptor: SlipNodeRep = null
   var toDescriptor: SlipNodeRep = null

@@ -4,8 +4,9 @@ import akka.event.LoggingReceive
 import akka.actor.ActorRef
 import models.Coderack.ProposeBond
 import models.SlipNode.SlipNodeRep
-import models.Slipnet.{GoWithTopDownBondScout2Response, SlipnetTopDownBondScout, SlipnetTopDownBondScoutCategory2, SlipnetTopDownBondScoutDirection2, SlipnetTopDownBondScoutResponse, WorkspaceStructureRep}
+import models.Slipnet.{GoWithTopDownBondScout2Response, SlipnetTopDownBondScout, SlipnetTopDownBondScoutCategory2, SlipnetTopDownBondScoutDirection2, SlipnetTopDownBondScoutResponse}
 import models.Workspace.{GoWithTopDownBondScout2, GoWithTopDownBondScoutDirection, GoWithTopDownBondScoutWithResponse, WorkspaceProposeBond, WorkspaceProposeBondResponse}
+import models.WorkspaceObject.WorkspaceObjectRep
 
 object TopDownBondScoutDirection {
 
@@ -30,8 +31,8 @@ class TopDownBondScoutDirection(urgency: Int,
   import TopDownBondScoutDirection.SlipnetTopDownBondScoutDirection2Response
 
   def directionID() = arguments.get.asInstanceOf[String]
-  var bondFrom: WorkspaceStructureRep = null
-  var bondTo: WorkspaceStructureRep = null
+  var bondFrom: WorkspaceObjectRep = null
+  var bondTo: WorkspaceObjectRep = null
   var from_descriptor: SlipNodeRep = null
   var to_descriptor: SlipNodeRep = null
   var bond_facet: SlipNodeRep = null

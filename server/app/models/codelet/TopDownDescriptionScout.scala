@@ -4,12 +4,13 @@ import akka.event.LoggingReceive
 import akka.actor.ActorRef
 import models.Coderack.ProposeDescription
 import models.SlipNode.SlipNodeRep
-import models.Slipnet.{DescriptionTypeInstanceLinksToNodeInfo, SlipnetGoWithTopDownDescriptionScout, WorkspaceStructureRep}
+import models.Slipnet.{DescriptionTypeInstanceLinksToNodeInfo, SlipnetGoWithTopDownDescriptionScout}
 import models.Workspace.{GoWithTopDownDescriptionScout, GoWithTopDownDescriptionScout2, PrepareDescription}
+import models.WorkspaceObject.WorkspaceObjectRep
 import models.codelet.TopDownDescriptionScout.SlipnetGoWithTopDownDescriptionScoutResponse
 
 object TopDownDescriptionScout {
-  case class GoWithTopDownDescriptionScoutResponse(chosen_object: WorkspaceStructureRep)
+  case class GoWithTopDownDescriptionScoutResponse(chosen_object: WorkspaceObjectRep)
   case class SlipnetGoWithTopDownDescriptionScoutResponse(i: DescriptionTypeInstanceLinksToNodeInfo)
   case class GoWithTopDownDescriptionScoutResponse2(chosen_property: SlipNodeRep)
   case class SlipnetGoWithTopDownDescriptionScoutResponse2(chosen_property_category: SlipNodeRep)
@@ -31,7 +32,7 @@ class TopDownDescriptionScout(urgency: Int,
   }
   import Codelet.PrepareDescriptionResponse
 
-  var chosen_object: WorkspaceStructureRep = null
+  var chosen_object: WorkspaceObjectRep = null
   var runTemperature : Double = 0.0
   var chosen_property : SlipNodeRep = null
 

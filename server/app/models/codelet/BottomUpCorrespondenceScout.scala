@@ -4,20 +4,21 @@ import akka.actor.ActorRef
 import akka.event.LoggingReceive
 import models.Coderack.ChooseAndRun
 import models.ConceptMapping.ConceptMappingRep
-import models.Slipnet.{ProposeAnyCorrespondence, WorkspaceStructureRep}
+import models.Slipnet.ProposeAnyCorrespondence
 import models.Workspace.GoWithBottomUpCorrespondenceScout2
+import models.WorkspaceObject.WorkspaceObjectRep
 import models.codelet.BottomUpCorrespondenceScout.GoWithBottomUpCorrespondenceScout2Response
 import models.codelet.Codelet.Finished
 
 object BottomUpCorrespondenceScout{
 
   case class GoWithBottomUpCorrespondenceScoutWorkspaceReponse(
-                                     obj1 :WorkspaceStructureRep,
-                                     obj2: WorkspaceStructureRep
+                                                                obj1 :WorkspaceObjectRep,
+                                                                obj2: WorkspaceObjectRep
                                    )
   case class ProposeAnyCorrespondenceSlipnetResponse(
-                                                      obj1: WorkspaceStructureRep,
-                                                      obj2: WorkspaceStructureRep,
+                                                      obj1: WorkspaceObjectRep,
+                                                      obj2: WorkspaceObjectRep,
                                                       concept_mapping_list : List[ConceptMappingRep],
                                                       flip_obj2: Boolean,
                                                       distiguishingConceptMappingSize: Int,
@@ -57,8 +58,8 @@ class BottomUpCorrespondenceScout(urgency: Int,
 
 
     case GoWithBottomUpCorrespondenceScoutWorkspaceReponse(
-      obj1 :WorkspaceStructureRep,
-      obj2: WorkspaceStructureRep
+      obj1 :WorkspaceObjectRep,
+      obj2: WorkspaceObjectRep
     ) =>
       slipnet ! ProposeAnyCorrespondence(
         obj1,

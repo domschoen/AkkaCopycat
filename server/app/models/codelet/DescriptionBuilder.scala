@@ -3,8 +3,8 @@ package models.codelet
 import akka.event.LoggingReceive
 import akka.actor.ActorRef
 import models.SlipNode.SlipNodeRep
-import models.Slipnet.WorkspaceStructureRep
 import models.Workspace.GoWithDescriptionBuilder
+import models.WorkspaceObject.WorkspaceObjectRep
 
 
 object DescriptionBuilder {
@@ -22,7 +22,7 @@ class DescriptionBuilder(urgency: Int,
   import models.Coderack.ProposeCorrespondence
   import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
 
-  var chosen_object: WorkspaceStructureRep = null
+  var chosen_object: WorkspaceObjectRep = null
   var runTemperature : Double = 0.0
   var chosen_property : SlipNodeRep = null
 
