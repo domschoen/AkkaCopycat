@@ -1,0 +1,19 @@
+    case GoWithTopDownGroupScoutCategory(groupID, bond_category, t) =>
+      val i_relevance = WorkspaceFormulas.local_relevance(initial, Some(bond_category.id), (b: Bond) => Some(b.bond_category))
+      val t_relevance = WorkspaceFormulas.local_relevance(target, Some(bond_category.id), (b: Bond) => Some(b.bond_category))
+
+      val fromOpt = chooseObjectWith(bond_category.id, i_relevance, t_relevance, t)
+      fromOpt match {
+        case None =>
+          log.debug("GoWithTopDownBondScoutWith | failed with empty from")
+          sender() ! Finished
+        case Some(fromob) =>
+          log.debug("object chosen: " + fromob);
+          if (fromob.spans_string) {
+            log.debug("chosen object spans the string. fizzle");
+            sender() ! Finished
+          } else {
+            val direction = if (fromob.leftmost) DirValue.Right else if (fromob.rightmost) DirValue.Left else DirValue.None
+            sender() ! GoWithTopDownGroupScoutCategoryResponse(direction, fromob.workspaceObjectRep())
+          }
+      }

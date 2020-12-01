@@ -12,7 +12,7 @@ import models.WorkspaceObject.WorkspaceObjectRep
 object TopDownGroupScoutCategory {
   case class SlipnetGoWithTopDownGroupScoutCategoryResponse(bond_category: SlipNodeRep)
   case class GoWithTopDownGroupScoutCategoryResponse(direction: DirValue, fromob: WorkspaceObjectRep)
-  case class SlipnetGoWithTopDownGroupScoutCategory2Response(direction: DirValue, lengthActivation: Double)
+  case class SlipnetGoWithTopDownGroupScoutCategory2Response(direction: SlipNodeRep, lengthActivation: Double)
   case class GoWithTopDownGroupScoutCategory2Response(
                                                        group_category: String,
                                                        direction_category: Option[String],
@@ -70,7 +70,7 @@ class TopDownGroupScoutCategory(urgency: Int,
 
     case SlipnetGoWithTopDownGroupScoutCategoryResponse(bc) =>
       bond_category = bc
-      workspace ! GoWithTopDownGroupScoutCategory(groupID(), bond_category, runTemperature)
+      workspace ! GoWithTopDownGroupScoutCategory(bond_category.id, "bond_category", runTemperature)
 
     case GoWithTopDownGroupScoutCategoryResponse(direction, fb) =>
       fromob = fb

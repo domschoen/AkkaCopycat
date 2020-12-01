@@ -25,7 +25,7 @@ import models.ConceptMapping.ConceptMappingRep
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.DirValue.DirValue
 import models.Slipnet.DescriptionTypeInstanceLinksToNodeInfo
-import models.Workspace.{GoWithDescriptionBuilder, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, InitializeWorkspaceStringsResponse, UpdateEverything, WorkspaceProposeBondResponse}
+import models.Workspace.{GoWithDescriptionBuilder, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, UpdateEverything, WorkspaceProposeBondResponse}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
 import models.codelet.BottomUpBondScout.{GoWithBottomUpBondScout2Response, GoWithBottomUpBondScoutResponse}
@@ -34,6 +34,7 @@ import models.codelet.Codelet.{Finished, PrepareDescriptionResponse}
 import models.codelet.DescriptionStrengthTester.GoWithDescriptionStrengthTesterResponse
 import models.codelet.TopDownDescriptionScout.GoWithTopDownDescriptionScoutResponse
 import models.codelet.TopDownGroupScoutCategory.{GoWithTopDownGroupScoutCategory2Response, GoWithTopDownGroupScoutCategoryResponse}
+import models.codelet.TopDownGroupScoutDirection.GoWithTopDownGroupScoutDirectionResponse
 import models.codelet.{Codelet, CodeletType}
 import play.api.Configuration
 import play.api.libs.concurrent.InjectedActorSupport
@@ -81,10 +82,10 @@ object Workspace {
   case class WorkspaceProposeGroupResponse(groupID: String)
 
   case object GoWithReplacementFinder
-  case class GoWithTopDownGroupScoutCategory(groupID: String, bond_category: SlipNodeRep, t: Double)
+  case class GoWithTopDownGroupScoutCategory(slipNodeID: String, bondFocus: String, t: Double)
   case class GoWithTopDownGroupScoutCategory2(
                                               groupID: String,
-                                              direction: DirValue,
+                                              direction: SlipNodeRep,
                                               fromob: WorkspaceObjectRep,
                                               bond_category: SlipNodeRep,
                                               temperature: Double,
@@ -123,6 +124,10 @@ object Workspace {
 
 
   case class GoWithBondBuilder(temperature: Double, bondID: String)
+
+  case class GoWithTopDownGroupScoutDirection(groupID: String, direction: SlipNodeRep, fromobrep: WorkspaceObjectRep, t:Double)
+  case class GoWithTopDownGroupScoutDirection2(group_category: Option[SlipNodeRep], fromob: WorkspaceObjectRep, firstBondUUID: String, bond_category: SlipNodeRep)
+  case class CommonSubProcessing(id: String, fromobUUID: String, firstBondUUID: String, bond_category: SlipNodeRep)
   case object UpdateEverything
 }
 
@@ -149,7 +154,9 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     BondWithNeighbor,
     GoWithBottomUpBondScout2,
     WorkspaceProposeBond,
-    GoWithBreaker
+    GoWithBreaker,
+    GoWithTopDownGroupScoutDirection,
+    CommonSubProcessing
   }
 
   import Slipnet._
@@ -853,24 +860,24 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       fromob.wString match {
         case Some(fromobString) =>
           val object_probs = bond_facets.map(ob => {
-            total_description_type_support(ob,fromobString)
+            total_description_type_support(ob, fromobString)
           })
           val bond_facet = bond_facets(Utilities.valueProportionalRandomIndexInValueList(object_probs))
-          print("chosen bond facet :"+bond_facet.id)
+          print("chosen bond facet :" + bond_facet.id)
           val toob = objectRefs()(toobrep.uuid)
 
           val fromDescriptorOpt = fromob.get_descriptor(bond_facet)
           val toDescriptorOpt = toob.get_descriptor(bond_facet)
 
-          if ((fromDescriptorOpt.isEmpty)||(toDescriptorOpt.isEmpty)){
+          if ((fromDescriptorOpt.isEmpty) || (toDescriptorOpt.isEmpty)) {
             log.debug("both objects do not have this descriptor: Fizzle!")
             sender() ! Finished
           } else {
             val from_descriptor = fromDescriptorOpt.get
             val to_descriptor = toDescriptorOpt.get
 
-            log.debug("from object descriptor: "+from_descriptor.id)
-            log.debug("to object descriptor: "+to_descriptor.id)
+            log.debug("from object descriptor: " + from_descriptor.id)
+            log.debug("to object descriptor: " + to_descriptor.id)
             sender() ! GoWithTopDownBondScout2Response(bond_facet, from_descriptor, to_descriptor)
 
           }
@@ -892,7 +899,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
         case Some(fromob) =>
           // choose neighbour
           print("initial object: " + fromob);
-          val conditional = if (directionID=="lf") conditionalLeftNeighbor else conditionalRightNeighbor
+          val conditional = if (directionID == "lf") conditionalLeftNeighbor else conditionalRightNeighbor
           val toOpt = chooseNeighbor(fromob, conditional)
           toOpt match {
             case None =>
@@ -916,11 +923,16 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
               )
           }
       }
-    case GoWithTopDownGroupScoutCategory(groupID, bond_category,t) =>
-      val i_relevance = WorkspaceFormulas.local_relevance(initial, Some(bond_category.id), (b: Bond) => Some(b.bond_category))
-      val t_relevance = WorkspaceFormulas.local_relevance(target, Some(bond_category.id), (b: Bond) => Some(b.bond_category))
+    case GoWithTopDownGroupScoutCategory(slipNodeID: String, bondFocus: String, t) =>
+      val bondFocusing = bondFocus match {
+        case "bond_category" => (b: Bond) => Some(b.bond_category)
+        case "direction_category" => (b: Bond) => b.direction_category
+        case _ => (b: Bond) => Some(b.bond_category)
+      }
+      val i_relevance = WorkspaceFormulas.local_relevance(initial, Some(slipNodeID), bondFocusing)
+      val t_relevance = WorkspaceFormulas.local_relevance(target, Some(slipNodeID), bondFocusing)
 
-      val fromOpt = chooseObjectWith(bond_category.id, i_relevance, t_relevance, t)
+      val fromOpt = chooseObjectWith(slipNodeID, i_relevance, t_relevance, t)
       fromOpt match {
         case None =>
           log.debug("GoWithTopDownBondScoutWith | failed with empty from")
@@ -932,7 +944,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
             sender() ! Finished
           } else {
             val direction = if (fromob.leftmost) DirValue.Right else if (fromob.rightmost) DirValue.Left else DirValue.None
-            sender() !  GoWithTopDownGroupScoutCategoryResponse(direction,fromob.workspaceObjectRep())
+            sender() ! GoWithTopDownGroupScoutCategoryResponse(direction, fromob.workspaceObjectRep())
           }
       }
     case GoWithTopDownGroupScoutCategory2(groupID: String, direction, fromobrep, bond_category, t, lengthActivation) =>
@@ -963,7 +975,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
               slipnet)
 
             val prob = g.single_letter_group_probability(lengthActivation, t);
-            if (r.nextDouble() < prob){
+            if (r.nextDouble() < prob) {
               // propose single letter group
               print("single letter group proposed");
 
@@ -988,94 +1000,98 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
           }
         }
       } else {
-        val first_bond = first_bondOpt.get
-        var direction = first_bond.direction_category;
-        var bond_facetOpt: Option[SlipNodeRep] = None
-        //var object_list = new Vector();
-        //var bond_list = new Vector();
-        // find leftmost object in group with these bonds
-        var search = true
-        while (search){
-          search = false;
-          if (fromob.left_bond.isDefined) {
-            //val left_bond = slipNodeRefs(fromob.left_bond.get.
-            val left_bond = fromob.left_bond.get
-            if (left_bond.bond_category.id == bond_category.id) {
-              if ((left_bond.direction_category.isEmpty)||
-                (left_bond.direction_category==direction)) {
-                if ((bond_facetOpt.isEmpty) || (bond_facetOpt.get == left_bond.bond_facet)) {
-                  bond_facetOpt = Some(left_bond.bond_facet)
-                  direction = left_bond.direction_category
-                  fromob = left_bond.left_obj
-                  search=true
-                }
+        self.forward(CommonSubProcessing(groupID, fromob.uuid,first_bondOpt.get.uuid, bond_category))
+      }
+
+    case CommonSubProcessing(id: String, fromobUUID, firstBondUUID, bond_category: SlipNodeRep) =>
+      var fromob = objectRefs()(fromobUUID)
+      var first_bond = structureRefs(firstBondUUID).asInstanceOf[Bond]
+      var direction = first_bond.direction_category;
+      var bond_facetOpt: Option[SlipNodeRep] = None
+      //var object_list = new Vector();
+      //var bond_list = new Vector();
+      // find leftmost object in group with these bonds
+      var search = true
+      while (search) {
+        search = false;
+        if (fromob.left_bond.isDefined) {
+          //val left_bond = slipNodeRefs(fromob.left_bond.get.
+          val left_bond = fromob.left_bond.get
+          if (left_bond.bond_category.id == bond_category.id) {
+            if ((left_bond.direction_category.isEmpty) ||
+              (left_bond.direction_category == direction)) {
+              if ((bond_facetOpt.isEmpty) || (bond_facetOpt.get == left_bond.bond_facet)) {
+                bond_facetOpt = Some(left_bond.bond_facet)
+                direction = left_bond.direction_category
+                fromob = left_bond.left_obj
+                search = true
               }
             }
           }
         }
-        // find rightmost object in group with these bonds
-        search = true
-        var toob = fromob
-        while (search){
-          search = false;
-          if (toob.right_bond.isDefined) {
-            val right_bond = toob.right_bond.get
-            if (right_bond.bond_category.id == bond_category.id){
-              if ((right_bond.direction_category.isEmpty)||
-                (right_bond.direction_category==direction)){
-                if ((bond_facetOpt.isEmpty)||(bond_facetOpt.get == right_bond.bond_facet)){
-                  bond_facetOpt = Some(right_bond.bond_facet)
-                  direction = right_bond.direction_category
-                  toob = right_bond.right_obj;
-                  search=true;}
+      }
+      // find rightmost object in group with these bonds
+      search = true
+      var toob = fromob
+      while (search) {
+        search = false;
+        if (toob.right_bond.isDefined) {
+          val right_bond = toob.right_bond.get
+          if (right_bond.bond_category.id == bond_category.id) {
+            if ((right_bond.direction_category.isEmpty) ||
+              (right_bond.direction_category == direction)) {
+              if ((bond_facetOpt.isEmpty) || (bond_facetOpt.get == right_bond.bond_facet)) {
+                bond_facetOpt = Some(right_bond.bond_facet)
+                direction = right_bond.direction_category
+                toob = right_bond.right_obj;
+                search = true;
               }
             }
           }
         }
-        if (bond_facetOpt.isEmpty) {
-          print("bond_facet is empty - fizzle");
+      }
+      if (bond_facetOpt.isEmpty) {
+        print("bond_facet is empty - fizzle");
+        sender() ! Finished
+      } else {
+        val bond_facet = bond_facetOpt.get
+        if (toob == fromob) {
+          print("no possible group - fizzle");
           sender() ! Finished
         } else {
-          val bond_facet = bond_facetOpt.get
-          if (toob == fromob) {
-            print("no possible group - fizzle");
-            sender() ! Finished
-          } else {
-            print("proposing group from "+fromob+" to "+toob);
-            var object_list = ListBuffer(fromob)
-            var bond_list = ListBuffer.empty[Bond]
-            breakable {
-              while (fromob != toob) {
-                if (fromob.right_bond.isDefined) {
-                  val right_bond = fromob.right_bond.get
-                  bond_list += right_bond
-                  object_list += right_bond.right_obj
-                  fromob = right_bond.right_obj
-                } else break
-              }
+          print("proposing group from " + fromob + " to " + toob);
+          var object_list = ListBuffer(fromob)
+          var bond_list = ListBuffer.empty[Bond]
+          breakable {
+            while (fromob != toob) {
+              if (fromob.right_bond.isDefined) {
+                val right_bond = fromob.right_bond.get
+                bond_list += right_bond
+                object_list += right_bond.right_obj
+                fromob = right_bond.right_obj
+              } else break
             }
-
-            val object_rep_list = object_list.toList.map(_.workspaceObjectRep())
-            val bond_rep_list = bond_list.toList.map(_.bondRep())
-            sender() ! GoWithTopDownGroupScoutCategory2Response(
-              groupID,
-              direction.map(_.id),
-              bond_facet.id,
-              object_rep_list,
-              bond_rep_list
-            )
           }
+
+          val object_rep_list = object_list.toList.map(_.workspaceObjectRep())
+          val bond_rep_list = bond_list.toList.map(_.bondRep())
+          sender() ! GoWithTopDownGroupScoutCategory2Response(
+            id,
+            direction.map(_.id),
+            bond_facet.id,
+            object_rep_list,
+            bond_rep_list
+          )
         }
       }
 
 
-
     case WorkspaceProposeGroup(
-      object_rep_list: List[WorkspaceStructureRep],
-      bls: List[WorkspaceStructureRep],
-      group_category: String,
-      direction_category: Option[String],
-      bond_facet: String,
+    object_rep_list: List[WorkspaceStructureRep],
+    bls: List[WorkspaceStructureRep],
+    group_category: String,
+    direction_category: Option[String],
+    bond_facet: String,
     ) =>
       val wStringFromWo = object_rep_list.head
       val wString = objectRefs()(wStringFromWo.uuid).wString.get
@@ -1083,11 +1099,51 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       val bond_list = bls.map(ol => structureRefs(ol.uuid).asInstanceOf[Bond]).to[ListBuffer]
 
 
-      val ng = new Group(wString,group_category,direction_category,bond_facet, object_list, bond_list, slipnet)
+      val ng = new Group(wString, group_category, direction_category, bond_facet, object_list, bond_list, slipnet)
       sender ! WorkspaceProposeGroupResponse(ng.uuid)
+
+    case GoWithTopDownGroupScoutDirection(directionID: String, direction: SlipNodeRep, fromobrep: WorkspaceObjectRep, t) =>
+      var fromob = objectRefs()(fromobrep.uuid)
+      var newDirection: Option[SlipNodeRep] = Some(direction)
+      var fizzle = false
+
+      val first_bondOpt = if (direction == DirValue.Left) fromob.left_bond else fromob.right_bond
+      if ((first_bondOpt.isDefined) && (first_bondOpt.get.direction_category.isEmpty)) {
+        newDirection = None
+      }
+      if ((first_bondOpt.isEmpty) || (first_bondOpt.isDefined && first_bondOpt.get.direction_category != direction)) {
+        val newFirst_bondOpt = if (direction == DirValue.Right) fromob.left_bond else fromob.right_bond
+        if ((newFirst_bondOpt.isEmpty) || (newFirst_bondOpt.get.direction_category.isEmpty)) {
+          newDirection = None
+        }
+        if ((first_bondOpt.isEmpty) || (first_bondOpt.isDefined && first_bondOpt.get.direction_category != direction)) {
+          fizzle = true
+        }
+      }
+      if (fizzle) {
+        print("no possible group: fizzle!")
+        sender() ! Finished
+      } else {
+        val bond_category = first_bondOpt.get.bond_category;
+
+        // Is this possible ?
+//        if (bond_category==null){
+//          print("no bond in the "+direction.pname+" direction was found: fizzle.");
+//          return false;
+//        }
+        sender() ! GoWithTopDownGroupScoutDirectionResponse(bond_category, first_bondOpt.get.uuid)
+      }
+
+    case GoWithTopDownGroupScoutDirection2(group_categoryOpt, fromob, firstBondUUID, bond_category: SlipNodeRep) =>
+      group_categoryOpt match {
+        case Some(group_category) =>
+          self.forward(CommonSubProcessing(group_category.id, fromob.uuid, firstBondUUID, bond_category))
+        case None =>
+          print("Look's like we can't go this way ? : fizzle!")
+          sender() ! Finished
+      }
+
   }
-
-
 
   val conditionalNeighbor = (from: WorkspaceObject, wo: WorkspaceObject) => (
     (wo.left_string_position == from.right_string_position + 1) ||

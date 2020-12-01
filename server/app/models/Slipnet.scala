@@ -33,6 +33,7 @@ import models.codelet.TopDownBondScoutCategory.SlipnetTopDownBondScoutCategory2R
 import models.codelet.TopDownBondScoutDirection.SlipnetTopDownBondScoutDirection2Response
 import models.codelet.TopDownDescriptionScout.{SlipnetGoWithTopDownDescriptionScoutResponse, SlipnetGoWithTopDownDescriptionScoutResponse2}
 import models.codelet.TopDownGroupScoutCategory.{SlipnetGoWithTopDownGroupScoutCategory2Response, SlipnetGoWithTopDownGroupScoutCategoryResponse}
+import models.codelet.TopDownGroupScoutDirection.SlipnetGoWithTopDownGroupScoutDirectionResponse
 
 import scala.collection.mutable.ListBuffer
 
@@ -99,6 +100,8 @@ object Slipnet {
   case class SlipnetGoWithTopDownGroupScoutCategory(groupID: String, temperature: Double)
   case class SlipnetGoWithTopDownGroupScoutCategory2(dir: DirValue.DirValue)
   case class SlipnetGoWithTopDownGroupScoutCategory3(bond_category: SlipNodeRep, fromOBRep: WorkspaceObjectRep)
+  case class SlipnetGoWithTopDownGroupScoutDirection(bond_category: SlipNodeRep)
+
 
   case class InflatedDescriptionRep(uuid :String, descriptionTypeSlipNode: SlipNode, descriptorSlipNode: Option[SlipNode]) {
     //def descriptionType(mapping: Map[String, SlipNode]) = mapping()
@@ -863,12 +866,12 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
     case SlipnetGoWithTopDownGroupScoutCategory2(dir) =>
       val direction = dir match {
         case DirValue.Right =>
-          DirValue.Left
+          left.slipNodeRep()
         case DirValue.Left =>
-          DirValue.Right
+          right.slipNodeRep()
         case DirValue.None =>
           val v = List(left.activation, right.activation)
-          if (Utilities.valueProportionalRandomIndexInValueList(v) == 0) DirValue.Left else DirValue.Right
+          if (Utilities.valueProportionalRandomIndexInValueList(v) == 0) left.slipNodeRep() else right.slipNodeRep()
       }
       //print("trying from "+fromob+" "+bond_category.pname+" checking to "+direction.pname+" first");
       sender() ! SlipnetGoWithTopDownGroupScoutCategory2Response(direction, length.activation)
@@ -894,8 +897,10 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
           log.debug("<c> no bond-category found")
           sender() ! Finished
       }
-    case SlipnetGoWithTopDownGroupScoutCategory3(bond_category, fromob) =>
-
+    case SlipnetGoWithTopDownGroupScoutDirection(bcRep) =>
+      val bondCat = slipNodeRefs(bcRep.id)
+      val group_cat = SlipnetFormulas.get_related_node(bondCat,group_category,identity);
+      sender() ! SlipnetGoWithTopDownGroupScoutDirectionResponse(group_cat.map(_.slipNodeRep()))
   }
 
   def update() = {
