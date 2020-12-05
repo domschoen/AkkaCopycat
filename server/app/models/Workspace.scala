@@ -1,7 +1,6 @@
 package models
 
 import java.util.UUID
-
 import akka.actor.Actor
 import akka.actor.ActorLogging
 import akka.event.LoggingReceive
@@ -19,19 +18,23 @@ import play.api.libs.functional.syntax._
 import scala.concurrent.Future
 import scala.concurrent.duration._
 import play.api.Play.current
+
 import javax.inject._
 import models.Bond.BondRep
 import models.ConceptMapping.ConceptMappingRep
+import models.Group.{FutureGroupRep, GroupRep}
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.DirValue.DirValue
 import models.Slipnet.DescriptionTypeInstanceLinksToNodeInfo
-import models.Workspace.{GoWithDescriptionBuilder, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, UpdateEverything, WorkspaceProposeBondResponse}
+import models.Workspace.{GoWithBottomUpCorrespondenceScout3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, UpdateEverything, WorkspaceProposeBondResponse}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
 import models.codelet.BottomUpBondScout.{GoWithBottomUpBondScout2Response, GoWithBottomUpBondScoutResponse}
+import models.codelet.BottomUpCorrespondenceScout.GoWithBottomUpCorrespondenceScout3Response
 import models.codelet.BottomUpDescriptionScout.GoWithBottomUpDescriptionScoutResponse
 import models.codelet.Codelet.{Finished, PrepareDescriptionResponse}
 import models.codelet.DescriptionStrengthTester.GoWithDescriptionStrengthTesterResponse
+import models.codelet.GroupScoutWholeString.{GoWithGroupScoutWholeStringResponse, GroupScoutWholeString2Response, GroupScoutWholeString3Response}
 import models.codelet.TopDownDescriptionScout.GoWithTopDownDescriptionScoutResponse
 import models.codelet.TopDownGroupScoutCategory.{GoWithTopDownGroupScoutCategory2Response, GoWithTopDownGroupScoutCategoryResponse}
 import models.codelet.TopDownGroupScoutDirection.GoWithTopDownGroupScoutDirectionResponse
@@ -101,6 +104,7 @@ object Workspace {
                                 chosen_propertyRep: SlipNodeRep,
                                 description_typeRep: SlipNodeRep)
   case class GoWithBottomUpCorrespondenceScout(temperature: Double)
+  case class GoWithBottomUpCorrespondenceScout3(fg: FutureGroupRep, obj2: WorkspaceObjectRep)
   case class GoWithBottomUpCorrespondenceScout2(
                                                  obj1: WorkspaceObjectRep,
                                                  obj2: WorkspaceObjectRep,
@@ -128,6 +132,11 @@ object Workspace {
   case class GoWithTopDownGroupScoutDirection(groupID: String, direction: SlipNodeRep, fromobrep: WorkspaceObjectRep, t:Double)
   case class GoWithTopDownGroupScoutDirection2(group_category: Option[SlipNodeRep], fromob: WorkspaceObjectRep, firstBondUUID: String, bond_category: SlipNodeRep)
   case class CommonSubProcessing(id: String, fromobUUID: String, firstBondUUID: String, bond_category: SlipNodeRep)
+
+  case class GoWithGroupScoutWholeString(t: Double)
+  case class GoWithGroupScoutWholeString2(left_most: WorkspaceObjectRep,slipnetLeft: SlipNodeRep,
+                                          slipnetRight: SlipNodeRep)
+
   case object UpdateEverything
 }
 
@@ -156,7 +165,8 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     WorkspaceProposeBond,
     GoWithBreaker,
     GoWithTopDownGroupScoutDirection,
-    CommonSubProcessing
+    CommonSubProcessing,
+    GoWithGroupScoutWholeString2
   }
 
   import Slipnet._
@@ -636,6 +646,23 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
         distiguishingConceptMappingTotalStrength
       )
 
+      // flipped case
+    case GoWithBottomUpCorrespondenceScout3(futureGroup: FutureGroupRep, obj2) =>
+      val obj2Group = objectRefs()(obj2.uuid).asInstanceOf[Group]
+      val bond_list = futureGroup.bond_list.map(bondRep => structureRefs(bondRep.uuid).asInstanceOf[Bond]).to[ListBuffer]
+
+      val newObj2 =
+        new Group(
+          obj2Group.wString.get,
+          futureGroup.groupCategorySlipNodeID,
+          futureGroup.directionCategorySlipNodeID,
+          futureGroup.bondFacetSlipNodeID,
+          obj2Group.object_list,
+          bond_list,
+          slipnet
+        )
+
+      sender() ! GoWithBottomUpCorrespondenceScout3Response(newObj2.workspaceObjectRep())
 
     // codelet.java.880
     case GoWithGroupBuilder(temperature, groupID) =>
@@ -1121,7 +1148,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
         }
       }
       if (fizzle) {
-        print("no possible group: fizzle!")
+        log.debug("no possible group: fizzle!")
         sender() ! Finished
       } else {
         val bond_category = first_bondOpt.get.bond_category;
@@ -1143,7 +1170,82 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
           sender() ! Finished
       }
 
+    case GoWithGroupScoutWholeString(t: Double) =>
+      log.debug("about to choose string");
+      val wString = if (r.nextDouble() > 0.5) target else initial
+      val wStringText = if (wString == initial) "initial" else "target"
+      log.debug(s"${wStringText} string selected")
+
+      // find leftmost object & the highest group to which it belongs
+      val leftmost = wString.objects.find(w => w.leftmost).get
+
+      // Codelet.java.805
+      sender() ! GoWithGroupScoutWholeStringResponse(leftmost.workspaceObjectRep())
+
+      // leftmost.group.map(_.groupRep())
+    //   Codelet.java.807
+    case GoWithGroupScoutWholeString2(left_mostRep, slipnetLeft, slipnetRight) =>
+      var leftmost = objectRefs()(left_mostRep.uuid)
+      if (leftmost.spans_string){
+        // the object already spans the string - propose this object
+        val g = leftmost.asInstanceOf[Group]
+
+        print("selected object already spans string: propose");
+
+        sender() ! GroupScoutWholeString2Response(
+          g.groupCategorySlipNodeID,
+          g.directionCategorySlipNodeID,
+          g.bondFacetSlipNodeID,
+          g.object_list.toList.map(_.workspaceObjectRep()),
+          g.bond_list.toList.map(_.bondRep())
+        )
+      } else {
+        var bond_list = ListBuffer.empty[Bond]
+        var object_list = ListBuffer(leftmost)
+
+        while (leftmost.right_bond.isDefined){
+          val right_bond = leftmost.right_bond.get
+          bond_list += right_bond
+          leftmost = right_bond.right_obj
+          object_list += leftmost
+        }
+        if (!(leftmost.rightmost)){
+          print("no spanning bonds - fizzle");
+          sender() ! Finished
+        } else {
+          // choose a random bond from list
+          val posRaw = (r.nextDouble() * bond_list.size).toInt
+          val pos = if (posRaw >= bond_list.size) 0 else posRaw
+
+          val chosen_bond = bond_list(pos)
+          val bond_category = chosen_bond.bond_category
+          val direction_category = chosen_bond.direction_category;
+          val bond_facet = chosen_bond.bond_facet;
+          val bond_listOpt = WorkspaceFormulas.possible_group_bond_list(bond_category,
+            direction_category, bond_facet, bond_list.toList, slipnetLeft, slipnetRight, slipnet)
+          if (bond_listOpt.isEmpty){
+            print("no possible group - fizzle");
+            sender() ! Finished
+          } else {
+            print("proposing "+bond_category.id+" group");
+
+            sender() ! GroupScoutWholeString3Response(
+              bond_category.id,
+              direction_category.map(_.id),
+              bond_facet.id,
+              object_list.toList.map(_.workspaceObjectRep()),
+              bond_list.toList.map(_.bondRep())
+            )
+          }
+
+
+        }
+
+      }
+
+
   }
+
 
   val conditionalNeighbor = (from: WorkspaceObject, wo: WorkspaceObject) => (
     (wo.left_string_position == from.right_string_position + 1) ||

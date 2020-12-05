@@ -3,12 +3,21 @@ package models
 import akka.actor.ActorRef
 import models.Bond.BondRep
 import models.Group.GroupRep
+import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
 
 import scala.collection.mutable.ListBuffer
 
 object Group {
   case class GroupRep(
+                       workspaceObjectRep: WorkspaceObjectRep,
+                       groupCategorySlipNodeID: String,
+                       directionCategorySlipNodeID: Option[String],
+                       bondFacetSlipNodeID: String,
+                       bond_list: List[BondRep]
+                     )
+
+  case class FutureGroupRep(
                        groupCategorySlipNodeID: String,
                        directionCategorySlipNodeID: Option[String],
                        bondFacetSlipNodeID: String,
@@ -33,6 +42,7 @@ class Group (
   def bondReps(): List[BondRep] = bond_list.toList.map(_.bondRep())
 
   def groupRep(): GroupRep = GroupRep(
+    workspaceObjectRep(),
     groupCategorySlipNodeID, directionCategorySlipNodeID, bondFacetSlipNodeID, bondReps)
 
 

@@ -10,6 +10,9 @@ import models.Workspace.{GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScou
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.codelet.TopDownGroupScoutCategory.{GoWithTopDownGroupScoutCategory2Response, GoWithTopDownGroupScoutCategoryResponse, SlipnetGoWithTopDownGroupScoutCategory2Response}
 
+
+// Codelet.java.667
+
 object TopDownGroupScoutDirection {
   case class GoWithTopDownGroupScoutDirectionResponse(bond_category: SlipNodeRep, first_bond: String)
   case class SlipnetGoWithTopDownGroupScoutDirectionResponse(group_category: Option[SlipNodeRep])

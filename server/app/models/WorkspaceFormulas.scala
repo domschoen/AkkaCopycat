@@ -1,5 +1,6 @@
 package models
 
+import akka.actor.ActorRef
 import models.SlipNode.SlipNodeRep
 
 object WorkspaceFormulas {
@@ -422,29 +423,51 @@ object WorkspaceFormulas {
     }
     return uo;
   }
-
-  def possible_group_bond_list(slipnode bond_cat,
-    slipnode direction, slipnode bond_facet, Vector bond_list): List[Bond] = {
-    Vector new_list = new Vector();
-    for (int x=0; x<bond_list.size(); x++){
-      bond b = (bond)bond_list.elementAt(x);
-      if ((b.bond_category==bond_cat)&&
-        (b.direction_category==direction)) new_list.addElement(b);
-      else {
+*/
+  val SlipnetSamenessID = "sm"
+  def possible_group_bond_list(
+                                bond_cat: SlipNodeRep,
+                                direction: Option[SlipNodeRep],
+                                bond_facet: SlipNodeRep,
+                                bond_list: List[Bond],
+                                slipnetLeft: SlipNodeRep,
+                                slipnetRight: SlipNodeRep,
+                                slipnet: ActorRef): Option[List[Bond]] = {
+    val new_list = bond_list.map(b => {
+      if ((b.bond_category==bond_cat) && (b.direction_category==direction)) {
+        Some(b)
+      } else {
         // a modified bond might be made
-        if (bond_cat==slipnet.sameness) return null; // a different bond
-        // cannot be made here
-        if ((b.bond_category==bond_cat)||
-          (b.direction_category==direction)) return null; // a different bond
-        // cannot be made here
-        if (b.bond_category==slipnet.sameness) return null;
-        b = new bond(b.to_obj,b.from_obj,bond_cat,bond_facet,
-          b.to_obj_descriptor, b.from_obj_descriptor);
-        new_list.addElement(b);
+        if (bond_cat.id == SlipnetSamenessID) {
+          // a different bond cannot be made here
+          None
+        } else {
+          if ((b.bond_category==bond_cat) || (b.direction_category==direction)) {
+            // a different bond cannot be made here
+            None
+          }  else {
+            if (b.bond_category.id == SlipnetSamenessID) {
+              None
+            } else {
+              val newB = new Bond(
+                b.to_obj,
+                b.from_obj,
+                bond_cat,
+                bond_facet,
+                b.to_obj_descriptor,
+                b.from_obj_descriptor,
+                slipnetLeft,
+                slipnetRight,
+                slipnet
+              )
+              Some(newB)
+            }
+          }
+        }
       }
-    }
-
-    return new_list;
-  }*/
+    })
+    val new_listFlatten = new_list.flatten
+    if (new_listFlatten.size < bond_list.size) None else Some(new_listFlatten)
+  }
 
 }

@@ -17,18 +17,20 @@ import play.api.libs.functional.syntax._
 import scala.concurrent.Future
 import scala.concurrent.duration._
 import play.api.Play.current
+
 import javax.inject._
 import models.Workspace.{GoWithBottomUpCorrespondenceScout2, InitializeWorkspaceStringsResponse}
-import models.codelet.BottomUpCorrespondenceScout.ProposeAnyCorrespondenceSlipnetResponse
+import models.codelet.BottomUpCorrespondenceScout.{ProposeAnyCorrespondenceSlipnetResponse, ProposeAnyCorrespondenceSlipnetResponse2}
 import play.api.Configuration
 import play.api.libs.concurrent.InjectedActorSupport
 import Description.DescriptionRep
 import models.Bond.BondRep
-import models.Group.GroupRep
+import models.Group.{FutureGroupRep, GroupRep}
 import models.Letter.LetterSlipnetComplement
 import models.SlipNode.{SlipNodeRep, SlipnetInfo}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.codelet.BottomUpDescriptionScout.SlipnetGoWithBottomUpDescriptionScoutResponse
+import models.codelet.GroupScoutWholeString.{GetLeftAndRightResponse, SlipnetGoWithGroupScoutWholeStringResponse}
 import models.codelet.TopDownBondScoutCategory.SlipnetTopDownBondScoutCategory2Response
 import models.codelet.TopDownBondScoutDirection.SlipnetTopDownBondScoutDirection2Response
 import models.codelet.TopDownDescriptionScout.{SlipnetGoWithTopDownDescriptionScoutResponse, SlipnetGoWithTopDownDescriptionScoutResponse2}
@@ -67,11 +69,12 @@ object Slipnet {
                           fromDescriptor: SlipNodeRep,
                           toDescriptor: SlipNodeRep)
 
-  case class ProposeAnyCorrespondence(
+  case class SlipnetBottomUpCorrespondenceScout(
                                        obj1 :WorkspaceObjectRep,
                                        obj2: WorkspaceObjectRep,
                                        temperature: Double
                                      )
+  case class SlipnetBottomUpCorrespondenceScout2(obj1: WorkspaceObjectRep, obj2: WorkspaceObjectRep)
   /*case class ProposeAnyCorrespondence2(
                                        obj1 :WorkspaceStructureRep,
                                        obj2: WorkspaceStructureRep,
@@ -102,11 +105,15 @@ object Slipnet {
   case class SlipnetGoWithTopDownGroupScoutCategory3(bond_category: SlipNodeRep, fromOBRep: WorkspaceObjectRep)
   case class SlipnetGoWithTopDownGroupScoutDirection(bond_category: SlipNodeRep)
 
+  case class SlipnetGoWithGroupScoutWholeString(bc: String)
 
   case class InflatedDescriptionRep(uuid :String, descriptionTypeSlipNode: SlipNode, descriptorSlipNode: Option[SlipNode]) {
     //def descriptionType(mapping: Map[String, SlipNode]) = mapping()
   }
 
+  case class GetRelatedNodeOf(slipnodeID: String, lookingAtSlipNodeID: String)
+  case class GetRelatedNodeOfResponse(related: Option[SlipNodeRep])
+  case object GetLeftAndRight
 
 
   object RelationType {
@@ -461,7 +468,9 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
     }
     InflatedDescriptionRep(rep.uuid, descriptionTypeSlipNode, descriptorSlipNode)
   }
-  def groupFlipped_version(obj: WorkspaceObjectRep): Option[WorkspaceObjectRep] = {
+
+
+  def groupFlipped_version(obj: WorkspaceObjectRep): Option[FutureGroupRep] = {
     val groupRep = obj.groupRep.get
     val bond_list = groupRep.bond_list
 
@@ -477,18 +486,18 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
         case None => None
       }
 
-      val flippedGroup = GroupRep(
+      val flippedGroup = FutureGroupRep(
         relatedGroup_category.id(),
         relatedDirection_categoryID,
         groupRep.bondFacetSlipNodeID, new_bond_list)
 
-      Some(obj.copy(groupRep = Some(flippedGroup)))
+      Some(flippedGroup)
 
     } else {
       None
     }
-
   }
+
 
 
   def bondFlipped_version(bond: BondRep): BondRep = {
@@ -674,21 +683,11 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
       }
 
     // codelet.java.1233
-    case ProposeAnyCorrespondence(obj1, obj2, temperature) =>
+    case SlipnetBottomUpCorrespondenceScout(obj1, obj2, temperature) =>
       val obj1Descriptions = obj1.descriptions.map(inflatedDescriptionRep)
       val obj2Descriptions = obj2.descriptions.map(inflatedDescriptionRep)
       val obj1Relevant_descriptions = relevant_descriptions(obj1Descriptions)
       val obj2Relevant_descriptions = relevant_descriptions(obj2Descriptions)
-
-      val slipnetInfo = SlipnetInfo(
-        opposite,
-        sameness,
-        identity,
-        letter,
-        group,
-        whole,
-        slipnet_numbers.toList
-      )
 
       // get the posible concept-mappings
       val concept_mapping_list = ConceptMapping.get_concept_mapping_list(
@@ -740,55 +739,80 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
               allOppositeMappings &&
               opposite.activation != 100.0
 
-            val newObj2Opt = if (flip_obj2) groupFlipped_version(obj2) else Some(obj2)
-            newObj2Opt match {
-              case None =>
-                print("no groupFlipped_version found: fizzle");
+            if (flip_obj2) {
+              val futureGroupOpt = groupFlipped_version(obj2)
+              if (futureGroupOpt.isEmpty) {
                 sender() ! Finished
+              } else {
+                val futureGroup = futureGroupOpt.get
+                sender() ! ProposeAnyCorrespondenceSlipnetResponse(futureGroup)
 
-              case Some(newObj2) =>
-                val newconcept_mapping_list = if (flip_obj2) {
-                  val newObj2Descriptions = newObj2.descriptions.map(inflatedDescriptionRep)
-                  val newObj2Relevant_descriptions = relevant_descriptions(newObj2Descriptions)
+              }
+            } else {
+              println("Proposing correspondence with concept mappings:");
+              for(cm <- concept_mapping_list) {
+                println(cm.toString())
+              }
 
-                  ConceptMapping.get_concept_mapping_list(
-                    obj1, newObj2,
-                    obj2Relevant_descriptions, newObj2Relevant_descriptions, slipnetInfo);
-                } else concept_mapping_list
+              // Coderack.java.323 (propose_correspondence)
+              activateConceptMappingList(concept_mapping_list)
 
-                println("Proposing correspondence with concept mappings:");
-                for(cm <- newconcept_mapping_list) {
-                  println(cm.toString())
-                }
+              val dcm = distinguishing_concept_mappings(concept_mapping_list)
+              val totalStrength = dcm.map(_.strength()).sum
 
-                // Coderack.java.323 (propose_correspondence)
-
-                // activate some descriptions
-                for (cm <- newconcept_mapping_list) {
-                  cm.description_type1.buffer=100.0
-                  cm.descriptor1.buffer=100.0
-                  cm.description_type2.buffer=100.0
-                  cm.descriptor2.buffer=100.0
-                }
-
-                val dcm = distinguishing_concept_mappings(newconcept_mapping_list)
-                val totalStrength = dcm.map(_.strength()).sum
-
-                val conceptMappingReps = concept_mapping_list.map(cm => cm.conceptMappingRep())
-                sender() ! ProposeAnyCorrespondenceSlipnetResponse(
-                  obj1,
-                  newObj2,
-                  conceptMappingReps,
-                  flip_obj2,
-                  dcm.size,
-                  totalStrength
-                )
-
+              val conceptMappingReps = concept_mapping_list.map(cm => cm.conceptMappingRep())
+              sender() ! ProposeAnyCorrespondenceSlipnetResponse2(
+                obj1,
+                obj2,
+                conceptMappingReps,
+                true,
+                dcm.size,
+                totalStrength
+              )
             }
-
           }
         }
       }
+
+    case SlipnetBottomUpCorrespondenceScout2(obj1, obj2) =>
+      val obj1Descriptions = obj1.descriptions.map(inflatedDescriptionRep)
+      val obj2Descriptions = obj2.descriptions.map(inflatedDescriptionRep)
+      val obj1Relevant_descriptions = relevant_descriptions(obj1Descriptions)
+      val obj2Relevant_descriptions = relevant_descriptions(obj2Descriptions)
+
+      val newObj2Descriptions = obj2.descriptions.map(inflatedDescriptionRep)
+      val newObj2Relevant_descriptions = relevant_descriptions(newObj2Descriptions)
+
+      val concept_mapping_list = ConceptMapping.get_concept_mapping_list(
+        obj1, obj2,
+        obj1Relevant_descriptions, obj2Relevant_descriptions, slipnetInfo);
+
+      println("Proposing correspondence with concept mappings:");
+      for(cm <- concept_mapping_list) {
+        println(cm.toString())
+      }
+
+      // Coderack.java.323 (propose_correspondence)
+      activateConceptMappingList(concept_mapping_list)
+
+      val dcm = distinguishing_concept_mappings(concept_mapping_list)
+      val totalStrength = dcm.map(_.strength()).sum
+
+      val conceptMappingReps = concept_mapping_list.map(cm => cm.conceptMappingRep())
+      sender() ! ProposeAnyCorrespondenceSlipnetResponse2(
+        obj1,
+        obj2,
+        conceptMappingReps,
+        true,
+        dcm.size,
+        totalStrength
+      )
+
+
+
+
+
+
 
     /*case ProposeAnyCorrespondence2(obj1, obj2, codelet) =>
       val obj1Descriptions = obj1.descriptions.map(inflatedDescriptionRep)
@@ -897,11 +921,45 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
           log.debug("<c> no bond-category found")
           sender() ! Finished
       }
-    case SlipnetGoWithTopDownGroupScoutDirection(bcRep) =>
-      val bondCat = slipNodeRefs(bcRep.id)
-      val group_cat = SlipnetFormulas.get_related_node(bondCat,group_category,identity);
-      sender() ! SlipnetGoWithTopDownGroupScoutDirectionResponse(group_cat.map(_.slipNodeRep()))
+    case GetRelatedNodeOf(slipnodeID: String, lookingAtSlipNodeID: String) =>
+      val fromSlipNode = slipNodeRefs(slipnodeID)
+      val slipNode = slipNodeRefs(lookingAtSlipNodeID)
+      val related = SlipnetFormulas.get_related_node(fromSlipNode,slipNode,identity);
+      sender() ! GetRelatedNodeOfResponse(related.map(_.slipNodeRep()))
+
+    case SlipnetGoWithGroupScoutWholeString(bc) =>
+      val bond_cat = slipNodeRefs(bc)
+
+      val related = SlipnetFormulas.get_related_node(bond_cat,group_category, identity)
+      sender() ! SlipnetGoWithGroupScoutWholeStringResponse(related.map(_.slipNodeRep()))
+
+    case GetLeftAndRight =>
+      sender() ! GetLeftAndRightResponse(left.slipNodeRep(), right.slipNodeRep())
   }
+
+
+  def activateConceptMappingList(concept_mapping_list: List[ConceptMapping]): Unit = {
+    // activate some descriptions
+    for (cm <- concept_mapping_list) {
+      cm.description_type1.buffer=100.0
+      cm.descriptor1.buffer=100.0
+      cm.description_type2.buffer=100.0
+      cm.descriptor2.buffer=100.0
+    }
+  }
+
+  def slipnetInfo() = SlipnetInfo(
+    opposite,
+    sameness,
+    identity,
+    letter,
+    group,
+    whole,
+    slipnet_numbers.toList
+  )
+
+
+
 
   def update() = {
     // this procedure updates the slipnet

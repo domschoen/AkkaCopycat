@@ -20,6 +20,7 @@ object TopDownGroupScoutCategory {
                                                        object_list: List[WorkspaceObjectRep],
                                                        bond_list: List[BondRep]
                                                      )
+
 }
 class TopDownGroupScoutCategory(urgency: Int,
                                 workspace: ActorRef,

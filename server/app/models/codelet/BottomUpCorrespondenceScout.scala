@@ -4,10 +4,10 @@ import akka.actor.ActorRef
 import akka.event.LoggingReceive
 import models.Coderack.ChooseAndRun
 import models.ConceptMapping.ConceptMappingRep
-import models.Slipnet.ProposeAnyCorrespondence
-import models.Workspace.GoWithBottomUpCorrespondenceScout2
+import models.Group.FutureGroupRep
+import models.Workspace.{GoWithBottomUpCorrespondenceScout2, GoWithBottomUpCorrespondenceScout3}
 import models.WorkspaceObject.WorkspaceObjectRep
-import models.codelet.BottomUpCorrespondenceScout.GoWithBottomUpCorrespondenceScout2Response
+import models.codelet.BottomUpCorrespondenceScout.{GoWithBottomUpCorrespondenceScout2Response, GoWithBottomUpCorrespondenceScout3Response, ProposeAnyCorrespondenceSlipnetResponse2}
 import models.codelet.Codelet.Finished
 
 object BottomUpCorrespondenceScout{
@@ -16,7 +16,10 @@ object BottomUpCorrespondenceScout{
                                                                 obj1 :WorkspaceObjectRep,
                                                                 obj2: WorkspaceObjectRep
                                    )
-  case class ProposeAnyCorrespondenceSlipnetResponse(
+  case class GoWithBottomUpCorrespondenceScout3Response(newObj2: WorkspaceObjectRep)
+  case class ProposeAnyCorrespondenceSlipnetResponse(fg: FutureGroupRep)
+
+  case class ProposeAnyCorrespondenceSlipnetResponse2(
                                                       obj1: WorkspaceObjectRep,
                                                       obj2: WorkspaceObjectRep,
                                                       concept_mapping_list : List[ConceptMappingRep],
@@ -46,6 +49,13 @@ class BottomUpCorrespondenceScout(urgency: Int,
   import BottomUpCorrespondenceScout.GoWithBottomUpCorrespondenceScoutWorkspaceReponse
   import BottomUpCorrespondenceScout.ProposeAnyCorrespondenceSlipnetResponse
   import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
+  import models.Slipnet.{
+    SlipnetBottomUpCorrespondenceScout,
+    SlipnetBottomUpCorrespondenceScout2
+  }
+  var obj1 :WorkspaceObjectRep = null
+  var obj2: WorkspaceObjectRep = null
+  var flip_obj2: Boolean = false
 
   def receive = LoggingReceive {
     // to the browser
@@ -57,17 +67,24 @@ class BottomUpCorrespondenceScout(urgency: Int,
       workspace ! GoWithBottomUpCorrespondenceScout(runTemperature)
 
 
-    case GoWithBottomUpCorrespondenceScoutWorkspaceReponse(
-      obj1 :WorkspaceObjectRep,
-      obj2: WorkspaceObjectRep
-    ) =>
-      slipnet ! ProposeAnyCorrespondence(
+    case GoWithBottomUpCorrespondenceScoutWorkspaceReponse(o1 :WorkspaceObjectRep, o2: WorkspaceObjectRep) =>
+      obj1 = o1
+      obj2 = o2
+      slipnet ! SlipnetBottomUpCorrespondenceScout(
         obj1,
         obj2,
         t
       )
 
-    case ProposeAnyCorrespondenceSlipnetResponse(
+      // flipped case
+    case ProposeAnyCorrespondenceSlipnetResponse(fg) =>
+      workspace ! GoWithBottomUpCorrespondenceScout3(fg, obj2)
+
+      // flipped case
+    case GoWithBottomUpCorrespondenceScout3Response(newObj2) =>
+      slipnet ! SlipnetBottomUpCorrespondenceScout2(obj1, newObj2)
+
+    case ProposeAnyCorrespondenceSlipnetResponse2(
                                                      obj1,
                                                      obj2,
                                                      concept_mapping_list,
