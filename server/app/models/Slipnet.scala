@@ -31,6 +31,7 @@ import models.SlipNode.{SlipNodeRep, SlipnetInfo}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.codelet.BottomUpDescriptionScout.SlipnetGoWithBottomUpDescriptionScoutResponse
 import models.codelet.GroupScoutWholeString.{GetLeftAndRightResponse, SlipnetGoWithGroupScoutWholeStringResponse}
+import models.codelet.GroupStrengthTester.SlipnetGoWithGroupStrengthTesterResponse
 import models.codelet.TopDownBondScoutCategory.SlipnetTopDownBondScoutCategory2Response
 import models.codelet.TopDownBondScoutDirection.SlipnetTopDownBondScoutDirection2Response
 import models.codelet.TopDownDescriptionScout.{SlipnetGoWithTopDownDescriptionScoutResponse, SlipnetGoWithTopDownDescriptionScoutResponse2}
@@ -114,7 +115,7 @@ object Slipnet {
   case class GetRelatedNodeOf(slipnodeID: String, lookingAtSlipNodeID: String)
   case class GetRelatedNodeOfResponse(related: Option[SlipNodeRep])
   case object GetLeftAndRight
-
+  case class SlipnetGoWithGroupStrengthTester(g: GroupRep, strength: Double)
 
   object RelationType {
     val Sameness = "Sameness"
@@ -935,6 +936,20 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
 
     case GetLeftAndRight =>
       sender() ! GetLeftAndRightResponse(left.slipNodeRep(), right.slipNodeRep())
+
+
+    case SlipnetGoWithGroupStrengthTester(g: GroupRep, strength: Double) =>
+      val group_cat = slipNodeRefs(g.groupCategorySlipNodeID)
+      val related = SlipnetFormulas.get_related_node(group_cat,group_category, identity)
+      if (related.isDefined)
+        related.get.buffer = 100.0
+      if (g.directionCategorySlipNodeID.isDefined) {
+        val direction_cat = slipNodeRefs(g.directionCategorySlipNodeID.get)
+        direction_cat.buffer = 100.0
+      }
+      // GUI workspace.Workspace_Comments.text+=": succeeded ";
+      // GUI if (!coderack.remove_terraced_scan) workspace.WorkspaceArea.AddObject(g,2);
+      sender() ! SlipnetGoWithGroupStrengthTesterResponse
   }
 
 

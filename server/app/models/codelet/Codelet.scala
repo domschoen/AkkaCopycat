@@ -9,6 +9,7 @@ object CodeletType {
 
   case object BondBuilder extends CodeletType
   case object DescriptionBuilder extends CodeletType
+  case object GroupBuilder extends CodeletType
   case object BottomUpBondScout extends CodeletType
   case object ReplacementFinder extends CodeletType
   case object BottomUpCorrespondenceScout extends CodeletType
@@ -52,6 +53,7 @@ object Codelet {
       case CodeletType.DescriptionStrengthTester => new DescriptionStrengthTester(urgency,  workspace, slipnet, temperature, arguments)
       case CodeletType.BondStrengthTester => new BondStrengthTester(urgency,  workspace, slipnet, temperature, arguments)
       case CodeletType.GroupStrengthTester => new GroupStrengthTester(urgency,  workspace, slipnet, temperature, arguments)
+      case CodeletType.GroupBuilder => new GroupBuilder(urgency,  workspace, slipnet, temperature, arguments)
 
 
     }

@@ -1,0 +1,28 @@
+      if (name.equals("group-strength-tester")){
+         // update strength value of the group
+         group g = (group)arguments.elementAt(0);
+         String st = g.toString();
+         if (g.string==workspace.initial) st+=" in initial string";
+         else st+=" in target string";
+         print("evaluating  "+st);
+         g.update_strength_value();
+         double strength = g.total_strength;
+         double prob = workspace_formulas.temperature_adjusted_probability(strength/100.0);
+         print("strength = "+strength+", adjusted prob.= "+prob);
+         if (random.rnd()>prob){
+            print("not strong enough: fizzled!");
+            return false; 
+         }
+         // it is strong enough - post builder  & activate nodes
+            (slipnet_formulas.get_related_node(g.group_category,slipnet.bond_category)).buffer=100.0;
+            if (g.direction_category!=null) g.direction_category.buffer=100.0;
+            workspace.Workspace_Comments.text+=": succeeded ";
+          if (!coderack.remove_terraced_scan) workspace.WorkspaceArea.AddObject(g,2);
+          codelet nc = new codelet("group-builder",coderack.get_urgency_bin(strength));
+          nc.arguments = arguments;
+          nc.Pressure_Type = this.Pressure_Type;
+          if (coderack.remove_terraced_scan) nc.run();
+          else coderack.Post(nc);
+          print("posting group builder codelet");
+
+      }

@@ -1,0 +1,23 @@
+     else if (name.equals("description-strength-tester")){
+         description d = (description)arguments.elementAt(0);
+         d.descriptor.buffer=100.0;
+         d.update_strength_value();
+
+         double strength = d.total_strength;
+         print(d.toString());
+         double prob = workspace_formulas.temperature_adjusted_probability(strength/100.0);
+         print("description strength = "+strength);
+         if (!workspace_formulas.flip_coin(prob)){
+            print("not strong enough: Fizzle!");
+            return false; 
+         }
+         // it is strong enough - post builder  & activate nodes
+       
+          print("succeeded: posting description-builder");
+          codelet nc = new codelet("description-builder",coderack.get_urgency_bin(strength));
+          nc.arguments = arguments;
+          nc.Pressure_Type = this.Pressure_Type;
+          if (coderack.remove_terraced_scan) nc.run();
+          else coderack.Post(nc);
+          return true;
+     }

@@ -1,0 +1,29 @@
+      if (name.equals("bond-strength-tester")){
+         bond b = (bond)arguments.elementAt(0);
+         b.update_strength_value();
+         double strength = b.total_strength;
+         String st = "bond = "+b;
+         if (b.left_obj.string==workspace.initial)
+            st+=" in initial string";
+            else st+=" in target string";
+         print(st);
+         double prob = workspace_formulas.temperature_adjusted_probability(strength/100.0);
+         print("bond strength = "+strength);
+         if (!workspace_formulas.flip_coin(prob)){
+            print("not strong enough: Fizzle!");
+            return false; 
+         }
+         // it is strong enough - post builder  & activate nodes
+            b.bond_facet.buffer=100.0;
+            b.from_obj_descriptor.buffer=100.0;
+            b.to_obj_descriptor.buffer=100.0;
+          print("succeeded: posting bond-builder");
+          codelet nc = new codelet("bond-builder",coderack.get_urgency_bin(strength));
+          nc.arguments = arguments;
+          nc.Pressure_Type = this.Pressure_Type;
+
+          if (coderack.remove_terraced_scan) nc.run();
+          else  { coderack.Post(nc);
+          workspace.WorkspaceArea.AddObject(b,2); }
+
+      }

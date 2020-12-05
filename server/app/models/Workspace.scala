@@ -26,7 +26,7 @@ import models.Group.{FutureGroupRep, GroupRep}
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.DirValue.DirValue
 import models.Slipnet.DescriptionTypeInstanceLinksToNodeInfo
-import models.Workspace.{GoWithBottomUpCorrespondenceScout3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, UpdateEverything, WorkspaceProposeBondResponse}
+import models.Workspace.{GoWithBottomUpCorrespondenceScout3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, UpdateEverything, WorkspaceProposeBondResponse}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
 import models.codelet.BottomUpBondScout.{GoWithBottomUpBondScout2Response, GoWithBottomUpBondScoutResponse}
@@ -35,6 +35,7 @@ import models.codelet.BottomUpDescriptionScout.GoWithBottomUpDescriptionScoutRes
 import models.codelet.Codelet.{Finished, PrepareDescriptionResponse}
 import models.codelet.DescriptionStrengthTester.GoWithDescriptionStrengthTesterResponse
 import models.codelet.GroupScoutWholeString.{GoWithGroupScoutWholeStringResponse, GroupScoutWholeString2Response, GroupScoutWholeString3Response}
+import models.codelet.GroupStrengthTester.GoWithGroupStrengthTesterResponse
 import models.codelet.TopDownDescriptionScout.GoWithTopDownDescriptionScoutResponse
 import models.codelet.TopDownGroupScoutCategory.{GoWithTopDownGroupScoutCategory2Response, GoWithTopDownGroupScoutCategoryResponse}
 import models.codelet.TopDownGroupScoutDirection.GoWithTopDownGroupScoutDirectionResponse
@@ -136,6 +137,7 @@ object Workspace {
   case class GoWithGroupScoutWholeString(t: Double)
   case class GoWithGroupScoutWholeString2(left_most: WorkspaceObjectRep,slipnetLeft: SlipNodeRep,
                                           slipnetRight: SlipNodeRep)
+  case class GoWithGroupStrengthTester(temperature: Double, bondID: String)
 
   case object UpdateEverything
 }
@@ -1243,7 +1245,23 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 
       }
 
+    case GoWithGroupStrengthTester(temperature: Double, groupID: String) =>
+      val g = objectRefs()(groupID).asInstanceOf[Group]
+      g.update_strength_value()
+      val strength = g.total_strength;
+      val workingString = if (g.wString == initial) "initial" else "target"
+      log.info(s"evaluating group = ${groupID} in ${workingString} string")
 
+      val prob = WorkspaceFormulas.temperature_adjusted_probability(strength / 100.0, temperature)
+      log.info(s"strength = $strength, adjusted prob.= $prob")
+      if (r.nextDouble() > prob){
+        print("not strong enough: fizzled!");
+        sender() ! Finished
+      } else {
+        // it is strong enough - post builder  & activate nodes
+        sender() ! GoWithGroupStrengthTesterResponse(g.groupRep(), strength)
+
+      }
   }
 
 
