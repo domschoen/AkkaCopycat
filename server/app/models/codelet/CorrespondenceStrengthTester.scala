@@ -2,10 +2,13 @@ package models.codelet
 
 import akka.event.LoggingReceive
 import akka.actor.ActorRef
+import models.Coderack.PostDescriptionBuilder
 import models.Temperature.{TemperatureChanged, TemperatureResponse}
 import models.Workspace.GoWithDescriptionStrengthTester
 
-
+object CorrespondenceStrengthTester {
+  case class GoWithDescriptionStrengthTesterResponse(strength: Double)
+}
 class CorrespondenceStrengthTester(urgency: Int,              workspace: ActorRef,
                                    slipnet: ActorRef,
                                    temperature: ActorRef,
@@ -13,6 +16,10 @@ class CorrespondenceStrengthTester(urgency: Int,              workspace: ActorRe
   import Codelet.{ Run, Finished }
   import models.Coderack.ChooseAndRun
   import models.Temperature.Register
+  import CorrespondenceStrengthTester.GoWithDescriptionStrengthTesterResponse
+  import models.Coderack.PostCorrespondenceBuilder
+
+  def correspondanceID() = arguments.get.asInstanceOf[String]
 
   def receive = LoggingReceive {
     // to the browser
@@ -21,8 +28,12 @@ class CorrespondenceStrengthTester(urgency: Int,              workspace: ActorRe
       coderack = sender()
       temperature ! Register(self)
 
-      val descriptionID = arguments.get.asInstanceOf[String]
-      workspace ! GoWithDescriptionStrengthTester(runTemperature, descriptionID)
+      workspace ! GoWithDescriptionStrengthTester(runTemperature, correspondanceID)
+
+    case GoWithDescriptionStrengthTesterResponse(strength) =>
+      coderack ! PostCorrespondenceBuilder(correspondanceID,strength)
+
+
 
     case TemperatureResponse(value) =>
       t = value

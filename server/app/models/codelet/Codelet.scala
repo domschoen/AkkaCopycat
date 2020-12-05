@@ -3,6 +3,14 @@ package models.codelet
 import akka.actor.{Actor, ActorLogging, ActorRef, Props}
 import play.api.libs.concurrent.InjectedActorSupport
 
+
+// TODO
+// Finish GroupBuilder
+// RuleScout
+// RuleStrengthTester
+// RuleBuilder
+// RuleTranslator
+// ImportantObjectCorrespondenceScout
 sealed trait CodeletType
 
 object CodeletType {
@@ -10,6 +18,8 @@ object CodeletType {
   case object BondBuilder extends CodeletType
   case object DescriptionBuilder extends CodeletType
   case object GroupBuilder extends CodeletType
+  case object CorrespondenceBuilder extends CodeletType
+
   case object BottomUpBondScout extends CodeletType
   case object ReplacementFinder extends CodeletType
   case object BottomUpCorrespondenceScout extends CodeletType
@@ -54,6 +64,7 @@ object Codelet {
       case CodeletType.BondStrengthTester => new BondStrengthTester(urgency,  workspace, slipnet, temperature, arguments)
       case CodeletType.GroupStrengthTester => new GroupStrengthTester(urgency,  workspace, slipnet, temperature, arguments)
       case CodeletType.GroupBuilder => new GroupBuilder(urgency,  workspace, slipnet, temperature, arguments)
+      case CodeletType.CorrespondenceBuilder => new CorrespondenceBuilder(urgency,  workspace, slipnet, temperature, arguments)
 
 
     }
