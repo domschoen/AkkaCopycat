@@ -11,8 +11,8 @@ object Bond {
                      to_obj: String,
                      bondCategorySlipNodeID: String,
                      bondFacetSlipNodeID: String,
-                     from_obj_descriptorSlipNodeID: String,
-                     to_obj_descriptorSlipNodeID: String)
+                     from_obj_descriptorSlipNodeID: Option[String],
+                     to_obj_descriptorSlipNodeID: Option[String])
 
 }
 
@@ -21,8 +21,8 @@ class Bond (
              val to_obj: WorkspaceObject,
              val bond_category: SlipNodeRep,
              val bond_facet: SlipNodeRep,
-             val from_obj_descriptor: SlipNodeRep,
-             val to_obj_descriptor: SlipNodeRep,
+             val from_obj_descriptor: Option[SlipNodeRep],
+             val to_obj_descriptor: Option[SlipNodeRep],
              slipnetLeft: SlipNodeRep,
              slipnetRight: SlipNodeRep,
              slipnet: ActorRef
@@ -50,8 +50,8 @@ class Bond (
     to_obj.uuid,
     bond_category.id,
     bond_facet.id,
-    from_obj_descriptor.id,
-    to_obj_descriptor.id
+    from_obj_descriptor.map(_.id),
+    to_obj_descriptor.map(_.id)
   )
 
   def get_incompatible_bonds(): List[Bond] = {

@@ -19,7 +19,7 @@ import scala.concurrent.duration._
 import play.api.Play.current
 
 import javax.inject._
-import models.Workspace.{GoWithBottomUpCorrespondenceScout2, InitializeWorkspaceStringsResponse}
+import models.Workspace.{GoWithBottomUpCorrespondenceScout2, InitializeWorkspaceStringsResponse, SlipnetLookAHeadForNewBondCreationResponse}
 import models.codelet.BottomUpCorrespondenceScout.{ProposeAnyCorrespondenceSlipnetResponse, ProposeAnyCorrespondenceSlipnetResponse2}
 import play.api.Configuration
 import play.api.libs.concurrent.InjectedActorSupport
@@ -61,14 +61,15 @@ object Slipnet {
 
   case class BondFromTo(from: WorkspaceObjectRep, to: WorkspaceObjectRep)
   case class SlipnetTopDownBondScout(fromdtypes: List[SlipNodeRep], todtypes: List[SlipNodeRep])
-  case class SlipnetTopDownBondScoutCategory2(bondCategory: String, from_descriptor: SlipNodeRep, to_descriptor: SlipNodeRep)
-  case class SlipnetTopDownBondScoutDirection2(bondCategory: String, from_descriptor: SlipNodeRep, to_descriptor: SlipNodeRep)
+  case class SlipnetTopDownBondScoutCategory2(bondCategory: String, from_descriptor: Option[SlipNodeRep], to_descriptor: Option[SlipNodeRep])
+  case class SlipnetTopDownBondScoutDirection2(bondCategory: String, from_descriptor: Option[SlipNodeRep], to_descriptor: Option[SlipNodeRep])
 
   case class BondFromTo2(
                           from: WorkspaceObjectRep,
                           to: WorkspaceObjectRep,
-                          fromDescriptor: SlipNodeRep,
-                          toDescriptor: SlipNodeRep)
+                          fromDescriptor: Option[SlipNodeRep],
+                          toDescriptor: Option[SlipNodeRep]
+                        )
 
   case class SlipnetBottomUpCorrespondenceScout(
                                        obj1 :WorkspaceObjectRep,
@@ -87,7 +88,7 @@ object Slipnet {
 
   case class SlipnetGoWithTopDownDescriptionScout(chosen_object: WorkspaceObjectRep, descriptionTypeID: String)
   case class GoWithTopDownDescriptionScoutResponse2(chosen_property: SlipNodeRep)
-  case class GoWithTopDownBondScout2Response(bond_facet: SlipNodeRep, from_descriptor: SlipNodeRep, to_descriptor: SlipNodeRep)
+  case class GoWithTopDownBondScout2Response(bond_facet: SlipNodeRep, from_descriptor: Option[SlipNodeRep], to_descriptor: Option[SlipNodeRep])
 
   case class SetSlipNodeBufferValue(slipNodeID: String, bufferValue: Double)
   case class SlipnetGoWithBottomUpDescriptionScout(slipNodeRep: SlipNodeRep, temperature: Double)
@@ -116,6 +117,9 @@ object Slipnet {
   case class GetRelatedNodeOfResponse(related: Option[SlipNodeRep])
   case object GetLeftAndRight
   case class SlipnetGoWithGroupStrengthTester(g: GroupRep, strength: Double)
+  case class SlipnetLookAHeadForNewBondCreation(s: ActorRef, group: GroupRep, index: Int, incg: List[String], newBondList: List[BondRep],                                                          from_obj_id: String,
+                                                to_obj_id: String
+                                               )
 
   object RelationType {
     val Sameness = "Sameness"
@@ -176,7 +180,7 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
   val left = add_slipnode(17, 22, 40.0, "left", "lf")
   left.codelets += "top-down-bond-scout--direction"
   left.codelets += "top-down-group-scout--direction"
-  val right = add_slipnode(27, 22, 40.0, "right", "rt")
+  val right = add_slipnode(27, 22, 40.0, "right", SlipNode.id.right)
   right.codelets += "top-down-bond-scout--direction"
   right.codelets += "top-down-group-scout--direction"
 
@@ -186,7 +190,7 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
 
   val successor = add_slipnode(14, 33, 50.0, "successor", "sc") //,60.0)
   successor.codelets += "top-down-bond-scout--category"
-  val sameness = add_slipnode(10, 29, 80.0, "sameness", "sm") //,0.0)
+  val sameness = add_slipnode(10, 29, 80.0, "sameness", SlipNode.id.sameness) //,0.0)
   sameness.codelets += "top-down-bond-scout--category"
 
   // group types
@@ -587,12 +591,12 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
         )
       }
     case SlipnetTopDownBondScoutCategory2(bondCategory, fromDescriptor, toDescriptor) =>
-      val from_descriptor = slipNodeRefs(fromDescriptor.id)
-      val to_descriptor = slipNodeRefs(toDescriptor.id)
+      val from_descriptor = if (fromDescriptor.isEmpty) None else Some(slipNodeRefs(fromDescriptor.get.id))
+      val to_descriptor = if (toDescriptor.isEmpty) None else Some(slipNodeRefs(toDescriptor.get.id))
 
-
-      val bc1 = SlipnetFormulas.get_bond_category(from_descriptor,to_descriptor, identity)
-      val bc2 = SlipnetFormulas.get_bond_category(to_descriptor,from_descriptor, identity)
+      val descriptorDefined = from_descriptor.isDefined && to_descriptor.isDefined
+      val bc1 = if (descriptorDefined) SlipnetFormulas.get_bond_category(from_descriptor.get,to_descriptor.get, identity) else None
+      val bc2 = if (descriptorDefined) SlipnetFormulas.get_bond_category(to_descriptor.get,from_descriptor.get, identity) else None
 
       // Added test  compare to JavaCopycat
       if (bc1.isEmpty || bc2.isEmpty) {
@@ -615,8 +619,10 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
           val urgency = bond_category.bond_degree_of_association();
 
           bond_facet.buffer=100.0;
-          from_descriptor.buffer=100.0;
-          to_descriptor.buffer=100.0;
+          if (from_descriptor.isDefined)
+            from_descriptor.get.buffer=100.0;
+          if (to_descriptor.isDefined)
+            to_descriptor.get.buffer=100.0;
 
           sender() ! SlipnetTopDownBondScoutCategory2Response(isFromTo,urgency, bond_category.slipNodeRep(),
             left.slipNodeRep(),
@@ -625,11 +631,10 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
         }
       }
     case SlipnetTopDownBondScoutDirection2(bondCategory, fromDescriptor, toDescriptor) =>
-      val from_descriptor = slipNodeRefs(fromDescriptor.id)
-      val to_descriptor = slipNodeRefs(toDescriptor.id)
-
-
-      val bond_categoryOpt = SlipnetFormulas.get_bond_category(from_descriptor,to_descriptor, identity)
+      val from_descriptor = if (fromDescriptor.isEmpty) None else Some(slipNodeRefs(fromDescriptor.get.id))
+      val to_descriptor = if (toDescriptor.isEmpty) None else Some(slipNodeRefs(toDescriptor.get.id))
+      val descriptorDefined = from_descriptor.isDefined && to_descriptor.isDefined
+      val bond_categoryOpt = if (descriptorDefined) SlipnetFormulas.get_bond_category(from_descriptor.get,to_descriptor.get, identity) else None
 
       // Added test  compare to JavaCopycat
       if (bond_categoryOpt.isEmpty) {
@@ -644,8 +649,10 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
           val urgency = bond_category.bond_degree_of_association();
 
           bond_facet.buffer=100.0;
-          from_descriptor.buffer=100.0;
-          to_descriptor.buffer=100.0;
+        if (from_descriptor.isDefined)
+          from_descriptor.get.buffer=100.0
+        if (to_descriptor.isDefined)
+          to_descriptor.get.buffer=100.0
 
           sender() ! SlipnetTopDownBondScoutDirection2Response(urgency, bond_category.slipNodeRep(),
             left.slipNodeRep(),
@@ -658,10 +665,12 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
 
     // bottom-up-bond-scout codelet.java.267
     case BondFromTo2(from,to,fromDescriptor,toDescriptor) =>
-      val from_descriptor = slipNodeRefs(fromDescriptor.id)
-      val to_descriptor = slipNodeRefs(toDescriptor.id)
-      val bondCategoryOpt = SlipnetFormulas.get_bond_category(from_descriptor, to_descriptor, identity)
-      bondCategoryOpt match {
+      val from_descriptor = if (fromDescriptor.isEmpty) None else Some(slipNodeRefs(fromDescriptor.get.id))
+      val to_descriptor = if (toDescriptor.isEmpty) None else Some(slipNodeRefs(toDescriptor.get.id))
+      val descriptorDefined = from_descriptor.isDefined && to_descriptor.isDefined
+      val bond_categoryOpt = if (descriptorDefined) SlipnetFormulas.get_bond_category(from_descriptor.get,to_descriptor.get, identity) else None
+
+      bond_categoryOpt match {
         case None =>
           log.debug(" no suitable link - fizzle")
           sender() ! Finished
@@ -672,8 +681,10 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
           // coderack.propose_bond(fromob,toob,bond_category,bond_facet,from_descriptor, to_descriptor,this);
           // coderack.java.274
           bond_facet.buffer=100.0;
-          from_descriptor.buffer=100.0;
-          to_descriptor.buffer=100.0;
+          if (from_descriptor.isDefined)
+            from_descriptor.get.buffer=100.0
+          if (to_descriptor.isDefined)
+            to_descriptor.get.buffer=100.0
 
           sender() ! BondFromTo2Response(
             adaptedBondCategory.slipNodeRep(),
@@ -950,8 +961,15 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
       // GUI workspace.Workspace_Comments.text+=": succeeded ";
       // GUI if (!coderack.remove_terraced_scan) workspace.WorkspaceArea.AddObject(g,2);
       sender() ! SlipnetGoWithGroupStrengthTesterResponse
-  }
 
+    case SlipnetLookAHeadForNewBondCreation(s: ActorRef, g, index: Int, incg, newBondList, from_obj_id, to_obj_id) =>
+      val group_cat = slipNodeRefs(g.groupCategorySlipNodeID)
+      val related = SlipnetFormulas.get_related_node(group_cat,bond_category, identity)
+      val bond_facet = slipNodeRefs(g.bondFacetSlipNodeID)
+      sender() ! SlipnetLookAHeadForNewBondCreationResponse(s, g, index, incg, newBondList, related.map(_.slipNodeRep()),
+        from_obj_id, to_obj_id, bond_facet.slipNodeRep(), left.slipNodeRep(), right.slipNodeRep())
+
+  }
 
   def activateConceptMappingList(concept_mapping_list: List[ConceptMapping]): Unit = {
     // activate some descriptions

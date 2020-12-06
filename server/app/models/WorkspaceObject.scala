@@ -71,7 +71,20 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
   )
 
 
-  def middle_object(): Boolean = {
+  def relatedGroups(): List[Group] = {
+    relatedGroups(List.empty[Group])
+  }
+  def relatedGroups(acc: List[Group]): List[Group] = {
+    group match {
+      case Some(g) =>
+        g.relatedGroups(g :: acc)
+      case None => acc
+    }
+  }
+
+
+
+    def middle_object(): Boolean = {
     // returns true if this is the middle object in the string
     var leftmost_neighbor = wString.objects.find(ob => ob.leftmost && (ob.right_string_position == left_string_position-1))
     var rightmost_neighbor = wString.objects.find(ob => ob.rightmost && (ob.left_string_position == right_string_position-1))
@@ -209,6 +222,10 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
 
   }
 
+  def get_description(description_type: SlipNodeRep): Option[SlipNodeRep] = {
+    // returns the description attached to this object of the specified description type
+    descriptions.find(d => d.descriptionType == description_type).map(_.descriptor).flatten
+  }
 
   def letterOrGroupCompanions(): List[WorkspaceObject] = {
     workspaceString() match {

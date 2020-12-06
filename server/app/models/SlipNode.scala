@@ -18,6 +18,11 @@ object SlipNode {
                         )
 
   case class SlipNodeRep(id: String, activation: Double)
+
+  object id {
+    val right = "rt"
+    val sameness = "sm"
+  }
 }
 
 class SlipNode(x: Int, y: Int, val conceptual_depth: Double, val name: String, val shortName: String) {

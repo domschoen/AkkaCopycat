@@ -4,13 +4,16 @@ import akka.actor.{Actor, ActorLogging, ActorRef, Props}
 import play.api.libs.concurrent.InjectedActorSupport
 
 
-// TODO
+// TODO (4 days)
 // Finish GroupBuilder
 // RuleScout
 // RuleStrengthTester
 // RuleBuilder
 // RuleTranslator
 // ImportantObjectCorrespondenceScout
+// Verify CorrespondenceStrengthTester
+// CorrespondenceBuilder
+
 sealed trait CodeletType
 
 object CodeletType {

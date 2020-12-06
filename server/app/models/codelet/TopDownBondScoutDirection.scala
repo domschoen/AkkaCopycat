@@ -33,8 +33,8 @@ class TopDownBondScoutDirection(urgency: Int,
   def directionID() = arguments.get.asInstanceOf[String]
   var bondFrom: WorkspaceObjectRep = null
   var bondTo: WorkspaceObjectRep = null
-  var from_descriptor: SlipNodeRep = null
-  var to_descriptor: SlipNodeRep = null
+  var from_descriptor: Option[SlipNodeRep] = null
+  var to_descriptor: Option[SlipNodeRep] = null
   var bond_facet: SlipNodeRep = null
   var bond_urgency: Double = 0.0
 

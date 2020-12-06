@@ -252,8 +252,9 @@ object WorkspaceFormulas {
     v2=temperature_adjusted_value(v2);
     !(((v1+v2) * r.nextDouble())>v1)
   }
+*/
   // See workspace
-
+/*
   def fight_it_out(wo: WorkspaceStructure, v1: Double, structs: List[WorkspaceStructure], v2: Double): Boolean = {
     if (structs.isEmpty) {
       true
@@ -261,7 +262,7 @@ object WorkspaceFormulas {
       !structs.find(ws => (!structure_vs_structure(wo,v1,ws,v2))).isDefined
     }
   }
-  */
+ */
 
 
   def local_relevance(wString: WorkspaceString, categoryID: Option[String], bondFlavor: Bond => Option[SlipNodeRep]): Double =
@@ -320,21 +321,15 @@ object WorkspaceFormulas {
       case None => List.empty[Group]
     }
   }
-/*
-  def get_incompatible_groups(group obj): List[WorkspaceObject] = {
-    Vector v = new Vector();
 
-    for (int i=0; i<obj.object_list.size(); i++){
-      workspace_object wo = (workspace_object)obj.object_list.elementAt(i);
-      while (wo.group!=null){
-        v.addElement(wo.group);
-        wo=wo.group;
-      }
-    }
-    return v;
+  def get_incompatible_groups(obj: Group): List[WorkspaceObject] = {
+    val v = obj.object_list.toList.map(wo => {
+      wo.relatedGroups()
+    })
+    v.flatten
   }
 
-*/
+
   def same_group(gp1: Group, gp2: Group): Boolean = {
     if (gp1.left_string_position!=gp2.left_string_position) return false;
     if (gp1.right_string_position!=gp2.right_string_position) return false;

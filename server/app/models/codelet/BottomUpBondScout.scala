@@ -16,11 +16,17 @@ import models.codelet.Codelet.Finished
 object BottomUpBondScout {
   case class GoWithBottomUpBondScoutResponse(from: WorkspaceObjectRep, to: WorkspaceObjectRep)
   case class BondFromToSlipnetResponse(fromFacets: List[SlipNodeRep], toFacets: List[SlipNodeRep])
-  case class GoWithBottomUpBondScout2Response(bondFacet: SlipNodeRep, fromDescriptor: SlipNodeRep, toDescriptor: SlipNodeRep)
-  case class BondFromTo2Response(bondCategory: SlipNodeRep,
-                                 bondCategoryDegreeOfAssociation: Double,
-                                 slipnetLeft: SlipNodeRep,
-                                 slipnetRight: SlipNodeRep)
+  case class GoWithBottomUpBondScout2Response(
+                                               bondFacet: SlipNodeRep,
+                                               fromDescriptor: Option[SlipNodeRep],
+                                               toDescriptor: Option[SlipNodeRep]
+                                             )
+  case class BondFromTo2Response(
+                                  bondCategory: SlipNodeRep,
+                                  bondCategoryDegreeOfAssociation: Double,
+                                  slipnetLeft: SlipNodeRep,
+                                  slipnetRight: SlipNodeRep
+                                )
 }
 
 
@@ -43,8 +49,8 @@ class BottomUpBondScout(urgency: Int,              workspace: ActorRef,
   var bondFrom: WorkspaceObjectRep = null
   var bondTo: WorkspaceObjectRep = null
   var bondFacet: SlipNodeRep = null
-  var fromDescriptor: SlipNodeRep = null
-  var toDescriptor: SlipNodeRep = null
+  var from_descriptor: Option[SlipNodeRep] = None
+  var to_descriptor: Option[SlipNodeRep] = None
   var bondCategoryDegreeOfAssociation = 0.0
 
   def receive = LoggingReceive {
@@ -67,9 +73,9 @@ class BottomUpBondScout(urgency: Int,              workspace: ActorRef,
 
     case GoWithBottomUpBondScout2Response(bf, fd, td) =>
       bondFacet = bf
-      fromDescriptor = fd
-      toDescriptor = td
-      slipnet ! BondFromTo2(bondFrom, bondTo, fromDescriptor, toDescriptor)
+      from_descriptor = fd
+      to_descriptor = td
+      slipnet ! BondFromTo2(bondFrom, bondTo, from_descriptor, to_descriptor)
 
     case BondFromTo2Response(bondCategory: SlipNodeRep, bcda, slipnetLeft, slipnetRight) =>
       bondCategoryDegreeOfAssociation = bcda
@@ -78,8 +84,8 @@ class BottomUpBondScout(urgency: Int,              workspace: ActorRef,
         bondTo,
         bondCategory,
         bondFacet,
-        fromDescriptor,
-        toDescriptor,
+        from_descriptor,
+        to_descriptor,
         slipnetLeft,
         slipnetRight
       )

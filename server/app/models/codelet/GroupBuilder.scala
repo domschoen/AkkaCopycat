@@ -4,6 +4,11 @@ import akka.actor.ActorRef
 import akka.event.LoggingReceive
 
 
+// codelet.java.880
+object GroupBuilder {
+
+}
+
 class GroupBuilder(urgency: Int,
                    workspace: ActorRef,
                    slipnet: ActorRef,

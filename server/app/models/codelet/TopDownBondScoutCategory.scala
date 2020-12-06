@@ -33,8 +33,8 @@ class TopDownBondScoutCategory(urgency: Int,
 
   var bondFrom: WorkspaceObjectRep = null
   var bondTo: WorkspaceObjectRep = null
-  var from_descriptor: SlipNodeRep = null
-  var to_descriptor: SlipNodeRep = null
+  var from_descriptor: Option[SlipNodeRep] = None
+  var to_descriptor: Option[SlipNodeRep] = None
   var bond_facet: SlipNodeRep = null
   var bond_urgency: Double = 0.0
 

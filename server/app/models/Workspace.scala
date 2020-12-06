@@ -26,7 +26,7 @@ import models.Group.{FutureGroupRep, GroupRep}
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.DirValue.DirValue
 import models.Slipnet.DescriptionTypeInstanceLinksToNodeInfo
-import models.Workspace.{GoWithBottomUpCorrespondenceScout3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, UpdateEverything, WorkspaceProposeBondResponse}
+import models.Workspace.{GoWithBottomUpCorrespondenceScout3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, SlipnetLookAHeadForNewBondCreationResponse, UpdateEverything, WorkspaceProposeBondResponse}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
 import models.codelet.BottomUpBondScout.{GoWithBottomUpBondScout2Response, GoWithBottomUpBondScoutResponse}
@@ -68,8 +68,8 @@ object Workspace {
                                       bondTo: WorkspaceObjectRep,
                                       bondCategory: SlipNodeRep,
                                       bondFacet: SlipNodeRep,
-                                      fromDescriptor: SlipNodeRep,
-                                      toDescriptor: SlipNodeRep,
+                                      fromDescriptor: Option[SlipNodeRep],
+                                      toDescriptor: Option[SlipNodeRep],
                                       slipnetLeft: SlipNodeRep,
                                       slipnetRight: SlipNodeRep
                                      )
@@ -138,7 +138,20 @@ object Workspace {
   case class GoWithGroupScoutWholeString2(left_most: WorkspaceObjectRep,slipnetLeft: SlipNodeRep,
                                           slipnetRight: SlipNodeRep)
   case class GoWithGroupStrengthTester(temperature: Double, bondID: String)
-
+  case class LookAHeadForNewBondCreation(s: ActorRef, groupID: String, index: Int, incg: List[String], newBondList: List[BondRep])
+  case class SlipnetLookAHeadForNewBondCreationResponse(
+                                                         s: ActorRef,
+                                                         g: GroupRep,
+                                                         index: Int,
+                                                         incg: List[String],
+                                                         newBondList: List[BondRep],
+                                                         related: Option[SlipNodeRep],
+                                                         from_obj_id: String,
+                                                         to_obj_id: String,
+                                                         bond_facet: SlipNodeRep,
+                                                         slipnetLeft: SlipNodeRep,
+                                                         slipnetRight: SlipNodeRep
+                                                       )
   case object UpdateEverything
 }
 
@@ -168,7 +181,8 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     GoWithBreaker,
     GoWithTopDownGroupScoutDirection,
     CommonSubProcessing,
-    GoWithGroupScoutWholeString2
+    GoWithGroupScoutWholeString2,
+    LookAHeadForNewBondCreation
   }
 
   import Slipnet._
@@ -433,13 +447,11 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
           sender() ! Finished
 
         } else {
-          val fromDescriptor = fromDescriptorOpt.get
-          val toDescriptor = toDescriptorOpt.get
-          log.debug(s"from object descriptor: ${fromDescriptor.id}")
-          log.debug(s"to object descriptor: ${toDescriptor.id}")
+          log.debug(s"from object descriptor: ${fromDescriptorOpt}")
+          log.debug(s"to object descriptor: ${toDescriptorOpt}")
 
           // Here it goes to slipnet
-          sender() ! GoWithBottomUpBondScout2Response(bondFacet, fromDescriptor, toDescriptor)
+          sender() ! GoWithBottomUpBondScout2Response(bondFacet, fromDescriptorOpt, toDescriptorOpt)
         }
       }
     case WorkspaceProposeBond(bondFromRep, bondToRep, bondCategory, bondFacet, fromDescriptor, toDescriptor, slipnetLeft, slipnetRight) =>
@@ -663,31 +675,156 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
           bond_list,
           slipnet
         )
+      structureRefs += (newObj2.uuid -> newObj2)
+
 
       sender() ! GoWithBottomUpCorrespondenceScout3Response(newObj2.workspaceObjectRep())
 
     // codelet.java.880
     case GoWithGroupBuilder(temperature, groupID) =>
-      val group = objectRefs()(groupID).asInstanceOf[Group]
-      logTrying(group, group)
+      val g = objectRefs()(groupID).asInstanceOf[Group]
+      logTrying(g, g)
 
-      if (WorkspaceFormulas.group_present(group)) {
+      if (WorkspaceFormulas.group_present(g)) {
         print("already exists...activate descriptors & fizzle");
-        group.activate_descriptions();
-        val woOpt = WorkspaceFormulas.equivalent_group(group)
+        g.activate_descriptions();
+        val woOpt = WorkspaceFormulas.equivalent_group(g)
         woOpt match {
-          case Some(wo) => addDescriptionsToWorkspaceObject(wo, group.descriptions.toList)
+          case Some(wo) => addDescriptionsToWorkspaceObject(wo, g.descriptions.toList)
           case None =>
             log.debug("GoWithGroupBuilder stop with no equivalent group")
         }
+        sender() ! Finished
+      } else {
+        // check to see if all objects are still there
+        val objectNotThere = g.object_list.find(wo => !workspaceObjects().contains(wo))
+        if (objectNotThere.isDefined) {
+          print("objects no longer exist! - fizzle");
+          sender() ! Finished
+        } else {
+          // check to see if bonds are there of the same direction
+          val gObjectList = g.object_list
+          val incompatibleBondListRaw = for (i <- 1 to gObjectList.size) yield {
+            val ol = gObjectList(i)
+            val bOpt = ol.left_bond
+            if (bOpt.isDefined) {
+              val b = bOpt.get
+              val ob2 = b.left_obj
+              if ((ob2 != gObjectList(i-1)) || (b.direction_category.map(_.id) != g.directionCategorySlipNodeID)) {
+                Some(b)
+              } else None
+            } else None
+          }
+          val bondCandidate = if (gObjectList.size > 1) {
+            val bOpt = gObjectList(0).right_bond
+            if (bOpt.isDefined) {
+              val b = bOpt.get
+              val ob2 = b.right_obj
+              if ((ob2 != gObjectList(1)) || (b.direction_category.map(_.id) != g.directionCategorySlipNodeID)) Some(b) else None
+            } else None
+          } else None
+
+          val incompatibleBondList = (bondCandidate :: incompatibleBondListRaw.toList).flatten
+
+          // if incompatible bonds exist - fight
+          g.update_strength_value()
+          val incbFightSucceeded = if (incompatibleBondList.size != 0) {
+            print("fighting incompatible bonds");
+            // try to break all incompatible groups
+            if (fight_it_out(g,1.0, incompatibleBondList,1.0)){
+              // beat all competing groups
+              print("won!")
+              true
+            }
+            else {
+              print("couldn't break incompatible bonds: fizzle!");
+              false
+            }
+          } else true
+
+          if (incbFightSucceeded) {
+            // fight incompatible groups
+            // fight all groups containing these objects
+            val incg = WorkspaceFormulas.get_incompatible_groups(g);
+            val incgFightSucceeded = if (incg.size != 0){
+              print("fighting incompatible groups");
+              // try to break all incompatible groups
+              if (fight_it_out(g,1.0, incg,1.0)){
+                // beat all competing groups
+                print("won");
+                true
+              }
+              else {
+                print("couldn't break incompatible groups: fizzle");
+                false
+              }
+            } else true
+            if (incgFightSucceeded) {
+              // destroy incompatible bonds
+              for (b <- incompatibleBondList) b.break_bond()
+
+              // create new bonds
+              g.bond_list = ListBuffer.empty[Bond]
+
+              self ! LookAHeadForNewBondCreation(sender(), g.uuid, 1, incg.map(_.uuid), List.empty[BondRep])
+
+            } else {
+              sender() ! Finished
+            }
+
+          } else {
+            sender() ! Finished
+          }
+        }
       }
 
+    case LookAHeadForNewBondCreation(s: ActorRef, groupID, i, incg, newBondList) =>
+      val g = objectRefs()(groupID).asInstanceOf[Group]
+      if (i < g.object_list.size) {
+        val ob1 = g.object_list(i-1)
+        val ob2 = g.object_list(i)
 
-      // TODO to be completed !!
+        if (ob1.right_bond.isEmpty){
+          val isForward = g.directionCategorySlipNodeID.isDefined && g.directionCategorySlipNodeID.get == SlipNode.id.right
+          val from_obj = if (isForward) ob1 else ob2
+          val to_obj = if (isForward) ob2 else ob1
 
+          slipnet ! SlipnetLookAHeadForNewBondCreation(s, g.groupRep(), i, incg, newBondList, from_obj.uuid, to_obj.uuid)
 
-      sender() ! Finished
+        } else {
+          self ! LookAHeadForNewBondCreation(s, groupID, i + 1, incg, ob1.right_bond.get.bondRep() :: newBondList)
+        }
+      } else {
+        // destroy incompatible groups
+        for (gr <- incg) {
+          val grp = objectRefs()(gr).asInstanceOf[Group]
+          break_group(grp)
+        }
 
+        build_group(g)
+// already done in build_group        g.activate_descriptions();
+        print("building group");
+        s ! Finished
+      }
+
+    case SlipnetLookAHeadForNewBondCreationResponse(s, g_rep, i, incg, newBondList, bond_categoryOpt, from_obj_id, to_obj_id, bond_facet,slipnetLeft,
+    slipnetRight) =>
+      bond_categoryOpt match {
+        case Some(bond_category) =>
+          val from_obj = objectRefs()(from_obj_id)
+          val to_obj = objectRefs()(to_obj_id)
+          val g = objectRefs()(g_rep.workspaceObjectRep.uuid).asInstanceOf[Group]
+          val from_obj_descriptor = from_obj.get_description(bond_facet)
+          val to_obj_descriptor = to_obj.get_description(bond_facet)
+
+          val nb = new Bond(from_obj,to_obj,bond_category,bond_facet, from_obj_descriptor,to_obj_descriptor, slipnetLeft,slipnetRight, slipnet)
+          build_bond(nb)
+          self ! LookAHeadForNewBondCreation(s, g.uuid, i + 1, incg, nb.bondRep() :: newBondList)
+
+        case None =>
+          println("Big mess")
+          s ! Finished
+      }
 
     // Codelet.java.425
     case GoWithBondBuilder(temperature, bondID) =>
@@ -838,8 +975,10 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       }
       // it is strong enough - post builder  & activate nodes
       slipnet ! SetSlipNodeBufferValue(b.bond_facet.id, 100.0)
-      slipnet ! SetSlipNodeBufferValue(b.from_obj_descriptor.id, 100.0)
-      slipnet ! SetSlipNodeBufferValue(b.to_obj_descriptor.id, 100.0)
+      if (b.from_obj_descriptor.isDefined)
+        slipnet ! SetSlipNodeBufferValue(b.from_obj_descriptor.get.id, 100.0)
+      if (b.to_obj_descriptor.isDefined)
+        slipnet ! SetSlipNodeBufferValue(b.to_obj_descriptor.get.id, 100.0)
 
       log.info("succeeded: will post bond-builder");
       sender() ! GoWithBondStrengthTesterResponse(strength)
@@ -902,12 +1041,9 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
             log.debug("both objects do not have this descriptor: Fizzle!")
             sender() ! Finished
           } else {
-            val from_descriptor = fromDescriptorOpt.get
-            val to_descriptor = toDescriptorOpt.get
-
-            log.debug("from object descriptor: " + from_descriptor.id)
-            log.debug("to object descriptor: " + to_descriptor.id)
-            sender() ! GoWithTopDownBondScout2Response(bond_facet, from_descriptor, to_descriptor)
+            log.debug("from object descriptor: " + fromDescriptorOpt)
+            log.debug("to object descriptor: " + toDescriptorOpt)
+            sender() ! GoWithTopDownBondScout2Response(bond_facet, fromDescriptorOpt, toDescriptorOpt)
 
           }
 
@@ -1399,6 +1535,24 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       }
     }
   }
+
+  def build_group(group: Group) = {
+    addStructure(group)
+    group.build_group()
+
+// GUI   workspace.WorkspaceArea.AddObject(this,3);
+// GUI   workspace.WorkspaceSmall.AddObject(this);
+    build_descriptions(group)
+// GUI    workspace.check_visibility();
+    group.activate_descriptions();
+  }
+
+  def build_bond(bond: Bond) = {
+    addStructure(bond)
+    bond.build_bond()
+  }
+
+
 
   // GUI
   def check_visibility() = {

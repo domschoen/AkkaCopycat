@@ -65,6 +65,13 @@ class Group (
     }
   }
 
+  def build_group() = {
+    wString.objects += this
+    for (wo <- object_list) {
+      wo.group = Some(this)
+    }
+  }
+
   def activate_descriptions() = {
     for (d <- descriptions) {
       d.descriptor match {
