@@ -227,6 +227,11 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
     descriptions.find(d => d.descriptionType == description_type).map(_.descriptor).flatten
   }
 
+  def get_description_type(description: Option[SlipNodeRep]): Option[SlipNodeRep] = {
+    // returns the description_type attached to this object of the specified description
+    descriptions.find(d => d.descriptor == description).map(_.descriptionType)
+  }
+
   def letterOrGroupCompanions(): List[WorkspaceObject] = {
     workspaceString() match {
       case Some(ws) => ws.objects.filter(wo =>

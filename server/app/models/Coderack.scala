@@ -50,6 +50,7 @@ object Coderack {
                                   )
   case class ProposeBond(bondID: String, d: Double)
   case class ProposeGroup(groupID: String, d: Double)
+  case class ProposeRule(groupID: String, d: Double)
 
   case class ProposeDescription(descriptionID: String, urgency: Double)
   case class PostBondBuilder(bondID: String, strength: Double)
@@ -257,6 +258,17 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
           self ! Post(newCodelet)
           sender() ! Finished
 
+        case  ProposeDescription(descriptionID, urgency) =>
+          val newCodelet = createCodelet(CodeletType.DescriptionStrengthTester, get_urgency_bin(urgency), Some(descriptionID))
+          // ignored ncd.Pressure_Type = orig.Pressure_Type;
+          self ! Post(newCodelet)
+          sender() ! Finished
+
+        case ProposeRule(ruleID, urgency) =>
+          val newCodelet = createCodelet(CodeletType.GroupStrengthTester, get_urgency_bin(urgency), Some(ruleID))
+          self ! Post(newCodelet)
+          sender() ! Finished
+
 
         case PostBondBuilder(bondID, strength) =>
           val urgency = get_urgency_bin(strength)
@@ -273,11 +285,6 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
           self ! Post(newCodelet)
           sender() ! Finished
 
-        case  ProposeDescription(descriptionID, urgency) =>
-          val newCodelet = createCodelet(CodeletType.DescriptionStrengthTester, get_urgency_bin(urgency), Some(descriptionID))
-          // ignored ncd.Pressure_Type = orig.Pressure_Type;
-          self ! Post(newCodelet)
-          sender() ! Finished
 
         case PostGroupBuilder(groupID, strength) =>
           val urgency = get_urgency_bin(strength)

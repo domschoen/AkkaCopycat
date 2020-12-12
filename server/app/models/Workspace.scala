@@ -26,7 +26,7 @@ import models.Group.{FutureGroupRep, GroupRep}
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.DirValue.DirValue
 import models.Slipnet.DescriptionTypeInstanceLinksToNodeInfo
-import models.Workspace.{GoWithBottomUpCorrespondenceScout3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, SlipnetLookAHeadForNewBondCreationResponse, UpdateEverything, WorkspaceProposeBondResponse}
+import models.Workspace.{GoWithBottomUpCorrespondenceScout3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, SlipnetLookAHeadForNewBondCreationResponse, UpdateEverything, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
 import models.codelet.BottomUpBondScout.{GoWithBottomUpBondScout2Response, GoWithBottomUpBondScoutResponse}
@@ -36,6 +36,7 @@ import models.codelet.Codelet.{Finished, PrepareDescriptionResponse}
 import models.codelet.DescriptionStrengthTester.GoWithDescriptionStrengthTesterResponse
 import models.codelet.GroupScoutWholeString.{GoWithGroupScoutWholeStringResponse, GroupScoutWholeString2Response, GroupScoutWholeString3Response}
 import models.codelet.GroupStrengthTester.GoWithGroupStrengthTesterResponse
+import models.codelet.RuleScout.{GoWithRuleScout2Response, GoWithRuleScoutResponse, RuleScoutProposeRule}
 import models.codelet.TopDownDescriptionScout.GoWithTopDownDescriptionScoutResponse
 import models.codelet.TopDownGroupScoutCategory.{GoWithTopDownGroupScoutCategory2Response, GoWithTopDownGroupScoutCategoryResponse}
 import models.codelet.TopDownGroupScoutDirection.GoWithTopDownGroupScoutDirectionResponse
@@ -152,6 +153,20 @@ object Workspace {
                                                          slipnetLeft: SlipNodeRep,
                                                          slipnetRight: SlipNodeRep
                                                        )
+  case object GoWithRuleScout
+  case class WorkspaceProposeRule(
+                                   facet: Option[String],
+                                  description: Option[String],
+                                  objectCategory: Option[String],
+                                  relation: Option[String],
+                                  lengthSlipNode: SlipNodeRep,
+                                  predecessorSlipNode: SlipNodeRep,
+                                  successorSlipNode: SlipNodeRep
+                                 )
+  case class WorkspaceProposeRuleResponse(ruleID: String)
+  case class GoWithRuleScout2(changed: WorkspaceObjectRep, string_position_category: SlipNodeRep, letter_category: SlipNodeRep)
+  case object GoWithRuleScout3
+
   case object UpdateEverything
 }
 
@@ -1398,8 +1413,73 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
         sender() ! GoWithGroupStrengthTesterResponse(g.groupRep(), strength)
 
       }
+    case GoWithRuleScout =>
+      if (unreplaced_objects().size != 0) {
+        print("not all replacements have been found. Fizzle");
+        sender() ! Finished
+      } else {
+        var changedOpt: Option[WorkspaceObject] = None
+        // find changed object;
+        for (wo <- initial.objects) {
+          if (wo.changed) changedOpt = Some(wo)
+        }
+        // if there are no changed objects, propose a rule with no changes
+        if (changedOpt.isEmpty) {
+          print("there are no changed objects!");
+          print("proposing null rule");
+          val facet = Option.empty[String]
+          val description = Option.empty[String]
+          val objectCategory = Option.empty[String]
+          val relation = Option.empty[String]
+
+          sender() ! RuleScoutProposeRule(None, None, None, None)
+        } else {
+          // generate a list of distinguishing descriptions for the first object
+          // ie. string-position (leftmost,rightmost,middle or whole) or letter category
+          // if it is the only one of its type in the string
+          val changed = changedOpt.get
+          sender() ! GoWithRuleScoutResponse(changed.workspaceObjectRep())
+        }
+
+      }
+
+    case WorkspaceProposeRule(facet, description, objectCategory, relation, lengthSplipNode, predecessorSlipNode, successorSlipNode) =>
+      val r = new Rule(facet, description, objectCategory, relation, slipnet, lengthSplipNode, predecessorSlipNode, successorSlipNode)
+      structureRefs += (r.uuid -> r)
+      sender() ! WorkspaceProposeRuleResponse(r.uuid)
+
+    case GoWithRuleScout2(changedRep, string_position_category, letter_category) =>
+      val changed = objectRefs()(changedRep.uuid)
+      var object_list = ListBuffer.empty[SlipNodeRep]
+      val positionOpt = changed.get_description(string_position_category);
+      if (positionOpt.isDefined) {
+        object_list += positionOpt.get
+      };
+      val letterOpt = changed.get_description(letter_category)
+      val noLetterFound = initial.objects.find(wo => (wo.get_description_type(letterOpt).isDefined)&&(wo!=changed))
+      var only_letter = noLetterFound.isEmpty;  // if this is true, the letter can be thought of as a distinguishing feature
+      if (only_letter) object_list += letterOpt.get
+
+      // if this object corresponds to another object in the workspace
+      // object_list = the union of this and the distingushing descriptors
+      if (changed.correspondence.isDefined) {
+        val obj2 = changed.correspondence.get.obj2;
+        sender() ! GoWithRuleScout2Response(obj2.workspaceObjectRep())
+      } else {
+        self.forward(GoWithRuleScout3)
+      }
+    case GoWithRuleScout3 =>
+      sender() ! Finished
   }
 
+  def unreplaced_objects(): List[WorkspaceObject] = {
+    // returns a list of all objects in the initial string that are not
+    // replaced
+    workspaceObjects().filter(wo => {
+      val ok =((wo.wString.isDefined && wo.wString == initial) && (wo.isInstanceOf[Letter]))
+      ok && wo.replacement.isEmpty
+    })
+  }
 
   val conditionalNeighbor = (from: WorkspaceObject, wo: WorkspaceObject) => (
     (wo.left_string_position == from.right_string_position + 1) ||

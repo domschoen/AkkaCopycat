@@ -389,6 +389,7 @@ object WorkspaceFormulas {
     return uo;
   }
 
+// see Workspace
   def unreplaced_objects(): List[WorkspaceObject] = {
     // returns a list of all objects in the initial string that are not
     // replaced

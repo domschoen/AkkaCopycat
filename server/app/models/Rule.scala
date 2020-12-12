@@ -1,6 +1,7 @@
 package models
 
 import akka.actor.ActorRef
+import models.SlipNode.SlipNodeRep
 import models.Slipnet.SetSlipNodeBufferValue
 
 object Rule {
@@ -23,11 +24,11 @@ case class Rule (
                   descriptorFacet: Option[String],
                   descriptor: Option[String],
                   objectCategory: Option[String],
-                  var relation: String,
+                  var relation: Option[String],
                   slipnet: ActorRef,
-                  lengthSlipNode: SlipNode,
-                  predecessorSlipNode: SlipNode,
-                  successorSlipNode: SlipNode
+                  lengthSlipNode: SlipNodeRep,
+                  predecessorSlipNode: SlipNodeRep,
+                  successorSlipNode: SlipNodeRep
 
                 ) extends WorkspaceStructure {
 
@@ -41,7 +42,7 @@ case class Rule (
   }
 
   def activate_rule_descriptions() = {
-    (relation :: List(descriptorFacet,objectCategory,descriptor).flatten).map(
+    (relation :: List(descriptorFacet,objectCategory,descriptor)).flatten.map(
       sn => slipnet ! SetSlipNodeBufferValue(sn,100.0)
     )
   }
@@ -53,12 +54,18 @@ case class Rule (
 
   // Rule.java.81
   def change_string(s: String): String = {
+    if (relation.isEmpty) {
+      // Does not look like it is supported
+      // throw exeception
+      throw new Exception("Rule change_string when relation is empty is not supported")
+    }
+    val relationVal = relation.get
     // applies the changes to this string ie. successor
     var stringok = true;
-    if (descriptorFacet == lengthSlipNode.id()){
-      if (relation == predecessorSlipNode.id())
+    if (descriptorFacet == lengthSlipNode.id) {
+      if (relationVal == predecessorSlipNode.id)
         return s.substring(0,s.length()-1);
-      if (relation == successorSlipNode.id()){
+      if (relationVal == successorSlipNode.id) {
         val addon = s.substring(0,1);
         return s+addon;
       }
@@ -67,20 +74,20 @@ case class Rule (
     // apply character changes
     val st = s.toList
     val ch = 36.toChar
-    val charname = relation.toList
+    val charname = relationVal.toList
 
 
     val biteTheLine = st.find(c => {
-      val lowerBite = c-1 < 97 && relation==predecessorSlipNode.id()
-      val higherBite = c+1 > 122 && relation==successorSlipNode.id()
+      val lowerBite = c-1 < 97 && relationVal==predecessorSlipNode.id
+      val higherBite = c+1 > 122 && relationVal==successorSlipNode.id
       lowerBite || higherBite
     })
     if (biteTheLine.isDefined) "NULL" else {
       val listOfChars: List[Char] = st.map(c => {
-        (relation match {
-          case r if r==predecessorSlipNode.id() => c-1
-          case r if r==successorSlipNode.id() => c+1
-          case _ => relation.toList.head + 32
+        (relationVal match {
+          case r if r==predecessorSlipNode.id => c-1
+          case r if r==successorSlipNode.id => c+1
+          case _ => relationVal.toList.head + 32
         }).toChar
       })
       listOfChars.mkString

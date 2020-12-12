@@ -5,7 +5,6 @@ import play.api.libs.concurrent.InjectedActorSupport
 
 
 // TODO (4 days)
-// Finish GroupBuilder
 // RuleScout
 // RuleStrengthTester
 // RuleBuilder
@@ -30,6 +29,7 @@ object CodeletType {
   case object DescriptionStrengthTester extends CodeletType
   case object BondStrengthTester extends CodeletType
   case object GroupStrengthTester extends CodeletType
+  case object RuleStrengthTester extends CodeletType
 
 }
 object Codelet {
@@ -68,6 +68,7 @@ object Codelet {
       case CodeletType.GroupStrengthTester => new GroupStrengthTester(urgency,  workspace, slipnet, temperature, arguments)
       case CodeletType.GroupBuilder => new GroupBuilder(urgency,  workspace, slipnet, temperature, arguments)
       case CodeletType.CorrespondenceBuilder => new CorrespondenceBuilder(urgency,  workspace, slipnet, temperature, arguments)
+      case CodeletType.RuleStrengthTester => new RuleStrengthTester(urgency,  workspace, slipnet, temperature, arguments)
 
 
     }

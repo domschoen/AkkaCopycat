@@ -32,6 +32,7 @@ import models.WorkspaceObject.WorkspaceObjectRep
 import models.codelet.BottomUpDescriptionScout.SlipnetGoWithBottomUpDescriptionScoutResponse
 import models.codelet.GroupScoutWholeString.{GetLeftAndRightResponse, SlipnetGoWithGroupScoutWholeStringResponse}
 import models.codelet.GroupStrengthTester.SlipnetGoWithGroupStrengthTesterResponse
+import models.codelet.RuleScout.{SlipnetGoWithRuleScout2Response, SlipnetGoWithRuleScoutResponse}
 import models.codelet.TopDownBondScoutCategory.SlipnetTopDownBondScoutCategory2Response
 import models.codelet.TopDownBondScoutDirection.SlipnetTopDownBondScoutDirection2Response
 import models.codelet.TopDownDescriptionScout.{SlipnetGoWithTopDownDescriptionScoutResponse, SlipnetGoWithTopDownDescriptionScoutResponse2}
@@ -120,7 +121,15 @@ object Slipnet {
   case class SlipnetLookAHeadForNewBondCreation(s: ActorRef, group: GroupRep, index: Int, incg: List[String], newBondList: List[BondRep],                                                          from_obj_id: String,
                                                 to_obj_id: String
                                                )
-
+  case class SlipnetProposeRule(description: Option[String], relation: Option[String])
+  case class SlipnetProposeRuleResponse(
+                                         urgency: Double,
+                                         lengthSlipNode: SlipNodeRep,
+                                         predecessorSlipNode: SlipNodeRep,
+                                         successorSlipNode: SlipNodeRep
+                                       )
+  case object SlipnetGoWithRuleScout
+  case class SlipnetGoWithRuleScout2(obj2: WorkspaceObjectRep)
   object RelationType {
     val Sameness = "Sameness"
     val Successor = "Successor"
@@ -968,6 +977,26 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
       val bond_facet = slipNodeRefs(g.bondFacetSlipNodeID)
       sender() ! SlipnetLookAHeadForNewBondCreationResponse(s, g, index, incg, newBondList, related.map(_.slipNodeRep()),
         from_obj_id, to_obj_id, bond_facet.slipNodeRep(), left.slipNodeRep(), right.slipNodeRep())
+
+
+    case SlipnetProposeRule(d, r) =>
+      val description = if (d.isDefined) Some(slipNodeRefs(d.get)) else None
+      val relation = if (r.isDefined) Some(slipNodeRefs(r.get)) else None
+      val urgency = if (description.isDefined && relation.isDefined) {
+        (Math.sqrt((description.get.conceptual_depth + relation.get.conceptual_depth)/200.0))*100.0
+      } else 100.0 // My guess !
+      sender() ! SlipnetProposeRuleResponse(
+        urgency,
+        length.slipNodeRep(),
+        predecessor.slipNodeRep(),
+        successor.slipNodeRep()
+      )
+
+    case SlipnetGoWithRuleScout =>
+      sender() ! SlipnetGoWithRuleScoutResponse(string_position_category.slipNodeRep(), letter_category.slipNodeRep())
+
+    case SlipnetGoWithRuleScout2(obj2) =>
+      sender() ! SlipnetGoWithRuleScout2Response
 
   }
 
