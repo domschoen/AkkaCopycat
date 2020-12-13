@@ -136,7 +136,7 @@ object WorkspaceFormulas {
 
     return choose_object_from_list(objects,variable);
   }*/
-/*
+/* see slipnet
   static slipnode choose_slipnode_by_conceptual_depth(Vector slist): SlipNode = {
     if (slist.size()==0) return null;
 

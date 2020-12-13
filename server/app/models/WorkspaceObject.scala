@@ -160,6 +160,15 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
     }
   }
 
+  def relevant_distinguishing_descriptors() = {
+    relevant_descriptions().map(d => {
+      if (d.descriptor.isDefined && distinguishing_descriptor(d.descriptor.get.id)) {
+        Some(d.descriptor.get)
+      } else None
+    }).flatten
+  }
+
+
   def distinguishing_descriptor(descriptor_id: String): Boolean = {
     // returns true if no other object of the same type (ie. letter or group)
     // has the same descriptor

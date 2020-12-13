@@ -26,7 +26,7 @@ import models.Group.{FutureGroupRep, GroupRep}
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.DirValue.DirValue
 import models.Slipnet.DescriptionTypeInstanceLinksToNodeInfo
-import models.Workspace.{GoWithBottomUpCorrespondenceScout3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithRuleBuilder, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3, GoWithRuleStrengthTester, GoWithRuleTranslator, GoWithRuleTranslator2, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, UpdateEverything, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
+import models.Workspace.{GoWithBottomUpCorrespondenceScout3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithImportantObjectCorrespondenceScout, GoWithImportantObjectCorrespondenceScout2, GoWithImportantObjectCorrespondenceScout3, GoWithRuleBuilder, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3, GoWithRuleStrengthTester, GoWithRuleTranslator, GoWithRuleTranslator2, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, UpdateEverything, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
 import models.codelet.BottomUpBondScout.{GoWithBottomUpBondScout2Response, GoWithBottomUpBondScoutResponse}
@@ -36,6 +36,7 @@ import models.codelet.Codelet.{Finished, PrepareDescriptionResponse}
 import models.codelet.DescriptionStrengthTester.GoWithDescriptionStrengthTesterResponse
 import models.codelet.GroupScoutWholeString.{GoWithGroupScoutWholeStringResponse, GroupScoutWholeString2Response, GroupScoutWholeString3Response}
 import models.codelet.GroupStrengthTester.GoWithGroupStrengthTesterResponse
+import models.codelet.ImportantObjectCorrespondenceScout.{GoWithImportantObjectCorrespondenceScout2Response, GoWithImportantObjectCorrespondenceScout3Response, GoWithImportantObjectCorrespondenceScoutResponse}
 import models.codelet.RuleScout.{GoWithRuleScout2Response, GoWithRuleScout3Response, GoWithRuleScoutResponse, RuleScoutProposeRule}
 import models.codelet.RuleStrengthTester.GoWithRuleStrengthTesterResponse
 import models.codelet.RuleTranslator.GoWithRuleTranslatorResponse
@@ -178,6 +179,9 @@ object Workspace {
   case class GoWithRuleTranslator(t: Double)
   case class GoWithRuleTranslator2(slippage_list_rep: List[ConceptMappingRep])
   //case class SlipnodeActivationChanged(id: String, activation: Double)
+  case class GoWithImportantObjectCorrespondenceScout(t: Double)
+  case object GoWithImportantObjectCorrespondenceScout2
+  case class GoWithImportantObjectCorrespondenceScout3(slippage_list_rep: List[ConceptMappingRep], s: SlipNodeRep, t:Double, obj1: WorkspaceObjectRep)
 
   case object UpdateEverything
 }
@@ -1621,6 +1625,63 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 //        Temperature.clamped = true;
 //        formulas.temperature = 100.0;
       }
+    case GoWithImportantObjectCorrespondenceScout(t) =>
+      val obj1Opt = chooseObject(initial.objects.toList, TemperatureAjustmentVariable.Relative_importance, t)
+
+      obj1Opt match {
+        case Some(obj1) =>
+          print("object chosen from initial string: "+obj1);
+          val v = obj1.relevant_distinguishing_descriptors()
+          sender() ! GoWithImportantObjectCorrespondenceScoutResponse(obj1.workspaceObjectRep(), v)
+
+        case None =>
+          println("Popopo obj1 is null: Fizzle")
+          sender() ! Finished
+      }
+
+    case GoWithImportantObjectCorrespondenceScout2 =>
+      val sShell = slippage_list()
+      sender() ! GoWithImportantObjectCorrespondenceScout2Response(sShell)
+
+    case GoWithImportantObjectCorrespondenceScout3(slippage_list_rep: List[ConceptMappingRep], s, t, o1) =>
+      val obj1_descriptorRaw = slippage_list_rep.find(cm => {
+        cm.descriptor1SlipNodeID == s.id
+      }).map(_.descriptor2SlipNodeID)
+      val obj1_descriptor = if (obj1_descriptorRaw.isEmpty) s.id else obj1_descriptorRaw.get
+
+      val obj2_candidates = target.objects.toList.filter(wo => {
+        wo.relevant_descriptions().find(d => {
+          d.descriptor.isDefined && d.descriptor.get.id == obj1_descriptor
+        }).isDefined
+      })
+      if (obj2_candidates.isEmpty) {
+        println("no corresponding objects found: fizzle")
+        sender() ! Finished
+      } else {
+        val obj2Opt = chooseObject(obj2_candidates, TemperatureAjustmentVariable.Inter_string_salience, t)
+
+        obj2Opt match {
+          case Some(obj2) =>
+            var flip_obj2 = false;
+            val obj1 = objectRefs()(o1.uuid)
+            print("trying a correspondence between "+obj1+" and "+obj2);
+
+            // if one object spans the string and the other doesn't - fizzle
+            if (obj1.spans_string!=obj2.spans_string){
+              // fizzle
+              print("only one object spans the string: fizzle");
+              sender() ! Finished
+            } else {
+              sender() ! GoWithImportantObjectCorrespondenceScout3Response(obj1.workspaceObjectRep())
+            }
+
+          case None =>
+            println("Should never happen ? but obj2 is null: fizzle")
+            sender() ! Finished
+        }
+
+      }
+
 
   }
 

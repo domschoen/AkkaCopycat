@@ -34,6 +34,7 @@ import models.WorkspaceStructure.WorkspaceStructureRep
 import models.codelet.BottomUpDescriptionScout.SlipnetGoWithBottomUpDescriptionScoutResponse
 import models.codelet.GroupScoutWholeString.{GetLeftAndRightResponse, SlipnetGoWithGroupScoutWholeStringResponse}
 import models.codelet.GroupStrengthTester.SlipnetGoWithGroupStrengthTesterResponse
+import models.codelet.ImportantObjectCorrespondenceScout.SlipnetGoWithImportantObjectCorrespondenceScoutResponse
 import models.codelet.RuleScout.{RuleScoutProposeRule, SlipnetGoWithRuleScoutResponse}
 import models.codelet.TopDownBondScoutCategory.SlipnetTopDownBondScoutCategory2Response
 import models.codelet.TopDownBondScoutDirection.SlipnetTopDownBondScoutDirection2Response
@@ -148,7 +149,7 @@ object Slipnet {
                                       letterCategory: SlipNodeRep,
                                       temperature: Double)
 
-  case class SlipnetGoWithRuleTranslator(slippage_list_rep: List[ConceptMappingRep])
+  case class SlipnetGoWithImportantObjectCorrespondenceScout(relevantDescriptors: List[SlipNodeRep], t: Double)
 
   object RelationType {
     val Sameness = "Sameness"
@@ -156,6 +157,19 @@ object Slipnet {
     val Predecessor = "Predecessor"
   }
   val time_step_length = 15
+
+
+  def choose_slipnode_by_conceptual_depth(slist: List[SlipNode], t: Double): Option[SlipNode] = {
+    if (slist.size == 0) {
+      None
+    } else {
+      val object_probs = slist.map(s => {
+        Formulas.temperature_adjusted_probability(s.conceptual_depth, t)
+      })
+      val index = Utilities.valueProportionalRandomIndexInValueList(object_probs)
+      Some(slist(index))
+    }
+  }
 
 }
 
@@ -1064,9 +1078,15 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
         Some(relation.id)
       )
 
-    case SlipnetGoWithRuleTranslator(slippage_list_rep) =>
+    case SlipnetGoWithImportantObjectCorrespondenceScout(rds, t) =>
+      val relevantDescriptors = rds.map(rd => slipNodeRefs(rd.id))
+      val sOpt = choose_slipnode_by_conceptual_depth(relevantDescriptors,t)
+      sender() ! SlipnetGoWithImportantObjectCorrespondenceScoutResponse(sOpt.map(_.slipNodeRep()))
 
   }
+
+
+
 
   def chooseSlipNodeWithTemperature(object_list: List[SlipNode], temperature: Double) = {
     val value_list = object_list.map(sn => {
