@@ -32,13 +32,18 @@ case class Rule (
 
                 ) extends WorkspaceStructure {
 
-  def rule_equal(r: Rule): Boolean = {
-    if (r==null) return false;
-    if ((relation == r.relation)&&
-      (descriptorFacet == r.descriptorFacet)&&
-      (objectCategory == r.objectCategory)&&
-      (descriptor==r.descriptor)) return true;
-    return false;
+  def rule_equal(rOpt: Option[Rule]): Boolean = {
+    if (rOpt.isEmpty) {
+      false
+    } else {
+      val r = rOpt.get
+      (
+        (relation == r.relation) &&
+        (descriptorFacet == r.descriptorFacet) &&
+        (objectCategory == r.objectCategory) &&
+        (descriptor==r.descriptor)
+      )
+    }
   }
 
   def activate_rule_descriptions() = {
@@ -51,6 +56,13 @@ case class Rule (
     s"replace ${descriptorFacet} of ${descriptor} ${objectCategory} by ${relation}"
   }
 
+  def build_rule() = {
+    // GUI workspace.Workspace_Rule.Change_Caption("rule : " +this.toString());
+//    if (workspace.rule!=null) workspace.workspace_structures.removeElement(workspace.rule);
+//    workspace.rule= this;
+//    workspace.workspace_structures.addElement(this);
+    activate_rule_descriptions();
+  }
 
   // Rule.java.81
   def change_string(s: String): String = {

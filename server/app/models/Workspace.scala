@@ -26,13 +26,7 @@ import models.Group.{FutureGroupRep, GroupRep}
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.DirValue.DirValue
 import models.Slipnet.DescriptionTypeInstanceLinksToNodeInfo
-import models.Workspace.{
-  GoWithBottomUpCorrespondenceScout3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString,
-  GoWithGroupStrengthTester, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3,
-  GoWithRuleStrengthTester, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse,
-  GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2,
-  InitializeWorkspaceStringsResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell,
-  UpdateEverything, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
+import models.Workspace.{GoWithBottomUpCorrespondenceScout3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithRuleBuilder, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3, GoWithRuleStrengthTester, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, UpdateEverything, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
 import models.codelet.BottomUpBondScout.{GoWithBottomUpBondScout2Response, GoWithBottomUpBondScoutResponse}
@@ -179,6 +173,8 @@ object Workspace {
                                 slippageCandidates: List[ConceptMappingRep]
                               )
   case class GoWithRuleStrengthTester(temperature: Double, ruleID: String)
+  case class GoWithRuleBuilder(ruleID: String)
+
   //case class SlipnodeActivationChanged(id: String, activation: Double)
 
   case object UpdateEverything
@@ -1538,7 +1534,52 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
         sender() ! GoWithRuleStrengthTesterResponse(rule.workspaceStructureRep(), strength)
       }
 
+    case GoWithRuleBuilder(ruleID) =>
+      val myrule = structureRefs(ruleID).asInstanceOf[Rule]
+      println("trying to build "+r.toString());
+      if (myrule.rule_equal(rule)){
+        // rule already exists: fizzle, but activate concepts
+        print("already exists - activate concepts");
+        myrule.activate_rule_descriptions()
+        sender() ! Finished
+      } else {
+        myrule.update_strength_value()
+        val strength = myrule.total_strength
+        if (strength == 0.0) {
+          print("the rule is incompatible with correspondences: Fizzle");
+          sender() ! Finished
+        } else {
+          // fight against other rules
+          if (rule.isDefined){
+            print("Fighting against existing rule");
+            print("existing rule strength: "+ rule.get.total_strength);
+            print("this rule strength: "+ rule.get.total_strength);
+            if (!structure_vs_structure(
+              myrule,1.0,rule.get,1.0)){
+              // lost the fight
+              println("lost the fight: fizzle!");
+              sender() ! Finished
+            }
+            else println("won!");
+          }
+          build_rule(myrule)
+          print("building rule");
 
+        }
+
+      }
+
+  }
+
+  def build_rule(r: Rule): Unit = {
+    // GUI workspace.Workspace_Rule.Change_Caption("rule : " +this.toString());
+    if (rule.isDefined) {
+      removeStructure(rule.get)
+    }
+    rule = Some(r);
+    addStructure(r);
+
+    r.build_rule()
   }
 
   def unreplaced_objects(): List[WorkspaceObject] = {
@@ -1745,16 +1786,6 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
   }
 
 
-
-  def build_rule(r: Rule) = {
-    // GUI workspace.Workspace_Rule.Change_Caption("rule : " +this.toString());
-    if (rule.isDefined) {
-      removeStructure(rule.get)
-    }
-    rule= Some(r)
-    addStructure(r)
-    r.activate_rule_descriptions()
-  }
 
 
   /*def addDescription(
