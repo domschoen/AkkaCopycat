@@ -3,10 +3,12 @@ package models.codelet
 import akka.event.LoggingReceive
 import akka.actor.ActorRef
 import models.Coderack.ProposeRule
+import models.ConceptMapping.ConceptMappingRep
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.SlipnetProposeRuleResponse
-import models.Workspace.{GoWithRuleScout, GoWithRuleScout3, WorkspaceProposeRuleResponse}
+import models.Workspace.{GoWithRuleScout, GoWithRuleScout3, SlippageListShell, WorkspaceProposeRuleResponse}
 import models.WorkspaceObject.WorkspaceObjectRep
+import models.WorkspaceStructure.WorkspaceStructureRep
 
 object RuleScout {
   case class RuleScoutProposeRule(descriptorFacet: Option[String],
@@ -14,9 +16,17 @@ object RuleScout {
                                   objectCategory: Option[String],
                                   relation: Option[String])
   case class GoWithRuleScoutResponse(changed: WorkspaceObjectRep)
-  case class GoWithRuleScout2Response(obj2: WorkspaceObjectRep)
+  case class GoWithRuleScout2Response(
+                                       obj2: WorkspaceObjectRep,
+                                       slippagesShell: SlippageListShell,
+                                       object_list: List[SlipNodeRep],
+                                       changedReplacementRelation: Option[String],
+                                       letterCategory: SlipNodeRep
+                                     )
   case class SlipnetGoWithRuleScoutResponse(string_position_category: SlipNodeRep, letter_category: SlipNodeRep)
-  case object SlipnetGoWithRuleScout2Response
+  case class SlipnetGoWithRuleScout2Response(slippage_list_rep: List[ConceptMappingRep])
+  case class GoWithRuleScout3Response(object_list: List[String])
+
 }
 class RuleScout(urgency: Int,
                 workspace: ActorRef,
@@ -32,12 +42,14 @@ class RuleScout(urgency: Int,
     GoWithRuleScoutResponse,
     GoWithRuleScout2Response,
     SlipnetGoWithRuleScoutResponse,
-    SlipnetGoWithRuleScout2Response
+    SlipnetGoWithRuleScout2Response,
+    GoWithRuleScout3Response
   }
   import models.Slipnet.{
     SlipnetProposeRule,
     SlipnetGoWithRuleScout,
-    SlipnetGoWithRuleScout2
+    SlipnetGoWithRuleScout2,
+    SlipnetGoWithRuleScout3
   }
   import models.Workspace.{
     WorkspaceProposeRule,
@@ -51,6 +63,10 @@ class RuleScout(urgency: Int,
   var relation: Option[String] = None
   var u: Double = 0.0
   var changed : WorkspaceObjectRep = null
+  var obj2: WorkspaceObjectRep = null
+  var object_list: List[SlipNodeRep] = null
+  var changedReplacementRelation: Option[String] = None
+  var letter_category: SlipNodeRep = null
 
   def receive = LoggingReceive {
     // to the browser
@@ -86,11 +102,23 @@ class RuleScout(urgency: Int,
       workspace ! GoWithRuleScout2(changed, string_position_category, letter_category)
 
 
-    case GoWithRuleScout2Response(obj2) =>
-      slipnet ! SlipnetGoWithRuleScout2(obj2)
+    case GoWithRuleScout2Response(o2, slippagesShell, ol, crr, lc) =>
+      changedReplacementRelation = crr
+      letter_category = lc
+      object_list = ol
+      obj2 = o2
+      slipnet ! SlipnetGoWithRuleScout2(slippagesShell)
 
-    case SlipnetGoWithRuleScout2Response =>
-      workspace ! GoWithRuleScout3
+    case SlipnetGoWithRuleScout2Response(slippage_list_rep) =>
+      workspace ! GoWithRuleScout3(slippage_list_rep, object_list, obj2)
+
+    case GoWithRuleScout3Response(object_list) =>
+      if (object_list.isEmpty){
+        print("no distinguishing descriptions could be found. fizzle");
+        self ! Finished
+      } else {
+        slipnet ! SlipnetGoWithRuleScout3(object_list, changedReplacementRelation, letter_category, runTemperature)
+      }
 
     case TemperatureResponse(value) =>
       t = value

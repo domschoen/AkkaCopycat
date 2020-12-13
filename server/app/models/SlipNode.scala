@@ -1,5 +1,6 @@
 package models
 
+import akka.actor.ActorRef
 import models.SlipNode.SlipNodeRep
 
 import scala.collection.mutable.ListBuffer
@@ -22,10 +23,14 @@ object SlipNode {
   object id {
     val right = "rt"
     val sameness = "sm"
+    val whole = "wh"
+    val letter = "l"
+    val group = "g"
+    val letter_category = "lc"
   }
 }
 
-class SlipNode(x: Int, y: Int, val conceptual_depth: Double, val name: String, val shortName: String) {
+class SlipNode(x: Int, y: Int, val conceptual_depth: Double, val name: String, val shortName: String, workspace: ActorRef) {
   var codelets = ListBuffer.empty[String]
   var lateral_nonslip_links = ListBuffer.empty[SlipnetLink]
   var lateral_slip_links = ListBuffer.empty[SlipnetLink]
@@ -46,8 +51,8 @@ class SlipNode(x: Int, y: Int, val conceptual_depth: Double, val name: String, v
   var intrinsic_link_length = 0.0
   var shrunk_link_length = 0.0
 
-  def this(x: Int, y: Int, conceptual_depth: Double, name: String, len: Double) = {
-    this(x, y, conceptual_depth, name, name)
+  def this(x: Int, y: Int, conceptual_depth: Double, name: String, len: Double, workspace: ActorRef) = {
+    this(x, y, conceptual_depth, name, name, workspace)
     intrinsic_link_length = len;
     shrunk_link_length = len*0.4;
   }
@@ -63,6 +68,12 @@ class SlipNode(x: Int, y: Int, val conceptual_depth: Double, val name: String, v
     }
   }
 
+  def setActivation(value: Double) = {
+    if (activation != value) {
+      activation = value
+      //workspace ! SlipnodeActivationChanged(id(),activation)
+    }
+  }
 
   def degree_of_association(): Double = {
     // used in calculating link lengths

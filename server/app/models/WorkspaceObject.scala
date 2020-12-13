@@ -132,9 +132,12 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
 
 
   def has_slipnode_description(ds: SlipNodeRep): Boolean = {
+    has_slipnode_description_with_id(ds.id)
+  }
+  def has_slipnode_description_with_id(ds_id: String): Boolean = {
     descriptions.find(d =>
-        d.descriptor.isDefined &&
-        d.descriptor.get.equals(ds.id)
+      d.descriptor.isDefined &&
+        d.descriptor.get.equals(ds_id)
     ).isDefined
   }
 
@@ -156,6 +159,37 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
       case None => None
     }
   }
+
+  def distinguishing_descriptor(descriptor_id: String): Boolean = {
+    // returns true if no other object of the same type (ie. letter or group)
+    // has the same descriptor
+
+    if (descriptor_id == SlipNode.id.letter ||
+      descriptor_id == SlipNode.id.group ||
+      Slipnet.isNumber(descriptor_id)
+    ) {
+      false
+    } else {
+
+      wString.objects.find(wo => {
+        if (wo == this) {
+          true
+        } else {
+          // check to see if they are of the same type
+          if (
+              (this.isInstanceOf[Letter] && wo.isInstanceOf[Letter]) ||
+              (this.isInstanceOf[Group] && wo.isInstanceOf[Group])
+          ) {
+            // check all descriptions for the descriptor
+            wo.descriptions.find(d => d.descriptor.isDefined && d.descriptor.get.id == descriptor_id).isEmpty
+
+          } else true
+        }
+
+      }).isDefined
+    }
+  }
+
 
   def update_object_value() = {
     // calculate the raw importance of the object
@@ -224,7 +258,10 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
 
   def get_description(description_type: SlipNodeRep): Option[SlipNodeRep] = {
     // returns the description attached to this object of the specified description type
-    descriptions.find(d => d.descriptionType == description_type).map(_.descriptor).flatten
+    get_description_with_id(description_type.id)
+  }
+  def get_description_with_id(description_type: String): Option[SlipNodeRep] = {
+    descriptions.find(d => d.descriptionType.id == description_type).map(_.descriptor).flatten
   }
 
   def get_description_type(description: Option[SlipNodeRep]): Option[SlipNodeRep] = {

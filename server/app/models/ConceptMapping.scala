@@ -1,8 +1,7 @@
 package models
 
 import java.util.UUID
-
-import models.SlipNode.SlipnetInfo
+import models.SlipNode.{SlipNodeRep, SlipnetInfo}
 import models.Slipnet.InflatedDescriptionRep
 import models.WorkspaceObject.WorkspaceObjectRep
 
@@ -11,13 +10,45 @@ import models.WorkspaceObject.WorkspaceObjectRep
 
 // A description has description type = slipnode
 object ConceptMapping {
-  case class ConceptMappingRep(description_type1SlipNodeID: String,
+  case class ConceptMappingRep(
+                                uuid: String,
+                                description_type1SlipNodeID: String,
                                description_type2SlipNodeID: String,
                                descriptor1SlipNodeID: String,
                                descriptor2SlipNodeID: String,
+//                               description_type1: SlipNodeRep,
+//                               description_type2: SlipNodeRep,
+//                               descriptor1: SlipNodeRep,
+//                               descriptor2: SlipNodeRep,
                                obj1: WorkspaceObjectRep,
                                obj2: WorkspaceObjectRep
-                         )
+                         ) {
+//    def updatedConceptMappingRepForDescriptionType1(slipNodeID: String, newActivation: Double) =
+//      if (description_type1.id == slipNodeID) this.copy(description_type1.copy(activation = newActivation)) else this
+//
+//    def updatedConceptMappingRepForDescriptionType2(slipNodeID: String, newActivation: Double) =
+//      if (description_type2.id == slipNodeID) this.copy(description_type2.copy(activation = newActivation)) else this
+//
+//    def updatedConceptMappingRepForDescriptor1(slipNodeID: String, newActivation: Double) =
+//      if (descriptor1.id == slipNodeID) this.copy(descriptor1.copy(activation = newActivation)) else this
+//
+//    def updatedConceptMappingRepForDescriptor2(slipNodeID: String, newActivation: Double) =
+//      if (descriptor2.id == slipNodeID) this.copy(descriptor2.copy(activation = newActivation)) else this
+//
+//    def updatedConceptMappingRep(slipNodeID: String, newActivation: Double) = {
+//      updatedConceptMappingRepForDescriptionType1(slipNodeID, newActivation)
+//        .updatedConceptMappingRepForDescriptionType2(slipNodeID, newActivation)
+//        .updatedConceptMappingRepForDescriptor1(slipNodeID, newActivation)
+//        .updatedConceptMappingRepForDescriptor2(slipNodeID, newActivation)
+//    }
+
+//    // Duplicated code (also defined in ConceptMapping)
+//    def relevant(): Boolean ={
+//      description_type1.activation == 100.0 && description_type2.activation == 100.0
+//    }
+
+  }
+  var conceptMappingRefs = Map.empty[String, ConceptMapping]
 
   def get_concept_mapping_list(
                                 w1 : WorkspaceObjectRep,
@@ -38,20 +69,27 @@ object ConceptMapping {
                 SlipnetFormulas.slip_linked(d1.descriptorSlipNode.get,d2.descriptorSlipNode.get)
               )
         )
-    ) yield new ConceptMapping(
-      d1.descriptionTypeSlipNode,
-      d2.descriptionTypeSlipNode,
-      d1.descriptorSlipNode.get,
-      d2.descriptorSlipNode.get,
-      w1,
-      w2,
-      slipnetInfo
-    )
+    ) yield {
+      val cm = new ConceptMapping(
+        d1.descriptionTypeSlipNode,
+        d2.descriptionTypeSlipNode,
+        d1.descriptorSlipNode.get,
+        d2.descriptorSlipNode.get,
+        w1,
+        w2,
+        slipnetInfo
+      )
+      addNewConceptMapping(cm)
+    }
   }
 
   def all_opposite_mappings(cms: List[ConceptMapping], opposite : SlipNode): Boolean = {
     // returns true if all mappings are opposite
     !cms.find(cm => cm.label != opposite).isDefined
+  }
+  def addNewConceptMapping(cm: ConceptMapping): ConceptMapping  = {
+    conceptMappingRefs += (cm.uuid -> cm)
+    cm
   }
 
 }
@@ -74,6 +112,7 @@ class ConceptMapping(val description_type1: SlipNode,
   var label: Option[SlipNode] = SlipnetFormulas.get_bond_category(descriptor1,descriptor2, slipnetInfo.slipnetOpposite)  // if the concept_mapping has a linking concept
 
   def conceptMappingRep(): ConceptMappingRep = ConceptMappingRep(
+      uuid,
       description_type1.id(),
       description_type2.id(),
       descriptor1.id(),
@@ -171,7 +210,8 @@ class ConceptMapping(val description_type1: SlipNode,
       return this;
     if (!(SlipnetFormulas.get_bond_category(descriptor2,descriptor1,slipnetInfo.slipnetIdentity) == label))
       return this;
-    new ConceptMapping(description_type2,description_type1,
+    val cm = new ConceptMapping(description_type2,description_type1,
       descriptor2,descriptor1,obj1,obj2,slipnetInfo)
+    ConceptMapping.addNewConceptMapping(cm)
   }
 }

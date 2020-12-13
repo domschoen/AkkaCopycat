@@ -1,19 +1,19 @@
 package models
 
 import akka.actor.ActorRef
+import models.ConceptMapping.ConceptMappingRep
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.SetSlipNodeBufferValue
 
 object Rule {
 
-  /*
-    public static slipnode apply_slippages(slipnode sn,Vector slippages){
-      for (int x=0; x<slippages.size(); x++){
-        concept_mapping cm = (concept_mapping)slippages.elementAt(x);
-        if (sn==cm.descriptor1) return cm.descriptor2;
+    def apply_slippages(sn: SlipNodeRep, slippages: List[ConceptMappingRep]): String = {
+      val found = slippages.find(cm => sn.id == cm.descriptor1SlipNodeID)
+      found match {
+        case Some(f) => f.descriptor2SlipNodeID
+        case None => sn.id
       }
-      return sn;
-    }*/
+    }
 }
 
 /*case class SlipNodeRep(id: String, descriptorFacetSlipNodeID: String,

@@ -19,7 +19,7 @@ import scala.concurrent.duration._
 import play.api.Play.current
 
 import javax.inject._
-import models.Workspace.{GoWithBottomUpCorrespondenceScout2, InitializeWorkspaceStringsResponse, SlipnetLookAHeadForNewBondCreationResponse}
+import models.Workspace.{GoWithBottomUpCorrespondenceScout2, InitializeWorkspaceStringsResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell}
 import models.codelet.BottomUpCorrespondenceScout.{ProposeAnyCorrespondenceSlipnetResponse, ProposeAnyCorrespondenceSlipnetResponse2}
 import play.api.Configuration
 import play.api.libs.concurrent.InjectedActorSupport
@@ -29,20 +29,29 @@ import models.Group.{FutureGroupRep, GroupRep}
 import models.Letter.LetterSlipnetComplement
 import models.SlipNode.{SlipNodeRep, SlipnetInfo}
 import models.WorkspaceObject.WorkspaceObjectRep
+import models.WorkspaceStructure.WorkspaceStructureRep
 import models.codelet.BottomUpDescriptionScout.SlipnetGoWithBottomUpDescriptionScoutResponse
 import models.codelet.GroupScoutWholeString.{GetLeftAndRightResponse, SlipnetGoWithGroupScoutWholeStringResponse}
 import models.codelet.GroupStrengthTester.SlipnetGoWithGroupStrengthTesterResponse
-import models.codelet.RuleScout.{SlipnetGoWithRuleScout2Response, SlipnetGoWithRuleScoutResponse}
+import models.codelet.RuleScout.{RuleScoutProposeRule, SlipnetGoWithRuleScout2Response, SlipnetGoWithRuleScoutResponse}
 import models.codelet.TopDownBondScoutCategory.SlipnetTopDownBondScoutCategory2Response
 import models.codelet.TopDownBondScoutDirection.SlipnetTopDownBondScoutDirection2Response
 import models.codelet.TopDownDescriptionScout.{SlipnetGoWithTopDownDescriptionScoutResponse, SlipnetGoWithTopDownDescriptionScoutResponse2}
 import models.codelet.TopDownGroupScoutCategory.{SlipnetGoWithTopDownGroupScoutCategory2Response, SlipnetGoWithTopDownGroupScoutCategoryResponse}
 import models.codelet.TopDownGroupScoutDirection.SlipnetGoWithTopDownGroupScoutDirectionResponse
 
+import scala.annotation.tailrec
 import scala.collection.mutable.ListBuffer
 
 
 object Slipnet {
+  def isNumber(descriptor_id: String): Boolean = {
+    slipnet_numbers.find(sn => sn.id == descriptor_id).isDefined
+  }
+
+  var slipnet_numbers: List[SlipNodeRep] = null
+
+
   val r = scala.util.Random
 
   def props(): Props = Props(new Slipnet())
@@ -129,7 +138,14 @@ object Slipnet {
                                          successorSlipNode: SlipNodeRep
                                        )
   case object SlipnetGoWithRuleScout
-  case class SlipnetGoWithRuleScout2(obj2: WorkspaceObjectRep)
+  case class SlipnetGoWithRuleScout2(slippagesShell: SlippageListShell)
+  case class SlipnetGoWithRuleScout3(
+                                      object_list: List[String],
+                                      changedReplacementRelation: Option[String],
+                                      letterCategory: SlipNodeRep,
+                                      temperature: Double)
+
+
   object RelationType {
     val Sameness = "Sameness"
     val Successor = "Successor"
@@ -168,7 +184,10 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
   var slipnet_letters = chars.map(c => addBasicSlipNode(0, 0, 10.0, c, c)).to[ListBuffer]
 
   var numbers = (0 to 4).map(i => (i + 49).toChar.toString)
-  var slipnet_numbers: ListBuffer[SlipNode] = numbers.map(c => addBasicSlipNode(0, 0, 30.0, c, c)).to[ListBuffer]
+  val slipnet_numbers: ListBuffer[SlipNode] = numbers.map(c => addBasicSlipNode(0, 0, 30.0, c, c)).to[ListBuffer]
+  Slipnet.slipnet_numbers = slipnet_numbers.toList.map(_.slipNodeRep())
+
+
 
   // moved to singleton
   // val time_step_length = 15
@@ -460,7 +479,7 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
 
 
   def addBasicSlipNode(x: Int, y: Int, cd: Double, pn: String, sn: String): SlipNode = {
-    val slipNode = new SlipNode(x, y, cd, pn, sn)
+    val slipNode = new SlipNode(x, y, cd, pn, sn, workspace)
     slipNodeRefs += (slipNode.id() -> slipNode)
     slipNodes += slipNode
     slipNode
@@ -995,10 +1014,65 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
     case SlipnetGoWithRuleScout =>
       sender() ! SlipnetGoWithRuleScoutResponse(string_position_category.slipNodeRep(), letter_category.slipNodeRep())
 
-    case SlipnetGoWithRuleScout2(obj2) =>
-      sender() ! SlipnetGoWithRuleScout2Response
+    case SlipnetGoWithRuleScout2(slippagesShell: SlippageListShell) =>
+      val sl = slippagesShell.sl.map(cm => ConceptMapping.conceptMappingRefs(cm.uuid))
+      val slippageCandidates = slippagesShell.slippageCandidates.map(cm => ConceptMapping.conceptMappingRefs(cm.uuid))
+      val filteredSlippageCandidates = slippageCandidates.filter(cm => cm.slippage())
 
+      val slippage_list = slippage_list_accumulation(sl, filteredSlippageCandidates)
+      val slippage_list_rep = slippage_list.map(cm => cm.conceptMappingRep())
+      sender() ! SlipnetGoWithRuleScout2Response(slippage_list_rep)
+
+    case SlipnetGoWithRuleScout3(ol, changedReplacementRelation, letterCategory, t) =>
+      println("choosing a description based on conceptual depth:")
+      val descriptor = {
+        val object_list = ol.map(slipNodeRefs(_))
+        chooseSlipNodeWithTemperature(object_list,t)
+      }
+      println("Chosen descriptor: "+descriptor.id)
+
+      // choose the relation(change the letmost object to..xxxx) i.e. "successor" or "d"
+
+      println("choosing relation based on conceptual depth:")
+      val relation = {
+        val letterCategorySlipNode = slipNodeRefs(letterCategory.id)
+        val object_list = if (changedReplacementRelation.isDefined) {
+          val relation = slipNodeRefs(changedReplacementRelation.get)
+          List(letterCategorySlipNode, relation)
+        } else List(letterCategorySlipNode)
+
+        chooseSlipNodeWithTemperature(object_list,t)
+      }
+      println("Chosen relation: "+relation.id);
+
+      println("proposing rule:");
+      println("change letter-cat of "+descriptor.id+" letter to "+ relation.id);
+
+      sender() ! RuleScoutProposeRule(
+        Some(letter_category.id),
+        Some(descriptor.id),
+        Some(letter.id),
+        Some(relation.id)
+      )
   }
+
+  def chooseSlipNodeWithTemperature(object_list: List[SlipNode], temperature: Double) = {
+    val value_list = object_list.map(sn => {
+      Formulas.temperatureAdjustedValue(sn.conceptual_depth, temperature)
+    })
+    val index = Utilities.valueProportionalRandomIndexInValueList(value_list)
+    object_list(index)
+  }
+
+  def slippage_list_accumulation(acc: List[ConceptMapping], candidates: List[ConceptMapping]): List[ConceptMapping] = {
+    val cm = candidates.head
+    val newAcc = if (!cm.in_vector(acc)) cm :: acc else acc
+    candidates match {
+      case Nil => newAcc
+      case x :: xs => slippage_list_accumulation(newAcc,xs)
+    }
+  }
+
 
   def activateConceptMappingList(concept_mapping_list: List[ConceptMapping]): Unit = {
     // activate some descriptions
@@ -1062,8 +1136,8 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
     // if activation>100 or clamp=true, activation=100
     for (ob <- slipNodes) {
       if (!(ob.clamp)) ob.activation+=ob.buffer;
-      if (ob.activation>100.0) ob.activation=100.0;
-      if (ob.activation<0.0) ob.activation = 0.0;
+      if (ob.activation>100.0) ob.setActivation(100.0)
+      if (ob.activation<0.0) ob.setActivation(0.0)
     }
 
 
@@ -1076,10 +1150,11 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
 
         if ((ob.activation>55.0)&& ( Slipnet.r.nextDouble() < act) &&
           (!(ob.clamp))) {
-          ob.activation=100.0
+          ob.setActivation(100.0)
         };
       }
     }
+
 
 
     // check for redraw; and reset buffer values to 0

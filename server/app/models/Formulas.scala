@@ -14,6 +14,9 @@ object Formulas {
 
   def min(x: Double, y: Double): Double = if (x<y) x else y
 
+  def temperatureAdjustedValue(value: Double, temperature: Double) = Math.pow(value,((100.0-temperature)/30.0)+0.5)
+
+
   def temperature_adjusted_probability(value: Double, temperature: Double): Double ={
     // if the temperature is 0, no adjustment is made
     // otherwise, values above .5 are lowered and values below .5 are raised

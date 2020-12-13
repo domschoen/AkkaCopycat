@@ -26,7 +26,7 @@ import models.Group.{FutureGroupRep, GroupRep}
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.DirValue.DirValue
 import models.Slipnet.DescriptionTypeInstanceLinksToNodeInfo
-import models.Workspace.{GoWithBottomUpCorrespondenceScout3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, SlipnetLookAHeadForNewBondCreationResponse, UpdateEverything, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
+import models.Workspace.{GoWithBottomUpCorrespondenceScout3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3, GoWithRuleScout4, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, UpdateEverything, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
 import models.codelet.BottomUpBondScout.{GoWithBottomUpBondScout2Response, GoWithBottomUpBondScoutResponse}
@@ -36,7 +36,7 @@ import models.codelet.Codelet.{Finished, PrepareDescriptionResponse}
 import models.codelet.DescriptionStrengthTester.GoWithDescriptionStrengthTesterResponse
 import models.codelet.GroupScoutWholeString.{GoWithGroupScoutWholeStringResponse, GroupScoutWholeString2Response, GroupScoutWholeString3Response}
 import models.codelet.GroupStrengthTester.GoWithGroupStrengthTesterResponse
-import models.codelet.RuleScout.{GoWithRuleScout2Response, GoWithRuleScoutResponse, RuleScoutProposeRule}
+import models.codelet.RuleScout.{GoWithRuleScout2Response, GoWithRuleScout3Response, GoWithRuleScoutResponse, RuleScoutProposeRule}
 import models.codelet.TopDownDescriptionScout.GoWithTopDownDescriptionScoutResponse
 import models.codelet.TopDownGroupScoutCategory.{GoWithTopDownGroupScoutCategory2Response, GoWithTopDownGroupScoutCategoryResponse}
 import models.codelet.TopDownGroupScoutDirection.GoWithTopDownGroupScoutDirectionResponse
@@ -165,7 +165,15 @@ object Workspace {
                                  )
   case class WorkspaceProposeRuleResponse(ruleID: String)
   case class GoWithRuleScout2(changed: WorkspaceObjectRep, string_position_category: SlipNodeRep, letter_category: SlipNodeRep)
-  case object GoWithRuleScout3
+  case class GoWithRuleScout3(slippage_list_rep: List[ConceptMappingRep], object_list: List[SlipNodeRep],obj2: WorkspaceObjectRep)
+  case class GoWithRuleScout4(object_list: List[String])
+
+  case class SlippageListShell(
+                                sl: List[ConceptMappingRep],
+                                slippageCandidates: List[ConceptMappingRep]
+                              )
+
+  //case class SlipnodeActivationChanged(id: String, activation: Double)
 
   case object UpdateEverything
 }
@@ -318,6 +326,14 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 
 
   def receive = LoggingReceive {
+
+
+//    case SlipnodeActivationChanged(slipNodeID, activation) =>
+//      for (structure <- structures) {
+//        if (structure.isInstanceOf[Correspondence]) {
+//          (structure.asInstanceOf[Correspondence]).slipNodeActivationChanged(slipNodeID, activation)
+//        }
+//      }
 
     case Initialize(initialS, modifiedS, targetS) =>
       coderack = sender()
@@ -1463,13 +1479,47 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       // if this object corresponds to another object in the workspace
       // object_list = the union of this and the distingushing descriptors
       if (changed.correspondence.isDefined) {
-        val obj2 = changed.correspondence.get.obj2;
-        sender() ! GoWithRuleScout2Response(obj2.workspaceObjectRep())
+
+        if (changed.replacement.isEmpty) {
+          println("Changed replacement is empty. Fizzle")
+          sender() ! Finished
+        } else {
+          val replacement = changed.replacement.get
+          val letterCategory = replacement.to.get_description_with_id(SlipNode.id.letter_category)
+          if (letterCategory.isEmpty) {
+            println("Changed replacement get_description_with_id letter_category is empty. Fizzle")
+            sender() ! Finished
+          } else {
+            val obj2 = changed.correspondence.get.obj2
+            val slippagesShell = slippage_list()
+
+            sender() ! GoWithRuleScout2Response(
+              obj2.workspaceObjectRep(),
+              slippagesShell,
+              object_list.toList,
+              replacement.relation,
+              letterCategory.get
+            )
+          }
+        }
       } else {
-        self.forward(GoWithRuleScout3)
+        sender() ! GoWithRuleScout3Response(object_list.toList.map(_.id))
       }
-    case GoWithRuleScout3 =>
+
+    case GoWithRuleScout3(slippage_list_rep, object_list,obj2_rep) =>
+      val obj2 = objectRefs()(obj2_rep.uuid)
+      val new_object_list = object_list.map(s => {
+        val sID = Rule.apply_slippages(s, slippage_list_rep)
+        if (obj2.has_slipnode_description_with_id(sID) && obj2.distinguishing_descriptor(sID))
+            Some(sID)
+        else None
+      }).flatten
+      sender() ! GoWithRuleScout3Response(new_object_list)
+
+    case GoWithRuleScout4(object_list) =>
       sender() ! Finished
+
+
   }
 
   def unreplaced_objects(): List[WorkspaceObject] = {
@@ -1756,8 +1806,8 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     s2.update_strength_value();
     val vs1 = s1.total_strength*w1;
     val vs2 = s2.total_strength*w2;
-    val v1 = temperatureAdjustedValue(vs1, chaleur)
-    val v2 = temperatureAdjustedValue(vs2, chaleur)
+    val v1 = Formulas.temperatureAdjustedValue(vs1, chaleur)
+    val v2 = Formulas.temperatureAdjustedValue(vs2, chaleur)
     !(((v1+v2) * r.nextDouble())>v1)
   }
 
@@ -1771,7 +1821,6 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 
 
 
-  def temperatureAdjustedValue(value: Double, temperature: Double) = Math.pow(value,((100.0-temperature)/30.0)+0.5)
 
 
   // From workspace_formulas.java.26
@@ -1813,32 +1862,36 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     log.debug("workspace total string unhappiness = " + total_unhappiness);
   }
 
-  /* slip !
-  def slippage_list(): List[ConceptMapping] = {
-    Vector sl = new Vector();
-    if ((changed_object!=null)&&(changed_object.correspondence!=null)){
-      Correspondence c = changed_object.correspondence;
 
-      val slip_list =
-      Vector slip_list = c.concept_mapping_list;
-      for (int y=0; y<slip_list.size(); y++){
-        concept_mapping cm = (concept_mapping)slip_list.elementAt(y);
-        sl.addElement(cm);
-      }
-    }
-    for (int x=0; x<workspace.initial.objects.size(); x++){
-      workspace_object wo =(workspace_object)workspace.initial.objects.elementAt(x);
-      if (wo.correspondence!=null){
-        Correspondence c = wo.correspondence;
-        Vector slip_list = c.slippage_list();
-        for (int y=0; y<slip_list.size(); y++){
-          concept_mapping cm = (concept_mapping)slip_list.elementAt(y);
-          if (!(cm.in_vector(sl))) sl.addElement(cm);
-        }
-      }
-    }
-    return sl;
-  }*/
+  def slippage_list(): SlippageListShell = {
+    //Vector sl = new Vector();
+    val sl = if (changed_object.isDefined && changed_object.get.correspondence.isDefined) {
+      val c = changed_object.get.correspondence.get;
+
+      c.concept_mapping_list
+    } else List.empty[ConceptMappingRep]
+
+    val sl2 = initial.objects.toList.map(wo => {
+      if (wo.correspondence.isDefined){
+        Some(wo.correspondence.get.slippageCandidates())
+      } else None
+    }).flatten.flatten
+
+    SlippageListShell(sl,sl2)
+  }
+
+
+  // Also coded in slipnet world, in ConceptMapping. If possible use slipnet world
+  def in_vector(cm: ConceptMappingRep, v: List[ConceptMappingRep]): Boolean = {
+    // returns true in the concept mapping is in the vector
+    v.find(c => {
+      ((c.description_type1SlipNodeID == cm.description_type1SlipNodeID) &&
+        (c.description_type2SlipNodeID == cm.description_type2SlipNodeID) &&
+        (c.descriptor1SlipNodeID == cm.descriptor1SlipNodeID))
+    }).isDefined
+  }
+
+
 
   def number_of_bonds(): Int = {
     //returns the number of bonds in the workspace
