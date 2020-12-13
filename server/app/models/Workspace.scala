@@ -26,7 +26,13 @@ import models.Group.{FutureGroupRep, GroupRep}
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.DirValue.DirValue
 import models.Slipnet.DescriptionTypeInstanceLinksToNodeInfo
-import models.Workspace.{GoWithBottomUpCorrespondenceScout3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3, GoWithRuleScout4, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, UpdateEverything, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
+import models.Workspace.{
+  GoWithBottomUpCorrespondenceScout3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString,
+  GoWithGroupStrengthTester, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3,
+  GoWithRuleStrengthTester, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse,
+  GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2,
+  InitializeWorkspaceStringsResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell,
+  UpdateEverything, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
 import models.codelet.BottomUpBondScout.{GoWithBottomUpBondScout2Response, GoWithBottomUpBondScoutResponse}
@@ -37,6 +43,7 @@ import models.codelet.DescriptionStrengthTester.GoWithDescriptionStrengthTesterR
 import models.codelet.GroupScoutWholeString.{GoWithGroupScoutWholeStringResponse, GroupScoutWholeString2Response, GroupScoutWholeString3Response}
 import models.codelet.GroupStrengthTester.GoWithGroupStrengthTesterResponse
 import models.codelet.RuleScout.{GoWithRuleScout2Response, GoWithRuleScout3Response, GoWithRuleScoutResponse, RuleScoutProposeRule}
+import models.codelet.RuleStrengthTester.GoWithRuleStrengthTesterResponse
 import models.codelet.TopDownDescriptionScout.GoWithTopDownDescriptionScoutResponse
 import models.codelet.TopDownGroupScoutCategory.{GoWithTopDownGroupScoutCategory2Response, GoWithTopDownGroupScoutCategoryResponse}
 import models.codelet.TopDownGroupScoutDirection.GoWithTopDownGroupScoutDirectionResponse
@@ -166,13 +173,12 @@ object Workspace {
   case class WorkspaceProposeRuleResponse(ruleID: String)
   case class GoWithRuleScout2(changed: WorkspaceObjectRep, string_position_category: SlipNodeRep, letter_category: SlipNodeRep)
   case class GoWithRuleScout3(slippage_list_rep: List[ConceptMappingRep], object_list: List[SlipNodeRep],obj2: WorkspaceObjectRep)
-  case class GoWithRuleScout4(object_list: List[String])
 
   case class SlippageListShell(
                                 sl: List[ConceptMappingRep],
                                 slippageCandidates: List[ConceptMappingRep]
                               )
-
+  case class GoWithRuleStrengthTester(temperature: Double, ruleID: String)
   //case class SlipnodeActivationChanged(id: String, activation: Double)
 
   case object UpdateEverything
@@ -1516,8 +1522,21 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       }).flatten
       sender() ! GoWithRuleScout3Response(new_object_list)
 
-    case GoWithRuleScout4(object_list) =>
-      sender() ! Finished
+    case GoWithRuleStrengthTester(temperature: Double, ruleID) =>
+      val rule = structureRefs(ruleID).asInstanceOf[Rule]
+      println("testing: "+rule.toString())
+
+      rule.update_strength_value()
+      val strength = rule.total_strength
+      val prob = WorkspaceFormulas.temperature_adjusted_probability(strength / 100.0, temperature)
+      log.info(s"strength = $strength, adjusted prob.= $prob")
+      if (r.nextDouble() > prob){
+        print("not strong enough: fizzled!");
+        sender() ! Finished
+      } else {
+        // it is strong enough - post builder  & activate nodes
+        sender() ! GoWithRuleStrengthTesterResponse(rule.workspaceStructureRep(), strength)
+      }
 
 
   }

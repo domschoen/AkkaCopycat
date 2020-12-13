@@ -57,6 +57,7 @@ object Coderack {
   case class PostDescriptionBuilder(descriptionID: String, strength: Double)
   case class PostGroupBuilder(groupID: String, strength: Double)
   case class PostCorrespondenceBuilder(correspondenceID: String, strength: Double)
+  case class PostRuleBuilder(ruleID: String, strength: Double)
 
 }
 
@@ -302,6 +303,13 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
           self ! Post(newCodelet)
           sender() ! Finished
 
+        case PostRuleBuilder(ruleID, strength) =>
+          val urgency = get_urgency_bin(strength)
+
+          // Pressure_Type argument is missing
+          val newCodelet = createCodelet(CodeletType.RuleBuilder, get_urgency_bin(urgency), Some(ruleID))
+          self ! Post(newCodelet)
+          sender() ! Finished
 
   }
 
