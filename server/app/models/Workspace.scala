@@ -1513,9 +1513,9 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     case GoWithRuleScout3(slippage_list_rep, object_list,obj2_rep) =>
       val obj2 = objectRefs()(obj2_rep.uuid)
       val new_object_list = object_list.map(s => {
-        val sID = Rule.apply_slippages(s, slippage_list_rep)
-        if (obj2.has_slipnode_description_with_id(sID) && obj2.distinguishing_descriptor(sID))
-            Some(sID)
+        val sID = Rule.apply_slippages(Some(s.id), slippage_list_rep)
+        if (sID.isDefined && obj2.has_slipnode_description_with_id(sID.get) && obj2.distinguishing_descriptor(sID.get))
+            Some(sID.get)
         else None
       }).flatten
       sender() ! GoWithRuleScout3Response(new_object_list)

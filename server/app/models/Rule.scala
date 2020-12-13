@@ -7,11 +7,11 @@ import models.Slipnet.SetSlipNodeBufferValue
 
 object Rule {
 
-    def apply_slippages(sn: SlipNodeRep, slippages: List[ConceptMappingRep]): String = {
-      val found = slippages.find(cm => sn.id == cm.descriptor1SlipNodeID)
+    def apply_slippages(sn: Option[String], slippages: List[ConceptMappingRep]): Option[String] = {
+      val found = slippages.find(cm => sn.isDefined && sn.get == cm.descriptor1SlipNodeID)
       found match {
-        case Some(f) => f.descriptor2SlipNodeID
-        case None => sn.id
+        case Some(cm) => Some(cm.descriptor2SlipNodeID)
+        case None => sn
       }
     }
 }
@@ -21,9 +21,9 @@ object Rule {
                         objectCategorySlipNodeID: String,
                         relationSlipNodeID: String)*/
 case class Rule (
-                  descriptorFacet: Option[String],
-                  descriptor: Option[String],
-                  objectCategory: Option[String],
+                  var descriptorFacet: Option[String],
+                  var descriptor: Option[String],
+                  var objectCategory: Option[String],
                   var relation: Option[String],
                   slipnet: ActorRef,
                   lengthSlipNode: SlipNodeRep,
@@ -106,16 +106,16 @@ case class Rule (
     }
   }
     def build_translated_rule(slippage_list_rep: List[ConceptMappingRep], target_string: String, target_object: List[WorkspaceObject]): Option[String] = {
-      val object_category = Rule.apply_slippages(object_category,slippage_list_rep)
-      val descriptor_facet = Rule.apply_slippages(descriptor_facet, slippage_list_rep)
-      val descriptor = Rule.apply_slippages(descriptor, slippage_list_rep)
-      val relation = Rule.apply_slippages(relation, slippage_list_rep)
+      objectCategory = Rule.apply_slippages(objectCategory,slippage_list_rep)
+      descriptorFacet = Rule.apply_slippages(descriptorFacet, slippage_list_rep)
+      descriptor = Rule.apply_slippages(descriptor, slippage_list_rep)
+      relation = Rule.apply_slippages(relation, slippage_list_rep)
 
       // generate the final string
       var final_answer = target_string;
       var changed_obOpt = target_object.find(wo => {
-        wo.has_slipnode_description_with_id(descriptor) &&
-        wo.has_slipnode_description_with_id(object_category)
+        descriptor.isDefined && wo.has_slipnode_description_with_id(descriptor.get) &&
+        objectCategory.isDefined && wo.has_slipnode_description_with_id(objectCategory.get)
       })
       if (changed_obOpt.isDefined) {
         val changed_ob = changed_obOpt.get
@@ -134,7 +134,11 @@ case class Rule (
         final_answer = start_string + middle_string + end_string;
         if (middle_string.equals("NULL")) return None
       }
-      System.out.println(final_answer+" "+codelets_run + " " + "formulas.actual_temperature")
+
+      // HARD Coded
+      val codelets_run = 0
+      val formulas_actual_temperature = 100.0
+      System.out.println(final_answer+" "+codelets_run + " " + formulas_actual_temperature)
 //   GUI   workspace.Workspace_Answer.Change_Caption(final_answer);
 //   GUI   workspace.Workspace_Comments.Change_Caption("translated rule : "+this.toString());
       Some(final_answer)
