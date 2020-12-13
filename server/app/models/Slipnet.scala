@@ -25,6 +25,7 @@ import play.api.Configuration
 import play.api.libs.concurrent.InjectedActorSupport
 import Description.DescriptionRep
 import models.Bond.BondRep
+import models.ConceptMapping.ConceptMappingRep
 import models.Group.{FutureGroupRep, GroupRep}
 import models.Letter.LetterSlipnetComplement
 import models.SlipNode.{SlipNodeRep, SlipnetInfo}
@@ -33,7 +34,7 @@ import models.WorkspaceStructure.WorkspaceStructureRep
 import models.codelet.BottomUpDescriptionScout.SlipnetGoWithBottomUpDescriptionScoutResponse
 import models.codelet.GroupScoutWholeString.{GetLeftAndRightResponse, SlipnetGoWithGroupScoutWholeStringResponse}
 import models.codelet.GroupStrengthTester.SlipnetGoWithGroupStrengthTesterResponse
-import models.codelet.RuleScout.{RuleScoutProposeRule, SlipnetGoWithRuleScout2Response, SlipnetGoWithRuleScoutResponse}
+import models.codelet.RuleScout.{RuleScoutProposeRule, SlipnetGoWithRuleScoutResponse}
 import models.codelet.TopDownBondScoutCategory.SlipnetTopDownBondScoutCategory2Response
 import models.codelet.TopDownBondScoutDirection.SlipnetTopDownBondScoutDirection2Response
 import models.codelet.TopDownDescriptionScout.{SlipnetGoWithTopDownDescriptionScoutResponse, SlipnetGoWithTopDownDescriptionScoutResponse2}
@@ -138,13 +139,16 @@ object Slipnet {
                                          successorSlipNode: SlipNodeRep
                                        )
   case object SlipnetGoWithRuleScout
-  case class SlipnetGoWithRuleScout2(slippagesShell: SlippageListShell)
+  case class SlipnetCompleteSlippageList(slippagesShell: SlippageListShell)
+  case class SlipnetCompleteSlippageListResponse(slippage_list_rep: List[ConceptMappingRep])
+
   case class SlipnetGoWithRuleScout3(
                                       object_list: List[String],
                                       changedReplacementRelation: Option[String],
                                       letterCategory: SlipNodeRep,
                                       temperature: Double)
 
+  case class SlipnetGoWithRuleTranslator(slippage_list_rep: List[ConceptMappingRep])
 
   object RelationType {
     val Sameness = "Sameness"
@@ -1014,14 +1018,19 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
     case SlipnetGoWithRuleScout =>
       sender() ! SlipnetGoWithRuleScoutResponse(string_position_category.slipNodeRep(), letter_category.slipNodeRep())
 
-    case SlipnetGoWithRuleScout2(slippagesShell: SlippageListShell) =>
+    case SlipnetCompleteSlippageList(slippagesShell: SlippageListShell) =>
       val sl = slippagesShell.sl.map(cm => ConceptMapping.conceptMappingRefs(cm.uuid))
       val slippageCandidates = slippagesShell.slippageCandidates.map(cm => ConceptMapping.conceptMappingRefs(cm.uuid))
       val filteredSlippageCandidates = slippageCandidates.filter(cm => cm.slippage())
 
       val slippage_list = slippage_list_accumulation(sl, filteredSlippageCandidates)
+
+      for(slippage <- slippage_list) {
+        print(s"slippage ${slippage.toString()}")
+      }
+
       val slippage_list_rep = slippage_list.map(cm => cm.conceptMappingRep())
-      sender() ! SlipnetGoWithRuleScout2Response(slippage_list_rep)
+      sender() ! SlipnetCompleteSlippageListResponse(slippage_list_rep)
 
     case SlipnetGoWithRuleScout3(ol, changedReplacementRelation, letterCategory, t) =>
       println("choosing a description based on conceptual depth:")
@@ -1054,6 +1063,9 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
         Some(letter.id),
         Some(relation.id)
       )
+
+    case SlipnetGoWithRuleTranslator(slippage_list_rep) =>
+
   }
 
   def chooseSlipNodeWithTemperature(object_list: List[SlipNode], temperature: Double) = {

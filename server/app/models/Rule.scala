@@ -105,46 +105,41 @@ case class Rule (
       listOfChars.mkString
     }
   }
-  /* for slipnet
-    def build_translated_rule(codelets_run: Int): Boolean = {
-      Vector v = slippage_list();
-      object_category = apply_slippages(object_category,v);
-      descriptor_facet = apply_slippages(descriptor_facet,v);
-      descriptor = apply_slippages(descriptor,v);
-      relation = apply_slippages(relation,v);
-      //System.out.println(this);
+    def build_translated_rule(slippage_list_rep: List[ConceptMappingRep], target_string: String, target_object: List[WorkspaceObject]): Option[String] = {
+      val object_category = Rule.apply_slippages(object_category,slippage_list_rep)
+      val descriptor_facet = Rule.apply_slippages(descriptor_facet, slippage_list_rep)
+      val descriptor = Rule.apply_slippages(descriptor, slippage_list_rep)
+      val relation = Rule.apply_slippages(relation, slippage_list_rep)
 
       // generate the final string
-      final_answer = workspace.target_string;
-      workspace_object changed_ob = null;
-      for (int x=0; x<workspace.target.objects.size(); x++){
-        workspace_object wo = (workspace_object)workspace.target.objects.elementAt(x);
-        if ((wo.has_description(descriptor))&&
-          (wo.has_description(object_category))) changed_ob = wo;
-      }
-      if (changed_ob!=null){
+      var final_answer = target_string;
+      var changed_obOpt = target_object.find(wo => {
+        wo.has_slipnode_description_with_id(descriptor) &&
+        wo.has_slipnode_description_with_id(object_category)
+      })
+      if (changed_obOpt.isDefined) {
+        val changed_ob = changed_obOpt.get
         //System.out.println("changed object = "+changed_ob);
-        int string_length = final_answer.length();
-        int start_pos = changed_ob.left_string_position;
-        int end_pos = changed_ob.right_string_position;
-        String start_string = "";
-        String middle_string = "";
-        String end_string = "";
+        val string_length = final_answer.length();
+        val start_pos = changed_ob.left_string_position
+        val end_pos = changed_ob.right_string_position
+        var start_string = ""
+        var middle_string = ""
+        var end_string = ""
         if (start_pos>1) start_string = final_answer.substring(0,start_pos-1);
         middle_string =
           change_string(final_answer.substring(start_pos-1,end_pos));
         if (end_pos<string_length) end_string =
           final_answer.substring(end_pos);
         final_answer = start_string + middle_string + end_string;
-        if (middle_string.equals("NULL")) return false;
+        if (middle_string.equals("NULL")) return None
       }
-      System.out.println(final_answer+" "+codelets_run+" "+
-        formulas.actual_temperature);
-      workspace.Workspace_Answer.Change_Caption(final_answer);
-      workspace.Workspace_Comments.Change_Caption("translated rule : "+this.toString());
-      return true;
+      System.out.println(final_answer+" "+codelets_run + " " + "formulas.actual_temperature")
+//   GUI   workspace.Workspace_Answer.Change_Caption(final_answer);
+//   GUI   workspace.Workspace_Comments.Change_Caption("translated rule : "+this.toString());
+      Some(final_answer)
     }
-
+/* for slipnet
     def calculate_internal_strength(){
       double cdd = descriptor.conceptual_depth-relation.conceptual_depth;
       if (cdd<0.0) cdd=-cdd;

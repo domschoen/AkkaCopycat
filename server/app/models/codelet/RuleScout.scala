@@ -5,7 +5,7 @@ import akka.actor.ActorRef
 import models.Coderack.ProposeRule
 import models.ConceptMapping.ConceptMappingRep
 import models.SlipNode.SlipNodeRep
-import models.Slipnet.SlipnetProposeRuleResponse
+import models.Slipnet.{SlipnetCompleteSlippageList, SlipnetCompleteSlippageListResponse, SlipnetProposeRuleResponse}
 import models.Workspace.{GoWithRuleScout, GoWithRuleScout3, SlippageListShell, WorkspaceProposeRuleResponse}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
@@ -24,7 +24,6 @@ object RuleScout {
                                        letterCategory: SlipNodeRep
                                      )
   case class SlipnetGoWithRuleScoutResponse(string_position_category: SlipNodeRep, letter_category: SlipNodeRep)
-  case class SlipnetGoWithRuleScout2Response(slippage_list_rep: List[ConceptMappingRep])
   case class GoWithRuleScout3Response(object_list: List[String])
 
 }
@@ -42,13 +41,13 @@ class RuleScout(urgency: Int,
     GoWithRuleScoutResponse,
     GoWithRuleScout2Response,
     SlipnetGoWithRuleScoutResponse,
-    SlipnetGoWithRuleScout2Response,
     GoWithRuleScout3Response
   }
   import models.Slipnet.{
     SlipnetProposeRule,
     SlipnetGoWithRuleScout,
-    SlipnetGoWithRuleScout2,
+    SlipnetCompleteSlippageList,
+    SlipnetCompleteSlippageListResponse,
     SlipnetGoWithRuleScout3
   }
   import models.Workspace.{
@@ -107,9 +106,9 @@ class RuleScout(urgency: Int,
       letter_category = lc
       object_list = ol
       obj2 = o2
-      slipnet ! SlipnetGoWithRuleScout2(slippagesShell)
+      slipnet ! SlipnetCompleteSlippageList(slippagesShell)
 
-    case SlipnetGoWithRuleScout2Response(slippage_list_rep) =>
+    case SlipnetCompleteSlippageListResponse(slippage_list_rep) =>
       workspace ! GoWithRuleScout3(slippage_list_rep, object_list, obj2)
 
     case GoWithRuleScout3Response(object_list) =>

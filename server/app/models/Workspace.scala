@@ -26,7 +26,7 @@ import models.Group.{FutureGroupRep, GroupRep}
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.DirValue.DirValue
 import models.Slipnet.DescriptionTypeInstanceLinksToNodeInfo
-import models.Workspace.{GoWithBottomUpCorrespondenceScout3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithRuleBuilder, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3, GoWithRuleStrengthTester, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, UpdateEverything, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
+import models.Workspace.{GoWithBottomUpCorrespondenceScout3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithRuleBuilder, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3, GoWithRuleStrengthTester, GoWithRuleTranslator, GoWithRuleTranslator2, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, UpdateEverything, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
 import models.codelet.BottomUpBondScout.{GoWithBottomUpBondScout2Response, GoWithBottomUpBondScoutResponse}
@@ -38,6 +38,7 @@ import models.codelet.GroupScoutWholeString.{GoWithGroupScoutWholeStringResponse
 import models.codelet.GroupStrengthTester.GoWithGroupStrengthTesterResponse
 import models.codelet.RuleScout.{GoWithRuleScout2Response, GoWithRuleScout3Response, GoWithRuleScoutResponse, RuleScoutProposeRule}
 import models.codelet.RuleStrengthTester.GoWithRuleStrengthTesterResponse
+import models.codelet.RuleTranslator.GoWithRuleTranslatorResponse
 import models.codelet.TopDownDescriptionScout.GoWithTopDownDescriptionScoutResponse
 import models.codelet.TopDownGroupScoutCategory.{GoWithTopDownGroupScoutCategory2Response, GoWithTopDownGroupScoutCategoryResponse}
 import models.codelet.TopDownGroupScoutDirection.GoWithTopDownGroupScoutDirectionResponse
@@ -174,7 +175,8 @@ object Workspace {
                               )
   case class GoWithRuleStrengthTester(temperature: Double, ruleID: String)
   case class GoWithRuleBuilder(ruleID: String)
-
+  case class GoWithRuleTranslator(t: Double)
+  case class GoWithRuleTranslator2(slippage_list_rep: List[ConceptMappingRep])
   //case class SlipnodeActivationChanged(id: String, activation: Double)
 
   case object UpdateEverything
@@ -1566,7 +1568,58 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
           print("building rule");
 
         }
+      }
+    case GoWithRuleTranslator(t) =>
 
+      if (rule.isEmpty){
+        println("Empty rule: fizzle!");
+        sender() ! Finished
+      } else {
+        val bond_densityRaw = if (
+          (initial.length == 1) &&
+          (target.length == 1)
+        ) 1.0 else {
+          (initial.bonds.size + target.bonds.size).toDouble / (initial.length + target.length-2).toDouble
+        }
+
+        val bond_density = if (bond_densityRaw > 1.0) 1.0 else bond_densityRaw
+        println("bond density : "+bond_density)
+        val distribution = if (bond_density>0.8)
+          WorkspaceFormulas.very_low_distribution
+        else if (bond_density>0.6)
+          WorkspaceFormulas.low_distribution
+        else if (bond_density>0.4)
+          WorkspaceFormulas.medium_distribution
+        else if (bond_density>0.2)
+          WorkspaceFormulas.high_distribution;
+        else WorkspaceFormulas.very_high_distribution
+
+        val cutoff = WorkspaceFormulas.choose(distribution) * 10.0
+        println("temperature cutoff = "+cutoff)
+        if (cutoff < t) { // formulas.actual_temperature = t ???
+          // not high enough
+          println("not high enough: Fizzle")
+          sender() ! Finished
+        } else {
+          print("building translated rule!");
+          print("Slippages used in translation:");
+          val slippagesShell = slippage_list()
+
+          sender() ! GoWithRuleTranslatorResponse(slippagesShell)
+        }
+      }
+    case GoWithRuleTranslator2(slippage_list_rep) =>
+      val found_answerOpt = rule.get.build_translated_rule(slippage_list_rep, target.s, target.objects.toList)
+
+      if (found_answerOpt.isDefined) {
+        println("Found answer " + found_answerOpt.get)
+        found_answer = true
+      } else {
+
+        // How to do that ????
+//        Temperature.clamp_time = coderack.codelets_run+100;
+//        Temperature.clamped = true;
+//        formulas.temperature = 100.0;
       }
 
   }

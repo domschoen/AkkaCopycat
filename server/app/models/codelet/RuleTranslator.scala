@@ -2,8 +2,13 @@ package models.codelet
 
 import akka.event.LoggingReceive
 import akka.actor.ActorRef
+import models.ConceptMapping.ConceptMappingRep
+import models.Workspace.{GoWithRuleTranslator2, SlippageListShell}
 
-
+// Codelet.java.1187
+object RuleTranslator {
+  case class GoWithRuleTranslatorResponse(slippageListShell: SlippageListShell)
+}
 class RuleTranslator(urgency: Int,
                      workspace: ActorRef,
                      slipnet: ActorRef,
@@ -13,26 +18,42 @@ class RuleTranslator(urgency: Int,
   import models.Coderack.ChooseAndRun
   import models.Coderack.ProposeCorrespondence
   import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
+  import models.Workspace.GoWithRuleTranslator
+  import RuleTranslator.GoWithRuleTranslatorResponse
+  import models.Slipnet.{
+    SlipnetCompleteSlippageList,
+    SlipnetCompleteSlippageListResponse
+  }
+
+  var runTemperature: Double = 0.0
+  def ruleID() = arguments.get.asInstanceOf[String]
 
   def receive = LoggingReceive {
     // to the browser
-    case Run(initialString, modifiedString, targetString,runTemperature) =>
+    case Run(initialString, modifiedString, targetString,t) =>
       log.debug(s"Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
       temperature ! Register(self)
+      runTemperature = t
+      workspace ! GoWithRuleTranslator(runTemperature)
 
 
-      case TemperatureResponse(value) =>
+    case GoWithRuleTranslatorResponse(slippagesShell) =>
+      slipnet ! SlipnetCompleteSlippageList(slippagesShell)
+
+    case SlipnetCompleteSlippageListResponse(slippage_list_rep: List[ConceptMappingRep]) =>
+      workspace ! GoWithRuleTranslator2(slippage_list_rep)
+
+    case TemperatureResponse(value) =>
       t = value
 
-      case TemperatureChanged(value) =>
+    case TemperatureChanged(value) =>
       t = value
 
-      case Finished =>
-        workspace ! models.Workspace.Step
+    case Finished =>
+      workspace ! models.Workspace.Step
 
-    }
-
+  }
 
 }
 

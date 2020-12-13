@@ -5,7 +5,6 @@ import play.api.libs.concurrent.InjectedActorSupport
 
 
 // TODO (4 days)
-// RuleBuilder
 // RuleTranslator
 // ImportantObjectCorrespondenceScout
 // Verify CorrespondenceStrengthTester
