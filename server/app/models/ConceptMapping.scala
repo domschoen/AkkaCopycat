@@ -4,12 +4,28 @@ import java.util.UUID
 import models.SlipNode.{SlipNodeRep, SlipnetInfo}
 import models.Slipnet.InflatedDescriptionRep
 import models.WorkspaceObject.WorkspaceObjectRep
+import models.Description.DescriptionRep
 
 // It is more a object living in Slipnet
 // w1 and w2 are going to be references, just an ID that could be then used in the workspace
 
 // A description has description type = slipnode
 object ConceptMapping {
+
+  case class ConceptMappingParameters(
+                                       w1 : WorkspaceObjectRep,
+                                       w2 : WorkspaceObjectRep,
+                                       ds1: List[DescriptionRep],
+                                       ds2: List[DescriptionRep]
+                                     )
+
+  case class ConceptMappingRep2(
+                                 description_type1: SlipNode,
+                                 description_type2: SlipNode,
+                                 descriptor1: SlipNode,
+                                 descriptor2: SlipNode,
+                                 label: Option[SlipNode]
+  )
   case class ConceptMappingRep(
                                 uuid: String,
                                 description_type1SlipNodeID: String,
@@ -23,7 +39,8 @@ object ConceptMapping {
                                obj1: WorkspaceObjectRep,
                                obj2: WorkspaceObjectRep
                          ) {
-//    def updatedConceptMappingRepForDescriptionType1(slipNodeID: String, newActivation: Double) =
+
+    //    def updatedConceptMappingRepForDescriptionType1(slipNodeID: String, newActivation: Double) =
 //      if (description_type1.id == slipNodeID) this.copy(description_type1.copy(activation = newActivation)) else this
 //
 //    def updatedConceptMappingRepForDescriptionType2(slipNodeID: String, newActivation: Double) =
@@ -49,6 +66,10 @@ object ConceptMapping {
 
   }
   var conceptMappingRefs = Map.empty[String, ConceptMapping]
+
+  def conceptMappingsWithReps(conceptMappingReps: List[ConceptMappingRep]) =
+    conceptMappingReps.map(cm => ConceptMapping.conceptMappingRefs(cm.uuid))
+
 
   def get_concept_mapping_list(
                                 w1 : WorkspaceObjectRep,
@@ -92,6 +113,7 @@ object ConceptMapping {
     cm
   }
 
+
 }
 
 
@@ -104,7 +126,10 @@ class ConceptMapping(val description_type1: SlipNode,
                      val obj2: WorkspaceObjectRep,
                      slipnetInfo: SlipnetInfo
                     ) {
-  import ConceptMapping.ConceptMappingRep
+  import ConceptMapping.{
+    ConceptMappingRep,
+    ConceptMappingRep2
+  }
 
   val uuid = generateID()
   def generateID(): String = UUID.randomUUID().toString()
@@ -120,6 +145,13 @@ class ConceptMapping(val description_type1: SlipNode,
       obj1,
       obj2
     )
+  def conceptMappingRep2(): ConceptMappingRep2 = ConceptMappingRep2(
+    description_type1,
+    description_type2,
+    descriptor1,
+    descriptor2,
+    label
+  )
 
 
   override def toString(): String = descriptor1.name + " -> " + descriptor2.name
@@ -205,7 +237,7 @@ class ConceptMapping(val description_type1: SlipNode,
   }
 
 
-  def concept_mapping_symmetric_version(): ConceptMapping ={
+  def symmetric_version(): ConceptMapping ={
     if ((label == slipnetInfo.slipnetIdentity) || (label == slipnetInfo.slipnetSameness))
       return this;
     if (!(SlipnetFormulas.get_bond_category(descriptor2,descriptor1,slipnetInfo.slipnetIdentity) == label))
@@ -214,4 +246,16 @@ class ConceptMapping(val description_type1: SlipNode,
       descriptor2,descriptor1,obj1,obj2,slipnetInfo)
     ConceptMapping.addNewConceptMapping(cm)
   }
+
+  def concept_mapping_present(concept_mapping_list: List[ConceptMapping]): Boolean = {
+    // returns true if a concept mapping of the same sort is
+    // present in the workspace
+    concept_mapping_list.find(c =>
+      ((c.description_type1 == description_type1)&&
+        (c.description_type2 == description_type2)&&
+        (c.descriptor1 == descriptor1)&&
+        (c.descriptor2 == descriptor2))
+    ).isDefined
+  }
+
 }

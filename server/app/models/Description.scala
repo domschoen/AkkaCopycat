@@ -33,7 +33,9 @@ case class Description (
 
   def descriptionRep(): DescriptionRep = DescriptionRep(uuid, descriptionType, descriptor)
 
-  def break_description() = {
+
+
+    def break_description() = {
     wObject.break_description(this);
   }
 }

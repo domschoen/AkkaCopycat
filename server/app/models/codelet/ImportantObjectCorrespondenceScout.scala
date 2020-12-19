@@ -4,7 +4,8 @@ import akka.event.LoggingReceive
 import akka.actor.ActorRef
 import models.ConceptMapping.ConceptMappingRep
 import models.SlipNode.SlipNodeRep
-import models.Workspace.SlippageListShell
+import models.Slipnet.{ProposeAnyCorrespondenceSlipnetResponse2, SlipnetBottomUpCorrespondenceScout2, SlipnetGoWithImportantObjectCorrespondenceScout2}
+import models.Workspace.{GoWithBottomUpCorrespondenceScout2, GoWithBottomUpCorrespondenceScout2Response, GoWithBottomUpCorrespondenceScout3, GoWithBottomUpCorrespondenceScout3Response, SlippageListShell}
 import models.WorkspaceObject.WorkspaceObjectRep
 
 // Codelet.java.1322
@@ -38,7 +39,8 @@ class ImportantObjectCorrespondenceScout(urgency: Int,
   import models.Slipnet.{
     SlipnetGoWithImportantObjectCorrespondenceScout,
     SlipnetCompleteSlippageList,
-    SlipnetCompleteSlippageListResponse
+    SlipnetCompleteSlippageListResponse,
+    ProposeAnyCorrespondenceSlipnetResponse
   }
 
 
@@ -64,6 +66,7 @@ class ImportantObjectCorrespondenceScout(urgency: Int,
       obj1 = o1
       slipnet ! SlipnetGoWithImportantObjectCorrespondenceScout(relevantDescriptors, runTemperature)
 
+      // Codelet.java.1328
     case SlipnetGoWithImportantObjectCorrespondenceScoutResponse(sn) =>
       if (sn.isEmpty) {
         println("no relevant distinguishing descriptors found: fizzle");
@@ -73,15 +76,49 @@ class ImportantObjectCorrespondenceScout(urgency: Int,
         workspace ! GoWithImportantObjectCorrespondenceScout2
       }
 
+      // Codelet.java.1333
     case GoWithImportantObjectCorrespondenceScout2Response(slippageListShell) =>
       slipnet ! SlipnetCompleteSlippageList(slippageListShell)
 
+    // Codelet.java.1333
     case SlipnetCompleteSlippageListResponse(slippage_list_rep: List[ConceptMappingRep]) =>
       workspace ! GoWithImportantObjectCorrespondenceScout3(slippage_list_rep, slipNode, runTemperature, obj1)
 
+    // Codelet.java.1369
     case GoWithImportantObjectCorrespondenceScout3Response(o2) =>
       obj2 = o2
-      // todo : continue with slipnet call
+      slipnet ! SlipnetGoWithImportantObjectCorrespondenceScout2(obj1, obj2, runTemperature)
+
+    // flipped case
+    case ProposeAnyCorrespondenceSlipnetResponse(fg) =>
+      workspace ! GoWithBottomUpCorrespondenceScout3(fg, obj2)
+
+    // flipped case
+    case GoWithBottomUpCorrespondenceScout3Response(newObj2) =>
+      slipnet ! SlipnetBottomUpCorrespondenceScout2(obj1, newObj2)
+
+    case ProposeAnyCorrespondenceSlipnetResponse2(
+    obj1,
+    obj2,
+    concept_mapping_list,
+    flip_obj2,
+    distiguishingConceptMappingSize,
+    distiguishingConceptMappingTotalStrength
+    ) =>
+      workspace !  GoWithBottomUpCorrespondenceScout2(
+        obj1,
+        obj2,
+        concept_mapping_list,
+        flip_obj2,
+        distiguishingConceptMappingSize,
+        distiguishingConceptMappingTotalStrength,
+        t
+      )
+
+    case GoWithBottomUpCorrespondenceScout2Response(correspondenceID: String,
+    distiguishingConceptMappingSize: Int,
+    distiguishingConceptMappingTotalStrength) =>
+      coderack ! ProposeCorrespondence(correspondenceID,distiguishingConceptMappingSize,distiguishingConceptMappingTotalStrength)
 
     case TemperatureResponse(value) =>
       t = value

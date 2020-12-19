@@ -20,18 +20,19 @@ import play.api.Play.current
 
 import javax.inject._
 import models.Workspace.{GoWithBottomUpCorrespondenceScout2, InitializeWorkspaceStringsResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell}
-import models.codelet.BottomUpCorrespondenceScout.{ProposeAnyCorrespondenceSlipnetResponse, ProposeAnyCorrespondenceSlipnetResponse2}
 import play.api.Configuration
 import play.api.libs.concurrent.InjectedActorSupport
 import Description.DescriptionRep
 import models.Bond.BondRep
-import models.ConceptMapping.ConceptMappingRep
+import models.ConceptMapping.{ConceptMappingParameters, ConceptMappingRep, ConceptMappingRep2}
+import models.Correspondence.CorrespondenceRep
 import models.Group.{FutureGroupRep, GroupRep}
 import models.Letter.LetterSlipnetComplement
 import models.SlipNode.{SlipNodeRep, SlipnetInfo}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
 import models.codelet.BottomUpDescriptionScout.SlipnetGoWithBottomUpDescriptionScoutResponse
+import models.codelet.CorrespondenceBuilder.{SlipnetGoWithCorrespondenceBuilder4Response, SlipnetGoWithCorrespondenceBuilder5Response, SlipnetGoWithCorrespondenceBuilderResponse, SlipnetGoWithCorrespondenceBuilderResponse2, SlipnetGoWithCorrespondenceBuilderResponse3}
 import models.codelet.GroupScoutWholeString.{GetLeftAndRightResponse, SlipnetGoWithGroupScoutWholeStringResponse}
 import models.codelet.GroupStrengthTester.SlipnetGoWithGroupStrengthTesterResponse
 import models.codelet.ImportantObjectCorrespondenceScout.SlipnetGoWithImportantObjectCorrespondenceScoutResponse
@@ -121,7 +122,10 @@ object Slipnet {
 
   case class SlipnetGoWithGroupScoutWholeString(bc: String)
 
-  case class InflatedDescriptionRep(uuid :String, descriptionTypeSlipNode: SlipNode, descriptorSlipNode: Option[SlipNode]) {
+  case class InflatedDescriptionRep(
+                                     uuid :String,
+                                     descriptionTypeSlipNode: SlipNode,
+                                     descriptorSlipNode: Option[SlipNode]) {
     //def descriptionType(mapping: Map[String, SlipNode]) = mapping()
   }
 
@@ -150,6 +154,30 @@ object Slipnet {
                                       temperature: Double)
 
   case class SlipnetGoWithImportantObjectCorrespondenceScout(relevantDescriptors: List[SlipNodeRep], t: Double)
+  case class SlipnetGoWithImportantObjectCorrespondenceScout2(obj1: WorkspaceObjectRep, obj2: WorkspaceObjectRep, t: Double)
+  case class GroupFlippedVersion(obj: WorkspaceObjectRep)
+  case class GroupFlippedVersionResponse(fgr: Option[FutureGroupRep])
+  case class SlipnetGoWithCorrespondenceBuilder(conceptMappingReps: List[ConceptMappingRep])
+  case class SlipnetGoWithCorrespondenceBuilder2(correspondence: CorrespondenceRep, correspondenceReps: List[CorrespondenceRep])
+  case class SlipnetGoWithCorrespondenceBuilder3(correspondence: CorrespondenceRep, incompatible_bond_base: Option[(BondRep,BondRep)])
+  case class SlipnetGoWithCorrespondenceBuilder4(c: CorrespondenceRep)
+  case class CheckOnBothObjectsSpanningForStringDescriptionFlip(
+                                                                 conceptMappingReps: List[ConceptMappingRep],
+                                                                 distinguishingMappingReps: List[ConceptMappingRep],
+                                                                 obj1: WorkspaceObjectRep,
+                                                                 obj2: WorkspaceObjectRep
+                                                               )
+  case class ProposeAnyCorrespondenceSlipnetResponse(fg: FutureGroupRep)
+  case class ProposeAnyCorrespondenceSlipnetResponse2(
+                                                       obj1: WorkspaceObjectRep,
+                                                       obj2: WorkspaceObjectRep,
+                                                       concept_mapping_list : List[ConceptMappingRep],
+                                                       flip_obj2: Boolean,
+                                                       distiguishingConceptMappingSize: Int,
+                                                       distiguishingConceptMappingTotalStrength: Double
+                                                     )
+  case class SlipnetGoWithCorrespondenceBuilder5(groupObjs: Option[ConceptMappingParameters])
+  case class SlipnetGoWithCorrespondenceBuilder6(cms: List[ConceptMappingRep])
 
   object RelationType {
     val Sameness = "Sameness"
@@ -562,7 +590,9 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
       related.id(),
       bond.bondFacetSlipNodeID,
       bond.to_obj_descriptorSlipNodeID, // swapped with below
-      bond.from_obj_descriptorSlipNodeID) // swapped with above
+      bond.from_obj_descriptorSlipNodeID, // swapped with above
+      bond.direction_category
+    )
 
   }
 
@@ -779,58 +809,71 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
             sender() ! Finished
 
           } else {
-            // if both objects span the strings, check to see if the
-            // string description needs to be flipped
-            val possible_opp_mappings = distinguishing_mappings.filter(cm => {
-              (cm.description_type1 == string_position_category) &&
-                (cm.description_type1 != bond_facet)
-            })
-
-            val dt1 = possible_opp_mappings.map(cm => cm.description_type1)
-            val dt1ContainsCategory = dt1.contains(direction_category)
-            val allOppositeMappings = ConceptMapping.all_opposite_mappings(possible_opp_mappings, opposite)
-
-
-            val flip_obj2 = obj1.spans_string &&
-              obj2.spans_string &&
-              dt1ContainsCategory &&
-              allOppositeMappings &&
-              opposite.activation != 100.0
-
-            if (flip_obj2) {
-              val futureGroupOpt = groupFlipped_version(obj2)
-              if (futureGroupOpt.isEmpty) {
-                sender() ! Finished
-              } else {
-                val futureGroup = futureGroupOpt.get
-                sender() ! ProposeAnyCorrespondenceSlipnetResponse(futureGroup)
-
-              }
-            } else {
-              println("Proposing correspondence with concept mappings:");
-              for(cm <- concept_mapping_list) {
-                println(cm.toString())
-              }
-
-              // Coderack.java.323 (propose_correspondence)
-              activateConceptMappingList(concept_mapping_list)
-
-              val dcm = distinguishing_concept_mappings(concept_mapping_list)
-              val totalStrength = dcm.map(_.strength()).sum
-
-              val conceptMappingReps = concept_mapping_list.map(cm => cm.conceptMappingRep())
-              sender() ! ProposeAnyCorrespondenceSlipnetResponse2(
-                obj1,
-                obj2,
-                conceptMappingReps,
-                true,
-                dcm.size,
-                totalStrength
-              )
-            }
+            val conceptMappingReps = concept_mapping_list.map(_.conceptMappingRep())
+            val distinguishing_mappingsReps = distinguishing_mappings.map(_.conceptMappingRep())
+            self.forward(CheckOnBothObjectsSpanningForStringDescriptionFlip(
+              conceptMappingReps,
+              distinguishing_mappingsReps,
+              obj1,
+              obj2
+            ))
           }
         }
       }
+
+    case  CheckOnBothObjectsSpanningForStringDescriptionFlip(conceptMappingReps,distinguishingMappingReps, obj1, obj2) =>
+      val concept_mapping_list = ConceptMapping.conceptMappingsWithReps(conceptMappingReps)
+      val distinguishing_mappings = ConceptMapping.conceptMappingsWithReps(distinguishingMappingReps)
+      // if both objects span the strings, check to see if the
+      // string description needs to be flipped
+      val possible_opp_mappings = distinguishing_mappings.filter(cm => {
+        (cm.description_type1 == string_position_category) &&
+          (cm.description_type1 != bond_facet)
+      })
+
+      val dt1 = possible_opp_mappings.map(cm => cm.description_type1)
+      val dt1ContainsCategory = dt1.contains(direction_category)
+      val allOppositeMappings = ConceptMapping.all_opposite_mappings(possible_opp_mappings, opposite)
+
+
+      val flip_obj2 = obj1.spans_string &&
+        obj2.spans_string &&
+        dt1ContainsCategory &&
+        allOppositeMappings &&
+        opposite.activation != 100.0
+
+      if (flip_obj2) {
+        val futureGroupOpt = groupFlipped_version(obj2)
+        if (futureGroupOpt.isEmpty) {
+          sender() ! Finished
+        } else {
+          val futureGroup = futureGroupOpt.get
+          sender() ! ProposeAnyCorrespondenceSlipnetResponse(futureGroup)
+
+        }
+      } else {
+        println("Proposing correspondence with concept mappings:");
+        for(cm <- concept_mapping_list) {
+          println(cm.toString())
+        }
+
+        // Coderack.java.323 (propose_correspondence)
+        activateConceptMappingList(concept_mapping_list)
+
+        val dcm = distinguishing_concept_mappings(concept_mapping_list)
+        val totalStrength = dcm.map(_.strength()).sum
+
+        val conceptMappingReps = concept_mapping_list.map(cm => cm.conceptMappingRep())
+        sender() ! ProposeAnyCorrespondenceSlipnetResponse2(
+          obj1,
+          obj2,
+          conceptMappingReps,
+          true,
+          dcm.size,
+          totalStrength
+        )
+      }
+
 
     case SlipnetBottomUpCorrespondenceScout2(obj1, obj2) =>
       val obj1Descriptions = obj1.descriptions.map(inflatedDescriptionRep)
@@ -1034,7 +1077,7 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
 
     case SlipnetCompleteSlippageList(slippagesShell: SlippageListShell) =>
       val sl = slippagesShell.sl.map(cm => ConceptMapping.conceptMappingRefs(cm.uuid))
-      val slippageCandidates = slippagesShell.slippageCandidates.map(cm => ConceptMapping.conceptMappingRefs(cm.uuid))
+      val slippageCandidates = ConceptMapping.conceptMappingsWithReps(slippagesShell.slippageCandidates)
       val filteredSlippageCandidates = slippageCandidates.filter(cm => cm.slippage())
 
       val slippage_list = slippage_list_accumulation(sl, filteredSlippageCandidates)
@@ -1078,14 +1121,207 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
         Some(relation.id)
       )
 
+      // Codelet.java.1327
     case SlipnetGoWithImportantObjectCorrespondenceScout(rds, t) =>
       val relevantDescriptors = rds.map(rd => slipNodeRefs(rd.id))
       val sOpt = choose_slipnode_by_conceptual_depth(relevantDescriptors,t)
       sender() ! SlipnetGoWithImportantObjectCorrespondenceScoutResponse(sOpt.map(_.slipNodeRep()))
 
+    // Codelet.java.1368
+    case SlipnetGoWithImportantObjectCorrespondenceScout2(obj1, obj2, temperature) =>
+      val obj1Descriptions = obj1.descriptions.map(inflatedDescriptionRep)
+      val obj2Descriptions = obj2.descriptions.map(inflatedDescriptionRep)
+      val obj1Relevant_descriptions = relevant_descriptions(obj1Descriptions)
+      val obj2Relevant_descriptions = relevant_descriptions(obj2Descriptions)
+
+      // get the posible concept-mappings
+      val concept_mapping_list = ConceptMapping.get_concept_mapping_list(
+        obj1, obj2,
+        obj2Relevant_descriptions, obj2Relevant_descriptions, slipnetInfo)
+
+      if (concept_mapping_list.isEmpty) {
+        // no possible mappings
+        sender() ! Finished
+      } else {
+        // check the slippability of concept mappings
+        // TODO: same code above
+        val cm_possible: Boolean = concept_mapping_list.find(cm => {
+          val slip_prob = WorkspaceFormulas.temperature_adjusted_probability(cm.slipability() / 100.0, temperature)
+          WorkspaceFormulas.flip_coin(slip_prob)
+        }).isDefined
+
+        if (!cm_possible) {
+          //cannot make necessary slippages
+          sender() ! Finished
+        } else {
+          //find out if any are distinguishing
+          val distinguishing_mappings = concept_mapping_list.filter(cm => {
+            cm.distinguishing()
+          })
+          if (distinguishing_mappings.isEmpty) {
+            // no distinguishing mappings
+            sender() ! Finished
+          } else {
+            // if both objects span the strings, check to see if the
+            // string description needs to be flipped
+            val conceptMappingReps = concept_mapping_list.map(_.conceptMappingRep())
+            val distinguishing_mappingsReps = distinguishing_mappings.map(_.conceptMappingRep())
+            self.forward(CheckOnBothObjectsSpanningForStringDescriptionFlip(
+              conceptMappingReps,
+              distinguishing_mappingsReps,
+              obj1,
+              obj2
+            ))
+          }
+        }
+      }
+
+
+
+
+
+    case GroupFlippedVersion(obj: WorkspaceObjectRep) =>
+      val flipped = groupFlipped_version(obj)
+      sender() ! GroupFlippedVersionResponse(flipped)
+
+// Codelet.java.1495
+    case SlipnetGoWithCorrespondenceBuilder(conceptMappingReps) =>
+      val existingConceptMappingList = ConceptMapping.conceptMappingsWithReps(conceptMappingReps)
+      for (cm <- existingConceptMappingList) {
+        if (cm.label.isDefined) cm.label.get.buffer=100.0
+      }
+      val updatedCorrespondenceCMs = existingConceptMappingList.filter(cm => {
+        !(cm.concept_mapping_present(existingConceptMappingList))
+      })
+      val updatedCorrespondenceCMReps = updatedCorrespondenceCMs.map(_.conceptMappingRep())
+      sender() ! SlipnetGoWithCorrespondenceBuilderResponse(updatedCorrespondenceCMReps)
+
+    case SlipnetGoWithCorrespondenceBuilder2(correspondence, correspondenceReps) =>
+      val incc = get_incompatible_correspondences(correspondence, correspondenceReps)
+      sender() ! SlipnetGoWithCorrespondenceBuilderResponse2(incc)
+
+    case SlipnetGoWithCorrespondenceBuilder3(correspondence, incompatible_bond_base) =>
+      val b = get_incompatible_bond(correspondence, incompatible_bond_base)
+      sender() ! SlipnetGoWithCorrespondenceBuilderResponse3(b)
+
+    case SlipnetGoWithCorrespondenceBuilder4(c) =>
+      // add mappings to accessory-concept-mapping-list
+      val v = relevant_distinguishing_cms(c)
+      val accessory_concept_mapping_list = v.filter(cm => cm.slippage()).map(_.symmetric_version())
+
+      sender() ! SlipnetGoWithCorrespondenceBuilder4Response(accessory_concept_mapping_list.map(_.conceptMappingRep()))
+
+    case SlipnetGoWithCorrespondenceBuilder5(groupObjs) =>
+      val accessory_concept_mapping_list = groupObjs match {
+        case Some(params) =>
+          val ds1 = params.ds1.map(d => convertDescriptionRepToInflatedDescriptionRep(d))
+          val ds2 = params.ds2.map(d => convertDescriptionRepToInflatedDescriptionRep(d))
+          val cmv = ConceptMapping.get_concept_mapping_list(
+            params.w1,
+            params.w2,
+            ds1,
+            ds2,
+            slipnetInfo()
+          )
+          cmv ::: cmv.filter(cm => cm.slippage()).map(_.symmetric_version())
+        case None => List.empty[ConceptMapping]
+      }
+      sender() ! SlipnetGoWithCorrespondenceBuilder5Response(accessory_concept_mapping_list.map(_.conceptMappingRep()))
+
+    case SlipnetGoWithCorrespondenceBuilder6(cms) =>
+      val conceptMappings = ConceptMapping.conceptMappingsWithReps(cms)
+      for (cm <- conceptMappings) {
+        if (cm.label.isDefined) cm.label.get.activation = 100.0
+      }
+      sender() ! Finished
+  }
+  def relevant_distinguishing_cms(c: CorrespondenceRep): List[ConceptMapping] = {
+    val cms = ConceptMapping.conceptMappingsWithReps(c.concept_mapping_list)
+    cms.filter(cm => {
+      cm.relevant() && cm.distinguishing()
+    })
   }
 
+  def convertDescriptionRepToInflatedDescriptionRep(d: DescriptionRep) = {
+    val descriptionType = slipNodeRefs(d.descriptionType.id)
+    val descriptor = d.descriptor.map(rep => slipNodeRefs(rep.id))
+    InflatedDescriptionRep(
+      d.uuid,
+      descriptionType,
+      descriptor
+    )
+  }
 
+  def get_incompatible_bond(correspondence: CorrespondenceRep, incompatible_bond_base: Option[(BondRep,BondRep)]) : Option[BondRep] = {
+    incompatible_bond_base match {
+      case Some((bond1, bond2)) =>
+        if (bond1.direction_category.isEmpty || bond2.direction_category.isEmpty) {
+          None
+        } else {
+          val bond1DirCat = slipNodeRefs(bond1.direction_category.get.id)
+          val bond2DirCat = slipNodeRefs(bond2.direction_category.get.id)
+
+          val cm = ConceptMappingRep2(
+            direction_category,
+            direction_category,
+            bond1DirCat,
+            bond2DirCat,
+            SlipnetFormulas.get_bond_category(bond1DirCat,bond2DirCat,identity)
+          )
+          val found = correspondence.concept_mapping_list.find(c => {
+            val conceptMapping = ConceptMapping.conceptMappingRefs(c.uuid)
+            incompatible_concept_mappings(conceptMapping.conceptMappingRep2(),cm)
+          }).isDefined
+
+          if (found) Some(bond2) else None
+        }
+
+      case None => None
+    }
+  }
+
+    def get_incompatible_correspondences(correspondence: CorrespondenceRep, correspondenceReps: List[CorrespondenceRep]) = {
+    // returns a list of all existing correspondences that are incompatible
+    // with this proposed correspondence
+    correspondenceReps.filter(c => {
+      incompatible_correspondences(correspondence,c)
+    })
+  }
+
+  def incompatible_correspondences(c1: CorrespondenceRep, c2: CorrespondenceRep) : Boolean = {
+    if (c1.obj1==c2.obj1) return true
+    if (c1.obj2==c2.obj2) return true
+    c1.concept_mapping_list.find(c1cm => {
+      c2.concept_mapping_list.find(c2cm => {
+        val cm1 = ConceptMapping.conceptMappingRefs(c1cm.uuid)
+        val cm2 = ConceptMapping.conceptMappingRefs(c1cm.uuid)
+
+        incompatible_concept_mappings(
+          cm1.conceptMappingRep2(),
+          cm2.conceptMappingRep2()
+        )
+      }).isDefined
+    }).isDefined
+  }
+
+  def incompatible_concept_mappings(cm1: ConceptMappingRep2, cm2: ConceptMappingRep2): Boolean = {
+    // Concept-mappings (a -> b) and (c -> d) are incompatible if a is
+    // related to c or if b is related to d, and the a -> b relationship is
+    // different from the c -> d relationship. E.g., rightmost -> leftmost
+    // is incompatible with right -> right, since rightmost is linked
+    // to right, but the relationships (opposite and identity) are different.
+    // Notice that slipnet distances are not looked at, only slipnet links. This
+    // should be changed eventually.
+//    val cm1 = ConceptMapping.conceptMappingRefs(cm1Rep.uuid)
+//    val cm2 = ConceptMapping.conceptMappingRefs(cm2Rep.uuid)
+
+    if (!(SlipnetFormulas.related(cm1.descriptor1,cm2.descriptor1) ||
+      SlipnetFormulas.related(cm1.descriptor2,cm2.descriptor2)))
+      return false
+    if (cm1.label.isEmpty || cm2.label.isEmpty) return false
+    if (!(cm1.label==cm2.label)) return true
+    false
+  }
 
 
   def chooseSlipNodeWithTemperature(object_list: List[SlipNode], temperature: Double) = {
@@ -1134,17 +1370,15 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
     number_of_updates += 1
     // unclamp initially clamped slipnodes if #of updates = 50
 
-    if (number_of_updates==50){
-      for (s <- initially_clamped_slipnodes) {
-        s.clamp=false;
-        // GUIs.Redraw = true;
-      }
+    if (number_of_updates==50) for (s <- initially_clamped_slipnodes) {
+      s.clamp=false
+      // GUIs.Redraw = true;
     }
 
     // for all nodes set old_activation to activation
     for (ob <- slipNodes) {
-      ob.old_activation=ob.activation;
-      ob.buffer-=ob.activation*((100.0-ob.conceptual_depth)/100.0);
+      ob.old_activation=ob.activation
+      ob.buffer-=ob.activation*((100.0-ob.conceptual_depth)/100.0)
       if (ob==successor){
         //System.out.println("activation ="+ob.activation+" buffer="+ob.buffer);
         //System.out.println("number of nodes = "+slipnodes.size());
@@ -1155,36 +1389,28 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
     // spreading activation
     // for all incomming links, if the activation of the sending node = 100
     // add the percentage of its activation to activation buffer
-    if (!remove_spreading_activation){
-      for (ob <- slipNodes) {
-        for (sl <- ob.outgoing_links) {
-          if (ob.activation == 100.0){
-            (sl.to_node).buffer += sl.intrinsic_degree_of_association()
-          }
-        }
+    if (!remove_spreading_activation) for (ob <- slipNodes) {
+      for (sl <- ob.outgoing_links) {
+        if (ob.activation == 100.0) sl.to_node.buffer += sl.intrinsic_degree_of_association()
       }
     }
     // for all nodes add the activation activation_buffer
     // if activation>100 or clamp=true, activation=100
     for (ob <- slipNodes) {
-      if (!(ob.clamp)) ob.activation+=ob.buffer;
+      if (!ob.clamp) ob.activation+=ob.buffer
       if (ob.activation>100.0) ob.setActivation(100.0)
       if (ob.activation<0.0) ob.setActivation(0.0)
     }
 
 
     // check for probabablistic jump to 100%
-    var act : Double = 0.0
-    if (!remove_activation_jump){
-      for (ob <- slipNodes) {
-        act=ob.activation/100.0
-        act=act*act*act
+    var act = 0.0
+    if (!remove_activation_jump) for (ob <- slipNodes) {
+      act=ob.activation/100.0
+      act=act*act*act
 
-        if ((ob.activation>55.0)&& ( Slipnet.r.nextDouble() < act) &&
-          (!(ob.clamp))) {
-          ob.setActivation(100.0)
-        };
-      }
+      if ((ob.activation>55.0)&& ( Slipnet.r.nextDouble() < act) &&
+        (!ob.clamp)) ob.setActivation(100.0)
     }
 
 
@@ -1204,11 +1430,11 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
     }*/
   }
 
-  def get_description_type_instance_links_to_node_info(description_type: SlipNode): DescriptionTypeInstanceLinksToNodeInfo = {
+  def get_description_type_instance_links_to_node_info(description_type: SlipNode) = {
     val firstTos = description_type.instance_links.toList.filter(sl => sl.to_node == first).map(_.to_node.slipNodeRep())
     val lastTos = description_type.instance_links.toList.filter(sl => sl.to_node == last).map(_.to_node.slipNodeRep())
     val numbersTos = (0 to 4).map(y => {
-      val yTos = description_type.instance_links.toList.filter(sl => (sl.to_node == slipnet_numbers(y))).map(_.to_node.slipNodeRep())
+      val yTos = description_type.instance_links.toList.filter(sl => sl.to_node == slipnet_numbers(y)).map(_.to_node.slipNodeRep())
       (y, TosInfo(slipnet_numbers(y).slipNodeRep(), yTos))
     }).toMap
     val middleTos = description_type.instance_links.toList.filter(sl => sl.to_node == middle).map(_.to_node.slipNodeRep())
@@ -1220,23 +1446,19 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
   }
 
 
-  def similar_has_property_links(s: SlipNode, t: Double): List[SlipnetLink] ={
-    s.has_property_links.toList.filter(sl => WorkspaceFormulas.flip_coin(
-        Formulas.temperature_adjusted_probability(sl.degree_of_association()/100.0,t)
-      )
+  def similar_has_property_links(s: SlipNode, t: Double) = s.has_property_links.toList.filter(sl => WorkspaceFormulas.flip_coin(
+      Formulas.temperature_adjusted_probability(sl.degree_of_association()/100.0,t)
     )
-  }
+  )
 
-  def distinguishing_concept_mappings(concept_mapping_list: List[ConceptMapping]): List[ConceptMapping] = {
-    concept_mapping_list.filter(cm => cm.distinguishing())
-  }
+  def distinguishing_concept_mappings(concept_mapping_list: List[ConceptMapping]) = concept_mapping_list.filter(cm => cm.distinguishing())
 
   //def getDescriptor(workspaceObject: WorkspaceObject, node: SlipNode): Option[SlipNode] = ???
   //def getBondCategory(fromDescriptor: SlipNode, toDescriptor: SlipNode): Option[SlipNode] = ???
 
 
 
-  def facetsOfAndPartOf(wo: WorkspaceObjectRep, facets: List[SlipNode]): List[SlipNode] = {
+  def facetsOfAndPartOf(wo: WorkspaceObjectRep, facets: List[SlipNode]) = {
     val woDescriptions = wo.descriptions.toList.map(dt => slipNodeRefs(dt.descriptionType.id))
     woDescriptions.filter(dt => {
       facets.contains(dt)

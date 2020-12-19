@@ -6,6 +6,7 @@ import models.ConceptMapping.ConceptMappingRep
 import models.Workspace.{GoWithRuleTranslator2, SlippageListShell}
 
 // Codelet.java.1187
+// TODO : see Workspace, case GoWithRuleTranslator2, "How to do that"
 object RuleTranslator {
   case class GoWithRuleTranslatorResponse(slippageListShell: SlippageListShell)
 }

@@ -12,7 +12,9 @@ object Bond {
                      bondCategorySlipNodeID: String,
                      bondFacetSlipNodeID: String,
                      from_obj_descriptorSlipNodeID: Option[String],
-                     to_obj_descriptorSlipNodeID: Option[String])
+                     to_obj_descriptorSlipNodeID: Option[String],
+                      direction_category: Option[SlipNodeRep]
+                    )
 
 }
 
@@ -51,7 +53,8 @@ class Bond (
     bond_category.id,
     bond_facet.id,
     from_obj_descriptor.map(_.id),
-    to_obj_descriptor.map(_.id)
+    to_obj_descriptor.map(_.id),
+    direction_category
   )
 
   def get_incompatible_bonds(): List[Bond] = {

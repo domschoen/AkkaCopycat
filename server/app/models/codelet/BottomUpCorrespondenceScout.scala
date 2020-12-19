@@ -5,9 +5,9 @@ import akka.event.LoggingReceive
 import models.Coderack.ChooseAndRun
 import models.ConceptMapping.ConceptMappingRep
 import models.Group.FutureGroupRep
-import models.Workspace.{GoWithBottomUpCorrespondenceScout2, GoWithBottomUpCorrespondenceScout3}
+import models.Slipnet.ProposeAnyCorrespondenceSlipnetResponse2
+import models.Workspace.{GoWithBottomUpCorrespondenceScout2, GoWithBottomUpCorrespondenceScout2Response, GoWithBottomUpCorrespondenceScout3, GoWithBottomUpCorrespondenceScout3Response}
 import models.WorkspaceObject.WorkspaceObjectRep
-import models.codelet.BottomUpCorrespondenceScout.{GoWithBottomUpCorrespondenceScout2Response, GoWithBottomUpCorrespondenceScout3Response, ProposeAnyCorrespondenceSlipnetResponse2}
 import models.codelet.Codelet.Finished
 
 object BottomUpCorrespondenceScout{
@@ -16,22 +16,7 @@ object BottomUpCorrespondenceScout{
                                                                 obj1 :WorkspaceObjectRep,
                                                                 obj2: WorkspaceObjectRep
                                    )
-  case class GoWithBottomUpCorrespondenceScout3Response(newObj2: WorkspaceObjectRep)
-  case class ProposeAnyCorrespondenceSlipnetResponse(fg: FutureGroupRep)
 
-  case class ProposeAnyCorrespondenceSlipnetResponse2(
-                                                      obj1: WorkspaceObjectRep,
-                                                      obj2: WorkspaceObjectRep,
-                                                      concept_mapping_list : List[ConceptMappingRep],
-                                                      flip_obj2: Boolean,
-                                                      distiguishingConceptMappingSize: Int,
-                                                      distiguishingConceptMappingTotalStrength: Double
-                                                    )
-  case class GoWithBottomUpCorrespondenceScout2Response(
-                                                         correspondenceID: String,
-                                                         distiguishingConceptMappingSize: Int,
-                                                         distiguishingConceptMappingTotalStrength: Double
-                                                       )
 
 }
 
@@ -47,11 +32,11 @@ class BottomUpCorrespondenceScout(urgency: Int,
   import models.Coderack.ChooseAndRun
   import models.Coderack.ProposeCorrespondence
   import BottomUpCorrespondenceScout.GoWithBottomUpCorrespondenceScoutWorkspaceReponse
-  import BottomUpCorrespondenceScout.ProposeAnyCorrespondenceSlipnetResponse
   import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
   import models.Slipnet.{
     SlipnetBottomUpCorrespondenceScout,
-    SlipnetBottomUpCorrespondenceScout2
+    SlipnetBottomUpCorrespondenceScout2,
+    ProposeAnyCorrespondenceSlipnetResponse
   }
   var obj1 :WorkspaceObjectRep = null
   var obj2: WorkspaceObjectRep = null

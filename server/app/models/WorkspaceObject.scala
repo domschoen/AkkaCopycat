@@ -46,6 +46,9 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
   var total_salience: Double = 0.0
 
   var descriptions = ListBuffer.empty[Description]
+  var bond_descriptions =  ListBuffer.empty[Description] // if it is a group
+  // these are the types of bonds holding it together
+
   var spans_string = false; // true if it spans the whole string
 
   var left_bond = Option.empty[Bond]

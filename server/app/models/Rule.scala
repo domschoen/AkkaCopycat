@@ -14,6 +14,7 @@ object Rule {
         case None => sn
       }
     }
+
 }
 
 /*case class SlipNodeRep(id: String, descriptorFacetSlipNodeID: String,

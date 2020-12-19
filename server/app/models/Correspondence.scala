@@ -1,8 +1,20 @@
 package models
 
+import models.Bond.BondRep
 import models.ConceptMapping.ConceptMappingRep
+import models.WorkspaceObject.WorkspaceObjectRep
 
 import scala.collection.mutable.ListBuffer
+
+object Correspondence {
+  case class CorrespondenceRep(
+                                uuid: String,
+                                obj1: WorkspaceObjectRep,
+                                obj2: WorkspaceObjectRep,
+                                concept_mapping_list: List[ConceptMappingRep]
+                              )
+
+}
 
 case class Correspondence (
                             val obj1: WorkspaceObject,
@@ -11,24 +23,31 @@ case class Correspondence (
                             val flip_obj2: Boolean
                           ) extends WorkspaceStructure {
 
+  import Correspondence.CorrespondenceRep
   var accessory_concept_mapping_list = ListBuffer.empty[ConceptMappingRep]
 
+  def correspondenceRep() = CorrespondenceRep(
+    uuid,
+    obj1.workspaceObjectRep(),
+    obj2.workspaceObjectRep(),
+    concept_mapping_list
+  )
 
   // This is cumbersome ! a list of concept mapping which is not just references ...
   // Vector concept_mapping_list = new Vector();
 
 
-
-  /* def concept_mapping_present(cm: ConceptMapping): Boolean = {
-     // returns true if a concept mapping of the same sort is
-     // present in the workspace
-     concept_mapping_list.find(c =>
-       ((c.description_type1==cm.description_type1)&&
-         (c.description_type2==cm.description_type2)&&
-         (c.descriptor1==cm.descriptor1)&&
-         (c.descriptor2==cm.descriptor2))
-     ).isDefined
-   }*/
+//  see ConceptMapping
+//  def concept_mapping_present(cm: ConceptMapping): Boolean = {
+//     // returns true if a concept mapping of the same sort is
+//     // present in the workspace
+//     concept_mapping_list.find(c =>
+//       ((c.description_type1 == cm.description_type1)&&
+//         (c.description_type2 == cm.description_type2)&&
+//         (c.descriptor1 == cm.descriptor1)&&
+//         (c.descriptor2 == cm.descriptor2))
+//     ).isDefined
+//   }
 
 //  def slipNodeActivationChanged(slipNodeID: String, newActivation: Double) = {
 //    concept_mapping_list = concept_mapping_list.map(cm => {
@@ -78,6 +97,83 @@ case class Correspondence (
 //  def relevant_distinguishing_cms() = {
 //    concept_mapping_list.filter(cm => cm.relevant() && cm.distinguishing())
 //  }
+
+
+
+
+/* see ...
+  def incompatible_concept_mappings() : Boolean = (
+    concept_mapping cm1, concept_mapping cm2){
+    // Concept-mappings (a -> b) and (c -> d) are incompatible if a is
+    // related to c or if b is related to d, and the a -> b relationship is
+    // different from the c -> d relationship. E.g., rightmost -> leftmost
+    // is incompatible with right -> right, since rightmost is linked
+    // to right, but the relationships (opposite and identity) are different.
+    // Notice that slipnet distances are not looked at, only slipnet links. This
+    // should be changed eventually.
+    if (!((slipnet_formulas.related(cm1.descriptor1,cm2.descriptor1))||
+      (slipnet_formulas.related(cm1.descriptor2,cm2.descriptor2))))
+      return false;
+    if ((cm1.label==null)||(cm2.label==null)) return false;
+    if (!(cm1.label==cm2.label)) return true;
+    return false;
+  }
+*/
+  def get_incompatible_bond(): Option[(BondRep,BondRep)] = {
+    var bond1 = Option.empty[Bond]
+    if (obj1.leftmost) bond1=obj1.right_bond
+    if (obj1.rightmost) bond1=obj1.left_bond
+    var bond2 = Option.empty[Bond]
+    if (obj2.leftmost) bond2=obj2.right_bond;
+    if (obj2.rightmost) bond2=obj2.left_bond;
+    if ((bond1.isDefined)&&(bond2.isDefined)){
+      if ((bond1.get.direction_category!=null)&&
+        (bond2.get.direction_category!=null)) {
+        Some((bond1.get.bondRep(),bond2.get.bondRep()))
+      }
+    }
+    return None
+  }
+
+
+/* see Slipnet
+  def incompatible_correspondences(c1: Correspondence, c2: Correspondence) : Boolean = {
+    if (c1.obj1==c2.obj1) return true;
+    if (c1.obj2==c2.obj2) return true;
+    c1.concept_mapping_list.find(c1cm => {
+      c2.concept_mapping_list.find(c2cm => {
+        incompatible_concept_mappings(
+          (concept_mapping)c1.concept_mapping_list.elementAt(x),
+        (concept_mapping)c2.concept_mapping_list.elementAt(y))
+      })
+    }).isDefined
+    for (int x=0; x<c1.concept_mapping_list.size(); x++)
+    for (int y=0; y<c2.concept_mapping_list.size(); y++){
+      if (incompatible_concept_mappings(
+        (concept_mapping)c1.concept_mapping_list.elementAt(x),
+      (concept_mapping)c2.concept_mapping_list.elementAt(y))) return true;
+    }
+    return false;
+  }
+*/
+
+  /* see workspace
+  def get_incompatible_correspondences() = {
+    // returns a list of all existing correspondences that are incompatible
+    // with this proposed correspondence
+    Vector incc = new Vector();
+    for (int x=0; x<workspace.initial.objects.size(); x++){
+      workspace_object w  = (workspace_object)workspace.initial.objects.elementAt(x);
+      if (w.correspondence!=null){
+        if (incompatible_correspondences(this,w.correspondence))
+          incc.addElement(w.correspondence);
+      }
+    }
+
+    return incc;
+  }
+*/
+
 
   def slippageCandidates() = {
     concept_mapping_list ::: accessory_concept_mapping_list.toList

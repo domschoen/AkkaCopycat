@@ -3,6 +3,7 @@ package models
 import akka.actor.ActorRef
 import models.Bond.BondRep
 import models.Group.GroupRep
+import models.SlipNode.SlipNodeRep
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
 
@@ -10,6 +11,7 @@ import scala.collection.mutable.ListBuffer
 
 object Group {
   case class GroupRep(
+                       uuid: String,
                        workspaceObjectRep: WorkspaceObjectRep,
                        groupCategorySlipNodeID: String,
                        directionCategorySlipNodeID: Option[String],
@@ -38,10 +40,13 @@ class Group (
             ) extends WorkspaceObject(wString) {
   import Slipnet.SetSlipNodeBufferValue
 
+  var bond_category: Option[SlipNodeRep] = None
+
 
   def bondReps(): List[BondRep] = bond_list.toList.map(_.bondRep())
 
   def groupRep(): GroupRep = GroupRep(
+    uuid,
     workspaceObjectRep(),
     groupCategorySlipNodeID, directionCategorySlipNodeID, bondFacetSlipNodeID, bondReps)
 

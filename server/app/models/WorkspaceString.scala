@@ -36,6 +36,20 @@ class WorkspaceString (val s: String, x1: Int, y1: Int, x2: Int, y2: Int) {
       else ob.relative_importance=ob.raw_importance/total_raw_importance;
     }
   }
+
+  def group_present(wg: Group): Option[Group] = {
+    // searches for the group in the string
+    // if an equivalent group exists, return this group
+    // otherwise return null;
+    val groups = objects.toList.filter(wo => wo.isInstanceOf[Group]).asInstanceOf[List[Group]]
+    groups.find(gp => {
+        (gp.left_string_position == wg.left_string_position) &&
+          (gp.right_string_position == wg.right_string_position) &&
+          (gp.bond_category == wg.bond_category) &&
+          (gp.directionCategorySlipNodeID == wg.directionCategorySlipNodeID)
+      })
+  }
+
   def update_intra_string_unhappiness() = {
     //returns the average of the the intra-string unhapinesses of all
     // the objects in the string
