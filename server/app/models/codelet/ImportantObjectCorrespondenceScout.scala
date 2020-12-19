@@ -91,7 +91,7 @@ class ImportantObjectCorrespondenceScout(urgency: Int,
 
     // flipped case
     case ProposeAnyCorrespondenceSlipnetResponse(fg) =>
-      workspace ! GoWithBottomUpCorrespondenceScout3(fg, obj2)
+      workspace ! GoWithBottomUpCorrespondenceScout3(fg, obj2, runTemperature)
 
     // flipped case
     case GoWithBottomUpCorrespondenceScout3Response(newObj2) =>

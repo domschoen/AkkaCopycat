@@ -41,14 +41,15 @@ class BottomUpCorrespondenceScout(urgency: Int,
   var obj1 :WorkspaceObjectRep = null
   var obj2: WorkspaceObjectRep = null
   var flip_obj2: Boolean = false
+  var runTemperature = 0.0
 
   def receive = LoggingReceive {
     // to the browser
-    case Run(initialString, modifiedString, targetString, runTemperature) =>
+    case Run(initialString, modifiedString, targetString, t) =>
       log.debug(s"BottomUpCorrespondenceScout. Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
       temperature ! Register(self)
-
+      runTemperature = t
       workspace ! GoWithBottomUpCorrespondenceScout(runTemperature)
 
 
@@ -63,7 +64,7 @@ class BottomUpCorrespondenceScout(urgency: Int,
 
       // flipped case
     case ProposeAnyCorrespondenceSlipnetResponse(fg) =>
-      workspace ! GoWithBottomUpCorrespondenceScout3(fg, obj2)
+      workspace ! GoWithBottomUpCorrespondenceScout3(fg, obj2,runTemperature)
 
       // flipped case
     case GoWithBottomUpCorrespondenceScout3Response(newObj2) =>

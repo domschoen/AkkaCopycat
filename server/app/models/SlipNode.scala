@@ -17,6 +17,25 @@ object SlipNode {
                           slipnetWhole: SlipNode,
                           slipnet_numbers: List[SlipNode]
                         )
+  case class GroupSlipnetInfo(
+                               bond_facet: SlipNodeRep,
+                               bond_category: SlipNodeRep,
+                               object_category: SlipNodeRep,
+                               group: SlipNodeRep,
+                               group_category: SlipNodeRep,
+                               direction_category: SlipNodeRep,
+                               string_position_category: SlipNodeRep,
+                               whole: SlipNodeRep,
+                               leftmost: SlipNodeRep,
+                               rightmost: SlipNodeRep,
+                               middle: SlipNodeRep,
+                               length: SlipNodeRep,
+                               samegrp: SlipNodeRep,
+                               letter: SlipNodeRep,
+                               letter_category: SlipNodeRep,
+                               slipnet_numbers: List[SlipNodeRep]
+                             )
+
 
   case class SlipNodeRep(id: String, activation: Double)
 

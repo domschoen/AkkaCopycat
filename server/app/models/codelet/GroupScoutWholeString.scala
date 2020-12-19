@@ -5,9 +5,9 @@ import akka.actor.ActorRef
 import models.Bond.BondRep
 import models.Coderack.ProposeGroup
 import models.Group.GroupRep
-import models.SlipNode.SlipNodeRep
+import models.SlipNode.{GroupSlipnetInfo, SlipNodeRep}
 import models.Slipnet.{CompleteProposeGroup, CompleteProposeGroupResponse, GetRelatedNodeOf, GetRelatedNodeOfResponse, SlipnetGoWithGroupScoutWholeString}
-import models.Workspace.{WorkspaceProposeGroup, WorkspaceProposeGroupResponse}
+import models.Workspace.WorkspaceProposeGroupResponse
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.codelet.GroupScoutWholeString.GroupScoutWholeString2Response
 import models.codelet.TopDownGroupScoutCategory.GoWithTopDownGroupScoutCategory2Response
@@ -16,21 +16,22 @@ import models.codelet.TopDownGroupScoutCategory.GoWithTopDownGroupScoutCategory2
 // Codelet.java.789
 object GroupScoutWholeString {
   case class GoWithGroupScoutWholeStringResponse(left_most: WorkspaceObjectRep)
-  case class SlipnetGoWithGroupScoutWholeStringResponse(bond_category: Option[SlipNodeRep])
+  case class SlipnetGoWithGroupScoutWholeStringResponse(bond_category: Option[SlipNodeRep],
+                                                        groupSlipnetInfo: GroupSlipnetInfo)
 
   case class GroupScoutWholeString2Response(
-                                                       group_category: String,
-                                                       direction_category: Option[String],
-                                                       bond_facet: String,
+                                                       group_category: SlipNodeRep,
+                                                       direction_category: Option[SlipNodeRep],
+                                                       bond_facet: SlipNodeRep,
                                                        object_list: List[WorkspaceObjectRep],
                                                        bond_list: List[BondRep]
                                                      )
 
 
   case class GroupScoutWholeString3Response(
-                                                       bond_category: String,
-                                                       direction_category: Option[String],
-                                                       bond_facet: String,
+                                                       bond_category: SlipNodeRep,
+                                                       direction_category: Option[SlipNodeRep],
+                                                       bond_facet: SlipNodeRep,
                                                        object_list: List[WorkspaceObjectRep],
                                                        bond_list: List[BondRep]
                                                      )
@@ -54,20 +55,22 @@ class GroupScoutWholeString(urgency: Int,
   }
   import models.Workspace.{
     GoWithGroupScoutWholeString,
-    GoWithGroupScoutWholeString2
+    GoWithGroupScoutWholeString2,
+    WorkspaceProposeGroup
   }
   import models.Slipnet.GetLeftAndRight
 
   var runTemperature: Double = 0.0
   var left_most: WorkspaceObjectRep = null
-  var group_category: String = null
-  var direction_category: Option[String] = None
-  var bond_facet: String = null
+  var group_category: SlipNodeRep = null
+  var direction_category: Option[SlipNodeRep] = None
+  var bond_facet: SlipNodeRep = null
   var object_list =  List.empty[WorkspaceObjectRep]
   var bond_list = List.empty[BondRep]
   var groupUrgency = 0.0
   var slipnetLeft: SlipNodeRep = null
   var slipnetRight: SlipNodeRep = null
+  var groupSlipnetInfo: GroupSlipnetInfo = null
 
   def receive = LoggingReceive {
     // to the browser
@@ -87,7 +90,7 @@ class GroupScoutWholeString(urgency: Int,
     case GoWithGroupScoutWholeStringResponse(lm) =>
       left_most = lm
       if (left_most.groupRep.isDefined) {
-        slipnet ! GetRelatedNodeOf(left_most.groupRep.get.groupCategorySlipNodeID, "bc")
+        slipnet ! GetRelatedNodeOf(left_most.groupRep.get.group_category.id, "bc")
       } else {
         workspace ! GoWithGroupScoutWholeString2(left_most, slipnetLeft, slipnetRight)
       }
@@ -124,17 +127,27 @@ class GroupScoutWholeString(urgency: Int,
       bond_list = bl
       slipnet ! SlipnetGoWithGroupScoutWholeString(bc)
 
-    case SlipnetGoWithGroupScoutWholeStringResponse(relatedOpt) =>
+    case SlipnetGoWithGroupScoutWholeStringResponse(relatedOpt, gsi) =>
+      groupSlipnetInfo = gsi
       relatedOpt match {
         case Some(group_cat) =>
-          slipnet ! CompleteProposeGroup(group_cat.id, direction_category)
+          slipnet ! CompleteProposeGroup(group_cat, direction_category)
         case None =>
           self ! Finished
       }
 
-    case CompleteProposeGroupResponse(u) =>
+    case CompleteProposeGroupResponse(u, bc) =>
       groupUrgency = u
-      workspace ! WorkspaceProposeGroup(object_list, bond_list, group_category, direction_category, bond_facet)
+      workspace ! WorkspaceProposeGroup(
+        object_list,
+        bond_list,
+        group_category,
+        direction_category,
+        bond_facet,
+        bc,
+        groupSlipnetInfo,
+        runTemperature
+      )
 
     case WorkspaceProposeGroupResponse(groupID) =>
       coderack ! ProposeGroup(groupID, groupUrgency)

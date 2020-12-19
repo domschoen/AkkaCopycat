@@ -93,7 +93,7 @@ class CorrespondenceBuilder(urgency: Int,
         println("Stuffer: empty flipped. Fizzle")
         self ! Finished
       } else {
-        workspace ! GoWithCorrespondenceBuilder2(correponsdenceID, fgr.get)
+        workspace ! GoWithCorrespondenceBuilder2(correponsdenceID, fgr.get, runTemperature)
       }
 
       //Codelet.java.1495

@@ -4,7 +4,7 @@ import akka.event.LoggingReceive
 import akka.actor.ActorRef
 import models.Bond.BondRep
 import models.Coderack.ProposeGroup
-import models.SlipNode.SlipNodeRep
+import models.SlipNode.{GroupSlipnetInfo, SlipNodeRep}
 import models.Slipnet.{CompleteProposeGroup, CompleteProposeGroupResponse, SlipnetGoWithTopDownGroupScoutCategory2, SlipnetGoWithTopDownGroupScoutDirection}
 import models.Workspace.{GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutCategory2, GoWithTopDownGroupScoutDirection, GoWithTopDownGroupScoutDirection2, WorkspaceProposeGroup, WorkspaceProposeGroupResponse}
 import models.WorkspaceObject.WorkspaceObjectRep
@@ -15,7 +15,7 @@ import models.codelet.TopDownGroupScoutCategory.{GoWithTopDownGroupScoutCategory
 
 object TopDownGroupScoutDirection {
   case class GoWithTopDownGroupScoutDirectionResponse(bond_category: SlipNodeRep, first_bond: String)
-  case class SlipnetGoWithTopDownGroupScoutDirectionResponse(group_category: Option[SlipNodeRep])
+  //case class SlipnetGoWithTopDownGroupScoutDirectionResponse(group_category: Option[SlipNodeRep], groupSlipnetInfo: GroupSlipnetInfo)
 }
 class TopDownGroupScoutDirection(urgency: Int,
                                  workspace: ActorRef,
@@ -27,20 +27,20 @@ class TopDownGroupScoutDirection(urgency: Int,
   import models.Coderack.ProposeCorrespondence
   import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
   import models.codelet.TopDownGroupScoutDirection.{
-    GoWithTopDownGroupScoutDirectionResponse,
-    SlipnetGoWithTopDownGroupScoutDirectionResponse
+    GoWithTopDownGroupScoutDirectionResponse
   }
 
   var runTemperature: Double = 0.0
   var fromob: WorkspaceObjectRep = null
   var first_bond: String = null
   var bond_category: SlipNodeRep = null
-  var group_category: String = null
-  var direction_category: Option[String] = None
-  var bond_facet: String = null
+  var group_category: SlipNodeRep = null
+  var direction_category: Option[SlipNodeRep] = None
+  var bond_facet: SlipNodeRep = null
   var object_list =  List.empty[WorkspaceObjectRep]
   var bond_list = List.empty[BondRep]
   var groupUrgency = 0.0
+  var groupSlipnetInfo : GroupSlipnetInfo = null
 
   def directionID() = arguments.get.asInstanceOf[String]
 
@@ -57,18 +57,20 @@ class TopDownGroupScoutDirection(urgency: Int,
 
     case GoWithTopDownGroupScoutCategoryResponse(direction, fb) =>
       fromob = fb
-      slipnet ! SlipnetGoWithTopDownGroupScoutCategory2(direction)
+      slipnet ! SlipnetGoWithTopDownGroupScoutCategory2(directionID, direction)
 
-    case SlipnetGoWithTopDownGroupScoutCategory2Response(direction, lengthActivation) =>
-      workspace ! GoWithTopDownGroupScoutDirection(directionID, direction, fromob, runTemperature)
+    case SlipnetGoWithTopDownGroupScoutCategory2Response(slipNodeRep, direction, gsi) =>
+      groupSlipnetInfo = gsi
+      workspace ! GoWithTopDownGroupScoutDirection(slipNodeRep, direction, fromob, runTemperature)
 
     case GoWithTopDownGroupScoutDirectionResponse(bc, fb) =>
       first_bond = fb
       bond_category = bc
       slipnet ! SlipnetGoWithTopDownGroupScoutDirection(bond_category)
 
-    case SlipnetGoWithTopDownGroupScoutDirectionResponse(group_category) =>
-      workspace ! GoWithTopDownGroupScoutDirection2(group_category, fromob, first_bond, bond_category)
+    /*case SlipnetGoWithTopDownGroupScoutDirectionResponse(group_category, gsi) =>
+      groupSlipnetInfo = gsi
+      workspace ! GoWithTopDownGroupScoutDirection2(group_category, fromob, first_bond, bond_category)*/
 
     case GoWithTopDownGroupScoutCategory2Response(gc, dc, bf, ol, bl) =>
       group_category = gc
@@ -79,9 +81,10 @@ class TopDownGroupScoutDirection(urgency: Int,
 
       slipnet ! CompleteProposeGroup(group_category, direction_category)
 
-    case CompleteProposeGroupResponse(u) =>
+    case CompleteProposeGroupResponse(u,bond_category) =>
       groupUrgency = u
-      workspace ! WorkspaceProposeGroup(object_list, bond_list, group_category, direction_category, bond_facet)
+      workspace ! WorkspaceProposeGroup(
+        object_list, bond_list, group_category, direction_category, bond_facet,bond_category, groupSlipnetInfo, runTemperature)
 
     case WorkspaceProposeGroupResponse(groupID) =>
       coderack ! ProposeGroup(groupID, groupUrgency)

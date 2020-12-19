@@ -3,7 +3,7 @@ package models
 import akka.actor.ActorRef
 import models.Bond.BondRep
 import models.Group.GroupRep
-import models.SlipNode.SlipNodeRep
+import models.SlipNode.{GroupSlipnetInfo, SlipNodeRep}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
 
@@ -13,34 +13,78 @@ object Group {
   case class GroupRep(
                        uuid: String,
                        workspaceObjectRep: WorkspaceObjectRep,
-                       groupCategorySlipNodeID: String,
-                       directionCategorySlipNodeID: Option[String],
-                       bondFacetSlipNodeID: String,
+                       group_category: SlipNodeRep,
+                       direction_category: Option[SlipNodeRep],
+                       bond_facet: SlipNodeRep,
                        bond_list: List[BondRep]
                      )
 
   case class FutureGroupRep(
-                       groupCategorySlipNodeID: String,
-                       directionCategorySlipNodeID: Option[String],
-                       bondFacetSlipNodeID: String,
-                       bond_list: List[BondRep]
+                             group_category: SlipNodeRep,
+                             direction_category: Option[SlipNodeRep],
+                             bond_facet: SlipNodeRep,
+                             bond_category: SlipNodeRep,
+                             bond_list: List[BondRep],
+                             groupSlipnetInfo: GroupSlipnetInfo
                      )
 
+  val r = scala.util.Random
 
 }
 
 class Group (
               wString: WorkspaceString,
-              val groupCategorySlipNodeID: String,
-              val directionCategorySlipNodeID: Option[String],
-              val bondFacetSlipNodeID: String,
+              val group_category: SlipNodeRep,
+              val direction_category: Option[SlipNodeRep],
+              val bond_facet: SlipNodeRep,
               var object_list: ListBuffer[WorkspaceObject],
               var bond_list: ListBuffer[Bond],
+              var bond_category: SlipNodeRep,
+              groupSlipnetInfo: GroupSlipnetInfo,
+              temperature: Double,
               slipnet: ActorRef
             ) extends WorkspaceObject(wString) {
   import Slipnet.SetSlipNodeBufferValue
 
-  var bond_category: Option[SlipNodeRep] = None
+  //var bond_category: Option[SlipNodeRep] = None
+  val leftob = object_list(0)
+  val rightob = object_list.last
+  left_string_position = leftob.left_string_position;
+  leftmost = (left_string_position==1);
+  right_string_position = rightob.right_string_position;
+  rightmost = (right_string_position==(wString.length));
+
+  spans_string = (leftmost&rightmost);
+
+  if (!bond_list.isEmpty){
+    val bbf = bond_list(0).bond_facet;
+    add_bond_description(new Description(this,groupSlipnetInfo.bond_facet,Some(bbf)))
+  }
+  add_bond_description(new Description(this,groupSlipnetInfo.bond_category,Some(bond_category)))
+  add_description(groupSlipnetInfo.object_category, Some(groupSlipnetInfo.group))
+  add_description(groupSlipnetInfo.group_category, Some(group_category))
+  if (direction_category.isEmpty){
+    // sameness group - find letter_category
+    val letter = object_list(0).get_description(bond_facet)
+    add_description(bond_facet,letter)
+  }
+
+  if (direction_category.isDefined) add_description(groupSlipnetInfo.direction_category,direction_category);
+  if (spans_string) add_description(groupSlipnetInfo.string_position_category, Some(groupSlipnetInfo.whole));
+  else if (left_string_position==1)
+    add_description(groupSlipnetInfo.string_position_category, Some(groupSlipnetInfo.leftmost))
+  else if (right_string_position == wString.length)
+    add_description(groupSlipnetInfo.string_position_category, Some(groupSlipnetInfo.rightmost))
+  else if (middle_object())
+    this.add_description(groupSlipnetInfo.string_position_category, Some(groupSlipnetInfo.middle))
+
+  // check whether or not to add length description category
+  val prob = length_description_probability(temperature);
+  if (Group.r.nextDouble()<prob){
+    val length = object_list.size
+    if (length<6) add_description(groupSlipnetInfo.length, Some(groupSlipnetInfo.slipnet_numbers(length-1)))
+  }
+
 
 
   def bondReps(): List[BondRep] = bond_list.toList.map(_.bondRep())
@@ -48,7 +92,16 @@ class Group (
   def groupRep(): GroupRep = GroupRep(
     uuid,
     workspaceObjectRep(),
-    groupCategorySlipNodeID, directionCategorySlipNodeID, bondFacetSlipNodeID, bondReps)
+    group_category, direction_category, bond_facet, bondReps)
+
+
+//  def add_description(dt: SlipNodeRep, d: SlipNodeRep){
+//    description ds = new description(this, string, dt, d);
+//    descriptions.addElement(ds);
+//  }
+  def add_bond_description(d: Description) {
+    bond_descriptions += d
+  }
 
 
   def single_letter_group_probability(lengthActivation: Double, temperature: Double): Double = {
@@ -88,6 +141,24 @@ class Group (
       }
     }
   }
+
+  def length_description_probability(temperature: Double): Double = {
+    val length = object_list.size
+    if (length>5) return 0.0;
+    val cube = (length*length*length).toDouble
+    val prob = Math.pow(0.5,cube*
+      ((100.0-groupSlipnetInfo.length.activation)/100.0));
+
+    val value = Formulas.temperature_adjusted_probability(prob, temperature)
+    if (value < 0.06) {
+      0.0 // otherwise 1/20 chance always
+    } else {
+      //System.out.println(this.toString()+" length description prob = "+val);
+      value
+    }
+  }
+
+
   def break_group() = {
     for (wo <- object_list) {
       wo.group = None
@@ -115,8 +186,8 @@ class Group (
         val g = wo.asInstanceOf[Group]
         ((g.right_string_position<left_string_position)||
           (g.left_string_position>right_string_position)) &&
-        ((g.groupCategorySlipNodeID == groupCategorySlipNodeID)&&
-            (g.directionCategorySlipNodeID == directionCategorySlipNodeID))
+        ((g.group_category == group_category)&&
+            (g.direction_category == direction_category))
     })
     grs.size
   }

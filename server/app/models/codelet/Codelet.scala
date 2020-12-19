@@ -7,7 +7,7 @@ import play.api.libs.concurrent.InjectedActorSupport
 // TODO (4 days)
 // RuleTranslator (almost)
 // Verify CorrespondenceStrengthTester
-// CorrespondenceBuilder
+// initialisation of Group (notably add_bond_description)
 
 sealed trait CodeletType
 

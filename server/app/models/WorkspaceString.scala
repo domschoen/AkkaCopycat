@@ -46,7 +46,7 @@ class WorkspaceString (val s: String, x1: Int, y1: Int, x2: Int, y2: Int) {
         (gp.left_string_position == wg.left_string_position) &&
           (gp.right_string_position == wg.right_string_position) &&
           (gp.bond_category == wg.bond_category) &&
-          (gp.directionCategorySlipNodeID == wg.directionCategorySlipNodeID)
+          (gp.direction_category == wg.direction_category)
       })
   }
 
