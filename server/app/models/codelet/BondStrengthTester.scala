@@ -21,14 +21,16 @@ class BondStrengthTester(urgency: Int,
   import models.Workspace.GoWithBondStrengthTester
   import BondStrengthTester.GoWithBondStrengthTesterResponse
 
+  var runTemperature = 0.0
   def bondID() = arguments.get.asInstanceOf[String]
 
   def receive = LoggingReceive {
     // to the browser
-    case Run(initialString, modifiedString, targetString,runTemperature) =>
+    case Run(initialString, modifiedString, targetString,t) =>
       log.debug(s"Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
       temperature ! Register(self)
+      runTemperature = t
       workspace ! GoWithBondStrengthTester(runTemperature, bondID)
 
     case GoWithBondStrengthTesterResponse(s) =>
@@ -42,7 +44,7 @@ class BondStrengthTester(urgency: Int,
     t = value
 
     case Finished =>
-      workspace ! models.Workspace.Step
+      workspace ! models.Workspace.Step(runTemperature)
 
   }
 

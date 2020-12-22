@@ -52,13 +52,15 @@ class BottomUpBondScout(urgency: Int,              workspace: ActorRef,
   var from_descriptor: Option[SlipNodeRep] = None
   var to_descriptor: Option[SlipNodeRep] = None
   var bondCategoryDegreeOfAssociation = 0.0
+  var runTemperature = 0.0
 
   def receive = LoggingReceive {
     // to the browser
-    case Run(initialString, modifiedString, targetString, runTemperature) =>
+    case Run(initialString, modifiedString, targetString, t) =>
       log.debug(s"BottomUpBondScout. Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
       temperature ! Register(self)
+      runTemperature = t
 
       workspace ! BondWithNeighbor(runTemperature)
 
@@ -101,7 +103,7 @@ class BottomUpBondScout(urgency: Int,              workspace: ActorRef,
       t = value
 
     case Finished =>
-      workspace ! models.Workspace.Step
+      workspace ! models.Workspace.Step(runTemperature)
 
   }
 

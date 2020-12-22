@@ -16,15 +16,15 @@ class Breaker(urgency: Int,
   import models.Coderack.ProposeCorrespondence
   import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
   import Workspace.GoWithBreaker
-
+  var runTemperature = 0.0
   def receive = LoggingReceive {
     // to the browser
-    case Run(initialString, modifiedString, targetString,runTemperature) =>
+    case Run(initialString, modifiedString, targetString,t) =>
       log.debug(s"Run with initial $initialString, modified: $modifiedString and target: $targetString")
       val probability = (100.0 - runTemperature) / 100.0
       log.debug("deciding whether or not to fizzle.")
       log.debug(s"fizzle probability = $probability")
-
+      runTemperature = t
       if(Codelet.flipCoin(probability)) {
         log.debug("decided to fizzle!")
       } else {

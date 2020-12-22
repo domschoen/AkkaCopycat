@@ -13,13 +13,14 @@ class ReplacementFinder(urgency: Int,              workspace: ActorRef,
   import Codelet.{ Run, Finished }
   import models.Coderack.ChooseAndRun
 
-
+  var runTemperature = 0.0
   def receive = LoggingReceive {
     // to the browser
-    case Run(initialString, modifiedString, targetString,runTemperature) =>
+    case Run(initialString, modifiedString, targetString,t) =>
       log.debug(s"ReplacementFinder. Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
       temperature ! Register(self)
+      runTemperature = t
 
       workspace ! GoWithReplacementFinder
     case TemperatureResponse(value) =>
@@ -29,7 +30,7 @@ class ReplacementFinder(urgency: Int,              workspace: ActorRef,
       t = value
 
     case Finished =>
-      workspace ! models.Workspace.Step
+      workspace ! models.Workspace.Step(runTemperature)
 
     }
 

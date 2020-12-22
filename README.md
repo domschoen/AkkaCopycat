@@ -71,6 +71,48 @@ We can query the slipnet for influencing the workspace.
 
 # Execution Debugging
 
+## Run JavaCopycat
+
+In Intellij, go to src/rungroup and right-click "main(String[]): void" and choose "Run 'rungroup.main()'"
+
+It execute 1000 trials using different random seed
+
+Output will look like this:
+
+```
+abc
+abd
+ijk
+-------------------------------------------- 0
+NUM NUM 0
+ijl 266 12.098747680049227
+-------------------------------------------- 1
+NUM NUM 1
+ijd 221 12.104129516579881
+-------------------------------------------- 2
+NUM NUM 2
+ijl 167 10.937297283098673
+...
+...
+-------------------------------------------- 999
+NUM NUM 999
+ijl 288 12.834735122641115
+
+Process finished with exit code 0
+```
+
+It will give exactly always the same, see JavaCopyCat1000Trial.log
+
+Here the stats:
+
+| Pattern | Number |
+| ------- | ------ |
+| ijl     | 504    |
+| ijd     | 485    |
+| ijk     | 11     |
+
+
+
 ## Codelet executed
 
 | Execution 1                                                  | Execution 2                              |

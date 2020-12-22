@@ -33,6 +33,8 @@ object SlipNode {
                                samegrp: SlipNodeRep,
                                letter: SlipNodeRep,
                                letter_category: SlipNodeRep,
+                               right: SlipNodeRep,
+                               left: SlipNodeRep,
                                slipnet_numbers: List[SlipNodeRep]
                              )
 

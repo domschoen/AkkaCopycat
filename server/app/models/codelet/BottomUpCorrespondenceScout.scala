@@ -101,7 +101,7 @@ class BottomUpCorrespondenceScout(urgency: Int,
       t = value
 
     case Finished =>
-      workspace ! models.Workspace.Step
+      workspace ! models.Workspace.Step(runTemperature)
 
   }
 

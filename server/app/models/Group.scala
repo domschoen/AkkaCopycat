@@ -28,7 +28,6 @@ object Group {
                              groupSlipnetInfo: GroupSlipnetInfo
                      )
 
-  val r = scala.util.Random
 
 }
 
@@ -80,7 +79,7 @@ class Group (
 
   // check whether or not to add length description category
   val prob = length_description_probability(temperature);
-  if (Group.r.nextDouble()<prob){
+  if (Random.rnd() < prob){
     val length = object_list.size
     if (length<6) add_description(groupSlipnetInfo.length, Some(groupSlipnetInfo.slipnet_numbers(length-1)))
   }

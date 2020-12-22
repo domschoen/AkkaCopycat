@@ -1,6 +1,7 @@
 package models.codelet
 
 import akka.actor.{Actor, ActorLogging, ActorRef, Props}
+import models.Random
 import play.api.libs.concurrent.InjectedActorSupport
 
 
@@ -38,10 +39,9 @@ object Codelet {
   def props(codeletType: CodeletType, urgency: Int, workspace: ActorRef,  slipnet: ActorRef,  temperature: ActorRef, arguments: Option[Any]): Props =
     Props(Codelet(codeletType, urgency, workspace, slipnet, temperature, arguments))
 
-  val r = scala.util.Random
 
   def flipCoin(value: Double): Boolean = {
-     r.nextDouble() < value
+    Random.rnd() < value
   }
 
 

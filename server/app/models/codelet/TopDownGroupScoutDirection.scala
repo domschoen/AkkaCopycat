@@ -5,7 +5,7 @@ import akka.actor.ActorRef
 import models.Bond.BondRep
 import models.Coderack.ProposeGroup
 import models.SlipNode.{GroupSlipnetInfo, SlipNodeRep}
-import models.Slipnet.{CompleteProposeGroup, CompleteProposeGroupResponse, SlipnetGoWithTopDownGroupScoutCategory2, SlipnetGoWithTopDownGroupScoutDirection}
+import models.Slipnet.{CompleteProposeGroup, CompleteProposeGroupResponse, SlipnetGoWithTopDownGroupScoutCategory2, SlipnetGoWithTopDownGroupScoutDirection, SlipnetGoWithTopDownGroupScoutDirection0}
 import models.Workspace.{GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutCategory2, GoWithTopDownGroupScoutDirection, GoWithTopDownGroupScoutDirection2, WorkspaceProposeGroup, WorkspaceProposeGroupResponse}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.codelet.TopDownGroupScoutCategory.{GoWithTopDownGroupScoutCategory2Response, GoWithTopDownGroupScoutCategoryResponse, SlipnetGoWithTopDownGroupScoutCategory2Response}
@@ -14,6 +14,7 @@ import models.codelet.TopDownGroupScoutCategory.{GoWithTopDownGroupScoutCategory
 // Codelet.java.667
 
 object TopDownGroupScoutDirection {
+  case class SlipnetGoWithTopDownGroupScoutDirection0Response(groupSlipnetInfo: GroupSlipnetInfo)
   case class GoWithTopDownGroupScoutDirectionResponse(bond_category: SlipNodeRep, first_bond: String)
   //case class SlipnetGoWithTopDownGroupScoutDirectionResponse(group_category: Option[SlipNodeRep], groupSlipnetInfo: GroupSlipnetInfo)
 }
@@ -27,6 +28,7 @@ class TopDownGroupScoutDirection(urgency: Int,
   import models.Coderack.ProposeCorrespondence
   import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
   import models.codelet.TopDownGroupScoutDirection.{
+    SlipnetGoWithTopDownGroupScoutDirection0Response,
     GoWithTopDownGroupScoutDirectionResponse
   }
 
@@ -51,17 +53,20 @@ class TopDownGroupScoutDirection(urgency: Int,
       coderack = sender()
       temperature ! Register(self)
       runTemperature = t
-      log.debug("looking for "+directionID+" group");
+      log.debug("looking for "+directionID+" group")
 
-      workspace ! GoWithTopDownGroupScoutCategory(directionID, "direction_category", runTemperature)
+      slipnet ! SlipnetGoWithTopDownGroupScoutDirection0
+
+    case SlipnetGoWithTopDownGroupScoutDirection0Response(gsi) =>
+      groupSlipnetInfo = gsi
+      workspace ! GoWithTopDownGroupScoutCategory(directionID, "direction_category", runTemperature, groupSlipnetInfo)
 
     case GoWithTopDownGroupScoutCategoryResponse(direction, fb) =>
       fromob = fb
       slipnet ! SlipnetGoWithTopDownGroupScoutCategory2(directionID, direction)
 
-    case SlipnetGoWithTopDownGroupScoutCategory2Response(slipNodeRep, direction, gsi) =>
-      groupSlipnetInfo = gsi
-      workspace ! GoWithTopDownGroupScoutDirection(slipNodeRep, direction, fromob, runTemperature)
+    case SlipnetGoWithTopDownGroupScoutCategory2Response(slipNodeRep, direction) =>
+      workspace ! GoWithTopDownGroupScoutDirection(slipNodeRep, direction, fromob, runTemperature, groupSlipnetInfo)
 
     case GoWithTopDownGroupScoutDirectionResponse(bc, fb) =>
       first_bond = fb
@@ -97,7 +102,7 @@ class TopDownGroupScoutDirection(urgency: Int,
       t = value
 
     case Finished =>
-      workspace ! models.Workspace.Step
+      workspace ! models.Workspace.Step(runTemperature)
 
   }
 

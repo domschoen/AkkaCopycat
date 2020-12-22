@@ -37,13 +37,15 @@ class TopDownBondScoutDirection(urgency: Int,
   var to_descriptor: Option[SlipNodeRep] = null
   var bond_facet: SlipNodeRep = null
   var bond_urgency: Double = 0.0
+  var runTemperature = 0.0
 
   def receive = LoggingReceive {
     // to the browser
-    case Run(initialString, modifiedString, targetString,runTemperature) =>
+    case Run(initialString, modifiedString, targetString,t) =>
       log.debug(s"Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
       temperature ! Register(self)
+      runTemperature = t
       workspace ! GoWithTopDownBondScoutDirection(directionID, t)
 
     case GoWithTopDownBondScoutWithResponse(from, to, fromdtypes, todtypes) =>
@@ -84,7 +86,7 @@ class TopDownBondScoutDirection(urgency: Int,
       t = value
 
     case Finished =>
-      workspace ! models.Workspace.Step
+      workspace ! models.Workspace.Step(runTemperature)
 
   }
 

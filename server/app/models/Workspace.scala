@@ -25,7 +25,6 @@ import models.ConceptMapping.{ConceptMappingParameters, ConceptMappingRep}
 import models.Correspondence.CorrespondenceRep
 import models.Group.{FutureGroupRep, GroupRep}
 import models.SlipNode.{GroupSlipnetInfo, SlipNodeRep}
-import models.Slipnet.DirValue.DirValue
 import models.Slipnet.DescriptionTypeInstanceLinksToNodeInfo
 import models.Workspace.{GoWithBottomUpCorrespondenceScout2Response, GoWithBottomUpCorrespondenceScout3, GoWithBottomUpCorrespondenceScout3Response, GoWithCorrespondenceBuilder, GoWithCorrespondenceBuilder2, GoWithCorrespondenceBuilder3, GoWithCorrespondenceBuilder4, GoWithCorrespondenceBuilder5, GoWithCorrespondenceBuilder6, GoWithCorrespondenceBuilder7, GoWithCorrespondenceBuilder8, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithImportantObjectCorrespondenceScout, GoWithImportantObjectCorrespondenceScout2, GoWithImportantObjectCorrespondenceScout3, GoWithRuleBuilder, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3, GoWithRuleStrengthTester, GoWithRuleTranslator, GoWithRuleTranslator2, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, UpdateEverything, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
 import models.WorkspaceObject.WorkspaceObjectRep
@@ -63,8 +62,9 @@ object Workspace {
   case class InitializeWorkspaceStringsResponse(
                                                  initialDescriptions: List[WorkspaceObjectRep],
                                                  modifiedDescriptions: List[WorkspaceObjectRep],
-                                                 targetDescriptions: List[WorkspaceObjectRep])
-  case object Step
+                                                 targetDescriptions: List[WorkspaceObjectRep]
+                                               )
+  case class Step(temperature: Double)
   case object Found
   case class GoWithBreaker(temperature: Double)
   case class BondWithNeighbor(temperature: Double)
@@ -94,7 +94,7 @@ object Workspace {
   case class WorkspaceProposeGroupResponse(groupID: String)
 
   case object GoWithReplacementFinder
-  case class GoWithTopDownGroupScoutCategory(slipNodeID: String, bondFocus: String, t: Double)
+  case class GoWithTopDownGroupScoutCategory(slipNodeID: String, bondFocus: String, t: Double, groupSlipnetInfo: GroupSlipnetInfo)
   case class GoWithTopDownGroupScoutCategory2(
                                               group_category: SlipNodeRep,
                                               direction: SlipNodeRep,
@@ -138,7 +138,7 @@ object Workspace {
 
   case class GoWithBondBuilder(temperature: Double, bondID: String)
 
-  case class GoWithTopDownGroupScoutDirection(slipNodeRep: SlipNodeRep, direction: SlipNodeRep, fromobrep: WorkspaceObjectRep, t:Double)
+  case class GoWithTopDownGroupScoutDirection(slipNodeRep: SlipNodeRep, direction: SlipNodeRep, fromobrep: WorkspaceObjectRep, t:Double, groupSlipnetInfo: GroupSlipnetInfo)
   case class GoWithTopDownGroupScoutDirection2(group_category: Option[SlipNodeRep], fromob: WorkspaceObjectRep, firstBondUUID: String, bond_category: SlipNodeRep)
   case class CommonSubProcessing(group_category: SlipNodeRep, fromobUUID: String, firstBondUUID: String, bond_category: SlipNodeRep)
 
@@ -221,6 +221,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
   import Workspace.{
     Initialize,
     Found,
+    Step,
     GoWithBottomUpCorrespondenceScout,
     GoWithBottomUpCorrespondenceScout2,
     GoWithBottomUpDescriptionScout,
@@ -264,7 +265,6 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
   var initial: WorkspaceString = null
   var target: WorkspaceString = null
   var modified: WorkspaceString = null
-  val r = scala.util.Random
   var changed_object = Option.empty[WorkspaceObject]
   var structureRefs = Map.empty[String, WorkspaceStructure]
   // Because a Map doesn't garantee the order, we need also an array
@@ -386,7 +386,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       updateWorkspaceStringWithDescriptionReps(initial, initialDescriptions)
       updateWorkspaceStringWithDescriptionReps(modified, modifiedDescriptions)
       updateWorkspaceStringWithDescriptionReps(target, targetDescriptions)
-      coderack ! FinishInitilizingWorkspaceStrings
+      coderack ! FinishInitilizingWorkspaceStrings(workspaceObjects().size)
 
     case models.Workspace.UpdateEverything =>
       for (ws <- structures) {
@@ -412,11 +412,11 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       found_answer = true
 
 
-    case Step =>
+    case Step(temperature) =>
       if (found_answer) {
         executionRunActor ! ExecutionRun.Found
       } else {
-        coderack ! ChooseAndRun
+        coderack ! ChooseAndRun(temperature)
       }
 
     // GoWithBreaker, see Codelet.java.68
@@ -431,7 +431,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       } else {
         val wsize = candidateStructures.size
         // Codelet.java.84
-        val p = (r.nextDouble() * wsize).toInt
+        val p = (Random.rnd() * wsize).toInt
         val pos = if (p >= wsize) 0 else p
         val ws = structures(pos);
 
@@ -535,7 +535,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     case GoWithReplacementFinder =>
       val initialLetters = lettersOf(initial)
       val size = initialLetters.size
-      val posBase = size * r.nextDouble()
+      val posBase = size * Random.rnd()
       val pos = if (posBase >= size) size - 1.0 else posBase
       val i_letter = initialLetters(pos.toInt)
       log.debug(s"selected letter in initial string = ${i_letter}")
@@ -1145,7 +1145,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
               )
           }
       }
-    case GoWithTopDownGroupScoutCategory(slipNodeID: String, bondFocus: String, t) =>
+    case GoWithTopDownGroupScoutCategory(slipNodeID: String, bondFocus: String, t, groupSlipnetInfo) =>
       val bondFocusing = bondFocus match {
         case "bond_category" => (b: Bond) => Some(b.bond_category)
         case "direction_category" => (b: Bond) => b.direction_category
@@ -1165,16 +1165,17 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
             log.debug("chosen object spans the string. fizzle");
             sender() ! Finished
           } else {
-            val direction = if (fromob.leftmost) DirValue.Right else if (fromob.rightmost) DirValue.Left else DirValue.None
+            val direction = if (fromob.leftmost) Some(groupSlipnetInfo.right) else
+              if (fromob.rightmost) Some(groupSlipnetInfo.left) else None
             sender() ! GoWithTopDownGroupScoutCategoryResponse(direction, fromob.workspaceObjectRep())
           }
       }
     case GoWithTopDownGroupScoutCategory2(group_category, direction, fromobrep, bond_category, t, groupSlipnetInfo) =>
       var fromob = objectRefs()(fromobrep.uuid)
-      val first_bondOpt = if (direction == DirValue.Left) fromob.left_bond else fromob.right_bond
+      val first_bondOpt = if (direction == groupSlipnetInfo.left) fromob.left_bond else fromob.right_bond
       if ((first_bondOpt.isEmpty) || (first_bondOpt.get.bond_category != bond_category)) {
         // check the other side of object
-        val newFirst_bondOpt = if (direction == DirValue.Right) fromob.left_bond else fromob.right_bond
+        val newFirst_bondOpt = if (direction == groupSlipnetInfo.right) fromob.left_bond else fromob.right_bond
         if ((newFirst_bondOpt.isEmpty) || (newFirst_bondOpt.get.bond_category != bond_category)) {
           // this is a single letter group
           if ((bond_category.id != "sm") || (!(fromob.isInstanceOf[Letter]))) {
@@ -1200,7 +1201,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
               slipnet)
 
             val prob = g.single_letter_group_probability(groupSlipnetInfo.length.activation, t);
-            if (r.nextDouble() < prob) {
+            if (Random.rnd() < prob) {
               // propose single letter group
               print("single letter group proposed");
 
@@ -1340,17 +1341,17 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
         slipnet)
       sender ! WorkspaceProposeGroupResponse(ng.uuid)
 
-    case GoWithTopDownGroupScoutDirection(slipNodeRep, direction: SlipNodeRep, fromobrep: WorkspaceObjectRep, t) =>
+    case GoWithTopDownGroupScoutDirection(slipNodeRep, direction: SlipNodeRep, fromobrep: WorkspaceObjectRep, t, gsi) =>
       var fromob = objectRefs()(fromobrep.uuid)
       var newDirection: Option[SlipNodeRep] = Some(direction)
       var fizzle = false
 
-      val first_bondOpt = if (direction == DirValue.Left) fromob.left_bond else fromob.right_bond
+      val first_bondOpt = if (direction == gsi.left) fromob.left_bond else fromob.right_bond
       if ((first_bondOpt.isDefined) && (first_bondOpt.get.direction_category.isEmpty)) {
         newDirection = None
       }
       if ((first_bondOpt.isEmpty) || (first_bondOpt.isDefined && first_bondOpt.get.direction_category != direction)) {
-        val newFirst_bondOpt = if (direction == DirValue.Right) fromob.left_bond else fromob.right_bond
+        val newFirst_bondOpt = if (direction == gsi.right) fromob.left_bond else fromob.right_bond
         if ((newFirst_bondOpt.isEmpty) || (newFirst_bondOpt.get.direction_category.isEmpty)) {
           newDirection = None
         }
@@ -1383,7 +1384,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 
     case GoWithGroupScoutWholeString(t: Double) =>
       log.debug("about to choose string");
-      val wString = if (r.nextDouble() > 0.5) target else initial
+      val wString = if (Random.rnd() > 0.5) target else initial
       val wStringText = if (wString == initial) "initial" else "target"
       log.debug(s"${wStringText} string selected")
 
@@ -1425,7 +1426,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
           sender() ! Finished
         } else {
           // choose a random bond from list
-          val posRaw = (r.nextDouble() * bond_list.size).toInt
+          val posRaw = (Random.rnd() * bond_list.size).toInt
           val pos = if (posRaw >= bond_list.size) 0 else posRaw
 
           val chosen_bond = bond_list(pos)
@@ -1463,7 +1464,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 
       val prob = WorkspaceFormulas.temperature_adjusted_probability(strength / 100.0, temperature)
       log.info(s"strength = $strength, adjusted prob.= $prob")
-      if (r.nextDouble() > prob){
+      if (Random.rnd() > prob){
         print("not strong enough: fizzled!");
         sender() ! Finished
       } else {
@@ -1566,7 +1567,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       val strength = rule.total_strength
       val prob = WorkspaceFormulas.temperature_adjusted_probability(strength / 100.0, temperature)
       log.info(s"strength = $strength, adjusted prob.= $prob")
-      if (r.nextDouble() > prob){
+      if (Random.rnd() > prob){
         print("not strong enough: fizzled!");
         sender() ! Finished
       } else {
@@ -1576,7 +1577,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 
     case GoWithRuleBuilder(ruleID) =>
       val myrule = structureRefs(ruleID).asInstanceOf[Rule]
-      println("trying to build "+r.toString());
+      println("trying to build "+myrule.toString());
       if (myrule.rule_equal(rule)){
         // rule already exists: fizzle, but activate concepts
         print("already exists - activate concepts");
@@ -1978,7 +1979,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
                                          t_relevance: Double,
                                          t_unhappiness:Double
                                        ): WorkspaceString = if (
-    (r.nextDouble() * (i_relevance + i_unhappiness + t_relevance + t_unhappiness)) >
+    (Random.rnd() * (i_relevance + i_unhappiness + t_relevance + t_unhappiness)) >
       (i_relevance + i_unhappiness)) target else initial
 
   def choose_bond_facet(fromob: WorkspaceObject, toob: WorkspaceObject) = {
@@ -2212,7 +2213,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     val vs2 = s2.total_strength*w2;
     val v1 = Formulas.temperatureAdjustedValue(vs1, chaleur)
     val v2 = Formulas.temperatureAdjustedValue(vs2, chaleur)
-    !(((v1+v2) * r.nextDouble())>v1)
+    !(((v1+v2) * Random.rnd())>v1)
   }
 
   def fight_it_out(wo: WorkspaceStructure, v1: Double, structs: List[WorkspaceStructure], v2: Double): Boolean = {

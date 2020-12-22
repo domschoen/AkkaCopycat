@@ -33,6 +33,7 @@ class ExecutionRun extends Actor with ActorLogging  { //with InjectedActorSuppor
     // to the browser
     case Run(initialString, modifiedString, targetString) => {
       log.debug(s"ExecutionRun: Run with initial $initialString, modified: $modifiedString and target: $targetString")
+      Random.setseed(0)
       slipnet = context.actorOf(Slipnet.props(),"Slipnet")
 
       temperature = context.actorOf(Temperature.props(),"Temperature")

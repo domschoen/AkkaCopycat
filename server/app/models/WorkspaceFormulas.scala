@@ -11,7 +11,6 @@ object WorkspaceFormulas {
   val high_distribution = List(1.0,1.0,2.0,5.0,150.0,5.0,2.0,1.0,1.0,1.0)
   val very_high_distribution = List(1.0,1.0,1.0,2.0,5.0,150.0,5.0,2.0,1.0,1.0)
 
-  val r = scala.util.Random
 
 
   def choose(vals: List[Double]): Int = {
@@ -45,7 +44,7 @@ object WorkspaceFormulas {
   }
 
   def flip_coin(value: Double): Boolean = {
-    r.nextDouble() < value
+    Random.rnd() < value
   }
 
   /* slip
@@ -250,7 +249,7 @@ object WorkspaceFormulas {
     val v2 = s2.total_strength*w2;
     v1=temperature_adjusted_value(v1);
     v2=temperature_adjusted_value(v2);
-    !(((v1+v2) * r.nextDouble())>v1)
+    !(((v1+v2) * Random.rnd())>v1)
   }
 */
   // See workspace
@@ -333,9 +332,9 @@ object WorkspaceFormulas {
   def same_group(gp1: Group, gp2: Group): Boolean = {
     if (gp1.left_string_position!=gp2.left_string_position) return false;
     if (gp1.right_string_position!=gp2.right_string_position) return false;
-    if (gp1.groupCategorySlipNodeID != gp2.groupCategorySlipNodeID) return false;
-    if (gp1.directionCategorySlipNodeID != gp2.directionCategorySlipNodeID) return false;
-    if (gp1.bondFacetSlipNodeID != gp2.bondFacetSlipNodeID) return false;
+    if (gp1.group_category != gp2.group_category) return false;
+    if (gp1.direction_category != gp2.direction_category) return false;
+    if (gp1.bond_facet != gp2.bond_facet) return false;
     return true;
   }
 

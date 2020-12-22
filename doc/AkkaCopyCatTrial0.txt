@@ -1,0 +1,1053 @@
+17:46:29 INFO  [akka://application/user/$a/flowActor] - Websocket received Run
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun] - ExecutionRun: Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Run with initial , modified:  and target: 
+WorkspaceString abc
+WorkspaceString abd
+WorkspaceString ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (1)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (2)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (3)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (1)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (2)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (3)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (1)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (2)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (3)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Initializing
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - TemperatureResponse 100.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - PostInitialCodelets 9
+create codelet BottomUpBondScout
+create codelet BottomUpBondScout
+create codelet BottomUpBondScout
+create codelet BottomUpBondScout
+create codelet BottomUpBondScout
+create codelet BottomUpBondScout
+create codelet BottomUpBondScout
+create codelet BottomUpBondScout
+create codelet BottomUpBondScout
+create codelet BottomUpBondScout
+create codelet BottomUpBondScout
+create codelet BottomUpBondScout
+create codelet BottomUpBondScout
+create codelet BottomUpBondScout
+create codelet BottomUpBondScout
+create codelet BottomUpBondScout
+create codelet BottomUpBondScout
+create codelet BottomUpBondScout
+create codelet ReplacementFinder
+create codelet ReplacementFinder
+create codelet ReplacementFinder
+create codelet ReplacementFinder
+create codelet ReplacementFinder
+create codelet ReplacementFinder
+create codelet ReplacementFinder
+create codelet ReplacementFinder
+create codelet ReplacementFinder
+create codelet ReplacementFinder
+create codelet ReplacementFinder
+create codelet ReplacementFinder
+create codelet ReplacementFinder
+create codelet ReplacementFinder
+create codelet ReplacementFinder
+create codelet ReplacementFinder
+create codelet ReplacementFinder
+create codelet ReplacementFinder
+create codelet BottomUpCorrespondenceScout
+create codelet BottomUpCorrespondenceScout
+create codelet BottomUpCorrespondenceScout
+create codelet BottomUpCorrespondenceScout
+create codelet BottomUpCorrespondenceScout
+create codelet BottomUpCorrespondenceScout
+create codelet BottomUpCorrespondenceScout
+create codelet BottomUpCorrespondenceScout
+create codelet BottomUpCorrespondenceScout
+create codelet BottomUpCorrespondenceScout
+create codelet BottomUpCorrespondenceScout
+create codelet BottomUpCorrespondenceScout
+create codelet BottomUpCorrespondenceScout
+create codelet BottomUpCorrespondenceScout
+create codelet BottomUpCorrespondenceScout
+create codelet BottomUpCorrespondenceScout
+create codelet BottomUpCorrespondenceScout
+create codelet BottomUpCorrespondenceScout
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - PostInitialCodelets createdCodelets size 54
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - PostInitialCodelets codelets size 0
+update_Everything
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 54
+Choose codelet codelets size 54
+Random rndseed=0
+sum 54.0 chosen 0.54
+Choose codelet at index 0
+Random rndseed=1
+Random rndseed=2
+Random rndseed=3
+Random rndseed=4
+Random rndseed=5
+Random rndseed=6
+Random rndseed=7
+Random rndseed=8
+Random rndseed=9
+Random rndseed=10
+Random rndseed=11
+Random rndseed=12
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$a#-1735992225]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$a] - BottomUpBondScout. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+Random rndseed=13
+sum 720.0 chosen 502.55999999999995
+Random rndseed=14
+sum 240.0 chosen 135.35999999999999
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - initial object chosen: letter (1) in target string
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - ito object: letter (2)
+update_Everything
+Choose codelet codelets size 53
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 53
+Random rndseed=15
+sum 53.0 chosen 2.173
+Choose codelet at index 2
+Random rndseed=16
+Random rndseed=17
+Random rndseed=18
+Random rndseed=19
+Random rndseed=20
+Random rndseed=21
+Random rndseed=22
+Random rndseed=23
+Random rndseed=24
+Random rndseed=25
+Random rndseed=26
+Random rndseed=27
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$d#441117873]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$d] - BottomUpBondScout. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+Random rndseed=28
+sum 720.0 chosen 324.72
+Random rndseed=29
+sum 480.0 chosen 289.92
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - initial object chosen: letter (2) in target string
+update_Everything
+Choose codelet codelets size 52
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - ito object: letter (3)
+Random rndseed=30
+sum 52.0 chosen 34.372
+Choose codelet at index 34
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 52
+Random rndseed=31
+Random rndseed=32
+Random rndseed=33
+Random rndseed=34
+Random rndseed=35
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$K#936390058]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$K] - BottomUpCorrespondenceScout. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+Random rndseed=36
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+sum 60.0 chosen 7.26
+Random rndseed=37
+sum 60.0 chosen 40.260000000000005
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - GoWithBottomUpCorrespondenceScout | trying a correspondence between letter (1) and letter (3)
+Random rndseed=38
+no distinguishing mappings found: fizzleupdate_Everything
+Choose codelet codelets size 51
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 51
+Random rndseed=39
+Random rndseed=40
+Random rndseed=40
+sum 51.0 chosen 28.763999999999996
+Random rndseed=42
+Choose codelet at index 28
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$E#-176402227]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$E] - ReplacementFinder. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+Random rndseed=43
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - selected letter in initial string = letter (1)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Workspace | ReplaceLetter | Sameness relation found
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - building replacement
+update_Everything
+Choose codelet codelets size 50
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 50
+Random rndseed=44
+sum 50.0 chosen 8.95
+Choose codelet at index 8
+Random rndseed=45
+Random rndseed=46
+Random rndseed=47
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$k#-1650053558]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$k] - BottomUpBondScout. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=48
+sum 720.0 chosen 387.36
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+Random rndseed=49
+sum 480.0 chosen 309.6
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - initial object chosen: letter (2) in target string
+update_Everything
+Choose codelet codelets size 49
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - ito object: letter (3)
+Random rndseed=50
+sum 49.0 chosen 30.527
+Choose codelet at index 30
+Random rndseed=51
+Random rndseed=52
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 49
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$I#-683112790]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$I] - ReplacementFinder. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=53
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+update_Everything
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+Choose codelet codelets size 48
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - selected letter in initial string = letter (1)
+Random rndseed=54
+Random rndseed=55
+sum 48.0 chosen 22.128
+Random rndseed=56
+Choose codelet at index 22
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - replacement already found for this object. Fizzle!
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 48
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$z#-1686536995]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$z] - ReplacementFinder. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=57
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+update_Everything
+Choose codelet codelets size 47
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - selected letter in initial string = letter (2)
+Random rndseed=58
+sum 47.0 chosen 28.340999999999998
+Choose codelet at index 28
+Random rndseed=59
+Random rndseed=60
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Workspace | ReplaceLetter | Sameness relation found
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - building replacement
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 47
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$H#270652454]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$H] - ReplacementFinder. Run with initial abc, modified: abd and target: ijk
+Random rndseed=61
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+update_Everything
+Choose codelet codelets size 46
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+Random rndseed=62
+Random rndseed=62
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+sum 46.0 chosen 13.524
+Random rndseed=64
+Choose codelet at index 13
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - selected letter in initial string = letter (3)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Workspace | ReplaceLetter | Sameness relation found
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - building replacement
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 46
+Random rndseed=65
+sum 720.0 chosen 172.79999999999998
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$q#-1165241465]
+Random rndseed=66
+sum 240.0 chosen 99.11999999999999
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$q] - BottomUpBondScout. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+update_Everything
+Choose codelet codelets size 45
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+Random rndseed=67
+sum 45.0 chosen 2.43
+Random rndseed=68
+Choose codelet at index 2
+Random rndseed=69
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - initial object chosen: letter (3) in target string
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - ito object: letter (2)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 45
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$e#-1654704140]
+Random rndseed=70
+sum 720.0 chosen 0.72
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$e] - BottomUpBondScout. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=71
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+sum 240.0 chosen 98.16
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+update_Everything
+Choose codelet codelets size 44
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - initial object chosen: letter (1) in target string
+Random rndseed=72
+sum 44.0 chosen 3.0360000000000005
+Choose codelet at index 3
+Random rndseed=73
+Random rndseed=74
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - ito object: letter (2)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 44
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$g#565878371]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$g] - BottomUpBondScout. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=75
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+sum 720.0 chosen 701.28
+Random rndseed=76
+sum 240.0 chosen 85.19999999999999
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - initial object chosen: letter (3) in target string
+update_Everything
+Choose codelet codelets size 43
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - ito object: letter (2)
+Random rndseed=77
+Random rndseed=77
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 43
+sum 43.0 chosen 8.471
+Random rndseed=78
+Choose codelet at index 8
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$n#1362946329]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$n] - BottomUpBondScout. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+Random rndseed=80
+sum 720.0 chosen 151.92
+Random rndseed=81
+sum 480.0 chosen 119.52
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - initial object chosen: letter (2) in target string
+update_Everything
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - ito object: letter (3)
+Choose codelet codelets size 42
+Random rndseed=82
+Random rndseed=82
+Random rndseed=83
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 42
+sum 42.0 chosen 37.338
+Choose codelet at index 37
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$X#465315359]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$X] - BottomUpCorrespondenceScout. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=85
+sum 60.0 chosen 44.1
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+Random rndseed=86
+sum 60.0 chosen 27.66
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+Random rndseed=87
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - GoWithBottomUpCorrespondenceScout | trying a correspondence between letter (3) and letter (2)
+no distinguishing mappings found: fizzleupdate_Everything
+Choose codelet codelets size 41
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 41
+Random rndseed=88
+sum 41.0 chosen 1.435
+Choose codelet at index 1
+Random rndseed=89
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$c#554255904]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$c] - BottomUpBondScout. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+Random rndseed=90
+sum 720.0 chosen 329.76
+Random rndseed=91
+sum 480.0 chosen 231.84
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - initial object chosen: letter (2) in target string
+update_Everything
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - ito object: letter (1)
+Choose codelet codelets size 40
+Random rndseed=92
+sum 40.0 chosen 23.84
+Choose codelet at index 23
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 40
+Random rndseed=93
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$J#-713617302]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$J] - ReplacementFinder. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=94
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+update_Everything
+Choose codelet codelets size 39
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - selected letter in initial string = letter (1)
+Random rndseed=95
+sum 39.0 chosen 27.339
+Choose codelet at index 27
+Random rndseed=96
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - replacement already found for this object. Fizzle!
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 39
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$P#868542197]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$P] - BottomUpCorrespondenceScout. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=97
+sum 60.0 chosen 53.160000000000004
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+Random rndseed=98
+sum 60.0 chosen 52.5
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+Random rndseed=99
+no distinguishing mappings found: fizzle17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - GoWithBottomUpCorrespondenceScout | trying a correspondence between letter (3) and letter (3)
+update_Everything
+Choose codelet codelets size 38
+Random rndseed=100
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 38
+sum 38.0 chosen 21.014000000000003
+Choose codelet at index 21
+Random rndseed=101
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$F#-1877150418]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$F] - ReplacementFinder. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=102
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+update_Everything
+Choose codelet codelets size 37
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+Random rndseed=103
+sum 37.0 chosen 28.527
+Choose codelet at index 28
+Random rndseed=104
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - selected letter in initial string = letter (2)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - replacement already found for this object. Fizzle!
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 37
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$S#501976828]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$S] - BottomUpCorrespondenceScout. Run with initial abc, modified: abd and target: ijk
+Random rndseed=105
+sum 60.0 chosen 13.02
+Random rndseed=106
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+sum 60.0 chosen 14.1
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+Random rndseed=107
+no distinguishing mappings found: fizzle17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+update_Everything
+Choose codelet codelets size 36
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - GoWithBottomUpCorrespondenceScout | trying a correspondence between letter (1) and letter (1)
+Random rndseed=108
+sum 36.0 chosen 20.375999999999998
+Choose codelet at index 20
+Random rndseed=109
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 36
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$D#2079625043]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$D] - ReplacementFinder. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=110
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+update_Everything
+Choose codelet codelets size 35
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - selected letter in initial string = letter (2)
+Random rndseed=111
+sum 35.0 chosen 1.085
+Choose codelet at index 1
+Random rndseed=112
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - replacement already found for this object. Fizzle!
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 35
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$f#-575663580]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$f] - BottomUpBondScout. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=113
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+sum 720.0 chosen 152.64
+Random rndseed=114
+sum 480.0 chosen 387.84000000000003
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - initial object chosen: letter (2) in target string
+update_Everything
+Choose codelet codelets size 34
+Random rndseed=115
+sum 34.0 chosen 21.386
+Choose codelet at index 21
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - ito object: letter (1)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 34
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$M#-1353302528]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$M] - BottomUpCorrespondenceScout. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=116
+sum 60.0 chosen 42.9
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+Random rndseed=117
+sum 60.0 chosen 43.92
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+no possible mappings exist: fizzle17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - GoWithBottomUpCorrespondenceScout | trying a correspondence between letter (3) and letter (3)
+update_Everything
+Choose codelet codelets size 33
+Random rndseed=118
+sum 33.0 chosen 18.183
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 33
+Choose codelet at index 18
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$C#-766028349]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$C] - ReplacementFinder. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=119
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+update_Everything
+Choose codelet codelets size 32
+Random rndseed=120
+sum 32.0 chosen 5.344
+Choose codelet at index 5
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - selected letter in initial string = letter (2)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - replacement already found for this object. Fizzle!
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 32
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$m#-832598484]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$m] - BottomUpBondScout. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=121
+sum 720.0 chosen 239.04000000000002
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+Random rndseed=122
+sum 240.0 chosen 208.56
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+update_Everything
+Choose codelet codelets size 31
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - initial object chosen: letter (3) in target string
+Random rndseed=123
+sum 31.0 chosen 25.543999999999997
+Choose codelet at index 25
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - ito object: letter (2)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 31
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$V#594184128]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$V] - BottomUpCorrespondenceScout. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=124
+sum 60.0 chosen 36.839999999999996
+Random rndseed=125
+sum 60.0 chosen 57.18
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+no possible mappings exist: fizzle17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+update_Everything
+Choose codelet codelets size 30
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - GoWithBottomUpCorrespondenceScout | trying a correspondence between letter (2) and letter (3)
+Random rndseed=126
+sum 30.0 chosen 29.73
+Choose codelet at index 29
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 30
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$1#-926788194]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$1] - BottomUpCorrespondenceScout. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=127
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+sum 60.0 chosen 58.92
+Random rndseed=128
+sum 60.0 chosen 44.22
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+no possible mappings exist: fizzleupdate_Everything
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - GoWithBottomUpCorrespondenceScout | trying a correspondence between letter (3) and letter (3)
+Choose codelet codelets size 29
+Random rndseed=129
+sum 29.0 chosen 14.761000000000001
+Choose codelet at index 14
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 29
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$y#-2062777190]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$y] - ReplacementFinder. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=130
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+update_Everything
+Choose codelet codelets size 28
+Random rndseed=131
+sum 28.0 chosen 20.104
+Choose codelet at index 20
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - selected letter in initial string = letter (1)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - replacement already found for this object. Fizzle!
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 28
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$Q#1044178453]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$Q] - BottomUpCorrespondenceScout. Run with initial abc, modified: abd and target: ijk
+Random rndseed=132
+sum 60.0 chosen 17.099999999999998
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=133
+sum 60.0 chosen 38.34
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+no possible mappings exist: fizzleupdate_Everything
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+Choose codelet codelets size 27
+Random rndseed=134
+sum 27.0 chosen 13.283999999999999
+Choose codelet at index 13
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - GoWithBottomUpCorrespondenceScout | trying a correspondence between letter (1) and letter (2)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 27
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$x#-1324026555]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$x] - ReplacementFinder. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=135
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+update_Everything
+Choose codelet codelets size 26
+Random rndseed=136
+sum 26.0 chosen 14.534
+Choose codelet at index 14
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - selected letter in initial string = letter (1)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - replacement already found for this object. Fizzle!
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 26
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$B#-1497276566]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$B] - ReplacementFinder. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=137
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+update_Everything
+Choose codelet codelets size 25
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+Random rndseed=138
+sum 25.0 chosen 19.35
+Choose codelet at index 19
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - selected letter in initial string = letter (2)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - replacement already found for this object. Fizzle!
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 25
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$T#694992105]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$T] - BottomUpCorrespondenceScout. Run with initial abc, modified: abd and target: ijk
+Random rndseed=139
+sum 60.0 chosen 23.28
+Random rndseed=140
+sum 60.0 chosen 39.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+no possible mappings exist: fizzle17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+update_Everything
+Choose codelet codelets size 24
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+Random rndseed=141
+sum 24.0 chosen 3.048
+Choose codelet at index 3
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - GoWithBottomUpCorrespondenceScout | trying a correspondence between letter (2) and letter (2)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 24
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$j#418165907]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$j] - BottomUpBondScout. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+Random rndseed=142
+sum 720.0 chosen 103.67999999999999
+Random rndseed=143
+sum 480.0 chosen 161.28
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - initial object chosen: letter (2) in target string
+update_Everything
+Choose codelet codelets size 23
+Random rndseed=144
+sum 23.0 chosen 21.114
+Choose codelet at index 21
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - ito object: letter (1)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 23
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$Z#329518641]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$Z] - BottomUpCorrespondenceScout. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=145
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+sum 60.0 chosen 39.24
+Random rndseed=146
+sum 60.0 chosen 38.88
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+no possible mappings exist: fizzle17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - GoWithBottomUpCorrespondenceScout | trying a correspondence between letter (2) and letter (2)
+update_Everything
+Choose codelet codelets size 22
+Random rndseed=147
+sum 22.0 chosen 15.597999999999999
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 22
+Choose codelet at index 15
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$N#-1255647881]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$N] - BottomUpCorrespondenceScout. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=148
+sum 60.0 chosen 39.300000000000004
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+Random rndseed=149
+sum 60.0 chosen 39.660000000000004
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+no possible mappings exist: fizzle17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - GoWithBottomUpCorrespondenceScout | trying a correspondence between letter (2) and letter (2)
+update_Everything
+Choose codelet codelets size 21
+Random rndseed=150
+sum 21.0 chosen 15.12
+Choose codelet at index 15
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 21
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$O#-1660423251]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$O] - BottomUpCorrespondenceScout. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=151
+sum 60.0 chosen 59.82
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+Random rndseed=152
+sum 60.0 chosen 25.259999999999998
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+no possible mappings exist: fizzle17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - GoWithBottomUpCorrespondenceScout | trying a correspondence between letter (3) and letter (2)
+update_Everything
+Choose codelet codelets size 20
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 20
+Random rndseed=153
+sum 20.0 chosen 11.240000000000002
+Choose codelet at index 11
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$w#-1718804447]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$w] - ReplacementFinder. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=154
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+update_Everything
+Choose codelet codelets size 19
+Random rndseed=155
+sum 19.0 chosen 18.677
+Choose codelet at index 18
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - selected letter in initial string = letter (2)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - replacement already found for this object. Fizzle!
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 19
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$0#-185166416]
+Random rndseed=156
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$0] - BottomUpCorrespondenceScout. Run with initial abc, modified: abd and target: ijk
+sum 60.0 chosen 0.84
+Random rndseed=157
+sum 60.0 chosen 56.519999999999996
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+no possible mappings exist: fizzle17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+update_Everything
+Choose codelet codelets size 18
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+Random rndseed=158
+sum 18.0 chosen 8.136000000000001
+Choose codelet at index 8
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - GoWithBottomUpCorrespondenceScout | trying a correspondence between letter (1) and letter (3)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 18
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$t#519896462]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$t] - ReplacementFinder. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=159
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+update_Everything
+Choose codelet codelets size 17
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+Random rndseed=160
+sum 17.0 chosen 9.282
+Choose codelet at index 9
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - selected letter in initial string = letter (1)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - replacement already found for this object. Fizzle!
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 17
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$v#-2100004664]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$v] - ReplacementFinder. Run with initial abc, modified: abd and target: ijk
+Random rndseed=161
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+update_Everything
+Choose codelet codelets size 16
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+Random rndseed=162
+sum 16.0 chosen 10.016
+Choose codelet at index 10
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - selected letter in initial string = letter (2)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - replacement already found for this object. Fizzle!
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 16
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$G#-171225839]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$G] - ReplacementFinder. Run with initial abc, modified: abd and target: ijk
+Random rndseed=163
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+update_Everything
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+Choose codelet codelets size 15
+Random rndseed=164
+sum 15.0 chosen 8.745
+Choose codelet at index 8
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - selected letter in initial string = letter (3)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - replacement already found for this object. Fizzle!
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 15
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$u#-830617773]
+Random rndseed=165
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$u] - ReplacementFinder. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+update_Everything
+Choose codelet codelets size 14
+Random rndseed=166
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+sum 14.0 chosen 6.048
+Choose codelet at index 6
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - selected letter in initial string = letter (3)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - replacement already found for this object. Fizzle!
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 14
+Random rndseed=167
+sum 720.0 chosen 2.16
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$r#-1401335174]
+Random rndseed=168
+sum 240.0 chosen 200.39999999999998
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$r] - BottomUpBondScout. Run with initial abc, modified: abd and target: ijk
+update_Everything
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Choose codelet codelets size 13
+Random rndseed=169
+sum 13.0 chosen 9.295
+Choose codelet at index 9
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - initial object chosen: letter (1) in target string
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - ito object: letter (2)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 13
+Random rndseed=170
+sum 60.0 chosen 59.16
+Random rndseed=171
+sum 60.0 chosen 27.42
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$R#-2018848037]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$R] - BottomUpCorrespondenceScout. Run with initial abc, modified: abd and target: ijk
+no possible mappings exist: fizzle17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+update_Everything
+Choose codelet codelets size 12
+Random rndseed=172
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+sum 12.0 chosen 4.224
+Choose codelet at index 4
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - GoWithBottomUpCorrespondenceScout | trying a correspondence between letter (3) and letter (2)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 12
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$o#-1265404348]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$o] - BottomUpBondScout. Run with initial abc, modified: abd and target: ijk
+Random rndseed=173
+sum 720.0 chosen 676.0799999999999
+Random rndseed=174
+sum 240.0 chosen 154.56
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+update_Everything
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+Choose codelet codelets size 11
+Random rndseed=175
+sum 11.0 chosen 6.204
+Choose codelet at index 6
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - initial object chosen: letter (3) in target string
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - ito object: letter (2)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 11
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$A#1088934126]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$A] - ReplacementFinder. Run with initial abc, modified: abd and target: ijk
+Random rndseed=176
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+update_Everything
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+Choose codelet codelets size 10
+Random rndseed=177
+sum 10.0 chosen 2.23
+Choose codelet at index 2
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - selected letter in initial string = letter (3)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - replacement already found for this object. Fizzle!
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 10
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$i#1780832730]
+Random rndseed=178
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$i] - BottomUpBondScout. Run with initial abc, modified: abd and target: ijk
+sum 720.0 chosen 222.48
+Random rndseed=179
+sum 240.0 chosen 215.52
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+update_Everything
+Choose codelet codelets size 9
+Random rndseed=180
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+sum 9.0 chosen 0.6479999999999999
+Choose codelet at index 0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - initial object chosen: letter (3) in target string
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - ito object: letter (2)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 9
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$b#-896497179]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$b] - BottomUpBondScout. Run with initial abc, modified: abd and target: ijk
+Random rndseed=181
+sum 720.0 chosen 689.04
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=182
+sum 240.0 chosen 146.88
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+update_Everything
+Choose codelet codelets size 8
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - initial object chosen: letter (3) in target string
+Random rndseed=183
+sum 8.0 chosen 0.648
+Choose codelet at index 0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - ito object: letter (2)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 8
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$h#-544844334]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$h] - BottomUpBondScout. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=184
+sum 720.0 chosen 609.84
+Random rndseed=185
+sum 480.0 chosen 348.96
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+update_Everything
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - initial object chosen: letter (2) in target string
+Choose codelet codelets size 7
+Random rndseed=186
+sum 7.0 chosen 4.718
+Choose codelet at index 4
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - ito object: letter (1)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 7
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$U#128573901]
+Random rndseed=187
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$U] - BottomUpCorrespondenceScout. Run with initial abc, modified: abd and target: ijk
+sum 60.0 chosen 55.5
+Random rndseed=188
+sum 60.0 chosen 29.58
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+no possible mappings exist: fizzle17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+update_Everything
+Choose codelet codelets size 6
+Random rndseed=189
+sum 6.0 chosen 1.71
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+Choose codelet at index 1
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - GoWithBottomUpCorrespondenceScout | trying a correspondence between letter (3) and letter (2)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 6
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$p#692110261]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$p] - BottomUpBondScout. Run with initial abc, modified: abd and target: ijk
+Random rndseed=190
+sum 720.0 chosen 489.6
+Random rndseed=191
+sum 240.0 chosen 74.16
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+update_Everything
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+Choose codelet codelets size 5
+Random rndseed=192
+sum 5.0 chosen 1.77
+Choose codelet at index 1
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - initial object chosen: letter (1) in target string
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - ito object: letter (2)
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 5
+Random rndseed=193
+Random rndseed=194
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$s#1319143135]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$s] - ReplacementFinder. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=195
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+update_Everything
+Choose codelet codelets size 4
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - selected letter in initial string = letter (3)
+Random rndseed=196
+sum 4.0 chosen 0.976
+Choose codelet at index 0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - replacement already found for this object. Fizzle!
+Random rndseed=197
+Random rndseed=198
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 4
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$l#1655725468]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$l] - BottomUpBondScout. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=199
+sum 720.0 chosen 301.68
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+Random rndseed=200
+sum 240.0 chosen 81.12
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - initial object chosen: letter (1) in target string
+update_Everything
+Choose codelet codelets size 3
+Random rndseed=201
+sum 3.0 chosen 2.6550000000000002
+Choose codelet at index 2
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - ito object: letter (2)
+Random rndseed=202
+Random rndseed=203
+Random rndseed=204
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 3
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$Y#1168214418]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$Y] - BottomUpCorrespondenceScout. Run with initial abc, modified: abd and target: ijk
+Random rndseed=205
+sum 60.0 chosen 9.06
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=206
+sum 60.0 chosen 37.44
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+Random rndseed=207
+Random rndseed=208
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - GoWithBottomUpCorrespondenceScout | trying a correspondence between letter (1) and letter (2)
+Proposing correspondence with concept mappings:
+J -> J
+middle -> middle
+create codelet CorrespondenceStrengthTester
+update_Everything
+Choose codelet codelets size 3
+Random rndseed=209
+sum 5.659305710022972 chosen 0.5659305710022972
+Choose codelet at index 0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 3
+Random rndseed=210
+Random rndseed=211
+Random rndseed=212
+Random rndseed=213
+Random rndseed=214
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$L#1476361918]
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$L] - BottomUpCorrespondenceScout. Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+Random rndseed=215
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+sum 60.0 chosen 52.62
+Random rndseed=216
+sum 60.0 chosen 54.300000000000004
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - GoWithBottomUpCorrespondenceScout | trying a correspondence between letter (3) and letter (3)
+Random rndseed=217
+Proposing correspondence with concept mappings:
+K -> K
+rightmost -> rightmost
+create codelet CorrespondenceStrengthTester
+update_Everything
+Choose codelet codelets size 3
+Random rndseed=218
+sum 8.318611420045944 chosen 5.10762741190821
+Choose codelet at index 2
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun 3
+Random rndseed=219
+Random rndseed=220
+Random rndseed=221
+Random rndseed=222
+Random rndseed=223
+Random rndseed=224
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$3#1166090732]
+Random rndseed=225
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$3] - Run with initial abc, modified: abd and target: ijk
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+17:46:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+17:46:29 ERROR [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - key not found: 851645d9-3493-443d-870a-1fe8c08f4273
+java.util.NoSuchElementException: key not found: 851645d9-3493-443d-870a-1fe8c08f4273
+	at scala.collection.MapLike.default(MapLike.scala:232)
+	at scala.collection.MapLike.default$(MapLike.scala:231)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike.apply(MapLike.scala:141)
+	at scala.collection.MapLike.apply$(MapLike.scala:140)
+	at scala.collection.AbstractMap.apply(Map.scala:59)
+	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:1000)
+	at akka.actor.Actor.aroundReceive(Actor.scala:517)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+	at models.Workspace.aroundReceive(Workspace.scala:220)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+17:46:29 ERROR [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - key not found: 851645d9-3493-443d-870a-1fe8c08f4273
+java.util.NoSuchElementException: key not found: 851645d9-3493-443d-870a-1fe8c08f4273
+	at scala.collection.MapLike.default(MapLike.scala:232)
+	at scala.collection.MapLike.default$(MapLike.scala:231)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike.apply(MapLike.scala:141)
+	at scala.collection.MapLike.apply$(MapLike.scala:140)
+	at scala.collection.AbstractMap.apply(Map.scala:59)
+	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:662)
+	at akka.actor.Actor.aroundReceive(Actor.scala:517)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+	at models.Slipnet.aroundReceive(Slipnet.scala:207)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
