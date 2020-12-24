@@ -1,4 +1,4 @@
-/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=49853:/Applications/IntelliJ IDEA CE.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/tools.jar:/Users/dschoen/Documents/gitlab/copycat/JavaCopyCat/out/production/JavaCopyCat rungroup
+/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=50402:/Applications/IntelliJ IDEA CE.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/tools.jar:/Users/dschoen/Documents/gitlab/copycat/JavaCopyCat/out/production/JavaCopyCat rungroup
 Random rndseed=1
 Random rndseed=2
 Random rndseed=3
@@ -329,24 +329,261 @@ Random rndseed=327
 Random rndseed=328
 Random rndseed=329
 Random rndseed=330
+slipnet_letters A letter_category.conceptual_depth 30.0 - 10.0
+slipnet_letters B letter_category.conceptual_depth 30.0 - 10.0
+slipnet_letters C letter_category.conceptual_depth 30.0 - 10.0
+slipnet_letters D letter_category.conceptual_depth 30.0 - 10.0
+slipnet_letters E letter_category.conceptual_depth 30.0 - 10.0
+slipnet_letters F letter_category.conceptual_depth 30.0 - 10.0
+slipnet_letters G letter_category.conceptual_depth 30.0 - 10.0
+slipnet_letters H letter_category.conceptual_depth 30.0 - 10.0
+slipnet_letters I letter_category.conceptual_depth 30.0 - 10.0
+slipnet_letters J letter_category.conceptual_depth 30.0 - 10.0
+slipnet_letters K letter_category.conceptual_depth 30.0 - 10.0
+slipnet_letters L letter_category.conceptual_depth 30.0 - 10.0
+slipnet_letters M letter_category.conceptual_depth 30.0 - 10.0
+slipnet_letters N letter_category.conceptual_depth 30.0 - 10.0
+slipnet_letters O letter_category.conceptual_depth 30.0 - 10.0
+slipnet_letters P letter_category.conceptual_depth 30.0 - 10.0
+slipnet_letters Q letter_category.conceptual_depth 30.0 - 10.0
+slipnet_letters R letter_category.conceptual_depth 30.0 - 10.0
+slipnet_letters S letter_category.conceptual_depth 30.0 - 10.0
+slipnet_letters T letter_category.conceptual_depth 30.0 - 10.0
+slipnet_letters U letter_category.conceptual_depth 30.0 - 10.0
+slipnet_letters V letter_category.conceptual_depth 30.0 - 10.0
+slipnet_letters W letter_category.conceptual_depth 30.0 - 10.0
+slipnet_letters X letter_category.conceptual_depth 30.0 - 10.0
+slipnet_letters Y letter_category.conceptual_depth 30.0 - 10.0
+slipnet_letters Z letter_category.conceptual_depth 30.0 - 10.0
 abc
 abd
 ijk
 update_Everything
+ob A conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob B conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob C conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob D conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob E conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob F conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob G conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob H conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob I conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob J conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob K conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob L conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob M conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob N conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob O conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob P conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob Q conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob R conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob S conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob T conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob U conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob V conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob W conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob X conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob Y conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob Z conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 1 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 2 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 3 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 4 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 5 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lm conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob rm conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob md conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob sl conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob wh conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob fs conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob ls conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lf conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob rt conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob pd conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob sc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob sm conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob pg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob sg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob smg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob id conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob op conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob l conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob g conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob spc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob apc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob dc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob bc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob gpc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob len conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob obc conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob bf conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+spreading activation ob A size 3
+spreading activation ob B size 3
+spreading activation ob C size 3
+spreading activation ob D size 3
+spreading activation ob E size 3
+spreading activation ob F size 3
+spreading activation ob G size 3
+spreading activation ob H size 3
+spreading activation ob I size 3
+spreading activation ob J size 3
+spreading activation ob K size 3
+spreading activation ob L size 3
+spreading activation ob M size 3
+spreading activation ob N size 3
+spreading activation ob O size 3
+spreading activation ob P size 3
+spreading activation ob Q size 3
+spreading activation ob R size 3
+spreading activation ob S size 3
+spreading activation ob T size 3
+spreading activation ob U size 3
+spreading activation ob V size 3
+spreading activation ob W size 3
+spreading activation ob X size 3
+spreading activation ob Y size 3
+spreading activation ob Z size 3
+spreading activation ob 1 size 2
+spreading activation ob 2 size 3
+spreading activation ob 3 size 3
+spreading activation ob 4 size 3
+spreading activation ob 5 size 2
+spreading activation ob lm size 6
+spreading activation ob rm size 6
+spreading activation ob md size 1
+spreading activation ob sl size 2
+spreading activation ob wh size 2
+spreading activation ob fs size 4
+spreading activation ob ls size 4
+spreading activation ob lf size 4
+spreading activation ob rt size 4
+spreading activation ob pd size 3
+spreading activation ob sc size 3
+spreading activation ob sm size 2
+spreading activation ob pg size 4
+spreading activation ob sg size 4
+spreading activation ob smg size 4
+spreading activation ob id size 0
+spreading activation ob op size 0
+spreading activation ob l size 2
+spreading activation ob g size 2
+spreading activation ob lc size 28
+sl.to A buffer 100.0 inc 3.0
+sl.to B buffer 100.0 inc 3.0
+sl.to C buffer 100.0 inc 3.0
+sl.to D buffer 100.0 inc 3.0
+sl.to E buffer 0.0 inc 3.0
+sl.to F buffer 0.0 inc 3.0
+sl.to G buffer 0.0 inc 3.0
+sl.to H buffer 0.0 inc 3.0
+sl.to I buffer 100.0 inc 3.0
+sl.to J buffer 100.0 inc 3.0
+sl.to K buffer 100.0 inc 3.0
+sl.to L buffer 0.0 inc 3.0
+sl.to M buffer 0.0 inc 3.0
+sl.to N buffer 0.0 inc 3.0
+sl.to O buffer 0.0 inc 3.0
+sl.to P buffer 0.0 inc 3.0
+sl.to Q buffer 0.0 inc 3.0
+sl.to R buffer 0.0 inc 3.0
+sl.to S buffer 0.0 inc 3.0
+sl.to T buffer 0.0 inc 3.0
+sl.to U buffer 0.0 inc 3.0
+sl.to V buffer 0.0 inc 3.0
+sl.to W buffer 0.0 inc 3.0
+sl.to X buffer 0.0 inc 3.0
+sl.to Y buffer 0.0 inc 3.0
+sl.to Z buffer 0.0 inc 3.0
+sl.to bf buffer 0.0 inc 40.0
+sl.to len buffer 0.0 inc 5.0
+spreading activation ob spc size 5
+sl.to lm buffer 100.0 inc 0.0
+sl.to rm buffer 100.0 inc 0.0
+sl.to md buffer 100.0 inc 0.0
+sl.to sl buffer 0.0 inc 0.0
+sl.to wh buffer 0.0 inc 0.0
+spreading activation ob apc size 2
+spreading activation ob dc size 2
+spreading activation ob bc size 3
+spreading activation ob gpc size 3
+spreading activation ob len size 7
+spreading activation ob obc size 2
+spreading activation ob bf size 2
+slipnodes.size()59
 Random rndseed=0
+ob A activation 100.0
 Random rndseed=1
+ob B activation 100.0
 Random rndseed=2
+ob C activation 100.0
 Random rndseed=3
+ob D activation 100.0
+ob E activation 3.0
+ob F activation 3.0
+ob G activation 3.0
+ob H activation 3.0
 Random rndseed=4
+ob I activation 100.0
 Random rndseed=5
+ob J activation 100.0
 Random rndseed=6
+ob K activation 100.0
+ob L activation 3.0
+ob M activation 3.0
+ob N activation 3.0
+ob O activation 3.0
+ob P activation 3.0
+ob Q activation 3.0
+ob R activation 3.0
+ob S activation 3.0
+ob T activation 3.0
+ob U activation 3.0
+ob V activation 3.0
+ob W activation 3.0
+ob X activation 3.0
+ob Y activation 3.0
+ob Z activation 3.0
+ob 1 activation 0.0
+ob 2 activation 0.0
+ob 3 activation 0.0
+ob 4 activation 0.0
+ob 5 activation 0.0
 Random rndseed=7
+ob lm activation 100.0
 Random rndseed=8
+ob rm activation 100.0
 Random rndseed=9
+ob md activation 100.0
+ob sl activation 0.0
+ob wh activation 0.0
+ob fs activation 0.0
+ob ls activation 0.0
+ob lf activation 0.0
+ob rt activation 0.0
+ob pd activation 0.0
+ob sc activation 0.0
+ob sm activation 0.0
+ob pg activation 0.0
+ob sg activation 0.0
+ob smg activation 0.0
+ob id activation 0.0
+ob op activation 0.0
 Random rndseed=10
+ob l activation 100.0
+ob g activation 0.0
 Random rndseed=11
+ob lc activation 100.0
 Random rndseed=12
+ob spc activation 100.0
+ob apc activation 0.0
+ob dc activation 0.0
+ob bc activation 0.0
+ob gpc activation 0.0
+ob len activation 5.0
 Random rndseed=13
+ob obc activation 100.0
+ob bf activation 40.0
 post_initial_codelets i=3x=9
 post_initial_codelets 0 x 0 ci bottom-up-bond-scout
 create codelet bottom-up-bond-scout
@@ -673,21 +910,270 @@ Random rndseed=68
 create codelet rule-scout
 Random rndseed=69
 create codelet breaker
+ob A conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob B conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob C conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob D conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob E conceptual_depth 50.0 ob.buffer -1.5 activation 3.0
+ob F conceptual_depth 50.0 ob.buffer -1.5 activation 3.0
+ob G conceptual_depth 50.0 ob.buffer -1.5 activation 3.0
+ob H conceptual_depth 50.0 ob.buffer -1.5 activation 3.0
+ob I conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob J conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob K conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob L conceptual_depth 50.0 ob.buffer -1.5 activation 3.0
+ob M conceptual_depth 50.0 ob.buffer -1.5 activation 3.0
+ob N conceptual_depth 50.0 ob.buffer -1.5 activation 3.0
+ob O conceptual_depth 50.0 ob.buffer -1.5 activation 3.0
+ob P conceptual_depth 50.0 ob.buffer -1.5 activation 3.0
+ob Q conceptual_depth 50.0 ob.buffer -1.5 activation 3.0
+ob R conceptual_depth 50.0 ob.buffer -1.5 activation 3.0
+ob S conceptual_depth 50.0 ob.buffer -1.5 activation 3.0
+ob T conceptual_depth 50.0 ob.buffer -1.5 activation 3.0
+ob U conceptual_depth 50.0 ob.buffer -1.5 activation 3.0
+ob V conceptual_depth 50.0 ob.buffer -1.5 activation 3.0
+ob W conceptual_depth 50.0 ob.buffer -1.5 activation 3.0
+ob X conceptual_depth 50.0 ob.buffer -1.5 activation 3.0
+ob Y conceptual_depth 50.0 ob.buffer -1.5 activation 3.0
+ob Z conceptual_depth 50.0 ob.buffer -1.5 activation 3.0
+ob 1 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 2 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 3 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 4 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 5 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lm conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob rm conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob md conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob sl conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob wh conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob fs conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob ls conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lf conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob rt conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob pd conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob sc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob sm conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob pg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob sg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob smg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob id conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob op conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob l conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob g conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob spc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob apc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob dc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob bc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob gpc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob len conceptual_depth 50.0 ob.buffer -2.5 activation 5.0
+ob obc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob bf conceptual_depth 50.0 ob.buffer -20.0 activation 40.0
+spreading activation ob A size 3
+sl.to B buffer 50.0 inc 40.0
+sl.to lc buffer 50.0 inc 80.0
+sl.to fs buffer 0.0 inc 25.0
+spreading activation ob B size 3
+sl.to A buffer -50.0 inc 40.0
+sl.to C buffer 50.0 inc 40.0
+sl.to lc buffer 130.0 inc 80.0
+spreading activation ob C size 3
+sl.to B buffer 90.0 inc 40.0
+sl.to D buffer -50.0 inc 40.0
+sl.to lc buffer 210.0 inc 80.0
+spreading activation ob D size 3
+sl.to C buffer 90.0 inc 40.0
+sl.to E buffer -1.5 inc 40.0
+sl.to lc buffer 290.0 inc 80.0
+spreading activation ob E size 3
+spreading activation ob F size 3
+spreading activation ob G size 3
+spreading activation ob H size 3
+spreading activation ob I size 3
+sl.to H buffer -1.5 inc 40.0
+sl.to J buffer 50.0 inc 40.0
+sl.to lc buffer 370.0 inc 80.0
+spreading activation ob J size 3
+sl.to I buffer -50.0 inc 40.0
+sl.to K buffer 50.0 inc 40.0
+sl.to lc buffer 450.0 inc 80.0
+spreading activation ob K size 3
+sl.to J buffer 90.0 inc 40.0
+sl.to L buffer -1.5 inc 40.0
+sl.to lc buffer 530.0 inc 80.0
+spreading activation ob L size 3
+spreading activation ob M size 3
+spreading activation ob N size 3
+spreading activation ob O size 3
+spreading activation ob P size 3
+spreading activation ob Q size 3
+spreading activation ob R size 3
+spreading activation ob S size 3
+spreading activation ob T size 3
+spreading activation ob U size 3
+spreading activation ob V size 3
+spreading activation ob W size 3
+spreading activation ob X size 3
+spreading activation ob Y size 3
+spreading activation ob Z size 3
+spreading activation ob 1 size 2
+spreading activation ob 2 size 3
+spreading activation ob 3 size 3
+spreading activation ob 4 size 3
+spreading activation ob 5 size 2
+spreading activation ob lm size 6
+sl.to rm buffer -50.0 inc 20.0
+sl.to spc buffer 50.0 inc 70.0
+sl.to lf buffer 0.0 inc 10.0
+sl.to rt buffer 0.0 inc 0.0
+sl.to fs buffer 25.0 inc 0.0
+sl.to ls buffer 0.0 inc 0.0
+spreading activation ob rm size 6
+sl.to lm buffer 50.0 inc 20.0
+sl.to spc buffer 120.0 inc 70.0
+sl.to rt buffer 0.0 inc 10.0
+sl.to lf buffer 10.0 inc 0.0
+sl.to fs buffer 25.0 inc 0.0
+sl.to ls buffer 0.0 inc 0.0
+spreading activation ob md size 1
+sl.to spc buffer 190.0 inc 70.0
+spreading activation ob sl size 2
+spreading activation ob wh size 2
+spreading activation ob fs size 4
+spreading activation ob ls size 4
+spreading activation ob lf size 4
+spreading activation ob rt size 4
+spreading activation ob pd size 3
+spreading activation ob sc size 3
+spreading activation ob sm size 2
+spreading activation ob pg size 4
+spreading activation ob sg size 4
+spreading activation ob smg size 4
+spreading activation ob id size 0
+spreading activation ob op size 0
+spreading activation ob l size 2
+sl.to obc buffer 50.0 inc 30.0
+sl.to g buffer 0.0 inc 10.0
+spreading activation ob g size 2
+spreading activation ob lc size 28
+sl.to A buffer -10.0 inc 3.0
+sl.to B buffer 130.0 inc 3.0
+sl.to C buffer 130.0 inc 3.0
+sl.to D buffer -10.0 inc 3.0
+sl.to E buffer 38.5 inc 3.0
+sl.to F buffer -1.5 inc 3.0
+sl.to G buffer -1.5 inc 3.0
+sl.to H buffer 38.5 inc 3.0
+sl.to I buffer -10.0 inc 3.0
+sl.to J buffer 130.0 inc 3.0
+sl.to K buffer 90.0 inc 3.0
+sl.to L buffer 38.5 inc 3.0
+sl.to M buffer -1.5 inc 3.0
+sl.to N buffer -1.5 inc 3.0
+sl.to O buffer -1.5 inc 3.0
+sl.to P buffer -1.5 inc 3.0
+sl.to Q buffer -1.5 inc 3.0
+sl.to R buffer -1.5 inc 3.0
+sl.to S buffer -1.5 inc 3.0
+sl.to T buffer -1.5 inc 3.0
+sl.to U buffer -1.5 inc 3.0
+sl.to V buffer -1.5 inc 3.0
+sl.to W buffer -1.5 inc 3.0
+sl.to X buffer -1.5 inc 3.0
+sl.to Y buffer -1.5 inc 3.0
+sl.to Z buffer -1.5 inc 3.0
+sl.to bf buffer -20.0 inc 40.0
+sl.to len buffer -2.5 inc 5.0
+spreading activation ob spc size 5
+sl.to lm buffer 70.0 inc 0.0
+sl.to rm buffer -30.0 inc 0.0
+sl.to md buffer 50.0 inc 0.0
+sl.to sl buffer 0.0 inc 0.0
+sl.to wh buffer 0.0 inc 0.0
+spreading activation ob apc size 2
+spreading activation ob dc size 2
+spreading activation ob bc size 3
+spreading activation ob gpc size 3
+spreading activation ob len size 7
+spreading activation ob obc size 2
+sl.to l buffer 50.0 inc 0.0
+sl.to g buffer 10.0 inc 0.0
+spreading activation ob bf size 2
+slipnodes.size()59
 Random rndseed=70
+ob A activation 100.0
 Random rndseed=71
+ob B activation 100.0
 Random rndseed=72
+ob C activation 100.0
 Random rndseed=73
+ob D activation 100.0
+ob E activation 44.5
+ob F activation 4.5
+ob G activation 4.5
+ob H activation 44.5
 Random rndseed=74
+ob I activation 100.0
 Random rndseed=75
+ob J activation 100.0
 Random rndseed=76
+ob K activation 100.0
+ob L activation 44.5
+ob M activation 4.5
+ob N activation 4.5
+ob O activation 4.5
+ob P activation 4.5
+ob Q activation 4.5
+ob R activation 4.5
+ob S activation 4.5
+ob T activation 4.5
+ob U activation 4.5
+ob V activation 4.5
+ob W activation 4.5
+ob X activation 4.5
+ob Y activation 4.5
+ob Z activation 4.5
+ob 1 activation 0.0
+ob 2 activation 0.0
+ob 3 activation 0.0
+ob 4 activation 0.0
+ob 5 activation 0.0
 Random rndseed=77
+ob lm activation 100.0
 Random rndseed=78
+ob rm activation 100.0
 Random rndseed=79
+ob md activation 100.0
+ob sl activation 0.0
+ob wh activation 0.0
+ob fs activation 25.0
+ob ls activation 0.0
+ob lf activation 10.0
+ob rt activation 10.0
+ob pd activation 0.0
+ob sc activation 0.0
+ob sm activation 0.0
+ob pg activation 0.0
+ob sg activation 0.0
+ob smg activation 0.0
+ob id activation 50.0
+ob op activation 0.0
 Random rndseed=80
+ob l activation 100.0
+ob g activation 10.0
 Random rndseed=81
+ob lc activation 100.0
 Random rndseed=82
+ob spc activation 100.0
+ob apc activation 0.0
+ob dc activation 0.0
+ob bc activation 0.0
+ob gpc activation 0.0
+ob len activation 7.5
 Random rndseed=83
+ob obc activation 100.0
 Random rndseed=84
+ob bf activation 60.0
 Random rndseed=85
 sum 67.78010916269778 chosen 49.81838023458287
 Choose codelet at index 45
@@ -884,25 +1370,274 @@ Random rndseed=141
 create codelet rule-scout
 Random rndseed=142
 create codelet breaker
+ob A conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob B conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob C conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob D conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob E conceptual_depth 50.0 ob.buffer -22.25 activation 44.5
+ob F conceptual_depth 50.0 ob.buffer -2.25 activation 4.5
+ob G conceptual_depth 50.0 ob.buffer -2.25 activation 4.5
+ob H conceptual_depth 50.0 ob.buffer -22.25 activation 44.5
+ob I conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob J conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob K conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob L conceptual_depth 50.0 ob.buffer -22.25 activation 44.5
+ob M conceptual_depth 50.0 ob.buffer -2.25 activation 4.5
+ob N conceptual_depth 50.0 ob.buffer -2.25 activation 4.5
+ob O conceptual_depth 50.0 ob.buffer -2.25 activation 4.5
+ob P conceptual_depth 50.0 ob.buffer -2.25 activation 4.5
+ob Q conceptual_depth 50.0 ob.buffer -2.25 activation 4.5
+ob R conceptual_depth 50.0 ob.buffer -2.25 activation 4.5
+ob S conceptual_depth 50.0 ob.buffer -2.25 activation 4.5
+ob T conceptual_depth 50.0 ob.buffer -2.25 activation 4.5
+ob U conceptual_depth 50.0 ob.buffer -2.25 activation 4.5
+ob V conceptual_depth 50.0 ob.buffer -2.25 activation 4.5
+ob W conceptual_depth 50.0 ob.buffer -2.25 activation 4.5
+ob X conceptual_depth 50.0 ob.buffer -2.25 activation 4.5
+ob Y conceptual_depth 50.0 ob.buffer -2.25 activation 4.5
+ob Z conceptual_depth 50.0 ob.buffer -2.25 activation 4.5
+ob 1 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 2 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 3 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 4 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 5 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lm conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob rm conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob md conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob sl conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob wh conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob fs conceptual_depth 50.0 ob.buffer -12.5 activation 25.0
+ob ls conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lf conceptual_depth 50.0 ob.buffer -5.0 activation 10.0
+ob rt conceptual_depth 50.0 ob.buffer -5.0 activation 10.0
+ob pd conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob sc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob sm conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob pg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob sg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob smg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob id conceptual_depth 50.0 ob.buffer 75.0 activation 50.0
+ob op conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob l conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob g conceptual_depth 50.0 ob.buffer -5.0 activation 10.0
+ob lc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob spc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob apc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob dc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob bc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob gpc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob len conceptual_depth 50.0 ob.buffer -3.75 activation 7.5
+ob obc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob bf conceptual_depth 50.0 ob.buffer -30.0 activation 60.0
+spreading activation ob A size 3
+sl.to B buffer -50.0 inc 40.0
+sl.to lc buffer 50.0 inc 80.0
+sl.to fs buffer -12.5 inc 25.0
+spreading activation ob B size 3
+sl.to A buffer -50.0 inc 40.0
+sl.to C buffer -50.0 inc 40.0
+sl.to lc buffer 130.0 inc 80.0
+spreading activation ob C size 3
+sl.to B buffer -10.0 inc 40.0
+sl.to D buffer -50.0 inc 40.0
+sl.to lc buffer 210.0 inc 80.0
+spreading activation ob D size 3
+sl.to C buffer -10.0 inc 40.0
+sl.to E buffer -22.25 inc 40.0
+sl.to lc buffer 290.0 inc 80.0
+spreading activation ob E size 3
+spreading activation ob F size 3
+spreading activation ob G size 3
+spreading activation ob H size 3
+spreading activation ob I size 3
+sl.to H buffer -22.25 inc 40.0
+sl.to J buffer 50.0 inc 40.0
+sl.to lc buffer 370.0 inc 80.0
+spreading activation ob J size 3
+sl.to I buffer -50.0 inc 40.0
+sl.to K buffer 50.0 inc 40.0
+sl.to lc buffer 450.0 inc 80.0
+spreading activation ob K size 3
+sl.to J buffer 90.0 inc 40.0
+sl.to L buffer -22.25 inc 40.0
+sl.to lc buffer 530.0 inc 80.0
+spreading activation ob L size 3
+spreading activation ob M size 3
+spreading activation ob N size 3
+spreading activation ob O size 3
+spreading activation ob P size 3
+spreading activation ob Q size 3
+spreading activation ob R size 3
+spreading activation ob S size 3
+spreading activation ob T size 3
+spreading activation ob U size 3
+spreading activation ob V size 3
+spreading activation ob W size 3
+spreading activation ob X size 3
+spreading activation ob Y size 3
+spreading activation ob Z size 3
+spreading activation ob 1 size 2
+spreading activation ob 2 size 3
+spreading activation ob 3 size 3
+spreading activation ob 4 size 3
+spreading activation ob 5 size 2
+spreading activation ob lm size 6
+sl.to rm buffer 50.0 inc 20.0
+sl.to spc buffer 50.0 inc 70.0
+sl.to lf buffer -5.0 inc 10.0
+sl.to rt buffer -5.0 inc 0.0
+sl.to fs buffer 12.5 inc 0.0
+sl.to ls buffer 0.0 inc 0.0
+spreading activation ob rm size 6
+sl.to lm buffer 50.0 inc 20.0
+sl.to spc buffer 120.0 inc 70.0
+sl.to rt buffer -5.0 inc 10.0
+sl.to lf buffer 5.0 inc 0.0
+sl.to fs buffer 12.5 inc 0.0
+sl.to ls buffer 0.0 inc 0.0
+spreading activation ob md size 1
+sl.to spc buffer 190.0 inc 70.0
+spreading activation ob sl size 2
+spreading activation ob wh size 2
+spreading activation ob fs size 4
+spreading activation ob ls size 4
+spreading activation ob lf size 4
+spreading activation ob rt size 4
+spreading activation ob pd size 3
+spreading activation ob sc size 3
+spreading activation ob sm size 2
+spreading activation ob pg size 4
+spreading activation ob sg size 4
+spreading activation ob smg size 4
+spreading activation ob id size 0
+spreading activation ob op size 0
+spreading activation ob l size 2
+sl.to obc buffer 50.0 inc 30.0
+sl.to g buffer -5.0 inc 10.0
+spreading activation ob g size 2
+spreading activation ob lc size 28
+sl.to A buffer -10.0 inc 3.0
+sl.to B buffer 30.0 inc 3.0
+sl.to C buffer 30.0 inc 3.0
+sl.to D buffer -10.0 inc 3.0
+sl.to E buffer 17.75 inc 3.0
+sl.to F buffer -2.25 inc 3.0
+sl.to G buffer -2.25 inc 3.0
+sl.to H buffer 17.75 inc 3.0
+sl.to I buffer -10.0 inc 3.0
+sl.to J buffer 130.0 inc 3.0
+sl.to K buffer 90.0 inc 3.0
+sl.to L buffer 17.75 inc 3.0
+sl.to M buffer -2.25 inc 3.0
+sl.to N buffer -2.25 inc 3.0
+sl.to O buffer -2.25 inc 3.0
+sl.to P buffer -2.25 inc 3.0
+sl.to Q buffer -2.25 inc 3.0
+sl.to R buffer -2.25 inc 3.0
+sl.to S buffer -2.25 inc 3.0
+sl.to T buffer -2.25 inc 3.0
+sl.to U buffer -2.25 inc 3.0
+sl.to V buffer -2.25 inc 3.0
+sl.to W buffer -2.25 inc 3.0
+sl.to X buffer -2.25 inc 3.0
+sl.to Y buffer -2.25 inc 3.0
+sl.to Z buffer -2.25 inc 3.0
+sl.to bf buffer -30.0 inc 40.0
+sl.to len buffer -3.75 inc 5.0
+spreading activation ob spc size 5
+sl.to lm buffer 70.0 inc 0.0
+sl.to rm buffer 70.0 inc 0.0
+sl.to md buffer 50.0 inc 0.0
+sl.to sl buffer 0.0 inc 0.0
+sl.to wh buffer 0.0 inc 0.0
+spreading activation ob apc size 2
+spreading activation ob dc size 2
+spreading activation ob bc size 3
+spreading activation ob gpc size 3
+spreading activation ob len size 7
+spreading activation ob obc size 2
+sl.to l buffer 50.0 inc 0.0
+sl.to g buffer 5.0 inc 0.0
+spreading activation ob bf size 2
+slipnodes.size()59
 Random rndseed=143
+ob A activation 100.0
 Random rndseed=144
+ob B activation 100.0
 Random rndseed=145
+ob C activation 100.0
 Random rndseed=146
+ob D activation 100.0
 Random rndseed=147
+ob E activation 65.25
+ob F activation 5.25
+ob G activation 5.25
 Random rndseed=148
+ob H activation 65.25
 Random rndseed=149
+ob I activation 100.0
 Random rndseed=150
+ob J activation 100.0
 Random rndseed=151
+ob K activation 100.0
 Random rndseed=152
+ob L activation 65.25
+ob M activation 5.25
+ob N activation 5.25
+ob O activation 5.25
+ob P activation 5.25
+ob Q activation 5.25
+ob R activation 5.25
+ob S activation 5.25
+ob T activation 5.25
+ob U activation 5.25
+ob V activation 5.25
+ob W activation 5.25
+ob X activation 5.25
+ob Y activation 5.25
+ob Z activation 5.25
+ob 1 activation 0.0
+ob 2 activation 0.0
+ob 3 activation 0.0
+ob 4 activation 0.0
+ob 5 activation 0.0
 Random rndseed=153
+ob lm activation 100.0
 Random rndseed=154
+ob rm activation 100.0
 Random rndseed=155
+ob md activation 100.0
+ob sl activation 0.0
+ob wh activation 0.0
+ob fs activation 37.5
+ob ls activation 0.0
+ob lf activation 15.0
+ob rt activation 15.0
+ob pd activation 0.0
+ob sc activation 0.0
+ob sm activation 0.0
+ob pg activation 0.0
+ob sg activation 0.0
+ob smg activation 0.0
 Random rndseed=156
+ob id activation 100.0
+ob op activation 0.0
 Random rndseed=157
+ob l activation 100.0
+ob g activation 15.0
 Random rndseed=158
+ob lc activation 100.0
 Random rndseed=159
+ob spc activation 100.0
+ob apc activation 0.0
+ob dc activation 0.0
+ob bc activation 0.0
+ob gpc activation 0.0
+ob len activation 8.75
 Random rndseed=160
+ob obc activation 100.0
 Random rndseed=161
+ob bf activation 70.0
 Random rndseed=162
 sum 116.32985711596945 chosen 72.82249055459687
 Choose codelet at index 42
@@ -1129,25 +1864,274 @@ Random rndseed=227
 create codelet rule-scout
 Random rndseed=228
 create codelet breaker
+ob A conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob B conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob C conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob D conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob E conceptual_depth 50.0 ob.buffer -32.625 activation 65.25
+ob F conceptual_depth 50.0 ob.buffer -2.625 activation 5.25
+ob G conceptual_depth 50.0 ob.buffer -2.625 activation 5.25
+ob H conceptual_depth 50.0 ob.buffer -32.625 activation 65.25
+ob I conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob J conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob K conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob L conceptual_depth 50.0 ob.buffer -32.625 activation 65.25
+ob M conceptual_depth 50.0 ob.buffer -2.625 activation 5.25
+ob N conceptual_depth 50.0 ob.buffer -2.625 activation 5.25
+ob O conceptual_depth 50.0 ob.buffer -2.625 activation 5.25
+ob P conceptual_depth 50.0 ob.buffer -2.625 activation 5.25
+ob Q conceptual_depth 50.0 ob.buffer -2.625 activation 5.25
+ob R conceptual_depth 50.0 ob.buffer -2.625 activation 5.25
+ob S conceptual_depth 50.0 ob.buffer -2.625 activation 5.25
+ob T conceptual_depth 50.0 ob.buffer -2.625 activation 5.25
+ob U conceptual_depth 50.0 ob.buffer -2.625 activation 5.25
+ob V conceptual_depth 50.0 ob.buffer -2.625 activation 5.25
+ob W conceptual_depth 50.0 ob.buffer -2.625 activation 5.25
+ob X conceptual_depth 50.0 ob.buffer -2.625 activation 5.25
+ob Y conceptual_depth 50.0 ob.buffer -2.625 activation 5.25
+ob Z conceptual_depth 50.0 ob.buffer -2.625 activation 5.25
+ob 1 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 2 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 3 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 4 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 5 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lm conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob rm conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob md conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob sl conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob wh conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob fs conceptual_depth 50.0 ob.buffer -18.75 activation 37.5
+ob ls conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lf conceptual_depth 50.0 ob.buffer 92.5 activation 15.0
+ob rt conceptual_depth 50.0 ob.buffer -7.5 activation 15.0
+ob pd conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob sc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob sm conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob pg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob sg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob smg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob id conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob op conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob l conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob g conceptual_depth 50.0 ob.buffer -7.5 activation 15.0
+ob lc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob spc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob apc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob dc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob bc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob gpc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob len conceptual_depth 50.0 ob.buffer -4.375 activation 8.75
+ob obc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob bf conceptual_depth 50.0 ob.buffer -35.0 activation 70.0
+spreading activation ob A size 3
+sl.to B buffer 50.0 inc 40.0
+sl.to lc buffer 50.0 inc 80.0
+sl.to fs buffer -18.75 inc 25.0
+spreading activation ob B size 3
+sl.to A buffer -50.0 inc 40.0
+sl.to C buffer 50.0 inc 40.0
+sl.to lc buffer 130.0 inc 80.0
+spreading activation ob C size 3
+sl.to B buffer 90.0 inc 40.0
+sl.to D buffer -50.0 inc 40.0
+sl.to lc buffer 210.0 inc 80.0
+spreading activation ob D size 3
+sl.to C buffer 90.0 inc 40.0
+sl.to E buffer -32.625 inc 40.0
+sl.to lc buffer 290.0 inc 80.0
+spreading activation ob E size 3
+spreading activation ob F size 3
+spreading activation ob G size 3
+spreading activation ob H size 3
+spreading activation ob I size 3
+sl.to H buffer -32.625 inc 40.0
+sl.to J buffer 50.0 inc 40.0
+sl.to lc buffer 370.0 inc 80.0
+spreading activation ob J size 3
+sl.to I buffer -50.0 inc 40.0
+sl.to K buffer 50.0 inc 40.0
+sl.to lc buffer 450.0 inc 80.0
+spreading activation ob K size 3
+sl.to J buffer 90.0 inc 40.0
+sl.to L buffer -32.625 inc 40.0
+sl.to lc buffer 530.0 inc 80.0
+spreading activation ob L size 3
+spreading activation ob M size 3
+spreading activation ob N size 3
+spreading activation ob O size 3
+spreading activation ob P size 3
+spreading activation ob Q size 3
+spreading activation ob R size 3
+spreading activation ob S size 3
+spreading activation ob T size 3
+spreading activation ob U size 3
+spreading activation ob V size 3
+spreading activation ob W size 3
+spreading activation ob X size 3
+spreading activation ob Y size 3
+spreading activation ob Z size 3
+spreading activation ob 1 size 2
+spreading activation ob 2 size 3
+spreading activation ob 3 size 3
+spreading activation ob 4 size 3
+spreading activation ob 5 size 2
+spreading activation ob lm size 6
+sl.to rm buffer 50.0 inc 20.0
+sl.to spc buffer 50.0 inc 70.0
+sl.to lf buffer 92.5 inc 10.0
+sl.to rt buffer -7.5 inc 0.0
+sl.to fs buffer 6.25 inc 0.0
+sl.to ls buffer 0.0 inc 0.0
+spreading activation ob rm size 6
+sl.to lm buffer 50.0 inc 20.0
+sl.to spc buffer 120.0 inc 70.0
+sl.to rt buffer -7.5 inc 10.0
+sl.to lf buffer 102.5 inc 0.0
+sl.to fs buffer 6.25 inc 0.0
+sl.to ls buffer 0.0 inc 0.0
+spreading activation ob md size 1
+sl.to spc buffer 190.0 inc 70.0
+spreading activation ob sl size 2
+spreading activation ob wh size 2
+spreading activation ob fs size 4
+spreading activation ob ls size 4
+spreading activation ob lf size 4
+spreading activation ob rt size 4
+spreading activation ob pd size 3
+spreading activation ob sc size 3
+spreading activation ob sm size 2
+spreading activation ob pg size 4
+spreading activation ob sg size 4
+spreading activation ob smg size 4
+spreading activation ob id size 0
+spreading activation ob op size 0
+spreading activation ob l size 2
+sl.to obc buffer 50.0 inc 30.0
+sl.to g buffer -7.5 inc 10.0
+spreading activation ob g size 2
+spreading activation ob lc size 28
+sl.to A buffer -10.0 inc 3.0
+sl.to B buffer 130.0 inc 3.0
+sl.to C buffer 130.0 inc 3.0
+sl.to D buffer -10.0 inc 3.0
+sl.to E buffer 7.375 inc 3.0
+sl.to F buffer -2.625 inc 3.0
+sl.to G buffer -2.625 inc 3.0
+sl.to H buffer 7.375 inc 3.0
+sl.to I buffer -10.0 inc 3.0
+sl.to J buffer 130.0 inc 3.0
+sl.to K buffer 90.0 inc 3.0
+sl.to L buffer 7.375 inc 3.0
+sl.to M buffer -2.625 inc 3.0
+sl.to N buffer -2.625 inc 3.0
+sl.to O buffer -2.625 inc 3.0
+sl.to P buffer -2.625 inc 3.0
+sl.to Q buffer -2.625 inc 3.0
+sl.to R buffer -2.625 inc 3.0
+sl.to S buffer -2.625 inc 3.0
+sl.to T buffer -2.625 inc 3.0
+sl.to U buffer -2.625 inc 3.0
+sl.to V buffer -2.625 inc 3.0
+sl.to W buffer -2.625 inc 3.0
+sl.to X buffer -2.625 inc 3.0
+sl.to Y buffer -2.625 inc 3.0
+sl.to Z buffer -2.625 inc 3.0
+sl.to bf buffer -35.0 inc 40.0
+sl.to len buffer -4.375 inc 5.0
+spreading activation ob spc size 5
+sl.to lm buffer 70.0 inc 0.0
+sl.to rm buffer 70.0 inc 0.0
+sl.to md buffer -50.0 inc 0.0
+sl.to sl buffer 0.0 inc 0.0
+sl.to wh buffer 0.0 inc 0.0
+spreading activation ob apc size 2
+spreading activation ob dc size 2
+spreading activation ob bc size 3
+spreading activation ob gpc size 3
+spreading activation ob len size 7
+spreading activation ob obc size 2
+sl.to l buffer 50.0 inc 0.0
+sl.to g buffer 2.5 inc 0.0
+spreading activation ob bf size 2
+slipnodes.size()59
 Random rndseed=229
+ob A activation 93.0
 Random rndseed=230
+ob B activation 100.0
 Random rndseed=231
+ob C activation 100.0
 Random rndseed=232
+ob D activation 100.0
 Random rndseed=233
+ob E activation 100.0
+ob F activation 5.625
+ob G activation 5.625
 Random rndseed=234
+ob H activation 75.625
 Random rndseed=235
+ob I activation 100.0
 Random rndseed=236
+ob J activation 100.0
 Random rndseed=237
+ob K activation 100.0
 Random rndseed=238
+ob L activation 100.0
+ob M activation 5.625
+ob N activation 5.625
+ob O activation 5.625
+ob P activation 5.625
+ob Q activation 5.625
+ob R activation 5.625
+ob S activation 5.625
+ob T activation 5.625
+ob U activation 5.625
+ob V activation 5.625
+ob W activation 5.625
+ob X activation 5.625
+ob Y activation 5.625
+ob Z activation 5.625
+ob 1 activation 0.0
+ob 2 activation 0.0
+ob 3 activation 0.0
+ob 4 activation 0.0
+ob 5 activation 0.0
 Random rndseed=239
+ob lm activation 100.0
 Random rndseed=240
+ob rm activation 100.0
+ob md activation 50.0
+ob sl activation 0.0
+ob wh activation 0.0
+ob fs activation 43.75
+ob ls activation 0.0
 Random rndseed=241
+ob lf activation 100.0
+ob rt activation 17.5
 Random rndseed=242
+ob pd activation 100.0
+ob sc activation 0.0
+ob sm activation 0.0
+ob pg activation 0.0
+ob sg activation 0.0
+ob smg activation 0.0
+ob id activation 50.0
+ob op activation 0.0
 Random rndseed=243
+ob l activation 100.0
+ob g activation 17.5
 Random rndseed=244
+ob lc activation 100.0
 Random rndseed=245
+ob spc activation 100.0
+ob apc activation 0.0
+ob dc activation 0.0
+ob bc activation 0.0
+ob gpc activation 0.0
+ob len activation 9.375
 Random rndseed=246
+ob obc activation 100.0
 Random rndseed=247
+ob bf activation 100.0
 Random rndseed=248
 sum 221.93878119488494 chosen 101.8699005684522
 Choose codelet at index 41
@@ -1383,28 +2367,288 @@ Random rndseed=323
 create codelet rule-scout
 Random rndseed=324
 create codelet breaker
+ob A conceptual_depth 50.0 ob.buffer -46.5 activation 93.0
+ob B conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob C conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob D conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob E conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob F conceptual_depth 50.0 ob.buffer -2.8125 activation 5.625
+ob G conceptual_depth 50.0 ob.buffer -2.8125 activation 5.625
+ob H conceptual_depth 50.0 ob.buffer -37.8125 activation 75.625
+ob I conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob J conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob K conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob L conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob M conceptual_depth 50.0 ob.buffer -2.8125 activation 5.625
+ob N conceptual_depth 50.0 ob.buffer -2.8125 activation 5.625
+ob O conceptual_depth 50.0 ob.buffer -2.8125 activation 5.625
+ob P conceptual_depth 50.0 ob.buffer -2.8125 activation 5.625
+ob Q conceptual_depth 50.0 ob.buffer -2.8125 activation 5.625
+ob R conceptual_depth 50.0 ob.buffer -2.8125 activation 5.625
+ob S conceptual_depth 50.0 ob.buffer -2.8125 activation 5.625
+ob T conceptual_depth 50.0 ob.buffer -2.8125 activation 5.625
+ob U conceptual_depth 50.0 ob.buffer -2.8125 activation 5.625
+ob V conceptual_depth 50.0 ob.buffer -2.8125 activation 5.625
+ob W conceptual_depth 50.0 ob.buffer -2.8125 activation 5.625
+ob X conceptual_depth 50.0 ob.buffer -2.8125 activation 5.625
+ob Y conceptual_depth 50.0 ob.buffer -2.8125 activation 5.625
+ob Z conceptual_depth 50.0 ob.buffer -2.8125 activation 5.625
+ob 1 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 2 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 3 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 4 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 5 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lm conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob rm conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob md conceptual_depth 50.0 ob.buffer -25.0 activation 50.0
+ob sl conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob wh conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob fs conceptual_depth 50.0 ob.buffer -21.875 activation 43.75
+ob ls conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lf conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob rt conceptual_depth 50.0 ob.buffer -8.75 activation 17.5
+ob pd conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob sc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob sm conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob pg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob sg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob smg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob id conceptual_depth 50.0 ob.buffer 75.0 activation 50.0
+ob op conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob l conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob g conceptual_depth 50.0 ob.buffer -8.75 activation 17.5
+ob lc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob spc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob apc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob dc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob bc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob gpc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob len conceptual_depth 50.0 ob.buffer -4.6875 activation 9.375
+ob obc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob bf conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+spreading activation ob A size 3
+spreading activation ob B size 3
+sl.to A buffer -46.5 inc 40.0
+sl.to C buffer -50.0 inc 40.0
+sl.to lc buffer 50.0 inc 80.0
+spreading activation ob C size 3
+sl.to B buffer -50.0 inc 40.0
+sl.to D buffer -50.0 inc 40.0
+sl.to lc buffer 130.0 inc 80.0
+spreading activation ob D size 3
+sl.to C buffer -10.0 inc 40.0
+sl.to E buffer -50.0 inc 40.0
+sl.to lc buffer 210.0 inc 80.0
+spreading activation ob E size 3
+sl.to D buffer -10.0 inc 40.0
+sl.to F buffer -2.8125 inc 40.0
+sl.to lc buffer 290.0 inc 80.0
+spreading activation ob F size 3
+spreading activation ob G size 3
+spreading activation ob H size 3
+spreading activation ob I size 3
+sl.to H buffer -37.8125 inc 40.0
+sl.to J buffer 50.0 inc 40.0
+sl.to lc buffer 370.0 inc 80.0
+spreading activation ob J size 3
+sl.to I buffer 50.0 inc 40.0
+sl.to K buffer 50.0 inc 40.0
+sl.to lc buffer 450.0 inc 80.0
+spreading activation ob K size 3
+sl.to J buffer 90.0 inc 40.0
+sl.to L buffer -50.0 inc 40.0
+sl.to lc buffer 530.0 inc 80.0
+spreading activation ob L size 3
+sl.to K buffer 90.0 inc 40.0
+sl.to M buffer -2.8125 inc 40.0
+sl.to lc buffer 610.0 inc 80.0
+spreading activation ob M size 3
+spreading activation ob N size 3
+spreading activation ob O size 3
+spreading activation ob P size 3
+spreading activation ob Q size 3
+spreading activation ob R size 3
+spreading activation ob S size 3
+spreading activation ob T size 3
+spreading activation ob U size 3
+spreading activation ob V size 3
+spreading activation ob W size 3
+spreading activation ob X size 3
+spreading activation ob Y size 3
+spreading activation ob Z size 3
+spreading activation ob 1 size 2
+spreading activation ob 2 size 3
+spreading activation ob 3 size 3
+spreading activation ob 4 size 3
+spreading activation ob 5 size 2
+spreading activation ob lm size 6
+sl.to rm buffer 50.0 inc 20.0
+sl.to spc buffer 50.0 inc 70.0
+sl.to lf buffer 50.0 inc 10.0
+sl.to rt buffer -8.75 inc 0.0
+sl.to fs buffer -21.875 inc 0.0
+sl.to ls buffer 0.0 inc 0.0
+spreading activation ob rm size 6
+sl.to lm buffer 50.0 inc 20.0
+sl.to spc buffer 120.0 inc 70.0
+sl.to rt buffer -8.75 inc 10.0
+sl.to lf buffer 60.0 inc 0.0
+sl.to fs buffer -21.875 inc 0.0
+sl.to ls buffer 0.0 inc 0.0
+spreading activation ob md size 1
+spreading activation ob sl size 2
+spreading activation ob wh size 2
+spreading activation ob fs size 4
+spreading activation ob ls size 4
+spreading activation ob lf size 4
+sl.to rt buffer 1.25 inc 20.0
+sl.to dc buffer 0.0 inc 70.0
+sl.to lm buffer 70.0 inc 10.0
+sl.to rm buffer 70.0 inc 0.0
+spreading activation ob rt size 4
+spreading activation ob pd size 3
+sl.to sc buffer 0.0 inc 20.0
+sl.to bc buffer 0.0 inc 70.0
+sl.to pg buffer 0.0 inc 40.0
+spreading activation ob sc size 3
+spreading activation ob sm size 2
+spreading activation ob pg size 4
+spreading activation ob sg size 4
+spreading activation ob smg size 4
+spreading activation ob id size 0
+spreading activation ob op size 0
+spreading activation ob l size 2
+sl.to obc buffer 50.0 inc 30.0
+sl.to g buffer -8.75 inc 10.0
+spreading activation ob g size 2
+spreading activation ob lc size 28
+sl.to A buffer -6.5 inc 3.0
+sl.to B buffer -10.0 inc 3.0
+sl.to C buffer 30.0 inc 3.0
+sl.to D buffer 30.0 inc 3.0
+sl.to E buffer -10.0 inc 3.0
+sl.to F buffer 37.1875 inc 3.0
+sl.to G buffer -2.8125 inc 3.0
+sl.to H buffer 2.1875 inc 3.0
+sl.to I buffer 90.0 inc 3.0
+sl.to J buffer 130.0 inc 3.0
+sl.to K buffer 130.0 inc 3.0
+sl.to L buffer -10.0 inc 3.0
+sl.to M buffer 37.1875 inc 3.0
+sl.to N buffer -2.8125 inc 3.0
+sl.to O buffer -2.8125 inc 3.0
+sl.to P buffer -2.8125 inc 3.0
+sl.to Q buffer -2.8125 inc 3.0
+sl.to R buffer -2.8125 inc 3.0
+sl.to S buffer -2.8125 inc 3.0
+sl.to T buffer -2.8125 inc 3.0
+sl.to U buffer -2.8125 inc 3.0
+sl.to V buffer -2.8125 inc 3.0
+sl.to W buffer -2.8125 inc 3.0
+sl.to X buffer -2.8125 inc 3.0
+sl.to Y buffer -2.8125 inc 3.0
+sl.to Z buffer -2.8125 inc 3.0
+sl.to bf buffer -50.0 inc 40.0
+sl.to len buffer -4.6875 inc 5.0
+spreading activation ob spc size 5
+sl.to lm buffer 80.0 inc 0.0
+sl.to rm buffer 70.0 inc 0.0
+sl.to md buffer -25.0 inc 0.0
+sl.to sl buffer 0.0 inc 0.0
+sl.to wh buffer 0.0 inc 0.0
+spreading activation ob apc size 2
+spreading activation ob dc size 2
+spreading activation ob bc size 3
+spreading activation ob gpc size 3
+spreading activation ob len size 7
+spreading activation ob obc size 2
+sl.to l buffer 50.0 inc 0.0
+sl.to g buffer 1.25 inc 0.0
+spreading activation ob bf size 2
+sl.to lc buffer 690.0 inc 0.0
+sl.to len buffer 0.3125 inc 0.0
+slipnodes.size()59
 Random rndseed=325
+ob A activation 100.0
 Random rndseed=326
+ob B activation 100.0
 Random rndseed=327
+ob C activation 100.0
 Random rndseed=328
+ob D activation 100.0
 Random rndseed=329
+ob E activation 93.0
+ob F activation 45.8125
+ob G activation 5.8125
 Random rndseed=330
+ob H activation 100.0
 Random rndseed=331
+ob I activation 100.0
 Random rndseed=332
+ob J activation 100.0
 Random rndseed=333
+ob K activation 100.0
 Random rndseed=334
+ob L activation 100.0
+ob M activation 45.8125
+ob N activation 5.8125
+ob O activation 5.8125
+ob P activation 5.8125
+ob Q activation 5.8125
+ob R activation 5.8125
+ob S activation 5.8125
+ob T activation 5.8125
+ob U activation 5.8125
+ob V activation 5.8125
+ob W activation 5.8125
+ob X activation 5.8125
+ob Y activation 5.8125
+ob Z activation 5.8125
+ob 1 activation 0.0
+ob 2 activation 0.0
+ob 3 activation 0.0
+ob 4 activation 0.0
+ob 5 activation 0.0
 Random rndseed=335
+ob lm activation 100.0
 Random rndseed=336
+ob rm activation 100.0
+ob md activation 25.0
+ob sl activation 0.0
+ob wh activation 0.0
+ob fs activation 21.875
+ob ls activation 0.0
 Random rndseed=337
+ob lf activation 100.0
+ob rt activation 38.75
 Random rndseed=338
+ob pd activation 100.0
+ob sc activation 20.0
+ob sm activation 0.0
+ob pg activation 40.0
+ob sg activation 0.0
+ob smg activation 0.0
 Random rndseed=339
+ob id activation 100.0
+ob op activation 0.0
 Random rndseed=340
+ob l activation 100.0
+ob g activation 18.75
 Random rndseed=341
+ob lc activation 100.0
 Random rndseed=342
+ob spc activation 100.0
+ob apc activation 0.0
 Random rndseed=343
+ob dc activation 70.0
 Random rndseed=344
+ob bc activation 70.0
+ob gpc activation 0.0
+ob len activation 9.6875
 Random rndseed=345
+ob obc activation 100.0
 Random rndseed=346
+ob bf activation 100.0
 Random rndseed=347
 sum 383.02195681434864 chosen 299.1401482720063
 Choose codelet at index 55
@@ -1668,29 +2912,292 @@ Random rndseed=430
 create codelet rule-scout
 Random rndseed=431
 create codelet breaker
+ob A conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob B conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob C conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob D conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob E conceptual_depth 50.0 ob.buffer -46.5 activation 93.0
+ob F conceptual_depth 50.0 ob.buffer -22.90625 activation 45.8125
+ob G conceptual_depth 50.0 ob.buffer -2.90625 activation 5.8125
+ob H conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob I conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob J conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob K conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob L conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob M conceptual_depth 50.0 ob.buffer -22.90625 activation 45.8125
+ob N conceptual_depth 50.0 ob.buffer -2.90625 activation 5.8125
+ob O conceptual_depth 50.0 ob.buffer -2.90625 activation 5.8125
+ob P conceptual_depth 50.0 ob.buffer -2.90625 activation 5.8125
+ob Q conceptual_depth 50.0 ob.buffer -2.90625 activation 5.8125
+ob R conceptual_depth 50.0 ob.buffer -2.90625 activation 5.8125
+ob S conceptual_depth 50.0 ob.buffer -2.90625 activation 5.8125
+ob T conceptual_depth 50.0 ob.buffer -2.90625 activation 5.8125
+ob U conceptual_depth 50.0 ob.buffer -2.90625 activation 5.8125
+ob V conceptual_depth 50.0 ob.buffer -2.90625 activation 5.8125
+ob W conceptual_depth 50.0 ob.buffer -2.90625 activation 5.8125
+ob X conceptual_depth 50.0 ob.buffer -2.90625 activation 5.8125
+ob Y conceptual_depth 50.0 ob.buffer -2.90625 activation 5.8125
+ob Z conceptual_depth 50.0 ob.buffer -2.90625 activation 5.8125
+ob 1 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 2 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 3 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 4 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 5 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lm conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob rm conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob md conceptual_depth 50.0 ob.buffer -12.5 activation 25.0
+ob sl conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob wh conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob fs conceptual_depth 50.0 ob.buffer -10.9375 activation 21.875
+ob ls conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lf conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob rt conceptual_depth 50.0 ob.buffer -19.375 activation 38.75
+ob pd conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob sc conceptual_depth 50.0 ob.buffer -10.0 activation 20.0
+ob sm conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob pg conceptual_depth 50.0 ob.buffer -20.0 activation 40.0
+ob sg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob smg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob id conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob op conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob l conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob g conceptual_depth 50.0 ob.buffer -9.375 activation 18.75
+ob lc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob spc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob apc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob dc conceptual_depth 50.0 ob.buffer -35.0 activation 70.0
+ob bc conceptual_depth 50.0 ob.buffer -35.0 activation 70.0
+ob gpc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob len conceptual_depth 50.0 ob.buffer -4.84375 activation 9.6875
+ob obc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob bf conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+spreading activation ob A size 3
+sl.to B buffer 50.0 inc 40.0
+sl.to lc buffer 50.0 inc 80.0
+sl.to fs buffer -10.9375 inc 25.0
+spreading activation ob B size 3
+sl.to A buffer 50.0 inc 40.0
+sl.to C buffer 50.0 inc 40.0
+sl.to lc buffer 130.0 inc 80.0
+spreading activation ob C size 3
+sl.to B buffer 90.0 inc 40.0
+sl.to D buffer -50.0 inc 40.0
+sl.to lc buffer 210.0 inc 80.0
+spreading activation ob D size 3
+sl.to C buffer 90.0 inc 40.0
+sl.to E buffer -46.5 inc 40.0
+sl.to lc buffer 290.0 inc 80.0
+spreading activation ob E size 3
+spreading activation ob F size 3
+spreading activation ob G size 3
+spreading activation ob H size 3
+sl.to G buffer -2.90625 inc 40.0
+sl.to I buffer 50.0 inc 40.0
+sl.to lc buffer 370.0 inc 80.0
+spreading activation ob I size 3
+sl.to H buffer -50.0 inc 40.0
+sl.to J buffer 50.0 inc 40.0
+sl.to lc buffer 450.0 inc 80.0
+spreading activation ob J size 3
+sl.to I buffer 90.0 inc 40.0
+sl.to K buffer 50.0 inc 40.0
+sl.to lc buffer 530.0 inc 80.0
+spreading activation ob K size 3
+sl.to J buffer 90.0 inc 40.0
+sl.to L buffer -50.0 inc 40.0
+sl.to lc buffer 610.0 inc 80.0
+spreading activation ob L size 3
+sl.to K buffer 90.0 inc 40.0
+sl.to M buffer -22.90625 inc 40.0
+sl.to lc buffer 690.0 inc 80.0
+spreading activation ob M size 3
+spreading activation ob N size 3
+spreading activation ob O size 3
+spreading activation ob P size 3
+spreading activation ob Q size 3
+spreading activation ob R size 3
+spreading activation ob S size 3
+spreading activation ob T size 3
+spreading activation ob U size 3
+spreading activation ob V size 3
+spreading activation ob W size 3
+spreading activation ob X size 3
+spreading activation ob Y size 3
+spreading activation ob Z size 3
+spreading activation ob 1 size 2
+spreading activation ob 2 size 3
+spreading activation ob 3 size 3
+spreading activation ob 4 size 3
+spreading activation ob 5 size 2
+spreading activation ob lm size 6
+sl.to rm buffer 50.0 inc 20.0
+sl.to spc buffer 50.0 inc 70.0
+sl.to lf buffer 50.0 inc 10.0
+sl.to rt buffer -19.375 inc 0.0
+sl.to fs buffer 14.0625 inc 0.0
+sl.to ls buffer 0.0 inc 0.0
+spreading activation ob rm size 6
+sl.to lm buffer 50.0 inc 20.0
+sl.to spc buffer 120.0 inc 70.0
+sl.to rt buffer -19.375 inc 10.0
+sl.to lf buffer 60.0 inc 0.0
+sl.to fs buffer 14.0625 inc 0.0
+sl.to ls buffer 0.0 inc 0.0
+spreading activation ob md size 1
+spreading activation ob sl size 2
+spreading activation ob wh size 2
+spreading activation ob fs size 4
+spreading activation ob ls size 4
+spreading activation ob lf size 4
+sl.to rt buffer -9.375 inc 20.0
+sl.to dc buffer -35.0 inc 70.0
+sl.to lm buffer 70.0 inc 10.0
+sl.to rm buffer 70.0 inc 0.0
+spreading activation ob rt size 4
+spreading activation ob pd size 3
+sl.to sc buffer -10.0 inc 20.0
+sl.to bc buffer -35.0 inc 70.0
+sl.to pg buffer -20.0 inc 40.0
+spreading activation ob sc size 3
+spreading activation ob sm size 2
+spreading activation ob pg size 4
+spreading activation ob sg size 4
+spreading activation ob smg size 4
+spreading activation ob id size 0
+spreading activation ob op size 0
+spreading activation ob l size 2
+sl.to obc buffer 50.0 inc 30.0
+sl.to g buffer -9.375 inc 10.0
+spreading activation ob g size 2
+spreading activation ob lc size 28
+sl.to A buffer 90.0 inc 3.0
+sl.to B buffer 130.0 inc 3.0
+sl.to C buffer 130.0 inc 3.0
+sl.to D buffer -10.0 inc 3.0
+sl.to E buffer -6.5 inc 3.0
+sl.to F buffer -22.90625 inc 3.0
+sl.to G buffer 37.09375 inc 3.0
+sl.to H buffer -10.0 inc 3.0
+sl.to I buffer 130.0 inc 3.0
+sl.to J buffer 130.0 inc 3.0
+sl.to K buffer 130.0 inc 3.0
+sl.to L buffer -10.0 inc 3.0
+sl.to M buffer 17.09375 inc 3.0
+sl.to N buffer -2.90625 inc 3.0
+sl.to O buffer -2.90625 inc 3.0
+sl.to P buffer -2.90625 inc 3.0
+sl.to Q buffer -2.90625 inc 3.0
+sl.to R buffer -2.90625 inc 3.0
+sl.to S buffer -2.90625 inc 3.0
+sl.to T buffer -2.90625 inc 3.0
+sl.to U buffer -2.90625 inc 3.0
+sl.to V buffer -2.90625 inc 3.0
+sl.to W buffer -2.90625 inc 3.0
+sl.to X buffer -2.90625 inc 3.0
+sl.to Y buffer -2.90625 inc 3.0
+sl.to Z buffer -2.90625 inc 3.0
+sl.to bf buffer -50.0 inc 40.0
+sl.to len buffer -4.84375 inc 5.0
+spreading activation ob spc size 5
+sl.to lm buffer 80.0 inc 0.0
+sl.to rm buffer 70.0 inc 0.0
+sl.to md buffer -12.5 inc 0.0
+sl.to sl buffer 0.0 inc 0.0
+sl.to wh buffer 0.0 inc 0.0
+spreading activation ob apc size 2
+spreading activation ob dc size 2
+spreading activation ob bc size 3
+spreading activation ob gpc size 3
+spreading activation ob len size 7
+spreading activation ob obc size 2
+sl.to l buffer 50.0 inc 0.0
+sl.to g buffer 0.625 inc 0.0
+spreading activation ob bf size 2
+sl.to lc buffer 770.0 inc 0.0
+sl.to len buffer 0.15625 inc 0.0
+slipnodes.size()59
 Random rndseed=432
+ob A activation 100.0
 Random rndseed=433
+ob B activation 100.0
 Random rndseed=434
+ob C activation 100.0
 Random rndseed=435
+ob D activation 100.0
 Random rndseed=436
+ob E activation 100.0
+ob F activation 25.90625
+ob G activation 45.90625
 Random rndseed=437
+ob H activation 93.0
 Random rndseed=438
+ob I activation 100.0
 Random rndseed=439
+ob J activation 100.0
 Random rndseed=440
+ob K activation 100.0
 Random rndseed=441
+ob L activation 93.0
 Random rndseed=442
+ob M activation 65.90625
+ob N activation 5.90625
+ob O activation 5.90625
+ob P activation 5.90625
+ob Q activation 5.90625
+ob R activation 5.90625
+ob S activation 5.90625
+ob T activation 5.90625
+ob U activation 5.90625
+ob V activation 5.90625
+ob W activation 5.90625
+ob X activation 5.90625
+ob Y activation 5.90625
+ob Z activation 5.90625
+ob 1 activation 0.0
+ob 2 activation 0.0
+ob 3 activation 0.0
+ob 4 activation 0.0
+ob 5 activation 0.0
 Random rndseed=443
+ob lm activation 100.0
 Random rndseed=444
+ob rm activation 100.0
+ob md activation 12.5
+ob sl activation 0.0
+ob wh activation 0.0
+ob fs activation 35.9375
+ob ls activation 0.0
 Random rndseed=445
+ob lf activation 100.0
+ob rt activation 49.375
 Random rndseed=446
+ob pd activation 100.0
+ob sc activation 30.0
+ob sm activation 0.0
 Random rndseed=447
+ob pg activation 60.0
+ob sg activation 0.0
+ob smg activation 0.0
+ob id activation 50.0
+ob op activation 0.0
 Random rndseed=448
+ob l activation 100.0
+ob g activation 19.375
 Random rndseed=449
+ob lc activation 100.0
 Random rndseed=450
+ob spc activation 100.0
+ob apc activation 0.0
 Random rndseed=451
+ob dc activation 100.0
 Random rndseed=452
+ob bc activation 100.0
+ob gpc activation 0.0
+ob len activation 9.84375
 Random rndseed=453
+ob obc activation 100.0
 Random rndseed=454
+ob bf activation 100.0
 Random rndseed=455
 sum 856.9326620941736 chosen 206.52077156469582
 Choose codelet at index 43
@@ -1936,30 +3443,295 @@ Random rndseed=527
 create codelet rule-scout
 Random rndseed=528
 create codelet breaker
+ob A conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob B conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob C conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob D conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob E conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob F conceptual_depth 50.0 ob.buffer -12.953125 activation 25.90625
+ob G conceptual_depth 50.0 ob.buffer -22.953125 activation 45.90625
+ob H conceptual_depth 50.0 ob.buffer -46.5 activation 93.0
+ob I conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob J conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob K conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob L conceptual_depth 50.0 ob.buffer -46.5 activation 93.0
+ob M conceptual_depth 50.0 ob.buffer -32.953125 activation 65.90625
+ob N conceptual_depth 50.0 ob.buffer -2.953125 activation 5.90625
+ob O conceptual_depth 50.0 ob.buffer -2.953125 activation 5.90625
+ob P conceptual_depth 50.0 ob.buffer -2.953125 activation 5.90625
+ob Q conceptual_depth 50.0 ob.buffer -2.953125 activation 5.90625
+ob R conceptual_depth 50.0 ob.buffer -2.953125 activation 5.90625
+ob S conceptual_depth 50.0 ob.buffer -2.953125 activation 5.90625
+ob T conceptual_depth 50.0 ob.buffer -2.953125 activation 5.90625
+ob U conceptual_depth 50.0 ob.buffer -2.953125 activation 5.90625
+ob V conceptual_depth 50.0 ob.buffer -2.953125 activation 5.90625
+ob W conceptual_depth 50.0 ob.buffer -2.953125 activation 5.90625
+ob X conceptual_depth 50.0 ob.buffer -2.953125 activation 5.90625
+ob Y conceptual_depth 50.0 ob.buffer -2.953125 activation 5.90625
+ob Z conceptual_depth 50.0 ob.buffer -2.953125 activation 5.90625
+ob 1 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 2 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 3 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 4 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 5 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lm conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob rm conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob md conceptual_depth 50.0 ob.buffer -6.25 activation 12.5
+ob sl conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob wh conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob fs conceptual_depth 50.0 ob.buffer -17.96875 activation 35.9375
+ob ls conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lf conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob rt conceptual_depth 50.0 ob.buffer -24.6875 activation 49.375
+ob pd conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob sc conceptual_depth 50.0 ob.buffer -15.0 activation 30.0
+ob sm conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob pg conceptual_depth 50.0 ob.buffer -30.0 activation 60.0
+ob sg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob smg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob id conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob op conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob l conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob g conceptual_depth 50.0 ob.buffer -9.6875 activation 19.375
+ob lc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob spc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob apc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob dc conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob bc conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob gpc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob len conceptual_depth 50.0 ob.buffer -4.921875 activation 9.84375
+ob obc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob bf conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+spreading activation ob A size 3
+sl.to B buffer 50.0 inc 40.0
+sl.to lc buffer 50.0 inc 80.0
+sl.to fs buffer -17.96875 inc 25.0
+spreading activation ob B size 3
+sl.to A buffer 50.0 inc 40.0
+sl.to C buffer 50.0 inc 40.0
+sl.to lc buffer 130.0 inc 80.0
+spreading activation ob C size 3
+sl.to B buffer 90.0 inc 40.0
+sl.to D buffer -50.0 inc 40.0
+sl.to lc buffer 210.0 inc 80.0
+spreading activation ob D size 3
+sl.to C buffer 90.0 inc 40.0
+sl.to E buffer -50.0 inc 40.0
+sl.to lc buffer 290.0 inc 80.0
+spreading activation ob E size 3
+sl.to D buffer -10.0 inc 40.0
+sl.to F buffer -12.953125 inc 40.0
+sl.to lc buffer 370.0 inc 80.0
+spreading activation ob F size 3
+spreading activation ob G size 3
+spreading activation ob H size 3
+spreading activation ob I size 3
+sl.to H buffer -46.5 inc 40.0
+sl.to J buffer 50.0 inc 40.0
+sl.to lc buffer 450.0 inc 80.0
+spreading activation ob J size 3
+sl.to I buffer 50.0 inc 40.0
+sl.to K buffer 50.0 inc 40.0
+sl.to lc buffer 530.0 inc 80.0
+spreading activation ob K size 3
+sl.to J buffer 90.0 inc 40.0
+sl.to L buffer -46.5 inc 40.0
+sl.to lc buffer 610.0 inc 80.0
+spreading activation ob L size 3
+spreading activation ob M size 3
+spreading activation ob N size 3
+spreading activation ob O size 3
+spreading activation ob P size 3
+spreading activation ob Q size 3
+spreading activation ob R size 3
+spreading activation ob S size 3
+spreading activation ob T size 3
+spreading activation ob U size 3
+spreading activation ob V size 3
+spreading activation ob W size 3
+spreading activation ob X size 3
+spreading activation ob Y size 3
+spreading activation ob Z size 3
+spreading activation ob 1 size 2
+spreading activation ob 2 size 3
+spreading activation ob 3 size 3
+spreading activation ob 4 size 3
+spreading activation ob 5 size 2
+spreading activation ob lm size 6
+sl.to rm buffer -50.0 inc 20.0
+sl.to spc buffer 50.0 inc 70.0
+sl.to lf buffer 50.0 inc 10.0
+sl.to rt buffer -24.6875 inc 0.0
+sl.to fs buffer 7.03125 inc 0.0
+sl.to ls buffer 0.0 inc 0.0
+spreading activation ob rm size 6
+sl.to lm buffer 50.0 inc 20.0
+sl.to spc buffer 120.0 inc 70.0
+sl.to rt buffer -24.6875 inc 10.0
+sl.to lf buffer 60.0 inc 0.0
+sl.to fs buffer 7.03125 inc 0.0
+sl.to ls buffer 0.0 inc 0.0
+spreading activation ob md size 1
+spreading activation ob sl size 2
+spreading activation ob wh size 2
+spreading activation ob fs size 4
+spreading activation ob ls size 4
+spreading activation ob lf size 4
+sl.to rt buffer -14.6875 inc 20.0
+sl.to dc buffer -50.0 inc 70.0
+sl.to lm buffer 70.0 inc 10.0
+sl.to rm buffer -30.0 inc 0.0
+spreading activation ob rt size 4
+spreading activation ob pd size 3
+sl.to sc buffer -15.0 inc 20.0
+sl.to bc buffer -50.0 inc 70.0
+sl.to pg buffer -30.0 inc 40.0
+spreading activation ob sc size 3
+spreading activation ob sm size 2
+spreading activation ob pg size 4
+spreading activation ob sg size 4
+spreading activation ob smg size 4
+spreading activation ob id size 0
+spreading activation ob op size 0
+spreading activation ob l size 2
+sl.to obc buffer 50.0 inc 30.0
+sl.to g buffer -9.6875 inc 10.0
+spreading activation ob g size 2
+spreading activation ob lc size 28
+sl.to A buffer 90.0 inc 3.0
+sl.to B buffer 130.0 inc 3.0
+sl.to C buffer 130.0 inc 3.0
+sl.to D buffer 30.0 inc 3.0
+sl.to E buffer -10.0 inc 3.0
+sl.to F buffer 27.046875 inc 3.0
+sl.to G buffer -22.953125 inc 3.0
+sl.to H buffer -6.5 inc 3.0
+sl.to I buffer 90.0 inc 3.0
+sl.to J buffer 130.0 inc 3.0
+sl.to K buffer 90.0 inc 3.0
+sl.to L buffer -6.5 inc 3.0
+sl.to M buffer -32.953125 inc 3.0
+sl.to N buffer -2.953125 inc 3.0
+sl.to O buffer -2.953125 inc 3.0
+sl.to P buffer -2.953125 inc 3.0
+sl.to Q buffer -2.953125 inc 3.0
+sl.to R buffer -2.953125 inc 3.0
+sl.to S buffer -2.953125 inc 3.0
+sl.to T buffer -2.953125 inc 3.0
+sl.to U buffer -2.953125 inc 3.0
+sl.to V buffer -2.953125 inc 3.0
+sl.to W buffer -2.953125 inc 3.0
+sl.to X buffer -2.953125 inc 3.0
+sl.to Y buffer -2.953125 inc 3.0
+sl.to Z buffer -2.953125 inc 3.0
+sl.to bf buffer -50.0 inc 40.0
+sl.to len buffer -4.921875 inc 5.0
+spreading activation ob spc size 5
+sl.to lm buffer 80.0 inc 0.0
+sl.to rm buffer -30.0 inc 0.0
+sl.to md buffer -6.25 inc 0.0
+sl.to sl buffer 0.0 inc 0.0
+sl.to wh buffer 0.0 inc 0.0
+spreading activation ob apc size 2
+spreading activation ob dc size 2
+sl.to lf buffer 60.0 inc 0.0
+sl.to rt buffer 5.3125 inc 0.0
+spreading activation ob bc size 3
+sl.to pd buffer 50.0 inc 0.0
+sl.to sc buffer 5.0 inc 0.0
+sl.to sm buffer 0.0 inc 0.0
+spreading activation ob gpc size 3
+spreading activation ob len size 7
+spreading activation ob obc size 2
+sl.to l buffer 50.0 inc 0.0
+sl.to g buffer 0.3125 inc 0.0
+spreading activation ob bf size 2
+sl.to lc buffer 690.0 inc 0.0
+sl.to len buffer 0.078125 inc 0.0
+slipnodes.size()59
 Random rndseed=529
+ob A activation 100.0
 Random rndseed=530
+ob B activation 100.0
 Random rndseed=531
+ob C activation 100.0
 Random rndseed=532
+ob D activation 100.0
 Random rndseed=533
+ob E activation 93.0
 Random rndseed=534
+ob F activation 55.953125
+ob G activation 25.953125
 Random rndseed=535
+ob H activation 100.0
 Random rndseed=536
+ob I activation 100.0
 Random rndseed=537
+ob J activation 100.0
 Random rndseed=538
+ob K activation 100.0
 Random rndseed=539
+ob L activation 100.0
+ob M activation 35.953125
+ob N activation 5.953125
+ob O activation 5.953125
+ob P activation 5.953125
+ob Q activation 5.953125
+ob R activation 5.953125
+ob S activation 5.953125
+ob T activation 5.953125
+ob U activation 5.953125
+ob V activation 5.953125
+ob W activation 5.953125
+ob X activation 5.953125
+ob Y activation 5.953125
+ob Z activation 5.953125
+ob 1 activation 0.0
+ob 2 activation 0.0
+ob 3 activation 0.0
+ob 4 activation 0.0
+ob 5 activation 0.0
 Random rndseed=540
+ob lm activation 100.0
 Random rndseed=541
+ob rm activation 100.0
+ob md activation 6.25
+ob sl activation 0.0
+ob wh activation 0.0
+ob fs activation 42.96875
+ob ls activation 0.0
 Random rndseed=542
+ob lf activation 100.0
+ob rt activation 54.6875
 Random rndseed=543
+ob pd activation 100.0
+ob sc activation 35.0
+ob sm activation 0.0
 Random rndseed=544
+ob pg activation 70.0
+ob sg activation 0.0
+ob smg activation 0.0
 Random rndseed=545
+ob id activation 100.0
+ob op activation 0.0
 Random rndseed=546
+ob l activation 100.0
+ob g activation 19.6875
 Random rndseed=547
+ob lc activation 100.0
 Random rndseed=548
+ob spc activation 100.0
+ob apc activation 0.0
 Random rndseed=549
+ob dc activation 100.0
 Random rndseed=550
+ob bc activation 100.0
+ob gpc activation 0.0
+ob len activation 9.921875
 Random rndseed=551
+ob obc activation 100.0
 Random rndseed=552
+ob bf activation 100.0
 Random rndseed=553
 sum 5201.527186945779 chosen 998.6932198935897
 Choose codelet at index 51
@@ -2196,32 +3968,300 @@ Random rndseed=625
 Random rndseed=626
 create codelet breaker
 Random rndseed=627
+ob A conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob B conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob C conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob D conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob E conceptual_depth 50.0 ob.buffer -46.5 activation 93.0
+ob F conceptual_depth 50.0 ob.buffer -27.9765625 activation 55.953125
+ob G conceptual_depth 50.0 ob.buffer -12.9765625 activation 25.953125
+ob H conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob I conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob J conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob K conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob L conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob M conceptual_depth 50.0 ob.buffer -17.9765625 activation 35.953125
+ob N conceptual_depth 50.0 ob.buffer -2.9765625 activation 5.953125
+ob O conceptual_depth 50.0 ob.buffer -2.9765625 activation 5.953125
+ob P conceptual_depth 50.0 ob.buffer -2.9765625 activation 5.953125
+ob Q conceptual_depth 50.0 ob.buffer -2.9765625 activation 5.953125
+ob R conceptual_depth 50.0 ob.buffer -2.9765625 activation 5.953125
+ob S conceptual_depth 50.0 ob.buffer -2.9765625 activation 5.953125
+ob T conceptual_depth 50.0 ob.buffer -2.9765625 activation 5.953125
+ob U conceptual_depth 50.0 ob.buffer -2.9765625 activation 5.953125
+ob V conceptual_depth 50.0 ob.buffer -2.9765625 activation 5.953125
+ob W conceptual_depth 50.0 ob.buffer -2.9765625 activation 5.953125
+ob X conceptual_depth 50.0 ob.buffer -2.9765625 activation 5.953125
+ob Y conceptual_depth 50.0 ob.buffer -2.9765625 activation 5.953125
+ob Z conceptual_depth 50.0 ob.buffer -2.9765625 activation 5.953125
+ob 1 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 2 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 3 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 4 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 5 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lm conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob rm conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob md conceptual_depth 50.0 ob.buffer -3.125 activation 6.25
+ob sl conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob wh conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob fs conceptual_depth 50.0 ob.buffer -21.484375 activation 42.96875
+ob ls conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lf conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob rt conceptual_depth 50.0 ob.buffer -27.34375 activation 54.6875
+ob pd conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob sc conceptual_depth 50.0 ob.buffer -17.5 activation 35.0
+ob sm conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob pg conceptual_depth 50.0 ob.buffer -35.0 activation 70.0
+ob sg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob smg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob id conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob op conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob l conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob g conceptual_depth 50.0 ob.buffer -9.84375 activation 19.6875
+ob lc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob spc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob apc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob dc conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob bc conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob gpc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob len conceptual_depth 50.0 ob.buffer -4.9609375 activation 9.921875
+ob obc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob bf conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+spreading activation ob A size 3
+sl.to B buffer 50.0 inc 40.0
+sl.to lc buffer 50.0 inc 80.0
+sl.to fs buffer -21.484375 inc 25.0
+spreading activation ob B size 3
+sl.to A buffer -50.0 inc 40.0
+sl.to C buffer 50.0 inc 40.0
+sl.to lc buffer 130.0 inc 80.0
+spreading activation ob C size 3
+sl.to B buffer 90.0 inc 40.0
+sl.to D buffer -50.0 inc 40.0
+sl.to lc buffer 210.0 inc 80.0
+spreading activation ob D size 3
+sl.to C buffer 90.0 inc 40.0
+sl.to E buffer -46.5 inc 40.0
+sl.to lc buffer 290.0 inc 80.0
+spreading activation ob E size 3
+spreading activation ob F size 3
+spreading activation ob G size 3
+spreading activation ob H size 3
+sl.to G buffer -12.9765625 inc 40.0
+sl.to I buffer 50.0 inc 40.0
+sl.to lc buffer 370.0 inc 80.0
+spreading activation ob I size 3
+sl.to H buffer -50.0 inc 40.0
+sl.to J buffer 50.0 inc 40.0
+sl.to lc buffer 450.0 inc 80.0
+spreading activation ob J size 3
+sl.to I buffer 90.0 inc 40.0
+sl.to K buffer 50.0 inc 40.0
+sl.to lc buffer 530.0 inc 80.0
+spreading activation ob K size 3
+sl.to J buffer 90.0 inc 40.0
+sl.to L buffer -50.0 inc 40.0
+sl.to lc buffer 610.0 inc 80.0
+spreading activation ob L size 3
+sl.to K buffer 90.0 inc 40.0
+sl.to M buffer -17.9765625 inc 40.0
+sl.to lc buffer 690.0 inc 80.0
+spreading activation ob M size 3
+spreading activation ob N size 3
+spreading activation ob O size 3
+spreading activation ob P size 3
+spreading activation ob Q size 3
+spreading activation ob R size 3
+spreading activation ob S size 3
+spreading activation ob T size 3
+spreading activation ob U size 3
+spreading activation ob V size 3
+spreading activation ob W size 3
+spreading activation ob X size 3
+spreading activation ob Y size 3
+spreading activation ob Z size 3
+spreading activation ob 1 size 2
+spreading activation ob 2 size 3
+spreading activation ob 3 size 3
+spreading activation ob 4 size 3
+spreading activation ob 5 size 2
+spreading activation ob lm size 6
+sl.to rm buffer 50.0 inc 20.0
+sl.to spc buffer 50.0 inc 70.0
+sl.to lf buffer 50.0 inc 10.0
+sl.to rt buffer -27.34375 inc 0.0
+sl.to fs buffer 3.515625 inc 0.0
+sl.to ls buffer 0.0 inc 0.0
+spreading activation ob rm size 6
+sl.to lm buffer 50.0 inc 20.0
+sl.to spc buffer 120.0 inc 70.0
+sl.to rt buffer -27.34375 inc 10.0
+sl.to lf buffer 60.0 inc 0.0
+sl.to fs buffer 3.515625 inc 0.0
+sl.to ls buffer 0.0 inc 0.0
+spreading activation ob md size 1
+spreading activation ob sl size 2
+spreading activation ob wh size 2
+spreading activation ob fs size 4
+spreading activation ob ls size 4
+spreading activation ob lf size 4
+sl.to rt buffer -17.34375 inc 20.0
+sl.to dc buffer -50.0 inc 70.0
+sl.to lm buffer 70.0 inc 10.0
+sl.to rm buffer 70.0 inc 0.0
+spreading activation ob rt size 4
+spreading activation ob pd size 3
+sl.to sc buffer -17.5 inc 20.0
+sl.to bc buffer -50.0 inc 70.0
+sl.to pg buffer -35.0 inc 40.0
+spreading activation ob sc size 3
+spreading activation ob sm size 2
+spreading activation ob pg size 4
+spreading activation ob sg size 4
+spreading activation ob smg size 4
+spreading activation ob id size 0
+spreading activation ob op size 0
+spreading activation ob l size 2
+sl.to obc buffer 50.0 inc 30.0
+sl.to g buffer -9.84375 inc 10.0
+spreading activation ob g size 2
+spreading activation ob lc size 28
+sl.to A buffer -10.0 inc 3.0
+sl.to B buffer 130.0 inc 3.0
+sl.to C buffer 130.0 inc 3.0
+sl.to D buffer -10.0 inc 3.0
+sl.to E buffer -6.5 inc 3.0
+sl.to F buffer -27.9765625 inc 3.0
+sl.to G buffer 27.0234375 inc 3.0
+sl.to H buffer -10.0 inc 3.0
+sl.to I buffer 130.0 inc 3.0
+sl.to J buffer 130.0 inc 3.0
+sl.to K buffer 130.0 inc 3.0
+sl.to L buffer -10.0 inc 3.0
+sl.to M buffer 22.0234375 inc 3.0
+sl.to N buffer -2.9765625 inc 3.0
+sl.to O buffer -2.9765625 inc 3.0
+sl.to P buffer -2.9765625 inc 3.0
+sl.to Q buffer -2.9765625 inc 3.0
+sl.to R buffer -2.9765625 inc 3.0
+sl.to S buffer -2.9765625 inc 3.0
+sl.to T buffer -2.9765625 inc 3.0
+sl.to U buffer -2.9765625 inc 3.0
+sl.to V buffer -2.9765625 inc 3.0
+sl.to W buffer -2.9765625 inc 3.0
+sl.to X buffer -2.9765625 inc 3.0
+sl.to Y buffer -2.9765625 inc 3.0
+sl.to Z buffer -2.9765625 inc 3.0
+sl.to bf buffer -50.0 inc 40.0
+sl.to len buffer -4.9609375 inc 5.0
+spreading activation ob spc size 5
+sl.to lm buffer 80.0 inc 0.0
+sl.to rm buffer 70.0 inc 0.0
+sl.to md buffer -3.125 inc 0.0
+sl.to sl buffer 0.0 inc 0.0
+sl.to wh buffer 0.0 inc 0.0
+spreading activation ob apc size 2
+spreading activation ob dc size 2
+sl.to lf buffer 60.0 inc 0.0
+sl.to rt buffer 2.65625 inc 0.0
+spreading activation ob bc size 3
+sl.to pd buffer 50.0 inc 0.0
+sl.to sc buffer 2.5 inc 0.0
+sl.to sm buffer 0.0 inc 0.0
+spreading activation ob gpc size 3
+spreading activation ob len size 7
+spreading activation ob obc size 2
+sl.to l buffer 50.0 inc 0.0
+sl.to g buffer 0.15625 inc 0.0
+spreading activation ob bf size 2
+sl.to lc buffer 770.0 inc 0.0
+sl.to len buffer 0.0390625 inc 0.0
+slipnodes.size()59
 Random rndseed=628
+ob A activation 100.0
 Random rndseed=629
+ob B activation 100.0
 Random rndseed=630
+ob C activation 100.0
 Random rndseed=631
+ob D activation 100.0
 Random rndseed=632
+ob E activation 100.0
+ob F activation 30.9765625
 Random rndseed=633
+ob G activation 55.9765625
 Random rndseed=634
+ob H activation 93.0
 Random rndseed=635
+ob I activation 100.0
 Random rndseed=636
+ob J activation 100.0
 Random rndseed=637
+ob K activation 100.0
 Random rndseed=638
+ob L activation 100.0
 Random rndseed=639
+ob M activation 60.9765625
+ob N activation 5.9765625
+ob O activation 5.9765625
+ob P activation 5.9765625
+ob Q activation 5.9765625
+ob R activation 5.9765625
+ob S activation 5.9765625
+ob T activation 5.9765625
+ob U activation 5.9765625
+ob V activation 5.9765625
+ob W activation 5.9765625
+ob X activation 5.9765625
+ob Y activation 5.9765625
+ob Z activation 5.9765625
+ob 1 activation 0.0
+ob 2 activation 0.0
+ob 3 activation 0.0
+ob 4 activation 0.0
+ob 5 activation 0.0
 Random rndseed=640
+ob lm activation 100.0
 Random rndseed=641
+ob rm activation 100.0
+ob md activation 3.125
+ob sl activation 0.0
+ob wh activation 0.0
+ob fs activation 46.484375
+ob ls activation 0.0
 Random rndseed=642
+ob lf activation 100.0
 Random rndseed=643
+ob rt activation 57.34375
 Random rndseed=644
+ob pd activation 100.0
+ob sc activation 37.5
+ob sm activation 0.0
 Random rndseed=645
+ob pg activation 75.0
+ob sg activation 0.0
+ob smg activation 0.0
 Random rndseed=646
+ob id activation 100.0
+ob op activation 0.0
 Random rndseed=647
+ob l activation 100.0
+ob g activation 19.84375
 Random rndseed=648
+ob lc activation 100.0
 Random rndseed=649
+ob spc activation 100.0
+ob apc activation 0.0
 Random rndseed=650
+ob dc activation 100.0
 Random rndseed=651
+ob bc activation 100.0
+ob gpc activation 0.0
+ob len activation 9.9609375
 Random rndseed=652
+ob obc activation 100.0
 Random rndseed=653
+ob bf activation 90.0
 Random rndseed=654
 sum 5775.858219507098 chosen 456.29279934106074
 Choose codelet at index 37
@@ -2455,31 +4495,297 @@ Random rndseed=725
 Random rndseed=726
 create codelet breaker
 Random rndseed=727
+ob A conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob B conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob C conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob D conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob E conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob F conceptual_depth 50.0 ob.buffer -15.48828125 activation 30.9765625
+ob G conceptual_depth 50.0 ob.buffer -27.98828125 activation 55.9765625
+ob H conceptual_depth 50.0 ob.buffer -46.5 activation 93.0
+ob I conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob J conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob K conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob L conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob M conceptual_depth 50.0 ob.buffer -30.48828125 activation 60.9765625
+ob N conceptual_depth 50.0 ob.buffer -2.98828125 activation 5.9765625
+ob O conceptual_depth 50.0 ob.buffer -2.98828125 activation 5.9765625
+ob P conceptual_depth 50.0 ob.buffer -2.98828125 activation 5.9765625
+ob Q conceptual_depth 50.0 ob.buffer -2.98828125 activation 5.9765625
+ob R conceptual_depth 50.0 ob.buffer -2.98828125 activation 5.9765625
+ob S conceptual_depth 50.0 ob.buffer -2.98828125 activation 5.9765625
+ob T conceptual_depth 50.0 ob.buffer -2.98828125 activation 5.9765625
+ob U conceptual_depth 50.0 ob.buffer -2.98828125 activation 5.9765625
+ob V conceptual_depth 50.0 ob.buffer -2.98828125 activation 5.9765625
+ob W conceptual_depth 50.0 ob.buffer -2.98828125 activation 5.9765625
+ob X conceptual_depth 50.0 ob.buffer -2.98828125 activation 5.9765625
+ob Y conceptual_depth 50.0 ob.buffer -2.98828125 activation 5.9765625
+ob Z conceptual_depth 50.0 ob.buffer -2.98828125 activation 5.9765625
+ob 1 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 2 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 3 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 4 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 5 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lm conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob rm conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob md conceptual_depth 50.0 ob.buffer -1.5625 activation 3.125
+ob sl conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob wh conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob fs conceptual_depth 50.0 ob.buffer -23.2421875 activation 46.484375
+ob ls conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lf conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob rt conceptual_depth 50.0 ob.buffer -28.671875 activation 57.34375
+ob pd conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob sc conceptual_depth 50.0 ob.buffer -18.75 activation 37.5
+ob sm conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob pg conceptual_depth 50.0 ob.buffer -37.5 activation 75.0
+ob sg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob smg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob id conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob op conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob l conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob g conceptual_depth 50.0 ob.buffer -9.921875 activation 19.84375
+ob lc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob spc conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob apc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob dc conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob bc conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob gpc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob len conceptual_depth 50.0 ob.buffer -4.98046875 activation 9.9609375
+ob obc conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob bf conceptual_depth 50.0 ob.buffer -45.0 activation 90.0
+spreading activation ob A size 3
+sl.to B buffer 50.0 inc 40.0
+sl.to lc buffer 50.0 inc 80.0
+sl.to fs buffer -23.2421875 inc 25.0
+spreading activation ob B size 3
+sl.to A buffer -50.0 inc 40.0
+sl.to C buffer 50.0 inc 40.0
+sl.to lc buffer 130.0 inc 80.0
+spreading activation ob C size 3
+sl.to B buffer 90.0 inc 40.0
+sl.to D buffer -50.0 inc 40.0
+sl.to lc buffer 210.0 inc 80.0
+spreading activation ob D size 3
+sl.to C buffer 90.0 inc 40.0
+sl.to E buffer -50.0 inc 40.0
+sl.to lc buffer 290.0 inc 80.0
+spreading activation ob E size 3
+sl.to D buffer -10.0 inc 40.0
+sl.to F buffer -15.48828125 inc 40.0
+sl.to lc buffer 370.0 inc 80.0
+spreading activation ob F size 3
+spreading activation ob G size 3
+spreading activation ob H size 3
+spreading activation ob I size 3
+sl.to H buffer -46.5 inc 40.0
+sl.to J buffer 50.0 inc 40.0
+sl.to lc buffer 450.0 inc 80.0
+spreading activation ob J size 3
+sl.to I buffer 50.0 inc 40.0
+sl.to K buffer -50.0 inc 40.0
+sl.to lc buffer 530.0 inc 80.0
+spreading activation ob K size 3
+sl.to J buffer 90.0 inc 40.0
+sl.to L buffer -50.0 inc 40.0
+sl.to lc buffer 610.0 inc 80.0
+spreading activation ob L size 3
+sl.to K buffer -10.0 inc 40.0
+sl.to M buffer -30.48828125 inc 40.0
+sl.to lc buffer 690.0 inc 80.0
+spreading activation ob M size 3
+spreading activation ob N size 3
+spreading activation ob O size 3
+spreading activation ob P size 3
+spreading activation ob Q size 3
+spreading activation ob R size 3
+spreading activation ob S size 3
+spreading activation ob T size 3
+spreading activation ob U size 3
+spreading activation ob V size 3
+spreading activation ob W size 3
+spreading activation ob X size 3
+spreading activation ob Y size 3
+spreading activation ob Z size 3
+spreading activation ob 1 size 2
+spreading activation ob 2 size 3
+spreading activation ob 3 size 3
+spreading activation ob 4 size 3
+spreading activation ob 5 size 2
+spreading activation ob lm size 6
+sl.to rm buffer -50.0 inc 20.0
+sl.to spc buffer -50.0 inc 70.0
+sl.to lf buffer 50.0 inc 10.0
+sl.to rt buffer -28.671875 inc 0.0
+sl.to fs buffer 1.7578125 inc 0.0
+sl.to ls buffer 0.0 inc 0.0
+spreading activation ob rm size 6
+sl.to lm buffer -50.0 inc 20.0
+sl.to spc buffer 20.0 inc 70.0
+sl.to rt buffer -28.671875 inc 10.0
+sl.to lf buffer 60.0 inc 0.0
+sl.to fs buffer 1.7578125 inc 0.0
+sl.to ls buffer 0.0 inc 0.0
+spreading activation ob md size 1
+spreading activation ob sl size 2
+spreading activation ob wh size 2
+spreading activation ob fs size 4
+spreading activation ob ls size 4
+spreading activation ob lf size 4
+sl.to rt buffer -18.671875 inc 20.0
+sl.to dc buffer -50.0 inc 70.0
+sl.to lm buffer -30.0 inc 10.0
+sl.to rm buffer -30.0 inc 0.0
+spreading activation ob rt size 4
+spreading activation ob pd size 3
+sl.to sc buffer -18.75 inc 20.0
+sl.to bc buffer -50.0 inc 70.0
+sl.to pg buffer -37.5 inc 40.0
+spreading activation ob sc size 3
+spreading activation ob sm size 2
+spreading activation ob pg size 4
+spreading activation ob sg size 4
+spreading activation ob smg size 4
+spreading activation ob id size 0
+spreading activation ob op size 0
+spreading activation ob l size 2
+sl.to obc buffer -50.0 inc 30.0
+sl.to g buffer -9.921875 inc 10.0
+spreading activation ob g size 2
+spreading activation ob lc size 28
+sl.to A buffer -10.0 inc 3.0
+sl.to B buffer 130.0 inc 3.0
+sl.to C buffer 130.0 inc 3.0
+sl.to D buffer 30.0 inc 3.0
+sl.to E buffer -10.0 inc 3.0
+sl.to F buffer 24.51171875 inc 3.0
+sl.to G buffer -27.98828125 inc 3.0
+sl.to H buffer -6.5 inc 3.0
+sl.to I buffer 90.0 inc 3.0
+sl.to J buffer 130.0 inc 3.0
+sl.to K buffer 30.0 inc 3.0
+sl.to L buffer -10.0 inc 3.0
+sl.to M buffer 9.51171875 inc 3.0
+sl.to N buffer -2.98828125 inc 3.0
+sl.to O buffer -2.98828125 inc 3.0
+sl.to P buffer -2.98828125 inc 3.0
+sl.to Q buffer -2.98828125 inc 3.0
+sl.to R buffer -2.98828125 inc 3.0
+sl.to S buffer -2.98828125 inc 3.0
+sl.to T buffer -2.98828125 inc 3.0
+sl.to U buffer -2.98828125 inc 3.0
+sl.to V buffer -2.98828125 inc 3.0
+sl.to W buffer -2.98828125 inc 3.0
+sl.to X buffer -2.98828125 inc 3.0
+sl.to Y buffer -2.98828125 inc 3.0
+sl.to Z buffer -2.98828125 inc 3.0
+sl.to bf buffer -45.0 inc 40.0
+sl.to len buffer -4.98046875 inc 5.0
+spreading activation ob spc size 5
+sl.to lm buffer -20.0 inc 0.0
+sl.to rm buffer -30.0 inc 0.0
+sl.to md buffer -1.5625 inc 0.0
+sl.to sl buffer 0.0 inc 0.0
+sl.to wh buffer 0.0 inc 0.0
+spreading activation ob apc size 2
+spreading activation ob dc size 2
+sl.to lf buffer 60.0 inc 0.0
+sl.to rt buffer 1.328125 inc 0.0
+spreading activation ob bc size 3
+sl.to pd buffer 50.0 inc 0.0
+sl.to sc buffer 1.25 inc 0.0
+sl.to sm buffer 0.0 inc 0.0
+spreading activation ob gpc size 3
+spreading activation ob len size 7
+spreading activation ob obc size 2
+sl.to l buffer -50.0 inc 0.0
+sl.to g buffer 0.078125 inc 0.0
+spreading activation ob bf size 2
+slipnodes.size()59
 Random rndseed=728
+ob A activation 100.0
 Random rndseed=729
+ob B activation 100.0
 Random rndseed=730
+ob C activation 100.0
 Random rndseed=731
+ob D activation 100.0
 Random rndseed=732
+ob E activation 93.0
 Random rndseed=733
+ob F activation 58.48828125
+ob G activation 30.98828125
 Random rndseed=734
+ob H activation 100.0
 Random rndseed=735
+ob I activation 100.0
 Random rndseed=736
+ob J activation 100.0
 Random rndseed=737
+ob K activation 100.0
 Random rndseed=738
+ob L activation 93.0
 Random rndseed=739
+ob M activation 100.0
+ob N activation 5.98828125
+ob O activation 5.98828125
+ob P activation 5.98828125
+ob Q activation 5.98828125
+ob R activation 5.98828125
+ob S activation 5.98828125
+ob T activation 5.98828125
+ob U activation 5.98828125
+ob V activation 5.98828125
+ob W activation 5.98828125
+ob X activation 5.98828125
+ob Y activation 5.98828125
+ob Z activation 5.98828125
+ob 1 activation 0.0
+ob 2 activation 0.0
+ob 3 activation 0.0
+ob 4 activation 0.0
+ob 5 activation 0.0
 Random rndseed=740
+ob lm activation 80.0
 Random rndseed=741
+ob rm activation 70.0
+ob md activation 1.5625
+ob sl activation 0.0
+ob wh activation 0.0
+ob fs activation 48.2421875
+ob ls activation 0.0
 Random rndseed=742
+ob lf activation 100.0
 Random rndseed=743
+ob rt activation 58.671875
 Random rndseed=744
+ob pd activation 100.0
+ob sc activation 38.75
+ob sm activation 0.0
 Random rndseed=745
+ob pg activation 77.5
+ob sg activation 0.0
+ob smg activation 0.0
 Random rndseed=746
+ob id activation 100.0
+ob op activation 0.0
+ob l activation 50.0
+ob g activation 19.921875
 Random rndseed=747
+ob lc activation 100.0
 Random rndseed=748
+ob spc activation 100.0
+ob apc activation 0.0
 Random rndseed=749
+ob dc activation 100.0
 Random rndseed=750
+ob bc activation 100.0
+ob gpc activation 0.0
+ob len activation 9.98046875
 Random rndseed=751
+ob obc activation 100.0
 Random rndseed=752
+ob bf activation 100.0
 Random rndseed=753
 sum 6906.190695660281 chosen 5587.108272789167
 Choose codelet at index 86
@@ -2716,25 +5022,279 @@ Random rndseed=823
 Random rndseed=824
 create codelet breaker
 Random rndseed=825
+ob A conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob B conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob C conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob D conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob E conceptual_depth 50.0 ob.buffer -46.5 activation 93.0
+ob F conceptual_depth 50.0 ob.buffer -29.244140625 activation 58.48828125
+ob G conceptual_depth 50.0 ob.buffer -15.494140625 activation 30.98828125
+ob H conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob I conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob J conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob K conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob L conceptual_depth 50.0 ob.buffer -46.5 activation 93.0
+ob M conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob N conceptual_depth 50.0 ob.buffer -2.994140625 activation 5.98828125
+ob O conceptual_depth 50.0 ob.buffer -2.994140625 activation 5.98828125
+ob P conceptual_depth 50.0 ob.buffer -2.994140625 activation 5.98828125
+ob Q conceptual_depth 50.0 ob.buffer -2.994140625 activation 5.98828125
+ob R conceptual_depth 50.0 ob.buffer -2.994140625 activation 5.98828125
+ob S conceptual_depth 50.0 ob.buffer -2.994140625 activation 5.98828125
+ob T conceptual_depth 50.0 ob.buffer -2.994140625 activation 5.98828125
+ob U conceptual_depth 50.0 ob.buffer -2.994140625 activation 5.98828125
+ob V conceptual_depth 50.0 ob.buffer -2.994140625 activation 5.98828125
+ob W conceptual_depth 50.0 ob.buffer -2.994140625 activation 5.98828125
+ob X conceptual_depth 50.0 ob.buffer -2.994140625 activation 5.98828125
+ob Y conceptual_depth 50.0 ob.buffer -2.994140625 activation 5.98828125
+ob Z conceptual_depth 50.0 ob.buffer -2.994140625 activation 5.98828125
+ob 1 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 2 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 3 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 4 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 5 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lm conceptual_depth 50.0 ob.buffer -40.0 activation 80.0
+ob rm conceptual_depth 50.0 ob.buffer -35.0 activation 70.0
+ob md conceptual_depth 50.0 ob.buffer -0.78125 activation 1.5625
+ob sl conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob wh conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob fs conceptual_depth 50.0 ob.buffer -24.12109375 activation 48.2421875
+ob ls conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lf conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob rt conceptual_depth 50.0 ob.buffer -29.3359375 activation 58.671875
+ob pd conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob sc conceptual_depth 50.0 ob.buffer -19.375 activation 38.75
+ob sm conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob pg conceptual_depth 50.0 ob.buffer -38.75 activation 77.5
+ob sg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob smg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob id conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob op conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob l conceptual_depth 50.0 ob.buffer -25.0 activation 50.0
+ob g conceptual_depth 50.0 ob.buffer -9.9609375 activation 19.921875
+ob lc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob spc conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob apc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob dc conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob bc conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob gpc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob len conceptual_depth 50.0 ob.buffer -4.990234375 activation 9.98046875
+ob obc conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob bf conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+spreading activation ob A size 3
+sl.to B buffer 50.0 inc 40.0
+sl.to lc buffer 50.0 inc 80.0
+sl.to fs buffer -24.12109375 inc 25.0
+spreading activation ob B size 3
+sl.to A buffer -50.0 inc 40.0
+sl.to C buffer 50.0 inc 40.0
+sl.to lc buffer 130.0 inc 80.0
+spreading activation ob C size 3
+sl.to B buffer 90.0 inc 40.0
+sl.to D buffer -50.0 inc 40.0
+sl.to lc buffer 210.0 inc 80.0
+spreading activation ob D size 3
+sl.to C buffer 90.0 inc 40.0
+sl.to E buffer -46.5 inc 40.0
+sl.to lc buffer 290.0 inc 80.0
+spreading activation ob E size 3
+spreading activation ob F size 3
+spreading activation ob G size 3
+spreading activation ob H size 3
+sl.to G buffer -15.494140625 inc 40.0
+sl.to I buffer -50.0 inc 40.0
+sl.to lc buffer 370.0 inc 80.0
+spreading activation ob I size 3
+sl.to H buffer -50.0 inc 40.0
+sl.to J buffer 50.0 inc 40.0
+sl.to lc buffer 450.0 inc 80.0
+spreading activation ob J size 3
+sl.to I buffer -10.0 inc 40.0
+sl.to K buffer 50.0 inc 40.0
+sl.to lc buffer 530.0 inc 80.0
+spreading activation ob K size 3
+sl.to J buffer 90.0 inc 40.0
+sl.to L buffer -46.5 inc 40.0
+sl.to lc buffer 610.0 inc 80.0
+spreading activation ob L size 3
+spreading activation ob M size 3
+sl.to L buffer -6.5 inc 40.0
+sl.to N buffer -2.994140625 inc 40.0
+sl.to lc buffer 690.0 inc 80.0
+spreading activation ob N size 3
+spreading activation ob O size 3
+spreading activation ob P size 3
+spreading activation ob Q size 3
+spreading activation ob R size 3
+spreading activation ob S size 3
+spreading activation ob T size 3
+spreading activation ob U size 3
+spreading activation ob V size 3
+spreading activation ob W size 3
+spreading activation ob X size 3
+spreading activation ob Y size 3
+spreading activation ob Z size 3
+spreading activation ob 1 size 2
+spreading activation ob 2 size 3
+spreading activation ob 3 size 3
+spreading activation ob 4 size 3
+spreading activation ob 5 size 2
+spreading activation ob lm size 6
+spreading activation ob rm size 6
+spreading activation ob md size 1
+spreading activation ob sl size 2
+spreading activation ob wh size 2
+spreading activation ob fs size 4
+spreading activation ob ls size 4
+spreading activation ob lf size 4
+sl.to rt buffer -29.3359375 inc 20.0
+sl.to dc buffer -50.0 inc 70.0
+sl.to lm buffer -40.0 inc 10.0
+sl.to rm buffer -35.0 inc 0.0
+spreading activation ob rt size 4
+spreading activation ob pd size 3
+sl.to sc buffer -19.375 inc 20.0
+sl.to bc buffer -50.0 inc 70.0
+sl.to pg buffer -38.75 inc 40.0
+spreading activation ob sc size 3
+spreading activation ob sm size 2
+spreading activation ob pg size 4
+spreading activation ob sg size 4
+spreading activation ob smg size 4
+spreading activation ob id size 0
+spreading activation ob op size 0
+spreading activation ob l size 2
+spreading activation ob g size 2
+spreading activation ob lc size 28
+sl.to A buffer -10.0 inc 3.0
+sl.to B buffer 130.0 inc 3.0
+sl.to C buffer 130.0 inc 3.0
+sl.to D buffer -10.0 inc 3.0
+sl.to E buffer -6.5 inc 3.0
+sl.to F buffer -29.244140625 inc 3.0
+sl.to G buffer 24.505859375 inc 3.0
+sl.to H buffer -10.0 inc 3.0
+sl.to I buffer 30.0 inc 3.0
+sl.to J buffer 130.0 inc 3.0
+sl.to K buffer 90.0 inc 3.0
+sl.to L buffer 33.5 inc 3.0
+sl.to M buffer -50.0 inc 3.0
+sl.to N buffer 37.005859375 inc 3.0
+sl.to O buffer -2.994140625 inc 3.0
+sl.to P buffer -2.994140625 inc 3.0
+sl.to Q buffer -2.994140625 inc 3.0
+sl.to R buffer -2.994140625 inc 3.0
+sl.to S buffer -2.994140625 inc 3.0
+sl.to T buffer -2.994140625 inc 3.0
+sl.to U buffer -2.994140625 inc 3.0
+sl.to V buffer -2.994140625 inc 3.0
+sl.to W buffer -2.994140625 inc 3.0
+sl.to X buffer -2.994140625 inc 3.0
+sl.to Y buffer -2.994140625 inc 3.0
+sl.to Z buffer -2.994140625 inc 3.0
+sl.to bf buffer -50.0 inc 40.0
+sl.to len buffer -4.990234375 inc 5.0
+spreading activation ob spc size 5
+sl.to lm buffer -30.0 inc 0.0
+sl.to rm buffer -35.0 inc 0.0
+sl.to md buffer -0.78125 inc 0.0
+sl.to sl buffer 0.0 inc 0.0
+sl.to wh buffer 0.0 inc 0.0
+spreading activation ob apc size 2
+spreading activation ob dc size 2
+sl.to lf buffer 50.0 inc 0.0
+sl.to rt buffer -9.3359375 inc 0.0
+spreading activation ob bc size 3
+sl.to pd buffer 50.0 inc 0.0
+sl.to sc buffer 0.625 inc 0.0
+sl.to sm buffer 0.0 inc 0.0
+spreading activation ob gpc size 3
+spreading activation ob len size 7
+spreading activation ob obc size 2
+sl.to l buffer -25.0 inc 0.0
+sl.to g buffer -9.9609375 inc 0.0
+spreading activation ob bf size 2
+sl.to lc buffer 770.0 inc 0.0
+sl.to len buffer 0.009765625 inc 0.0
+slipnodes.size()59
 Random rndseed=826
+ob A activation 100.0
 Random rndseed=827
+ob B activation 100.0
 Random rndseed=828
+ob C activation 100.0
 Random rndseed=829
+ob D activation 93.0
 Random rndseed=830
+ob E activation 89.5
+ob F activation 32.244140625
 Random rndseed=831
+ob G activation 58.494140625
 Random rndseed=832
+ob H activation 100.0
 Random rndseed=833
+ob I activation 100.0
 Random rndseed=834
+ob J activation 100.0
 Random rndseed=835
+ob K activation 100.0
 Random rndseed=836
+ob L activation 100.0
+ob M activation 53.0
+ob N activation 45.994140625
+ob O activation 5.994140625
+ob P activation 5.994140625
+ob Q activation 5.994140625
+ob R activation 5.994140625
+ob S activation 5.994140625
+ob T activation 5.994140625
+ob U activation 5.994140625
+ob V activation 5.994140625
+ob W activation 5.994140625
+ob X activation 5.994140625
+ob Y activation 5.994140625
+ob Z activation 5.994140625
+ob 1 activation 0.0
+ob 2 activation 0.0
+ob 3 activation 0.0
+ob 4 activation 0.0
+ob 5 activation 0.0
+ob lm activation 50.0
+ob rm activation 35.0
+ob md activation 0.78125
+ob sl activation 0.0
+ob wh activation 0.0
+ob fs activation 49.12109375
+ob ls activation 0.0
 Random rndseed=837
+ob lf activation 100.0
+ob rt activation 49.3359375
 Random rndseed=838
+ob pd activation 100.0
+ob sc activation 39.375
+ob sm activation 0.0
 Random rndseed=839
+ob pg activation 78.75
+ob sg activation 0.0
+ob smg activation 0.0
+ob id activation 50.0
+ob op activation 0.0
+ob l activation 25.0
+ob g activation 9.9609375
 Random rndseed=840
+ob lc activation 100.0
 Random rndseed=841
+ob spc activation 100.0
+ob apc activation 0.0
 Random rndseed=842
+ob dc activation 100.0
 Random rndseed=843
+ob bc activation 100.0
+ob gpc activation 0.0
+ob len activation 9.990234375
+ob obc activation 50.0
 Random rndseed=844
+ob bf activation 90.0
 Random rndseed=845
 sum 6999.509881842778 chosen 4920.655446935472
 Choose codelet at index 85
@@ -2966,29 +5526,276 @@ Random rndseed=911
 Random rndseed=912
 create codelet breaker
 Random rndseed=913
+ob A conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob B conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob C conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob D conceptual_depth 50.0 ob.buffer -46.5 activation 93.0
+ob E conceptual_depth 50.0 ob.buffer -44.75 activation 89.5
+ob F conceptual_depth 50.0 ob.buffer -16.1220703125 activation 32.244140625
+ob G conceptual_depth 50.0 ob.buffer -29.2470703125 activation 58.494140625
+ob H conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob I conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob J conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob K conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob L conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob M conceptual_depth 50.0 ob.buffer -26.5 activation 53.0
+ob N conceptual_depth 50.0 ob.buffer -22.9970703125 activation 45.994140625
+ob O conceptual_depth 50.0 ob.buffer -2.9970703125 activation 5.994140625
+ob P conceptual_depth 50.0 ob.buffer -2.9970703125 activation 5.994140625
+ob Q conceptual_depth 50.0 ob.buffer -2.9970703125 activation 5.994140625
+ob R conceptual_depth 50.0 ob.buffer -2.9970703125 activation 5.994140625
+ob S conceptual_depth 50.0 ob.buffer -2.9970703125 activation 5.994140625
+ob T conceptual_depth 50.0 ob.buffer -2.9970703125 activation 5.994140625
+ob U conceptual_depth 50.0 ob.buffer -2.9970703125 activation 5.994140625
+ob V conceptual_depth 50.0 ob.buffer -2.9970703125 activation 5.994140625
+ob W conceptual_depth 50.0 ob.buffer -2.9970703125 activation 5.994140625
+ob X conceptual_depth 50.0 ob.buffer -2.9970703125 activation 5.994140625
+ob Y conceptual_depth 50.0 ob.buffer -2.9970703125 activation 5.994140625
+ob Z conceptual_depth 50.0 ob.buffer -2.9970703125 activation 5.994140625
+ob 1 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 2 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 3 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 4 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 5 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lm conceptual_depth 50.0 ob.buffer -25.0 activation 50.0
+ob rm conceptual_depth 50.0 ob.buffer -17.5 activation 35.0
+ob md conceptual_depth 50.0 ob.buffer -0.390625 activation 0.78125
+ob sl conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob wh conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob fs conceptual_depth 50.0 ob.buffer -24.560546875 activation 49.12109375
+ob ls conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lf conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob rt conceptual_depth 50.0 ob.buffer -24.66796875 activation 49.3359375
+ob pd conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob sc conceptual_depth 50.0 ob.buffer -19.6875 activation 39.375
+ob sm conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob pg conceptual_depth 50.0 ob.buffer 60.625 activation 78.75
+ob sg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob smg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob id conceptual_depth 50.0 ob.buffer -25.0 activation 50.0
+ob op conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob l conceptual_depth 50.0 ob.buffer -12.5 activation 25.0
+ob g conceptual_depth 50.0 ob.buffer 95.01953125 activation 9.9609375
+ob lc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob spc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob apc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob dc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob bc conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob gpc conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob len conceptual_depth 50.0 ob.buffer -4.9951171875 activation 9.990234375
+ob obc conceptual_depth 50.0 ob.buffer 75.0 activation 50.0
+ob bf conceptual_depth 50.0 ob.buffer -45.0 activation 90.0
+spreading activation ob A size 3
+sl.to B buffer 50.0 inc 40.0
+sl.to lc buffer 50.0 inc 80.0
+sl.to fs buffer -24.560546875 inc 25.0
+spreading activation ob B size 3
+sl.to A buffer 50.0 inc 40.0
+sl.to C buffer 50.0 inc 40.0
+sl.to lc buffer 130.0 inc 80.0
+spreading activation ob C size 3
+sl.to B buffer 90.0 inc 40.0
+sl.to D buffer -46.5 inc 40.0
+sl.to lc buffer 210.0 inc 80.0
+spreading activation ob D size 3
+spreading activation ob E size 3
+spreading activation ob F size 3
+spreading activation ob G size 3
+spreading activation ob H size 3
+sl.to G buffer -29.2470703125 inc 40.0
+sl.to I buffer -50.0 inc 40.0
+sl.to lc buffer 290.0 inc 80.0
+spreading activation ob I size 3
+sl.to H buffer -50.0 inc 40.0
+sl.to J buffer 50.0 inc 40.0
+sl.to lc buffer 370.0 inc 80.0
+spreading activation ob J size 3
+sl.to I buffer -10.0 inc 40.0
+sl.to K buffer 50.0 inc 40.0
+sl.to lc buffer 450.0 inc 80.0
+spreading activation ob K size 3
+sl.to J buffer 90.0 inc 40.0
+sl.to L buffer -50.0 inc 40.0
+sl.to lc buffer 530.0 inc 80.0
+spreading activation ob L size 3
+sl.to K buffer 90.0 inc 40.0
+sl.to M buffer -26.5 inc 40.0
+sl.to lc buffer 610.0 inc 80.0
+spreading activation ob M size 3
+spreading activation ob N size 3
+spreading activation ob O size 3
+spreading activation ob P size 3
+spreading activation ob Q size 3
+spreading activation ob R size 3
+spreading activation ob S size 3
+spreading activation ob T size 3
+spreading activation ob U size 3
+spreading activation ob V size 3
+spreading activation ob W size 3
+spreading activation ob X size 3
+spreading activation ob Y size 3
+spreading activation ob Z size 3
+spreading activation ob 1 size 2
+spreading activation ob 2 size 3
+spreading activation ob 3 size 3
+spreading activation ob 4 size 3
+spreading activation ob 5 size 2
+spreading activation ob lm size 6
+spreading activation ob rm size 6
+spreading activation ob md size 1
+spreading activation ob sl size 2
+spreading activation ob wh size 2
+spreading activation ob fs size 4
+spreading activation ob ls size 4
+spreading activation ob lf size 4
+sl.to rt buffer -24.66796875 inc 20.0
+sl.to dc buffer 50.0 inc 70.0
+sl.to lm buffer -25.0 inc 10.0
+sl.to rm buffer -17.5 inc 0.0
+spreading activation ob rt size 4
+spreading activation ob pd size 3
+sl.to sc buffer -19.6875 inc 20.0
+sl.to bc buffer -50.0 inc 70.0
+sl.to pg buffer 60.625 inc 40.0
+spreading activation ob sc size 3
+spreading activation ob sm size 2
+spreading activation ob pg size 4
+spreading activation ob sg size 4
+spreading activation ob smg size 4
+spreading activation ob id size 0
+spreading activation ob op size 0
+spreading activation ob l size 2
+spreading activation ob g size 2
+spreading activation ob lc size 28
+sl.to A buffer 90.0 inc 3.0
+sl.to B buffer 130.0 inc 3.0
+sl.to C buffer 90.0 inc 3.0
+sl.to D buffer -6.5 inc 3.0
+sl.to E buffer -44.75 inc 3.0
+sl.to F buffer -16.1220703125 inc 3.0
+sl.to G buffer 10.7529296875 inc 3.0
+sl.to H buffer -10.0 inc 3.0
+sl.to I buffer 30.0 inc 3.0
+sl.to J buffer 130.0 inc 3.0
+sl.to K buffer 130.0 inc 3.0
+sl.to L buffer -10.0 inc 3.0
+sl.to M buffer 13.5 inc 3.0
+sl.to N buffer -22.9970703125 inc 3.0
+sl.to O buffer -2.9970703125 inc 3.0
+sl.to P buffer -2.9970703125 inc 3.0
+sl.to Q buffer -2.9970703125 inc 3.0
+sl.to R buffer -2.9970703125 inc 3.0
+sl.to S buffer -2.9970703125 inc 3.0
+sl.to T buffer -2.9970703125 inc 3.0
+sl.to U buffer -2.9970703125 inc 3.0
+sl.to V buffer -2.9970703125 inc 3.0
+sl.to W buffer -2.9970703125 inc 3.0
+sl.to X buffer -2.9970703125 inc 3.0
+sl.to Y buffer -2.9970703125 inc 3.0
+sl.to Z buffer -2.9970703125 inc 3.0
+sl.to bf buffer -45.0 inc 40.0
+sl.to len buffer -4.9951171875 inc 5.0
+spreading activation ob spc size 5
+sl.to lm buffer -15.0 inc 0.0
+sl.to rm buffer -17.5 inc 0.0
+sl.to md buffer -0.390625 inc 0.0
+sl.to sl buffer 0.0 inc 0.0
+sl.to wh buffer 100.0 inc 0.0
+spreading activation ob apc size 2
+spreading activation ob dc size 2
+sl.to lf buffer 50.0 inc 0.0
+sl.to rt buffer -4.66796875 inc 0.0
+spreading activation ob bc size 3
+sl.to pd buffer 50.0 inc 0.0
+sl.to sc buffer 0.3125 inc 0.0
+sl.to sm buffer 0.0 inc 0.0
+spreading activation ob gpc size 3
+spreading activation ob len size 7
+spreading activation ob obc size 2
+spreading activation ob bf size 2
+slipnodes.size()59
 Random rndseed=914
+ob A activation 100.0
 Random rndseed=915
+ob B activation 100.0
 Random rndseed=916
+ob C activation 100.0
 Random rndseed=917
+ob D activation 100.0
+ob E activation 47.75
+ob F activation 19.1220703125
 Random rndseed=918
+ob G activation 72.2470703125
 Random rndseed=919
+ob H activation 100.0
 Random rndseed=920
+ob I activation 100.0
 Random rndseed=921
+ob J activation 100.0
 Random rndseed=922
+ob K activation 100.0
 Random rndseed=923
+ob L activation 100.0
 Random rndseed=924
+ob M activation 69.5
+ob N activation 25.9970703125
+ob O activation 5.9970703125
+ob P activation 5.9970703125
+ob Q activation 5.9970703125
+ob R activation 5.9970703125
+ob S activation 5.9970703125
+ob T activation 5.9970703125
+ob U activation 5.9970703125
+ob V activation 5.9970703125
+ob W activation 5.9970703125
+ob X activation 5.9970703125
+ob Y activation 5.9970703125
+ob Z activation 5.9970703125
+ob 1 activation 0.0
+ob 2 activation 0.0
+ob 3 activation 0.0
+ob 4 activation 0.0
+ob 5 activation 0.0
+ob lm activation 35.0
+ob rm activation 17.5
+ob md activation 0.390625
+ob sl activation 0.0
 Random rndseed=925
+ob wh activation 100.0
+ob fs activation 49.560546875
+ob ls activation 0.0
 Random rndseed=926
+ob lf activation 100.0
+ob rt activation 44.66796875
 Random rndseed=927
+ob pd activation 100.0
+ob sc activation 39.6875
+ob sm activation 0.0
 Random rndseed=928
+ob pg activation 100.0
+ob sg activation 0.0
+ob smg activation 0.0
+ob id activation 25.0
+ob op activation 0.0
+ob l activation 12.5
 Random rndseed=929
+ob g activation 100.0
 Random rndseed=930
+ob lc activation 100.0
 Random rndseed=931
+ob spc activation 100.0
+ob apc activation 0.0
 Random rndseed=932
+ob dc activation 100.0
 Random rndseed=933
+ob bc activation 100.0
 Random rndseed=934
+ob gpc activation 100.0
+ob len activation 9.9951171875
 Random rndseed=935
+ob obc activation 100.0
 Random rndseed=936
+ob bf activation 85.0
 Random rndseed=937
 sum 18726.53065303869 chosen 3670.4000079955836
 Choose codelet at index 55
@@ -3179,32 +5986,295 @@ Random rndseed=989
 Random rndseed=990
 Random rndseed=991
 create codelet breaker
+ob A conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob B conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob C conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob D conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob E conceptual_depth 50.0 ob.buffer -23.875 activation 47.75
+ob F conceptual_depth 50.0 ob.buffer -9.56103515625 activation 19.1220703125
+ob G conceptual_depth 50.0 ob.buffer -36.12353515625 activation 72.2470703125
+ob H conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob I conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob J conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob K conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob L conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob M conceptual_depth 50.0 ob.buffer -34.75 activation 69.5
+ob N conceptual_depth 50.0 ob.buffer -12.99853515625 activation 25.9970703125
+ob O conceptual_depth 50.0 ob.buffer -2.99853515625 activation 5.9970703125
+ob P conceptual_depth 50.0 ob.buffer -2.99853515625 activation 5.9970703125
+ob Q conceptual_depth 50.0 ob.buffer -2.99853515625 activation 5.9970703125
+ob R conceptual_depth 50.0 ob.buffer -2.99853515625 activation 5.9970703125
+ob S conceptual_depth 50.0 ob.buffer -2.99853515625 activation 5.9970703125
+ob T conceptual_depth 50.0 ob.buffer -2.99853515625 activation 5.9970703125
+ob U conceptual_depth 50.0 ob.buffer -2.99853515625 activation 5.9970703125
+ob V conceptual_depth 50.0 ob.buffer -2.99853515625 activation 5.9970703125
+ob W conceptual_depth 50.0 ob.buffer -2.99853515625 activation 5.9970703125
+ob X conceptual_depth 50.0 ob.buffer -2.99853515625 activation 5.9970703125
+ob Y conceptual_depth 50.0 ob.buffer -2.99853515625 activation 5.9970703125
+ob Z conceptual_depth 50.0 ob.buffer -2.99853515625 activation 5.9970703125
+ob 1 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 2 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 3 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 4 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 5 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lm conceptual_depth 50.0 ob.buffer -17.5 activation 35.0
+ob rm conceptual_depth 50.0 ob.buffer 91.25 activation 17.5
+ob md conceptual_depth 50.0 ob.buffer -0.1953125 activation 0.390625
+ob sl conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob wh conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob fs conceptual_depth 50.0 ob.buffer -24.7802734375 activation 49.560546875
+ob ls conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lf conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob rt conceptual_depth 50.0 ob.buffer -22.333984375 activation 44.66796875
+ob pd conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob sc conceptual_depth 50.0 ob.buffer -19.84375 activation 39.6875
+ob sm conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob pg conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob sg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob smg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob id conceptual_depth 50.0 ob.buffer -12.5 activation 25.0
+ob op conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob l conceptual_depth 50.0 ob.buffer 93.75 activation 12.5
+ob g conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob lc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob spc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob apc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob dc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob bc conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob gpc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob len conceptual_depth 50.0 ob.buffer -4.99755859375 activation 9.9951171875
+ob obc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob bf conceptual_depth 50.0 ob.buffer -42.5 activation 85.0
+spreading activation ob A size 3
+sl.to B buffer -50.0 inc 40.0
+sl.to lc buffer 50.0 inc 80.0
+sl.to fs buffer -24.7802734375 inc 25.0
+spreading activation ob B size 3
+sl.to A buffer -50.0 inc 40.0
+sl.to C buffer -50.0 inc 40.0
+sl.to lc buffer 130.0 inc 80.0
+spreading activation ob C size 3
+sl.to B buffer -10.0 inc 40.0
+sl.to D buffer 50.0 inc 40.0
+sl.to lc buffer 210.0 inc 80.0
+spreading activation ob D size 3
+sl.to C buffer -10.0 inc 40.0
+sl.to E buffer -23.875 inc 40.0
+sl.to lc buffer 290.0 inc 80.0
+spreading activation ob E size 3
+spreading activation ob F size 3
+spreading activation ob G size 3
+spreading activation ob H size 3
+sl.to G buffer -36.12353515625 inc 40.0
+sl.to I buffer -50.0 inc 40.0
+sl.to lc buffer 370.0 inc 80.0
+spreading activation ob I size 3
+sl.to H buffer -50.0 inc 40.0
+sl.to J buffer 50.0 inc 40.0
+sl.to lc buffer 450.0 inc 80.0
+spreading activation ob J size 3
+sl.to I buffer -10.0 inc 40.0
+sl.to K buffer 50.0 inc 40.0
+sl.to lc buffer 530.0 inc 80.0
+spreading activation ob K size 3
+sl.to J buffer 90.0 inc 40.0
+sl.to L buffer -50.0 inc 40.0
+sl.to lc buffer 610.0 inc 80.0
+spreading activation ob L size 3
+sl.to K buffer 90.0 inc 40.0
+sl.to M buffer -34.75 inc 40.0
+sl.to lc buffer 690.0 inc 80.0
+spreading activation ob M size 3
+spreading activation ob N size 3
+spreading activation ob O size 3
+spreading activation ob P size 3
+spreading activation ob Q size 3
+spreading activation ob R size 3
+spreading activation ob S size 3
+spreading activation ob T size 3
+spreading activation ob U size 3
+spreading activation ob V size 3
+spreading activation ob W size 3
+spreading activation ob X size 3
+spreading activation ob Y size 3
+spreading activation ob Z size 3
+spreading activation ob 1 size 2
+spreading activation ob 2 size 3
+spreading activation ob 3 size 3
+spreading activation ob 4 size 3
+spreading activation ob 5 size 2
+spreading activation ob lm size 6
+spreading activation ob rm size 6
+spreading activation ob md size 1
+spreading activation ob sl size 2
+spreading activation ob wh size 2
+sl.to spc buffer 50.0 inc 70.0
+sl.to sl buffer 0.0 inc 10.0
+spreading activation ob fs size 4
+spreading activation ob ls size 4
+spreading activation ob lf size 4
+sl.to rt buffer -22.333984375 inc 20.0
+sl.to dc buffer 50.0 inc 70.0
+sl.to lm buffer -17.5 inc 10.0
+sl.to rm buffer 91.25 inc 0.0
+spreading activation ob rt size 4
+spreading activation ob pd size 3
+sl.to sc buffer -19.84375 inc 20.0
+sl.to bc buffer -50.0 inc 70.0
+sl.to pg buffer 50.0 inc 40.0
+spreading activation ob sc size 3
+spreading activation ob sm size 2
+spreading activation ob pg size 4
+sl.to len buffer -4.99755859375 inc 5.0
+sl.to sg buffer 0.0 inc 20.0
+sl.to gpc buffer 50.0 inc 70.0
+sl.to pd buffer 50.0 inc 10.0
+spreading activation ob sg size 4
+spreading activation ob smg size 4
+spreading activation ob id size 0
+spreading activation ob op size 0
+spreading activation ob l size 2
+spreading activation ob g size 2
+sl.to obc buffer 50.0 inc 90.0
+sl.to l buffer 93.75 inc 10.0
+spreading activation ob lc size 28
+sl.to A buffer -10.0 inc 3.0
+sl.to B buffer 30.0 inc 3.0
+sl.to C buffer 30.0 inc 3.0
+sl.to D buffer 90.0 inc 3.0
+sl.to E buffer 16.125 inc 3.0
+sl.to F buffer -9.56103515625 inc 3.0
+sl.to G buffer 3.87646484375 inc 3.0
+sl.to H buffer -10.0 inc 3.0
+sl.to I buffer 30.0 inc 3.0
+sl.to J buffer 130.0 inc 3.0
+sl.to K buffer 130.0 inc 3.0
+sl.to L buffer -10.0 inc 3.0
+sl.to M buffer 5.25 inc 3.0
+sl.to N buffer -12.99853515625 inc 3.0
+sl.to O buffer -2.99853515625 inc 3.0
+sl.to P buffer -2.99853515625 inc 3.0
+sl.to Q buffer -2.99853515625 inc 3.0
+sl.to R buffer -2.99853515625 inc 3.0
+sl.to S buffer -2.99853515625 inc 3.0
+sl.to T buffer -2.99853515625 inc 3.0
+sl.to U buffer -2.99853515625 inc 3.0
+sl.to V buffer -2.99853515625 inc 3.0
+sl.to W buffer -2.99853515625 inc 3.0
+sl.to X buffer -2.99853515625 inc 3.0
+sl.to Y buffer -2.99853515625 inc 3.0
+sl.to Z buffer -2.99853515625 inc 3.0
+sl.to bf buffer -42.5 inc 40.0
+sl.to len buffer 0.00244140625 inc 5.0
+spreading activation ob spc size 5
+sl.to lm buffer -7.5 inc 0.0
+sl.to rm buffer 91.25 inc 0.0
+sl.to md buffer -0.1953125 inc 0.0
+sl.to sl buffer 10.0 inc 0.0
+sl.to wh buffer 50.0 inc 0.0
+spreading activation ob apc size 2
+spreading activation ob dc size 2
+sl.to lf buffer 50.0 inc 0.0
+sl.to rt buffer -2.333984375 inc 0.0
+spreading activation ob bc size 3
+sl.to pd buffer 60.0 inc 0.0
+sl.to sc buffer 0.15625 inc 0.0
+sl.to sm buffer 0.0 inc 0.0
+spreading activation ob gpc size 3
+sl.to pg buffer 90.0 inc 0.0
+sl.to sg buffer 20.0 inc 0.0
+sl.to smg buffer 0.0 inc 0.0
+spreading activation ob len size 7
+spreading activation ob obc size 2
+sl.to l buffer 103.75 inc 0.0
+sl.to g buffer 50.0 inc 0.0
+spreading activation ob bf size 2
+slipnodes.size()59
 Random rndseed=992
+ob A activation 100.0
 Random rndseed=993
+ob B activation 100.0
 Random rndseed=994
+ob C activation 100.0
 Random rndseed=995
+ob D activation 100.0
 Random rndseed=996
+ob E activation 66.875
+ob F activation 12.56103515625
 Random rndseed=997
+ob G activation 79.12353515625
 Random rndseed=998
+ob H activation 100.0
 Random rndseed=999
+ob I activation 100.0
 Random rndseed=1000
+ob J activation 100.0
 Random rndseed=1001
+ob K activation 100.0
 Random rndseed=1002
+ob L activation 100.0
 Random rndseed=1003
+ob M activation 77.75
+ob N activation 15.99853515625
+ob O activation 5.99853515625
+ob P activation 5.99853515625
+ob Q activation 5.99853515625
+ob R activation 5.99853515625
+ob S activation 5.99853515625
+ob T activation 5.99853515625
+ob U activation 5.99853515625
+ob V activation 5.99853515625
+ob W activation 5.99853515625
+ob X activation 5.99853515625
+ob Y activation 5.99853515625
+ob Z activation 5.99853515625
+ob 1 activation 0.0
+ob 2 activation 0.0
+ob 3 activation 0.0
+ob 4 activation 0.0
+ob 5 activation 0.0
+ob lm activation 27.5
 Random rndseed=1004
+ob rm activation 100.0
+ob md activation 0.1953125
+ob sl activation 10.0
 Random rndseed=1005
+ob wh activation 100.0
+ob fs activation 49.7802734375
+ob ls activation 0.0
 Random rndseed=1006
+ob lf activation 100.0
+ob rt activation 42.333984375
 Random rndseed=1007
+ob pd activation 100.0
+ob sc activation 39.84375
+ob sm activation 0.0
 Random rndseed=1008
+ob pg activation 100.0
+ob sg activation 20.0
+ob smg activation 0.0
+ob id activation 12.5
+ob op activation 0.0
 Random rndseed=1009
+ob l activation 100.0
 Random rndseed=1010
+ob g activation 100.0
 Random rndseed=1011
+ob lc activation 100.0
 Random rndseed=1012
+ob spc activation 100.0
+ob apc activation 0.0
 Random rndseed=1013
+ob dc activation 100.0
 Random rndseed=1014
+ob bc activation 100.0
 Random rndseed=1015
+ob gpc activation 100.0
+ob len activation 14.99755859375
 Random rndseed=1016
+ob obc activation 100.0
 Random rndseed=1017
+ob bf activation 100.0
 Random rndseed=1018
 sum 146814.19209786586 chosen 19085.844972722563
 Choose codelet at index 56
@@ -3424,31 +6494,304 @@ Random rndseed=1078
 Random rndseed=1079
 Random rndseed=1080
 create codelet breaker
+ob A conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob B conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob C conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob D conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob E conceptual_depth 50.0 ob.buffer -33.4375 activation 66.875
+ob F conceptual_depth 50.0 ob.buffer -6.280517578125 activation 12.56103515625
+ob G conceptual_depth 50.0 ob.buffer -39.561767578125 activation 79.12353515625
+ob H conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob I conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob J conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob K conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob L conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob M conceptual_depth 50.0 ob.buffer -38.875 activation 77.75
+ob N conceptual_depth 50.0 ob.buffer -7.999267578125 activation 15.99853515625
+ob O conceptual_depth 50.0 ob.buffer -2.999267578125 activation 5.99853515625
+ob P conceptual_depth 50.0 ob.buffer -2.999267578125 activation 5.99853515625
+ob Q conceptual_depth 50.0 ob.buffer -2.999267578125 activation 5.99853515625
+ob R conceptual_depth 50.0 ob.buffer -2.999267578125 activation 5.99853515625
+ob S conceptual_depth 50.0 ob.buffer -2.999267578125 activation 5.99853515625
+ob T conceptual_depth 50.0 ob.buffer -2.999267578125 activation 5.99853515625
+ob U conceptual_depth 50.0 ob.buffer -2.999267578125 activation 5.99853515625
+ob V conceptual_depth 50.0 ob.buffer -2.999267578125 activation 5.99853515625
+ob W conceptual_depth 50.0 ob.buffer -2.999267578125 activation 5.99853515625
+ob X conceptual_depth 50.0 ob.buffer -2.999267578125 activation 5.99853515625
+ob Y conceptual_depth 50.0 ob.buffer -2.999267578125 activation 5.99853515625
+ob Z conceptual_depth 50.0 ob.buffer -2.999267578125 activation 5.99853515625
+ob 1 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 2 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 3 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 4 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 5 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lm conceptual_depth 50.0 ob.buffer -13.75 activation 27.5
+ob rm conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob md conceptual_depth 50.0 ob.buffer -0.09765625 activation 0.1953125
+ob sl conceptual_depth 50.0 ob.buffer -5.0 activation 10.0
+ob wh conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob fs conceptual_depth 50.0 ob.buffer -24.89013671875 activation 49.7802734375
+ob ls conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lf conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob rt conceptual_depth 50.0 ob.buffer -21.1669921875 activation 42.333984375
+ob pd conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob sc conceptual_depth 50.0 ob.buffer -19.921875 activation 39.84375
+ob sm conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob pg conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob sg conceptual_depth 50.0 ob.buffer -10.0 activation 20.0
+ob smg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob id conceptual_depth 50.0 ob.buffer -6.25 activation 12.5
+ob op conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob l conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob g conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob lc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob spc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob apc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob dc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob bc conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob gpc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob len conceptual_depth 50.0 ob.buffer -7.498779296875 activation 14.99755859375
+ob obc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob bf conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+spreading activation ob A size 3
+sl.to B buffer 50.0 inc 40.0
+sl.to lc buffer 50.0 inc 80.0
+sl.to fs buffer -24.89013671875 inc 25.0
+spreading activation ob B size 3
+sl.to A buffer 50.0 inc 40.0
+sl.to C buffer 50.0 inc 40.0
+sl.to lc buffer 130.0 inc 80.0
+spreading activation ob C size 3
+sl.to B buffer 90.0 inc 40.0
+sl.to D buffer -50.0 inc 40.0
+sl.to lc buffer 210.0 inc 80.0
+spreading activation ob D size 3
+sl.to C buffer 90.0 inc 40.0
+sl.to E buffer -33.4375 inc 40.0
+sl.to lc buffer 290.0 inc 80.0
+spreading activation ob E size 3
+spreading activation ob F size 3
+spreading activation ob G size 3
+spreading activation ob H size 3
+sl.to G buffer -39.561767578125 inc 40.0
+sl.to I buffer 50.0 inc 40.0
+sl.to lc buffer 370.0 inc 80.0
+spreading activation ob I size 3
+sl.to H buffer -50.0 inc 40.0
+sl.to J buffer 50.0 inc 40.0
+sl.to lc buffer 450.0 inc 80.0
+spreading activation ob J size 3
+sl.to I buffer 90.0 inc 40.0
+sl.to K buffer -50.0 inc 40.0
+sl.to lc buffer 530.0 inc 80.0
+spreading activation ob K size 3
+sl.to J buffer 90.0 inc 40.0
+sl.to L buffer -50.0 inc 40.0
+sl.to lc buffer 610.0 inc 80.0
+spreading activation ob L size 3
+sl.to K buffer -10.0 inc 40.0
+sl.to M buffer -38.875 inc 40.0
+sl.to lc buffer 690.0 inc 80.0
+spreading activation ob M size 3
+spreading activation ob N size 3
+spreading activation ob O size 3
+spreading activation ob P size 3
+spreading activation ob Q size 3
+spreading activation ob R size 3
+spreading activation ob S size 3
+spreading activation ob T size 3
+spreading activation ob U size 3
+spreading activation ob V size 3
+spreading activation ob W size 3
+spreading activation ob X size 3
+spreading activation ob Y size 3
+spreading activation ob Z size 3
+spreading activation ob 1 size 2
+spreading activation ob 2 size 3
+spreading activation ob 3 size 3
+spreading activation ob 4 size 3
+spreading activation ob 5 size 2
+spreading activation ob lm size 6
+spreading activation ob rm size 6
+sl.to lm buffer -13.75 inc 20.0
+sl.to spc buffer 50.0 inc 70.0
+sl.to rt buffer -21.1669921875 inc 10.0
+sl.to lf buffer 50.0 inc 0.0
+sl.to fs buffer 0.10986328125 inc 0.0
+sl.to ls buffer 0.0 inc 0.0
+spreading activation ob md size 1
+spreading activation ob sl size 2
+spreading activation ob wh size 2
+sl.to spc buffer 120.0 inc 70.0
+sl.to sl buffer -5.0 inc 10.0
+spreading activation ob fs size 4
+spreading activation ob ls size 4
+spreading activation ob lf size 4
+sl.to rt buffer -11.1669921875 inc 20.0
+sl.to dc buffer 50.0 inc 70.0
+sl.to lm buffer 6.25 inc 10.0
+sl.to rm buffer -50.0 inc 0.0
+spreading activation ob rt size 4
+spreading activation ob pd size 3
+sl.to sc buffer -19.921875 inc 20.0
+sl.to bc buffer -50.0 inc 70.0
+sl.to pg buffer 50.0 inc 40.0
+spreading activation ob sc size 3
+spreading activation ob sm size 2
+spreading activation ob pg size 4
+sl.to len buffer -7.498779296875 inc 5.0
+sl.to sg buffer -10.0 inc 20.0
+sl.to gpc buffer 50.0 inc 70.0
+sl.to pd buffer 50.0 inc 10.0
+spreading activation ob sg size 4
+spreading activation ob smg size 4
+spreading activation ob id size 0
+spreading activation ob op size 0
+spreading activation ob l size 2
+sl.to obc buffer 50.0 inc 30.0
+sl.to g buffer 50.0 inc 10.0
+spreading activation ob g size 2
+sl.to obc buffer 80.0 inc 90.0
+sl.to l buffer -50.0 inc 10.0
+spreading activation ob lc size 28
+sl.to A buffer 90.0 inc 3.0
+sl.to B buffer 130.0 inc 3.0
+sl.to C buffer 130.0 inc 3.0
+sl.to D buffer -10.0 inc 3.0
+sl.to E buffer 6.5625 inc 3.0
+sl.to F buffer -6.280517578125 inc 3.0
+sl.to G buffer 0.438232421875 inc 3.0
+sl.to H buffer -10.0 inc 3.0
+sl.to I buffer 130.0 inc 3.0
+sl.to J buffer 130.0 inc 3.0
+sl.to K buffer 30.0 inc 3.0
+sl.to L buffer -10.0 inc 3.0
+sl.to M buffer 1.125 inc 3.0
+sl.to N buffer -7.999267578125 inc 3.0
+sl.to O buffer -2.999267578125 inc 3.0
+sl.to P buffer -2.999267578125 inc 3.0
+sl.to Q buffer -2.999267578125 inc 3.0
+sl.to R buffer -2.999267578125 inc 3.0
+sl.to S buffer -2.999267578125 inc 3.0
+sl.to T buffer -2.999267578125 inc 3.0
+sl.to U buffer -2.999267578125 inc 3.0
+sl.to V buffer -2.999267578125 inc 3.0
+sl.to W buffer -2.999267578125 inc 3.0
+sl.to X buffer -2.999267578125 inc 3.0
+sl.to Y buffer -2.999267578125 inc 3.0
+sl.to Z buffer -2.999267578125 inc 3.0
+sl.to bf buffer -50.0 inc 40.0
+sl.to len buffer -2.498779296875 inc 5.0
+spreading activation ob spc size 5
+sl.to lm buffer 16.25 inc 0.0
+sl.to rm buffer -50.0 inc 0.0
+sl.to md buffer -0.09765625 inc 0.0
+sl.to sl buffer 5.0 inc 0.0
+sl.to wh buffer 50.0 inc 0.0
+spreading activation ob apc size 2
+spreading activation ob dc size 2
+sl.to lf buffer 50.0 inc 0.0
+sl.to rt buffer 8.8330078125 inc 0.0
+spreading activation ob bc size 3
+sl.to pd buffer 60.0 inc 0.0
+sl.to sc buffer 0.078125 inc 0.0
+sl.to sm buffer 0.0 inc 0.0
+spreading activation ob gpc size 3
+sl.to pg buffer 90.0 inc 0.0
+sl.to sg buffer 10.0 inc 0.0
+sl.to smg buffer 0.0 inc 0.0
+spreading activation ob len size 7
+spreading activation ob obc size 2
+sl.to l buffer -40.0 inc 0.0
+sl.to g buffer 60.0 inc 0.0
+spreading activation ob bf size 2
+sl.to lc buffer 770.0 inc 0.0
+sl.to len buffer 2.501220703125 inc 0.0
+slipnodes.size()59
 Random rndseed=1081
+ob A activation 100.0
 Random rndseed=1082
+ob B activation 100.0
 Random rndseed=1083
+ob C activation 100.0
 Random rndseed=1084
+ob D activation 100.0
 Random rndseed=1085
+ob E activation 100.0
+ob F activation 9.280517578125
 Random rndseed=1086
+ob G activation 100.0
 Random rndseed=1087
+ob H activation 100.0
 Random rndseed=1088
+ob I activation 100.0
 Random rndseed=1089
+ob J activation 100.0
 Random rndseed=1090
+ob K activation 100.0
 Random rndseed=1091
+ob L activation 100.0
 Random rndseed=1092
+ob M activation 81.875
+ob N activation 10.999267578125
+ob O activation 5.999267578125
+ob P activation 5.999267578125
+ob Q activation 5.999267578125
+ob R activation 5.999267578125
+ob S activation 5.999267578125
+ob T activation 5.999267578125
+ob U activation 5.999267578125
+ob V activation 5.999267578125
+ob W activation 5.999267578125
+ob X activation 5.999267578125
+ob Y activation 5.999267578125
+ob Z activation 5.999267578125
+ob 1 activation 0.0
+ob 2 activation 0.0
+ob 3 activation 0.0
+ob 4 activation 0.0
+ob 5 activation 0.0
+ob lm activation 43.75
+ob rm activation 50.0
+ob md activation 0.09765625
+ob sl activation 15.0
 Random rndseed=1093
+ob wh activation 100.0
+ob fs activation 49.89013671875
+ob ls activation 0.0
 Random rndseed=1094
+ob lf activation 100.0
+ob rt activation 51.1669921875
 Random rndseed=1095
+ob pd activation 100.0
+ob sc activation 39.921875
+ob sm activation 0.0
 Random rndseed=1096
+ob pg activation 100.0
+ob sg activation 30.0
+ob smg activation 0.0
+ob id activation 6.25
+ob op activation 0.0
 Random rndseed=1097
+ob l activation 60.0
 Random rndseed=1098
+ob g activation 100.0
 Random rndseed=1099
+ob lc activation 100.0
 Random rndseed=1100
+ob spc activation 100.0
+ob apc activation 0.0
 Random rndseed=1101
+ob dc activation 100.0
 Random rndseed=1102
+ob bc activation 100.0
 Random rndseed=1103
+ob gpc activation 100.0
+ob len activation 17.498779296875
 Random rndseed=1104
+ob obc activation 100.0
 Random rndseed=1105
+ob bf activation 90.0
 Random rndseed=1106
 sum 220660.7959250796 chosen 176969.95833191386
 Choose codelet at index 89
@@ -3647,31 +6990,300 @@ Random rndseed=1159
 Random rndseed=1160
 Random rndseed=1161
 create codelet breaker
+ob A conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob B conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob C conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob D conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob E conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob F conceptual_depth 50.0 ob.buffer -4.6402587890625 activation 9.280517578125
+ob G conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob H conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob I conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob J conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob K conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob L conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob M conceptual_depth 50.0 ob.buffer -40.9375 activation 81.875
+ob N conceptual_depth 50.0 ob.buffer -5.4996337890625 activation 10.999267578125
+ob O conceptual_depth 50.0 ob.buffer -2.9996337890625 activation 5.999267578125
+ob P conceptual_depth 50.0 ob.buffer -2.9996337890625 activation 5.999267578125
+ob Q conceptual_depth 50.0 ob.buffer -2.9996337890625 activation 5.999267578125
+ob R conceptual_depth 50.0 ob.buffer -2.9996337890625 activation 5.999267578125
+ob S conceptual_depth 50.0 ob.buffer -2.9996337890625 activation 5.999267578125
+ob T conceptual_depth 50.0 ob.buffer -2.9996337890625 activation 5.999267578125
+ob U conceptual_depth 50.0 ob.buffer -2.9996337890625 activation 5.999267578125
+ob V conceptual_depth 50.0 ob.buffer -2.9996337890625 activation 5.999267578125
+ob W conceptual_depth 50.0 ob.buffer -2.9996337890625 activation 5.999267578125
+ob X conceptual_depth 50.0 ob.buffer -2.9996337890625 activation 5.999267578125
+ob Y conceptual_depth 50.0 ob.buffer -2.9996337890625 activation 5.999267578125
+ob Z conceptual_depth 50.0 ob.buffer -2.9996337890625 activation 5.999267578125
+ob 1 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 2 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 3 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 4 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 5 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lm conceptual_depth 50.0 ob.buffer -21.875 activation 43.75
+ob rm conceptual_depth 50.0 ob.buffer -25.0 activation 50.0
+ob md conceptual_depth 50.0 ob.buffer -0.048828125 activation 0.09765625
+ob sl conceptual_depth 50.0 ob.buffer -7.5 activation 15.0
+ob wh conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob fs conceptual_depth 50.0 ob.buffer -24.945068359375 activation 49.89013671875
+ob ls conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lf conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob rt conceptual_depth 50.0 ob.buffer -25.58349609375 activation 51.1669921875
+ob pd conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob sc conceptual_depth 50.0 ob.buffer -19.9609375 activation 39.921875
+ob sm conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob pg conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob sg conceptual_depth 50.0 ob.buffer -15.0 activation 30.0
+ob smg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob id conceptual_depth 50.0 ob.buffer -3.125 activation 6.25
+ob op conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob l conceptual_depth 50.0 ob.buffer -30.0 activation 60.0
+ob g conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob lc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob spc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob apc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob dc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob bc conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob gpc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob len conceptual_depth 50.0 ob.buffer -8.7493896484375 activation 17.498779296875
+ob obc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob bf conceptual_depth 50.0 ob.buffer -45.0 activation 90.0
+spreading activation ob A size 3
+sl.to B buffer 50.0 inc 40.0
+sl.to lc buffer 50.0 inc 80.0
+sl.to fs buffer -24.945068359375 inc 25.0
+spreading activation ob B size 3
+sl.to A buffer -50.0 inc 40.0
+sl.to C buffer 50.0 inc 40.0
+sl.to lc buffer 130.0 inc 80.0
+spreading activation ob C size 3
+sl.to B buffer 90.0 inc 40.0
+sl.to D buffer -50.0 inc 40.0
+sl.to lc buffer 210.0 inc 80.0
+spreading activation ob D size 3
+sl.to C buffer 90.0 inc 40.0
+sl.to E buffer -50.0 inc 40.0
+sl.to lc buffer 290.0 inc 80.0
+spreading activation ob E size 3
+sl.to D buffer -10.0 inc 40.0
+sl.to F buffer -4.6402587890625 inc 40.0
+sl.to lc buffer 370.0 inc 80.0
+spreading activation ob F size 3
+spreading activation ob G size 3
+sl.to F buffer 35.3597412109375 inc 40.0
+sl.to H buffer -50.0 inc 40.0
+sl.to lc buffer 450.0 inc 80.0
+spreading activation ob H size 3
+sl.to G buffer -50.0 inc 40.0
+sl.to I buffer 50.0 inc 40.0
+sl.to lc buffer 530.0 inc 80.0
+spreading activation ob I size 3
+sl.to H buffer -10.0 inc 40.0
+sl.to J buffer 50.0 inc 40.0
+sl.to lc buffer 610.0 inc 80.0
+spreading activation ob J size 3
+sl.to I buffer 90.0 inc 40.0
+sl.to K buffer -50.0 inc 40.0
+sl.to lc buffer 690.0 inc 80.0
+spreading activation ob K size 3
+sl.to J buffer 90.0 inc 40.0
+sl.to L buffer -50.0 inc 40.0
+sl.to lc buffer 770.0 inc 80.0
+spreading activation ob L size 3
+sl.to K buffer -10.0 inc 40.0
+sl.to M buffer -40.9375 inc 40.0
+sl.to lc buffer 850.0 inc 80.0
+spreading activation ob M size 3
+spreading activation ob N size 3
+spreading activation ob O size 3
+spreading activation ob P size 3
+spreading activation ob Q size 3
+spreading activation ob R size 3
+spreading activation ob S size 3
+spreading activation ob T size 3
+spreading activation ob U size 3
+spreading activation ob V size 3
+spreading activation ob W size 3
+spreading activation ob X size 3
+spreading activation ob Y size 3
+spreading activation ob Z size 3
+spreading activation ob 1 size 2
+spreading activation ob 2 size 3
+spreading activation ob 3 size 3
+spreading activation ob 4 size 3
+spreading activation ob 5 size 2
+spreading activation ob lm size 6
+spreading activation ob rm size 6
+spreading activation ob md size 1
+spreading activation ob sl size 2
+spreading activation ob wh size 2
+sl.to spc buffer 50.0 inc 70.0
+sl.to sl buffer -7.5 inc 10.0
+spreading activation ob fs size 4
+spreading activation ob ls size 4
+spreading activation ob lf size 4
+sl.to rt buffer -25.58349609375 inc 20.0
+sl.to dc buffer 50.0 inc 70.0
+sl.to lm buffer -21.875 inc 10.0
+sl.to rm buffer -25.0 inc 0.0
+spreading activation ob rt size 4
+spreading activation ob pd size 3
+sl.to sc buffer -19.9609375 inc 20.0
+sl.to bc buffer -50.0 inc 70.0
+sl.to pg buffer 50.0 inc 40.0
+spreading activation ob sc size 3
+spreading activation ob sm size 2
+spreading activation ob pg size 4
+sl.to len buffer -8.7493896484375 inc 5.0
+sl.to sg buffer -15.0 inc 20.0
+sl.to gpc buffer 50.0 inc 70.0
+sl.to pd buffer 50.0 inc 10.0
+spreading activation ob sg size 4
+spreading activation ob smg size 4
+spreading activation ob id size 0
+spreading activation ob op size 0
+spreading activation ob l size 2
+spreading activation ob g size 2
+sl.to obc buffer 50.0 inc 90.0
+sl.to l buffer -30.0 inc 10.0
+spreading activation ob lc size 28
+sl.to A buffer -10.0 inc 3.0
+sl.to B buffer 130.0 inc 3.0
+sl.to C buffer 130.0 inc 3.0
+sl.to D buffer 30.0 inc 3.0
+sl.to E buffer -10.0 inc 3.0
+sl.to F buffer 75.3597412109375 inc 3.0
+sl.to G buffer -10.0 inc 3.0
+sl.to H buffer 30.0 inc 3.0
+sl.to I buffer 130.0 inc 3.0
+sl.to J buffer 130.0 inc 3.0
+sl.to K buffer 30.0 inc 3.0
+sl.to L buffer -10.0 inc 3.0
+sl.to M buffer -0.9375 inc 3.0
+sl.to N buffer -5.4996337890625 inc 3.0
+sl.to O buffer -2.9996337890625 inc 3.0
+sl.to P buffer -2.9996337890625 inc 3.0
+sl.to Q buffer -2.9996337890625 inc 3.0
+sl.to R buffer -2.9996337890625 inc 3.0
+sl.to S buffer -2.9996337890625 inc 3.0
+sl.to T buffer -2.9996337890625 inc 3.0
+sl.to U buffer -2.9996337890625 inc 3.0
+sl.to V buffer -2.9996337890625 inc 3.0
+sl.to W buffer -2.9996337890625 inc 3.0
+sl.to X buffer -2.9996337890625 inc 3.0
+sl.to Y buffer -2.9996337890625 inc 3.0
+sl.to Z buffer -2.9996337890625 inc 3.0
+sl.to bf buffer -45.0 inc 40.0
+sl.to len buffer -3.7493896484375 inc 5.0
+spreading activation ob spc size 5
+sl.to lm buffer -11.875 inc 0.0
+sl.to rm buffer -25.0 inc 0.0
+sl.to md buffer -0.048828125 inc 0.0
+sl.to sl buffer 2.5 inc 0.0
+sl.to wh buffer 50.0 inc 0.0
+spreading activation ob apc size 2
+spreading activation ob dc size 2
+sl.to lf buffer 50.0 inc 0.0
+sl.to rt buffer -5.58349609375 inc 0.0
+spreading activation ob bc size 3
+sl.to pd buffer 60.0 inc 0.0
+sl.to sc buffer 0.0390625 inc 0.0
+sl.to sm buffer 0.0 inc 0.0
+spreading activation ob gpc size 3
+sl.to pg buffer 90.0 inc 0.0
+sl.to sg buffer 5.0 inc 0.0
+sl.to smg buffer 0.0 inc 0.0
+spreading activation ob len size 7
+spreading activation ob obc size 2
+sl.to l buffer -20.0 inc 0.0
+sl.to g buffer 50.0 inc 0.0
+spreading activation ob bf size 2
+slipnodes.size()59
 Random rndseed=1162
+ob A activation 100.0
 Random rndseed=1163
+ob B activation 100.0
 Random rndseed=1164
+ob C activation 100.0
 Random rndseed=1165
+ob D activation 100.0
 Random rndseed=1166
+ob E activation 100.0
 Random rndseed=1167
+ob F activation 100.0
 Random rndseed=1168
+ob G activation 100.0
 Random rndseed=1169
+ob H activation 100.0
 Random rndseed=1170
+ob I activation 100.0
 Random rndseed=1171
+ob J activation 100.0
 Random rndseed=1172
+ob K activation 100.0
 Random rndseed=1173
+ob L activation 100.0
 Random rndseed=1174
+ob M activation 100.0
+ob N activation 8.4996337890625
+ob O activation 5.9996337890625
+ob P activation 5.9996337890625
+ob Q activation 5.9996337890625
+ob R activation 5.9996337890625
+ob S activation 5.9996337890625
+ob T activation 5.9996337890625
+ob U activation 5.9996337890625
+ob V activation 5.9996337890625
+ob W activation 5.9996337890625
+ob X activation 5.9996337890625
+ob Y activation 5.9996337890625
+ob Z activation 5.9996337890625
+ob 1 activation 0.0
+ob 2 activation 0.0
+ob 3 activation 0.0
+ob 4 activation 0.0
+ob 5 activation 0.0
+ob lm activation 31.875
+ob rm activation 25.0
+ob md activation 0.048828125
+ob sl activation 17.5
 Random rndseed=1175
+ob wh activation 100.0
+ob fs activation 49.945068359375
+ob ls activation 0.0
 Random rndseed=1176
+ob lf activation 100.0
+ob rt activation 45.58349609375
 Random rndseed=1177
+ob pd activation 100.0
+ob sc activation 39.9609375
+ob sm activation 0.0
 Random rndseed=1178
+ob pg activation 100.0
+ob sg activation 35.0
+ob smg activation 0.0
+ob id activation 3.125
+ob op activation 0.0
+ob l activation 40.0
 Random rndseed=1179
+ob g activation 100.0
 Random rndseed=1180
+ob lc activation 100.0
 Random rndseed=1181
+ob spc activation 100.0
+ob apc activation 0.0
 Random rndseed=1182
+ob dc activation 100.0
 Random rndseed=1183
+ob bc activation 100.0
 Random rndseed=1184
+ob gpc activation 100.0
+ob len activation 18.7493896484375
 Random rndseed=1185
+ob obc activation 100.0
 Random rndseed=1186
+ob bf activation 100.0
 Random rndseed=1187
 sum 92276.99777238448 chosen 69023.1943337436
 Choose codelet at index 86
@@ -3880,31 +7492,308 @@ Random rndseed=1246
 create codelet rule-translator
 Random rndseed=1247
 create codelet breaker
+ob A conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob B conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob C conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob D conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob E conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob F conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob G conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob H conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob I conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob J conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob K conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob L conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob M conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob N conceptual_depth 50.0 ob.buffer -4.24981689453125 activation 8.4996337890625
+ob O conceptual_depth 50.0 ob.buffer -2.99981689453125 activation 5.9996337890625
+ob P conceptual_depth 50.0 ob.buffer -2.99981689453125 activation 5.9996337890625
+ob Q conceptual_depth 50.0 ob.buffer -2.99981689453125 activation 5.9996337890625
+ob R conceptual_depth 50.0 ob.buffer -2.99981689453125 activation 5.9996337890625
+ob S conceptual_depth 50.0 ob.buffer -2.99981689453125 activation 5.9996337890625
+ob T conceptual_depth 50.0 ob.buffer -2.99981689453125 activation 5.9996337890625
+ob U conceptual_depth 50.0 ob.buffer -2.99981689453125 activation 5.9996337890625
+ob V conceptual_depth 50.0 ob.buffer -2.99981689453125 activation 5.9996337890625
+ob W conceptual_depth 50.0 ob.buffer -2.99981689453125 activation 5.9996337890625
+ob X conceptual_depth 50.0 ob.buffer -2.99981689453125 activation 5.9996337890625
+ob Y conceptual_depth 50.0 ob.buffer -2.99981689453125 activation 5.9996337890625
+ob Z conceptual_depth 50.0 ob.buffer -2.99981689453125 activation 5.9996337890625
+ob 1 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 2 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 3 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 4 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 5 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lm conceptual_depth 50.0 ob.buffer -15.9375 activation 31.875
+ob rm conceptual_depth 50.0 ob.buffer -12.5 activation 25.0
+ob md conceptual_depth 50.0 ob.buffer -0.0244140625 activation 0.048828125
+ob sl conceptual_depth 50.0 ob.buffer -8.75 activation 17.5
+ob wh conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob fs conceptual_depth 50.0 ob.buffer -24.9725341796875 activation 49.945068359375
+ob ls conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lf conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob rt conceptual_depth 50.0 ob.buffer -22.791748046875 activation 45.58349609375
+ob pd conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob sc conceptual_depth 50.0 ob.buffer -19.98046875 activation 39.9609375
+ob sm conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob pg conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob sg conceptual_depth 50.0 ob.buffer -17.5 activation 35.0
+ob smg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob id conceptual_depth 50.0 ob.buffer -1.5625 activation 3.125
+ob op conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob l conceptual_depth 50.0 ob.buffer -20.0 activation 40.0
+ob g conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob lc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob spc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob apc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob dc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob bc conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob gpc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob len conceptual_depth 50.0 ob.buffer -9.37469482421875 activation 18.7493896484375
+ob obc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob bf conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+spreading activation ob A size 3
+sl.to B buffer 50.0 inc 40.0
+sl.to lc buffer 50.0 inc 80.0
+sl.to fs buffer -24.9725341796875 inc 25.0
+spreading activation ob B size 3
+sl.to A buffer -50.0 inc 40.0
+sl.to C buffer 50.0 inc 40.0
+sl.to lc buffer 130.0 inc 80.0
+spreading activation ob C size 3
+sl.to B buffer 90.0 inc 40.0
+sl.to D buffer -50.0 inc 40.0
+sl.to lc buffer 210.0 inc 80.0
+spreading activation ob D size 3
+sl.to C buffer 90.0 inc 40.0
+sl.to E buffer -50.0 inc 40.0
+sl.to lc buffer 290.0 inc 80.0
+spreading activation ob E size 3
+sl.to D buffer -10.0 inc 40.0
+sl.to F buffer -50.0 inc 40.0
+sl.to lc buffer 370.0 inc 80.0
+spreading activation ob F size 3
+sl.to E buffer -10.0 inc 40.0
+sl.to G buffer -50.0 inc 40.0
+sl.to lc buffer 450.0 inc 80.0
+spreading activation ob G size 3
+sl.to F buffer -10.0 inc 40.0
+sl.to H buffer -50.0 inc 40.0
+sl.to lc buffer 530.0 inc 80.0
+spreading activation ob H size 3
+sl.to G buffer -10.0 inc 40.0
+sl.to I buffer -50.0 inc 40.0
+sl.to lc buffer 610.0 inc 80.0
+spreading activation ob I size 3
+sl.to H buffer -10.0 inc 40.0
+sl.to J buffer -50.0 inc 40.0
+sl.to lc buffer 690.0 inc 80.0
+spreading activation ob J size 3
+sl.to I buffer -10.0 inc 40.0
+sl.to K buffer -50.0 inc 40.0
+sl.to lc buffer 770.0 inc 80.0
+spreading activation ob K size 3
+sl.to J buffer -10.0 inc 40.0
+sl.to L buffer -50.0 inc 40.0
+sl.to lc buffer 850.0 inc 80.0
+spreading activation ob L size 3
+sl.to K buffer -10.0 inc 40.0
+sl.to M buffer -50.0 inc 40.0
+sl.to lc buffer 930.0 inc 80.0
+spreading activation ob M size 3
+sl.to L buffer -10.0 inc 40.0
+sl.to N buffer -4.24981689453125 inc 40.0
+sl.to lc buffer 1010.0 inc 80.0
+spreading activation ob N size 3
+spreading activation ob O size 3
+spreading activation ob P size 3
+spreading activation ob Q size 3
+spreading activation ob R size 3
+spreading activation ob S size 3
+spreading activation ob T size 3
+spreading activation ob U size 3
+spreading activation ob V size 3
+spreading activation ob W size 3
+spreading activation ob X size 3
+spreading activation ob Y size 3
+spreading activation ob Z size 3
+spreading activation ob 1 size 2
+spreading activation ob 2 size 3
+spreading activation ob 3 size 3
+spreading activation ob 4 size 3
+spreading activation ob 5 size 2
+spreading activation ob lm size 6
+spreading activation ob rm size 6
+spreading activation ob md size 1
+spreading activation ob sl size 2
+spreading activation ob wh size 2
+sl.to spc buffer 50.0 inc 70.0
+sl.to sl buffer -8.75 inc 10.0
+spreading activation ob fs size 4
+spreading activation ob ls size 4
+spreading activation ob lf size 4
+sl.to rt buffer -22.791748046875 inc 20.0
+sl.to dc buffer 50.0 inc 70.0
+sl.to lm buffer -15.9375 inc 10.0
+sl.to rm buffer -12.5 inc 0.0
+spreading activation ob rt size 4
+spreading activation ob pd size 3
+sl.to sc buffer -19.98046875 inc 20.0
+sl.to bc buffer -50.0 inc 70.0
+sl.to pg buffer 50.0 inc 40.0
+spreading activation ob sc size 3
+spreading activation ob sm size 2
+spreading activation ob pg size 4
+sl.to len buffer -9.37469482421875 inc 5.0
+sl.to sg buffer -17.5 inc 20.0
+sl.to gpc buffer 50.0 inc 70.0
+sl.to pd buffer 50.0 inc 10.0
+spreading activation ob sg size 4
+spreading activation ob smg size 4
+spreading activation ob id size 0
+spreading activation ob op size 0
+spreading activation ob l size 2
+spreading activation ob g size 2
+sl.to obc buffer 50.0 inc 90.0
+sl.to l buffer -20.0 inc 10.0
+spreading activation ob lc size 28
+sl.to A buffer -10.0 inc 3.0
+sl.to B buffer 130.0 inc 3.0
+sl.to C buffer 130.0 inc 3.0
+sl.to D buffer 30.0 inc 3.0
+sl.to E buffer 30.0 inc 3.0
+sl.to F buffer 30.0 inc 3.0
+sl.to G buffer 30.0 inc 3.0
+sl.to H buffer 30.0 inc 3.0
+sl.to I buffer 30.0 inc 3.0
+sl.to J buffer 30.0 inc 3.0
+sl.to K buffer 30.0 inc 3.0
+sl.to L buffer 30.0 inc 3.0
+sl.to M buffer -10.0 inc 3.0
+sl.to N buffer 35.75018310546875 inc 3.0
+sl.to O buffer -2.99981689453125 inc 3.0
+sl.to P buffer -2.99981689453125 inc 3.0
+sl.to Q buffer -2.99981689453125 inc 3.0
+sl.to R buffer -2.99981689453125 inc 3.0
+sl.to S buffer -2.99981689453125 inc 3.0
+sl.to T buffer -2.99981689453125 inc 3.0
+sl.to U buffer -2.99981689453125 inc 3.0
+sl.to V buffer -2.99981689453125 inc 3.0
+sl.to W buffer -2.99981689453125 inc 3.0
+sl.to X buffer -2.99981689453125 inc 3.0
+sl.to Y buffer -2.99981689453125 inc 3.0
+sl.to Z buffer -2.99981689453125 inc 3.0
+sl.to bf buffer -50.0 inc 40.0
+sl.to len buffer -4.37469482421875 inc 5.0
+spreading activation ob spc size 5
+sl.to lm buffer -5.9375 inc 0.0
+sl.to rm buffer -12.5 inc 0.0
+sl.to md buffer -0.0244140625 inc 0.0
+sl.to sl buffer 1.25 inc 0.0
+sl.to wh buffer 50.0 inc 0.0
+spreading activation ob apc size 2
+spreading activation ob dc size 2
+sl.to lf buffer 50.0 inc 0.0
+sl.to rt buffer -2.791748046875 inc 0.0
+spreading activation ob bc size 3
+sl.to pd buffer 60.0 inc 0.0
+sl.to sc buffer 0.01953125 inc 0.0
+sl.to sm buffer 0.0 inc 0.0
+spreading activation ob gpc size 3
+sl.to pg buffer 90.0 inc 0.0
+sl.to sg buffer 2.5 inc 0.0
+sl.to smg buffer 0.0 inc 0.0
+spreading activation ob len size 7
+spreading activation ob obc size 2
+sl.to l buffer -10.0 inc 0.0
+sl.to g buffer 50.0 inc 0.0
+spreading activation ob bf size 2
+sl.to lc buffer 1090.0 inc 0.0
+sl.to len buffer 0.62530517578125 inc 0.0
+slipnodes.size()59
 Random rndseed=1248
+ob A activation 100.0
 Random rndseed=1249
+ob B activation 100.0
 Random rndseed=1250
+ob C activation 100.0
 Random rndseed=1251
+ob D activation 100.0
 Random rndseed=1252
+ob E activation 100.0
 Random rndseed=1253
+ob F activation 100.0
 Random rndseed=1254
+ob G activation 100.0
 Random rndseed=1255
+ob H activation 100.0
 Random rndseed=1256
+ob I activation 100.0
 Random rndseed=1257
+ob J activation 100.0
 Random rndseed=1258
+ob K activation 100.0
 Random rndseed=1259
+ob L activation 100.0
 Random rndseed=1260
+ob M activation 100.0
+ob N activation 47.24981689453125
+ob O activation 5.99981689453125
+ob P activation 5.99981689453125
+ob Q activation 5.99981689453125
+ob R activation 5.99981689453125
+ob S activation 5.99981689453125
+ob T activation 5.99981689453125
+ob U activation 5.99981689453125
+ob V activation 5.99981689453125
+ob W activation 5.99981689453125
+ob X activation 5.99981689453125
+ob Y activation 5.99981689453125
+ob Z activation 5.99981689453125
+ob 1 activation 0.0
+ob 2 activation 0.0
+ob 3 activation 0.0
+ob 4 activation 0.0
+ob 5 activation 0.0
+ob lm activation 25.9375
+ob rm activation 12.5
+ob md activation 0.0244140625
+ob sl activation 18.75
 Random rndseed=1261
+ob wh activation 100.0
+ob fs activation 49.9725341796875
+ob ls activation 0.0
 Random rndseed=1262
+ob lf activation 100.0
+ob rt activation 42.791748046875
 Random rndseed=1263
+ob pd activation 100.0
+ob sc activation 39.98046875
+ob sm activation 0.0
 Random rndseed=1264
+ob pg activation 100.0
+ob sg activation 37.5
+ob smg activation 0.0
+ob id activation 1.5625
+ob op activation 0.0
+ob l activation 30.0
 Random rndseed=1265
+ob g activation 100.0
 Random rndseed=1266
+ob lc activation 100.0
 Random rndseed=1267
+ob spc activation 100.0
+ob apc activation 0.0
 Random rndseed=1268
+ob dc activation 100.0
 Random rndseed=1269
+ob bc activation 100.0
 Random rndseed=1270
+ob gpc activation 100.0
+ob len activation 19.37469482421875
 Random rndseed=1271
+ob obc activation 100.0
 Random rndseed=1272
+ob bf activation 90.0
 Random rndseed=1273
 sum 68896.18858601517 chosen 65175.794402370346
 Choose codelet at index 84
@@ -4105,37 +7994,312 @@ Random rndseed=1328
 Random rndseed=1329
 Random rndseed=1330
 create codelet breaker
+ob A conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob B conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob C conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob D conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob E conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob F conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob G conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob H conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob I conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob J conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob K conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob L conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob M conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob N conceptual_depth 50.0 ob.buffer -23.624908447265625 activation 47.24981689453125
+ob O conceptual_depth 50.0 ob.buffer -2.999908447265625 activation 5.99981689453125
+ob P conceptual_depth 50.0 ob.buffer -2.999908447265625 activation 5.99981689453125
+ob Q conceptual_depth 50.0 ob.buffer -2.999908447265625 activation 5.99981689453125
+ob R conceptual_depth 50.0 ob.buffer -2.999908447265625 activation 5.99981689453125
+ob S conceptual_depth 50.0 ob.buffer -2.999908447265625 activation 5.99981689453125
+ob T conceptual_depth 50.0 ob.buffer -2.999908447265625 activation 5.99981689453125
+ob U conceptual_depth 50.0 ob.buffer -2.999908447265625 activation 5.99981689453125
+ob V conceptual_depth 50.0 ob.buffer -2.999908447265625 activation 5.99981689453125
+ob W conceptual_depth 50.0 ob.buffer -2.999908447265625 activation 5.99981689453125
+ob X conceptual_depth 50.0 ob.buffer -2.999908447265625 activation 5.99981689453125
+ob Y conceptual_depth 50.0 ob.buffer -2.999908447265625 activation 5.99981689453125
+ob Z conceptual_depth 50.0 ob.buffer -2.999908447265625 activation 5.99981689453125
+ob 1 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 2 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 3 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 4 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 5 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lm conceptual_depth 50.0 ob.buffer -12.96875 activation 25.9375
+ob rm conceptual_depth 50.0 ob.buffer 93.75 activation 12.5
+ob md conceptual_depth 50.0 ob.buffer 99.98779296875 activation 0.0244140625
+ob sl conceptual_depth 50.0 ob.buffer -9.375 activation 18.75
+ob wh conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob fs conceptual_depth 50.0 ob.buffer -24.98626708984375 activation 49.9725341796875
+ob ls conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lf conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob rt conceptual_depth 50.0 ob.buffer -21.3958740234375 activation 42.791748046875
+ob pd conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob sc conceptual_depth 50.0 ob.buffer 80.009765625 activation 39.98046875
+ob sm conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob pg conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob sg conceptual_depth 50.0 ob.buffer -18.75 activation 37.5
+ob smg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob id conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob op conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob l conceptual_depth 50.0 ob.buffer 85.0 activation 30.0
+ob g conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob lc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob spc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob apc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob dc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob bc conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob gpc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob len conceptual_depth 50.0 ob.buffer -9.687347412109375 activation 19.37469482421875
+ob obc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob bf conceptual_depth 50.0 ob.buffer -45.0 activation 90.0
+spreading activation ob A size 3
+sl.to B buffer -50.0 inc 40.0
+sl.to lc buffer 50.0 inc 80.0
+sl.to fs buffer -24.98626708984375 inc 25.0
+spreading activation ob B size 3
+sl.to A buffer -50.0 inc 40.0
+sl.to C buffer -50.0 inc 40.0
+sl.to lc buffer 130.0 inc 80.0
+spreading activation ob C size 3
+sl.to B buffer -10.0 inc 40.0
+sl.to D buffer 50.0 inc 40.0
+sl.to lc buffer 210.0 inc 80.0
+spreading activation ob D size 3
+sl.to C buffer -10.0 inc 40.0
+sl.to E buffer -50.0 inc 40.0
+sl.to lc buffer 290.0 inc 80.0
+spreading activation ob E size 3
+sl.to D buffer 90.0 inc 40.0
+sl.to F buffer -50.0 inc 40.0
+sl.to lc buffer 370.0 inc 80.0
+spreading activation ob F size 3
+sl.to E buffer -10.0 inc 40.0
+sl.to G buffer -50.0 inc 40.0
+sl.to lc buffer 450.0 inc 80.0
+spreading activation ob G size 3
+sl.to F buffer -10.0 inc 40.0
+sl.to H buffer -50.0 inc 40.0
+sl.to lc buffer 530.0 inc 80.0
+spreading activation ob H size 3
+sl.to G buffer -10.0 inc 40.0
+sl.to I buffer 50.0 inc 40.0
+sl.to lc buffer 610.0 inc 80.0
+spreading activation ob I size 3
+sl.to H buffer -10.0 inc 40.0
+sl.to J buffer 50.0 inc 40.0
+sl.to lc buffer 690.0 inc 80.0
+spreading activation ob J size 3
+sl.to I buffer 90.0 inc 40.0
+sl.to K buffer -50.0 inc 40.0
+sl.to lc buffer 770.0 inc 80.0
+spreading activation ob K size 3
+sl.to J buffer 90.0 inc 40.0
+sl.to L buffer -50.0 inc 40.0
+sl.to lc buffer 850.0 inc 80.0
+spreading activation ob L size 3
+sl.to K buffer -10.0 inc 40.0
+sl.to M buffer -50.0 inc 40.0
+sl.to lc buffer 930.0 inc 80.0
+spreading activation ob M size 3
+sl.to L buffer -10.0 inc 40.0
+sl.to N buffer -23.624908447265625 inc 40.0
+sl.to lc buffer 1010.0 inc 80.0
+spreading activation ob N size 3
+spreading activation ob O size 3
+spreading activation ob P size 3
+spreading activation ob Q size 3
+spreading activation ob R size 3
+spreading activation ob S size 3
+spreading activation ob T size 3
+spreading activation ob U size 3
+spreading activation ob V size 3
+spreading activation ob W size 3
+spreading activation ob X size 3
+spreading activation ob Y size 3
+spreading activation ob Z size 3
+spreading activation ob 1 size 2
+spreading activation ob 2 size 3
+spreading activation ob 3 size 3
+spreading activation ob 4 size 3
+spreading activation ob 5 size 2
+spreading activation ob lm size 6
+spreading activation ob rm size 6
+spreading activation ob md size 1
+spreading activation ob sl size 2
+spreading activation ob wh size 2
+sl.to spc buffer 50.0 inc 70.0
+sl.to sl buffer -9.375 inc 10.0
+spreading activation ob fs size 4
+spreading activation ob ls size 4
+spreading activation ob lf size 4
+sl.to rt buffer -21.3958740234375 inc 20.0
+sl.to dc buffer 50.0 inc 70.0
+sl.to lm buffer -12.96875 inc 10.0
+sl.to rm buffer 93.75 inc 0.0
+spreading activation ob rt size 4
+spreading activation ob pd size 3
+sl.to sc buffer 80.009765625 inc 20.0
+sl.to bc buffer -50.0 inc 70.0
+sl.to pg buffer 50.0 inc 40.0
+spreading activation ob sc size 3
+spreading activation ob sm size 2
+spreading activation ob pg size 4
+sl.to len buffer -9.687347412109375 inc 5.0
+sl.to sg buffer -18.75 inc 20.0
+sl.to gpc buffer 50.0 inc 70.0
+sl.to pd buffer 50.0 inc 10.0
+spreading activation ob sg size 4
+spreading activation ob smg size 4
+spreading activation ob id size 0
+spreading activation ob op size 0
+spreading activation ob l size 2
+spreading activation ob g size 2
+sl.to obc buffer 50.0 inc 90.0
+sl.to l buffer 85.0 inc 10.0
+spreading activation ob lc size 28
+sl.to A buffer -10.0 inc 3.0
+sl.to B buffer 30.0 inc 3.0
+sl.to C buffer 30.0 inc 3.0
+sl.to D buffer 130.0 inc 3.0
+sl.to E buffer 30.0 inc 3.0
+sl.to F buffer 30.0 inc 3.0
+sl.to G buffer 30.0 inc 3.0
+sl.to H buffer 30.0 inc 3.0
+sl.to I buffer 130.0 inc 3.0
+sl.to J buffer 130.0 inc 3.0
+sl.to K buffer 30.0 inc 3.0
+sl.to L buffer 30.0 inc 3.0
+sl.to M buffer -10.0 inc 3.0
+sl.to N buffer 16.375091552734375 inc 3.0
+sl.to O buffer -2.999908447265625 inc 3.0
+sl.to P buffer -2.999908447265625 inc 3.0
+sl.to Q buffer -2.999908447265625 inc 3.0
+sl.to R buffer -2.999908447265625 inc 3.0
+sl.to S buffer -2.999908447265625 inc 3.0
+sl.to T buffer -2.999908447265625 inc 3.0
+sl.to U buffer -2.999908447265625 inc 3.0
+sl.to V buffer -2.999908447265625 inc 3.0
+sl.to W buffer -2.999908447265625 inc 3.0
+sl.to X buffer -2.999908447265625 inc 3.0
+sl.to Y buffer -2.999908447265625 inc 3.0
+sl.to Z buffer -2.999908447265625 inc 3.0
+sl.to bf buffer -45.0 inc 40.0
+sl.to len buffer -4.687347412109375 inc 5.0
+spreading activation ob spc size 5
+sl.to lm buffer -2.96875 inc 0.0
+sl.to rm buffer 93.75 inc 0.0
+sl.to md buffer 99.98779296875 inc 0.0
+sl.to sl buffer 0.625 inc 0.0
+sl.to wh buffer 50.0 inc 0.0
+spreading activation ob apc size 2
+spreading activation ob dc size 2
+sl.to lf buffer 50.0 inc 0.0
+sl.to rt buffer -1.3958740234375 inc 0.0
+spreading activation ob bc size 3
+sl.to pd buffer 60.0 inc 0.0
+sl.to sc buffer 100.009765625 inc 0.0
+sl.to sm buffer 0.0 inc 0.0
+spreading activation ob gpc size 3
+sl.to pg buffer 90.0 inc 0.0
+sl.to sg buffer 1.25 inc 0.0
+sl.to smg buffer 0.0 inc 0.0
+spreading activation ob len size 7
+spreading activation ob obc size 2
+sl.to l buffer 95.0 inc 0.0
+sl.to g buffer 50.0 inc 0.0
+spreading activation ob bf size 2
+slipnodes.size()59
 Random rndseed=1331
+ob A activation 100.0
 Random rndseed=1332
+ob B activation 100.0
 Random rndseed=1333
+ob C activation 100.0
 Random rndseed=1334
+ob D activation 100.0
 Random rndseed=1335
+ob E activation 100.0
 Random rndseed=1336
+ob F activation 100.0
 Random rndseed=1337
+ob G activation 100.0
 Random rndseed=1338
+ob H activation 100.0
 Random rndseed=1339
+ob I activation 100.0
 Random rndseed=1340
+ob J activation 100.0
 Random rndseed=1341
+ob K activation 100.0
 Random rndseed=1342
+ob L activation 100.0
 Random rndseed=1343
+ob M activation 100.0
 Random rndseed=1344
+ob N activation 66.62490844726562
+ob O activation 5.999908447265625
+ob P activation 5.999908447265625
+ob Q activation 5.999908447265625
+ob R activation 5.999908447265625
+ob S activation 5.999908447265625
+ob T activation 5.999908447265625
+ob U activation 5.999908447265625
+ob V activation 5.999908447265625
+ob W activation 5.999908447265625
+ob X activation 5.999908447265625
+ob Y activation 5.999908447265625
+ob Z activation 5.999908447265625
+ob 1 activation 0.0
+ob 2 activation 0.0
+ob 3 activation 0.0
+ob 4 activation 0.0
+ob 5 activation 0.0
+ob lm activation 22.96875
 Random rndseed=1345
+ob rm activation 100.0
 Random rndseed=1346
+ob md activation 100.0
+ob sl activation 19.375
 Random rndseed=1347
+ob wh activation 100.0
+ob fs activation 49.98626708984375
+ob ls activation 0.0
 Random rndseed=1348
+ob lf activation 100.0
+ob rt activation 41.3958740234375
 Random rndseed=1349
+ob pd activation 100.0
 Random rndseed=1350
+ob sc activation 100.0
+ob sm activation 0.0
 Random rndseed=1351
+ob pg activation 100.0
+ob sg activation 38.75
+ob smg activation 0.0
 Random rndseed=1352
+ob id activation 100.0
+ob op activation 0.0
 Random rndseed=1353
+ob l activation 100.0
 Random rndseed=1354
+ob g activation 100.0
 Random rndseed=1355
+ob lc activation 100.0
 Random rndseed=1356
+ob spc activation 100.0
+ob apc activation 0.0
 Random rndseed=1357
+ob dc activation 100.0
 Random rndseed=1358
+ob bc activation 100.0
 Random rndseed=1359
+ob gpc activation 100.0
+ob len activation 19.687347412109375
 Random rndseed=1360
+ob obc activation 100.0
 Random rndseed=1361
+ob bf activation 100.0
 Random rndseed=1362
 sum 787591.911693349 chosen 66945.31249393467
 Choose codelet at index 42
@@ -4339,36 +8503,325 @@ Random rndseed=1418
 Random rndseed=1419
 Random rndseed=1420
 create codelet breaker
+ob A conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob B conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob C conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob D conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob E conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob F conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob G conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob H conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob I conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob J conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob K conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob L conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob M conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob N conceptual_depth 50.0 ob.buffer -33.31245422363281 activation 66.62490844726562
+ob O conceptual_depth 50.0 ob.buffer -2.9999542236328125 activation 5.999908447265625
+ob P conceptual_depth 50.0 ob.buffer -2.9999542236328125 activation 5.999908447265625
+ob Q conceptual_depth 50.0 ob.buffer -2.9999542236328125 activation 5.999908447265625
+ob R conceptual_depth 50.0 ob.buffer -2.9999542236328125 activation 5.999908447265625
+ob S conceptual_depth 50.0 ob.buffer -2.9999542236328125 activation 5.999908447265625
+ob T conceptual_depth 50.0 ob.buffer -2.9999542236328125 activation 5.999908447265625
+ob U conceptual_depth 50.0 ob.buffer -2.9999542236328125 activation 5.999908447265625
+ob V conceptual_depth 50.0 ob.buffer -2.9999542236328125 activation 5.999908447265625
+ob W conceptual_depth 50.0 ob.buffer -2.9999542236328125 activation 5.999908447265625
+ob X conceptual_depth 50.0 ob.buffer -2.9999542236328125 activation 5.999908447265625
+ob Y conceptual_depth 50.0 ob.buffer -2.9999542236328125 activation 5.999908447265625
+ob Z conceptual_depth 50.0 ob.buffer -2.9999542236328125 activation 5.999908447265625
+ob 1 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 2 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 3 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 4 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 5 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lm conceptual_depth 50.0 ob.buffer -11.484375 activation 22.96875
+ob rm conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob md conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob sl conceptual_depth 50.0 ob.buffer -9.6875 activation 19.375
+ob wh conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob fs conceptual_depth 50.0 ob.buffer -24.993133544921875 activation 49.98626708984375
+ob ls conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lf conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob rt conceptual_depth 50.0 ob.buffer -20.69793701171875 activation 41.3958740234375
+ob pd conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob sc conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob sm conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob pg conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob sg conceptual_depth 50.0 ob.buffer -19.375 activation 38.75
+ob smg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob id conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob op conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob l conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob g conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob lc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob spc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob apc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob dc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob bc conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob gpc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob len conceptual_depth 50.0 ob.buffer -9.843673706054688 activation 19.687347412109375
+ob obc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob bf conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+spreading activation ob A size 3
+sl.to B buffer 50.0 inc 40.0
+sl.to lc buffer 50.0 inc 80.0
+sl.to fs buffer -24.993133544921875 inc 25.0
+spreading activation ob B size 3
+sl.to A buffer -50.0 inc 40.0
+sl.to C buffer 50.0 inc 40.0
+sl.to lc buffer 130.0 inc 80.0
+spreading activation ob C size 3
+sl.to B buffer 90.0 inc 40.0
+sl.to D buffer -50.0 inc 40.0
+sl.to lc buffer 210.0 inc 80.0
+spreading activation ob D size 3
+sl.to C buffer 90.0 inc 40.0
+sl.to E buffer -50.0 inc 40.0
+sl.to lc buffer 290.0 inc 80.0
+spreading activation ob E size 3
+sl.to D buffer -10.0 inc 40.0
+sl.to F buffer -50.0 inc 40.0
+sl.to lc buffer 370.0 inc 80.0
+spreading activation ob F size 3
+sl.to E buffer -10.0 inc 40.0
+sl.to G buffer -50.0 inc 40.0
+sl.to lc buffer 450.0 inc 80.0
+spreading activation ob G size 3
+sl.to F buffer -10.0 inc 40.0
+sl.to H buffer -50.0 inc 40.0
+sl.to lc buffer 530.0 inc 80.0
+spreading activation ob H size 3
+sl.to G buffer -10.0 inc 40.0
+sl.to I buffer -50.0 inc 40.0
+sl.to lc buffer 610.0 inc 80.0
+spreading activation ob I size 3
+sl.to H buffer -10.0 inc 40.0
+sl.to J buffer -50.0 inc 40.0
+sl.to lc buffer 690.0 inc 80.0
+spreading activation ob J size 3
+sl.to I buffer -10.0 inc 40.0
+sl.to K buffer -50.0 inc 40.0
+sl.to lc buffer 770.0 inc 80.0
+spreading activation ob K size 3
+sl.to J buffer -10.0 inc 40.0
+sl.to L buffer -50.0 inc 40.0
+sl.to lc buffer 850.0 inc 80.0
+spreading activation ob L size 3
+sl.to K buffer -10.0 inc 40.0
+sl.to M buffer -50.0 inc 40.0
+sl.to lc buffer 930.0 inc 80.0
+spreading activation ob M size 3
+sl.to L buffer -10.0 inc 40.0
+sl.to N buffer -33.31245422363281 inc 40.0
+sl.to lc buffer 1010.0 inc 80.0
+spreading activation ob N size 3
+spreading activation ob O size 3
+spreading activation ob P size 3
+spreading activation ob Q size 3
+spreading activation ob R size 3
+spreading activation ob S size 3
+spreading activation ob T size 3
+spreading activation ob U size 3
+spreading activation ob V size 3
+spreading activation ob W size 3
+spreading activation ob X size 3
+spreading activation ob Y size 3
+spreading activation ob Z size 3
+spreading activation ob 1 size 2
+spreading activation ob 2 size 3
+spreading activation ob 3 size 3
+spreading activation ob 4 size 3
+spreading activation ob 5 size 2
+spreading activation ob lm size 6
+spreading activation ob rm size 6
+sl.to lm buffer -11.484375 inc 20.0
+sl.to spc buffer 50.0 inc 70.0
+sl.to rt buffer -20.69793701171875 inc 10.0
+sl.to lf buffer 50.0 inc 0.0
+sl.to fs buffer 0.006866455078125 inc 0.0
+sl.to ls buffer 0.0 inc 0.0
+spreading activation ob md size 1
+sl.to spc buffer 120.0 inc 70.0
+spreading activation ob sl size 2
+spreading activation ob wh size 2
+sl.to spc buffer 190.0 inc 70.0
+sl.to sl buffer -9.6875 inc 10.0
+spreading activation ob fs size 4
+spreading activation ob ls size 4
+spreading activation ob lf size 4
+sl.to rt buffer -10.69793701171875 inc 20.0
+sl.to dc buffer 50.0 inc 70.0
+sl.to lm buffer 8.515625 inc 10.0
+sl.to rm buffer -50.0 inc 0.0
+spreading activation ob rt size 4
+spreading activation ob pd size 3
+sl.to sc buffer -50.0 inc 20.0
+sl.to bc buffer -50.0 inc 70.0
+sl.to pg buffer 50.0 inc 40.0
+spreading activation ob sc size 3
+sl.to pd buffer 50.0 inc 20.0
+sl.to bc buffer 20.0 inc 70.0
+sl.to sg buffer -19.375 inc 40.0
+spreading activation ob sm size 2
+spreading activation ob pg size 4
+sl.to len buffer -9.843673706054688 inc 5.0
+sl.to sg buffer 20.625 inc 20.0
+sl.to gpc buffer 50.0 inc 70.0
+sl.to pd buffer 70.0 inc 10.0
+spreading activation ob sg size 4
+spreading activation ob smg size 4
+spreading activation ob id size 0
+spreading activation ob op size 0
+spreading activation ob l size 2
+sl.to obc buffer 50.0 inc 30.0
+sl.to g buffer 50.0 inc 10.0
+spreading activation ob g size 2
+sl.to obc buffer 80.0 inc 90.0
+sl.to l buffer -50.0 inc 10.0
+spreading activation ob lc size 28
+sl.to A buffer -10.0 inc 3.0
+sl.to B buffer 130.0 inc 3.0
+sl.to C buffer 130.0 inc 3.0
+sl.to D buffer 30.0 inc 3.0
+sl.to E buffer 30.0 inc 3.0
+sl.to F buffer 30.0 inc 3.0
+sl.to G buffer 30.0 inc 3.0
+sl.to H buffer 30.0 inc 3.0
+sl.to I buffer 30.0 inc 3.0
+sl.to J buffer 30.0 inc 3.0
+sl.to K buffer 30.0 inc 3.0
+sl.to L buffer 30.0 inc 3.0
+sl.to M buffer -10.0 inc 3.0
+sl.to N buffer 6.6875457763671875 inc 3.0
+sl.to O buffer -2.9999542236328125 inc 3.0
+sl.to P buffer -2.9999542236328125 inc 3.0
+sl.to Q buffer -2.9999542236328125 inc 3.0
+sl.to R buffer -2.9999542236328125 inc 3.0
+sl.to S buffer -2.9999542236328125 inc 3.0
+sl.to T buffer -2.9999542236328125 inc 3.0
+sl.to U buffer -2.9999542236328125 inc 3.0
+sl.to V buffer -2.9999542236328125 inc 3.0
+sl.to W buffer -2.9999542236328125 inc 3.0
+sl.to X buffer -2.9999542236328125 inc 3.0
+sl.to Y buffer -2.9999542236328125 inc 3.0
+sl.to Z buffer -2.9999542236328125 inc 3.0
+sl.to bf buffer -50.0 inc 40.0
+sl.to len buffer -4.8436737060546875 inc 5.0
+spreading activation ob spc size 5
+sl.to lm buffer 18.515625 inc 0.0
+sl.to rm buffer -50.0 inc 0.0
+sl.to md buffer 50.0 inc 0.0
+sl.to sl buffer 0.3125 inc 0.0
+sl.to wh buffer 50.0 inc 0.0
+spreading activation ob apc size 2
+spreading activation ob dc size 2
+sl.to lf buffer 50.0 inc 0.0
+sl.to rt buffer 9.30206298828125 inc 0.0
+spreading activation ob bc size 3
+sl.to pd buffer 80.0 inc 0.0
+sl.to sc buffer -30.0 inc 0.0
+sl.to sm buffer 0.0 inc 0.0
+spreading activation ob gpc size 3
+sl.to pg buffer 90.0 inc 0.0
+sl.to sg buffer 40.625 inc 0.0
+sl.to smg buffer 0.0 inc 0.0
+spreading activation ob len size 7
+spreading activation ob obc size 2
+sl.to l buffer -40.0 inc 0.0
+sl.to g buffer 60.0 inc 0.0
+spreading activation ob bf size 2
+sl.to lc buffer 1090.0 inc 0.0
+sl.to len buffer 0.1563262939453125 inc 0.0
+slipnodes.size()59
 Random rndseed=1421
+ob A activation 100.0
 Random rndseed=1422
+ob B activation 100.0
 Random rndseed=1423
+ob C activation 100.0
 Random rndseed=1424
+ob D activation 100.0
 Random rndseed=1425
+ob E activation 100.0
 Random rndseed=1426
+ob F activation 100.0
 Random rndseed=1427
+ob G activation 100.0
 Random rndseed=1428
+ob H activation 100.0
 Random rndseed=1429
+ob I activation 100.0
 Random rndseed=1430
+ob J activation 100.0
 Random rndseed=1431
+ob K activation 100.0
 Random rndseed=1432
+ob L activation 100.0
 Random rndseed=1433
+ob M activation 100.0
 Random rndseed=1434
+ob N activation 76.31245422363281
+ob O activation 5.9999542236328125
+ob P activation 5.9999542236328125
+ob Q activation 5.9999542236328125
+ob R activation 5.9999542236328125
+ob S activation 5.9999542236328125
+ob T activation 5.9999542236328125
+ob U activation 5.9999542236328125
+ob V activation 5.9999542236328125
+ob W activation 5.9999542236328125
+ob X activation 5.9999542236328125
+ob Y activation 5.9999542236328125
+ob Z activation 5.9999542236328125
+ob 1 activation 0.0
+ob 2 activation 0.0
+ob 3 activation 0.0
+ob 4 activation 0.0
+ob 5 activation 0.0
+ob lm activation 41.484375
+ob rm activation 50.0
 Random rndseed=1435
+ob md activation 100.0
+ob sl activation 19.6875
 Random rndseed=1436
+ob wh activation 100.0
+ob fs activation 49.993133544921875
+ob ls activation 0.0
 Random rndseed=1437
+ob lf activation 100.0
+ob rt activation 50.69793701171875
 Random rndseed=1438
+ob pd activation 100.0
 Random rndseed=1439
+ob sc activation 100.0
+ob sm activation 0.0
 Random rndseed=1440
+ob pg activation 100.0
 Random rndseed=1441
+ob sg activation 79.375
+ob smg activation 0.0
+ob id activation 50.0
+ob op activation 0.0
 Random rndseed=1442
+ob l activation 60.0
 Random rndseed=1443
+ob g activation 100.0
 Random rndseed=1444
+ob lc activation 100.0
 Random rndseed=1445
+ob spc activation 100.0
+ob apc activation 0.0
 Random rndseed=1446
+ob dc activation 100.0
 Random rndseed=1447
+ob bc activation 100.0
 Random rndseed=1448
+ob gpc activation 100.0
+ob len activation 19.843673706054688
 Random rndseed=1449
+ob obc activation 100.0
 Random rndseed=1450
+ob bf activation 100.0
 Random rndseed=1451
 sum 290576.00650246633 chosen 252219.9736441408
 Choose codelet at index 80
@@ -4589,34 +9042,315 @@ Random rndseed=1511
 create codelet rule-translator
 Random rndseed=1512
 create codelet breaker
+ob A conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob B conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob C conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob D conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob E conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob F conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob G conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob H conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob I conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob J conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob K conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob L conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob M conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob N conceptual_depth 50.0 ob.buffer -38.156227111816406 activation 76.31245422363281
+ob O conceptual_depth 50.0 ob.buffer -2.9999771118164062 activation 5.9999542236328125
+ob P conceptual_depth 50.0 ob.buffer -2.9999771118164062 activation 5.9999542236328125
+ob Q conceptual_depth 50.0 ob.buffer -2.9999771118164062 activation 5.9999542236328125
+ob R conceptual_depth 50.0 ob.buffer -2.9999771118164062 activation 5.9999542236328125
+ob S conceptual_depth 50.0 ob.buffer -2.9999771118164062 activation 5.9999542236328125
+ob T conceptual_depth 50.0 ob.buffer -2.9999771118164062 activation 5.9999542236328125
+ob U conceptual_depth 50.0 ob.buffer -2.9999771118164062 activation 5.9999542236328125
+ob V conceptual_depth 50.0 ob.buffer -2.9999771118164062 activation 5.9999542236328125
+ob W conceptual_depth 50.0 ob.buffer -2.9999771118164062 activation 5.9999542236328125
+ob X conceptual_depth 50.0 ob.buffer -2.9999771118164062 activation 5.9999542236328125
+ob Y conceptual_depth 50.0 ob.buffer -2.9999771118164062 activation 5.9999542236328125
+ob Z conceptual_depth 50.0 ob.buffer -2.9999771118164062 activation 5.9999542236328125
+ob 1 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 2 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 3 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 4 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 5 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lm conceptual_depth 50.0 ob.buffer -20.7421875 activation 41.484375
+ob rm conceptual_depth 50.0 ob.buffer -25.0 activation 50.0
+ob md conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob sl conceptual_depth 50.0 ob.buffer -9.84375 activation 19.6875
+ob wh conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob fs conceptual_depth 50.0 ob.buffer -24.996566772460938 activation 49.993133544921875
+ob ls conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lf conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob rt conceptual_depth 50.0 ob.buffer -25.348968505859375 activation 50.69793701171875
+ob pd conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob sc conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob sm conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob pg conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob sg conceptual_depth 50.0 ob.buffer -39.6875 activation 79.375
+ob smg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob id conceptual_depth 50.0 ob.buffer -25.0 activation 50.0
+ob op conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob l conceptual_depth 50.0 ob.buffer -30.0 activation 60.0
+ob g conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob lc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob spc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob apc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob dc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob bc conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+ob gpc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob len conceptual_depth 50.0 ob.buffer -9.921836853027344 activation 19.843673706054688
+ob obc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob bf conceptual_depth 50.0 ob.buffer -50.0 activation 100.0
+spreading activation ob A size 3
+sl.to B buffer -50.0 inc 40.0
+sl.to lc buffer 50.0 inc 80.0
+sl.to fs buffer -24.996566772460938 inc 25.0
+spreading activation ob B size 3
+sl.to A buffer -50.0 inc 40.0
+sl.to C buffer -50.0 inc 40.0
+sl.to lc buffer 130.0 inc 80.0
+spreading activation ob C size 3
+sl.to B buffer -10.0 inc 40.0
+sl.to D buffer -50.0 inc 40.0
+sl.to lc buffer 210.0 inc 80.0
+spreading activation ob D size 3
+sl.to C buffer -10.0 inc 40.0
+sl.to E buffer -50.0 inc 40.0
+sl.to lc buffer 290.0 inc 80.0
+spreading activation ob E size 3
+sl.to D buffer -10.0 inc 40.0
+sl.to F buffer -50.0 inc 40.0
+sl.to lc buffer 370.0 inc 80.0
+spreading activation ob F size 3
+sl.to E buffer -10.0 inc 40.0
+sl.to G buffer -50.0 inc 40.0
+sl.to lc buffer 450.0 inc 80.0
+spreading activation ob G size 3
+sl.to F buffer -10.0 inc 40.0
+sl.to H buffer -50.0 inc 40.0
+sl.to lc buffer 530.0 inc 80.0
+spreading activation ob H size 3
+sl.to G buffer -10.0 inc 40.0
+sl.to I buffer 50.0 inc 40.0
+sl.to lc buffer 610.0 inc 80.0
+spreading activation ob I size 3
+sl.to H buffer -10.0 inc 40.0
+sl.to J buffer 50.0 inc 40.0
+sl.to lc buffer 690.0 inc 80.0
+spreading activation ob J size 3
+sl.to I buffer 90.0 inc 40.0
+sl.to K buffer 50.0 inc 40.0
+sl.to lc buffer 770.0 inc 80.0
+spreading activation ob K size 3
+sl.to J buffer 90.0 inc 40.0
+sl.to L buffer -50.0 inc 40.0
+sl.to lc buffer 850.0 inc 80.0
+spreading activation ob L size 3
+sl.to K buffer 90.0 inc 40.0
+sl.to M buffer -50.0 inc 40.0
+sl.to lc buffer 930.0 inc 80.0
+spreading activation ob M size 3
+sl.to L buffer -10.0 inc 40.0
+sl.to N buffer -38.156227111816406 inc 40.0
+sl.to lc buffer 1010.0 inc 80.0
+spreading activation ob N size 3
+spreading activation ob O size 3
+spreading activation ob P size 3
+spreading activation ob Q size 3
+spreading activation ob R size 3
+spreading activation ob S size 3
+spreading activation ob T size 3
+spreading activation ob U size 3
+spreading activation ob V size 3
+spreading activation ob W size 3
+spreading activation ob X size 3
+spreading activation ob Y size 3
+spreading activation ob Z size 3
+spreading activation ob 1 size 2
+spreading activation ob 2 size 3
+spreading activation ob 3 size 3
+spreading activation ob 4 size 3
+spreading activation ob 5 size 2
+spreading activation ob lm size 6
+spreading activation ob rm size 6
+spreading activation ob md size 1
+sl.to spc buffer 50.0 inc 70.0
+spreading activation ob sl size 2
+spreading activation ob wh size 2
+sl.to spc buffer 120.0 inc 70.0
+sl.to sl buffer -9.84375 inc 10.0
+spreading activation ob fs size 4
+spreading activation ob ls size 4
+spreading activation ob lf size 4
+sl.to rt buffer -25.348968505859375 inc 20.0
+sl.to dc buffer 50.0 inc 70.0
+sl.to lm buffer -20.7421875 inc 10.0
+sl.to rm buffer -25.0 inc 0.0
+spreading activation ob rt size 4
+spreading activation ob pd size 3
+sl.to sc buffer -50.0 inc 20.0
+sl.to bc buffer -50.0 inc 70.0
+sl.to pg buffer 50.0 inc 40.0
+spreading activation ob sc size 3
+sl.to pd buffer 50.0 inc 20.0
+sl.to bc buffer 20.0 inc 70.0
+sl.to sg buffer -39.6875 inc 40.0
+spreading activation ob sm size 2
+spreading activation ob pg size 4
+sl.to len buffer -9.921836853027344 inc 5.0
+sl.to sg buffer 0.3125 inc 20.0
+sl.to gpc buffer 50.0 inc 70.0
+sl.to pd buffer 70.0 inc 10.0
+spreading activation ob sg size 4
+spreading activation ob smg size 4
+spreading activation ob id size 0
+spreading activation ob op size 0
+spreading activation ob l size 2
+spreading activation ob g size 2
+sl.to obc buffer 50.0 inc 90.0
+sl.to l buffer -30.0 inc 10.0
+spreading activation ob lc size 28
+sl.to A buffer -10.0 inc 3.0
+sl.to B buffer 30.0 inc 3.0
+sl.to C buffer 30.0 inc 3.0
+sl.to D buffer 30.0 inc 3.0
+sl.to E buffer 30.0 inc 3.0
+sl.to F buffer 30.0 inc 3.0
+sl.to G buffer 30.0 inc 3.0
+sl.to H buffer 30.0 inc 3.0
+sl.to I buffer 130.0 inc 3.0
+sl.to J buffer 130.0 inc 3.0
+sl.to K buffer 130.0 inc 3.0
+sl.to L buffer 30.0 inc 3.0
+sl.to M buffer -10.0 inc 3.0
+sl.to N buffer 1.8437728881835938 inc 3.0
+sl.to O buffer -2.9999771118164062 inc 3.0
+sl.to P buffer -2.9999771118164062 inc 3.0
+sl.to Q buffer -2.9999771118164062 inc 3.0
+sl.to R buffer -2.9999771118164062 inc 3.0
+sl.to S buffer -2.9999771118164062 inc 3.0
+sl.to T buffer -2.9999771118164062 inc 3.0
+sl.to U buffer -2.9999771118164062 inc 3.0
+sl.to V buffer -2.9999771118164062 inc 3.0
+sl.to W buffer -2.9999771118164062 inc 3.0
+sl.to X buffer -2.9999771118164062 inc 3.0
+sl.to Y buffer -2.9999771118164062 inc 3.0
+sl.to Z buffer -2.9999771118164062 inc 3.0
+sl.to bf buffer -50.0 inc 40.0
+sl.to len buffer -4.921836853027344 inc 5.0
+spreading activation ob spc size 5
+sl.to lm buffer -10.7421875 inc 0.0
+sl.to rm buffer -25.0 inc 0.0
+sl.to md buffer -50.0 inc 0.0
+sl.to sl buffer 0.15625 inc 0.0
+sl.to wh buffer 50.0 inc 0.0
+spreading activation ob apc size 2
+spreading activation ob dc size 2
+sl.to lf buffer 50.0 inc 0.0
+sl.to rt buffer -5.348968505859375 inc 0.0
+spreading activation ob bc size 3
+sl.to pd buffer 80.0 inc 0.0
+sl.to sc buffer -30.0 inc 0.0
+sl.to sm buffer 0.0 inc 0.0
+spreading activation ob gpc size 3
+sl.to pg buffer 90.0 inc 0.0
+sl.to sg buffer 20.3125 inc 0.0
+sl.to smg buffer 0.0 inc 0.0
+spreading activation ob len size 7
+spreading activation ob obc size 2
+sl.to l buffer -20.0 inc 0.0
+sl.to g buffer 50.0 inc 0.0
+spreading activation ob bf size 2
+sl.to lc buffer 1090.0 inc 0.0
+sl.to len buffer 0.07816314697265625 inc 0.0
+slipnodes.size()59
 Random rndseed=1513
+ob A activation 100.0
 Random rndseed=1514
+ob B activation 100.0
 Random rndseed=1515
+ob C activation 100.0
 Random rndseed=1516
+ob D activation 100.0
 Random rndseed=1517
+ob E activation 100.0
 Random rndseed=1518
+ob F activation 100.0
 Random rndseed=1519
+ob G activation 100.0
 Random rndseed=1520
+ob H activation 100.0
 Random rndseed=1521
+ob I activation 100.0
 Random rndseed=1522
+ob J activation 100.0
 Random rndseed=1523
+ob K activation 100.0
 Random rndseed=1524
+ob L activation 100.0
 Random rndseed=1525
+ob M activation 93.0
 Random rndseed=1526
+ob N activation 81.1562271118164
+ob O activation 5.999977111816406
+ob P activation 5.999977111816406
+ob Q activation 5.999977111816406
+ob R activation 5.999977111816406
+ob S activation 5.999977111816406
+ob T activation 5.999977111816406
+ob U activation 5.999977111816406
+ob V activation 5.999977111816406
+ob W activation 5.999977111816406
+ob X activation 5.999977111816406
+ob Y activation 5.999977111816406
+ob Z activation 5.999977111816406
+ob 1 activation 0.0
+ob 2 activation 0.0
+ob 3 activation 0.0
+ob 4 activation 0.0
+ob 5 activation 0.0
+ob lm activation 30.7421875
+ob rm activation 25.0
+ob md activation 50.0
+ob sl activation 19.84375
 Random rndseed=1527
+ob wh activation 100.0
+ob fs activation 49.99656677246094
+ob ls activation 0.0
 Random rndseed=1528
+ob lf activation 100.0
+ob rt activation 45.348968505859375
 Random rndseed=1529
+ob pd activation 100.0
 Random rndseed=1530
+ob sc activation 100.0
+ob sm activation 0.0
 Random rndseed=1531
+ob pg activation 100.0
 Random rndseed=1532
+ob sg activation 100.0
+ob smg activation 0.0
+ob id activation 25.0
+ob op activation 0.0
+ob l activation 40.0
 Random rndseed=1533
+ob g activation 100.0
 Random rndseed=1534
+ob lc activation 100.0
 Random rndseed=1535
+ob spc activation 100.0
+ob apc activation 0.0
 Random rndseed=1536
+ob dc activation 100.0
 Random rndseed=1537
+ob bc activation 100.0
 Random rndseed=1538
+ob gpc activation 100.0
+ob len activation 19.921836853027344
 Random rndseed=1539
+ob obc activation 100.0
 Random rndseed=1540
+ob bf activation 100.0
 Random rndseed=1541
 sum 818707.6205776202 chosen 641048.0669122767
 Choose codelet at index 79

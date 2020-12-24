@@ -5,6 +5,7 @@ import akka.actor.ActorLogging
 import akka.event.LoggingReceive
 import akka.actor.ActorRef
 import akka.actor.Props
+import models.Slipnet.isNumber
 
 
 
@@ -16,7 +17,7 @@ object ExecutionRun {
   case object Found
   case object Step
   case object UpdateEverything
-
+  case object InitializeSlipnetResponse
 }
 
 
@@ -28,10 +29,17 @@ class ExecutionRun extends Actor with ActorLogging  { //with InjectedActorSuppor
   var slipnet: ActorRef = null
   var coderack: ActorRef = null
   var temperature: ActorRef = null
+  var initialString: String = null
+  var modifiedString: String = null
+  var targetString: String = null
 
   def receive = LoggingReceive {
     // to the browser
-    case Run(initialString, modifiedString, targetString) => {
+    case Run(is, ms, ts) => {
+      initialString = is
+      modifiedString = ms
+      targetString = ts
+
       log.debug(s"ExecutionRun: Run with initial $initialString, modified: $modifiedString and target: $targetString")
       Random.setseed(0)
       slipnet = context.actorOf(Slipnet.props(),"Slipnet")
@@ -40,9 +48,10 @@ class ExecutionRun extends Actor with ActorLogging  { //with InjectedActorSuppor
       workspace = context.actorOf(Workspace.props(slipnet, temperature),"Workspace")
       coderack = context.actorOf(Coderack.props(workspace, slipnet, temperature, self),"Coderack")
       slipnet ! InitializeSlipnet(coderack, workspace)
-
-      coderack ! Coderack.Run(initialString, modifiedString, targetString)
     }
+
+    case InitializeSlipnetResponse =>
+      coderack ! Coderack.Run(initialString, modifiedString, targetString)
 
     case Found => {
       log.debug("Solution found")

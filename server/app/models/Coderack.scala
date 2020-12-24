@@ -36,9 +36,13 @@ object Coderack {
   def props(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, executionRun: ActorRef): Props = Props(new Coderack(workspace, slipnet, temperature, executionRun))
 
   case class Run(initialString: String, modifiedString: String, targetString: String)
-  case class FinishInitilizingWorkspaceStrings(number_of_objects: Int)
+  case class FinishInitializingWorkspaceStrings(number_of_objects: Int)
   case class PostInitialCodelets(number_of_objects: Int)
-  case class ChooseAndRun(temperature: Double)
+  case class UpdateEverythingResponse(t: Double)
+  case class SlipnetUpdateEverythingResponse(t: Double)
+  case class ChooseAndRun(number_of_objects: Int, temperature: Double)
+  case class ChooseAndRun2(temperature: Double)
+  case class ChooseAndRun3(temperature: Double)
   case object Finish
   case object Step
   case object Initializing
@@ -136,9 +140,10 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
       initialString = initialS
       modifiedString = modifiedS
       targetString = targetS
-      workspace ! Initialize(initialS, modifiedS, targetS)
+      workspace ! Initialize(self, initialS, modifiedS, targetS)
 
-    case FinishInitilizingWorkspaceStrings(nbwos) =>
+    case FinishInitializingWorkspaceStrings(nbwos) =>
+      log.debug("Coderack: FinishInitilizingWorkspaceStrings")
       number_of_objects = nbwos
       context.become(initializing)
       self ! Initializing
@@ -158,7 +163,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
       runTemperature = t
       // At beginning we post initial codelets because anyway codelets is empty
       context.become(startingRun)
-      self ! PostInitialCodelets(number_of_objects)
+      self ! ChooseAndRun(number_of_objects,t)
 
 
   }
@@ -182,7 +187,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
           for (newCodelet <- createdCodelets) {
             self ! Post(newCodelet, 1)
           }
-          self ! ChooseAndRun(100.0)
+          self ! ChooseAndRun3(100.0)
 
         case Post(codelet: ActorRef, urgency) => {
           // TODO
@@ -200,47 +205,58 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
           // if (CoderackArea.Visible) update_captions();
         }
 
-        case ChooseAndRun(temperature) =>
-          log.debug("ChooseAndRun " + codelets.size)
-          if (codelets.size == 0) {
-            log.debug("ChooseAndRun: codelets is empty => stop")
+        case ChooseAndRun(nbobjs, temperature) =>
+          number_of_objects = nbobjs
+          // How to ask all codelets for the urgency for having the sum of all codeleets urgencies
+          // https://medium.com/kenshoos-engineering-blog/assembling-requests-from-multiple-actors-44434c18e69d
+          // => ask patter is a solution
+          // second solution: coderack has a map codelet -> urgency and it is updated by notifications
+
+          //temperature ! CheckClamped(codelets_run)
+          if (((codelets_run - last_update) >= Slipnet.time_step_length) || (codelets_run == 0)) {
+            println("update_Everything")
+            workspace ! models.Workspace.UpdateEverything(temperature)
+            //update_Everything();
           } else {
-            // How to ask all codelets for the urgency for having the sum of all codeleets urgencies
-            // https://medium.com/kenshoos-engineering-blog/assembling-requests-from-multiple-actors-44434c18e69d
-            // => ask patter is a solution
-            // second solution: coderack has a map codelet -> urgency and it is updated by notifications
-
-            //temperature ! CheckClamped(codelets_run)
-            if (((codelets_run - last_update) >= Slipnet.time_step_length )|| (codelets_run==0)) {
-              println("update_Everything")
-              update_Everything();
-              last_update = codelets_run
-            }
-            // if coderack is empty, clamp initially clamped slipnodes and
-            // post initial_codelets;
-            if (total_num_of_codelets()==0){
-              self ! PostInitialCodelets
-            }
-
-
-            // From Coderack.choose().java.60
-            // let's change the view point: The urgency of a codelet is only in the context of a coderack => not a property of the codelet
-            val scale: Double = (100.0 - runTemperature + 10.0) / 15.0
-            println("Choose codelet codelets size " + codelets.size)
-
-            val urgencies = codelets.map(c => Math.pow(codeletsUrgency(c),scale))
-            // then we choose a random number in the urgency sum and we choose the codelet at this random number looking
-            // from first codelet up to this random number in terms of urgency
-            val index = Utilities.valueProportionalRandomIndexInValueList(urgencies.toList)
-            println("Choose codelet at index " + index)
-            val chosenCodelet = codelets(index)
-
-            // we remove this codelet from codelets and we run it
-            codelets = codelets.filter(e => e != chosenCodelet)
-            log.debug("ChooseAndRun: codelets found " + chosenCodelet)
-
-            chosenCodelet ! Codelet.Run(initialString, modifiedString, targetString, runTemperature)
+            self ! ChooseAndRun2(temperature)
           }
+
+
+        case UpdateEverythingResponse(t) =>
+          slipnet ! models.Slipnet.UpdateEverything(t)
+
+        case SlipnetUpdateEverythingResponse(t) =>
+          last_update = codelets_run
+          self ! ChooseAndRun2(t)
+
+
+        case ChooseAndRun2(t) =>
+          // if coderack is empty, clamp initially clamped slipnodes and
+          // post initial_codelets;
+          if (total_num_of_codelets()==0){
+            self ! PostInitialCodelets(number_of_objects)
+          } else {
+            self ! ChooseAndRun3(t)
+          }
+        case ChooseAndRun3(t) =>
+          // From Coderack.choose().java.60
+          // let's change the view point: The urgency of a codelet is only in the context of a coderack => not a property of the codelet
+          val scale: Double = (100.0 - runTemperature + 10.0) / 15.0
+          println("Choose codelet codelets size " + codelets.size)
+
+          val urgencies = codelets.map(c => Math.pow(codeletsUrgency(c),scale))
+          // then we choose a random number in the urgency sum and we choose the codelet at this random number looking
+          // from first codelet up to this random number in terms of urgency
+          val index = Utilities.valueProportionalRandomIndexInValueList(urgencies.toList)
+          println("Choose codelet at index " + index)
+          val chosenCodelet = codelets(index)
+
+          // we remove this codelet from codelets and we run it
+          codelets = codelets.filter(e => e != chosenCodelet)
+          log.debug("ChooseAndRun: codelets found " + chosenCodelet)
+
+          chosenCodelet ! Codelet.Run(initialString, modifiedString, targetString, runTemperature)
+
 
         case ProposeCorrespondence(
           correspondenceID,

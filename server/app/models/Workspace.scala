@@ -58,7 +58,7 @@ object Workspace {
   def props(slipnet: ActorRef, temperature: ActorRef): Props = Props(new Workspace(slipnet, temperature))
 
   case class Run(executionRun: ActorRef, initialString: String, modifiedString: String, targetString: String)
-  case class Initialize(initialS: String, modifiedS: String, targetS: String)
+  case class Initialize(coderack: ActorRef, initialS: String, modifiedS: String, targetS: String)
   case class InitializeWorkspaceStringsResponse(
                                                  initialDescriptions: List[WorkspaceObjectRep],
                                                  modifiedDescriptions: List[WorkspaceObjectRep],
@@ -214,7 +214,7 @@ object Workspace {
                                                          distiguishingConceptMappingTotalStrength: Double
                                                        )
 
-  case object UpdateEverything
+  case class UpdateEverything(t: Double)
 }
 
 class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with ActorLogging with InjectedActorSupport {
@@ -373,8 +373,9 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 //        }
 //      }
 
-    case Initialize(initialS, modifiedS, targetS) =>
-      coderack = sender()
+    case Initialize(cr, initialS, modifiedS, targetS) =>
+      log.debug("Workspace: Initialize")
+      coderack = cr
       reset(initialS, modifiedS, targetS)
       slipnet ! InitializeWorkspaceStrings(
         initial.letterSlipnetComplements(),
@@ -383,12 +384,13 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       )
 
     case InitializeWorkspaceStringsResponse(initialDescriptions, modifiedDescriptions, targetDescriptions) =>
+      log.debug("Workspace: InitializeWorkspaceStringsResponse")
       updateWorkspaceStringWithDescriptionReps(initial, initialDescriptions)
       updateWorkspaceStringWithDescriptionReps(modified, modifiedDescriptions)
       updateWorkspaceStringWithDescriptionReps(target, targetDescriptions)
-      coderack ! FinishInitilizingWorkspaceStrings(workspaceObjects().size)
+      coderack ! FinishInitializingWorkspaceStrings(workspaceObjects().size)
 
-    case models.Workspace.UpdateEverything =>
+    case models.Workspace.UpdateEverything(t) =>
       for (ws <- structures) {
         ws.update_strength_value()
       }
@@ -407,6 +409,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       target.update_intra_string_unhappiness();
 
       update_temperature()
+      sender() ! UpdateEverythingResponse(t)
 
     case Found =>
       found_answer = true
@@ -416,7 +419,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       if (found_answer) {
         executionRunActor ! ExecutionRun.Found
       } else {
-        coderack ! ChooseAndRun(temperature)
+        coderack ! ChooseAndRun(workspaceObjects().size,temperature)
       }
 
     // GoWithBreaker, see Codelet.java.68

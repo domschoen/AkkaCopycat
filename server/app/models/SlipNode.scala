@@ -51,7 +51,7 @@ object SlipNode {
   }
 }
 
-class SlipNode(x: Int, y: Int, val conceptual_depth: Double, val name: String, val shortName: String, workspace: ActorRef) {
+class SlipNode(x: Int, y: Int, var conceptual_depth: Double, val name: String, val shortName: String, workspace: ActorRef) {
   var codelets = ListBuffer.empty[String]
   var lateral_nonslip_links = ListBuffer.empty[SlipnetLink]
   var lateral_slip_links = ListBuffer.empty[SlipnetLink]

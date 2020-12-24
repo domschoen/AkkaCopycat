@@ -1,0 +1,135 @@
+ob A conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob B conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob C conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob D conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob E conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob F conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob G conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob H conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob I conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob J conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob K conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob L conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob M conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob N conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob O conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob P conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob Q conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob R conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob S conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob T conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob U conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob V conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob W conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob X conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob Y conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob Z conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 1 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 2 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 3 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 4 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob 5 conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lm conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob rm conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob md conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob sl conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob wh conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob fs conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob ls conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lf conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob rt conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob pd conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob sc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob sm conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob pg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob sg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob smg conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob id conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob op conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob l conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob g conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob lc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob spc conceptual_depth 50.0 ob.buffer 50.0 activation 100.0
+ob apc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob dc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob bc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob gpc conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob len conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+ob obc conceptual_depth 50.0 ob.buffer 100.0 activation 0.0
+ob bf conceptual_depth 50.0 ob.buffer 0.0 activation 0.0
+
+
+slipnodes.size()59
+Random rndseed=0
+ob A activation 100.0
+Random rndseed=1
+ob B activation 100.0
+Random rndseed=2
+ob C activation 100.0
+Random rndseed=3
+ob D activation 100.0
+ob E activation 3.0
+ob F activation 3.0
+ob G activation 3.0
+ob H activation 3.0
+Random rndseed=4
+ob I activation 100.0
+Random rndseed=5
+ob J activation 100.0
+Random rndseed=6
+ob K activation 100.0
+ob L activation 3.0
+ob M activation 3.0
+ob N activation 3.0
+ob O activation 3.0
+ob P activation 3.0
+ob Q activation 3.0
+ob R activation 3.0
+ob S activation 3.0
+ob T activation 3.0
+ob U activation 3.0
+ob V activation 3.0
+ob W activation 3.0
+ob X activation 3.0
+ob Y activation 3.0
+ob Z activation 3.0
+ob 1 activation 0.0
+ob 2 activation 0.0
+ob 3 activation 0.0
+ob 4 activation 0.0
+ob 5 activation 0.0
+Random rndseed=7
+ob lm activation 100.0
+Random rndseed=8
+ob rm activation 100.0
+Random rndseed=9
+ob md activation 100.0
+ob sl activation 0.0
+ob wh activation 0.0
+ob fs activation 0.0
+ob ls activation 0.0
+ob lf activation 0.0
+ob rt activation 0.0
+ob pd activation 0.0
+ob sc activation 0.0
+ob sm activation 0.0
+ob pg activation 0.0
+ob sg activation 0.0
+ob smg activation 0.0
+ob id activation 0.0
+ob op activation 0.0
+Random rndseed=10
+ob l activation 100.0
+ob g activation 0.0
+Random rndseed=11
+ob lc activation 100.0
+Random rndseed=12
+ob spc activation 100.0
+ob apc activation 0.0
+ob dc activation 0.0
+ob bc activation 0.0
+ob gpc activation 0.0
+ob len activation 5.0
+Random rndseed=13
+ob obc activation 100.0
+ob bf activation 40.0

@@ -24,8 +24,10 @@ import play.api.Configuration
 import play.api.libs.concurrent.InjectedActorSupport
 import Description.DescriptionRep
 import models.Bond.BondRep
+import models.Coderack.SlipnetUpdateEverythingResponse
 import models.ConceptMapping.{ConceptMappingParameters, ConceptMappingRep, ConceptMappingRep2}
 import models.Correspondence.CorrespondenceRep
+import models.ExecutionRun.InitializeSlipnetResponse
 import models.Group.{FutureGroupRep, GroupRep}
 import models.Letter.LetterSlipnetComplement
 import models.SlipNode.{GroupSlipnetInfo, SlipNodeRep, SlipnetInfo}
@@ -67,7 +69,7 @@ object Slipnet {
 
   case class Run(initialString: String, modifiedString: String, targetString: String)
   case class InitializeSlipnet(coderack: ActorRef, workspace: ActorRef)
-  case object UpdateEverything
+  case class UpdateEverything(t:Double)
   case class InitializeWorkspaceStrings(initialWos: List[LetterSlipnetComplement],
                                         modifiedWos: List[LetterSlipnetComplement],
                                         targetWos: List[LetterSlipnetComplement]
@@ -286,7 +288,7 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
   val group = add_slipnode(6, 38, 80.0, "group", "g")
 
   // categories
-  val letter_category = add_slipnode(22, 9, 30.0, "letter category", "lc")
+  val letter_category = add_slipnode(22, 9, 30.0, "letter category", SlipNode.id.letter_category)
   val string_position_category = add_slipnode(30, 21, 70.0, "string position", "spc")
   string_position_category.codelets += "top-down-description-scout"
   val alphabetic_position_category = add_slipnode(22, 12, 80.0, "alphabetic position", "apc")
@@ -319,10 +321,6 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
   linkSuccessiveSlipNodes(slipnet_numbers)
   // ************** letter category links
   linkWith(slipnet_letters, letter_category, 97.0)
-  for (i <- 0 to slipnet_letters.size - 1) {
-    add_category_link(slipnet_letters(i), letter_category, letter_category.conceptual_depth - slipnet_letters(i).conceptual_depth);
-    add_instance_link(letter_category, slipnet_letters(i), 97.0);
-  }
   add_category_link(samegrp, letter_category, 50.0);
 
   // *************** length links
@@ -467,9 +465,11 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
     add_nonslip_link(nodes(i + 1), nodes(i), predecessor);
   }
 
-  def linkWith(nodes: ListBuffer[SlipNode], withSplipNode: SlipNode, len: Double) = for (i <- 0 to nodes.size - 1) {
-    add_category_link(nodes(i), withSplipNode, withSplipNode.conceptual_depth - nodes(i).conceptual_depth);
-    add_instance_link(withSplipNode, nodes(i), len);
+  def linkWith(nodes: ListBuffer[SlipNode], withSplipNode: SlipNode, len: Double) = {
+    for (i <- 0 to nodes.size - 1) {
+      add_category_link(nodes(i), withSplipNode, withSplipNode.conceptual_depth - nodes(i).conceptual_depth);
+      add_instance_link(withSplipNode, nodes(i), len);
+    }
   }
 
 
@@ -645,13 +645,21 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
       log.debug(s"Slipnet | Run with initial $initialString, modified: $modifiedString and target: $targetString")
     }
     case InitializeSlipnet(cr, ws) =>
+      log.debug("Slipnet: InitializeSlipnet")
       coderack = cr
       workspace = ws
+      reset()
+      set_conceptual_depths(50.0)
+      sender() ! InitializeSlipnetResponse
 
-    case UpdateEverything =>
+
+    case UpdateEverything(t) =>
+      println("Update everything")
       update()
+      sender() ! SlipnetUpdateEverythingResponse(t)
 
     case InitializeWorkspaceStrings(initialWos, modifiedWos, targetWos) =>
+      log.debug("Slipnet: InitializeWorkspaceStrings")
       val initialDescriptions = letterDescriptionReps(initialWos)
       val modifiedDescriptions = letterDescriptionReps(modifiedWos)
       val targetDescriptions = letterDescriptionReps(targetWos)
@@ -1330,6 +1338,13 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
     }).isDefined
   }
 
+  def set_conceptual_depths(cd: Double) = {
+    for (ob <- slipNodes) {
+      ob.conceptual_depth = cd
+    }
+  }
+
+
   def incompatible_concept_mappings(cm1: ConceptMappingRep2, cm2: ConceptMappingRep2): Boolean = {
     // Concept-mappings (a -> b) and (c -> d) are incompatible if a is
     // related to c or if b is related to d, and the a -> b relationship is
@@ -1389,7 +1404,19 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
   )
 
 
+  def reset() = {
+    number_of_updates=0;
+    for (ob <- slipNodes){
+      ob.buffer = 0.0;
+      ob.activation = 0.0;
+    }
+    // clamp initially clamped slipnodes
+    for (s <- initially_clamped_slipnodes){
+      s.clamp=true
+      s.activation=100.0
+    }
 
+  }
 
   def update() = {
     // this procedure updates the slipnet
@@ -1405,6 +1432,8 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
     for (ob <- slipNodes) {
       ob.old_activation=ob.activation
       ob.buffer-=ob.activation*((100.0-ob.conceptual_depth)/100.0)
+      //println(s"ob ${ob.id()} conceptual_depth ${ob.conceptual_depth} ob.buffer ${ob.buffer} activation ${ob.activation}")
+
       if (ob==successor){
         //System.out.println("activation ="+ob.activation+" buffer="+ob.buffer);
         //System.out.println("number of nodes = "+slipnodes.size());
@@ -1416,27 +1445,40 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
     // for all incomming links, if the activation of the sending node = 100
     // add the percentage of its activation to activation buffer
     if (!remove_spreading_activation) for (ob <- slipNodes) {
+      //println(s"spreading activation ob ${ob.id()} size ${ob.outgoing_links.size}")
       for (sl <- ob.outgoing_links) {
-        if (ob.activation == 100.0) sl.to_node.buffer += sl.intrinsic_degree_of_association()
+        if (ob.activation == 100.0) {
+          //println(s"sl.to ${sl.to_node.id()} buffer ${sl.to_node.buffer} inc ${sl.intrinsic_degree_of_association()}")
+
+          sl.to_node.buffer += sl.intrinsic_degree_of_association()
+        }
       }
     }
     // for all nodes add the activation activation_buffer
     // if activation>100 or clamp=true, activation=100
     for (ob <- slipNodes) {
-      if (!ob.clamp) ob.activation+=ob.buffer
+      if (!ob.clamp) {
+        //println(s"Not clamp ob ${ob.id()} ob.buffer ${ob.buffer} activation ${ob.activation}")
+        ob.activation+=ob.buffer
+      }
       if (ob.activation>100.0) ob.setActivation(100.0)
       if (ob.activation<0.0) ob.setActivation(0.0)
+      println(s"ob ${ob.id()} clamp ${!ob.clamp} ob.buffer ${ob.buffer} activation ${ob.activation}")
+
     }
 
 
     // check for probabablistic jump to 100%
     var act = 0.0
+    println("slipnodes.size()" + slipNodes.size)
     if (!remove_activation_jump) for (ob <- slipNodes) {
       act=ob.activation/100.0
       act=act*act*act
 
-      if ((ob.activation>55.0)&& ( Random.rnd() < act) &&
+      if ((ob.activation>55.0) && ( Random.rnd() < act) &&
         (!ob.clamp)) ob.setActivation(100.0)
+      println(s"ob ${ob.id()} activation ${ob.activation}")
+
     }
 
 
