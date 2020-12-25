@@ -570,7 +570,10 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
             } else {
               log.debug(s"Workspace | ReplaceLetter | no relation found")
             }
-            i_letter.replacement = Some(new Replacement(i_letter, m_letter, relationOpt))
+            val replacement = new Replacement(i_letter, m_letter, relationOpt)
+            i_letter.replacement = Some(replacement)
+            addStructure(replacement)
+
             if (relationOpt.isDefined && relationOpt.get == Slipnet.RelationType.Sameness) {
               i_letter.changed = true;
               changed_object = Some(i_letter)

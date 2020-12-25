@@ -27,6 +27,8 @@ import scala.collection.mutable.ListBuffer
 
 
 object Temperature {
+  var clamp_time = 30
+
   def props(): Props = Props(new Temperature())
 
   case class Run(initialString: String, modifiedString: String, targetString: String)
@@ -48,7 +50,6 @@ object Temperature {
 class Temperature extends Actor with ActorLogging with InjectedActorSupport {
   import Temperature._
   var woAppActor: Option[ActorRef] = None
-  var clamp_time = 30
   var clamped = true
   var temperature: Double = 100.0
   var subscribers = ListBuffer.empty[ActorRef]

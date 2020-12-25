@@ -7,7 +7,7 @@ object Utilities {
     val sum = values.sum
     val chosen = Random.rnd() * sum
 
-    println(s"sum $sum chosen $chosen")
+    //println(s"sum $sum chosen $chosen")
 
     valueProportionalIndexInValueListAtValue(0.0, 0, values, chosen)
   }

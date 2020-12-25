@@ -40,7 +40,9 @@ object Coderack {
   case class PostInitialCodelets(number_of_objects: Int)
   case class UpdateEverythingResponse(t: Double)
   case class SlipnetUpdateEverythingResponse(t: Double)
+  case class ProcessChooseAndRun(number_of_objects: Int, temperature: Double)
   case class ChooseAndRun(number_of_objects: Int, temperature: Double)
+
   case class ChooseAndRun2(temperature: Double)
   case class ChooseAndRun3(temperature: Double)
   case object Finish
@@ -163,7 +165,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
       runTemperature = t
       // At beginning we post initial codelets because anyway codelets is empty
       context.become(startingRun)
-      self ! ChooseAndRun(number_of_objects,t)
+      self ! ProcessChooseAndRun(number_of_objects,t)
 
 
   }
@@ -204,14 +206,21 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
           // Graphics
           // if (CoderackArea.Visible) update_captions();
         }
-
         case ChooseAndRun(nbobjs, temperature) =>
+          codelets_run += 1
+          self ! ProcessChooseAndRun(nbobjs, temperature)
+
+
+        case ProcessChooseAndRun(nbobjs, temperature) =>
           number_of_objects = nbobjs
           // How to ask all codelets for the urgency for having the sum of all codeleets urgencies
           // https://medium.com/kenshoos-engineering-blog/assembling-requests-from-multiple-actors-44434c18e69d
           // => ask patter is a solution
           // second solution: coderack has a map codelet -> urgency and it is updated by notifications
+          println(s"mainloop | codelets_run ${codelets_run} clamp_time ${Temperature.clamp_time} " +
+            s" last_update ${last_update} time_step_length ${Slipnet.time_step_length}")
 
+          // TODO
           //temperature ! CheckClamped(codelets_run)
           if (((codelets_run - last_update) >= Slipnet.time_step_length) || (codelets_run == 0)) {
             println("update_Everything")
