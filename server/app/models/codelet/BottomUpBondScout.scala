@@ -8,7 +8,7 @@ import models.Slipnet.{BondFromTo, BondFromTo2}
 import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
 import models.Workspace
 import models.Workspace.{WorkspaceProposeBond, WorkspaceProposeBondResponse}
-import models.WorkspaceObject.WorkspaceObjectRep
+import models.WorkspaceObject.{WorkspaceObjectRep}
 import models.WorkspaceStructure.WorkspaceStructureRep
 import models.codelet.BottomUpBondScout.BondFromToSlipnetResponse
 import models.codelet.Codelet.Finished
@@ -44,7 +44,7 @@ class BottomUpBondScout(urgency: Int,              workspace: ActorRef,
     GoWithBottomUpBondScout2Response,
     BondFromTo2Response
   }
-  import models.Workspace.{GoWithBottomUpBondScout2}
+  import models.Workspace.GoWithBottomUpBondScout2
 
   var bondFrom: WorkspaceObjectRep = null
   var bondTo: WorkspaceObjectRep = null
@@ -65,12 +65,14 @@ class BottomUpBondScout(urgency: Int,              workspace: ActorRef,
       workspace ! BondWithNeighbor(runTemperature)
 
     case GoWithBottomUpBondScoutResponse(from, to) =>
+      log.debug(s"BottomUpBondScout. response")
       bondFrom = from
       bondTo = to
       // continue in slipnet with codelet.java.255
       slipnet ! BondFromTo(from, to)
 
     case BondFromToSlipnetResponse(fromFacets, toFacets) =>
+      log.debug(s"BottomUpBondScout. BondFromToSlipnetResponse")
       workspace ! GoWithBottomUpBondScout2(bondFrom, bondTo, fromFacets, toFacets)
 
     case GoWithBottomUpBondScout2Response(bf, fd, td) =>
@@ -103,6 +105,7 @@ class BottomUpBondScout(urgency: Int,              workspace: ActorRef,
       t = value
 
     case Finished =>
+      log.debug(s"Finished $runTemperature")
       workspace ! models.Workspace.Step(runTemperature)
 
   }

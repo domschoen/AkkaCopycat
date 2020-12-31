@@ -1,4 +1,4 @@
-/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=49847:/Applications/IntelliJ IDEA CE.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/tools.jar:/Users/dschoen/Documents/gitlab/copycat/JavaCopyCat/out/production/JavaCopyCat rungroup
+/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=50249:/Applications/IntelliJ IDEA CE.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/tools.jar:/Users/dschoen/Documents/gitlab/copycat/JavaCopyCat/out/production/JavaCopyCat rungroup
 Random rndseed=1
 Random rndseed=2
 Random rndseed=3
@@ -728,7 +728,7 @@ coderack: chosen codelet codelet@27d6c5e0
 coderack: chosen codelet replacement-finder urgency = 1
 #### replacement-finder ####
 Random rndseed=15
-selected letter in initial string =letter (1)
+selected letter in initial string =letter (1)1
 sameness relation found
 building replacement
 mainloop | codelets_run 1 clamp_time 30 last_update 0 time_step_length 15
@@ -740,8 +740,8 @@ coderack: chosen codelet bottom-up-bond-scout urgency = 1
 #### bottom-up-bond-scout ####
 Random rndseed=17
 Random rndseed=18
-initial object chosen: letter (2) in target string
-to object: letter (3)
+initial object chosen: letter (2)2 in target string
+to object: letter (3)3
 Random rndseed=19
 chosen bond facet: letter category
 from object descriptor: J
@@ -749,13 +749,15 @@ to object descriptior: K
 proposing successor bond 
 create codelet bond-strength-tester
 mainloop | codelets_run 2 clamp_time 30 last_update 0 time_step_length 15
+
+
 Random rndseed=20
 sum 15677.0 chosen 12964.878999999999
 Choose codelet at index 52
 coderack: chosen codelet codelet@15aeb7ab
 coderack: chosen codelet bond-strength-tester urgency = 5
 #### bond-strength-tester ####
-bond = successor bond between letter (2) and letter (3) in target string
+bond = successor bond between letter (2)2 and letter (3)3 in target string
 bond strength = 48.400000000000006
 Random rndseed=21
 not strong enough: Fizzle!
@@ -768,8 +770,8 @@ coderack: chosen codelet bottom-up-bond-scout urgency = 1
 #### bottom-up-bond-scout ####
 Random rndseed=23
 Random rndseed=24
-initial object chosen: letter (3) in initial string
-to object: letter (2)
+initial object chosen: letter (3)3 in initial string
+to object: letter (2)2
 Random rndseed=25
 chosen bond facet: letter category
 from object descriptor: C
@@ -783,7 +785,7 @@ Choose codelet at index 51
 coderack: chosen codelet codelet@6acbcfc0
 coderack: chosen codelet bond-strength-tester urgency = 5
 #### bond-strength-tester ####
-bond = predecessor bond between letter (2) and letter (3) in initial string
+bond = predecessor bond between letter (2)2 and letter (3)3 in initial string
 bond strength = 48.400000000000006
 Random rndseed=27
 not strong enough: Fizzle!
@@ -795,7 +797,7 @@ coderack: chosen codelet codelet@5f184fc6
 coderack: chosen codelet replacement-finder urgency = 1
 #### replacement-finder ####
 Random rndseed=29
-selected letter in initial string =letter (2)
+selected letter in initial string =letter (2)2
 sameness relation found
 building replacement
 mainloop | codelets_run 6 clamp_time 30 last_update 0 time_step_length 15
@@ -807,7 +809,7 @@ coderack: chosen codelet bottom-up-correspondence-scout urgency = 1
 #### bottom-up-correspondence-scout ####
 Random rndseed=31
 Random rndseed=32
-trying a correspondence between letter (2) and letter (2)
+trying a correspondence between letter (2)2 and letter (2)2
 Random rndseed=33
 Random rndseed=34
 Proposing correspondence with concept mappings:
@@ -821,7 +823,7 @@ Choose codelet at index 49
 coderack: chosen codelet codelet@5b480cf9
 coderack: chosen codelet correspondence-strength-tester urgency = 7
 #### correspondence-strength-tester ####
-evaluating correspondence from letter (2) to letter (2)
+evaluating correspondence from letter (2)2 to letter (2)2
 strength = 0.6332433402239946
 Random rndseed=36
 create codelet correspondence-builder
@@ -833,7 +835,7 @@ Choose codelet at index 49
 coderack: chosen codelet codelet@6f496d9f
 coderack: chosen codelet correspondence-builder urgency = 5
 #### correspondence-builder ####
-trying correspondence from letter (2) to letter (2)
+trying correspondence from letter (2)2 to letter (2)2
 building correspondence
 mainloop | codelets_run 9 clamp_time 30 last_update 0 time_step_length 15
 Random rndseed=38
@@ -843,7 +845,7 @@ coderack: chosen codelet codelet@723279cf
 coderack: chosen codelet replacement-finder urgency = 1
 #### replacement-finder ####
 Random rndseed=39
-selected letter in initial string =letter (2)
+selected letter in initial string =letter (2)2
 replacement already found for this object. Fizzle!
 mainloop | codelets_run 10 clamp_time 30 last_update 0 time_step_length 15
 Random rndseed=40
@@ -853,7 +855,7 @@ coderack: chosen codelet codelet@10f87f48
 coderack: chosen codelet replacement-finder urgency = 1
 #### replacement-finder ####
 Random rndseed=41
-selected letter in initial string =letter (2)
+selected letter in initial string =letter (2)2
 replacement already found for this object. Fizzle!
 mainloop | codelets_run 11 clamp_time 30 last_update 0 time_step_length 15
 Random rndseed=42
@@ -864,7 +866,7 @@ coderack: chosen codelet bottom-up-correspondence-scout urgency = 1
 #### bottom-up-correspondence-scout ####
 Random rndseed=43
 Random rndseed=44
-trying a correspondence between letter (1) and letter (1)
+trying a correspondence between letter (1)1 and letter (1)1
 Random rndseed=45
 Random rndseed=46
 Proposing correspondence with concept mappings:
@@ -878,7 +880,7 @@ Choose codelet at index 46
 coderack: chosen codelet codelet@2f4d3709
 coderack: chosen codelet correspondence-strength-tester urgency = 7
 #### correspondence-strength-tester ####
-evaluating correspondence from letter (1) to letter (1)
+evaluating correspondence from letter (1)1 to letter (1)1
 strength = 0.6332433402239946
 Random rndseed=48
 create codelet correspondence-builder
@@ -890,7 +892,7 @@ Choose codelet at index 46
 coderack: chosen codelet codelet@4e50df2e
 coderack: chosen codelet correspondence-builder urgency = 5
 #### correspondence-builder ####
-trying correspondence from letter (1) to letter (1)
+trying correspondence from letter (1)1 to letter (1)1
 building correspondence
 mainloop | codelets_run 14 clamp_time 30 last_update 0 time_step_length 15
 Random rndseed=50
@@ -900,7 +902,7 @@ coderack: chosen codelet codelet@1d81eb93
 coderack: chosen codelet replacement-finder urgency = 1
 #### replacement-finder ####
 Random rndseed=51
-selected letter in initial string =letter (1)
+selected letter in initial string =letter (1)1
 replacement already found for this object. Fizzle!
 mainloop | codelets_run 15 clamp_time 30 last_update 0 time_step_length 15
 update_Everything
@@ -1197,7 +1199,7 @@ coderack: chosen codelet codelet@7291c18f
 coderack: chosen codelet replacement-finder urgency = 3
 #### replacement-finder ####
 Random rndseed=86
-selected letter in initial string =letter (2)
+selected letter in initial string =letter (2)2
 replacement already found for this object. Fizzle!
 mainloop | codelets_run 16 clamp_time 30 last_update 15 time_step_length 15
 Random rndseed=87
@@ -1208,7 +1210,7 @@ coderack: chosen codelet bottom-up-correspondence-scout urgency = 1
 #### bottom-up-correspondence-scout ####
 Random rndseed=88
 Random rndseed=89
-trying a correspondence between letter (1) and letter (1)
+trying a correspondence between letter (1)1 and letter (1)1
 Random rndseed=90
 Random rndseed=91
 Proposing correspondence with concept mappings:
@@ -1231,7 +1233,7 @@ coderack: chosen codelet codelet@6e8cf4c6
 coderack: chosen codelet replacement-finder urgency = 1
 #### replacement-finder ####
 Random rndseed=94
-selected letter in initial string =letter (1)
+selected letter in initial string =letter (1)1
 replacement already found for this object. Fizzle!
 mainloop | codelets_run 19 clamp_time 30 last_update 15 time_step_length 15
 Random rndseed=95
@@ -1240,7 +1242,7 @@ Choose codelet at index 45
 coderack: chosen codelet codelet@12edcd21
 coderack: chosen codelet correspondence-strength-tester urgency = 7
 #### correspondence-strength-tester ####
-evaluating correspondence from letter (1) to letter (1)
+evaluating correspondence from letter (1)1 to letter (1)1
 strength = 0.6024395663101093
 Random rndseed=96
 not strong enough: fizzle 
@@ -1261,7 +1263,7 @@ coderack: chosen codelet bottom-up-correspondence-scout urgency = 1
 #### bottom-up-correspondence-scout ####
 Random rndseed=99
 Random rndseed=100
-trying a correspondence between letter (1) and letter (3)
+trying a correspondence between letter (1)1 and letter (3)3
 Random rndseed=101
 Random rndseed=102
 Proposing correspondence with concept mappings:
@@ -1277,7 +1279,7 @@ coderack: chosen codelet bottom-up-correspondence-scout urgency = 1
 #### bottom-up-correspondence-scout ####
 Random rndseed=104
 Random rndseed=105
-trying a correspondence between letter (2) and letter (2)
+trying a correspondence between letter (2)2 and letter (2)2
 Random rndseed=106
 Random rndseed=107
 Proposing correspondence with concept mappings:
@@ -1291,7 +1293,7 @@ Choose codelet at index 42
 coderack: chosen codelet codelet@27973e9b
 coderack: chosen codelet correspondence-strength-tester urgency = 2
 #### correspondence-strength-tester ####
-evaluating correspondence from letter (1) to letter (3)
+evaluating correspondence from letter (1)1 to letter (3)3
 strength = 0.09634065053483609
 Random rndseed=109
 not strong enough: fizzle 
@@ -1302,7 +1304,7 @@ Choose codelet at index 42
 coderack: chosen codelet codelet@312b1dae
 coderack: chosen codelet correspondence-strength-tester urgency = 7
 #### correspondence-strength-tester ####
-evaluating correspondence from letter (2) to letter (2)
+evaluating correspondence from letter (2)2 to letter (2)2
 strength = 0.6024395663101093
 Random rndseed=111
 create codelet correspondence-builder
@@ -1314,7 +1316,7 @@ Choose codelet at index 42
 coderack: chosen codelet codelet@7530d0a
 coderack: chosen codelet correspondence-builder urgency = 5
 #### correspondence-builder ####
-trying correspondence from letter (2) to letter (2)
+trying correspondence from letter (2)2 to letter (2)2
 correspondence is already present
 activate concept mappings & fizzle
 mainloop | codelets_run 26 clamp_time 30 last_update 15 time_step_length 15
@@ -1326,8 +1328,8 @@ coderack: chosen codelet bottom-up-bond-scout urgency = 1
 #### bottom-up-bond-scout ####
 Random rndseed=114
 Random rndseed=115
-initial object chosen: letter (2) in target string
-to object: letter (3)
+initial object chosen: letter (2)2 in target string
+to object: letter (3)3
 Random rndseed=116
 chosen bond facet: letter category
 from object descriptor: J
@@ -1341,7 +1343,7 @@ Choose codelet at index 41
 coderack: chosen codelet codelet@3941a79c
 coderack: chosen codelet bond-strength-tester urgency = 5
 #### bond-strength-tester ####
-bond = successor bond between letter (2) and letter (3) in target string
+bond = successor bond between letter (2)2 and letter (3)3 in target string
 bond strength = 48.400000000000006
 Random rndseed=118
 not strong enough: Fizzle!
@@ -1353,7 +1355,7 @@ coderack: chosen codelet codelet@506e1b77
 coderack: chosen codelet replacement-finder urgency = 1
 #### replacement-finder ####
 Random rndseed=120
-selected letter in initial string =letter (1)
+selected letter in initial string =letter (1)1
 replacement already found for this object. Fizzle!
 mainloop | codelets_run 29 clamp_time 30 last_update 15 time_step_length 15
 Random rndseed=121
@@ -1364,8 +1366,8 @@ coderack: chosen codelet bottom-up-bond-scout urgency = 1
 #### bottom-up-bond-scout ####
 Random rndseed=122
 Random rndseed=123
-initial object chosen: letter (3) in target string
-to object: letter (2)
+initial object chosen: letter (3)3 in target string
+to object: letter (2)2
 Random rndseed=124
 chosen bond facet: letter category
 from object descriptor: K
@@ -1677,8 +1679,8 @@ coderack: chosen codelet bottom-up-bond-scout urgency = 3
 #### bottom-up-bond-scout ####
 Random rndseed=163
 Random rndseed=164
-initial object chosen: letter (2) in target string
-to object: letter (3)
+initial object chosen: letter (2)2 in target string
+to object: letter (3)3
 Random rndseed=165
 chosen bond facet: letter category
 from object descriptor: J
@@ -1692,7 +1694,7 @@ Choose codelet at index 39
 coderack: chosen codelet codelet@3d494fbf
 coderack: chosen codelet bond-strength-tester urgency = 5
 #### bond-strength-tester ####
-bond = predecessor bond between letter (2) and letter (3) in target string
+bond = predecessor bond between letter (2)2 and letter (3)3 in target string
 bond strength = 48.400000000000006
 Random rndseed=167
 succeeded: posting bond-builder
@@ -1704,7 +1706,7 @@ Choose codelet at index 47
 coderack: chosen codelet codelet@1ddc4ec2
 coderack: chosen codelet bond-strength-tester urgency = 5
 #### bond-strength-tester ####
-bond = successor bond between letter (2) and letter (3) in target string
+bond = successor bond between letter (2)2 and letter (3)3 in target string
 bond strength = 48.400000000000006
 Random rndseed=169
 not strong enough: Fizzle!
@@ -1715,7 +1717,7 @@ Choose codelet at index 47
 coderack: chosen codelet codelet@133314b
 coderack: chosen codelet bond-builder urgency = 4
 #### bond-builder ####
-trying to build predecessor bond between letter (2) and letter (3) in target string
+trying to build predecessor bond between letter (2)2 and letter (3)3 in target string
 strength = 48.400000000000006
 no incompatible bonds!
 no incompatible groups!
@@ -1729,8 +1731,8 @@ coderack: chosen codelet bottom-up-bond-scout urgency = 3
 #### bottom-up-bond-scout ####
 Random rndseed=172
 Random rndseed=173
-initial object chosen: letter (3) in initial string
-to object: letter (2)
+initial object chosen: letter (3)3 in initial string
+to object: letter (2)2
 Random rndseed=174
 chosen bond facet: letter category
 from object descriptor: C
@@ -1745,7 +1747,7 @@ coderack: chosen codelet codelet@7cd84586
 coderack: chosen codelet replacement-finder urgency = 3
 #### replacement-finder ####
 Random rndseed=176
-selected letter in initial string =letter (3)
+selected letter in initial string =letter (3)3
 successor relation found
 building replacement
 mainloop | codelets_run 36 clamp_time 30 last_update 30 time_step_length 15
@@ -1756,7 +1758,7 @@ coderack: chosen codelet codelet@30dae81
 coderack: chosen codelet replacement-finder urgency = 1
 #### replacement-finder ####
 Random rndseed=178
-selected letter in initial string =letter (1)
+selected letter in initial string =letter (1)1
 replacement already found for this object. Fizzle!
 mainloop | codelets_run 37 clamp_time 30 last_update 30 time_step_length 15
 Random rndseed=179
@@ -1765,7 +1767,7 @@ Choose codelet at index 44
 coderack: chosen codelet codelet@1b2c6ec2
 coderack: chosen codelet bond-strength-tester urgency = 5
 #### bond-strength-tester ####
-bond = predecessor bond between letter (2) and letter (3) in initial string
+bond = predecessor bond between letter (2)2 and letter (3)3 in initial string
 bond strength = 48.400000000000006
 Random rndseed=180
 succeeded: posting bond-builder
@@ -1777,7 +1779,7 @@ Choose codelet at index 44
 coderack: chosen codelet codelet@4edde6e5
 coderack: chosen codelet bond-builder urgency = 4
 #### bond-builder ####
-trying to build predecessor bond between letter (2) and letter (3) in initial string
+trying to build predecessor bond between letter (2)2 and letter (3)3 in initial string
 strength = 48.400000000000006
 no incompatible bonds!
 no incompatible groups!
@@ -1790,10 +1792,10 @@ coderack: chosen codelet codelet@70177ecd
 coderack: chosen codelet important-object-correspondence-scout urgency = 3
 #### important-object-correspondence-scout ####
 Random rndseed=183
-object chosen from initial string: letter (1)
+object chosen from initial string: letter (1)1
 Random rndseed=184
 Random rndseed=185
-trying a correspondence between letter (1) and letter (1)
+trying a correspondence between letter (1)1 and letter (1)1
 Random rndseed=186
 Random rndseed=187
 proposing correspondence with concept mappings:
@@ -1808,7 +1810,7 @@ coderack: chosen codelet codelet@1e80bfe8
 coderack: chosen codelet replacement-finder urgency = 3
 #### replacement-finder ####
 Random rndseed=189
-selected letter in initial string =letter (1)
+selected letter in initial string =letter (1)1
 replacement already found for this object. Fizzle!
 mainloop | codelets_run 41 clamp_time 30 last_update 30 time_step_length 15
 Random rndseed=190
@@ -1817,7 +1819,7 @@ Choose codelet at index 42
 coderack: chosen codelet codelet@66a29884
 coderack: chosen codelet correspondence-strength-tester urgency = 7
 #### correspondence-strength-tester ####
-evaluating correspondence from letter (1) to letter (1)
+evaluating correspondence from letter (1)1 to letter (1)1
 strength = 0.6024395663101093
 Random rndseed=191
 create codelet correspondence-builder
@@ -1831,7 +1833,7 @@ coderack: chosen codelet bottom-up-correspondence-scout urgency = 1
 #### bottom-up-correspondence-scout ####
 Random rndseed=193
 Random rndseed=194
-trying a correspondence between letter (3) and letter (3)
+trying a correspondence between letter (3)3 and letter (3)3
 Random rndseed=195
 Random rndseed=196
 Proposing correspondence with concept mappings:
@@ -1863,8 +1865,8 @@ coderack: chosen codelet bottom-up-bond-scout urgency = 3
 #### bottom-up-bond-scout ####
 Random rndseed=201
 Random rndseed=202
-initial object chosen: letter (3) in target string
-to object: letter (2)
+initial object chosen: letter (3)3 in target string
+to object: letter (2)2
 Random rndseed=203
 chosen bond facet: letter category
 from object descriptor: K
@@ -2201,7 +2203,7 @@ fizzle probability = 0.17218888888888897
 Random rndseed=251
 did not fizzle.
 Random rndseed=252
-object chosen = Correspondence between letter (2) and letter (2)
+object chosen = Correspondence between letter (2)2 and letter (2)2
 break probability = 0.3974427846171913
 Random rndseed=253
 couldn't break structure: Fizzle!
@@ -2212,7 +2214,7 @@ Choose codelet at index 40
 coderack: chosen codelet codelet@79fc0f2f
 coderack: chosen codelet bond-strength-tester urgency = 5
 #### bond-strength-tester ####
-bond = predecessor bond between letter (2) and letter (3) in target string
+bond = predecessor bond between letter (2)2 and letter (3)3 in target string
 bond strength = 91.96
 Random rndseed=255
 succeeded: posting bond-builder
@@ -2226,7 +2228,7 @@ coderack: chosen codelet bottom-up-correspondence-scout urgency = 1
 #### bottom-up-correspondence-scout ####
 Random rndseed=257
 Random rndseed=258
-trying a correspondence between letter (3) and letter (3)
+trying a correspondence between letter (3)3 and letter (3)3
 Random rndseed=259
 Random rndseed=260
 Proposing correspondence with concept mappings:
@@ -2242,8 +2244,8 @@ coderack: chosen codelet bottom-up-bond-scout urgency = 1
 #### bottom-up-bond-scout ####
 Random rndseed=262
 Random rndseed=263
-initial object chosen: letter (1) in target string
-to object: letter (2)
+initial object chosen: letter (1)1 in target string
+to object: letter (2)2
 Random rndseed=264
 chosen bond facet: letter category
 from object descriptor: I
@@ -2259,7 +2261,7 @@ coderack: chosen codelet bottom-up-correspondence-scout urgency = 1
 #### bottom-up-correspondence-scout ####
 Random rndseed=266
 Random rndseed=267
-trying a correspondence between letter (1) and letter (1)
+trying a correspondence between letter (1)1 and letter (1)1
 Random rndseed=268
 Random rndseed=269
 Proposing correspondence with concept mappings:
@@ -2274,7 +2276,7 @@ coderack: chosen codelet codelet@4783da3f
 coderack: chosen codelet bottom-up-description-scout urgency = 3
 #### bottom-up-description-scout ####
 Random rndseed=271
-chosen object: letter (1) from initial string
+chosen object: letter (1)1 from initial string
 Random rndseed=272
 chosen descriptor = leftmost
 has no property links: Fizzle!
@@ -2285,7 +2287,7 @@ Choose codelet at index 35
 coderack: chosen codelet codelet@378fd1ac
 coderack: chosen codelet correspondence-builder urgency = 5
 #### correspondence-builder ####
-trying correspondence from letter (1) to letter (1)
+trying correspondence from letter (1)1 to letter (1)1
 correspondence is already present
 activate concept mappings & fizzle
 mainloop | codelets_run 53 clamp_time 30 last_update 45 time_step_length 15
@@ -2295,7 +2297,7 @@ Choose codelet at index 50
 coderack: chosen codelet codelet@49097b5d
 coderack: chosen codelet bond-strength-tester urgency = 5
 #### bond-strength-tester ####
-bond = successor bond between letter (1) and letter (2) in target string
+bond = successor bond between letter (1)1 and letter (2)2 in target string
 bond strength = 48.400000000000006
 Random rndseed=275
 succeeded: posting bond-builder
@@ -2307,7 +2309,7 @@ Choose codelet at index 35
 coderack: chosen codelet codelet@6e2c634b
 coderack: chosen codelet correspondence-strength-tester urgency = 7
 #### correspondence-strength-tester ####
-evaluating correspondence from letter (3) to letter (3)
+evaluating correspondence from letter (3)3 to letter (3)3
 strength = 0.7230686584593704
 Random rndseed=277
 not strong enough: fizzle 
@@ -2318,7 +2320,7 @@ Choose codelet at index 49
 coderack: chosen codelet codelet@37a71e93
 coderack: chosen codelet correspondence-strength-tester urgency = 7
 #### correspondence-strength-tester ####
-evaluating correspondence from letter (1) to letter (1)
+evaluating correspondence from letter (1)1 to letter (1)1
 strength = 0.6025572153828087
 Random rndseed=279
 not strong enough: fizzle 
@@ -2329,7 +2331,7 @@ Choose codelet at index 47
 coderack: chosen codelet codelet@7e6cbb7a
 coderack: chosen codelet bond-builder urgency = 7
 #### bond-builder ####
-trying to build predecessor bond between letter (2) and letter (3) in target string
+trying to build predecessor bond between letter (2)2 and letter (3)3 in target string
 strength = 91.96
 already exists: activate descriptors & Fizzle!
 mainloop | codelets_run 57 clamp_time 30 last_update 45 time_step_length 15
@@ -2339,7 +2341,7 @@ Choose codelet at index 47
 coderack: chosen codelet codelet@7c3df479
 coderack: chosen codelet correspondence-strength-tester urgency = 7
 #### correspondence-strength-tester ####
-evaluating correspondence from letter (3) to letter (3)
+evaluating correspondence from letter (3)3 to letter (3)3
 strength = 0.7230686584593704
 Random rndseed=282
 create codelet correspondence-builder
@@ -2352,7 +2354,7 @@ coderack: chosen codelet codelet@7106e68e
 coderack: chosen codelet top-down-description-scout urgency = 4
 #### top-down-description-scout ####
 Random rndseed=284
-chosen object: letter (3) from target string
+chosen object: letter (3)3 from target string
 looking for string position descriptor
 couldn't find any descriptions
 mainloop | codelets_run 59 clamp_time 30 last_update 45 time_step_length 15
@@ -2717,7 +2719,7 @@ coderack: chosen codelet codelet@6576fe71
 coderack: chosen codelet top-down-description-scout urgency = 4
 #### top-down-description-scout ####
 Random rndseed=348
-chosen object: letter (3) from target string
+chosen object: letter (3)3 from target string
 looking for string position descriptor
 couldn't find any descriptions
 mainloop | codelets_run 61 clamp_time 30 last_update 60 time_step_length 15
@@ -2756,8 +2758,8 @@ coderack: chosen codelet bottom-up-bond-scout urgency = 3
 #### bottom-up-bond-scout ####
 Random rndseed=355
 Random rndseed=356
-initial object chosen: letter (2) in target string
-to object: letter (1)
+initial object chosen: letter (2)2 in target string
+to object: letter (1)1
 Random rndseed=357
 chosen bond facet: letter category
 from object descriptor: J
@@ -2771,7 +2773,7 @@ Choose codelet at index 63
 coderack: chosen codelet codelet@4d405ef7
 coderack: chosen codelet bond-strength-tester urgency = 7
 #### bond-strength-tester ####
-bond = predecessor bond between letter (1) and letter (2) in target string
+bond = predecessor bond between letter (1)1 and letter (2)2 in target string
 bond strength = 94.862124085996
 Random rndseed=359
 succeeded: posting bond-builder
@@ -2787,9 +2789,9 @@ searching for predecessor
 Random rndseed=361
 initial string selected
 Random rndseed=362
-initial object: letter (2)
+initial object: letter (2)2
 Random rndseed=363
-to object : letter (3)
+to object : letter (3)3
 Random rndseed=364
 chosen bond facet :letter category
 from object descriptor: B
@@ -2817,7 +2819,7 @@ coderack: chosen codelet bottom-up-correspondence-scout urgency = 1
 #### bottom-up-correspondence-scout ####
 Random rndseed=368
 Random rndseed=369
-trying a correspondence between letter (3) and letter (3)
+trying a correspondence between letter (3)3 and letter (3)3
 Random rndseed=370
 Random rndseed=371
 Proposing correspondence with concept mappings:
@@ -2833,8 +2835,8 @@ coderack: chosen codelet bottom-up-bond-scout urgency = 3
 #### bottom-up-bond-scout ####
 Random rndseed=373
 Random rndseed=374
-initial object chosen: letter (2) in target string
-to object: letter (3)
+initial object chosen: letter (2)2 in target string
+to object: letter (3)3
 Random rndseed=375
 chosen bond facet: letter category
 from object descriptor: J
@@ -2849,10 +2851,10 @@ coderack: chosen codelet codelet@3f91beef
 coderack: chosen codelet important-object-correspondence-scout urgency = 3
 #### important-object-correspondence-scout ####
 Random rndseed=377
-object chosen from initial string: letter (1)
+object chosen from initial string: letter (1)1
 Random rndseed=378
 Random rndseed=379
-trying a correspondence between letter (1) and letter (1)
+trying a correspondence between letter (1)1 and letter (1)1
 Random rndseed=380
 Random rndseed=381
 proposing correspondence with concept mappings:
@@ -2879,8 +2881,8 @@ coderack: chosen codelet bottom-up-bond-scout urgency = 1
 #### bottom-up-bond-scout ####
 Random rndseed=385
 Random rndseed=386
-initial object chosen: letter (2) in initial string
-to object: letter (1)
+initial object chosen: letter (2)2 in initial string
+to object: letter (1)1
 Random rndseed=387
 chosen bond facet: letter category
 from object descriptor: B
@@ -2894,7 +2896,7 @@ Choose codelet at index 59
 coderack: chosen codelet codelet@179d3b25
 coderack: chosen codelet correspondence-strength-tester urgency = 7
 #### correspondence-strength-tester ####
-evaluating correspondence from letter (3) to letter (3)
+evaluating correspondence from letter (3)3 to letter (3)3
 strength = 0.7243454070822996
 Random rndseed=389
 create codelet correspondence-builder
@@ -2910,9 +2912,9 @@ trying to build a left bond
 Random rndseed=391
 target string selected
 Random rndseed=392
-initial object: letter (2)
+initial object: letter (2)2
 Random rndseed=393
-to object: letter (1)
+to object: letter (1)1
 Random rndseed=394
 chosen bond facet = letter category
 from descriptor: J
@@ -2926,7 +2928,7 @@ Choose codelet at index 55
 coderack: chosen codelet codelet@5d099f62
 coderack: chosen codelet bond-builder urgency = 7
 #### bond-builder ####
-trying to build predecessor bond between letter (1) and letter (2) in target string
+trying to build predecessor bond between letter (1)1 and letter (2)2 in target string
 strength = 94.862124085996
 no incompatible bonds!
 no incompatible groups!
@@ -3287,10 +3289,10 @@ target string: relevance=100.0, unhappiness=78.91952798088978
 Random rndseed=456
 initial string selected
 Random rndseed=457
-object chosen = letter (2)
+object chosen = letter (2)2
 Random rndseed=458
-trying from letter (2) predecessor
-proposing group from letter (2) to letter (3)
+trying from letter (2)2 predecessor
+proposing group from letter (2)2 to letter (3)3
 Random rndseed=459
 create codelet group-strength-tester
 mainloop | codelets_run 76 clamp_time 30 last_update 75 time_step_length 15
@@ -3304,9 +3306,9 @@ searching for predecessor
 Random rndseed=461
 target string selected
 Random rndseed=462
-initial object: letter (3)
+initial object: letter (3)3
 Random rndseed=463
-to object : letter (2)
+to object : letter (2)2
 Random rndseed=464
 chosen bond facet :letter category
 from object descriptor: K
@@ -3320,7 +3322,7 @@ Choose codelet at index 40
 coderack: chosen codelet codelet@20ad9418
 coderack: chosen codelet correspondence-builder urgency = 6
 #### correspondence-builder ####
-trying correspondence from letter (3) to letter (3)
+trying correspondence from letter (3)3 to letter (3)3
 building correspondence
 mainloop | codelets_run 78 clamp_time 30 last_update 75 time_step_length 15
 Random rndseed=466
@@ -3336,9 +3338,9 @@ target string: relevance=100.0, unhappiness=78.91952798088978
 Random rndseed=467
 target string selected
 Random rndseed=468
-object chosen = letter (3)
-trying from letter (3) predecessor
-proposing group from letter (1) to letter (3)
+object chosen = letter (3)3
+trying from letter (3)3 predecessor
+proposing group from letter (1)1 to letter (3)3
 Random rndseed=469
 create codelet group-strength-tester
 mainloop | codelets_run 79 clamp_time 30 last_update 75 time_step_length 15
@@ -3348,7 +3350,7 @@ Choose codelet at index 53
 coderack: chosen codelet codelet@439f5b3d
 coderack: chosen codelet bond-strength-tester urgency = 7
 #### bond-strength-tester ####
-bond = predecessor bond between letter (2) and letter (3) in initial string
+bond = predecessor bond between letter (2)2 and letter (3)3 in initial string
 bond strength = 91.96
 Random rndseed=471
 succeeded: posting bond-builder
@@ -3364,9 +3366,9 @@ searching for predecessor
 Random rndseed=473
 target string selected
 Random rndseed=474
-initial object: letter (3)
+initial object: letter (3)3
 Random rndseed=475
-to object : letter (2)
+to object : letter (2)2
 Random rndseed=476
 chosen bond facet :letter category
 from object descriptor: K
@@ -3380,7 +3382,7 @@ Choose codelet at index 78
 coderack: chosen codelet codelet@5197848c
 coderack: chosen codelet bond-builder urgency = 7
 #### bond-builder ####
-trying to build predecessor bond between letter (2) and letter (3) in initial string
+trying to build predecessor bond between letter (2)2 and letter (3)3 in initial string
 strength = 91.96
 already exists: activate descriptors & Fizzle!
 mainloop | codelets_run 82 clamp_time 30 last_update 75 time_step_length 15
@@ -3390,7 +3392,7 @@ Choose codelet at index 54
 coderack: chosen codelet codelet@17f052a3
 coderack: chosen codelet correspondence-strength-tester urgency = 7
 #### correspondence-strength-tester ####
-evaluating correspondence from letter (1) to letter (1)
+evaluating correspondence from letter (1)1 to letter (1)1
 strength = 0.7500762492045834
 Random rndseed=479
 create codelet correspondence-builder
@@ -3413,7 +3415,7 @@ Choose codelet at index 54
 coderack: chosen codelet codelet@5010be6
 coderack: chosen codelet bond-strength-tester urgency = 7
 #### bond-strength-tester ####
-bond = predecessor bond between letter (1) and letter (2) in initial string
+bond = predecessor bond between letter (1)1 and letter (2)2 in initial string
 bond strength = 94.862124085996
 Random rndseed=483
 succeeded: posting bond-builder
@@ -3425,7 +3427,7 @@ Choose codelet at index 76
 coderack: chosen codelet codelet@685f4c2e
 coderack: chosen codelet correspondence-builder urgency = 6
 #### correspondence-builder ####
-trying correspondence from letter (1) to letter (1)
+trying correspondence from letter (1)1 to letter (1)1
 correspondence is already present
 activate concept mappings & fizzle
 mainloop | codelets_run 86 clamp_time 30 last_update 75 time_step_length 15
@@ -3435,7 +3437,7 @@ Choose codelet at index 75
 coderack: chosen codelet codelet@7daf6ecc
 coderack: chosen codelet bond-strength-tester urgency = 7
 #### bond-strength-tester ####
-bond = predecessor bond between letter (2) and letter (3) in target string
+bond = predecessor bond between letter (2)2 and letter (3)3 in target string
 bond strength = 96.06422324210519
 Random rndseed=486
 succeeded: posting bond-builder
@@ -3460,8 +3462,8 @@ coderack: chosen codelet bottom-up-bond-scout urgency = 3
 #### bottom-up-bond-scout ####
 Random rndseed=490
 Random rndseed=491
-initial object chosen: letter (1) in target string
-to object: letter (2)
+initial object chosen: letter (1)1 in target string
+to object: letter (2)2
 Random rndseed=492
 chosen bond facet: letter category
 from object descriptor: I
@@ -3475,7 +3477,7 @@ Choose codelet at index 71
 coderack: chosen codelet codelet@31221be2
 coderack: chosen codelet bond-strength-tester urgency = 7
 #### bond-strength-tester ####
-bond = predecessor bond between letter (2) and letter (3) in target string
+bond = predecessor bond between letter (2)2 and letter (3)3 in target string
 bond strength = 96.06422324210519
 Random rndseed=494
 succeeded: posting bond-builder
@@ -3829,7 +3831,7 @@ Choose codelet at index 51
 coderack: chosen codelet codelet@377dca04
 coderack: chosen codelet bond-strength-tester urgency = 5
 #### bond-strength-tester ####
-bond = successor bond between letter (2) and letter (3) in target string
+bond = successor bond between letter (2)2 and letter (3)3 in target string
 bond strength = 48.400000000000006
 Random rndseed=554
 not strong enough: Fizzle!
@@ -3842,8 +3844,8 @@ coderack: chosen codelet bottom-up-bond-scout urgency = 3
 #### bottom-up-bond-scout ####
 Random rndseed=556
 Random rndseed=557
-initial object chosen: letter (2) in target string
-to object: letter (3)
+initial object chosen: letter (2)2 in target string
+to object: letter (3)3
 Random rndseed=558
 chosen bond facet: letter category
 from object descriptor: J
@@ -3857,7 +3859,7 @@ Choose codelet at index 51
 coderack: chosen codelet codelet@21b8d17c
 coderack: chosen codelet correspondence-builder urgency = 6
 #### correspondence-builder ####
-trying correspondence from letter (3) to letter (3)
+trying correspondence from letter (3)3 to letter (3)3
 correspondence is already present
 activate concept mappings & fizzle
 mainloop | codelets_run 93 clamp_time 30 last_update 90 time_step_length 15
@@ -3871,9 +3873,9 @@ searching for predecessor
 Random rndseed=561
 initial string selected
 Random rndseed=562
-initial object: letter (3)
+initial object: letter (3)3
 Random rndseed=563
-to object : letter (2)
+to object : letter (2)2
 Random rndseed=564
 chosen bond facet :letter category
 from object descriptor: C
@@ -3889,7 +3891,7 @@ coderack: chosen codelet bottom-up-correspondence-scout urgency = 3
 #### bottom-up-correspondence-scout ####
 Random rndseed=566
 Random rndseed=567
-trying a correspondence between letter (3) and letter (3)
+trying a correspondence between letter (3)3 and letter (3)3
 Random rndseed=568
 Random rndseed=569
 Proposing correspondence with concept mappings:
@@ -3903,7 +3905,7 @@ Choose codelet at index 51
 coderack: chosen codelet codelet@6267c3bb
 coderack: chosen codelet bond-strength-tester urgency = 7
 #### bond-strength-tester ####
-bond = predecessor bond between letter (1) and letter (2) in target string
+bond = predecessor bond between letter (1)1 and letter (2)2 in target string
 bond strength = 96.06422324210519
 Random rndseed=571
 succeeded: posting bond-builder
@@ -3926,8 +3928,8 @@ coderack: chosen codelet bottom-up-bond-scout urgency = 3
 #### bottom-up-bond-scout ####
 Random rndseed=574
 Random rndseed=575
-initial object chosen: letter (2) in target string
-to object: letter (3)
+initial object chosen: letter (2)2 in target string
+to object: letter (3)3
 Random rndseed=576
 chosen bond facet: letter category
 from object descriptor: J
@@ -3941,7 +3943,7 @@ Choose codelet at index 69
 coderack: chosen codelet codelet@7a07c5b4
 coderack: chosen codelet bond-builder urgency = 7
 #### bond-builder ####
-trying to build predecessor bond between letter (2) and letter (3) in target string
+trying to build predecessor bond between letter (2)2 and letter (3)3 in target string
 strength = 96.06422324210519
 already exists: activate descriptors & Fizzle!
 mainloop | codelets_run 99 clamp_time 30 last_update 90 time_step_length 15
@@ -3951,7 +3953,7 @@ Choose codelet at index 86
 coderack: chosen codelet codelet@26a1ab54
 coderack: chosen codelet bond-strength-tester urgency = 7
 #### bond-strength-tester ####
-bond = predecessor bond between letter (2) and letter (3) in initial string
+bond = predecessor bond between letter (2)2 and letter (3)3 in initial string
 bond strength = 91.96
 Random rndseed=579
 succeeded: posting bond-builder
@@ -3964,10 +3966,10 @@ coderack: chosen codelet codelet@3d646c37
 coderack: chosen codelet important-object-correspondence-scout urgency = 3
 #### important-object-correspondence-scout ####
 Random rndseed=581
-object chosen from initial string: letter (1)
+object chosen from initial string: letter (1)1
 Random rndseed=582
 Random rndseed=583
-trying a correspondence between letter (1) and letter (1)
+trying a correspondence between letter (1)1 and letter (1)1
 Random rndseed=584
 Random rndseed=585
 proposing correspondence with concept mappings:
@@ -3997,7 +3999,7 @@ Choose codelet at index 85
 coderack: chosen codelet codelet@5a10411
 coderack: chosen codelet bond-builder urgency = 7
 #### bond-builder ####
-trying to build predecessor bond between letter (1) and letter (2) in target string
+trying to build predecessor bond between letter (1)1 and letter (2)2 in target string
 strength = 96.06422324210519
 already exists: activate descriptors & Fizzle!
 mainloop | codelets_run 103 clamp_time 30 last_update 90 time_step_length 15
@@ -4007,7 +4009,7 @@ Choose codelet at index 85
 coderack: chosen codelet codelet@2ef1e4fa
 coderack: chosen codelet bond-strength-tester urgency = 5
 #### bond-strength-tester ####
-bond = successor bond between letter (2) and letter (3) in target string
+bond = successor bond between letter (2)2 and letter (3)3 in target string
 bond strength = 48.400000000000006
 Random rndseed=591
 succeeded: posting bond-builder
@@ -4019,7 +4021,7 @@ Choose codelet at index 86
 coderack: chosen codelet codelet@306a30c7
 coderack: chosen codelet correspondence-strength-tester urgency = 7
 #### correspondence-strength-tester ####
-evaluating correspondence from letter (1) to letter (1)
+evaluating correspondence from letter (1)1 to letter (1)1
 strength = 0.7682017453998018
 Random rndseed=593
 create codelet correspondence-builder
@@ -4381,9 +4383,9 @@ target string: relevance=100.0, unhappiness=78.91952798088978
 Random rndseed=655
 target string selected
 Random rndseed=656
-object chosen = letter (1)
-trying from letter (1) predecessor
-proposing group from letter (1) to letter (3)
+object chosen = letter (1)1
+trying from letter (1)1 predecessor
+proposing group from letter (1)1 to letter (3)3
 Random rndseed=657
 create codelet group-strength-tester
 mainloop | codelets_run 106 clamp_time 30 last_update 105 time_step_length 15
@@ -4408,9 +4410,9 @@ trying to build a left bond
 Random rndseed=661
 initial string selected
 Random rndseed=662
-initial object: letter (3)
+initial object: letter (3)3
 Random rndseed=663
-to object: letter (2)
+to object: letter (2)2
 Random rndseed=664
 chosen bond facet = letter category
 from descriptor: C
@@ -4424,7 +4426,7 @@ Choose codelet at index 83
 coderack: chosen codelet codelet@46f7f36a
 coderack: chosen codelet correspondence-builder urgency = 6
 #### correspondence-builder ####
-trying correspondence from letter (1) to letter (1)
+trying correspondence from letter (1)1 to letter (1)1
 correspondence is already present
 activate concept mappings & fizzle
 mainloop | codelets_run 109 clamp_time 30 last_update 105 time_step_length 15
@@ -4438,8 +4440,8 @@ trying to build a left bond
 Random rndseed=667
 target string selected
 Random rndseed=668
-initial object: letter (1)
-letter (1) has no neighbour: Fizzle!
+initial object: letter (1)1
+letter (1)1 has no neighbour: Fizzle!
 mainloop | codelets_run 110 clamp_time 30 last_update 105 time_step_length 15
 Random rndseed=669
 sum 5714.465127464481 chosen 2045.778515632284
@@ -4447,7 +4449,7 @@ Choose codelet at index 61
 coderack: chosen codelet codelet@2b71fc7e
 coderack: chosen codelet bond-builder urgency = 7
 #### bond-builder ####
-trying to build predecessor bond between letter (1) and letter (2) in initial string
+trying to build predecessor bond between letter (1)1 and letter (2)2 in initial string
 strength = 94.862124085996
 no incompatible bonds!
 no incompatible groups!
@@ -4478,7 +4480,7 @@ fizzle probability = 0.3678558430873713
 Random rndseed=675
 did not fizzle.
 Random rndseed=676
-object chosen = predecessor bond between letter (1) and letter (2)
+object chosen = predecessor bond between letter (1)1 and letter (2)2
 break probability = 0.08870594193636372
 Random rndseed=677
 couldn't break structure: Fizzle!
@@ -4489,7 +4491,7 @@ Choose codelet at index 60
 coderack: chosen codelet codelet@1a86f2f1
 coderack: chosen codelet bond-strength-tester urgency = 5
 #### bond-strength-tester ####
-bond = successor bond between letter (1) and letter (2) in target string
+bond = successor bond between letter (1)1 and letter (2)2 in target string
 bond strength = 48.400000000000006
 Random rndseed=679
 succeeded: posting bond-builder
@@ -4517,7 +4519,7 @@ coderack: chosen codelet bottom-up-correspondence-scout urgency = 3
 #### bottom-up-correspondence-scout ####
 Random rndseed=685
 Random rndseed=686
-trying a correspondence between letter (2) and letter (3)
+trying a correspondence between letter (2)2 and letter (3)3
 Random rndseed=687
 no distinguishing mappings found: fizzle
 mainloop | codelets_run 116 clamp_time 30 last_update 105 time_step_length 15
@@ -4527,7 +4529,7 @@ Choose codelet at index 90
 coderack: chosen codelet codelet@69d0a921
 coderack: chosen codelet bond-strength-tester urgency = 7
 #### bond-strength-tester ####
-bond = predecessor bond between letter (2) and letter (3) in initial string
+bond = predecessor bond between letter (2)2 and letter (3)3 in initial string
 bond strength = 96.06422324210519
 Random rndseed=689
 succeeded: posting bond-builder
@@ -4539,7 +4541,7 @@ Choose codelet at index 73
 coderack: chosen codelet codelet@446cdf90
 coderack: chosen codelet correspondence-strength-tester urgency = 7
 #### correspondence-strength-tester ####
-evaluating correspondence from letter (3) to letter (3)
+evaluating correspondence from letter (3)3 to letter (3)3
 strength = 0.7684717111481516
 Random rndseed=691
 not strong enough: fizzle 
@@ -4566,9 +4568,9 @@ target string: relevance=100.0, unhappiness=78.91952798088978
 Random rndseed=694
 target string selected
 Random rndseed=695
-object chosen = letter (1)
-trying from letter (1) predecessor
-proposing group from letter (1) to letter (3)
+object chosen = letter (1)1
+trying from letter (1)1 predecessor
+proposing group from letter (1)1 to letter (3)3
 Random rndseed=696
 create codelet group-strength-tester
 mainloop | codelets_run 120 clamp_time 30 last_update 105 time_step_length 15
@@ -4913,7 +4915,7 @@ Choose codelet at index 86
 coderack: chosen codelet codelet@277050dc
 coderack: chosen codelet bond-builder urgency = 7
 #### bond-builder ####
-trying to build predecessor bond between letter (2) and letter (3) in initial string
+trying to build predecessor bond between letter (2)2 and letter (3)3 in initial string
 strength = 96.06422324210519
 already exists: activate descriptors & Fizzle!
 mainloop | codelets_run 121 clamp_time 30 last_update 120 time_step_length 15
@@ -4927,9 +4929,9 @@ searching for predecessor
 Random rndseed=755
 initial string selected
 Random rndseed=756
-initial object: letter (3)
+initial object: letter (3)3
 Random rndseed=757
-to object : letter (2)
+to object : letter (2)2
 Random rndseed=758
 chosen bond facet :letter category
 from object descriptor: C
@@ -4950,9 +4952,9 @@ target string: relevance=100.0, unhappiness=78.91952798088978
 Random rndseed=760
 initial string selected
 Random rndseed=761
-object chosen = letter (1)
-trying from letter (1) predecessor
-proposing group from letter (1) to letter (3)
+object chosen = letter (1)1
+trying from letter (1)1 predecessor
+proposing group from letter (1)1 to letter (3)3
 Random rndseed=762
 create codelet group-strength-tester
 mainloop | codelets_run 123 clamp_time 30 last_update 120 time_step_length 15
@@ -4969,9 +4971,9 @@ target string: relevance=100.0, unhappiness=78.91952798088978
 Random rndseed=764
 initial string selected
 Random rndseed=765
-object chosen = letter (3)
-trying from letter (3) predecessor
-proposing group from letter (1) to letter (3)
+object chosen = letter (3)3
+trying from letter (3)3 predecessor
+proposing group from letter (1)1 to letter (3)3
 Random rndseed=766
 create codelet group-strength-tester
 mainloop | codelets_run 124 clamp_time 30 last_update 120 time_step_length 15
@@ -4994,7 +4996,7 @@ coderack: chosen codelet codelet@531d72ca
 coderack: chosen codelet bottom-up-description-scout urgency = 3
 #### bottom-up-description-scout ####
 Random rndseed=770
-chosen object: letter (3) from initial string
+chosen object: letter (3)3 from initial string
 Random rndseed=771
 chosen descriptor = C
 has no property links: Fizzle!
@@ -5019,8 +5021,8 @@ coderack: chosen codelet bottom-up-bond-scout urgency = 3
 #### bottom-up-bond-scout ####
 Random rndseed=775
 Random rndseed=776
-initial object chosen: letter (2) in target string
-to object: letter (3)
+initial object chosen: letter (2)2 in target string
+to object: letter (3)3
 Random rndseed=777
 chosen bond facet: letter category
 from object descriptor: J
@@ -5048,8 +5050,8 @@ coderack: chosen codelet bottom-up-bond-scout urgency = 3
 #### bottom-up-bond-scout ####
 Random rndseed=781
 Random rndseed=782
-initial object chosen: letter (3) in target string
-to object: letter (2)
+initial object chosen: letter (3)3 in target string
+to object: letter (2)2
 Random rndseed=783
 chosen bond facet: letter category
 from object descriptor: K
@@ -5063,7 +5065,7 @@ Choose codelet at index 97
 coderack: chosen codelet codelet@41906a77
 coderack: chosen codelet bond-strength-tester urgency = 7
 #### bond-strength-tester ####
-bond = predecessor bond between letter (2) and letter (3) in target string
+bond = predecessor bond between letter (2)2 and letter (3)3 in target string
 bond strength = 96.06422324210519
 Random rndseed=785
 succeeded: posting bond-builder
@@ -5076,7 +5078,7 @@ coderack: chosen codelet codelet@4b9af9a9
 coderack: chosen codelet top-down-description-scout urgency = 4
 #### top-down-description-scout ####
 Random rndseed=787
-chosen object: letter (3) from initial string
+chosen object: letter (3)3 from initial string
 looking for string position descriptor
 couldn't find any descriptions
 mainloop | codelets_run 132 clamp_time 30 last_update 120 time_step_length 15
@@ -5098,7 +5100,7 @@ Choose codelet at index 61
 coderack: chosen codelet codelet@6e5e91e4
 coderack: chosen codelet bond-builder urgency = 7
 #### bond-builder ####
-trying to build predecessor bond between letter (2) and letter (3) in initial string
+trying to build predecessor bond between letter (2)2 and letter (3)3 in initial string
 strength = 96.06422324210519
 already exists: activate descriptors & Fizzle!
 mainloop | codelets_run 134 clamp_time 30 last_update 120 time_step_length 15
@@ -5437,7 +5439,7 @@ Choose codelet at index 85
 coderack: chosen codelet codelet@30946e09
 coderack: chosen codelet bond-strength-tester urgency = 5
 #### bond-strength-tester ####
-bond = successor bond between letter (2) and letter (3) in target string
+bond = successor bond between letter (2)2 and letter (3)3 in target string
 bond strength = 48.400000000000006
 Random rndseed=846
 not strong enough: Fizzle!
@@ -5448,7 +5450,7 @@ Choose codelet at index 81
 coderack: chosen codelet codelet@5cb0d902
 coderack: chosen codelet bond-strength-tester urgency = 7
 #### bond-strength-tester ####
-bond = predecessor bond between letter (2) and letter (3) in initial string
+bond = predecessor bond between letter (2)2 and letter (3)3 in initial string
 bond strength = 96.06422324210519
 Random rndseed=848
 succeeded: posting bond-builder
@@ -5464,9 +5466,9 @@ searching for predecessor
 Random rndseed=850
 initial string selected
 Random rndseed=851
-initial object: letter (1)
+initial object: letter (1)1
 Random rndseed=852
-to object : letter (2)
+to object : letter (2)2
 Random rndseed=853
 chosen bond facet :letter category
 from object descriptor: A
@@ -5480,7 +5482,7 @@ Choose codelet at index 84
 coderack: chosen codelet codelet@1698c449
 coderack: chosen codelet bond-builder urgency = 7
 #### bond-builder ####
-trying to build predecessor bond between letter (2) and letter (3) in target string
+trying to build predecessor bond between letter (2)2 and letter (3)3 in target string
 strength = 96.06422324210519
 already exists: activate descriptors & Fizzle!
 mainloop | codelets_run 139 clamp_time 30 last_update 135 time_step_length 15
@@ -5511,7 +5513,7 @@ Choose codelet at index 95
 coderack: chosen codelet codelet@443b7951
 coderack: chosen codelet bond-strength-tester urgency = 7
 #### bond-strength-tester ####
-bond = predecessor bond between letter (1) and letter (2) in initial string
+bond = predecessor bond between letter (1)1 and letter (2)2 in initial string
 bond strength = 96.06422324210519
 Random rndseed=859
 succeeded: posting bond-builder
@@ -5539,7 +5541,7 @@ Choose codelet at index 56
 coderack: chosen codelet codelet@69663380
 coderack: chosen codelet bond-strength-tester urgency = 5
 #### bond-strength-tester ####
-bond = successor bond between letter (2) and letter (3) in target string
+bond = successor bond between letter (2)2 and letter (3)3 in target string
 bond strength = 48.400000000000006
 Random rndseed=864
 succeeded: posting bond-builder
@@ -5555,8 +5557,8 @@ trying to build a left bond
 Random rndseed=866
 target string selected
 Random rndseed=867
-initial object: letter (1)
-letter (1) has no neighbour: Fizzle!
+initial object: letter (1)1
+letter (1)1 has no neighbour: Fizzle!
 mainloop | codelets_run 145 clamp_time 30 last_update 135 time_step_length 15
 Random rndseed=868
 sum 6173.175950114173 chosen 1654.4111546305985
@@ -5564,7 +5566,7 @@ Choose codelet at index 56
 coderack: chosen codelet codelet@4459eb14
 coderack: chosen codelet bond-builder urgency = 4
 #### bond-builder ####
-trying to build successor bond between letter (2) and letter (3) in target string
+trying to build successor bond between letter (2)2 and letter (3)3 in target string
 strength = 48.400000000000006
 trying to break incompatible bonds
 Random rndseed=869
@@ -5579,7 +5581,7 @@ Choose codelet at index 90
 coderack: chosen codelet codelet@5a2e4553
 coderack: chosen codelet bond-builder urgency = 7
 #### bond-builder ####
-trying to build predecessor bond between letter (2) and letter (3) in initial string
+trying to build predecessor bond between letter (2)2 and letter (3)3 in initial string
 strength = 96.06422324210519
 already exists: activate descriptors & Fizzle!
 mainloop | codelets_run 147 clamp_time 30 last_update 135 time_step_length 15
@@ -5596,9 +5598,9 @@ target string: relevance=100.0, unhappiness=78.91952798088978
 Random rndseed=873
 initial string selected
 Random rndseed=874
-object chosen = letter (1)
-trying from letter (1) predecessor
-proposing group from letter (1) to letter (3)
+object chosen = letter (1)1
+trying from letter (1)1 predecessor
+proposing group from letter (1)1 to letter (3)3
 Random rndseed=875
 create codelet group-strength-tester
 mainloop | codelets_run 148 clamp_time 30 last_update 135 time_step_length 15
@@ -5626,9 +5628,9 @@ trying to build a left bond
 Random rndseed=881
 initial string selected
 Random rndseed=882
-initial object: letter (3)
+initial object: letter (3)3
 Random rndseed=883
-to object: letter (2)
+to object: letter (2)2
 Random rndseed=884
 chosen bond facet = letter category
 from descriptor: C
@@ -6024,8 +6026,8 @@ trying to build a left bond
 Random rndseed=950
 initial string selected
 Random rndseed=951
-initial object: letter (1)
-letter (1) has no neighbour: Fizzle!
+initial object: letter (1)1
+letter (1)1 has no neighbour: Fizzle!
 mainloop | codelets_run 157 clamp_time 30 last_update 150 time_step_length 15
 Random rndseed=952
 sum 17101.618362687772 chosen 2069.2958218852204
@@ -6037,9 +6039,9 @@ searching for predecessor
 Random rndseed=953
 target string selected
 Random rndseed=954
-initial object: letter (2)
+initial object: letter (2)2
 Random rndseed=955
-to object : letter (3)
+to object : letter (3)3
 Random rndseed=956
 chosen bond facet :letter category
 from object descriptor: J
@@ -6086,7 +6088,7 @@ coderack: chosen codelet codelet@4ccabbaa
 coderack: chosen codelet top-down-description-scout urgency = 4
 #### top-down-description-scout ####
 Random rndseed=964
-chosen object: letter (1) from initial string
+chosen object: letter (1)1 from initial string
 looking for string position descriptor
 couldn't find any descriptions
 mainloop | codelets_run 162 clamp_time 30 last_update 150 time_step_length 15
@@ -6096,7 +6098,7 @@ Choose codelet at index 91
 coderack: chosen codelet codelet@4bf558aa
 coderack: chosen codelet bond-strength-tester urgency = 7
 #### bond-strength-tester ####
-bond = predecessor bond between letter (2) and letter (3) in target string
+bond = predecessor bond between letter (2)2 and letter (3)3 in target string
 bond strength = 96.06422324210519
 Random rndseed=966
 succeeded: posting bond-builder
@@ -6108,7 +6110,7 @@ Choose codelet at index 92
 coderack: chosen codelet codelet@2d38eb89
 coderack: chosen codelet bond-builder urgency = 7
 #### bond-builder ####
-trying to build predecessor bond between letter (2) and letter (3) in target string
+trying to build predecessor bond between letter (2)2 and letter (3)3 in target string
 strength = 96.06422324210519
 already exists: activate descriptors & Fizzle!
 mainloop | codelets_run 164 clamp_time 30 last_update 150 time_step_length 15
@@ -6454,10 +6456,10 @@ target string: relevance=100.0, unhappiness=15.394735584502783
 Random rndseed=1019
 target string selected
 Random rndseed=1020
-object chosen = letter (2)
+object chosen = letter (2)2
 Random rndseed=1021
-trying from letter (2) predecessor
-proposing group from letter (1) to letter (3)
+trying from letter (2)2 predecessor
+proposing group from letter (1)1 to letter (3)3
 Random rndseed=1022
 create codelet group-strength-tester
 mainloop | codelets_run 166 clamp_time 30 last_update 165 time_step_length 15
@@ -6471,9 +6473,9 @@ searching for predecessor
 Random rndseed=1024
 initial string selected
 Random rndseed=1025
-initial object: letter (1)
+initial object: letter (1)1
 Random rndseed=1026
-to object : letter (2)
+to object : letter (2)2
 Random rndseed=1027
 chosen bond facet :letter category
 from object descriptor: A
@@ -6499,7 +6501,7 @@ Choose codelet at index 77
 coderack: chosen codelet codelet@2d8e6db6
 coderack: chosen codelet bond-strength-tester urgency = 7
 #### bond-strength-tester ####
-bond = predecessor bond between letter (2) and letter (3) in initial string
+bond = predecessor bond between letter (2)2 and letter (3)3 in initial string
 bond strength = 96.06422324210519
 Random rndseed=1031
 succeeded: posting bond-builder
@@ -6524,9 +6526,9 @@ searching for predecessor
 Random rndseed=1034
 target string selected
 Random rndseed=1035
-initial object: letter (1)
+initial object: letter (1)1
 Random rndseed=1036
-to object : letter (2)
+to object : letter (2)2
 Random rndseed=1037
 chosen bond facet :letter category
 from object descriptor: I
@@ -6540,7 +6542,7 @@ Choose codelet at index 95
 coderack: chosen codelet codelet@3fa77460
 coderack: chosen codelet bond-strength-tester urgency = 7
 #### bond-strength-tester ####
-bond = predecessor bond between letter (1) and letter (2) in target string
+bond = predecessor bond between letter (1)1 and letter (2)2 in target string
 bond strength = 96.06422324210519
 Random rndseed=1039
 succeeded: posting bond-builder
@@ -6561,7 +6563,7 @@ Choose codelet at index 91
 coderack: chosen codelet codelet@1ed6993a
 coderack: chosen codelet bond-strength-tester urgency = 7
 #### bond-strength-tester ####
-bond = predecessor bond between letter (1) and letter (2) in initial string
+bond = predecessor bond between letter (1)1 and letter (2)2 in initial string
 bond strength = 96.06422324210519
 Random rndseed=1042
 succeeded: posting bond-builder
@@ -6580,9 +6582,9 @@ target string: relevance=100.0, unhappiness=15.394735584502783
 Random rndseed=1044
 initial string selected
 Random rndseed=1045
-object chosen = letter (1)
-trying from letter (1) predecessor
-proposing group from letter (1) to letter (3)
+object chosen = letter (1)1
+trying from letter (1)1 predecessor
+proposing group from letter (1)1 to letter (3)3
 Random rndseed=1046
 create codelet group-strength-tester
 mainloop | codelets_run 175 clamp_time 30 last_update 165 time_step_length 15
@@ -6603,7 +6605,7 @@ Choose codelet at index 91
 coderack: chosen codelet codelet@497470ed
 coderack: chosen codelet bond-builder urgency = 7
 #### bond-builder ####
-trying to build predecessor bond between letter (2) and letter (3) in initial string
+trying to build predecessor bond between letter (2)2 and letter (3)3 in initial string
 strength = 96.06422324210519
 already exists: activate descriptors & Fizzle!
 mainloop | codelets_run 177 clamp_time 30 last_update 165 time_step_length 15
@@ -6622,7 +6624,7 @@ Choose codelet at index 90
 coderack: chosen codelet codelet@b1a58a3
 coderack: chosen codelet bond-builder urgency = 7
 #### bond-builder ####
-trying to build predecessor bond between letter (1) and letter (2) in target string
+trying to build predecessor bond between letter (1)1 and letter (2)2 in target string
 strength = 96.06422324210519
 already exists: activate descriptors & Fizzle!
 mainloop | codelets_run 179 clamp_time 30 last_update 165 time_step_length 15
@@ -6636,9 +6638,9 @@ trying to build a left bond
 Random rndseed=1053
 target string selected
 Random rndseed=1054
-initial object: letter (2)
+initial object: letter (2)2
 Random rndseed=1055
-to object: letter (1)
+to object: letter (1)1
 Random rndseed=1056
 chosen bond facet = letter category
 from descriptor: J
@@ -6979,7 +6981,7 @@ Choose codelet at index 89
 coderack: chosen codelet codelet@e2144e4
 coderack: chosen codelet bond-builder urgency = 7
 #### bond-builder ####
-trying to build predecessor bond between letter (1) and letter (2) in initial string
+trying to build predecessor bond between letter (1)1 and letter (2)2 in initial string
 strength = 96.06422324210519
 already exists: activate descriptors & Fizzle!
 mainloop | codelets_run 181 clamp_time 30 last_update 180 time_step_length 15
@@ -6989,7 +6991,7 @@ Choose codelet at index 22
 coderack: chosen codelet codelet@6477463f
 coderack: chosen codelet bond-builder urgency = 4
 #### bond-builder ####
-trying to build successor bond between letter (1) and letter (2) in target string
+trying to build successor bond between letter (1)1 and letter (2)2 in target string
 strength = 48.400000000000006
 trying to break incompatible bonds
 Random rndseed=1108
@@ -7022,7 +7024,7 @@ Choose codelet at index 53
 coderack: chosen codelet codelet@18769467
 coderack: chosen codelet bond-builder urgency = 4
 #### bond-builder ####
-trying to build successor bond between letter (1) and letter (2) in target string
+trying to build successor bond between letter (1)1 and letter (2)2 in target string
 strength = 48.400000000000006
 trying to break incompatible bonds
 Random rndseed=1113
@@ -7034,7 +7036,7 @@ Choose codelet at index 68
 coderack: chosen codelet codelet@46ee7fe8
 coderack: chosen codelet bond-builder urgency = 7
 #### bond-builder ####
-trying to build predecessor bond between letter (1) and letter (2) in initial string
+trying to build predecessor bond between letter (1)1 and letter (2)2 in initial string
 strength = 96.06422324210519
 already exists: activate descriptors & Fizzle!
 mainloop | codelets_run 186 clamp_time 30 last_update 180 time_step_length 15
@@ -7044,7 +7046,7 @@ Choose codelet at index 84
 coderack: chosen codelet codelet@7506e922
 coderack: chosen codelet bond-strength-tester urgency = 7
 #### bond-strength-tester ####
-bond = predecessor bond between letter (1) and letter (2) in target string
+bond = predecessor bond between letter (1)1 and letter (2)2 in target string
 bond strength = 96.06422324210519
 Random rndseed=1116
 succeeded: posting bond-builder
@@ -7069,7 +7071,7 @@ Choose codelet at index 88
 coderack: chosen codelet codelet@621be5d1
 coderack: chosen codelet bond-builder urgency = 7
 #### bond-builder ####
-trying to build predecessor bond between letter (1) and letter (2) in target string
+trying to build predecessor bond between letter (1)1 and letter (2)2 in target string
 strength = 96.06422324210519
 already exists: activate descriptors & Fizzle!
 mainloop | codelets_run 189 clamp_time 30 last_update 180 time_step_length 15
@@ -7083,9 +7085,9 @@ searching for predecessor
 Random rndseed=1122
 initial string selected
 Random rndseed=1123
-initial object: letter (3)
+initial object: letter (3)3
 Random rndseed=1124
-to object : letter (2)
+to object : letter (2)2
 Random rndseed=1125
 chosen bond facet :letter category
 from object descriptor: C
@@ -7127,10 +7129,10 @@ target string: relevance=100.0, unhappiness=15.394735584502783
 Random rndseed=1130
 initial string selected
 Random rndseed=1131
-object chosen = letter (2)
+object chosen = letter (2)2
 Random rndseed=1132
-trying from letter (2) predecessor
-proposing group from letter (1) to letter (3)
+trying from letter (2)2 predecessor
+proposing group from letter (1)1 to letter (3)3
 Random rndseed=1133
 create codelet group-strength-tester
 mainloop | codelets_run 193 clamp_time 30 last_update 180 time_step_length 15
@@ -7151,7 +7153,7 @@ Choose codelet at index 85
 coderack: chosen codelet codelet@5d6f64b1
 coderack: chosen codelet bond-strength-tester urgency = 7
 #### bond-strength-tester ####
-bond = predecessor bond between letter (2) and letter (3) in initial string
+bond = predecessor bond between letter (2)2 and letter (3)3 in initial string
 bond strength = 96.06422324210519
 Random rndseed=1137
 succeeded: posting bond-builder
@@ -7486,7 +7488,7 @@ Choose codelet at index 86
 coderack: chosen codelet codelet@32a1bec0
 coderack: chosen codelet bond-builder urgency = 7
 #### bond-builder ####
-trying to build predecessor bond between letter (2) and letter (3) in initial string
+trying to build predecessor bond between letter (2)2 and letter (3)3 in initial string
 strength = 96.06422324210519
 already exists: activate descriptors & Fizzle!
 mainloop | codelets_run 196 clamp_time 30 last_update 195 time_step_length 15
@@ -7503,9 +7505,9 @@ target string: relevance=100.0, unhappiness=15.394735584502783
 Random rndseed=1189
 initial string selected
 Random rndseed=1190
-object chosen = letter (3)
-trying from letter (3) predecessor
-proposing group from letter (1) to letter (3)
+object chosen = letter (3)3
+trying from letter (3)3 predecessor
+proposing group from letter (1)1 to letter (3)3
 Random rndseed=1191
 create codelet group-strength-tester
 mainloop | codelets_run 197 clamp_time 30 last_update 195 time_step_length 15
@@ -7522,10 +7524,10 @@ target string: relevance=100.0, unhappiness=15.394735584502783
 Random rndseed=1193
 target string selected
 Random rndseed=1194
-object chosen = letter (2)
+object chosen = letter (2)2
 Random rndseed=1195
-trying from letter (2) predecessor
-proposing group from letter (1) to letter (3)
+trying from letter (2)2 predecessor
+proposing group from letter (1)1 to letter (3)3
 Random rndseed=1196
 create codelet group-strength-tester
 mainloop | codelets_run 198 clamp_time 30 last_update 195 time_step_length 15
@@ -7604,8 +7606,8 @@ coderack: chosen codelet bottom-up-bond-scout urgency = 3
 #### bottom-up-bond-scout ####
 Random rndseed=1209
 Random rndseed=1210
-initial object chosen: letter (3) in initial string
-to object: letter (2)
+initial object chosen: letter (3)3 in initial string
+to object: letter (2)2
 Random rndseed=1211
 chosen bond facet: letter category
 from object descriptor: C
@@ -7619,7 +7621,7 @@ Choose codelet at index 87
 coderack: chosen codelet codelet@deb6432
 coderack: chosen codelet bond-strength-tester urgency = 7
 #### bond-strength-tester ####
-bond = predecessor bond between letter (2) and letter (3) in initial string
+bond = predecessor bond between letter (2)2 and letter (3)3 in initial string
 bond strength = 96.06422324210519
 Random rndseed=1213
 succeeded: posting bond-builder
@@ -7640,7 +7642,7 @@ Choose codelet at index 86
 coderack: chosen codelet codelet@694f9431
 coderack: chosen codelet bond-builder urgency = 7
 #### bond-builder ####
-trying to build predecessor bond between letter (2) and letter (3) in initial string
+trying to build predecessor bond between letter (2)2 and letter (3)3 in initial string
 strength = 96.06422324210519
 already exists: activate descriptors & Fizzle!
 mainloop | codelets_run 208 clamp_time 30 last_update 195 time_step_length 15
@@ -8128,8 +8130,8 @@ coderack: chosen codelet bottom-up-bond-scout urgency = 3
 #### bottom-up-bond-scout ####
 Random rndseed=1297
 Random rndseed=1298
-initial object chosen: letter (1) in target string
-to object: letter (2)
+initial object chosen: letter (1)1 in target string
+to object: letter (2)2
 Random rndseed=1299
 chosen bond facet: letter category
 from object descriptor: I
@@ -8189,7 +8191,7 @@ coderack: chosen codelet codelet@66cd51c3
 coderack: chosen codelet top-down-description-scout urgency = 4
 #### top-down-description-scout ####
 Random rndseed=1307
-chosen object: letter (2) from target string
+chosen object: letter (2)2 from target string
 looking for string position descriptor
 Random rndseed=1308
 create codelet description-strength-tester
@@ -8561,7 +8563,7 @@ Choose codelet at index 60
 coderack: chosen codelet codelet@17d10166
 coderack: chosen codelet bond-builder urgency = 4
 #### bond-builder ####
-trying to build successor bond between letter (2) and letter (3) in target string
+trying to build successor bond between letter (2)2 and letter (3)3 in target string
 strength = 91.96
 trying to break incompatible bonds
 Random rndseed=1369
@@ -8588,7 +8590,7 @@ Choose codelet at index 80
 coderack: chosen codelet codelet@ba8a1dc
 coderack: chosen codelet description-strength-tester urgency = 7
 #### description-strength-tester ####
-description(middle) of letter (2) in target string
+description(middle) of letter (2)2 in target string
 description strength = 75.0
 Random rndseed=1374
 succeeded: posting description-builder
@@ -8625,9 +8627,9 @@ searching for predecessor
 Random rndseed=1379
 initial string selected
 Random rndseed=1380
-initial object: letter (3)
+initial object: letter (3)3
 Random rndseed=1381
-to object : letter (2)
+to object : letter (2)2
 Random rndseed=1382
 chosen bond facet :letter category
 from object descriptor: C
@@ -8641,7 +8643,7 @@ Choose codelet at index 82
 coderack: chosen codelet codelet@759ebb3d
 coderack: chosen codelet description-builder urgency = 6
 #### description-builder ####
-description(middle) of letter (2) in target string
+description(middle) of letter (2)2 in target string
 description already exists: Fizzle!
 mainloop | codelets_run 234 clamp_time 30 last_update 225 time_step_length 15
 Random rndseed=1384
@@ -8650,7 +8652,7 @@ Choose codelet at index 82
 coderack: chosen codelet codelet@484b61fc
 coderack: chosen codelet bond-strength-tester urgency = 7
 #### bond-strength-tester ####
-bond = predecessor bond between letter (2) and letter (3) in initial string
+bond = predecessor bond between letter (2)2 and letter (3)3 in initial string
 bond strength = 96.06422324210519
 Random rndseed=1385
 succeeded: posting bond-builder
@@ -8675,7 +8677,7 @@ Choose codelet at index 81
 coderack: chosen codelet codelet@4cdf35a9
 coderack: chosen codelet bond-builder urgency = 7
 #### bond-builder ####
-trying to build predecessor bond between letter (2) and letter (3) in initial string
+trying to build predecessor bond between letter (2)2 and letter (3)3 in initial string
 strength = 96.06422324210519
 already exists: activate descriptors & Fizzle!
 mainloop | codelets_run 237 clamp_time 30 last_update 225 time_step_length 15
@@ -9082,9 +9084,9 @@ trying to build a left bond
 Random rndseed=1453
 target string selected
 Random rndseed=1454
-initial object: letter (3)
+initial object: letter (3)3
 Random rndseed=1455
-to object: letter (2)
+to object: letter (2)2
 Random rndseed=1456
 chosen bond facet = letter category
 from descriptor: K
@@ -9105,9 +9107,9 @@ target string: relevance=100.0, unhappiness=15.394735584502783
 Random rndseed=1458
 target string selected
 Random rndseed=1459
-object chosen: letter (3)
-trying from letter (3) predecessor checking to left first
-proposing group from letter (1) to letter (3)
+object chosen: letter (3)3
+trying from letter (3)3 predecessor checking to left first
+proposing group from letter (1)1 to letter (3)3
 Random rndseed=1460
 create codelet group-strength-tester
 mainloop | codelets_run 243 clamp_time 30 last_update 240 time_step_length 15
@@ -9117,7 +9119,7 @@ Choose codelet at index 82
 coderack: chosen codelet codelet@ea30797
 coderack: chosen codelet bond-strength-tester urgency = 7
 #### bond-strength-tester ####
-bond = predecessor bond between letter (2) and letter (3) in target string
+bond = predecessor bond between letter (2)2 and letter (3)3 in target string
 bond strength = 96.06422324210519
 Random rndseed=1462
 succeeded: posting bond-builder
@@ -9141,7 +9143,7 @@ Choose codelet at index 82
 coderack: chosen codelet codelet@3f8f9dd6
 coderack: chosen codelet bond-builder urgency = 7
 #### bond-builder ####
-trying to build predecessor bond between letter (2) and letter (3) in target string
+trying to build predecessor bond between letter (2)2 and letter (3)3 in target string
 strength = 96.06422324210519
 already exists: activate descriptors & Fizzle!
 mainloop | codelets_run 246 clamp_time 30 last_update 240 time_step_length 15
@@ -9158,9 +9160,9 @@ target string: relevance=100.0, unhappiness=15.394735584502783
 Random rndseed=1467
 target string selected
 Random rndseed=1468
-object chosen = letter (3)
-trying from letter (3) predecessor
-proposing group from letter (1) to letter (3)
+object chosen = letter (3)3
+trying from letter (3)3 predecessor
+proposing group from letter (1)1 to letter (3)3
 Random rndseed=1469
 create codelet group-strength-tester
 mainloop | codelets_run 247 clamp_time 30 last_update 240 time_step_length 15
@@ -9198,7 +9200,7 @@ Choose codelet at index 74
 coderack: chosen codelet codelet@1b701da1
 coderack: chosen codelet bond-strength-tester urgency = 5
 #### bond-strength-tester ####
-bond = successor bond between letter (1) and letter (2) in target string
+bond = successor bond between letter (1)1 and letter (2)2 in target string
 bond strength = 91.96
 Random rndseed=1476
 succeeded: posting bond-builder
@@ -9219,7 +9221,7 @@ Choose codelet at index 81
 coderack: chosen codelet codelet@442d9b6e
 coderack: chosen codelet bond-builder urgency = 7
 #### bond-builder ####
-trying to build successor bond between letter (1) and letter (2) in target string
+trying to build successor bond between letter (1)1 and letter (2)2 in target string
 strength = 91.96
 trying to break incompatible bonds
 Random rndseed=1479
@@ -9247,9 +9249,9 @@ trying to build a left bond
 Random rndseed=1483
 target string selected
 Random rndseed=1484
-initial object: letter (2)
+initial object: letter (2)2
 Random rndseed=1485
-to object: letter (1)
+to object: letter (1)1
 Random rndseed=1486
 chosen bond facet = letter category
 from descriptor: J
@@ -9639,7 +9641,7 @@ Choose codelet at index 77
 coderack: chosen codelet codelet@1963006a
 coderack: chosen codelet bond-strength-tester urgency = 7
 #### bond-strength-tester ####
-bond = predecessor bond between letter (1) and letter (2) in target string
+bond = predecessor bond between letter (1)1 and letter (2)2 in target string
 bond strength = 96.06422324210519
 Random rndseed=1546
 succeeded: posting bond-builder
@@ -9664,7 +9666,7 @@ Choose codelet at index 81
 coderack: chosen codelet codelet@41975e01
 coderack: chosen codelet bond-builder urgency = 7
 #### bond-builder ####
-trying to build predecessor bond between letter (1) and letter (2) in target string
+trying to build predecessor bond between letter (1)1 and letter (2)2 in target string
 strength = 96.06422324210519
 already exists: activate descriptors & Fizzle!
 mainloop | codelets_run 260 clamp_time 30 last_update 255 time_step_length 15
@@ -9742,5 +9744,3 @@ Slippages used in translation:
 letter -> letter
 rightmost -> rightmost
 ijl 266 12.098747680049227
-
-Process finished with exit code 0

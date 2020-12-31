@@ -1,6 +1,7 @@
 package models
 
 class SlipnetLink(var from_node: SlipNode, var to_node: SlipNode, var label: SlipNode, var fixed_length: Double) {
+  from_node.outgoing_links += this
 
   var slip_link = false;
   def this(fr: SlipNode, to: SlipNode, lab: SlipNode) = {
@@ -8,7 +9,6 @@ class SlipnetLink(var from_node: SlipNode, var to_node: SlipNode, var label: Sli
   }
   def this(fr: SlipNode, to: SlipNode, len: Double) = {
     this(fr, to, null, len)
-    fr.outgoing_links += this
   }
 
   def intrinsic_degree_of_association(): Double = {

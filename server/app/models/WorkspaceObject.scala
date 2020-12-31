@@ -7,7 +7,7 @@ import models.Description.DescriptionRep
 import models.Group.GroupRep
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.DescriptionTypeInstanceLinksToNodeInfo
-import models.WorkspaceObject.WorkspaceObjectRep
+import models.WorkspaceObject.{WorkspaceObjectRep, WorkspaceObjectRep2}
 
 import scala.collection.mutable.ListBuffer
 
@@ -15,18 +15,29 @@ object WorkspaceObject {
   case class WorkspaceObjectRep(
                                  uuid: String,
                                  descriptions: List[DescriptionRep],
-                                 letterOrGroupCompanionReps: List[WorkspaceObjectRep],
+                                 letterOrGroupCompanionReps: List[WorkspaceObjectRep2],
                                  spans_string: Boolean,
                                  groupRep: Option[GroupRep],
                                  left_bond: Option[BondRep],
                                  right_bond: Option[BondRep]
                                )
+
+  case class WorkspaceObjectRep2(
+                                 uuid: String,
+                                 descriptions: List[DescriptionRep],
+                                 //letterOrGroupCompanionReps: List[WorkspaceObjectRep],
+                                 spans_string: Boolean,
+                                 groupRep: Option[GroupRep],
+                                 left_bond: Option[BondRep],
+                                 right_bond: Option[BondRep]
+                               )
+
 }
 
 
-abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStructure {
+abstract class WorkspaceObject(ws: WorkspaceString) extends WorkspaceStructure {
 
-
+  wString = Some(ws)
   var left_string_position: Int = 0
   var leftmost = false       // true if the object is the leftmost in the string
 
@@ -65,8 +76,18 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
   var name = ""
 
   def workspaceObjectRep(): WorkspaceObjectRep = WorkspaceObjectRep(
-    uuid,descriptionReps(),
+    uuid,
+    descriptionReps(),
     letterOrGroupCompanionReps(),
+    spans_string,
+    group.map(_.groupRep()),
+    left_bond.map(_.bondRep()),
+    right_bond.map(_.bondRep())
+  )
+  def workspaceObjectRep2(): WorkspaceObjectRep2 = WorkspaceObjectRep2(
+    uuid,
+    descriptionReps(),
+    //letterOrGroupCompanionReps(),
     spans_string,
     group.map(_.groupRep()),
     left_bond.map(_.bondRep()),
@@ -89,8 +110,8 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
 
     def middle_object(): Boolean = {
     // returns true if this is the middle object in the string
-    var leftmost_neighbor = wString.objects.find(ob => ob.leftmost && (ob.right_string_position == left_string_position-1))
-    var rightmost_neighbor = wString.objects.find(ob => ob.rightmost && (ob.left_string_position == right_string_position-1))
+    var leftmost_neighbor = ws.objects.find(ob => ob.leftmost && (ob.right_string_position == left_string_position-1))
+    var rightmost_neighbor = ws.objects.find(ob => ob.rightmost && (ob.left_string_position == right_string_position-1))
 
     leftmost_neighbor.isDefined && rightmost_neighbor.isDefined
   }
@@ -106,7 +127,7 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
 
   override def toString(): String = {
     if (left_string_position==right_string_position)
-      s"letter ($left_string_position)"
+      s"letter ($left_string_position) $right_string_position"
     else
       s"group ($left_string_position-$right_string_position)"
   }
@@ -115,7 +136,7 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
 
 
   def add_description(descriptionType: SlipNodeRep, descriptor: Option[SlipNodeRep]) = {
-    val description = new Description(this, wString, descriptionType, descriptor)
+    val description = new Description(this, ws, descriptionType, descriptor)
     descriptions += description
   }
 
@@ -183,7 +204,7 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
       false
     } else {
 
-      wString.objects.find(wo => {
+      ws.objects.find(wo => {
         if (wo == this) {
           true
         } else {
@@ -282,16 +303,13 @@ abstract class WorkspaceObject(wString: WorkspaceString) extends WorkspaceStruct
   }
 
   def letterOrGroupCompanions(): List[WorkspaceObject] = {
-    workspaceString() match {
-      case Some(ws) => ws.objects.filter(wo =>
+      ws.objects.filter(wo =>
         (wo != this) &&
           (isInstanceOf[Letter] && wo.isInstanceOf[Letter]) ||
           (isInstanceOf[Group] && wo.isInstanceOf[Group])
       ).toList
-      case None => List.empty[WorkspaceObject]
-    }
   }
-  def letterOrGroupCompanionReps(): List[WorkspaceObjectRep] = letterOrGroupCompanions().map(_.workspaceObjectRep())
+  def letterOrGroupCompanionReps(): List[WorkspaceObjectRep2] = letterOrGroupCompanions().map(_.workspaceObjectRep2())
 
   def addBond(b: Bond): Unit = {
     bonds += b

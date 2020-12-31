@@ -32,7 +32,7 @@ object Group {
 }
 
 class Group (
-              wString: WorkspaceString,
+              ws: WorkspaceString,
               val group_category: SlipNodeRep,
               val direction_category: Option[SlipNodeRep],
               val bond_facet: SlipNodeRep,
@@ -42,7 +42,7 @@ class Group (
               groupSlipnetInfo: GroupSlipnetInfo,
               temperature: Double,
               slipnet: ActorRef
-            ) extends WorkspaceObject(wString) {
+            ) extends WorkspaceObject(ws) {
   import Slipnet.SetSlipNodeBufferValue
 
   //var bond_category: Option[SlipNodeRep] = None
@@ -51,7 +51,7 @@ class Group (
   left_string_position = leftob.left_string_position;
   leftmost = (left_string_position==1);
   right_string_position = rightob.right_string_position;
-  rightmost = (right_string_position==(wString.length));
+  rightmost = (right_string_position==(ws.length));
 
   spans_string = (leftmost&rightmost);
 
@@ -72,7 +72,7 @@ class Group (
   if (spans_string) add_description(groupSlipnetInfo.string_position_category, Some(groupSlipnetInfo.whole));
   else if (left_string_position==1)
     add_description(groupSlipnetInfo.string_position_category, Some(groupSlipnetInfo.leftmost))
-  else if (right_string_position == wString.length)
+  else if (right_string_position == ws.length)
     add_description(groupSlipnetInfo.string_position_category, Some(groupSlipnetInfo.rightmost))
   else if (middle_object())
     this.add_description(groupSlipnetInfo.string_position_category, Some(groupSlipnetInfo.middle))
@@ -123,7 +123,7 @@ class Group (
   }
 
   def build_group() = {
-    wString.objects += this
+    ws.objects += this
     for (wo <- object_list) {
       wo.group = Some(this)
     }
@@ -162,9 +162,7 @@ class Group (
     for (wo <- object_list) {
       wo.group = None
     }
-    if (workspaceString().isDefined) {
-      workspaceString().get.break_group(this)
-    }
+    ws.break_group(this)
   }
 
   def local_support(): Double = {
@@ -180,7 +178,7 @@ class Group (
   }
 
   def number_of_local_supporting_groups() = {
-    val grs = wString.objects.filter(wo =>
+    val grs = ws.objects.filter(wo =>
       if (wo.isInstanceOf[Group]) false else {
         val g = wo.asInstanceOf[Group]
         ((g.right_string_position<left_string_position)||
@@ -192,7 +190,7 @@ class Group (
   }
   def local_density() = {
     val sg = number_of_local_supporting_groups().toDouble
-    val ln = wString.length / 2.0
+    val ln = ws.length / 2.0
     //System.out.println(this+" local density="+ln+"  sg="+sg+" ln="+ln);
     100.0*sg/ln;
   }

@@ -217,13 +217,13 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
           // https://medium.com/kenshoos-engineering-blog/assembling-requests-from-multiple-actors-44434c18e69d
           // => ask patter is a solution
           // second solution: coderack has a map codelet -> urgency and it is updated by notifications
-          println(s"mainloop | codelets_run ${codelets_run} clamp_time ${Temperature.clamp_time} " +
+          log.debug(s"mainloop | codelets_run ${codelets_run} clamp_time ${Temperature.clamp_time} " +
             s" last_update ${last_update} time_step_length ${Slipnet.time_step_length}")
 
           // TODO
           //temperature ! CheckClamped(codelets_run)
           if (((codelets_run - last_update) >= Slipnet.time_step_length) || (codelets_run == 0)) {
-            println("update_Everything")
+            log.debug("update_Everything")
             workspace ! models.Workspace.UpdateEverything(temperature)
             //update_Everything();
           } else {
@@ -242,6 +242,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
         case ChooseAndRun2(t) =>
           // if coderack is empty, clamp initially clamped slipnodes and
           // post initial_codelets;
+          log.debug(s"ChooseAndRun2 $total_num_of_codelets")
           if (total_num_of_codelets()==0){
             self ! PostInitialCodelets(number_of_objects)
           } else {

@@ -12,10 +12,10 @@ object Letter {
 }
 
 class Letter (
-               wString: WorkspaceString,
+               ws: WorkspaceString,
                lf: Int,
                rt: Int
-             ) extends WorkspaceObject(wString) {
+             ) extends WorkspaceObject(ws) {
 
   import Letter.LetterSlipnetComplement
 
@@ -24,11 +24,11 @@ class Letter (
 
   def letterSlipnetComplement(): LetterSlipnetComplement = {
     val x = lf - 1
-    val s2 = wString.s.substring(x,x+1)
+    val s2 = ws.s.substring(x,x+1)
     val letterChar = s2(0)
     val letterInt = letterChar.toInt
     val letval = if (letterInt > 96) letterInt- 97 else letterInt -65
 
-    LetterSlipnetComplement(uuid, x, letval, wString.length)
+    LetterSlipnetComplement(uuid, x, letval, ws.length)
   }
 }

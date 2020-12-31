@@ -221,7 +221,6 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
   var remove_spreading_activation = false
   var remove_activation_jump = false
 
-  var bondFacets = List.empty[SlipNode]
   var slipNodeRefs = Map.empty[String, SlipNode]
   var slipNodes = ListBuffer.empty[SlipNode]
 
@@ -671,13 +670,14 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
 
     // bottom-up-bond-scout codelet.java.255
     case BondFromTo(from, to) =>
-
+      log.debug(s"BondFromTo: Slipnet bond facets $bond_facets")
       // choose_bond_facet, workspace_formulas.java.191
-      val fromDescriptionFacets: List[SlipNode] = facetsOfAndPartOf(from, bondFacets)
+      val fromDescriptionFacets: List[SlipNode] = facetsOfAndPartOf(from, bond_facets.toList)
       val toDescriptionFacets: List[SlipNode] = facetsOfAndPartOf(to, fromDescriptionFacets)
 
       val fromFacetSlipNodeReps = fromDescriptionFacets.map(_.slipNodeRep())
-      val toFacetSlipNodeReps = fromDescriptionFacets.map(_.slipNodeRep())
+      val toFacetSlipNodeReps = toDescriptionFacets.map(_.slipNodeRep())
+      println("Slipnet BondFromTo will send response")
 
       sender() ! BondFromToSlipnetResponse(fromFacetSlipNodeReps, toFacetSlipNodeReps)
 
@@ -771,14 +771,25 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
 
     // bottom-up-bond-scout codelet.java.267
     case BondFromTo2(from,to,fromDescriptor,toDescriptor) =>
-      val from_descriptor = if (fromDescriptor.isEmpty) None else Some(slipNodeRefs(fromDescriptor.get.id))
-      val to_descriptor = if (toDescriptor.isEmpty) None else Some(slipNodeRefs(toDescriptor.get.id))
-      val descriptorDefined = from_descriptor.isDefined && to_descriptor.isDefined
-      val bond_categoryOpt = if (descriptorDefined) SlipnetFormulas.get_bond_category(from_descriptor.get,to_descriptor.get, identity) else None
+      val from_descriptorOpt = fromDescriptor.map(d => slipNodeRefs(d.id))
+      val to_descriptorOpt = toDescriptor.map(d => slipNodeRefs(d.id))
+      val descriptorDefined = from_descriptorOpt.isDefined && to_descriptorOpt.isDefined
+      val bond_categoryOpt = if (descriptorDefined) {
+        log.debug(s"BondFromTo2 | descriptorDefined $descriptorDefined")
+        val from_descriptor = from_descriptorOpt.get
+        val to_descriptor = to_descriptorOpt.get
+        log.debug(s"BondFromTo2 | from_descriptor ${from_descriptor}")
+        log.debug(s"BondFromTo2 | to_descriptor ${to_descriptor}")
+        //from_descriptor.outgoing_links.find(l => l.to_node == to_descriptor).map(_.label)
+        log.debug(s"BondFromTo2 | fromnode.outgoing_links ${from_descriptor.outgoing_links}")
+        log.debug(s"BondFromTo2 | fromnode.outgoing_links ${from_descriptor.outgoing_links.last.to_node}")
+
+        SlipnetFormulas.get_bond_category(from_descriptor,to_descriptor, identity)
+      } else None
 
       bond_categoryOpt match {
         case None =>
-          log.debug(" no suitable link - fizzle")
+          log.debug("BondFromTo2 | no suitable link - fizzle")
           sender() ! Finished
         case Some(bondCategory) =>
           val adaptedBondCategory = if (bondCategory==identity) sameness else bondCategory
@@ -787,10 +798,10 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
           // coderack.propose_bond(fromob,toob,bond_category,bond_facet,from_descriptor, to_descriptor,this);
           // coderack.java.274
           bond_facet.buffer=100.0;
-          if (from_descriptor.isDefined)
-            from_descriptor.get.buffer=100.0
-          if (to_descriptor.isDefined)
-            to_descriptor.get.buffer=100.0
+          if (from_descriptorOpt.isDefined)
+            from_descriptorOpt.get.buffer=100.0
+          if (to_descriptorOpt.isDefined)
+            to_descriptorOpt.get.buffer=100.0
 
           sender() ! BondFromTo2Response(
             adaptedBondCategory.slipNodeRep(),

@@ -27,7 +27,7 @@ import models.Group.{FutureGroupRep, GroupRep}
 import models.SlipNode.{GroupSlipnetInfo, SlipNodeRep}
 import models.Slipnet.DescriptionTypeInstanceLinksToNodeInfo
 import models.Workspace.{GoWithBottomUpCorrespondenceScout2Response, GoWithBottomUpCorrespondenceScout3, GoWithBottomUpCorrespondenceScout3Response, GoWithCorrespondenceBuilder, GoWithCorrespondenceBuilder2, GoWithCorrespondenceBuilder3, GoWithCorrespondenceBuilder4, GoWithCorrespondenceBuilder5, GoWithCorrespondenceBuilder6, GoWithCorrespondenceBuilder7, GoWithCorrespondenceBuilder8, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithImportantObjectCorrespondenceScout, GoWithImportantObjectCorrespondenceScout2, GoWithImportantObjectCorrespondenceScout3, GoWithRuleBuilder, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3, GoWithRuleStrengthTester, GoWithRuleTranslator, GoWithRuleTranslator2, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, UpdateEverything, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
-import models.WorkspaceObject.WorkspaceObjectRep
+import models.WorkspaceObject.{WorkspaceObjectRep}
 import models.WorkspaceStructure.WorkspaceStructureRep
 import models.codelet.BottomUpBondScout.{GoWithBottomUpBondScout2Response, GoWithBottomUpBondScoutResponse}
 import models.codelet.BottomUpDescriptionScout.GoWithBottomUpDescriptionScoutResponse
@@ -67,8 +67,9 @@ object Workspace {
   case class Step(temperature: Double)
   case object Found
   case class GoWithBreaker(temperature: Double)
-  case class BondWithNeighbor(temperature: Double)
+  case class BondWithNeighbor(temperatGoWithBottomUpBondScout2Debugure: Double)
   case class GoWithBottomUpBondScout2(from: WorkspaceObjectRep, to:WorkspaceObjectRep, fromFacets: List[SlipNodeRep], toFacets: List [SlipNodeRep])
+
   case class WorkspaceProposeBond(bondFrom: WorkspaceObjectRep,
                                       bondTo: WorkspaceObjectRep,
                                       bondCategory: SlipNodeRep,
@@ -416,10 +417,15 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 
 
     case Step(temperature) =>
+      log.debug("Step...")
+
       if (found_answer) {
         executionRunActor ! ExecutionRun.Found
       } else {
-        coderack ! ChooseAndRun(workspaceObjects().size,temperature)
+        val dd = workspaceObjects()
+        log.debug(s"Step2 <$dd>")
+
+        coderack ! ChooseAndRun(dd.size,temperature)
       }
 
     // GoWithBreaker, see Codelet.java.68
@@ -479,6 +485,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
           log.debug("BondWithNeighbor | failed with empty from")
           sender() ! Finished
         case Some(from) =>
+          //log.debug(s"BondWithNeighbor | from ${from}")
           val toOpt = chooseNeighbor(from, conditionalNeighbor)
           toOpt match {
             case None =>
@@ -487,23 +494,26 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 
             case Some(to) =>
               log.debug(s"initial object chosen: $from in ${if (from.workspaceString() == initial) "initial" else "target"} string")
-              log.debug(s"ito object: $to")
+              log.debug(s"to object: $to")
 
               sender() ! GoWithBottomUpBondScoutResponse(from.workspaceObjectRep(), to.workspaceObjectRep())
           }
       }
-      sender() ! Finished
 
 
-    case GoWithBottomUpBondScout2(fromRep: WorkspaceStructureRep, toRep: WorkspaceStructureRep, fromFacets: List[SlipNodeRep], toFacets: List[SlipNodeRep]) =>
+    case GoWithBottomUpBondScout2(fromRep, toRep, fromFacets, toFacets) =>
+      println("GoWithBottomUpBondScout2 in ws")
       // workspace_formulas.java.207
       if (fromFacets.isEmpty) {
         log.debug(s" no possible bond-facet - fizzle")
         sender() ! Finished
 
       } else {
+        log.debug(s"fromRep.uuid ${fromRep.uuid} toRep.uuid ${toRep.uuid}")
+
         val from = objectRefs()(fromRep.uuid)
         val to = objectRefs()(toRep.uuid)
+        log.debug(s"GoWithBottomUpBondScout2 $from $to")
         val probs = toFacets.map(sn => {
           total_description_type_support(sn, from.workspaceString().get)
         })
@@ -2175,13 +2185,14 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     chooseObjectFromList(nonModifieds, variable)
   }
   def chooseNeighbor(from: WorkspaceObject, conditional: (WorkspaceObject,WorkspaceObject) => Boolean ) : Option[WorkspaceObject] = {
-    val nonModifieds = workspaceObjects().filter(wo => (
-      wo.workspaceString() == from.workspaceString()) && conditional(from, wo)
+    //println("workspace_objects " + workspaceObjects());
+
+    val nonModifieds = workspaceObjects().filter(wo =>
+      wo.workspaceString() == from.workspaceString() && conditional(from, wo)
     )
+    //println("nonModifieds " + nonModifieds)
     chooseObjectFromList(nonModifieds, TemperatureAjustmentVariable.Intra_string_salience)
   }
-
-
 
   object TemperatureAjustmentVariable {
     val Intra_string_salience = "intra_string_salience"
