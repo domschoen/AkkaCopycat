@@ -20,7 +20,7 @@ class Breaker(urgency: Int,
   def receive = LoggingReceive {
     // to the browser
     case Run(initialString, modifiedString, targetString,t) =>
-      log.debug(s"Run with initial $initialString, modified: $modifiedString and target: $targetString")
+      log.debug(s"${getClass.getName}. Run with initial $initialString, modified: $modifiedString and target: $targetString")
       val probability = (100.0 - runTemperature) / 100.0
       log.debug("deciding whether or not to fizzle.")
       log.debug(s"fizzle probability = $probability")

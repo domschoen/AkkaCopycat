@@ -409,8 +409,10 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       initial.update_intra_string_unhappiness();
       target.update_intra_string_unhappiness();
 
-      update_temperature()
-      sender() ! UpdateEverythingResponse(t)
+      val newT = update_temperature()
+      println("Finish update_Everything T: " + newT);
+
+      sender() ! UpdateEverythingResponse(newT)
 
     case Found =>
       found_answer = true
@@ -2246,7 +2248,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 
 
   // From workspace_formulas.java.26
-  def update_temperature() = {
+  def update_temperature(): Double = {
     calculate_intra_string_unhappiness()
     calculate_inter_string_unhappiness()
     calculate_total_unhappiness()
@@ -2263,6 +2265,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     // GUI Temperature.Update(chaleur);
     total_happiness_values += 100.0 - total_unhappiness
     temperature_values += actual_temperature
+    chaleur
   }
 
   def calculate_string_unhappiness(extractor:  WorkspaceObject => Double): Double = {

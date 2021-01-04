@@ -262,12 +262,12 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
   right.codelets += "top-down-group-scout--direction"
 
   // bond types
-  val predecessor = add_slipnode(14, 38, 50.0, "predecessor", "pd") //,60.0)
+  val predecessor = add_slipnode_with_len(14, 38, 50.0, "predecessor", "pd" ,60.0)
   predecessor.codelets += "top-down-bond-scout--category"
 
-  val successor = add_slipnode(14, 33, 50.0, "successor", "sc") //,60.0)
+  val successor = add_slipnode_with_len(14, 33, 50.0, "successor", "sc" , 60.0)
   successor.codelets += "top-down-bond-scout--category"
-  val sameness = add_slipnode(10, 29, 80.0, "sameness", SlipNode.id.sameness) //,0.0)
+  val sameness = add_slipnode_with_len(10, 29, 80.0, "sameness", SlipNode.id.sameness,0.0)
   sameness.codelets += "top-down-bond-scout--category"
 
   // group types
@@ -279,8 +279,8 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
   samegrp.codelets += "top-down-group-scout--category"
 
   // other relations
-  val identity = add_slipnode(2, 30, 90.0, "identity", "id") //,0.0)
-  val opposite = add_slipnode(6, 30, 90.0, "opposite", "op") //,80.0)
+  val identity = add_slipnode_with_len(2, 30, 90.0, "identity", "id", 0.0)
+  val opposite = add_slipnode_with_len(6, 30, 90.0, "opposite", "op", 80.0)
 
   // objects
   val letter = add_slipnode(2, 38, 20.0, "letter", "l")
@@ -550,9 +550,18 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
     slipNodes += slipNode
     slipNode
   }
+  def addBasicSlipNodeWithLen(x: Int, y: Int, cd: Double, pn: String,sn: String, len: Double): SlipNode = {
+    val slipNode = new SlipNode(x, y, cd, pn,sn, len, workspace)
+    slipNodeRefs += (slipNode.id() -> slipNode)
+    slipNodes += slipNode
+    slipNode
+  }
 
   def add_slipnode(x: Int, y: Int, cd: Double, pn: String, sn: String): SlipNode = {
     addBasicSlipNode(x * 25, y * 25, cd, pn, sn)
+  }
+  def add_slipnode_with_len(x: Int, y: Int, cd: Double, pn: String,sn: String, len: Double): SlipNode = {
+    addBasicSlipNodeWithLen(x * 25, y * 25, cd, pn, sn, len)
   }
 
   def relevant_descriptions(descriptions: List[InflatedDescriptionRep]) = {

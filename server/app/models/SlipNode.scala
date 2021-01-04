@@ -72,8 +72,8 @@ class SlipNode(x: Int, y: Int, var conceptual_depth: Double, val name: String, v
   var intrinsic_link_length = 0.0
   var shrunk_link_length = 0.0
 
-  def this(x: Int, y: Int, conceptual_depth: Double, name: String, len: Double, workspace: ActorRef) = {
-    this(x, y, conceptual_depth, name, name, workspace)
+  def this(x: Int, y: Int, conceptual_depth: Double, name: String, shortName: String, len: Double, workspace: ActorRef) = {
+    this(x, y, conceptual_depth, name, shortName, workspace)
     intrinsic_link_length = len;
     shrunk_link_length = len*0.4;
   }
@@ -104,6 +104,8 @@ class SlipNode(x: Int, y: Int, var conceptual_depth: Double, val name: String, v
 
   def bond_degree_of_association(): Double = {
     // used to calculate strength of bonds of this type
+    println("bond_degree_of_association " + id() + " clamp_bdoa: " + SlipNode.clamp_bdoa + " activation: " + activation + " shrunk_link_length: " + shrunk_link_length + " intrinsic_link_length: " + intrinsic_link_length);
+
     val dof1 = if ((!SlipNode.clamp_bdoa)&&(activation==100.0)) shrunk_link_length else intrinsic_link_length
 
     val dof = Math.sqrt(100.0-dof1) *11.0   /// usually *11.0- but lets see what happens

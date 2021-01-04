@@ -20,7 +20,7 @@ class BondBuilder(urgency: Int, workspace: ActorRef,
   def receive = LoggingReceive {
     // to the browser
     case Run(initialString, modifiedString, targetString, t) => {
-      log.debug(s"Run with initial $initialString, modified: $modifiedString and target: $targetString")
+      log.debug(s"BondBuilder. Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
       temperature ! Register(self)
       runTemperature = t

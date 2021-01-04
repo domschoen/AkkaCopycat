@@ -44,7 +44,7 @@ object Coderack {
   case class ChooseAndRun(number_of_objects: Int, temperature: Double)
 
   case class ChooseAndRun2(temperature: Double)
-  case class ChooseAndRun3(temperature: Double)
+  case object ChooseAndRun3
   case object Finish
   case object Step
   case object Initializing
@@ -189,7 +189,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
           for (newCodelet <- createdCodelets) {
             self ! Post(newCodelet, 1)
           }
-          self ! ChooseAndRun3(100.0)
+          self ! ChooseAndRun3
 
         case Post(codelet: ActorRef, urgency) => {
           // TODO
@@ -240,21 +240,26 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
 
 
         case ChooseAndRun2(t) =>
+          runTemperature = t
+
           // if coderack is empty, clamp initially clamped slipnodes and
           // post initial_codelets;
-          log.debug(s"ChooseAndRun2 $total_num_of_codelets")
+          log.debug(s"ChooseAndRun2 $total_num_of_codelets T: $t")
           if (total_num_of_codelets()==0){
             self ! PostInitialCodelets(number_of_objects)
           } else {
-            self ! ChooseAndRun3(t)
+            self ! ChooseAndRun3
           }
-        case ChooseAndRun3(t) =>
+        case ChooseAndRun3 =>
           // From Coderack.choose().java.60
           // let's change the view point: The urgency of a codelet is only in the context of a coderack => not a property of the codelet
+          println("choose T: " + runTemperature);
+
           val scale: Double = (100.0 - runTemperature + 10.0) / 15.0
-          println("Choose codelet codelets size " + codelets.size)
+          println("Choose codelet codelets size " + codelets.size + " scale " + scale)
 
           val urgencies = codelets.map(c => Math.pow(codeletsUrgency(c),scale))
+          log.debug(s"urgencies: $urgencies")
           // then we choose a random number in the urgency sum and we choose the codelet at this random number looking
           // from first codelet up to this random number in terms of urgency
           val index = Utilities.valueProportionalRandomIndexInValueList(urgencies.toList)
@@ -284,7 +289,10 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
 
         case ProposeBond(bondID, bond_degree_of_association) =>
           val urgencyRaw = bond_degree_of_association
+          println("propose_bond urgency " + urgencyRaw)
           val urgency = get_urgency_bin(urgencyRaw)
+          println("propose_bond urgency " + urgency)
+
           val newCodelet = createCodelet(CodeletType.BondStrengthTester, urgency, Some(bondID))
           self ! Post(newCodelet, urgency)
           sender() ! Finished

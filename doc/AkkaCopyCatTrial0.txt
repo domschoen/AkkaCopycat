@@ -1,30 +1,31 @@
-18:21:42 INFO  [akka://application/user/$a/flowActor] - Websocket received Run
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun] - ExecutionRun: Run with initial abc, modified: abd and target: ijk
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - Slipnet: InitializeSlipnet
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Run with initial , modified:  and target: 
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Workspace: Initialize
+23:11:03 INFO  [akka://application/user/$a/flowActor] - Websocket received Run
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun] - ExecutionRun: Run with initial abc, modified: abd and target: ijk
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - Slipnet: InitializeSlipnet
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Run with initial , modified:  and target: 
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Workspace: Initialize
 WorkspaceString abc
 WorkspaceString abd
 WorkspaceString ijk
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - Slipnet: InitializeWorkspaceStrings
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Workspace: InitializeWorkspaceStringsResponse
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (1) 1
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (2) 2
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (3) 3
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (1) 1
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (2) 2
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (3) 3
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (1) 1
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (2) 2
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (3) 3
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Coderack: FinishInitilizingWorkspaceStrings
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Initializing
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - TemperatureResponse 100.0
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - mainloop | codelets_run 0 clamp_time 30  last_update 0 time_step_length 15
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - update_Everything
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - Slipnet: InitializeWorkspaceStrings
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Workspace: InitializeWorkspaceStringsResponse
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (1) 1
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (2) 2
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (3) 3
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (1) 1
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (2) 2
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (3) 3
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (1) 1
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (2) 2
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (3) 3
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Coderack: FinishInitilizingWorkspaceStrings
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Initializing
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - TemperatureResponse 100.0
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - mainloop | codelets_run 0 clamp_time 30  last_update 0 time_step_length 15
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - update_Everything
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+Finish update_Everything T: 20.0
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
 Update everything
 ob A clamp true ob.buffer 103.0 activation 100.0
 ob B clamp true ob.buffer 103.0 activation 100.0
@@ -159,8 +160,8 @@ ob len activation 5.0
 Random rndseed=13
 ob obc activation 100.0
 ob bf activation 40.0
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun2 0
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - PostInitialCodelets 9
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun2 0 T: 20.0
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - PostInitialCodelets 9
 create codelet BottomUpBondScout
 create codelet BottomUpBondScout
 create codelet BottomUpBondScout
@@ -215,103 +216,85 @@ create codelet BottomUpCorrespondenceScout
 create codelet BottomUpCorrespondenceScout
 create codelet BottomUpCorrespondenceScout
 create codelet BottomUpCorrespondenceScout
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - PostInitialCodelets createdCodelets size 54
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - PostInitialCodelets codelets size 0
-Choose codelet codelets size 54
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - PostInitialCodelets createdCodelets size 54
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - PostInitialCodelets codelets size 0
+choose T: 20.0
+Choose codelet codelets size 54 scale 6.0
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - urgencies: ListBuffer(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
 Random rndseed=14
+sum 54.0 chosen 30.455999999999996
 Choose codelet at index 30
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$E#371838282]
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$E] - ReplacementFinder. Run with initial abc, modified: abd and target: ijk
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$E#-1847643664]
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$E] - ReplacementFinder. Run with initial abc, modified: abd and target: ijk
 Random rndseed=15
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - selected letter in initial string = letter (1) 1
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Workspace | ReplaceLetter | Sameness relation found
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - building replacement
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Step...
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Step2 <List(letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3)>
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - mainloop | codelets_run 1 clamp_time 30  last_update 0 time_step_length 15
-Choose codelet codelets size 53
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun2 53
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - selected letter in initial string = letter (1) 1
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Workspace | ReplaceLetter | Sameness relation found
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - building replacement
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Step...
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Step2 <List(letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3)>
+choose T: 20.0
+Choose codelet codelets size 53 scale 6.0
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - mainloop | codelets_run 1 clamp_time 30  last_update 0 time_step_length 15
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun2 53 T: 20.0
 Random rndseed=16
+sum 53.0 chosen 8.745000000000001
 Choose codelet at index 8
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$i#1818416582]
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$i] - BottomUpBondScout. Run with initial abc, modified: abd and target: ijk
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - urgencies: ListBuffer(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$i#-537434217]
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$i] - BottomUpBondScout. Run with initial abc, modified: abd and target: ijk
 Random rndseed=17
+sum 720.0 chosen 586.8
 Random rndseed=18
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - initial object chosen: letter (2) 2 in target string
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - to object: letter (3) 3
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$i] - BottomUpBondScout. response
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - BondFromTo: Slipnet bond facets ListBuffer(models.SlipNode@17b621e9, models.SlipNode@3b0c9f6f)
+sum 160.0 chosen 109.60000000000001
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - initial object chosen: letter (2) 2 in target string
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - to object: letter (3) 3
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$i] - BottomUpBondScout. response
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - BondFromTo: Slipnet bond facets ListBuffer(models.SlipNode@665c11e, models.SlipNode@3712dbcb)
 Slipnet BondFromTo will send response
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$i] - BottomUpBondScout. BondFromToSlipnetResponse
 GoWithBottomUpBondScout2 in ws
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$i] - BottomUpBondScout. BondFromToSlipnetResponse
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - fromRep.uuid WorkspaceObjectRep(41d146fe-3c73-470b-8600-b587cc07ea24,List(DescriptionRep(0ef28544-385b-4758-92e5-ca1d8bc43f7b,SlipNodeRep(obc,0.0),Some(SlipNodeRep(l,0.0))), DescriptionRep(71fb40da-fc70-48f0-90bc-617dbe080109,SlipNodeRep(lc,100.0),Some(SlipNodeRep(J,0.0))), DescriptionRep(b59774a5-c22d-4b96-a044-0342dc0f6a43,SlipNodeRep(spc,100.0),Some(SlipNodeRep(md,0.0)))),List(WorkspaceObjectRep2(9b2c2ccd-467c-4b8b-858e-371061a4b925,List(DescriptionRep(a9ed883a-1463-427e-9b96-2656a0caa4f6,SlipNodeRep(obc,0.0),Some(SlipNodeRep(l,0.0))), DescriptionRep(0fd35ad7-cff6-41ab-9e5e-069f061dfd47,SlipNodeRep(lc,100.0),Some(SlipNodeRep(I,0.0))), DescriptionRep(73285f1b-8bf4-4137-8752-be3f0b3b310c,SlipNodeRep(spc,100.0),Some(SlipNodeRep(lm,0.0)))),false,None,None,None), WorkspaceObjectRep2(4d314548-c1ec-4aa7-a8a0-c1b9fb535d4c,List(DescriptionRep(5dae7f18-5ab7-498b-bf63-f7dc5fdef114,SlipNodeRep(obc,0.0),Some(SlipNodeRep(l,0.0))), DescriptionRep(b5183fad-034f-4844-a8ee-86f543248c7b,SlipNodeRep(lc,100.0),Some(SlipNodeRep(K,0.0))), DescriptionRep(c7c5dfdc-04d5-4011-a3ea-3a56227d8f00,SlipNodeRep(spc,100.0),Some(SlipNodeRep(rm,0.0)))),false,None,None,None)),false,None,None,None) toRep.uuid WorkspaceObjectRep(4d314548-c1ec-4aa7-a8a0-c1b9fb535d4c,List(DescriptionRep(5dae7f18-5ab7-498b-bf63-f7dc5fdef114,SlipNodeRep(obc,0.0),Some(SlipNodeRep(l,0.0))), DescriptionRep(b5183fad-034f-4844-a8ee-86f543248c7b,SlipNodeRep(lc,100.0),Some(SlipNodeRep(K,0.0))), DescriptionRep(c7c5dfdc-04d5-4011-a3ea-3a56227d8f00,SlipNodeRep(spc,100.0),Some(SlipNodeRep(rm,0.0)))),List(WorkspaceObjectRep2(9b2c2ccd-467c-4b8b-858e-371061a4b925,List(DescriptionRep(a9ed883a-1463-427e-9b96-2656a0caa4f6,SlipNodeRep(obc,0.0),Some(SlipNodeRep(l,0.0))), DescriptionRep(0fd35ad7-cff6-41ab-9e5e-069f061dfd47,SlipNodeRep(lc,100.0),Some(SlipNodeRep(I,0.0))), DescriptionRep(73285f1b-8bf4-4137-8752-be3f0b3b310c,SlipNodeRep(spc,100.0),Some(SlipNodeRep(lm,0.0)))),false,None,None,None), WorkspaceObjectRep2(41d146fe-3c73-470b-8600-b587cc07ea24,List(DescriptionRep(0ef28544-385b-4758-92e5-ca1d8bc43f7b,SlipNodeRep(obc,0.0),Some(SlipNodeRep(l,0.0))), DescriptionRep(71fb40da-fc70-48f0-90bc-617dbe080109,SlipNodeRep(lc,100.0),Some(SlipNodeRep(J,0.0))), DescriptionRep(b59774a5-c22d-4b96-a044-0342dc0f6a43,SlipNodeRep(spc,100.0),Some(SlipNodeRep(md,0.0)))),false,None,None,None)),false,None,None,None)
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - GoWithBottomUpBondScout2 letter (2) 2 letter (3) 3
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - fromRep.uuid 6e62530a-a52b-486f-9baa-62297527650b toRep.uuid 9c479b93-ea97-40b0-82f3-a94e14570294
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - GoWithBottomUpBondScout2 letter (2) 2 letter (3) 3
 Random rndseed=19
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - chosen bond facet: lc
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - from object descriptor: Some(SlipNodeRep(J,0.0))
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - to object descriptor: Some(SlipNodeRep(K,0.0))
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] -  no suitable link - fizzle
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$i] - Finished 100.0
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Step...
-Choose codelet codelets size 52
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Step2 <List(letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3)>
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - mainloop | codelets_run 2 clamp_time 30  last_update 0 time_step_length 15
+sum 50.5 chosen 38.582
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - chosen bond facet: lc
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - from object descriptor: Some(SlipNodeRep(J,0.0))
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - to object descriptor: Some(SlipNodeRep(K,0.0))
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - BondFromTo2 | descriptorDefined true
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - BondFromTo2 | from_descriptor models.SlipNode@41167204
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - BondFromTo2 | to_descriptor models.SlipNode@20f3792f
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - BondFromTo2 | fromnode.outgoing_links ListBuffer(models.SlipnetLink@5a60d2e9, models.SlipnetLink@517f3ca2, models.SlipnetLink@230be2db)
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - BondFromTo2 | fromnode.outgoing_links models.SlipNode@665c11e
+23:11:03 INFO  [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - proposing successor bond 
+bond_degree_of_association sc clamp_bdoa: false activation: 0.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
+propose_bond urgency 69.57010852370435
+propose_bond urgency 5
+create codelet BondStrengthTester
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$i] - Finished 20.0
+choose T: 20.0
+Choose codelet codelets size 53 scale 6.0
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Step...
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Step2 <List(letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3)>
 Random rndseed=20
-Choose codelet at index 43
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun2 52
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$T#-1777810596]
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$T] - BottomUpCorrespondenceScout. Run with initial abc, modified: abd and target: ijk
-Random rndseed=21
-Random rndseed=22
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - GoWithBottomUpCorrespondenceScout | trying a correspondence between letter (3) 3 and letter (1) 1
-Random rndseed=23
-Proposing correspondence with concept mappings:
-letter -> letter
-I -> I
-leftmost -> leftmost
-create codelet CorrespondenceStrengthTester
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Step...
-Choose codelet codelets size 52
-Random rndseed=24
-Choose codelet at index 51
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Step2 <List(letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3)>
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - mainloop | codelets_run 3 clamp_time 30  last_update 0 time_step_length 15
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun2 52
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$2#446352343]
-18:21:42 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$2] - Run with initial abc, modified: abd and target: ijk
-18:21:42 ERROR [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - key not found: 958843e1-4fd1-40b1-9e63-d201b11df819
-java.util.NoSuchElementException: key not found: 958843e1-4fd1-40b1-9e63-d201b11df819
+sum 15677.0 chosen 12964.878999999999
+Choose codelet at index 52
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - mainloop | codelets_run 2 clamp_time 30  last_update 0 time_step_length 15
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun2 53 T: 20.0
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - urgencies: ListBuffer(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 15625.0)
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$2#1296736182]
+23:11:03 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$2] - models.codelet.BondStrengthTester. Run with initial abc, modified: abd and target: ijk
+23:11:03 ERROR [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - key not found: b987ffc8-b654-42a7-99ee-478159ca6fe4
+java.util.NoSuchElementException: key not found: b987ffc8-b654-42a7-99ee-478159ca6fe4
 	at scala.collection.MapLike.default(MapLike.scala:232)
 	at scala.collection.MapLike.default$(MapLike.scala:231)
 	at scala.collection.AbstractMap.default(Map.scala:59)
 	at scala.collection.MapLike.apply(MapLike.scala:141)
 	at scala.collection.MapLike.apply$(MapLike.scala:140)
 	at scala.collection.AbstractMap.apply(Map.scala:59)
-	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:669)
+	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:1039)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
-	at models.Slipnet.aroundReceive(Slipnet.scala:209)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:225)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:235)
-	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-18:21:42 ERROR [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - key not found: 958843e1-4fd1-40b1-9e63-d201b11df819
-java.util.NoSuchElementException: key not found: 958843e1-4fd1-40b1-9e63-d201b11df819
-	at scala.collection.MapLike.default(MapLike.scala:232)
-	at scala.collection.MapLike.default$(MapLike.scala:231)
-	at scala.collection.AbstractMap.default(Map.scala:59)
-	at scala.collection.MapLike.apply(MapLike.scala:141)
-	at scala.collection.MapLike.apply$(MapLike.scala:140)
-	at scala.collection.AbstractMap.apply(Map.scala:59)
-	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:1030)
-	at akka.actor.Actor.aroundReceive(Actor.scala:517)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
-	at models.Workspace.aroundReceive(Workspace.scala:223)
+	at models.Workspace.aroundReceive(Workspace.scala:221)
 	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
 	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
 	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
