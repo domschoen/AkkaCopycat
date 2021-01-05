@@ -26,9 +26,10 @@ import models.Correspondence.CorrespondenceRep
 import models.Group.{FutureGroupRep, GroupRep}
 import models.SlipNode.{GroupSlipnetInfo, SlipNodeRep}
 import models.Slipnet.DescriptionTypeInstanceLinksToNodeInfo
-import models.Workspace.{GoWithBottomUpCorrespondenceScout2Response, GoWithBottomUpCorrespondenceScout3, GoWithBottomUpCorrespondenceScout3Response, GoWithCorrespondenceBuilder, GoWithCorrespondenceBuilder2, GoWithCorrespondenceBuilder3, GoWithCorrespondenceBuilder4, GoWithCorrespondenceBuilder5, GoWithCorrespondenceBuilder6, GoWithCorrespondenceBuilder7, GoWithCorrespondenceBuilder8, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithImportantObjectCorrespondenceScout, GoWithImportantObjectCorrespondenceScout2, GoWithImportantObjectCorrespondenceScout3, GoWithRuleBuilder, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3, GoWithRuleStrengthTester, GoWithRuleTranslator, GoWithRuleTranslator2, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, UpdateEverything, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
-import models.WorkspaceObject.{WorkspaceObjectRep}
+import models.Workspace.{GoWithBondStrengthTester2, GoWithBottomUpCorrespondenceScout2Response, GoWithBottomUpCorrespondenceScout3, GoWithBottomUpCorrespondenceScout3Response, GoWithCorrespondenceBuilder, GoWithCorrespondenceBuilder2, GoWithCorrespondenceBuilder3, GoWithCorrespondenceBuilder4, GoWithCorrespondenceBuilder5, GoWithCorrespondenceBuilder6, GoWithCorrespondenceBuilder7, GoWithCorrespondenceBuilder8, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithImportantObjectCorrespondenceScout, GoWithImportantObjectCorrespondenceScout2, GoWithImportantObjectCorrespondenceScout3, GoWithRuleBuilder, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3, GoWithRuleStrengthTester, GoWithRuleTranslator, GoWithRuleTranslator2, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, UpdateEverything, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
+import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
+import models.codelet.BondStrengthTester.GoWithBondStrengthTesterResponse2
 import models.codelet.BottomUpBondScout.{GoWithBottomUpBondScout2Response, GoWithBottomUpBondScoutResponse}
 import models.codelet.BottomUpDescriptionScout.GoWithBottomUpDescriptionScoutResponse
 import models.codelet.Codelet.{Finished, PrepareDescriptionResponse}
@@ -135,6 +136,7 @@ object Workspace {
   case class GoWithGroupBuilder(temperature: Double, groupID: String)
   case class GoWithDescriptionStrengthTester(temperature: Double, descriptionID: String)
   case class GoWithBondStrengthTester(temperature: Double, bondID: String)
+  case class GoWithBondStrengthTester2(temperature: Double, bondID: String, bond_category_degree_of_association: Double)
 
 
   case class GoWithBondBuilder(temperature: Double, bondID: String)
@@ -495,7 +497,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
               sender() ! Finished
 
             case Some(to) =>
-              log.debug(s"initial object chosen: $from in ${if (from.workspaceString() == initial) "initial" else "target"} string")
+              log.debug(s"initial object chosen: $from in ${if (from.wString.isDefined && from.wString.get == initial) "initial" else "target"} string")
               log.debug(s"to object: $to")
 
               sender() ! GoWithBottomUpBondScoutResponse(from.workspaceObjectRep(), to.workspaceObjectRep())
@@ -543,6 +545,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       val bondTo = objectRefs()(bondToRep.uuid)
       val nb = new Bond(bondFrom, bondTo, bondCategory, bondFacet, fromDescriptor, toDescriptor, slipnetLeft, slipnetRight, slipnet)
       // if (!remove_terraced_scan) workspace.WorkspaceArea.AddObject(nb,1);
+      addBond(nb)
 
       sender ! WorkspaceProposeBondResponse(nb.uuid)
 
@@ -1036,27 +1039,32 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 
     // codelet.java.395
     case GoWithBondStrengthTester(temperature, bondID) =>
-      val b = objectRefs()(bondID).asInstanceOf[Bond]
-      b.update_strength_value()
+      val b = structureRefs(bondID).asInstanceOf[Bond]
+      sender() ! GoWithBondStrengthTesterResponse(b.bondRep())
+
+    case GoWithBondStrengthTester2(temperature, bondID, bond_category_degree_of_association) =>
+      val b = structureRefs(bondID).asInstanceOf[Bond]
+      b.update_strength_value(bond_category_degree_of_association, workspaceObjects())
       val strength = b.total_strength;
       val workingString = if (b.left_obj.wString == initial) "initial" else "target"
-      log.info(s"bond = ${bondID} in ${workingString} string")
+      log.info(s"bond = ${b.toString} in ${workingString} string")
 
       val prob = WorkspaceFormulas.temperature_adjusted_probability(strength / 100.0, temperature)
       log.info("bond strength = " + strength)
       if (!WorkspaceFormulas.flip_coin(prob)) {
         log.debug("not strong enough: Fizzle!");
         sender() ! Finished
-      }
-      // it is strong enough - post builder  & activate nodes
-      slipnet ! SetSlipNodeBufferValue(b.bond_facet.id, 100.0)
-      if (b.from_obj_descriptor.isDefined)
-        slipnet ! SetSlipNodeBufferValue(b.from_obj_descriptor.get.id, 100.0)
-      if (b.to_obj_descriptor.isDefined)
-        slipnet ! SetSlipNodeBufferValue(b.to_obj_descriptor.get.id, 100.0)
+      } else {
+        // it is strong enough - post builder  & activate nodes
+        slipnet ! SetSlipNodeBufferValue(b.bond_facet.id, 100.0)
+        if (b.from_obj_descriptor.isDefined)
+          slipnet ! SetSlipNodeBufferValue(b.from_obj_descriptor.get.id, 100.0)
+        if (b.to_obj_descriptor.isDefined)
+          slipnet ! SetSlipNodeBufferValue(b.to_obj_descriptor.get.id, 100.0)
 
-      log.info("succeeded: will post bond-builder");
-      sender() ! GoWithBondStrengthTesterResponse(strength)
+        log.info("succeeded: will post bond-builder");
+        sender() ! GoWithBondStrengthTesterResponse2(strength)
+      }
 
 
     // codelet.java.278
@@ -2180,7 +2188,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     val nonModifieds = wos.filter(wo =>
       {
         //println("chooseObject " + wo.workspaceString + " modified " + modified)
-        wo.workspaceString != modified
+        wo.wString.isDefined && wo.wString.get != modified
       })
     //log.debug("nonModifieds " + nonModifieds)
 

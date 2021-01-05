@@ -3,10 +3,13 @@ package models.codelet
 import akka.actor.ActorRef
 import akka.event.LoggingReceive
 import com.sun.org.apache.xerces.internal.impl.xpath.XPath.Step
+import models.Bond.BondRep
 
 
 object BondStrengthTester {
-  case class GoWithBondStrengthTesterResponse(strength: Double)
+  case class GoWithBondStrengthTesterResponse(bond: BondRep)
+  case class GoWithBondStrengthTesterResponse2(strength: Double)
+  case class SlipnetGoWithBondStrengthTesterResponse(bond_category_degree_of_association: Double)
 }
 
 class BondStrengthTester(urgency: Int,
@@ -18,8 +21,16 @@ class BondStrengthTester(urgency: Int,
   import models.Coderack.{ ChooseAndRun, PostBondBuilder }
   import models.Coderack.ProposeCorrespondence
   import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
-  import models.Workspace.GoWithBondStrengthTester
-  import BondStrengthTester.GoWithBondStrengthTesterResponse
+  import models.Workspace.{
+    GoWithBondStrengthTester,
+    GoWithBondStrengthTester2
+  }
+  import models.Slipnet.SlipnetGoWithBondStrengthTester
+  import BondStrengthTester.{
+    GoWithBondStrengthTesterResponse,
+    GoWithBondStrengthTesterResponse2,
+    SlipnetGoWithBondStrengthTesterResponse
+  }
 
   var runTemperature = 0.0
   def bondID() = arguments.get.asInstanceOf[String]
@@ -33,7 +44,13 @@ class BondStrengthTester(urgency: Int,
       runTemperature = t
       workspace ! GoWithBondStrengthTester(runTemperature, bondID)
 
-    case GoWithBondStrengthTesterResponse(s) =>
+    case GoWithBondStrengthTesterResponse(bondRep) =>
+      slipnet ! SlipnetGoWithBondStrengthTester(bondRep)
+
+    case SlipnetGoWithBondStrengthTesterResponse(bond_category_degree_of_association) =>
+      workspace ! GoWithBondStrengthTester2(runTemperature, bondID, bond_category_degree_of_association)
+
+    case GoWithBondStrengthTesterResponse2(s) =>
       coderack ! PostBondBuilder(bondID,s)
 
 
@@ -44,6 +61,7 @@ class BondStrengthTester(urgency: Int,
     t = value
 
     case Finished =>
+      log.debug("BondStrengthTester. Finished")
       workspace ! models.Workspace.Step(runTemperature)
 
   }

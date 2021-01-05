@@ -792,6 +792,8 @@ Random rndseed=16
 sum 53.0 chosen 8.745000000000001
 Choose codelet at index 8
 coderack: chosen codelet codelet@4f3f5b24
+
+-------
 coderack: chosen codelet bottom-up-bond-scout urgency = 1
 #### bottom-up-bond-scout ####
 Random rndseed=17
@@ -811,6 +813,10 @@ bond_degree_of_association sc clamp_bdoa: false activation: 0.0 shrunk_link_leng
 propose_bond urgency 69.57010852370435
 propose_bond urgency 5
 create codelet bond-strength-tester urgency 5
+
+
+
+
 mainloop | codelets_run 2 clamp_time 30 last_update 0 time_step_length 15
 choose T: 20.0
 urgency_values i=0 = 1.0 sum 1.0 codelet bottom-up-bond-scout scale : 6.0
@@ -934,6 +940,8 @@ urgency_values i=51 = 1.0 sum 52.0 codelet bottom-up-correspondence-scout scale 
 Random rndseed=22
 sum 52.0 chosen 11.388
 Choose codelet at index 11
+
+-----
 coderack: chosen codelet codelet@6f496d9f
 coderack: chosen codelet bottom-up-bond-scout urgency = 1
 #### bottom-up-bond-scout ####

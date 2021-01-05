@@ -253,17 +253,17 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
         case ChooseAndRun3 =>
           // From Coderack.choose().java.60
           // let's change the view point: The urgency of a codelet is only in the context of a coderack => not a property of the codelet
-          println("choose T: " + runTemperature);
+          log.debug("choose T: " + runTemperature);
 
           val scale: Double = (100.0 - runTemperature + 10.0) / 15.0
-          println("Choose codelet codelets size " + codelets.size + " scale " + scale)
+          log.debug("Choose codelet codelets size " + codelets.size + " scale " + scale)
 
           val urgencies = codelets.map(c => Math.pow(codeletsUrgency(c),scale))
           log.debug(s"urgencies: $urgencies")
           // then we choose a random number in the urgency sum and we choose the codelet at this random number looking
           // from first codelet up to this random number in terms of urgency
           val index = Utilities.valueProportionalRandomIndexInValueList(urgencies.toList)
-          println("Choose codelet at index " + index)
+          log.debug("Choose codelet at index " + index)
           val chosenCodelet = codelets(index)
 
           // we remove this codelet from codelets and we run it

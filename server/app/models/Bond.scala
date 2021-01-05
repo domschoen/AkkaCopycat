@@ -45,6 +45,9 @@ class Bond (
 
   wString = from_obj.wString
 
+  override def toString(): String = {
+    s"${bond_category.id} bond between ${left_obj} and ${right_obj}"
+  }
 
   def bondRep(): BondRep = BondRep(
     uuid,
@@ -128,6 +131,100 @@ class Bond (
       (wo: WorkspaceObject) => wo.left_bond,
       initial)
     List(locOpt,rocOpt).flatten
+  }
+  def calculate_internal_strength(bond_degree_of_association: Double) = {
+    // bonds between objects of same type(ie. letter or group) are
+    // stronger than bonds between different types
+    val fromgp = (from_obj.left_string_position!=from_obj.right_string_position);
+    val togp = (to_obj.left_string_position!=to_obj.right_string_position);
+    val member_compatibility = if (fromgp==togp) 1.0 else 0.7
+
+    // letter category bonds are stronger
+    val bff = if (bond_facet.id == SlipNode.id.letter_category) 1.0 else 0.7
+    val intstr = member_compatibility * bff * bond_degree_of_association;
+    //System.out.println(bond_category.pname+" bdoa:"+bond_category.bond_degree_of_association());
+    internal_strength = if (intstr > 100.0 ) 100.0 else intstr
+    //System.out.println(this+" internal strength:"+internal_strength);
+    internal_strength
+  }
+
+
+  def number_of_local_supporting_bonds(): Int = {
+    wString match {
+      case Some(ws) =>
+        ws.bonds.filter(ob => {
+           (ob.wString == from_obj.wString) &&
+           (
+             (!(left_obj.letter_distance(ob.left_obj)==0)) &&
+             (!(right_obj.letter_distance(ob.right_obj)==0)) &&
+             (bond_category==ob.bond_category) &&
+             (direction_category==ob.direction_category)
+           )
+          }
+        ).size
+      case None => 0
+    }
+  }
+
+  def local_density(wos: List[WorkspaceObject]): Double = {
+    wString match {
+      case Some(ws) =>
+        // returns a rough measure of the density in the string
+        // of the same bond-category and the direction-category of
+        // the given bond
+        var slot_sum =0.0
+        var support_sum = 0.0
+
+        for (ob1 <- wos) {
+          if (ob1.wString == wString){
+            for (ob2 <- wos) {
+              if (ob1.wString == ob2.wString)
+                if ((ob1.left_string_position==(ob2.right_string_position+1))||
+                  (ob1.right_string_position==(ob2.left_string_position-1))){
+                  // they are neighbours
+                  slot_sum+=1.0;
+                  for (b <- ws.bonds) {
+                    if ((b!=this)&&(((from_obj==ob1)&&(to_obj==ob2))||
+                      ((from_obj==ob2)&&(to_obj==ob1))))
+
+                      if ((b.bond_category==bond_category)&&
+                        (b.direction_category==direction_category))
+                        support_sum+=1.0;
+
+                  }
+                }
+            }
+          }
+        }
+
+        if (slot_sum==0.0) 0.0 else 100.0*support_sum/slot_sum;
+
+      case None => 0.0
+
+    }
+  }
+
+  def update_strength_value(bond_category_degree_of_association: Double, wos: List[WorkspaceObject]) = {
+    calculate_internal_strength(bond_category_degree_of_association)
+    calculate_external_strength(wos)
+    calculate_total_strength()
+  };
+
+
+  def calculate_external_strength(wos: List[WorkspaceObject]) = {
+    // equals the local support
+
+    val num : Double = number_of_local_supporting_bonds()
+    val extstr = if (num > 0.0){
+      val density = Math.sqrt(local_density(wos) / 100) * 100.0
+      val nf1 = Math.pow(0.6,(1.0/(num*num*num)));
+      val nf = if (nf1 < 1.0) 1.0 else nf1
+      nf1 * density
+    } else 0.0
+
+    external_strength = extstr;
+    //System.out.println(this+" external strength:"+external_strength);
+    external_strength
   }
 
 }

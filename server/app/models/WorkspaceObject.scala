@@ -289,6 +289,16 @@ abstract class WorkspaceObject(ws: WorkspaceString) extends WorkspaceStructure {
 
   }
 
+  def letter_distance(ob2: WorkspaceObject) = {
+    if (ob2.left_string_position > right_string_position) {
+       ob2.left_string_position - right_string_position
+    } else if (left_string_position > ob2.right_string_position) {
+      left_string_position-ob2.right_string_position
+    } else 0
+  }
+
+
+
   def get_description(description_type: SlipNodeRep): Option[SlipNodeRep] = {
     // returns the description attached to this object of the specified description type
     get_description_with_id(description_type.id)

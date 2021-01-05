@@ -1,5 +1,7 @@
 package models
 
+import java.io.{PrintWriter, StringWriter}
+
 object Random {
   val numbers: Seq[Integer] = Seq(
     10,3,335,33,355,217,536,195,700,949,
@@ -204,6 +206,16 @@ object Random {
     392,841,266,114,440,428,445,846,621,365)
   var  rndseed: Integer = 1
   def rnd(): Double = {
+    if (rndseed == 23) {
+      try {
+        throw new Exception("toto")
+      } catch {
+        case e: Exception =>
+          val sw = new StringWriter()
+          e.printStackTrace(new PrintWriter(sw))
+          println("H" + sw.toString)
+      }
+    }
     println(s"Random rndseed=$rndseed")
     val value = numbers(rndseed) / 1000.0
     rndseed += 1

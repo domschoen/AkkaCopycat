@@ -33,6 +33,7 @@ import models.Letter.LetterSlipnetComplement
 import models.SlipNode.{GroupSlipnetInfo, SlipNodeRep, SlipnetInfo}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
+import models.codelet.BondStrengthTester.SlipnetGoWithBondStrengthTesterResponse
 import models.codelet.BottomUpDescriptionScout.SlipnetGoWithBottomUpDescriptionScoutResponse
 import models.codelet.CorrespondenceBuilder.{SlipnetGoWithCorrespondenceBuilder4Response, SlipnetGoWithCorrespondenceBuilder5Response, SlipnetGoWithCorrespondenceBuilderResponse, SlipnetGoWithCorrespondenceBuilderResponse2, SlipnetGoWithCorrespondenceBuilderResponse3}
 import models.codelet.GroupScoutWholeString.{GetLeftAndRightResponse, SlipnetGoWithGroupScoutWholeStringResponse}
@@ -182,7 +183,7 @@ object Slipnet {
                                                      )
   case class SlipnetGoWithCorrespondenceBuilder5(groupObjs: Option[ConceptMappingParameters])
   case class SlipnetGoWithCorrespondenceBuilder6(cms: List[ConceptMappingRep])
-
+  case class SlipnetGoWithBondStrengthTester(bondRep: BondRep)
   object RelationType {
     val Sameness = "Sameness"
     val Successor = "Successor"
@@ -1288,6 +1289,10 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
         if (cm.label.isDefined) cm.label.get.activation = 100.0
       }
       sender() ! Finished
+
+    case SlipnetGoWithBondStrengthTester(bondRep) =>
+      val bondCategorySlipNode = slipNodeRefs(bondRep.bondCategorySlipNodeID)
+      sender() ! SlipnetGoWithBondStrengthTesterResponse(bondCategorySlipNode.bond_degree_of_association())
   }
   def relevant_distinguishing_cms(c: CorrespondenceRep): List[ConceptMapping] = {
     val cms = ConceptMapping.conceptMappingsWithReps(c.concept_mapping_list)

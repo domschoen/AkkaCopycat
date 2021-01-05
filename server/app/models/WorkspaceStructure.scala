@@ -36,13 +36,13 @@ abstract class WorkspaceStructure {
     calculate_total_strength()
   };
 
-  // implemented in Bond, Correspondence, Description, Rule, WorkSpaceObject (Group)
+  // See subclass implementation in Bond, Correspondence, Description, Rule, WorkSpaceObject (Group)
   def calculate_internal_strength() = {}
   def calculate_external_strength() = {}
   def calculate_total_strength() = {
     total_strength = Formulas.weighted_average(internal_strength,
       internal_strength, external_strength, (100.0-internal_strength));
-    //System.out.println(this+" total strength:"+total_strength);
+    println(this+" total strength:"+total_strength)
   }
   def total_weakness(): Double = {
     100.0-Math.pow(total_strength,0.95)

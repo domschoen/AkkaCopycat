@@ -105,7 +105,7 @@ class BottomUpBondScout(urgency: Int,              workspace: ActorRef,
       t = value
 
     case Finished =>
-      log.debug(s"Finished $runTemperature")
+      log.debug(s"BottomUpBondScout. Finished $runTemperature")
       workspace ! models.Workspace.Step(runTemperature)
 
   }
