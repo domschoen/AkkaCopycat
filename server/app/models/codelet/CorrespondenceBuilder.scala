@@ -13,7 +13,6 @@ import models.codelet.CorrespondenceBuilder.SlipnetGoWithCorrespondenceBuilderRe
 
 // Codelet.java.1476
 object CorrespondenceBuilder {
-  case class GoWithCorrespondenceBuilderResponse(obj2: WorkspaceObjectRep)
   case class GoWithCorrespondenceBuilder2Response(conceptMappingReps: List[ConceptMappingRep])
   case class GoWithCorrespondenceBuilder3Response(corrrespondence: CorrespondenceRep, correspondenceReps: List[CorrespondenceRep])
   case class GoWithCorrespondenceBuilder7Response(groupObjs: Option[ConceptMappingParameters])
@@ -38,12 +37,13 @@ class CorrespondenceBuilder(urgency: Int,
   import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
   import models.Workspace.{
     GoWithCorrespondenceBuilder,
+    GoWithCorrespondenceBuilderResponse,
+
     GoWithCorrespondenceBuilder2,
     GoWithCorrespondenceBuilder6,
     GoWithCorrespondenceBuilder7
   }
   import CorrespondenceBuilder.{
-    GoWithCorrespondenceBuilderResponse,
     GoWithCorrespondenceBuilder2Response,
     GoWithCorrespondenceBuilder3Response,
     SlipnetGoWithCorrespondenceBuilderResponse,

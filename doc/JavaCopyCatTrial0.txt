@@ -727,6 +727,8 @@ Random rndseed=14
 sum 54.0 chosen 30.455999999999996
 Choose codelet at index 30
 coderack: chosen codelet codelet@27d6c5e0
+
+-----
 coderack: chosen codelet replacement-finder urgency = 1
 #### replacement-finder ####
 Random rndseed=15
@@ -876,6 +878,8 @@ Random rndseed=20
 sum 15677.0 chosen 12964.878999999999
 Choose codelet at index 52
 coderack: chosen codelet codelet@5b480cf9
+
+------------
 coderack: chosen codelet bond-strength-tester urgency = 5
 #### bond-strength-tester ####
 bond_degree_of_association sc clamp_bdoa: false activation: 0.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0

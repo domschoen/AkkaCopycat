@@ -62,7 +62,7 @@ class Temperature extends Actor with ActorLogging with InjectedActorSupport {
 
     case Register =>
       subscribers += sender()
-      sender() ! TemperatureResponse(temperature)
+      //sender() ! TemperatureResponse(temperature)
 
     case SetTemperature(value) =>
       temperature = value

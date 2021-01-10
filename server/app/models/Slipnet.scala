@@ -36,6 +36,7 @@ import models.WorkspaceStructure.WorkspaceStructureRep
 import models.codelet.BondStrengthTester.SlipnetGoWithBondStrengthTesterResponse
 import models.codelet.BottomUpDescriptionScout.SlipnetGoWithBottomUpDescriptionScoutResponse
 import models.codelet.CorrespondenceBuilder.{SlipnetGoWithCorrespondenceBuilder4Response, SlipnetGoWithCorrespondenceBuilder5Response, SlipnetGoWithCorrespondenceBuilderResponse, SlipnetGoWithCorrespondenceBuilderResponse2, SlipnetGoWithCorrespondenceBuilderResponse3}
+import models.codelet.CorrespondenceStrengthTester.SlipnetGoWithCorrespondenceStrengthTesterResponse
 import models.codelet.GroupScoutWholeString.{GetLeftAndRightResponse, SlipnetGoWithGroupScoutWholeStringResponse}
 import models.codelet.GroupStrengthTester.SlipnetGoWithGroupStrengthTesterResponse
 import models.codelet.ImportantObjectCorrespondenceScout.SlipnetGoWithImportantObjectCorrespondenceScoutResponse
@@ -184,6 +185,8 @@ object Slipnet {
   case class SlipnetGoWithCorrespondenceBuilder5(groupObjs: Option[ConceptMappingParameters])
   case class SlipnetGoWithCorrespondenceBuilder6(cms: List[ConceptMappingRep])
   case class SlipnetGoWithBondStrengthTester(bondRep: BondRep)
+  case class SlipnetGoWithCorrespondenceStrengthTester(c: CorrespondenceRep)
+
   object RelationType {
     val Sameness = "Sameness"
     val Successor = "Successor"
@@ -1293,6 +1296,18 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
     case SlipnetGoWithBondStrengthTester(bondRep) =>
       val bondCategorySlipNode = slipNodeRefs(bondRep.bondCategorySlipNodeID)
       sender() ! SlipnetGoWithBondStrengthTesterResponse(bondCategorySlipNode.bond_degree_of_association())
+
+    case SlipnetGoWithCorrespondenceStrengthTester(c: CorrespondenceRep) =>
+      val cms = ConceptMapping.conceptMappingsWithReps(c.concept_mapping_list)
+
+      for (cm <- cms) {
+        cm.description_type1.buffer=100.0;
+        cm.descriptor1.buffer=100.0;
+        cm.description_type2.buffer=100.0;
+        cm.descriptor2.buffer=100.0;
+      }
+      sender() ! SlipnetGoWithCorrespondenceStrengthTesterResponse
+
   }
   def relevant_distinguishing_cms(c: CorrespondenceRep): List[ConceptMapping] = {
     val cms = ConceptMapping.conceptMappingsWithReps(c.concept_mapping_list)

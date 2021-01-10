@@ -206,7 +206,7 @@ object Random {
     392,841,266,114,440,428,445,846,621,365)
   var  rndseed: Integer = 1
   def rnd(): Double = {
-    if (rndseed == 23) {
+    //if (rndseed == 23) {
       try {
         throw new Exception("toto")
       } catch {
@@ -215,7 +215,7 @@ object Random {
           e.printStackTrace(new PrintWriter(sw))
           println("H" + sw.toString)
       }
-    }
+    //}
     println(s"Random rndseed=$rndseed")
     val value = numbers(rndseed) / 1000.0
     rndseed += 1
