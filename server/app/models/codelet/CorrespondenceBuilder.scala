@@ -9,10 +9,12 @@ import models.Workspace.{GoWithCorrespondenceBuilder3, GoWithCorrespondenceBuild
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.Correspondence.CorrespondenceRep
 import models.Group.GroupRep
-import models.codelet.CorrespondenceBuilder.SlipnetGoWithCorrespondenceBuilderResponse2
+import models.codelet.CorrespondenceBuilder.{GoWithCorrespondenceBuilder9Response, SlipnetGoWithCorrespondenceBuilderResponse2}
 
 // Codelet.java.1476
 object CorrespondenceBuilder {
+  case object GoWithCorrespondenceBuilder9Response
+
   case class GoWithCorrespondenceBuilder2Response(conceptMappingReps: List[ConceptMappingRep])
   case class GoWithCorrespondenceBuilder3Response(corrrespondence: CorrespondenceRep, correspondenceReps: List[CorrespondenceRep])
   case class GoWithCorrespondenceBuilder7Response(groupObjs: Option[ConceptMappingParameters])
@@ -41,7 +43,8 @@ class CorrespondenceBuilder(urgency: Int,
 
     GoWithCorrespondenceBuilder2,
     GoWithCorrespondenceBuilder6,
-    GoWithCorrespondenceBuilder7
+    GoWithCorrespondenceBuilder7,
+    GoWithCorrespondenceBuilder9
   }
   import CorrespondenceBuilder.{
     GoWithCorrespondenceBuilder2Response,
@@ -66,7 +69,7 @@ class CorrespondenceBuilder(urgency: Int,
 
   var runTemperature: Double = 0.0
 
-  def correponsdenceID() = arguments.get.asInstanceOf[String]
+  def corresponsdenceID() = arguments.get.asInstanceOf[String]
 
   var incc: List[CorrespondenceRep] = null
 
@@ -82,57 +85,75 @@ class CorrespondenceBuilder(urgency: Int,
       coderack = sender()
       temperature ! Register(self)
       runTemperature = t
-      workspace ! GoWithCorrespondenceBuilder(runTemperature, correponsdenceID)
+      workspace ! GoWithCorrespondenceBuilder(runTemperature, corresponsdenceID)
 
-      // Codelet.java.1478
+
+
+    // Codelet.java.1478
     case GoWithCorrespondenceBuilderResponse(obj2) =>
-      slipnet ! GroupFlippedVersion(obj2.asGroupRep.get)
+      obj2.asGroupRep match {
+        case Some(gr) =>
+          log.debug("CorrespondenceBuilder: is a Group")
+          slipnet ! GroupFlippedVersion(gr)
+        case None =>
+          log.debug("CorrespondenceBuilder: is a " + obj2.getClass)
+          workspace ! GoWithCorrespondenceBuilder9(corresponsdenceID,runTemperature)
+      }
 
     case GroupFlippedVersionResponse(fgr) =>
       if (fgr.isEmpty) {
         println("Stuffer: empty flipped. Fizzle")
         self ! Finished
       } else {
-        workspace ! GoWithCorrespondenceBuilder2(correponsdenceID, fgr.get, runTemperature)
+        workspace ! GoWithCorrespondenceBuilder2(corresponsdenceID, fgr.get, runTemperature)
       }
 
-      //Codelet.java.1495
+    // From FlipppedGroup
+    case GoWithCorrespondenceBuilder9Response =>
+      workspace ! GoWithCorrespondenceBuilder9(corresponsdenceID,runTemperature)
+
+
+    //Codelet.java.1495
     case GoWithCorrespondenceBuilder2Response(conceptMappingReps: List[ConceptMappingRep]) =>
       slipnet ! SlipnetGoWithCorrespondenceBuilder(conceptMappingReps)
 
     case SlipnetGoWithCorrespondenceBuilderResponse(updatedCorrespondenceCMReps) =>
-      workspace ! GoWithCorrespondenceBuilder3(correponsdenceID, updatedCorrespondenceCMReps)
+      workspace ! GoWithCorrespondenceBuilder3(corresponsdenceID, updatedCorrespondenceCMReps)
 
     case GoWithCorrespondenceBuilder3Response(correspondence, correspondenceReps) =>
+      log.debug("CorrespondenceBuilder. GoWithCorrespondenceBuilder3Response")
       slipnet ! SlipnetGoWithCorrespondenceBuilder2(correspondence, correspondenceReps)
 
     case SlipnetGoWithCorrespondenceBuilderResponse2(correspondenceReps) =>
+      log.debug("CorrespondenceBuilder. SlipnetGoWithCorrespondenceBuilderResponse2")
       incc = correspondenceReps
-      workspace ! GoWithCorrespondenceBuilder4(correponsdenceID, incc)
+      workspace ! GoWithCorrespondenceBuilder4(corresponsdenceID, incc)
 
     case GoWithCorrespondenceBuilder4Response1(correspondence, incompatible_bond_base) =>
+      log.debug("CorrespondenceBuilder. GoWithCorrespondenceBuilder4Response1")
       slipnet ! SlipnetGoWithCorrespondenceBuilder3(correspondence, incompatible_bond_base)
 
 
     case  SlipnetGoWithCorrespondenceBuilderResponse3(bOpt) =>
       incompatible_bond = bOpt
-      workspace ! GoWithCorrespondenceBuilder5(correponsdenceID, bOpt)
+      workspace ! GoWithCorrespondenceBuilder5(corresponsdenceID, bOpt)
 
+      //2 branches joining here
     case GoWithCorrespondenceBuilder4Response2(g) =>
       incompatible_group = g
-      workspace ! GoWithCorrespondenceBuilder6(correponsdenceID, incc, incompatible_bond, incompatible_group)
+      workspace ! GoWithCorrespondenceBuilder6(corresponsdenceID, incc, incompatible_bond, incompatible_group)
 
     case GoWithCorrespondenceBuilder6Response(crep) =>
       slipnet ! SlipnetGoWithCorrespondenceBuilder4(crep)
 
     case SlipnetGoWithCorrespondenceBuilder4Response(accessory_concept_mapping_list) =>
-      workspace ! GoWithCorrespondenceBuilder7(correponsdenceID, accessory_concept_mapping_list)
+      workspace ! GoWithCorrespondenceBuilder7(corresponsdenceID, accessory_concept_mapping_list)
 
     case GoWithCorrespondenceBuilder7Response(groupObjs) =>
       slipnet ! SlipnetGoWithCorrespondenceBuilder5(groupObjs)
 
     case SlipnetGoWithCorrespondenceBuilder5Response(accessory_concept_mapping_list) =>
-      workspace ! GoWithCorrespondenceBuilder8(correponsdenceID, accessory_concept_mapping_list)
+      workspace ! GoWithCorrespondenceBuilder8(corresponsdenceID, accessory_concept_mapping_list)
 
     case GoWithCorrespondenceBuilder8Response(cms) =>
       slipnet ! SlipnetGoWithCorrespondenceBuilder6(cms)

@@ -1255,6 +1255,7 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
       sender() ! SlipnetGoWithCorrespondenceBuilderResponse(updatedCorrespondenceCMReps)
 
     case SlipnetGoWithCorrespondenceBuilder2(correspondence, correspondenceReps) =>
+      log.debug("Slipnet. SlipnetGoWithCorrespondenceBuilder2")
       val incc = get_incompatible_correspondences(correspondence, correspondenceReps)
       sender() ! SlipnetGoWithCorrespondenceBuilderResponse2(incc)
 
@@ -1444,7 +1445,7 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
     }
   }
 
-    def get_incompatible_correspondences(correspondence: CorrespondenceRep, correspondenceReps: List[CorrespondenceRep]) = {
+  def get_incompatible_correspondences(correspondence: CorrespondenceRep, correspondenceReps: List[CorrespondenceRep]) = {
     // returns a list of all existing correspondences that are incompatible
     // with this proposed correspondence
     correspondenceReps.filter(c => {
@@ -1458,7 +1459,7 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
     c1.concept_mapping_list.find(c1cm => {
       c2.concept_mapping_list.find(c2cm => {
         val cm1 = ConceptMapping.conceptMappingRefs(c1cm.uuid)
-        val cm2 = ConceptMapping.conceptMappingRefs(c1cm.uuid)
+        val cm2 = ConceptMapping.conceptMappingRefs(c2cm.uuid)
 
         incompatible_concept_mappings(
           cm1.conceptMappingRep2(),
