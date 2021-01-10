@@ -91,7 +91,7 @@ object Slipnet {
 
   case class SlipnetBottomUpCorrespondenceScout(
                                        obj1 :WorkspaceObjectRep,
-                                       obj2: WorkspaceObjectRep,
+                                       obj2 :WorkspaceObjectRep,
                                        temperature: Double
                                      )
   case class SlipnetBottomUpCorrespondenceScout2(obj1: WorkspaceObjectRep, obj2: WorkspaceObjectRep)
@@ -160,8 +160,8 @@ object Slipnet {
                                       temperature: Double)
 
   case class SlipnetGoWithImportantObjectCorrespondenceScout(relevantDescriptors: List[SlipNodeRep], t: Double)
-  case class SlipnetGoWithImportantObjectCorrespondenceScout2(obj1: WorkspaceObjectRep, obj2: WorkspaceObjectRep, t: Double)
-  case class GroupFlippedVersion(obj: WorkspaceObjectRep)
+  case class SlipnetGoWithImportantObjectCorrespondenceScout2(obj1: WorkspaceObjectRep,  obj2: WorkspaceObjectRep, obj2GroupRep: GroupRep, t: Double)
+  case class GroupFlippedVersion(obj: GroupRep)
   case class GroupFlippedVersionResponse(fgr: Option[FutureGroupRep])
   case class SlipnetGoWithCorrespondenceBuilder(conceptMappingReps: List[ConceptMappingRep])
   case class SlipnetGoWithCorrespondenceBuilder2(correspondence: CorrespondenceRep, correspondenceReps: List[CorrespondenceRep])
@@ -185,7 +185,7 @@ object Slipnet {
   case class SlipnetGoWithCorrespondenceBuilder5(groupObjs: Option[ConceptMappingParameters])
   case class SlipnetGoWithCorrespondenceBuilder6(cms: List[ConceptMappingRep])
   case class SlipnetGoWithBondStrengthTester(bondRep: BondRep)
-  case class SlipnetGoWithCorrespondenceStrengthTester(c: CorrespondenceRep)
+  case class SlipnetGoWithCorrespondenceStrengthTester(c: CorrespondenceRep, workspaceCorrespondences: List[CorrespondenceRep])
 
   object RelationType {
     val Sameness = "Sameness"
@@ -582,8 +582,7 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
   }
 
 
-  def groupFlipped_version(obj: WorkspaceObjectRep): Option[FutureGroupRep] = {
-    val groupRep = obj.groupRep.get
+  def groupFlipped_version(groupRep: GroupRep): Option[FutureGroupRep] = {
     val bond_list = groupRep.bond_list
 
     // returns a flipped version of this group
@@ -644,7 +643,7 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
       if ((x==0)&&(len>1)) descriptions += DescriptionRep("NotYes",string_position_category.slipNodeRep(),Some(leftmost.slipNodeRep()))
       if ((x==(len-1))&&(len>1)) descriptions += DescriptionRep("NotYes",string_position_category.slipNodeRep(),Some(rightmost.slipNodeRep()))
       if ((len>2)&&((x*2)==(len-1))) descriptions += DescriptionRep("NotYes",string_position_category.slipNodeRep(),Some(middle.slipNodeRep()))
-      WorkspaceObjectRep(l.uuid, descriptions.toList, List(), false, None, None, None)
+      WorkspaceObjectRep(l.uuid, descriptions.toList, List(), false, None, None,None, None)
     })
 
 
@@ -826,6 +825,7 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
 
     // codelet.java.1233
     case SlipnetBottomUpCorrespondenceScout(obj1, obj2, temperature) =>
+      printDescription(obj1)
       val obj1Descriptions = obj1.descriptions.map(inflatedDescriptionRep)
       val obj2Descriptions = obj2.descriptions.map(inflatedDescriptionRep)
       val obj1Relevant_descriptions = relevant_descriptions(obj1Descriptions)
@@ -834,7 +834,7 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
       // get the posible concept-mappings
       val concept_mapping_list = ConceptMapping.get_concept_mapping_list(
         obj1, obj2,
-        obj2Relevant_descriptions, obj2Relevant_descriptions, slipnetInfo)
+        obj1Relevant_descriptions, obj2Relevant_descriptions, slipnetInfo)
 
       // check the slippability of concept mappings
       val cm_possible = concept_mapping_list.find(cm => {
@@ -897,7 +897,7 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
         opposite.activation != 100.0
 
       if (flip_obj2) {
-        val futureGroupOpt = groupFlipped_version(obj2)
+        val futureGroupOpt = groupFlipped_version(obj2.asGroupRep.get)
         if (futureGroupOpt.isEmpty) {
           sender() ! Finished
         } else {
@@ -1186,7 +1186,7 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
       sender() ! SlipnetGoWithImportantObjectCorrespondenceScoutResponse(sOpt.map(_.slipNodeRep()))
 
     // Codelet.java.1368
-    case SlipnetGoWithImportantObjectCorrespondenceScout2(obj1, obj2, temperature) =>
+    case SlipnetGoWithImportantObjectCorrespondenceScout2(obj1, obj2, obj2GroupRep, temperature) =>
       val obj1Descriptions = obj1.descriptions.map(inflatedDescriptionRep)
       val obj2Descriptions = obj2.descriptions.map(inflatedDescriptionRep)
       val obj1Relevant_descriptions = relevant_descriptions(obj1Descriptions)
@@ -1238,7 +1238,7 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
 
 
 
-    case GroupFlippedVersion(obj: WorkspaceObjectRep) =>
+    case GroupFlippedVersion(obj: GroupRep) =>
       val flipped = groupFlipped_version(obj)
       sender() ! GroupFlippedVersionResponse(flipped)
 
@@ -1297,7 +1297,14 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
       val bondCategorySlipNode = slipNodeRefs(bondRep.bondCategorySlipNodeID)
       sender() ! SlipnetGoWithBondStrengthTesterResponse(bondCategorySlipNode.bond_degree_of_association())
 
-    case SlipnetGoWithCorrespondenceStrengthTester(c: CorrespondenceRep) =>
+    case SlipnetGoWithCorrespondenceStrengthTester(c: CorrespondenceRep, workspaceCorrespondences) =>
+      val relevant_dcms = relevant_distinguishing_cms(c)
+      val internal_strength = correspondence_internal_strength(relevant_dcms)
+
+      val cocouples  = for (co <- workspaceCorrespondences) yield (co.uuid,  supporting_correspondences(c, co))
+      val comap = cocouples.toMap
+
+
       val cms = ConceptMapping.conceptMappingsWithReps(c.concept_mapping_list)
 
       for (cm <- cms) {
@@ -1306,12 +1313,95 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
         cm.description_type2.buffer=100.0;
         cm.descriptor2.buffer=100.0;
       }
-      sender() ! SlipnetGoWithCorrespondenceStrengthTesterResponse
+      sender() ! SlipnetGoWithCorrespondenceStrengthTesterResponse(internal_strength, comap)
 
   }
+
+
+  def printDescription(wo: WorkspaceObjectRep) = {
+    for(d <- wo.descriptions) {
+      log.debug(s"Description ${d.descriptor.get.id} ${d.descriptor.get.activation}")
+    }
+  }
+
+  def supporting_correspondences(
+    c1: CorrespondenceRep, c2: CorrespondenceRep): Boolean = {
+    // Returns t if c1 supports c2, nil otherwise.  For now, c1 is
+    // defined to support c2 if c1 is not incompatible with c2, and
+    // has a concept-mapping that supports the concept-mappings of c2.
+    if ((c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)) return false;
+    if (incompatible_correspondences(c1,c2)) return false;
+    val c1dms = ConceptMapping.conceptMappingsWithReps(c1.concept_mapping_list)
+    val c2dms = ConceptMapping.conceptMappingsWithReps(c2.concept_mapping_list)
+    val dcm1 = distinguishing_concept_mappings(c1dms)
+    val dcm2 = distinguishing_concept_mappings(c2dms)
+    supporting_concept_mappingsWithXY(dcm1,dcm2,true)
+  }
+
+
+  def correspondence_internal_strength(relevant_dcms: List[ConceptMapping]): Double = {
+    // a function of how many concept-mapping there are, how strong they
+    // are, and how much internal coherence there is among concept mappings
+    if (relevant_dcms.isEmpty) 0
+    else {
+      val num_of_concept_mappings = relevant_dcms.size
+      // average of the strengths of all
+      val sum_strength = relevant_dcms.map(_.strength()).sum
+      val average_strength = sum_strength / num_of_concept_mappings.toDouble
+
+      // returns 1.2 but should be 0.8
+      val num_of_concept_mappings_factor = num_of_concept_mappings match {
+        case 1 => 0.8
+        case 2 => 1.2
+        case _ => 1.6
+      }
+      // should return false
+      val internal_coherence_factor = if (internally_coherent(relevant_dcms)) 2.5 else 1.0
+      println(s"correspondence_internal_strength average_strength $average_strength internal_coherence_factor $internal_coherence_factor num_of_concept_mappings_factor $num_of_concept_mappings_factor")
+      val rawI = average_strength * internal_coherence_factor * num_of_concept_mappings_factor
+      if (rawI > 100.0) 100.0 else rawI
+    }
+  }
+  def supporting_concept_mappings(
+                               cm1: ConceptMapping , cm2: ConceptMapping) : Boolean = {
+    // Concept-mappings (a -> b) and (c -> d) support each other if a is related
+    // to c and if b is related to d and the a -> b relationship is the same as the
+    // c -> d relationship.  E.g., rightmost -> rightmost supports right -> right
+    // and leftmost -> leftmost.  Notice that slipnet distances are not looked
+    // at, only slipnet links.  This should be changed eventually.
+
+    // If the two concept-mappings are the same, then return t.  This
+    // means that letter->group supports letter->group, even though these
+    // concept-mappings have no label.
+
+    if ((cm1.descriptor1==cm2.descriptor1)&&(cm1.descriptor2==cm2.descriptor2)) return true;
+    // if the descriptors are not related return false
+    if (!(SlipnetFormulas.related(cm1.descriptor1,cm2.descriptor1)||
+      SlipnetFormulas.related(cm1.descriptor2,cm2.descriptor2))) return false;
+    if ((cm1.label==null)||(cm2.label==null)) return false;
+    if ((cm1.label).equals(cm2.label)) return true;
+    return false;
+  }
+
+  def supporting_concept_mappingsWithXY(dcm1: List[ConceptMapping], dcm2: List[ConceptMapping], takeEquals: Boolean): Boolean = {
+    val couples = for (
+      xcm <- dcm1;
+      ycm <- dcm2 if (!takeEquals && xcm != ycm)
+    ) yield (xcm, ycm)
+
+    couples.find(c => supporting_concept_mappings(c._1, c._2)).isDefined
+  }
+
+  def internally_coherent(cm_list: List[ConceptMapping]): Boolean = {
+    // returns true if there is any pair of relevant_distinguish
+    // cms that support each other
+    supporting_concept_mappingsWithXY(cm_list,cm_list,false)
+  }
+
   def relevant_distinguishing_cms(c: CorrespondenceRep): List[ConceptMapping] = {
     val cms = ConceptMapping.conceptMappingsWithReps(c.concept_mapping_list)
     cms.filter(cm => {
+      log.debug(s"relevant_distinguishing_cms ${c.uuid} $cm relevant ${cm.relevant()} distinguishing ${cm.distinguishing()}")
       cm.relevant() && cm.distinguishing()
     })
   }

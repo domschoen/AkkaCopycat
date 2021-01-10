@@ -55,6 +55,54 @@ case class Correspondence (
 //    })
 //  }
 
+/* see slipnet
+  public static boolean supporting_concept_mappings(
+         concept_mapping cm1, concept_mapping cm2){
+   // Concept-mappings (a -> b) and (c -> d) support each other if a is related
+    // to c and if b is related to d and the a -> b relationship is the same as the
+    // c -> d relationship.  E.g., rightmost -> rightmost supports right -> right
+    // and leftmost -> leftmost.  Notice that slipnet distances are not looked
+    // at, only slipnet links.  This should be changed eventually.
+
+    // If the two concept-mappings are the same, then return t.  This
+    // means that letter->group supports letter->group, even though these
+    // concept-mappings have no label.
+
+    if ((cm1.descriptor1==cm2.descriptor1)&&(cm1.descriptor2==cm2.descriptor2)) return true;
+    // if the descriptors are not related return false
+    if (!(slipnet_formulas.related(cm1.descriptor1,cm2.descriptor1)||
+         slipnet_formulas.related(cm1.descriptor2,cm2.descriptor2))) return false;
+   if ((cm1.label==null)||(cm2.label==null)) return false;
+   if ((cm1.label).equals(cm2.label)) return true;
+   return false;
+  }
+
+  public boolean internally_coherent(){
+    // returns true if there is any pair of relevant_distinguish
+    // cms that support each other
+    Vector cm_list = this.relevant_distinguishing_cms();
+    for (int x=0; x<cm_list.size(); x++)
+    for (int y=0; y<cm_list.size(); y++)
+    if (x!=y){
+      if (supporting_concept_mappings(
+        (concept_mapping)cm_list.elementAt(x),
+      (concept_mapping)cm_list.elementAt(y))) return true;
+    }
+    return false;
+  }
+
+
+
+  def relevant_distinguishing_cms() = {
+    Vector v = new Vector();
+    for (int x=0; x<concept_mapping_list.size(); x++){
+      concept_mapping cm = (concept_mapping)concept_mapping_list.elementAt(x);
+      if ((cm.relevant())&&(cm.distinguishing())) v.addElement(cm);
+    }
+    return v;
+  }
+
+*/
 
   // partially moved to Workspace.break_correspondence
   def break_correspondence() = {
@@ -136,6 +184,16 @@ case class Correspondence (
   }
 
 
+  def update_strength_value(internal_strength: Double, cs: List[Correspondence], supporting_correspondences:Map[String, Boolean]) = {
+    calculate_internal_strength(internal_strength)
+    calculate_external_strength(cs, supporting_correspondences)
+    calculate_total_strength()
+  };
+
+  def calculate_internal_strength(internalStrength: Double) = {
+    internal_strength = internalStrength
+  }
+
 /* see Slipnet
   def incompatible_correspondences(c1: Correspondence, c2: Correspondence) : Boolean = {
     if (c1.obj1==c2.obj1) return true;
@@ -177,6 +235,27 @@ case class Correspondence (
 
   def slippageCandidates() = {
     concept_mapping_list ::: accessory_concept_mapping_list.toList
+  }
+
+  def support(cs: List[Correspondence], supporting_correspondences:Map[String, Boolean]): Double = {
+    // For now there are three levels of compatibility:
+    // supporting, not incompatible but not supporting, and incompatible.
+    // This returns the sum of the strengths of other correspondences that
+    // support this one (or 100, whichever is lower).  If one of the objects is the
+    // single letter in its string, then the support is 100.
+    if (obj1.isInstanceOf[Letter] && obj1.spans_string) return 100.0
+    if (obj2.isInstanceOf[Letter] && obj2.spans_string) return 100.0
+    var support_sum = 0.0;
+    for (c <- cs) {
+        if ((c != this) && supporting_correspondences(c.uuid))
+          support_sum += c.total_strength;
+    }
+    if (support_sum>100.0) return 100.0;
+    else return support_sum;
+  }
+
+  def calculate_external_strength(cs: List[Correspondence], supporting_correspondences:Map[String, Boolean]) = {
+    external_strength = support(cs, supporting_correspondences)
   }
 
 }

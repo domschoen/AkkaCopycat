@@ -63,6 +63,7 @@ object ConceptMapping {
 //    def relevant(): Boolean ={
 //      description_type1.activation == 100.0 && description_type2.activation == 100.0
 //    }
+     override def toString(): String = descriptor1SlipNodeID + " -> " + descriptor2SlipNodeID
 
   }
   var conceptMappingRefs = Map.empty[String, ConceptMapping]
@@ -78,9 +79,14 @@ object ConceptMapping {
                                 ds2: List[InflatedDescriptionRep],
                                 slipnetInfo: SlipnetInfo
                               ) = {
-    for (
+    val couples = for (
       d1 <- ds1;
-      d2 <- ds2 if
+      d2 <- ds2) yield (d1, d2)
+
+    val goodCouples = couples.filter(c => {
+      val d1 = c._1
+      val d2 = c._2
+      println(s"get_concept_mapping_list ${d1.descriptorSlipNode.map(_.id())} -> ${d2.descriptorSlipNode.map(_.id())}")
       d1.descriptionTypeSlipNode.equals(d2.descriptionTypeSlipNode) &&
         (
           d1.descriptorSlipNode.equals(d2.descriptorSlipNode) ||
@@ -89,8 +95,11 @@ object ConceptMapping {
                 d2.descriptorSlipNode.isDefined &&
                 SlipnetFormulas.slip_linked(d1.descriptorSlipNode.get,d2.descriptorSlipNode.get)
               )
-        )
-    ) yield {
+          )
+    })
+    goodCouples.map(c => {
+      val d1 = c._1
+      val d2 = c._2
       val cm = new ConceptMapping(
         d1.descriptionTypeSlipNode,
         d2.descriptionTypeSlipNode,
@@ -101,7 +110,7 @@ object ConceptMapping {
         slipnetInfo
       )
       addNewConceptMapping(cm)
-    }
+    })
   }
 
   def all_opposite_mappings(cms: List[ConceptMapping], opposite : SlipNode): Boolean = {

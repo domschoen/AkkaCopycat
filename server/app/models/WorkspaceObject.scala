@@ -18,6 +18,7 @@ object WorkspaceObject {
                                  letterOrGroupCompanionReps: List[WorkspaceObjectRep2],
                                  spans_string: Boolean,
                                  groupRep: Option[GroupRep],
+                                 asGroupRep: Option[GroupRep],
                                  left_bond: Option[BondRep],
                                  right_bond: Option[BondRep]
                                )
@@ -81,6 +82,7 @@ abstract class WorkspaceObject(ws: WorkspaceString) extends WorkspaceStructure {
     letterOrGroupCompanionReps(),
     spans_string,
     group.map(_.groupRep()),
+    asGroupRep(),
     left_bond.map(_.bondRep()),
     right_bond.map(_.bondRep())
   )
@@ -94,6 +96,11 @@ abstract class WorkspaceObject(ws: WorkspaceString) extends WorkspaceStructure {
     right_bond.map(_.bondRep())
   )
 
+  def asGroupRep(): Option[GroupRep] = {
+    if (this.isInstanceOf[Group]) {
+      Some(this.asInstanceOf[Group].groupRep())
+    } else None
+  }
 
   def relatedGroups(): List[Group] = {
     relatedGroups(List.empty[Group])

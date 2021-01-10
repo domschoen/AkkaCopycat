@@ -77,7 +77,7 @@ class CorrespondenceBuilder(urgency: Int,
   def receive = LoggingReceive {
     // to the browser
     case Run(initialString, modifiedString, targetString, t) =>
-      log.debug(s"Run with initial $initialString, modified: $modifiedString and target: $targetString")
+      log.debug(s"CorrespondenceBuilder. Run with initial $initialString, modified: $modifiedString and target: $targetString")
 
       coderack = sender()
       temperature ! Register(self)
@@ -86,7 +86,7 @@ class CorrespondenceBuilder(urgency: Int,
 
       // Codelet.java.1478
     case GoWithCorrespondenceBuilderResponse(obj2) =>
-      slipnet ! GroupFlippedVersion(obj2)
+      slipnet ! GroupFlippedVersion(obj2.asGroupRep.get)
 
     case GroupFlippedVersionResponse(fgr) =>
       if (fgr.isEmpty) {

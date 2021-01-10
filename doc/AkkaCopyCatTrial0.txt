@@ -1,67 +1,67 @@
-10:47:58 INFO  [akka://application/user/$b/flowActor] - Websocket received Run
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun] - ExecutionRun: Run with initial abc, modified: abd and target: ijk
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Slipnet] - Slipnet: InitializeSlipnet
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - Run with initial , modified:  and target: 
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - Workspace: Initialize
+15:48:09 INFO  [akka://application/user/$a/flowActor] - Websocket received Run
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun] - ExecutionRun: Run with initial abc, modified: abd and target: ijk
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - Slipnet: InitializeSlipnet
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Run with initial , modified:  and target: 
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Workspace: Initialize
 WorkspaceString abc
 WorkspaceString abd
 WorkspaceString ijk
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Slipnet] - Slipnet: InitializeWorkspaceStrings
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - Workspace: InitializeWorkspaceStringsResponse
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - build_descriptions letter (1) 1
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - build_descriptions letter (2) 2
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - build_descriptions letter (3) 3
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - build_descriptions letter (1) 1
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - build_descriptions letter (2) 2
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - build_descriptions letter (3) 3
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - build_descriptions letter (1) 1
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - build_descriptions letter (2) 2
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - build_descriptions letter (3) 3
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - Coderack: FinishInitilizingWorkspaceStrings
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - Initializing
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - TemperatureResponse 100.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - mainloop | codelets_run 0 clamp_time 30  last_update 0 time_step_length 15
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - update_Everything
-letter (1) 1 total strength:0.0
-letter (2) 2 total strength:0.0
-letter (3) 3 total strength:0.0
-letter (1) 1 total strength:0.0
-letter (2) 2 total strength:0.0
-letter (3) 3 total strength:0.0
-letter (1) 1 total strength:0.0
-letter (2) 2 total strength:0.0
-letter (3) 3 total strength:0.0
-Description(letter (1) 1,SlipNodeRep(obc,0.0),Some(SlipNodeRep(l,0.0))) total strength:0.0
-Description(letter (1) 1,SlipNodeRep(lc,100.0),Some(SlipNodeRep(A,0.0))) total strength:0.0
-Description(letter (1) 1,SlipNodeRep(spc,100.0),Some(SlipNodeRep(lm,0.0))) total strength:0.0
-Description(letter (2) 2,SlipNodeRep(obc,0.0),Some(SlipNodeRep(l,0.0))) total strength:0.0
-Description(letter (2) 2,SlipNodeRep(lc,100.0),Some(SlipNodeRep(B,0.0))) total strength:0.0
-Description(letter (2) 2,SlipNodeRep(spc,100.0),Some(SlipNodeRep(md,0.0))) total strength:0.0
-Description(letter (3) 3,SlipNodeRep(obc,0.0),Some(SlipNodeRep(l,0.0))) total strength:0.0
-Description(letter (3) 3,SlipNodeRep(lc,100.0),Some(SlipNodeRep(C,0.0))) total strength:0.0
-Description(letter (3) 3,SlipNodeRep(spc,100.0),Some(SlipNodeRep(rm,0.0))) total strength:0.0
-Description(letter (1) 1,SlipNodeRep(obc,0.0),Some(SlipNodeRep(l,0.0))) total strength:0.0
-Description(letter (1) 1,SlipNodeRep(lc,100.0),Some(SlipNodeRep(A,0.0))) total strength:0.0
-Description(letter (1) 1,SlipNodeRep(spc,100.0),Some(SlipNodeRep(lm,0.0))) total strength:0.0
-Description(letter (2) 2,SlipNodeRep(obc,0.0),Some(SlipNodeRep(l,0.0))) total strength:0.0
-Description(letter (2) 2,SlipNodeRep(lc,100.0),Some(SlipNodeRep(B,0.0))) total strength:0.0
-Description(letter (2) 2,SlipNodeRep(spc,100.0),Some(SlipNodeRep(md,0.0))) total strength:0.0
-Description(letter (3) 3,SlipNodeRep(obc,0.0),Some(SlipNodeRep(l,0.0))) total strength:0.0
-Description(letter (3) 3,SlipNodeRep(lc,100.0),Some(SlipNodeRep(D,0.0))) total strength:0.0
-Description(letter (3) 3,SlipNodeRep(spc,100.0),Some(SlipNodeRep(rm,0.0))) total strength:0.0
-Description(letter (1) 1,SlipNodeRep(obc,0.0),Some(SlipNodeRep(l,0.0))) total strength:0.0
-Description(letter (1) 1,SlipNodeRep(lc,100.0),Some(SlipNodeRep(I,0.0))) total strength:0.0
-Description(letter (1) 1,SlipNodeRep(spc,100.0),Some(SlipNodeRep(lm,0.0))) total strength:0.0
-Description(letter (2) 2,SlipNodeRep(obc,0.0),Some(SlipNodeRep(l,0.0))) total strength:0.0
-Description(letter (2) 2,SlipNodeRep(lc,100.0),Some(SlipNodeRep(J,0.0))) total strength:0.0
-Description(letter (2) 2,SlipNodeRep(spc,100.0),Some(SlipNodeRep(md,0.0))) total strength:0.0
-Description(letter (3) 3,SlipNodeRep(obc,0.0),Some(SlipNodeRep(l,0.0))) total strength:0.0
-Description(letter (3) 3,SlipNodeRep(lc,100.0),Some(SlipNodeRep(K,0.0))) total strength:0.0
-Description(letter (3) 3,SlipNodeRep(spc,100.0),Some(SlipNodeRep(rm,0.0))) total strength:0.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - Slipnet: InitializeWorkspaceStrings
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Workspace: InitializeWorkspaceStringsResponse
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (1) 1
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (2) 2
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (3) 3
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (1) 1
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (2) 2
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (3) 3
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (1) 1
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (2) 2
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - build_descriptions letter (3) 3
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Coderack: FinishInitilizingWorkspaceStrings
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Initializing
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - TemperatureResponse 100.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - mainloop | codelets_run 0 clamp_time 30  last_update 0 time_step_length 15
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - update_Everything
+class models.Letter internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Letter internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Letter internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Letter internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Letter internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Letter internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Letter internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Letter internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Letter internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+class models.Description internal_strength 0.0 external_strength 0.0 total strength: 0.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace inter string unhappiness = 0.0
 Finish update_Everything T: 20.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace total string unhappiness = 0.0
 Update everything
 ob A clamp true ob.buffer 103.0 activation 100.0
 ob B clamp true ob.buffer 103.0 activation 100.0
@@ -125,14 +125,14 @@ ob bf clamp true ob.buffer 40.0 activation 40.0
 slipnodes.size()59
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
-	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1518)
-	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1514)
+	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1600)
+	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1596)
 	at scala.collection.immutable.List.foreach(List.scala:389)
 	at scala.collection.generic.TraversableForwarder.foreach(TraversableForwarder.scala:35)
 	at scala.collection.generic.TraversableForwarder.foreach$(TraversableForwarder.scala:35)
 	at scala.collection.mutable.ListBuffer.foreach(ListBuffer.scala:44)
-	at models.Slipnet.update(Slipnet.scala:1514)
-	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:670)
+	at models.Slipnet.update(Slipnet.scala:1596)
+	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:669)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
 	at models.Slipnet.aroundReceive(Slipnet.scala:213)
@@ -150,14 +150,14 @@ Random rndseed=0
 ob A activation 100.0
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
-	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1518)
-	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1514)
+	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1600)
+	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1596)
 	at scala.collection.immutable.List.foreach(List.scala:389)
 	at scala.collection.generic.TraversableForwarder.foreach(TraversableForwarder.scala:35)
 	at scala.collection.generic.TraversableForwarder.foreach$(TraversableForwarder.scala:35)
 	at scala.collection.mutable.ListBuffer.foreach(ListBuffer.scala:44)
-	at models.Slipnet.update(Slipnet.scala:1514)
-	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:670)
+	at models.Slipnet.update(Slipnet.scala:1596)
+	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:669)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
 	at models.Slipnet.aroundReceive(Slipnet.scala:213)
@@ -175,14 +175,14 @@ Random rndseed=1
 ob B activation 100.0
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
-	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1518)
-	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1514)
+	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1600)
+	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1596)
 	at scala.collection.immutable.List.foreach(List.scala:389)
 	at scala.collection.generic.TraversableForwarder.foreach(TraversableForwarder.scala:35)
 	at scala.collection.generic.TraversableForwarder.foreach$(TraversableForwarder.scala:35)
 	at scala.collection.mutable.ListBuffer.foreach(ListBuffer.scala:44)
-	at models.Slipnet.update(Slipnet.scala:1514)
-	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:670)
+	at models.Slipnet.update(Slipnet.scala:1596)
+	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:669)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
 	at models.Slipnet.aroundReceive(Slipnet.scala:213)
@@ -200,14 +200,14 @@ Random rndseed=2
 ob C activation 100.0
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
-	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1518)
-	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1514)
+	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1600)
+	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1596)
 	at scala.collection.immutable.List.foreach(List.scala:389)
 	at scala.collection.generic.TraversableForwarder.foreach(TraversableForwarder.scala:35)
 	at scala.collection.generic.TraversableForwarder.foreach$(TraversableForwarder.scala:35)
 	at scala.collection.mutable.ListBuffer.foreach(ListBuffer.scala:44)
-	at models.Slipnet.update(Slipnet.scala:1514)
-	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:670)
+	at models.Slipnet.update(Slipnet.scala:1596)
+	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:669)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
 	at models.Slipnet.aroundReceive(Slipnet.scala:213)
@@ -229,14 +229,14 @@ ob G activation 3.0
 ob H activation 3.0
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
-	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1518)
-	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1514)
+	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1600)
+	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1596)
 	at scala.collection.immutable.List.foreach(List.scala:389)
 	at scala.collection.generic.TraversableForwarder.foreach(TraversableForwarder.scala:35)
 	at scala.collection.generic.TraversableForwarder.foreach$(TraversableForwarder.scala:35)
 	at scala.collection.mutable.ListBuffer.foreach(ListBuffer.scala:44)
-	at models.Slipnet.update(Slipnet.scala:1514)
-	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:670)
+	at models.Slipnet.update(Slipnet.scala:1596)
+	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:669)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
 	at models.Slipnet.aroundReceive(Slipnet.scala:213)
@@ -254,14 +254,14 @@ Random rndseed=4
 ob I activation 100.0
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
-	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1518)
-	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1514)
+	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1600)
+	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1596)
 	at scala.collection.immutable.List.foreach(List.scala:389)
 	at scala.collection.generic.TraversableForwarder.foreach(TraversableForwarder.scala:35)
 	at scala.collection.generic.TraversableForwarder.foreach$(TraversableForwarder.scala:35)
 	at scala.collection.mutable.ListBuffer.foreach(ListBuffer.scala:44)
-	at models.Slipnet.update(Slipnet.scala:1514)
-	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:670)
+	at models.Slipnet.update(Slipnet.scala:1596)
+	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:669)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
 	at models.Slipnet.aroundReceive(Slipnet.scala:213)
@@ -279,14 +279,14 @@ Random rndseed=5
 ob J activation 100.0
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
-	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1518)
-	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1514)
+	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1600)
+	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1596)
 	at scala.collection.immutable.List.foreach(List.scala:389)
 	at scala.collection.generic.TraversableForwarder.foreach(TraversableForwarder.scala:35)
 	at scala.collection.generic.TraversableForwarder.foreach$(TraversableForwarder.scala:35)
 	at scala.collection.mutable.ListBuffer.foreach(ListBuffer.scala:44)
-	at models.Slipnet.update(Slipnet.scala:1514)
-	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:670)
+	at models.Slipnet.update(Slipnet.scala:1596)
+	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:669)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
 	at models.Slipnet.aroundReceive(Slipnet.scala:213)
@@ -324,14 +324,14 @@ ob 4 activation 0.0
 ob 5 activation 0.0
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
-	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1518)
-	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1514)
+	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1600)
+	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1596)
 	at scala.collection.immutable.List.foreach(List.scala:389)
 	at scala.collection.generic.TraversableForwarder.foreach(TraversableForwarder.scala:35)
 	at scala.collection.generic.TraversableForwarder.foreach$(TraversableForwarder.scala:35)
 	at scala.collection.mutable.ListBuffer.foreach(ListBuffer.scala:44)
-	at models.Slipnet.update(Slipnet.scala:1514)
-	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:670)
+	at models.Slipnet.update(Slipnet.scala:1596)
+	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:669)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
 	at models.Slipnet.aroundReceive(Slipnet.scala:213)
@@ -349,14 +349,14 @@ Random rndseed=7
 ob lm activation 100.0
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
-	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1518)
-	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1514)
+	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1600)
+	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1596)
 	at scala.collection.immutable.List.foreach(List.scala:389)
 	at scala.collection.generic.TraversableForwarder.foreach(TraversableForwarder.scala:35)
 	at scala.collection.generic.TraversableForwarder.foreach$(TraversableForwarder.scala:35)
 	at scala.collection.mutable.ListBuffer.foreach(ListBuffer.scala:44)
-	at models.Slipnet.update(Slipnet.scala:1514)
-	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:670)
+	at models.Slipnet.update(Slipnet.scala:1596)
+	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:669)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
 	at models.Slipnet.aroundReceive(Slipnet.scala:213)
@@ -374,14 +374,14 @@ Random rndseed=8
 ob rm activation 100.0
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
-	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1518)
-	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1514)
+	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1600)
+	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1596)
 	at scala.collection.immutable.List.foreach(List.scala:389)
 	at scala.collection.generic.TraversableForwarder.foreach(TraversableForwarder.scala:35)
 	at scala.collection.generic.TraversableForwarder.foreach$(TraversableForwarder.scala:35)
 	at scala.collection.mutable.ListBuffer.foreach(ListBuffer.scala:44)
-	at models.Slipnet.update(Slipnet.scala:1514)
-	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:670)
+	at models.Slipnet.update(Slipnet.scala:1596)
+	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:669)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
 	at models.Slipnet.aroundReceive(Slipnet.scala:213)
@@ -413,14 +413,14 @@ ob id activation 0.0
 ob op activation 0.0
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
-	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1518)
-	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1514)
+	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1600)
+	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1596)
 	at scala.collection.immutable.List.foreach(List.scala:389)
 	at scala.collection.generic.TraversableForwarder.foreach(TraversableForwarder.scala:35)
 	at scala.collection.generic.TraversableForwarder.foreach$(TraversableForwarder.scala:35)
 	at scala.collection.mutable.ListBuffer.foreach(ListBuffer.scala:44)
-	at models.Slipnet.update(Slipnet.scala:1514)
-	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:670)
+	at models.Slipnet.update(Slipnet.scala:1596)
+	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:669)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
 	at models.Slipnet.aroundReceive(Slipnet.scala:213)
@@ -439,14 +439,14 @@ ob l activation 100.0
 ob g activation 0.0
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
-	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1518)
-	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1514)
+	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1600)
+	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1596)
 	at scala.collection.immutable.List.foreach(List.scala:389)
 	at scala.collection.generic.TraversableForwarder.foreach(TraversableForwarder.scala:35)
 	at scala.collection.generic.TraversableForwarder.foreach$(TraversableForwarder.scala:35)
 	at scala.collection.mutable.ListBuffer.foreach(ListBuffer.scala:44)
-	at models.Slipnet.update(Slipnet.scala:1514)
-	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:670)
+	at models.Slipnet.update(Slipnet.scala:1596)
+	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:669)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
 	at models.Slipnet.aroundReceive(Slipnet.scala:213)
@@ -464,14 +464,14 @@ Random rndseed=11
 ob lc activation 100.0
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
-	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1518)
-	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1514)
+	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1600)
+	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1596)
 	at scala.collection.immutable.List.foreach(List.scala:389)
 	at scala.collection.generic.TraversableForwarder.foreach(TraversableForwarder.scala:35)
 	at scala.collection.generic.TraversableForwarder.foreach$(TraversableForwarder.scala:35)
 	at scala.collection.mutable.ListBuffer.foreach(ListBuffer.scala:44)
-	at models.Slipnet.update(Slipnet.scala:1514)
-	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:670)
+	at models.Slipnet.update(Slipnet.scala:1596)
+	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:669)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
 	at models.Slipnet.aroundReceive(Slipnet.scala:213)
@@ -494,14 +494,14 @@ ob gpc activation 0.0
 ob len activation 5.0
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
-	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1518)
-	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1514)
+	at models.Slipnet.$anonfun$update$6(Slipnet.scala:1600)
+	at models.Slipnet.$anonfun$update$6$adapted(Slipnet.scala:1596)
 	at scala.collection.immutable.List.foreach(List.scala:389)
 	at scala.collection.generic.TraversableForwarder.foreach(TraversableForwarder.scala:35)
 	at scala.collection.generic.TraversableForwarder.foreach$(TraversableForwarder.scala:35)
 	at scala.collection.mutable.ListBuffer.foreach(ListBuffer.scala:44)
-	at models.Slipnet.update(Slipnet.scala:1514)
-	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:670)
+	at models.Slipnet.update(Slipnet.scala:1596)
+	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:669)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
 	at models.Slipnet.aroundReceive(Slipnet.scala:213)
@@ -518,8 +518,8 @@ Hjava.lang.Exception: toto
 Random rndseed=13
 ob obc activation 100.0
 ob bf activation 40.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - ChooseAndRun2 0 T: 20.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - PostInitialCodelets 9
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun2 0 T: 20.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - PostInitialCodelets 9
 create codelet BottomUpBondScout
 create codelet BottomUpBondScout
 create codelet BottomUpBondScout
@@ -574,11 +574,11 @@ create codelet BottomUpCorrespondenceScout
 create codelet BottomUpCorrespondenceScout
 create codelet BottomUpCorrespondenceScout
 create codelet BottomUpCorrespondenceScout
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - PostInitialCodelets createdCodelets size 54
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - PostInitialCodelets codelets size 0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - choose T: 20.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - Choose codelet codelets size 54 scale 6.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - urgencies: ListBuffer(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - PostInitialCodelets createdCodelets size 54
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - PostInitialCodelets codelets size 0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - choose T: 20.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Choose codelet codelets size 54 scale 6.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - urgencies: ListBuffer(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
 	at models.Utilities$.valueProportionalRandomIndexInValueList(Utilities.scala:8)
@@ -598,15 +598,15 @@ Hjava.lang.Exception: toto
 
 Random rndseed=14
 sum 54.0 chosen 30.455999999999996
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - Choose codelet at index 30
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$b/flowActor/ExecutionRun/Coderack/$E#-1307637574]
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack/$E] - ReplacementFinder. Run with initial abc, modified: abd and target: ijk
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Choose codelet at index 30
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$E#935930882]
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$E] - ReplacementFinder. Run with initial abc, modified: abd and target: ijk
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
-	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:561)
+	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:563)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
-	at models.Workspace.aroundReceive(Workspace.scala:227)
+	at models.Workspace.aroundReceive(Workspace.scala:229)
 	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
 	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
 	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
@@ -618,14 +618,14 @@ Hjava.lang.Exception: toto
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
 
 Random rndseed=15
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - selected letter in initial string = letter (1) 1
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - Workspace | ReplaceLetter | Sameness relation found
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - building replacement
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - Step...
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - Step2 <List(letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3)>
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - mainloop | codelets_run 1 clamp_time 30  last_update 0 time_step_length 15
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - ChooseAndRun2 53 T: 20.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - choose T: 20.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - selected letter in initial string = letter (1) 1
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Workspace | ReplaceLetter | Sameness relation found
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - building replacement
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Step...
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Step2 <List(letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3)>
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - mainloop | codelets_run 1 clamp_time 30  last_update 0 time_step_length 15
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun2 53 T: 20.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - choose T: 20.0
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
 	at models.Utilities$.valueProportionalRandomIndexInValueList(Utilities.scala:8)
@@ -644,21 +644,21 @@ Hjava.lang.Exception: toto
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
 
 Random rndseed=16
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - Choose codelet codelets size 53 scale 6.0
 sum 53.0 chosen 8.745000000000001
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - urgencies: ListBuffer(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - Choose codelet at index 8
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$b/flowActor/ExecutionRun/Coderack/$i#-883364700]
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack/$i] - BottomUpBondScout. Run with initial abc, modified: abd and target: ijk
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Choose codelet codelets size 53 scale 6.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - urgencies: ListBuffer(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Choose codelet at index 8
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$i#-1388001048]
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$i] - BottomUpBondScout. Run with initial abc, modified: abd and target: ijk
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
 	at models.Utilities$.valueProportionalRandomIndexInValueList(Utilities.scala:8)
-	at models.Workspace.chooseObjectFromList(Workspace.scala:2263)
-	at models.Workspace.chooseObject(Workspace.scala:2231)
-	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:491)
+	at models.Workspace.chooseObjectFromList(Workspace.scala:2277)
+	at models.Workspace.chooseObject(Workspace.scala:2245)
+	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:493)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
-	at models.Workspace.aroundReceive(Workspace.scala:227)
+	at models.Workspace.aroundReceive(Workspace.scala:229)
 	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
 	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
 	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
@@ -674,12 +674,12 @@ sum 480.0 chosen 391.2
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
 	at models.Utilities$.valueProportionalRandomIndexInValueList(Utilities.scala:8)
-	at models.Workspace.chooseObjectFromList(Workspace.scala:2263)
-	at models.Workspace.chooseNeighbor(Workspace.scala:2240)
-	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:498)
+	at models.Workspace.chooseObjectFromList(Workspace.scala:2277)
+	at models.Workspace.chooseNeighbor(Workspace.scala:2254)
+	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:500)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
-	at models.Workspace.aroundReceive(Workspace.scala:227)
+	at models.Workspace.aroundReceive(Workspace.scala:229)
 	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
 	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
 	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
@@ -692,22 +692,22 @@ Hjava.lang.Exception: toto
 
 Random rndseed=18
 sum 160.0 chosen 109.60000000000001
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - initial object chosen: letter (2) 2 in target string
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - to object: letter (3) 3
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack/$i] - BottomUpBondScout. response
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Slipnet] - BondFromTo: Slipnet bond facets ListBuffer(models.SlipNode@8d6cf29, models.SlipNode@f0ba24d)
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - initial object chosen: letter (2) 2 in target string
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - to object: letter (3) 3
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$i] - BottomUpBondScout. response
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - BondFromTo: Slipnet bond facets ListBuffer(models.SlipNode@3c317de5, models.SlipNode@755715de)
 Slipnet BondFromTo will send response
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack/$i] - BottomUpBondScout. BondFromToSlipnetResponse
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$i] - BottomUpBondScout. BondFromToSlipnetResponse
 GoWithBottomUpBondScout2 in ws
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - fromRep.uuid ac267a21-d3bd-4d76-bed6-0c6dbf00c8f6 toRep.uuid a13bbd3a-4984-4c54-9132-9c4085837f21
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - GoWithBottomUpBondScout2 letter (2) 2 letter (3) 3
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - fromRep.uuid 315ed3d3-aa67-4c23-b193-b96f2d63afa7 toRep.uuid 80e09a28-4eb7-474d-a813-2c2de385b31c
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - GoWithBottomUpBondScout2 letter (2) 2 letter (3) 3
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
 	at models.Utilities$.valueProportionalRandomIndexInValueList(Utilities.scala:8)
-	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:529)
+	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:531)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
-	at models.Workspace.aroundReceive(Workspace.scala:227)
+	at models.Workspace.aroundReceive(Workspace.scala:229)
 	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
 	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
 	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
@@ -720,24 +720,23 @@ Hjava.lang.Exception: toto
 
 Random rndseed=19
 sum 50.5 chosen 38.582
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - chosen bond facet: lc
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - from object descriptor: Some(SlipNodeRep(J,0.0))
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - to object descriptor: Some(SlipNodeRep(K,0.0))
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Slipnet] - BondFromTo2 | descriptorDefined true
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Slipnet] - BondFromTo2 | from_descriptor models.SlipNode@5bcb1a80
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Slipnet] - BondFromTo2 | to_descriptor models.SlipNode@1ec98f9d
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Slipnet] - BondFromTo2 | fromnode.outgoing_links ListBuffer(models.SlipnetLink@54bfd145, models.SlipnetLink@2f1db7c1, models.SlipnetLink@2c81b7b8)
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Slipnet] - BondFromTo2 | fromnode.outgoing_links models.SlipNode@8d6cf29
-10:47:58 INFO  [akka://application/user/$b/flowActor/ExecutionRun/Slipnet] - proposing successor bond 
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - chosen bond facet: lc
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - from object descriptor: Some(SlipNodeRep(J,0.0))
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - to object descriptor: Some(SlipNodeRep(K,0.0))
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - BondFromTo2 | descriptorDefined true
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - BondFromTo2 | from_descriptor models.SlipNode@7bb2007d
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - BondFromTo2 | to_descriptor models.SlipNode@1307864c
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - BondFromTo2 | fromnode.outgoing_links ListBuffer(models.SlipnetLink@6aacd2dd, models.SlipnetLink@3a10cae8, models.SlipnetLink@514a943f)
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - BondFromTo2 | fromnode.outgoing_links models.SlipNode@3c317de5
+15:48:09 INFO  [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - proposing successor bond 
 bond_degree_of_association sc clamp_bdoa: false activation: 0.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 propose_bond urgency 69.57010852370435
 propose_bond urgency 5
 create codelet BondStrengthTester
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack/$i] - BottomUpBondScout. Finished 20.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - Step...
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - Step2 <List(letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3)>
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - mainloop | codelets_run 2 clamp_time 30  last_update 0 time_step_length 15
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - ChooseAndRun2 53 T: 20.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$i] - BottomUpBondScout. Finished 20.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Step...
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Step2 <List(letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3)>
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - mainloop | codelets_run 2 clamp_time 30  last_update 0 time_step_length 15
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
 	at models.Utilities$.valueProportionalRandomIndexInValueList(Utilities.scala:8)
@@ -757,23 +756,23 @@ Hjava.lang.Exception: toto
 
 Random rndseed=20
 sum 15677.0 chosen 12964.878999999999
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - choose T: 20.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - Choose codelet codelets size 53 scale 6.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - urgencies: ListBuffer(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 15625.0)
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - Choose codelet at index 52
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$b/flowActor/ExecutionRun/Coderack/$2#1274008361]
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack/$2] - models.codelet.BondStrengthTester. Run with initial abc, modified: abd and target: ijk
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun2 53 T: 20.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - choose T: 20.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Choose codelet codelets size 53 scale 6.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - urgencies: ListBuffer(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 15625.0)
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Choose codelet at index 52
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$2#376679850]
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$2] - models.codelet.BondStrengthTester. Run with initial abc, modified: abd and target: ijk
 bond_degree_of_association sc clamp_bdoa: false activation: 0.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
-sc bond between letter (2) 2 and letter (3) 3 total strength:48.400000000000006
-10:47:58 INFO  [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - bond = sc bond between letter (2) 2 and letter (3) 3 in target string
-10:47:58 INFO  [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - bond strength = 48.400000000000006
+class models.Bond internal_strength 69.57010852370435 external_strength 0.0 total strength: 48.400000000000006
+15:48:09 INFO  [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - bond = sc bond between letter (2) 2 and letter (3) 3 in target string
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
 	at models.WorkspaceFormulas$.flip_coin(WorkspaceFormulas.scala:47)
-	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:1061)
+	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:1063)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
-	at models.Workspace.aroundReceive(Workspace.scala:227)
+	at models.Workspace.aroundReceive(Workspace.scala:229)
 	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
 	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
 	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
@@ -785,10 +784,13 @@ Hjava.lang.Exception: toto
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
 
 Random rndseed=21
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - not strong enough: Fizzle!
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack/$2] - BondStrengthTester. Finished
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - Step...
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - Step2 <List(letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3)>
+15:48:09 INFO  [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - bond strength = 48.400000000000006
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - not strong enough: Fizzle!
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$2] - BondStrengthTester. Finished
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Step...
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Step2 <List(letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3)>
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - mainloop | codelets_run 3 clamp_time 30  last_update 0 time_step_length 15
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun2 52 T: 20.0
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
 	at models.Utilities$.valueProportionalRandomIndexInValueList(Utilities.scala:8)
@@ -807,20 +809,20 @@ Hjava.lang.Exception: toto
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
 
 Random rndseed=22
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - mainloop | codelets_run 3 clamp_time 30  last_update 0 time_step_length 15
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - choose T: 20.0
 sum 52.0 chosen 11.388
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - ChooseAndRun2 52 T: 20.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - choose T: 20.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - Choose codelet codelets size 52 scale 6.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Choose codelet codelets size 52 scale 6.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - urgencies: ListBuffer(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Choose codelet at index 11
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
 	at models.Utilities$.valueProportionalRandomIndexInValueList(Utilities.scala:8)
-	at models.Workspace.chooseObjectFromList(Workspace.scala:2263)
-	at models.Workspace.chooseObject(Workspace.scala:2231)
-	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:491)
+	at models.Workspace.chooseObjectFromList(Workspace.scala:2277)
+	at models.Workspace.chooseObject(Workspace.scala:2245)
+	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:493)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
-	at models.Workspace.aroundReceive(Workspace.scala:227)
+	at models.Workspace.aroundReceive(Workspace.scala:229)
 	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
 	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
 	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
@@ -832,19 +834,17 @@ Hjava.lang.Exception: toto
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
 
 Random rndseed=23
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - urgencies: ListBuffer(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
 sum 480.0 chosen 204.48
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - Choose codelet at index 11
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$b/flowActor/ExecutionRun/Coderack/$m#1378067877]
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$m#-1147788424]
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
 	at models.Utilities$.valueProportionalRandomIndexInValueList(Utilities.scala:8)
-	at models.Workspace.chooseObjectFromList(Workspace.scala:2263)
-	at models.Workspace.chooseNeighbor(Workspace.scala:2240)
-	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:498)
+	at models.Workspace.chooseObjectFromList(Workspace.scala:2277)
+	at models.Workspace.chooseNeighbor(Workspace.scala:2254)
+	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:500)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
-	at models.Workspace.aroundReceive(Workspace.scala:227)
+	at models.Workspace.aroundReceive(Workspace.scala:229)
 	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
 	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
 	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
@@ -856,22 +856,23 @@ Hjava.lang.Exception: toto
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
 
 Random rndseed=24
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$m] - BottomUpBondScout. Run with initial abc, modified: abd and target: ijk
 sum 80.0 chosen 76.16
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack/$m] - BottomUpBondScout. Run with initial abc, modified: abd and target: ijk
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - initial object chosen: letter (3) 3 in initial string
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - to object: letter (2) 2
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - initial object chosen: letter (3) 3 in initial string
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - to object: letter (2) 2
 Slipnet BondFromTo will send response
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$m] - BottomUpBondScout. response
 GoWithBottomUpBondScout2 in ws
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack/$m] - BottomUpBondScout. response
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Slipnet] - BondFromTo: Slipnet bond facets ListBuffer(models.SlipNode@8d6cf29, models.SlipNode@f0ba24d)
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack/$m] - BottomUpBondScout. BondFromToSlipnetResponse
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - BondFromTo: Slipnet bond facets ListBuffer(models.SlipNode@3c317de5, models.SlipNode@755715de)
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$m] - BottomUpBondScout. BondFromToSlipnetResponse
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - fromRep.uuid a1788497-5623-4433-b31a-7af0c5a41444 toRep.uuid c642a6c5-b1c0-4e04-830c-efdf4a3c238a
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
 	at models.Utilities$.valueProportionalRandomIndexInValueList(Utilities.scala:8)
-	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:529)
+	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:531)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
-	at models.Workspace.aroundReceive(Workspace.scala:227)
+	at models.Workspace.aroundReceive(Workspace.scala:229)
 	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
 	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
 	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
@@ -883,21 +884,22 @@ Hjava.lang.Exception: toto
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
 
 Random rndseed=25
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - fromRep.uuid c26fbf5f-8e1a-4c75-8a27-5a4d6e763689 toRep.uuid bde20124-2b7f-4f9c-8f95-ff3b76bca6b6
 sum 50.5 chosen 42.369499999999995
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - GoWithBottomUpBondScout2 letter (3) 3 letter (2) 2
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - chosen bond facet: lc
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - GoWithBottomUpBondScout2 letter (3) 3 letter (2) 2
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - chosen bond facet: lc
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - from object descriptor: Some(SlipNodeRep(C,0.0))
 bond_degree_of_association pd clamp_bdoa: false activation: 0.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - from object descriptor: Some(SlipNodeRep(C,0.0))
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - to object descriptor: Some(SlipNodeRep(B,0.0))
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - to object descriptor: Some(SlipNodeRep(B,0.0))
 propose_bond urgency 69.57010852370435
 propose_bond urgency 5
 create codelet BondStrengthTester
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Slipnet] - BondFromTo2 | descriptorDefined true
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Slipnet] - BondFromTo2 | from_descriptor models.SlipNode@2aa80b34
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Slipnet] - BondFromTo2 | to_descriptor models.SlipNode@11327d5d
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Slipnet] - BondFromTo2 | fromnode.outgoing_links ListBuffer(models.SlipnetLink@6eecbe71, models.SlipnetLink@5715e2a8, models.SlipnetLink@3d0eb2d5)
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Slipnet] - BondFromTo2 | fromnode.outgoing_links models.SlipNode@8d6cf29
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - BondFromTo2 | descriptorDefined true
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - BondFromTo2 | from_descriptor models.SlipNode@739d4561
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - BondFromTo2 | to_descriptor models.SlipNode@34d9f116
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - BondFromTo2 | fromnode.outgoing_links ListBuffer(models.SlipnetLink@48ba0c0e, models.SlipnetLink@7ba6ca61, models.SlipnetLink@62093e39)
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - BondFromTo2 | fromnode.outgoing_links models.SlipNode@3c317de5
+15:48:09 INFO  [akka://application/user/$a/flowActor/ExecutionRun/Slipnet] - proposing predecessor bond 
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$m] - BottomUpBondScout. Finished 20.0
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
 	at models.Utilities$.valueProportionalRandomIndexInValueList(Utilities.scala:8)
@@ -915,23 +917,22 @@ Hjava.lang.Exception: toto
 	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
 
-10:47:58 INFO  [akka://application/user/$b/flowActor/ExecutionRun/Slipnet] - proposing predecessor bond 
 Random rndseed=26
 sum 15676.0 chosen 14468.948
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack/$m] - BottomUpBondScout. Finished 20.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - Step...
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Step...
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Step2 <List(letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3)>
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - mainloop | codelets_run 4 clamp_time 30  last_update 0 time_step_length 15
 bond_degree_of_association pd clamp_bdoa: false activation: 0.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - Step2 <List(letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3)>
-pd bond between letter (2) 2 and letter (3) 3 total strength:48.400000000000006
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - mainloop | codelets_run 4 clamp_time 30  last_update 0 time_step_length 15
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - ChooseAndRun2 52 T: 20.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun2 52 T: 20.0
+class models.Bond internal_strength 69.57010852370435 external_strength 0.0 total strength: 48.400000000000006
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - choose T: 20.0
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
 	at models.WorkspaceFormulas$.flip_coin(WorkspaceFormulas.scala:47)
-	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:1061)
+	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:1063)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
-	at models.Workspace.aroundReceive(Workspace.scala:227)
+	at models.Workspace.aroundReceive(Workspace.scala:229)
 	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
 	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
 	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
@@ -943,10 +944,12 @@ Hjava.lang.Exception: toto
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
 
 Random rndseed=27
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - choose T: 20.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - Choose codelet codelets size 52 scale 6.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - urgencies: ListBuffer(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 15625.0)
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - Choose codelet at index 51
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Choose codelet codelets size 52 scale 6.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - urgencies: ListBuffer(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 15625.0)
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Choose codelet at index 51
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$3#1445073642]
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$3] - models.codelet.BondStrengthTester. Run with initial abc, modified: abd and target: ijk
+15:48:09 INFO  [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - bond = pd bond between letter (2) 2 and letter (3) 3 in target string
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
 	at models.Utilities$.valueProportionalRandomIndexInValueList(Utilities.scala:8)
@@ -966,14 +969,14 @@ Hjava.lang.Exception: toto
 
 Random rndseed=28
 sum 51.0 chosen 23.001
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$b/flowActor/ExecutionRun/Coderack/$3#1674151153]
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack/$3] - models.codelet.BondStrengthTester. Run with initial abc, modified: abd and target: ijk
+15:48:09 INFO  [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - bond strength = 48.400000000000006
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - not strong enough: Fizzle!
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
-	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:561)
+	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:563)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
-	at models.Workspace.aroundReceive(Workspace.scala:227)
+	at models.Workspace.aroundReceive(Workspace.scala:229)
 	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
 	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
 	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
@@ -985,11 +988,13 @@ Hjava.lang.Exception: toto
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
 
 Random rndseed=29
-10:47:58 INFO  [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - bond = pd bond between letter (2) 2 and letter (3) 3 in target string
-10:47:58 INFO  [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - bond strength = 48.400000000000006
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - not strong enough: Fizzle!
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack/$3] - BondStrengthTester. Finished
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - Step...
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$3] - BondStrengthTester. Finished
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Step...
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Step2 <List(letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3)>
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - mainloop | codelets_run 5 clamp_time 30  last_update 0 time_step_length 15
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun2 51 T: 20.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - choose T: 20.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Choose codelet codelets size 51 scale 6.0
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
 	at models.Utilities$.valueProportionalRandomIndexInValueList(Utilities.scala:8)
@@ -1008,23 +1013,22 @@ Hjava.lang.Exception: toto
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
 
 Random rndseed=30
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - Step2 <List(letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3)>
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - urgencies: ListBuffer(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
 sum 50.0 chosen 33.050000000000004
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - mainloop | codelets_run 5 clamp_time 30  last_update 0 time_step_length 15
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - ChooseAndRun2 51 T: 20.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - choose T: 20.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - Choose codelet codelets size 51 scale 6.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - urgencies: ListBuffer(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - Choose codelet at index 23
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$b/flowActor/ExecutionRun/Coderack/$z#1942648927]
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Choose codelet at index 23
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$z#-1007888000]
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$z] - ReplacementFinder. Run with initial abc, modified: abd and target: ijk
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - selected letter in initial string = letter (2) 2
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Workspace | ReplaceLetter | Sameness relation found
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - building replacement
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
 	at models.Utilities$.valueProportionalRandomIndexInValueList(Utilities.scala:8)
-	at models.Workspace.chooseObjectFromList(Workspace.scala:2263)
-	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:702)
+	at models.Workspace.chooseObjectFromList(Workspace.scala:2277)
+	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:704)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
-	at models.Workspace.aroundReceive(Workspace.scala:227)
+	at models.Workspace.aroundReceive(Workspace.scala:229)
 	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
 	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
 	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
@@ -1036,17 +1040,16 @@ Hjava.lang.Exception: toto
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
 
 Random rndseed=31
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack/$z] - ReplacementFinder. Run with initial abc, modified: abd and target: ijk
 sum 60.0 chosen 35.94
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - selected letter in initial string = letter (2) 2
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Step...
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
 	at models.Utilities$.valueProportionalRandomIndexInValueList(Utilities.scala:8)
-	at models.Workspace.chooseObjectFromList(Workspace.scala:2263)
-	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:709)
+	at models.Workspace.chooseObjectFromList(Workspace.scala:2277)
+	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:711)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
-	at models.Workspace.aroundReceive(Workspace.scala:227)
+	at models.Workspace.aroundReceive(Workspace.scala:229)
 	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
 	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
 	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
@@ -1057,30 +1060,27 @@ Hjava.lang.Exception: toto
 	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
 
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - Workspace | ReplaceLetter | Sameness relation found
 Random rndseed=32
 sum 60.0 chosen 32.940000000000005
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - building replacement
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - Step...
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - Step2 <List(letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3)>
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - mainloop | codelets_run 6 clamp_time 30  last_update 0 time_step_length 15
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - ChooseAndRun2 50 T: 20.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - choose T: 20.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - Choose codelet codelets size 50 scale 6.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - urgencies: ListBuffer(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - Choose codelet at index 33
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$b/flowActor/ExecutionRun/Coderack/$L#-739298417]
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack/$L] - BottomUpCorrespondenceScout. Run with initial abc, modified: abd and target: ijk
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - GoWithBottomUpCorrespondenceScout | trying a correspondence between letter (2) 2 and letter (2) 2
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Step2 <List(letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3)>
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - mainloop | codelets_run 6 clamp_time 30  last_update 0 time_step_length 15
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun2 50 T: 20.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - choose T: 20.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Choose codelet codelets size 50 scale 6.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - urgencies: ListBuffer(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Choose codelet at index 33
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$L#-1896753578]
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$L] - BottomUpCorrespondenceScout. Run with initial abc, modified: abd and target: ijk
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - GoWithBottomUpCorrespondenceScout | trying a correspondence between letter (2) 2 and letter (2) 2
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
 	at models.WorkspaceFormulas$.flip_coin(WorkspaceFormulas.scala:47)
-	at models.Slipnet$$anonfun$receive$1.$anonfun$applyOrElse$13(Slipnet.scala:842)
-	at models.Slipnet$$anonfun$receive$1.$anonfun$applyOrElse$13$adapted(Slipnet.scala:840)
+	at models.Slipnet$$anonfun$receive$1.$anonfun$applyOrElse$13(Slipnet.scala:841)
+	at models.Slipnet$$anonfun$receive$1.$anonfun$applyOrElse$13$adapted(Slipnet.scala:839)
 	at scala.collection.LinearSeqOptimized.find(LinearSeqOptimized.scala:111)
 	at scala.collection.LinearSeqOptimized.find$(LinearSeqOptimized.scala:108)
 	at scala.collection.immutable.List.find(List.scala:86)
-	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:840)
+	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:839)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
 	at models.Slipnet.aroundReceive(Slipnet.scala:213)
@@ -1100,7 +1100,9 @@ letter -> letter
 J -> J
 middle -> middle
 create codelet CorrespondenceStrengthTester
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - Step...
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Step...
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Step2 <List(letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3)>
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - mainloop | codelets_run 7 clamp_time 30  last_update 0 time_step_length 15
 Hjava.lang.Exception: toto
 	at models.Random$.rnd(Random.scala:211)
 	at models.Utilities$.valueProportionalRandomIndexInValueList(Utilities.scala:8)
@@ -1120,25 +1122,37 @@ Hjava.lang.Exception: toto
 
 Random rndseed=34
 sum 117698.0 chosen 13299.874
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Workspace] - Step2 <List(letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3)>
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - mainloop | codelets_run 7 clamp_time 30  last_update 0 time_step_length 15
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - ChooseAndRun2 50 T: 20.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - choose T: 20.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - Choose codelet codelets size 50 scale 6.0
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - urgencies: ListBuffer(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 117649.0)
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - Choose codelet at index 49
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$b/flowActor/ExecutionRun/Coderack/$4#1200090525]
-10:47:58 DEBUG [akka://application/user/$b/flowActor/ExecutionRun/Coderack/$4] - CorrespondenceStrengthTester. Run with initial abc, modified: abd and target: ijk
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun2 50 T: 20.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - choose T: 20.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Choose codelet codelets size 50 scale 6.0
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - urgencies: ListBuffer(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 117649.0)
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Choose codelet at index 49
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - ChooseAndRun: codelets found Actor[akka://application/user/$a/flowActor/ExecutionRun/Coderack/$4#-340314191]
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$4] - CorrespondenceStrengthTester. Run with initial abc, modified: abd and target: ijk
 trying correspondence from letter (2) 2 to letter (2) 2
-10:47:58 ERROR [akka://application/user/$b/flowActor/ExecutionRun/Slipnet] - None.get
-java.util.NoSuchElementException: None.get
-	at scala.None$.get(Option.scala:349)
-	at scala.None$.get(Option.scala:347)
-	at models.Slipnet.groupFlipped_version(Slipnet.scala:586)
-	at models.Slipnet$$anonfun$receive$1.applyOrElse(Slipnet.scala:1242)
+
+
+------
+relevant_distinguishing_cms letter -> letter relevant true distinguishing false
+relevant_distinguishing_cms J -> J relevant true distinguishing true
+relevant_distinguishing_cms middle -> middle relevant true distinguishing true
+
+----- should be 
+relevant_distinguishing_cms letter -> letter relevant true distinguishing false
+relevant_distinguishing_cms middle -> middle relevant true distinguishing true
+relevant_distinguishing_cms letter -> letter relevant true distinguishing false
+relevant_distinguishing_cms middle -> middle relevant true distinguishing true
+
+
+
+correspondence_internal_strength average_strength 100.0 internal_coherence_factor 2.5 num_of_concept_mappings_factor 1.2
+class models.Correspondence internal_strength 100.0 external_strength 0.0 total strength: 100.0
+Hjava.lang.Exception: toto
+	at models.Random$.rnd(Random.scala:211)
+	at models.Workspace$$anonfun$receive$1.applyOrElse(Workspace.scala:1976)
 	at akka.actor.Actor.aroundReceive(Actor.scala:517)
 	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
-	at models.Slipnet.aroundReceive(Slipnet.scala:213)
+	at models.Workspace.aroundReceive(Workspace.scala:229)
 	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
 	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
 	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
@@ -1148,4 +1162,9 @@ java.util.NoSuchElementException: None.get
 	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
 	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+Random rndseed=35
+15:48:09 INFO  [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - strength = 100.0, adjusted prob.= 0.9894427190999916
+create codelet CorrespondenceBuilder
+15:48:09 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack/$4] - CorrespondenceStrengthTester. Finished
 

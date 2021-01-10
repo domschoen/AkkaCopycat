@@ -3,6 +3,7 @@ package models.codelet
 import akka.event.LoggingReceive
 import akka.actor.ActorRef
 import models.ConceptMapping.ConceptMappingRep
+import models.Group.GroupRep
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.{ProposeAnyCorrespondenceSlipnetResponse2, SlipnetBottomUpCorrespondenceScout2, SlipnetGoWithImportantObjectCorrespondenceScout2}
 import models.Workspace.{GoWithBottomUpCorrespondenceScout2, GoWithBottomUpCorrespondenceScout2Response, GoWithBottomUpCorrespondenceScout3, GoWithBottomUpCorrespondenceScout3Response, SlippageListShell}
@@ -13,7 +14,7 @@ object ImportantObjectCorrespondenceScout {
   case class GoWithImportantObjectCorrespondenceScoutResponse(obj1: WorkspaceObjectRep, relevantDescriptors: List[SlipNodeRep])
   case class SlipnetGoWithImportantObjectCorrespondenceScoutResponse(s: Option[SlipNodeRep])
   case class GoWithImportantObjectCorrespondenceScout2Response(slippageListShell: SlippageListShell)
-  case class GoWithImportantObjectCorrespondenceScout3Response(obj2: WorkspaceObjectRep)
+  case class GoWithImportantObjectCorrespondenceScout3Response(obj2: WorkspaceObjectRep, obj2GroupRep: GroupRep)
 }
 
 class ImportantObjectCorrespondenceScout(urgency: Int,
@@ -48,6 +49,7 @@ class ImportantObjectCorrespondenceScout(urgency: Int,
   var slipNode : SlipNodeRep = null
   var obj1: WorkspaceObjectRep = null
   var obj2: WorkspaceObjectRep = null
+  var obj2GroupRep: GroupRep = null
 
   def ruleID() = arguments.get.asInstanceOf[String]
 
@@ -85,9 +87,10 @@ class ImportantObjectCorrespondenceScout(urgency: Int,
       workspace ! GoWithImportantObjectCorrespondenceScout3(slippage_list_rep, slipNode, runTemperature, obj1)
 
     // Codelet.java.1369
-    case GoWithImportantObjectCorrespondenceScout3Response(o2) =>
+    case GoWithImportantObjectCorrespondenceScout3Response(o2, o2GroupRep) =>
       obj2 = o2
-      slipnet ! SlipnetGoWithImportantObjectCorrespondenceScout2(obj1, obj2, runTemperature)
+      obj2GroupRep = o2GroupRep
+      slipnet ! SlipnetGoWithImportantObjectCorrespondenceScout2(obj1, obj2, obj2GroupRep, runTemperature)
 
     // flipped case
     case ProposeAnyCorrespondenceSlipnetResponse(fg) =>

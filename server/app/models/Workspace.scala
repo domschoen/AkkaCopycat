@@ -26,7 +26,7 @@ import models.Correspondence.CorrespondenceRep
 import models.Group.{FutureGroupRep, GroupRep}
 import models.SlipNode.{GroupSlipnetInfo, SlipNodeRep}
 import models.Slipnet.DescriptionTypeInstanceLinksToNodeInfo
-import models.Workspace.{GoWithBondStrengthTester2, GoWithBottomUpCorrespondenceScout2Response, GoWithBottomUpCorrespondenceScout3, GoWithBottomUpCorrespondenceScout3Response, GoWithCorrespondenceBuilder, GoWithCorrespondenceBuilder2, GoWithCorrespondenceBuilder3, GoWithCorrespondenceBuilder4, GoWithCorrespondenceBuilder5, GoWithCorrespondenceBuilder6, GoWithCorrespondenceBuilder7, GoWithCorrespondenceBuilder8, GoWithCorrespondenceStrengthTester, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithImportantObjectCorrespondenceScout, GoWithImportantObjectCorrespondenceScout2, GoWithImportantObjectCorrespondenceScout3, GoWithRuleBuilder, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3, GoWithRuleStrengthTester, GoWithRuleTranslator, GoWithRuleTranslator2, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, UpdateEverything, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
+import models.Workspace.{GoWithBondStrengthTester2, GoWithBottomUpCorrespondenceScout2Response, GoWithBottomUpCorrespondenceScout3, GoWithBottomUpCorrespondenceScout3Response, GoWithCorrespondenceBuilder, GoWithCorrespondenceBuilder2, GoWithCorrespondenceBuilder3, GoWithCorrespondenceBuilder4, GoWithCorrespondenceBuilder5, GoWithCorrespondenceBuilder6, GoWithCorrespondenceBuilder7, GoWithCorrespondenceBuilder8, GoWithCorrespondenceStrengthTester, GoWithCorrespondenceStrengthTester2, GoWithCorrespondenceStrengthTester3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithImportantObjectCorrespondenceScout, GoWithImportantObjectCorrespondenceScout2, GoWithImportantObjectCorrespondenceScout3, GoWithRuleBuilder, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3, GoWithRuleStrengthTester, GoWithRuleTranslator, GoWithRuleTranslator2, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, UpdateEverything, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
 import models.codelet.BondStrengthTester.GoWithBondStrengthTesterResponse2
@@ -34,7 +34,7 @@ import models.codelet.BottomUpBondScout.{GoWithBottomUpBondScout2Response, GoWit
 import models.codelet.BottomUpDescriptionScout.GoWithBottomUpDescriptionScoutResponse
 import models.codelet.Codelet.{Finished, PrepareDescriptionResponse}
 import models.codelet.CorrespondenceBuilder.{GoWithCorrespondenceBuilder2Response, GoWithCorrespondenceBuilder3Response, GoWithCorrespondenceBuilder4Response1, GoWithCorrespondenceBuilder4Response2, GoWithCorrespondenceBuilder6Response, GoWithCorrespondenceBuilder7Response, GoWithCorrespondenceBuilder8Response}
-import models.codelet.CorrespondenceStrengthTester.GoWithCorrespondenceStrengthTesterResponse
+import models.codelet.CorrespondenceStrengthTester.{GoWithCorrespondenceStrengthTesterResponse, GoWithCorrespondenceStrengthTesterResponse2, GoWithCorrespondenceStrengthTesterResponse3}
 import models.codelet.DescriptionStrengthTester.GoWithDescriptionStrengthTesterResponse
 import models.codelet.GroupScoutWholeString.{GoWithGroupScoutWholeStringResponse, GroupScoutWholeString2Response, GroupScoutWholeString3Response}
 import models.codelet.GroupStrengthTester.GoWithGroupStrengthTesterResponse
@@ -220,6 +220,8 @@ object Workspace {
                                                          distiguishingConceptMappingTotalStrength: Double
                                                        )
   case class GoWithCorrespondenceStrengthTester(correponsdenceID: String, futureGroupRep: FutureGroupRep, t:Double)
+  case class GoWithCorrespondenceStrengthTester2(correponsdenceID: String, t:Double)
+  case class GoWithCorrespondenceStrengthTester3(correponsdenceID: String, internalStrength: Double,supporting_correspondences:Map[String, Boolean], t:Double)
 
   case class UpdateEverything(t: Double)
 }
@@ -750,6 +752,8 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       // TODO if (!remove_terraced_scan) WorkspaceArea.AddObject(nc,1);
       addStructure(nc)
 
+      log.debug(s"BottomUpCorrespondenceScout. create new Correspondence ${nc.uuid} ")
+      printCorrespondenceCMs(nc)
 
       sender ! GoWithBottomUpCorrespondenceScout2Response(
         nc.uuid,
@@ -1742,7 +1746,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
               print("only one object spans the string: fizzle");
               sender() ! Finished
             } else {
-              sender() ! GoWithImportantObjectCorrespondenceScout3Response(obj1.workspaceObjectRep())
+              sender() ! GoWithImportantObjectCorrespondenceScout3Response(obj2.workspaceObjectRep(), obj2.asInstanceOf[Group].groupRep())
             }
 
           case None =>
@@ -1955,23 +1959,43 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
         println("objects no longer exist");
         sender() ! Finished
       } else {
-        c.update_strength_value()
-        val strength = c.total_strength
-        val prob = WorkspaceFormulas.temperature_adjusted_probability(strength / 100.0, t)
-        log.info(s"strength = $strength, adjusted prob.= $prob")
-        if (Random.rnd() > prob){
-          print("not strong enough: fizzled!");
-          sender() ! Finished
-        } else {
-          // it is strong enough - post builder  & activate nodes
-          sender() ! GoWithCorrespondenceStrengthTesterResponse(c.correspondenceRep(), strength)
-        }
-
+        sender() ! GoWithCorrespondenceStrengthTesterResponse
       }
+
+    case GoWithCorrespondenceStrengthTester2(correponsdenceID: String, t:Double) =>
+      val c = structureRefs(correponsdenceID).asInstanceOf[Correspondence]
+      val wcreps = workspaceCorrespondences().map(_.correspondenceRep())
+
+      sender() ! GoWithCorrespondenceStrengthTesterResponse2(c.correspondenceRep(), wcreps)
+
+    case GoWithCorrespondenceStrengthTester3(correponsdenceID: String, internalStrength: Double, supporting_correspondences:Map[String, Boolean], t:Double) =>
+      val c = structureRefs(correponsdenceID).asInstanceOf[Correspondence]
+      c.update_strength_value(internalStrength, workspaceCorrespondences(), supporting_correspondences)
+
+      val strength = c.total_strength
+      val prob = WorkspaceFormulas.temperature_adjusted_probability(strength / 100.0, t)
+      log.info(s"strength = $strength, adjusted prob.= $prob")
+      if (Random.rnd() > prob){
+        print("not strong enough: fizzled!");
+        sender() ! Finished
+      } else {
+        // it is strong enough - post builder  & activate nodes
+        sender() ! GoWithCorrespondenceStrengthTesterResponse3(c.correspondenceRep(), strength)
+      }
+
+  }
+
+  def printCorrespondenceCMs(c: Correspondence) = {
+    for (cm <- c.concept_mapping_list) {
+      log.debug(s"Correspondence ${c.uuid} cm ${cm}")
+    }
   }
 
 
 
+  def workspaceCorrespondences(): List[Correspondence] = {
+    structures.toList.filter(ws => ws.isInstanceOf[Correspondence]).asInstanceOf[List[Correspondence]]
+  }
 
 
   def flippedGroupWithFutureGroup(group: Group, futureGroupRep: FutureGroupRep, t: Double) = {

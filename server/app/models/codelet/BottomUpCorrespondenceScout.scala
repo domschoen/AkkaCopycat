@@ -4,7 +4,7 @@ import akka.actor.ActorRef
 import akka.event.LoggingReceive
 import models.Coderack.ChooseAndRun
 import models.ConceptMapping.ConceptMappingRep
-import models.Group.FutureGroupRep
+import models.Group.{GroupRep, FutureGroupRep}
 import models.Slipnet.ProposeAnyCorrespondenceSlipnetResponse2
 import models.Workspace.{GoWithBottomUpCorrespondenceScout2, GoWithBottomUpCorrespondenceScout2Response, GoWithBottomUpCorrespondenceScout3, GoWithBottomUpCorrespondenceScout3Response}
 import models.WorkspaceObject.WorkspaceObjectRep
