@@ -837,10 +837,12 @@ class Slipnet extends Actor with ActorLogging with InjectedActorSupport {
         obj1Relevant_descriptions, obj2Relevant_descriptions, slipnetInfo)
 
       // check the slippability of concept mappings
+      log.debug("check the slippability of concept mappings");
       val cm_possible = concept_mapping_list.find(cm => {
         val slip_prob = WorkspaceFormulas.temperature_adjusted_probability(cm.slipability() / 100.0, temperature)
         WorkspaceFormulas.flip_coin(slip_prob)
       })
+      log.debug("End of check the slippability of concept mappings $cm_possible");
 
       if (concept_mapping_list.isEmpty) {
         // no possible mappings
