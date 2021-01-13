@@ -159,6 +159,8 @@ class Group (
 
 
   def break_group() = {
+    System.out.println("breaking group "+this);
+
     for (wo <- object_list) {
       wo.group = None
     }

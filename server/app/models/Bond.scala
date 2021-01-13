@@ -68,6 +68,8 @@ class Bond (
 
   // partially moved to Workspace.addBond
   def build_bond() = {
+    System.out.println("bond.build_bond | string.bonds.add this " + workspaceString().get.s + " this " + this);
+
     workspaceString().get.addBond(this);
 
     activateDescriptor()
@@ -79,6 +81,8 @@ class Bond (
 
   // partially moved to Workspace.break_bond
   def break_bond() = {
+    System.out.println("bond.break_bond " + this);
+
     if (workspaceString().isDefined) workspaceString().get.break_bond(this)
     left_obj.right_bond = null;
     right_obj.left_bond = null;
@@ -152,8 +156,14 @@ class Bond (
   def number_of_local_supporting_bonds(): Int = {
     wString match {
       case Some(ws) =>
+        println("ws.bonds " + ws.bonds.size);
+        println("from_obj.wString " + from_obj.wString);
+        println("wString " + ws);
+        println("wString " + ws.s);
         ws.bonds.filter(ob => {
-           (ob.wString == from_obj.wString) &&
+          println("ob " + ob.wString);
+
+          (ob.wString.equals(from_obj.wString)) &&
            (
              (!(left_obj.letter_distance(ob.left_obj)==0)) &&
              (!(right_obj.letter_distance(ob.right_obj)==0)) &&
@@ -215,6 +225,7 @@ class Bond (
     // equals the local support
 
     val num : Double = number_of_local_supporting_bonds()
+    println("calculate_external_strength " + num)
     val extstr = if (num > 0.0){
       val density = Math.sqrt(local_density(wos) / 100) * 100.0
       val nf1 = Math.pow(0.6,(1.0/(num*num*num)));

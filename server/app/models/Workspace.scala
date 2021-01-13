@@ -557,7 +557,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       val bondTo = objectRefs()(bondToRep.uuid)
       val nb = new Bond(bondFrom, bondTo, bondCategory, bondFacet, fromDescriptor, toDescriptor, slipnetLeft, slipnetRight, slipnet)
       // if (!remove_terraced_scan) workspace.WorkspaceArea.AddObject(nb,1);
-      addBond(nb)
+      addStructure(nb)
 
       sender ! WorkspaceProposeBondResponse(nb.uuid)
 
@@ -912,7 +912,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
           val to_obj_descriptor = to_obj.get_description(bond_facet)
 
           val nb = new Bond(from_obj,to_obj,bond_category,bond_facet, from_obj_descriptor,to_obj_descriptor, slipnetLeft,slipnetRight, slipnet)
-          build_bond(nb)
+          addBond(nb)
           self ! LookAHeadForNewBondCreation(s, g.uuid, i + 1, incg, nb.bondRep() :: newBondList)
 
         case None =>
@@ -1062,7 +1062,8 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       val b = structureRefs(bondID).asInstanceOf[Bond]
       b.update_strength_value(bond_category_degree_of_association, workspaceObjects())
       val strength = b.total_strength;
-      val workingString = if (b.left_obj.wString == initial) "initial" else "target"
+      val leftStringOpt = b.left_obj.wString
+      val workingString = if (leftStringOpt.isDefined && leftStringOpt.get == initial) "initial" else "target"
       log.info(s"bond = ${b.toString} in ${workingString} string")
 
       val prob = WorkspaceFormulas.temperature_adjusted_probability(strength / 100.0, temperature)
