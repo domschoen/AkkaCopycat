@@ -1770,6 +1770,11 @@ class models.Bond internal_strength 69.57010852370435 external_strength 0.0 tota
 23:37:52 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - Step2 <List(letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3, letter (1) 1, letter (2) 2, letter (3) 3)>
 class models.Bond internal_strength 0.0 external_strength 0.0 total strength: 0.0
 23:37:52 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - mainloop | codelets_run 15 clamp_time 30  last_update 0 time_step_length 15
+
+
+
+
+/// Update everything !! to check
 23:37:52 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - update_Everything
 Finish update_Everything T: 20.0
 23:37:52 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - workspace intra string unhappiness = 0.0

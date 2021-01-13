@@ -1519,6 +1519,12 @@ propose_bond urgency 69.57010852370435
 propose_bond urgency 5
 create codelet bond-strength-tester urgency 5
 mainloop | codelets_run 15 clamp_time 30 last_update 0 time_step_length 15
+
+
+
+
+/// Update everything !! to check
+
 update_Everything
 description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
