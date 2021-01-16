@@ -28,8 +28,21 @@ object CodeletType {
   case object BondStrengthTester extends CodeletType
   case object GroupStrengthTester extends CodeletType
   case object RuleStrengthTester extends CodeletType
-
+  case object TopDownBondScoutDirection extends CodeletType
+  case object TopDownGroupScoutDirection extends CodeletType
+  case object TopDownBondScoutCategory extends CodeletType
+  case object TopDownGroupScoutCategory extends CodeletType
+  case object TopDownDescriptionScout extends CodeletType
 }
+
+object CodeletTypeString {
+  val TopDownBondScoutDirection = "top-down-bond-scout--direction"
+  val TopDownGroupScoutDirection = "top-down-group-scout--direction"
+  val TopDownBondScoutCategory = "top-down-bond-scout--category"
+  val TopDownGroupScoutCategory = "top-down-group-scout--category"
+  val TopDownDescriptionScout = "top-down-description-scout"
+}
+
 object Codelet {
   case class Run(initialString: String, modifiedString: String, targetString: String, runTemperature: Double)
   case class PrepareDescriptionResponse(descriptionID: String, urgency: Double)
@@ -44,6 +57,15 @@ object Codelet {
     Random.rnd() < value
   }
 
+  def codeletTypeWithString(s: String): CodeletType = {
+    s match {
+      case CodeletTypeString.TopDownBondScoutDirection => CodeletType.TopDownBondScoutDirection
+      case CodeletTypeString.TopDownGroupScoutDirection => CodeletType.TopDownGroupScoutDirection
+      case CodeletTypeString.TopDownBondScoutCategory => CodeletType.TopDownBondScoutCategory
+      case CodeletTypeString.TopDownGroupScoutCategory => CodeletType.TopDownGroupScoutCategory
+      case CodeletTypeString.TopDownDescriptionScout => CodeletType.TopDownDescriptionScout
+    }
+  }
 
   def apply(
              codeletType: CodeletType,
@@ -67,6 +89,11 @@ object Codelet {
       case CodeletType.CorrespondenceBuilder => new CorrespondenceBuilder(urgency,  workspace, slipnet, temperature, arguments)
       case CodeletType.RuleStrengthTester => new RuleStrengthTester(urgency,  workspace, slipnet, temperature, arguments)
       case CodeletType.RuleBuilder => new RuleBuilder(urgency,  workspace, slipnet, temperature, arguments)
+      case CodeletType.TopDownBondScoutDirection => new TopDownBondScoutDirection(urgency,  workspace, slipnet, temperature, arguments)
+      case CodeletType.TopDownGroupScoutDirection => new TopDownGroupScoutDirection(urgency,  workspace, slipnet, temperature, arguments)
+      case CodeletType.TopDownBondScoutCategory => new TopDownBondScoutCategory(urgency,  workspace, slipnet, temperature, arguments)
+      case CodeletType.TopDownGroupScoutCategory => new TopDownGroupScoutCategory(urgency,  workspace, slipnet, temperature, arguments)
+      case CodeletType.TopDownDescriptionScout => new TopDownDescriptionScout(urgency,  workspace, slipnet, temperature, arguments)
 
 
     }

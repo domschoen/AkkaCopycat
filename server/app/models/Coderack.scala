@@ -18,10 +18,11 @@ import play.api.libs.functional.syntax._
 import scala.concurrent.Future
 import scala.concurrent.duration._
 import play.api.Play.current
+
 import javax.inject._
 import models.SlipNode.SlipNodeRep
 import models.Temperature.CheckClamped
-import models.Workspace.Initialize
+import models.Workspace.{Initialize, UpdateEverythingFollowUp}
 import models.codelet.CodeletType
 import models.codelet.Codelet
 import play.api.Configuration
@@ -64,7 +65,7 @@ object Coderack {
   case class PostGroupBuilder(groupID: String, strength: Double)
   case class PostCorrespondenceBuilder(correspondenceID: String, strength: Double)
   case class PostRuleBuilder(ruleID: String, strength: Double)
-
+  case class PostCodelets(codeletToPost: List[(String,Double)])
 }
 
 
@@ -113,7 +114,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
     context.actorOf(Codelet.props(codeletType, urgency, workspace, slipnet, temperature, arguments))
   }
 
-
+/*
   def update_Everything() = {
 //  GUI  Graph.GraphFrame.Redraw = true;
 //  GUI  Graph.GraphMinFrame.Redraw = true;
@@ -131,7 +132,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
     // WorkspaceFormulas.update_temperature();
 
     // GUI Coderack_Pressure.calculate_Pressures()
-  }
+  }*/
 
 
   def receive = LoggingReceive {
@@ -224,7 +225,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
           //temperature ! CheckClamped(codelets_run)
           if (((codelets_run - last_update) >= Slipnet.time_step_length) || (codelets_run == 0)) {
             log.debug("update_Everything")
-            workspace ! models.Workspace.UpdateEverything(temperature)
+            workspace ! models.Workspace.UpdateEverything(codelets_run, temperature)
             //update_Everything();
           } else {
             self ! ChooseAndRun2(temperature)
@@ -357,6 +358,14 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
           self ! Post(newCodelet,urgency)
           sender() ! Finished
 
+        case PostCodelets(codeletToPost) =>
+          for ((st, rawUrgency) <- codeletToPost) {
+            val codeletType = Codelet.codeletTypeWithString(st)
+            val urgency = get_urgency_bin(rawUrgency)
+            val newCodelet = createCodelet(codeletType, urgency, None)
+            self ! Post(newCodelet,urgency)
+          }
+          workspace ! UpdateEverythingFollowUp
   }
 
   def total_num_of_codelets() = {

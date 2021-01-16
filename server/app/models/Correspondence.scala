@@ -22,6 +22,12 @@ case class Correspondence (
                             var concept_mapping_list : List[ConceptMappingRep],
                             val flip_obj2: Boolean
                           ) extends WorkspaceStructure {
+  def addConceptMappings(cCMReps: List[ConceptMappingRep]) = {
+    System.out.println("Correspondence. addConceptMapping concept_mapping_list " + concept_mapping_list);
+    System.out.println("Correspondence. addConceptMapping " + cCMReps);
+    concept_mapping_list = cCMReps ::: concept_mapping_list
+  }
+
 
   import Correspondence.CorrespondenceRep
   var accessory_concept_mapping_list = ListBuffer.empty[ConceptMappingRep]
@@ -243,18 +249,29 @@ case class Correspondence (
     // This returns the sum of the strengths of other correspondences that
     // support this one (or 100, whichever is lower).  If one of the objects is the
     // single letter in its string, then the support is 100.
+    System.out.println("support obj1 " + obj1);
+    System.out.println("support obj1.spans_string " + obj1.spans_string);
+    System.out.println("support obj2 " + obj1);
+    System.out.println("support obj2.spans_string " + obj2.spans_string);
     if (obj1.isInstanceOf[Letter] && obj1.spans_string) return 100.0
     if (obj2.isInstanceOf[Letter] && obj2.spans_string) return 100.0
     var support_sum = 0.0;
     for (c <- cs) {
-        if ((c != this) && supporting_correspondences(c.uuid))
+      System.out.println("support ws!=this " + (c !=this));
+      System.out.println("support supporting_correspondences(this,(Correspondence)ws)) " + (supporting_correspondences(c.uuid)));
+
+      if ((c != this) && supporting_correspondences(c.uuid))
           support_sum += c.total_strength;
     }
+    System.out.println("support support_sum " + support_sum);
+
     if (support_sum>100.0) return 100.0;
     else return support_sum;
   }
 
   def calculate_external_strength(cs: List[Correspondence], supporting_correspondences:Map[String, Boolean]) = {
+    System.out.println("calculate_external_strength " + cs)
+    System.out.println("calculate_external_strength " + supporting_correspondences)
     external_strength = support(cs, supporting_correspondences)
   }
 

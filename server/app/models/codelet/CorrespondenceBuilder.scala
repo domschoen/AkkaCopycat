@@ -135,18 +135,22 @@ class CorrespondenceBuilder(urgency: Int,
 
 
     case  SlipnetGoWithCorrespondenceBuilderResponse3(bOpt) =>
+      log.debug("CorrespondenceBuilder. SlipnetGoWithCorrespondenceBuilderResponse3")
       incompatible_bond = bOpt
       workspace ! GoWithCorrespondenceBuilder5(corresponsdenceID, bOpt)
 
       //2 branches joining here
     case GoWithCorrespondenceBuilder4Response2(g) =>
+      log.debug("CorrespondenceBuilder. GoWithCorrespondenceBuilder4Response2")
       incompatible_group = g
       workspace ! GoWithCorrespondenceBuilder6(corresponsdenceID, incc, incompatible_bond, incompatible_group)
 
     case GoWithCorrespondenceBuilder6Response(crep) =>
+      log.debug("CorrespondenceBuilder. GoWithCorrespondenceBuilder6Response")
       slipnet ! SlipnetGoWithCorrespondenceBuilder4(crep)
 
     case SlipnetGoWithCorrespondenceBuilder4Response(accessory_concept_mapping_list) =>
+      log.debug("CorrespondenceBuilder. SlipnetGoWithCorrespondenceBuilder4Response")
       workspace ! GoWithCorrespondenceBuilder7(corresponsdenceID, accessory_concept_mapping_list)
 
     case GoWithCorrespondenceBuilder7Response(groupObjs) =>

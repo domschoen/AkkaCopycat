@@ -221,7 +221,7 @@ class Bond (
   };
 
 
-  def calculate_external_strength(wos: List[WorkspaceObject]) = {
+  override def calculate_external_strength(wos: List[WorkspaceObject]) = {
     // equals the local support
 
     val num : Double = number_of_local_supporting_bonds()
@@ -235,7 +235,6 @@ class Bond (
 
     external_strength = extstr;
     //System.out.println(this+" external strength:"+external_strength);
-    external_strength
   }
 
 }

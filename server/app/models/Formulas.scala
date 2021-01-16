@@ -56,5 +56,9 @@ object Formulas {
     //System.out.println("Temperature adjusted value.  Temp="+Temperature.value+" t:"+t+" inital val="+val+" adjusted val="+rval);
     return rval;
   }
+  def blur(value: Double): Double = {
+    val sq = Math.sqrt(value);
+    if (Random.rnd()<0.5) value + sq else value - sq
+  }
 
 }

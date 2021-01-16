@@ -115,7 +115,7 @@ abstract class WorkspaceObject(ws: WorkspaceString) extends WorkspaceStructure {
 
 
 
-    def middle_object(): Boolean = {
+  def middle_object(): Boolean = {
     // returns true if this is the middle object in the string
     var leftmost_neighbor = ws.objects.find(ob => ob.leftmost && (ob.right_string_position == left_string_position-1))
     var rightmost_neighbor = ws.objects.find(ob => ob.rightmost && (ob.left_string_position == right_string_position-1))
@@ -128,7 +128,7 @@ abstract class WorkspaceObject(ws: WorkspaceString) extends WorkspaceStructure {
 
 
   def relevant_descriptions(): List[Description] = {
-    descriptions.toList.filter(d => d.descriptionType.activation==100.0)
+    descriptions.toList.filter(d => d.description_type.activation==100.0)
   }
 
 
@@ -175,7 +175,7 @@ abstract class WorkspaceObject(ws: WorkspaceString) extends WorkspaceStructure {
 
   def has_description(description: Description): Boolean = {
     descriptions.find(d =>
-      description.descriptionType.id.equals(d.descriptionType.id) &&
+      description.description_type.id.equals(d.description_type.id) &&
         description.descriptor.isDefined &&
         d.descriptor.isDefined &&
         description.descriptor.get.equals(d.descriptor.get.id)
@@ -184,7 +184,7 @@ abstract class WorkspaceObject(ws: WorkspaceString) extends WorkspaceStructure {
 
   // What is not seen is that in found a description same dt, it can still return None (because descriptor is an option)
   def get_descriptor(dt: SlipNodeRep): Option[SlipNodeRep] = {
-    val descriptionWithDescriptionType = descriptions.find(d => d.descriptionType.id == dt.id)
+    val descriptionWithDescriptionType = descriptions.find(d => d.description_type.id == dt.id)
     descriptionWithDescriptionType match {
       case Some(d) => d.descriptor
       case None => None
@@ -230,13 +230,19 @@ abstract class WorkspaceObject(ws: WorkspaceString) extends WorkspaceStructure {
     }
   }
 
+  def recursive_group_member(group: WorkspaceObject): Boolean = {
+    if ((left_string_position>=group.left_string_position)&&
+      (right_string_position<=group.right_string_position))
+      return true;
+    return false;
+  }
 
   def update_object_value() = {
     // calculate the raw importance of the object
     // = sum of all relevant descriptions
     val rawSum = descriptions.filter(d => d.descriptor.isDefined).map(d => {
       val descriptorActivation = d.descriptor.get.activation
-      if (d.descriptionType.activation==100.0) {
+      if (d.description_type.activation==100.0) {
         descriptorActivation
       } else {
         descriptorActivation / 20.0
@@ -311,12 +317,12 @@ abstract class WorkspaceObject(ws: WorkspaceString) extends WorkspaceStructure {
     get_description_with_id(description_type.id)
   }
   def get_description_with_id(description_type: String): Option[SlipNodeRep] = {
-    descriptions.find(d => d.descriptionType.id == description_type).map(_.descriptor).flatten
+    descriptions.find(d => d.description_type.id == description_type).map(_.descriptor).flatten
   }
 
   def get_description_type(description: Option[SlipNodeRep]): Option[SlipNodeRep] = {
     // returns the description_type attached to this object of the specified description
-    descriptions.find(d => d.descriptor == description).map(_.descriptionType)
+    descriptions.find(d => d.descriptor == description).map(_.description_type)
   }
 
   def letterOrGroupCompanions(): List[WorkspaceObject] = {

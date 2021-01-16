@@ -51,7 +51,8 @@ class GroupScoutWholeString(urgency: Int,
   import models.codelet.GroupScoutWholeString.{
     GoWithGroupScoutWholeStringResponse,
     SlipnetGoWithGroupScoutWholeStringResponse,
-    GetLeftAndRightResponse
+    GetLeftAndRightResponse,
+    GroupScoutWholeString3Response
   }
   import models.Workspace.{
     GoWithGroupScoutWholeString,
@@ -120,7 +121,7 @@ class GroupScoutWholeString(urgency: Int,
 
       slipnet ! CompleteProposeGroup(group_category, direction_category)
 
-    case GroupScoutWholeString2Response(bc, dc, bf, ol, bl) =>
+    case GroupScoutWholeString3Response(bc, dc, bf, ol, bl) =>
       direction_category = dc
       bond_facet = bf
       object_list = ol
