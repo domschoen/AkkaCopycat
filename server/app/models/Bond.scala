@@ -214,14 +214,14 @@ class Bond (
     }
   }
 
-  def update_strength_value(bond_category_degree_of_association: Double, wos: List[WorkspaceObject]) = {
+  def update_strength_value(activationBySlipNodeID: Map[String, Double], bond_category_degree_of_association: Double, wos: List[WorkspaceObject]) = {
     calculate_internal_strength(bond_category_degree_of_association)
-    calculate_external_strength(wos)
+    calculate_external_strength(activationBySlipNodeID, wos)
     calculate_total_strength()
   };
 
 
-  override def calculate_external_strength(wos: List[WorkspaceObject]) = {
+  override def calculate_external_strength(activationBySlipNodeID: Map[String, Double], wos: List[WorkspaceObject]) = {
     // equals the local support
 
     val num : Double = number_of_local_supporting_bonds()

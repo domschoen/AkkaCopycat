@@ -29,11 +29,21 @@ class WorkspaceString (val s: String, x1: Int, y1: Int, x2: Int, y2: Int) {
   def update_relative_importance() = {
     // updates the normalized importances of all the objects in the string
     val total_raw_importance = objects.map(ob => ob.raw_importance).sum
+    System.out.println("update_relative_importance " + total_raw_importance);
 
 
     for (ob <- objects){
-      if (total_raw_importance==0.0) ob.relative_importance=0.0;
-      else ob.relative_importance=ob.raw_importance/total_raw_importance;
+      System.out.println("ob " + ob);
+
+      if (total_raw_importance==0.0) {
+        ob.relative_importance=0.0
+        System.out.println("1ob.relative_importance " + ob.relative_importance);
+
+      } else {
+        ob.relative_importance=ob.raw_importance/total_raw_importance
+        System.out.println("2ob.relative_importance " + ob.relative_importance);
+
+      };
     }
   }
 

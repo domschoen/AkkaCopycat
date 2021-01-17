@@ -30,15 +30,15 @@ abstract class WorkspaceStructure {
   }
 
 
-  def update_strength_value(wos: List[WorkspaceObject]) = {
+  def update_strength_value(activationBySlipNodeID: Map[String, Double], wos: List[WorkspaceObject]) = {
     calculate_internal_strength()
-    calculate_external_strength(wos)
+    calculate_external_strength(activationBySlipNodeID, wos)
     calculate_total_strength()
   };
 
   // See subclass implementation in Bond, Correspondence, Description, Rule, WorkSpaceObject (Group)
   def calculate_internal_strength() = {}
-  def calculate_external_strength(wos: List[WorkspaceObject]) = {}
+  def calculate_external_strength(activationBySlipNodeID: Map[String, Double], wos: List[WorkspaceObject]) = {}
   def calculate_total_strength() = {
     total_strength = Formulas.weighted_average(internal_strength,
       internal_strength, external_strength, (100.0-internal_strength));

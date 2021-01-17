@@ -65,7 +65,7 @@ object Coderack {
   case class PostGroupBuilder(groupID: String, strength: Double)
   case class PostCorrespondenceBuilder(correspondenceID: String, strength: Double)
   case class PostRuleBuilder(ruleID: String, strength: Double)
-  case class PostCodelets(codeletToPost: List[(String,Double)])
+  case class PostCodelets(codeletToPost: List[(String,Either[Double, Int])])
 }
 
 
@@ -361,7 +361,12 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
         case PostCodelets(codeletToPost) =>
           for ((st, rawUrgency) <- codeletToPost) {
             val codeletType = Codelet.codeletTypeWithString(st)
-            val urgency = get_urgency_bin(rawUrgency)
+            val urgency = rawUrgency match {
+              case Right(x) => x
+              case Left(x) => get_urgency_bin(x)
+            }
+            System.out.println("PostCodelets " + codeletType + " rawUrgency" + rawUrgency + " urgency_bin " + urgency);
+
             val newCodelet = createCodelet(codeletType, urgency, None)
             self ! Post(newCodelet,urgency)
           }

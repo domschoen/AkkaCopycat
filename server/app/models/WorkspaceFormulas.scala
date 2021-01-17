@@ -112,12 +112,12 @@ object WorkspaceFormulas {
 
   }*/
 
-  def choose_relevant_description_by_activation(wo: WorkspaceObject): Option[Description] = {
-    val v = wo.relevant_descriptions();
+  def choose_relevant_description_by_activation(activationBySlipNodeID: Map[String, Double],wo: WorkspaceObject): Option[Description] = {
+    val v = wo.relevant_descriptions(activationBySlipNodeID);
     if (v.isEmpty) {
       None
     } else {
-      val vals = v.map(d => if (d.descriptor.isEmpty) 0.0 else d.descriptor.get.activation)
+      val vals = v.map(d => if (d.descriptor.isEmpty) 0.0 else Workspace.activationWithSlipNodeRep(activationBySlipNodeID, d.descriptor.get))
       Some(v(Utilities.valueProportionalRandomIndexInValueList(vals)))
     }
   }

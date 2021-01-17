@@ -127,8 +127,8 @@ abstract class WorkspaceObject(ws: WorkspaceString) extends WorkspaceStructure {
   def letter_span() = right_string_position - left_string_position + 1
 
 
-  def relevant_descriptions(): List[Description] = {
-    descriptions.toList.filter(d => d.description_type.activation==100.0)
+  def relevant_descriptions(activationBySlipNodeID: Map[String, Double]): List[Description] = {
+    descriptions.toList.filter(d => Workspace.activationWithSlipNodeRep(activationBySlipNodeID, d.description_type) == 100.0)
   }
 
 
@@ -191,8 +191,8 @@ abstract class WorkspaceObject(ws: WorkspaceString) extends WorkspaceStructure {
     }
   }
 
-  def relevant_distinguishing_descriptors() = {
-    relevant_descriptions().map(d => {
+  def relevant_distinguishing_descriptors(activationBySlipNodeID: Map[String, Double]) = {
+    relevant_descriptions(activationBySlipNodeID).map(d => {
       if (d.descriptor.isDefined && distinguishing_descriptor(d.descriptor.get.id)) {
         Some(d.descriptor.get)
       } else None
@@ -237,21 +237,27 @@ abstract class WorkspaceObject(ws: WorkspaceString) extends WorkspaceStructure {
     return false;
   }
 
-  def update_object_value() = {
+  def update_object_value(activationBySlipNodeID: Map[String, Double]) = {
     // calculate the raw importance of the object
     // = sum of all relevant descriptions
     val rawSum = descriptions.filter(d => d.descriptor.isDefined).map(d => {
-      val descriptorActivation = d.descriptor.get.activation
-      if (d.description_type.activation==100.0) {
+      val descriptorActivation = Workspace.activationWithSlipNodeRep(activationBySlipNodeID, d.descriptor.get)
+      val description_typeActivation = Workspace.activationWithSlipNodeRep(activationBySlipNodeID, d.description_type)
+
+      System.out.println("update_object_value " + d + " d.description_type.activation " + description_typeActivation + " d.descriptor.activation " + descriptorActivation);
+
+      if (description_typeActivation == 100.0) {
         descriptorActivation
       } else {
         descriptorActivation / 20.0
       }
     }).sum
+    System.out.println("update_object_value " + rawSum + " group.isDefined " + group.isDefined + " changed " +changed);
 
     val groupAdaptedSum = if (group.isDefined) rawSum * 2.0 / 3.0 else rawSum
     val sum = if (changed) groupAdaptedSum * 2.0 else groupAdaptedSum
     raw_importance = sum;
+    System.out.println("update_object_value : raw_importance " + raw_importance);
 
     // calculate the intra-string-happiness of the object
     val result = if (spans_string) {
@@ -261,9 +267,13 @@ abstract class WorkspaceObject(ws: WorkspaceString) extends WorkspaceStructure {
         group.get.total_strength
       } else {
         val bondstrengthRaw = bonds.map(b => b.total_strength).sum
+        System.out.println("update_object_value : bondstrengthRaw " + bondstrengthRaw);
+
         if (spans_string) bondstrengthRaw / 3.0 else bondstrengthRaw / 6.0
       }
     }
+    System.out.println("update_object_value : intra_string_happiness " + result);
+
     intra_string_happiness = result;
 
 

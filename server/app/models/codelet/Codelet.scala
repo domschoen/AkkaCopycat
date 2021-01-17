@@ -33,6 +33,13 @@ object CodeletType {
   case object TopDownBondScoutCategory extends CodeletType
   case object TopDownGroupScoutCategory extends CodeletType
   case object TopDownDescriptionScout extends CodeletType
+  case object Breaker extends CodeletType
+  case object RuleTranslator extends CodeletType
+  case object RuleScout extends CodeletType
+  case object ImportantObjectCorrespondenceScout extends CodeletType
+  case object GroupScoutWholeString extends CodeletType
+  case object BottomUpDescriptionScout extends CodeletType
+
 }
 
 object CodeletTypeString {
@@ -41,6 +48,16 @@ object CodeletTypeString {
   val TopDownBondScoutCategory = "top-down-bond-scout--category"
   val TopDownGroupScoutCategory = "top-down-group-scout--category"
   val TopDownDescriptionScout = "top-down-description-scout"
+  val Breaker = "breaker"
+  val RuleTranslator = "rule-translator"
+  val RuleScout = "rule-scout"
+  val ReplacementFinder = "replacement-finder"
+  val ImportantObjectCorrespondenceScout = "important-object-correspondence-scout"
+  val BottomUpCorrespondenceScout = "bottom-up-correspondence-scout"
+  val GroupScoutWholeString = "group-scout--whole-string"
+  val BottomUpBondScout = "bottom-up-bond-scout"
+  val BottomUpDescriptionScout = "bottom-up-description-scout"
+
 }
 
 object Codelet {
@@ -64,6 +81,16 @@ object Codelet {
       case CodeletTypeString.TopDownBondScoutCategory => CodeletType.TopDownBondScoutCategory
       case CodeletTypeString.TopDownGroupScoutCategory => CodeletType.TopDownGroupScoutCategory
       case CodeletTypeString.TopDownDescriptionScout => CodeletType.TopDownDescriptionScout
+      case CodeletTypeString.Breaker => CodeletType.Breaker
+      case CodeletTypeString.RuleTranslator => CodeletType.RuleTranslator
+      case CodeletTypeString.ReplacementFinder => CodeletType.ReplacementFinder
+      case CodeletTypeString.RuleScout => CodeletType.RuleScout
+      case CodeletTypeString.ImportantObjectCorrespondenceScout => CodeletType.ImportantObjectCorrespondenceScout
+      case CodeletTypeString.BottomUpCorrespondenceScout => CodeletType.BottomUpCorrespondenceScout
+      case CodeletTypeString.GroupScoutWholeString => CodeletType.GroupScoutWholeString
+      case CodeletTypeString.BottomUpBondScout => CodeletType.BottomUpBondScout
+      case CodeletTypeString.BottomUpDescriptionScout => CodeletType.BottomUpDescriptionScout
+
     }
   }
 
@@ -94,6 +121,12 @@ object Codelet {
       case CodeletType.TopDownBondScoutCategory => new TopDownBondScoutCategory(urgency,  workspace, slipnet, temperature, arguments)
       case CodeletType.TopDownGroupScoutCategory => new TopDownGroupScoutCategory(urgency,  workspace, slipnet, temperature, arguments)
       case CodeletType.TopDownDescriptionScout => new TopDownDescriptionScout(urgency,  workspace, slipnet, temperature, arguments)
+      case CodeletType.Breaker => new Breaker(urgency,  workspace, slipnet, temperature, arguments)
+      case CodeletType.RuleTranslator => new RuleTranslator(urgency,  workspace, slipnet, temperature, arguments)
+      case CodeletType.RuleScout => new RuleScout(urgency,  workspace, slipnet, temperature, arguments)
+      case CodeletType.ImportantObjectCorrespondenceScout => new ImportantObjectCorrespondenceScout(urgency,  workspace, slipnet, temperature, arguments)
+      case CodeletType.GroupScoutWholeString => new GroupScoutWholeString(urgency,  workspace, slipnet, temperature, arguments)
+      case CodeletType.BottomUpDescriptionScout => new BottomUpDescriptionScout(urgency,  workspace, slipnet, temperature, arguments)
 
 
     }

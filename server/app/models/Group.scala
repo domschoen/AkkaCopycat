@@ -41,7 +41,8 @@ class Group (
               var bond_category: SlipNodeRep,
               groupSlipnetInfo: GroupSlipnetInfo,
               temperature: Double,
-              slipnet: ActorRef
+              slipnet: ActorRef,
+              activationBySlipNodeID: Map[String, Double]
             ) extends WorkspaceObject(ws) {
   import Slipnet.SetSlipNodeBufferValue
 
@@ -78,7 +79,7 @@ class Group (
     this.add_description(groupSlipnetInfo.string_position_category, Some(groupSlipnetInfo.middle))
 
   // check whether or not to add length description category
-  val prob = length_description_probability(temperature);
+  val prob = length_description_probability(activationBySlipNodeID,temperature);
   if (Random.rnd() < prob){
     val length = object_list.size
     if (length<6) add_description(groupSlipnetInfo.length, Some(groupSlipnetInfo.slipnet_numbers(length-1)))
@@ -141,12 +142,12 @@ class Group (
     }
   }
 
-  def length_description_probability(temperature: Double): Double = {
+  def length_description_probability(activationBySlipNodeID: Map[String, Double], temperature: Double): Double = {
     val length = object_list.size
     if (length>5) return 0.0;
     val cube = (length*length*length).toDouble
     val prob = Math.pow(0.5,cube*
-      ((100.0-groupSlipnetInfo.length.activation)/100.0));
+      ((100.0- Workspace.activationWithSlipNodeRep(activationBySlipNodeID, groupSlipnetInfo.length))/100.0));
 
     val value = Formulas.temperature_adjusted_probability(prob, temperature)
     if (value < 0.06) {

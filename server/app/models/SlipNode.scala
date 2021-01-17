@@ -2,6 +2,7 @@ package models
 
 import akka.actor.ActorRef
 import models.SlipNode.SlipNodeRep
+import models.Workspace.SlipnodeActivationChanged
 
 import scala.collection.mutable.ListBuffer
 
@@ -40,7 +41,6 @@ object SlipNode {
 
 
   case class SlipNodeRep(id: String,
-                         activation: Double,
                          conceptual_depth: Double
                         )
 
@@ -83,7 +83,7 @@ class SlipNode(x: Int, y: Int, var conceptual_depth: Double, val name: String, v
 
   def id() = shortName
 
-  def slipNodeRep() = SlipNodeRep(id(), activation, conceptual_depth)
+  def slipNodeRep() = SlipNodeRep(id(), conceptual_depth)
 
   def category(): Option[SlipNode] = {
     if (category_links.isEmpty) None else {
@@ -95,7 +95,8 @@ class SlipNode(x: Int, y: Int, var conceptual_depth: Double, val name: String, v
   def setActivation(value: Double) = {
     if (activation != value) {
       activation = value
-      //workspace ! SlipnodeActivationChanged(id(),activation)
+      println(s"workspace $workspace id ${id()}")
+      workspace ! SlipnodeActivationChanged(id(),activation)
     }
   }
 

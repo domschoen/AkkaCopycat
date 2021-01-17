@@ -39,8 +39,8 @@ case class Description (
       case None => 0.0
     }
   }
-  override def calculate_external_strength(wos: List[WorkspaceObject]) = {
-    external_strength = (local_support(wos) + description_type.activation)/2.0;
+  override def calculate_external_strength(activationBySlipNodeID: Map[String, Double], wos: List[WorkspaceObject]) = {
+    external_strength = (local_support(wos) + Workspace.activationWithSlipNodeRep(activationBySlipNodeID, description_type))/2.0;
   }
 
   def local_support(wos: List[WorkspaceObject]): Double = {

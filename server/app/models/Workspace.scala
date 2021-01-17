@@ -57,7 +57,12 @@ import scala.util.control.Breaks._
 
 
 object Workspace {
-  def props(slipnet: ActorRef, temperature: ActorRef): Props = Props(new Workspace(slipnet, temperature))
+  def props(temperature: ActorRef): Props = Props(new Workspace(temperature))
+  def activationWithSlipNodeRep(activationBySlipNodeID: Map[String, Double], sr: SlipNodeRep): Double = {
+    if (activationBySlipNodeID.contains(sr.id)) {
+      activationBySlipNodeID(sr.id)
+    } else 0.0
+  }
 
   case class Run(executionRun: ActorRef, initialString: String, modifiedString: String, targetString: String)
   case class Initialize(coderack: ActorRef, initialS: String, modifiedS: String, targetS: String)
@@ -186,7 +191,7 @@ object Workspace {
   case class GoWithRuleBuilder(ruleID: String)
   case class GoWithRuleTranslator(t: Double)
   case class GoWithRuleTranslator2(slippage_list_rep: List[ConceptMappingRep])
-  //case class SlipnodeActivationChanged(id: String, activation: Double)
+  case class SlipnodeActivationChanged(id: String, activation: Double)
   case class GoWithImportantObjectCorrespondenceScout(t: Double)
   case object GoWithImportantObjectCorrespondenceScout2
   case class GoWithImportantObjectCorrespondenceScout3(slippage_list_rep: List[ConceptMappingRep], s: SlipNodeRep, t:Double, obj1: WorkspaceObjectRep)
@@ -230,10 +235,11 @@ object Workspace {
   case class DataForStrengthUpdateResponse(bondData: Map[String,Double], correpondenceData: Map[String, CorrespondenceUpdateStrengthData], t: Double)
   case class UpdateEverything(codelets_run: Int, t: Double)
   case object UpdateEverythingFollowUp
-  case class PostTopBottomCodeletsGetInfoResponse(codeletToPost: List[(String,Double)])
+  case class PostTopBottomCodeletsGetInfoResponse(codeletToPost: List[(String,Either[Double, Int])])
+  case class InitializeWorkspace(slipnet: ActorRef)
 }
 
-class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with ActorLogging with InjectedActorSupport {
+class Workspace(temperature: ActorRef) extends Actor with ActorLogging with InjectedActorSupport {
   import Workspace.{
     Initialize,
     Found,
@@ -263,7 +269,9 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     GoWithGroupScoutWholeString2,
     LookAHeadForNewBondCreation,
     GoWithCorrespondenceBuilderResponse,
-    GoWithCorrespondenceBuilder9
+    GoWithCorrespondenceBuilder9,
+    SlipnodeActivationChanged,
+    InitializeWorkspace
   }
 
   import Slipnet._
@@ -275,6 +283,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 
   var executionRunActor: ActorRef = null
   var coderack: ActorRef = null
+  var slipnet: ActorRef = null
 
   var found_answer = false;
   // var structures = ListBuffer.empty[WorkspaceStructure]
@@ -302,7 +311,9 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
   var total_happiness_values = ListBuffer.empty[Double]
   var temperature_values = ListBuffer.empty[Double]
   var clamp_temperature = false;  // external clamp
-  var codelets_run = 0;
+  var codelets_run = 0
+
+  var activationBySlipNodeID = Map.empty[String, Double]
 
   /*def objectRefs: Map[String, WorkspaceObject] = {
     val subset = structureRefs.filter { case (k,v) => v.isInstanceOf[WorkspaceObject] }
@@ -399,12 +410,9 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
   def receive = LoggingReceive {
 
 
-//    case SlipnodeActivationChanged(slipNodeID, activation) =>
-//      for (structure <- structures) {
-//        if (structure.isInstanceOf[Correspondence]) {
-//          (structure.asInstanceOf[Correspondence]).slipNodeActivationChanged(slipNodeID, activation)
-//        }
-//      }
+    case SlipnodeActivationChanged(slipNodeID, activation) =>
+      activationBySlipNodeID += (slipNodeID -> activation)
+
 
     case Initialize(cr, initialS, modifiedS, targetS) =>
       log.debug("Workspace: Initialize")
@@ -423,6 +431,9 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       updateWorkspaceStringWithDescriptionReps(target, targetDescriptions)
       coderack ! FinishInitializingWorkspaceStrings(objects.toList.size)
 
+    case InitializeWorkspace(sn) =>
+      slipnet = sn
+
     case models.Workspace.UpdateEverything(cr, t) =>
       codelets_run = cr
 
@@ -438,20 +449,20 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
         if (ws.isInstanceOf[Bond]) {
           val b = ws.asInstanceOf[Bond]
           val bond_category_degree_of_association = bondData(b.uuid)
-          b.update_strength_value(bond_category_degree_of_association, objects.toList)
+          b.update_strength_value(activationBySlipNodeID, bond_category_degree_of_association, objects.toList)
         } else if (ws.isInstanceOf[Correspondence]) {
           val c = ws.asInstanceOf[Correspondence]
           val cData = correspondenceData(c.uuid)
           log.debug("cData.internal_strength " + cData.internal_strength)
           c.update_strength_value(cData.internal_strength, workspaceCorrespondences(), cData.supporting_correspondences)
         } else {
-          ws.update_strength_value(objects.toList)
+          ws.update_strength_value(activationBySlipNodeID, objects.toList)
         }
       }
 
       // update the the object values of all objects in the workspace
       for (wo <- objects.toList) {
-        wo.update_object_value()
+        wo.update_object_value(activationBySlipNodeID)
       }
 
       // update the relative importances of initial and target strings
@@ -485,6 +496,8 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       } else {
         self ! UpdateEverythingFollowUp
       }
+
+
 
     case UpdateEverythingFollowUp =>
       val newT = update_temperature()
@@ -687,7 +700,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
         case Some(chosen_object) =>
           log.debug(s"chosen object: ${chosen_object} from ${initialOrTargetText(chosen_object)} string")
 
-          val dOpt = WorkspaceFormulas.choose_relevant_description_by_activation(chosen_object)
+          val dOpt = WorkspaceFormulas.choose_relevant_description_by_activation(activationBySlipNodeID, chosen_object)
           dOpt match {
             case Some(d) =>
               val chosen_descriptorOpt = d.descriptor
@@ -712,7 +725,8 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       val descriptor = chosen_propertyRep
       val d = new models.Description(ob, description_typeRep, Some(descriptor))
       slipnet ! SetSlipNodeBufferValue(descriptor.id, 100.0)
-      val urgency = description_typeRep.activation
+
+      val urgency = Workspace.activationWithSlipNodeRep(activationBySlipNodeID, description_typeRep)
       sender() ! PrepareDescriptionResponse(d.uuid, urgency)
 
 
@@ -738,7 +752,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
         log.debug("couldn't find any descriptions");
         sender() ! Finished
       } else {
-        val act = v.map(sn => sn.activation)
+        val act = v.map(sn => Workspace.activationWithSlipNodeRep(activationBySlipNodeID, sn))
         val chosen_property = v(Utilities.valueProportionalRandomIndexInValueList(act))
         sender() ! GoWithTopDownDescriptionScoutResponse2(chosen_property)
       }
@@ -885,7 +899,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
           val incompatibleBondList = (bondCandidate :: incompatibleBondListRaw.toList).flatten
 
           // if incompatible bonds exist - fight
-          g.update_strength_value(objects.toList)
+          g.update_strength_value(activationBySlipNodeID, objects.toList)
           val incbFightSucceeded = if (incompatibleBondList.size != 0) {
             print("fighting incompatible bonds");
             // try to break all incompatible groups
@@ -989,7 +1003,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       val b = objectRefs(bondID).asInstanceOf[Bond]
       logTrying(b, b.left_obj)
 
-      b.update_strength_value(objects.toList);
+      b.update_strength_value(activationBySlipNodeID, objects.toList);
       print("strength = " + b.total_strength);
       //val competitors = b.get_incompatible_bonds();
 
@@ -1099,7 +1113,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     case GoWithDescriptionStrengthTester(temperature, descriptionID) =>
       slipnet ! SetSlipNodeBufferValue(descriptionID, 100.0)
       val d = structureRefs(descriptionID).asInstanceOf[Description]
-      d.update_strength_value(objects.toList)
+      d.update_strength_value(activationBySlipNodeID, objects.toList)
 
       val strength = d.total_strength
       log.debug("GoWithDescriptionStrengthTester" + d.toString())
@@ -1124,7 +1138,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 
     case GoWithBondStrengthTester2(temperature, bondID, bond_category_degree_of_association) =>
       val b = wsRefs(bondID).asInstanceOf[Bond]
-      b.update_strength_value(bond_category_degree_of_association, objects.toList)
+      b.update_strength_value(activationBySlipNodeID, bond_category_degree_of_association, objects.toList)
       val strength = b.total_strength;
       val leftStringOpt = b.left_obj.wString
       val workingString = if (leftStringOpt.isDefined && leftStringOpt.get == initial) "initial" else "target"
@@ -1305,9 +1319,11 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
               bond_category,
               groupSlipnetInfo,
               t,
-              slipnet)
+              slipnet,
+              activationBySlipNodeID
+            )
 
-            val prob = g.single_letter_group_probability(groupSlipnetInfo.length.activation, t);
+            val prob = g.single_letter_group_probability(Workspace.activationWithSlipNodeRep(activationBySlipNodeID, groupSlipnetInfo.length), t)
             if (Random.rnd() < prob) {
               // propose single letter group
               print("single letter group proposed");
@@ -1445,7 +1461,9 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
         bond_category,
         groupSlipnetInfo,
         t,
-        slipnet)
+        slipnet,
+        activationBySlipNodeID
+      )
       sender ! WorkspaceProposeGroupResponse(ng.uuid)
 
     case GoWithTopDownGroupScoutDirection(slipNodeRep, direction: SlipNodeRep, fromobrep: WorkspaceObjectRep, t, gsi) =>
@@ -1564,7 +1582,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 
     case GoWithGroupStrengthTester(temperature: Double, groupID: String) =>
       val g = objectRefs(groupID).asInstanceOf[Group]
-      g.update_strength_value(objects.toList)
+      g.update_strength_value(activationBySlipNodeID, objects.toList)
       val strength = g.total_strength;
       val workingString = if (g.wString == initial) "initial" else "target"
       log.info(s"evaluating group = ${groupID} in ${workingString} string")
@@ -1670,7 +1688,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       val rule = structureRefs(ruleID).asInstanceOf[Rule]
       println("testing: "+rule.toString())
 
-      rule.update_strength_value(objects.toList)
+      rule.update_strength_value(activationBySlipNodeID, objects.toList)
       val strength = rule.total_strength
       val prob = WorkspaceFormulas.temperature_adjusted_probability(strength / 100.0, temperature)
       log.info(s"strength = $strength, adjusted prob.= $prob")
@@ -1691,7 +1709,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
         myrule.activate_rule_descriptions()
         sender() ! Finished
       } else {
-        myrule.update_strength_value(objects.toList)
+        myrule.update_strength_value(activationBySlipNodeID, objects.toList)
         val strength = myrule.total_strength
         if (strength == 0.0) {
           print("the rule is incompatible with correspondences: Fizzle");
@@ -1773,7 +1791,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       obj1Opt match {
         case Some(obj1) =>
           print("object chosen from initial string: "+obj1);
-          val v = obj1.relevant_distinguishing_descriptors()
+          val v = obj1.relevant_distinguishing_descriptors(activationBySlipNodeID)
           sender() ! GoWithImportantObjectCorrespondenceScoutResponse(obj1.workspaceObjectRep(), v)
 
         case None =>
@@ -1794,7 +1812,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       val obj1_descriptor = if (obj1_descriptorRaw.isEmpty) s.id else obj1_descriptorRaw.get
 
       val obj2_candidates = target.objects.toList.filter(wo => {
-        wo.relevant_descriptions().find(d => {
+        wo.relevant_descriptions(activationBySlipNodeID).find(d => {
           d.descriptor.isDefined && d.descriptor.get.id == obj1_descriptor
         }).isDefined
       })
@@ -2100,7 +2118,8 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
       futureGroupRep.bond_category,
       futureGroupRep.groupSlipnetInfo,
       t,
-      slipnet
+      slipnet,
+      activationBySlipNodeID
     )
   }
 
@@ -2121,8 +2140,8 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     // one bond slot open
     objects.toList.filter(wo => {
       val ok = ((wo.wString.isDefined && wo.wString.get == initial) || (wo.wString.isDefined && wo.wString.get == target));
-      val left = ((wo.left_bond==null)&&(!wo.leftmost));
-      val right = ((wo.right_bond==null)&&(!wo.rightmost));
+      val left = ((wo.left_bond.isEmpty)&&(!wo.leftmost));
+      val right = ((wo.right_bond.isEmpty)&&(!wo.rightmost));
       ((ok)&&(!wo.spans_string) && ((right)||(left)))
     })
   }
@@ -2209,7 +2228,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
   }
 
   def total_description_type_support(description: SlipNodeRep, workspaceString: WorkspaceString): Double = {
-    (description.activation+ local_description_type_support(description,workspaceString)) / 2.0
+    (Workspace.activationWithSlipNodeRep(activationBySlipNodeID,description) + local_description_type_support(description,workspaceString)) / 2.0
   }
   def local_description_type_support(description_type: SlipNodeRep, workspaceString: WorkspaceString): Double = {
     // returns the proportion of objects in the string that have
@@ -2422,8 +2441,8 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
                              w1: Double,
                              s2: WorkspaceStructure,
                              w2: Double): Boolean = {
-    s1.update_strength_value(objects.toList);
-    s2.update_strength_value(objects.toList);
+    s1.update_strength_value(activationBySlipNodeID,objects.toList);
+    s2.update_strength_value(activationBySlipNodeID,objects.toList);
     val vs1 = s1.total_strength*w1;
     val vs2 = s2.total_strength*w2;
     val v1 = Formulas.temperatureAdjustedValue(vs1, chaleur)
@@ -2448,16 +2467,23 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
     calculate_intra_string_unhappiness()
     calculate_inter_string_unhappiness()
     calculate_total_unhappiness()
+    System.out.println("intra_string_unhappiness " + intra_string_unhappiness + " inter_string_unhappiness " + inter_string_unhappiness + " total_unhappiness " + total_unhappiness);
 
     val rule_weakness = if (rule.isDefined){
-      rule.get.update_strength_value(objects.toList);
+      rule.get.update_strength_value(activationBySlipNodeID, objects.toList);
       100.0-rule.get.total_strength
     } else 100.0
+    System.out.println("rule_weakness " +rule_weakness);
 
     actual_temperature = if (clamp_temperature) 100.0 else Formulas.weighted_average(total_unhappiness,0.8, rule_weakness,0.2)
     // Not useful Temperature.Update(actual_temperature);
+    System.out.println("formulas.actual_temperature " + actual_temperature);
+
+    System.out.println("clamp_temperature " + clamp_temperature);
 
     chaleur = if (!clamp_temperature) actual_temperature else chaleur;
+    System.out.println("formulas.actual_temperature " + actual_temperature);
+
     // GUI Temperature.Update(chaleur);
     total_happiness_values += 100.0 - total_unhappiness
     temperature_values += actual_temperature
@@ -2466,6 +2492,7 @@ class Workspace(slipnet: ActorRef, temperature: ActorRef) extends Actor with Act
 
   def calculate_string_unhappiness(extractor:  WorkspaceObject => Double): Double = {
     val isu = (objects.toList.map(wo => wo.relative_importance * extractor(wo)).sum) / 2
+    log.debug("workspace calculate_string_unhappiness isu " + isu)
     if (isu>100.0) 100.0 else isu
   }
   def calculate_intra_string_unhappiness() = {

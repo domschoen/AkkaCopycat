@@ -6,6 +6,7 @@ import akka.event.LoggingReceive
 import akka.actor.ActorRef
 import akka.actor.Props
 import models.Slipnet.isNumber
+import models.Workspace.InitializeWorkspace
 
 
 
@@ -42,10 +43,11 @@ class ExecutionRun extends Actor with ActorLogging  { //with InjectedActorSuppor
 
       log.debug(s"ExecutionRun: Run with initial $initialString, modified: $modifiedString and target: $targetString")
       Random.setseed(0)
-      slipnet = context.actorOf(Slipnet.props(),"Slipnet")
+      workspace = context.actorOf(Workspace.props(temperature),"Workspace")
 
+      slipnet = context.actorOf(Slipnet.props(workspace),"Slipnet")
+      workspace ! InitializeWorkspace(slipnet)
       temperature = context.actorOf(Temperature.props(),"Temperature")
-      workspace = context.actorOf(Workspace.props(slipnet, temperature),"Workspace")
       coderack = context.actorOf(Coderack.props(workspace, slipnet, temperature, self),"Coderack")
       slipnet ! InitializeSlipnet(coderack, workspace)
     }
