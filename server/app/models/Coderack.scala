@@ -65,7 +65,7 @@ object Coderack {
   case class PostGroupBuilder(groupID: String, strength: Double)
   case class PostCorrespondenceBuilder(correspondenceID: String, strength: Double)
   case class PostRuleBuilder(ruleID: String, strength: Double)
-  case class PostCodelets(codeletToPost: List[(String,Either[Double, Int])])
+  case class PostCodelets(codeletToPost: List[(String,Either[Double, Int], Option[String])])
 }
 
 
@@ -138,7 +138,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
   def receive = LoggingReceive {
     // to the browser
     case Run(initialS, modifiedS, targetS) =>
-      log.debug(s"Run with initial $initialString, modified: $modifiedString and target: $targetString")
+      log.debug(s"${getClass.getName}. Run with initial $initialString, modified: $modifiedString and target: $targetString")
       // TODO init
       initialString = initialS
       modifiedString = modifiedS
@@ -259,8 +259,9 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
           val scale: Double = (100.0 - runTemperature + 10.0) / 15.0
           log.debug("Choose codelet codelets size " + codelets.size + " scale " + scale)
 
+          val urgues = codelets.map(c => codeletsUrgency(c))
           val urgencies = codelets.map(c => Math.pow(codeletsUrgency(c),scale))
-          log.debug(s"urgencies: $urgencies")
+          log.debug(s"urgencies: $urgues")
           // then we choose a random number in the urgency sum and we choose the codelet at this random number looking
           // from first codelet up to this random number in terms of urgency
           val index = Utilities.valueProportionalRandomIndexInValueList(urgencies.toList)
@@ -313,7 +314,8 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
 
         case ProposeRule(ruleID, urgencyRaw) =>
           val urgency = get_urgency_bin(urgencyRaw)
-          val newCodelet = createCodelet(CodeletType.GroupStrengthTester, urgency, Some(ruleID))
+          log.debug("Coderack. ProposeRule " + ruleID)
+          val newCodelet = createCodelet(CodeletType.RuleStrengthTester, urgency, Some(ruleID))
           self ! Post(newCodelet, urgency)
           sender() ! Finished
 
@@ -359,7 +361,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
           sender() ! Finished
 
         case PostCodelets(codeletToPost) =>
-          for ((st, rawUrgency) <- codeletToPost) {
+          for ((st, rawUrgency, argOpt) <- codeletToPost) {
             val codeletType = Codelet.codeletTypeWithString(st)
             val urgency = rawUrgency match {
               case Right(x) => x
@@ -367,7 +369,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
             }
             System.out.println("PostCodelets " + codeletType + " rawUrgency" + rawUrgency + " urgency_bin " + urgency);
 
-            val newCodelet = createCodelet(codeletType, urgency, None)
+            val newCodelet = createCodelet(codeletType, urgency, argOpt)
             self ! Post(newCodelet,urgency)
           }
           workspace ! UpdateEverythingFollowUp

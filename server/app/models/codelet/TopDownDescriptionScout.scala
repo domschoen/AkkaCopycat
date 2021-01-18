@@ -41,7 +41,7 @@ class TopDownDescriptionScout(urgency: Int,
   def receive = LoggingReceive {
     // to the browser
     case Run(initialString, modifiedString, targetString,t) =>
-      log.debug(s"Run with initial $initialString, modified: $modifiedString and target: $targetString")
+      log.debug(s"${getClass.getName}. Run with initial $initialString, modified: $modifiedString and target: $targetString")
       runTemperature = t
       coderack = sender()
       temperature ! Register(self)

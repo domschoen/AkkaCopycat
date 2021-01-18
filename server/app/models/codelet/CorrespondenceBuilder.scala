@@ -16,14 +16,23 @@ object CorrespondenceBuilder {
   case object GoWithCorrespondenceBuilder9Response
 
   case class GoWithCorrespondenceBuilder2Response(conceptMappingReps: List[ConceptMappingRep])
-  case class GoWithCorrespondenceBuilder3Response(corrrespondence: CorrespondenceRep, correspondenceReps: List[CorrespondenceRep])
+  case class GoWithCorrespondenceBuilder3Response(corrrespondence: CorrespondenceRep, correspondenceReps: List[CorrespondenceRep], wcorrespondenceReps: List[CorrespondenceRep])
   case class GoWithCorrespondenceBuilder7Response(groupObjs: Option[ConceptMappingParameters])
   case class GoWithCorrespondenceBuilder8Response(cms: List[ConceptMappingRep])
   case class SlipnetGoWithCorrespondenceBuilderResponse(updatedCorrespondenceCMReps: List[ConceptMappingRep])
-  case class SlipnetGoWithCorrespondenceBuilderResponse2(correspondenceReps: List[CorrespondenceRep])
-  case class SlipnetGoWithCorrespondenceBuilderResponse3(b: Option[BondRep])
-  case class GoWithCorrespondenceBuilder4Response1(corrrespondence: CorrespondenceRep, incompatible_bond_base: Option[(BondRep,BondRep)])
-  case class GoWithCorrespondenceBuilder4Response2(g: Option[GroupRep])
+  case class SlipnetGoWithCorrespondenceBuilderResponse2(
+                                                          correspondenceReps: List[CorrespondenceRep],
+                                                          internal_strength: Double,
+                                                          supporting_correspondences:Map[String, Boolean]
+                                                        )
+  case class SlipnetGoWithCorrespondenceBuilderResponse3(b: Option[BondRep],
+                                                         internal_strength: Double,
+                                                         supporting_correspondences:Map[String, Boolean],
+                                                         bond_category_degree_of_associationOpt: Option[Double]
+                                                        )
+  case class GoWithCorrespondenceBuilder4Response1(corrrespondence: CorrespondenceRep, incompatible_bond_base: Option[(BondRep,BondRep)], wCReps: List[CorrespondenceRep])
+  case class GoWithCorrespondenceBuilder4Response2(g: Option[GroupRep],internal_strength: Double,
+                                                   supporting_correspondences:Map[String, Boolean])
   case class GoWithCorrespondenceBuilder6Response(c: CorrespondenceRep)
   case class SlipnetGoWithCorrespondenceBuilder4Response(accessory_concept_mapping_list: List[ConceptMappingRep])
   case class SlipnetGoWithCorrespondenceBuilder5Response(accessory_concept_mapping_list: List[ConceptMappingRep])
@@ -120,30 +129,34 @@ class CorrespondenceBuilder(urgency: Int,
     case SlipnetGoWithCorrespondenceBuilderResponse(updatedCorrespondenceCMReps) =>
       workspace ! GoWithCorrespondenceBuilder3(corresponsdenceID, updatedCorrespondenceCMReps)
 
-    case GoWithCorrespondenceBuilder3Response(correspondence, correspondenceReps) =>
+    case GoWithCorrespondenceBuilder3Response(correspondence, correspondenceReps, wCReps) =>
       log.debug("CorrespondenceBuilder. GoWithCorrespondenceBuilder3Response")
-      slipnet ! SlipnetGoWithCorrespondenceBuilder2(correspondence, correspondenceReps)
+      slipnet ! SlipnetGoWithCorrespondenceBuilder2(correspondence, correspondenceReps, wCReps)
 
-    case SlipnetGoWithCorrespondenceBuilderResponse2(correspondenceReps) =>
+    case SlipnetGoWithCorrespondenceBuilderResponse2(correspondenceReps, internal_strength, supporting_correspondences) =>
       log.debug("CorrespondenceBuilder. SlipnetGoWithCorrespondenceBuilderResponse2")
       incc = correspondenceReps
-      workspace ! GoWithCorrespondenceBuilder4(corresponsdenceID, incc)
+      workspace ! GoWithCorrespondenceBuilder4(corresponsdenceID, incc, internal_strength, supporting_correspondences)
 
-    case GoWithCorrespondenceBuilder4Response1(correspondence, incompatible_bond_base) =>
+    case GoWithCorrespondenceBuilder4Response1(correspondence, incompatible_bond_base, wCReps) =>
       log.debug("CorrespondenceBuilder. GoWithCorrespondenceBuilder4Response1")
-      slipnet ! SlipnetGoWithCorrespondenceBuilder3(correspondence, incompatible_bond_base)
+      slipnet ! SlipnetGoWithCorrespondenceBuilder3(correspondence, incompatible_bond_base, wCReps)
 
 
-    case  SlipnetGoWithCorrespondenceBuilderResponse3(bOpt) =>
+    case  SlipnetGoWithCorrespondenceBuilderResponse3(bOpt, internal_strength, supporting_correspondences, bond_category_degree_of_associationOpt) =>
       log.debug("CorrespondenceBuilder. SlipnetGoWithCorrespondenceBuilderResponse3")
       incompatible_bond = bOpt
-      workspace ! GoWithCorrespondenceBuilder5(corresponsdenceID, bOpt)
+      workspace ! GoWithCorrespondenceBuilder5(corresponsdenceID, bOpt,
+        internal_strength,
+        supporting_correspondences,
+        bond_category_degree_of_associationOpt
+      )
 
       //2 branches joining here
-    case GoWithCorrespondenceBuilder4Response2(g) =>
+    case GoWithCorrespondenceBuilder4Response2(g, internal_strength, supporting_correspondences) =>
       log.debug("CorrespondenceBuilder. GoWithCorrespondenceBuilder4Response2")
       incompatible_group = g
-      workspace ! GoWithCorrespondenceBuilder6(corresponsdenceID, incc, incompatible_bond, incompatible_group)
+      workspace ! GoWithCorrespondenceBuilder6(corresponsdenceID, incc, incompatible_bond, incompatible_group, internal_strength, supporting_correspondences)
 
     case GoWithCorrespondenceBuilder6Response(crep) =>
       log.debug("CorrespondenceBuilder. GoWithCorrespondenceBuilder6Response")

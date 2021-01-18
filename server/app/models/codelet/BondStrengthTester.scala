@@ -7,9 +7,7 @@ import models.Bond.BondRep
 
 
 object BondStrengthTester {
-  case class GoWithBondStrengthTesterResponse(bond: BondRep)
   case class GoWithBondStrengthTesterResponse2(strength: Double)
-  case class SlipnetGoWithBondStrengthTesterResponse(bond_category_degree_of_association: Double)
 }
 
 class BondStrengthTester(urgency: Int,
@@ -23,13 +21,16 @@ class BondStrengthTester(urgency: Int,
   import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
   import models.Workspace.{
     GoWithBondStrengthTester,
-    GoWithBondStrengthTester2
+    GoWithBondStrengthTester2,
+    GoWithBondStrengthTesterResponse
   }
-  import models.Slipnet.SlipnetGoWithBondStrengthTester
+  import models.Slipnet.{
+    SlipnetGoWithBondStrengthTesterResponse,
+    SlipnetGoWithBondStrengthTester
+  }
   import BondStrengthTester.{
-    GoWithBondStrengthTesterResponse,
-    GoWithBondStrengthTesterResponse2,
-    SlipnetGoWithBondStrengthTesterResponse
+    GoWithBondStrengthTesterResponse2
+
   }
 
   var runTemperature = 0.0

@@ -28,14 +28,14 @@ object ConceptMapping {
   )
   case class ConceptMappingRep(
                                 uuid: String,
-                                description_type1SlipNodeID: String,
-                               description_type2SlipNodeID: String,
-                               descriptor1SlipNodeID: String,
-                               descriptor2SlipNodeID: String,
-//                               description_type1: SlipNodeRep,
-//                               description_type2: SlipNodeRep,
-//                               descriptor1: SlipNodeRep,
-//                               descriptor2: SlipNodeRep,
+//                                description_type1SlipNodeID: String,
+//                               description_type2SlipNodeID: String,
+//                               descriptor1SlipNodeID: String,
+//                               descriptor2SlipNodeID: String,
+                               description_type1: SlipNodeRep,
+                               description_type2: SlipNodeRep,
+                               descriptor1: SlipNodeRep,
+                               descriptor2: SlipNodeRep,
                                obj1: WorkspaceObjectRep,
                                obj2: WorkspaceObjectRep
                          ) {
@@ -63,7 +63,7 @@ object ConceptMapping {
 //    def relevant(): Boolean ={
 //      description_type1.activation == 100.0 && description_type2.activation == 100.0
 //    }
-     override def toString(): String = descriptor1SlipNodeID + " -> " + descriptor2SlipNodeID
+     override def toString(): String = descriptor1.id + " -> " + descriptor2.id
 
   }
   var conceptMappingRefs = Map.empty[String, ConceptMapping]
@@ -147,10 +147,10 @@ class ConceptMapping(val description_type1: SlipNode,
 
   def conceptMappingRep(): ConceptMappingRep = ConceptMappingRep(
       uuid,
-      description_type1.id(),
-      description_type2.id(),
-      descriptor1.id(),
-      descriptor2.id(),
+      description_type1.slipNodeRep(),
+      description_type2.slipNodeRep(),
+      descriptor1.slipNodeRep(),
+      descriptor2.slipNodeRep(),
       obj1,
       obj2
     )

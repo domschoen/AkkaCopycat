@@ -57,7 +57,7 @@ class Temperature extends Actor with ActorLogging with InjectedActorSupport {
   def receive = LoggingReceive {
     // to the browser
     case Run(initialString, modifiedString, targetString) => {
-      log.debug(s"Run with initial $initialString, modified: $modifiedString and target: $targetString")
+      log.debug(s"${getClass.getName}. Run with initial $initialString, modified: $modifiedString and target: $targetString")
     }
 
     case Register =>

@@ -11,10 +11,10 @@ import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
 
 object RuleScout {
-  case class RuleScoutProposeRule(descriptorFacet: Option[String],
-                                  descriptor: Option[String],
-                                  objectCategory: Option[String],
-                                  relation: Option[String])
+  case class RuleScoutProposeRule(descriptorFacet: Option[SlipNodeRep],
+                                  descriptor: Option[SlipNodeRep],
+                                  objectCategory: Option[SlipNodeRep],
+                                  relation: Option[SlipNodeRep])
   case class GoWithRuleScoutResponse(changed: WorkspaceObjectRep)
   case class GoWithRuleScout2Response(
                                        obj2: WorkspaceObjectRep,
@@ -24,7 +24,9 @@ object RuleScout {
                                        letterCategory: SlipNodeRep
                                      )
   case class SlipnetGoWithRuleScoutResponse(string_position_category: SlipNodeRep, letter_category: SlipNodeRep)
-  case class GoWithRuleScout3Response(object_list: List[String])
+  case class GoWithRuleScout3Response(object_list: List[SlipNodeRep],
+                                      letterCategory: SlipNodeRep
+                                     )
 
 }
 class RuleScout(urgency: Int,
@@ -56,10 +58,10 @@ class RuleScout(urgency: Int,
   }
 
   var runTemperature: Double = 0.0
-  var descriptorFacet: Option[String] = None
-  var descriptor: Option[String] = None
-  var objectCategory: Option[String] = None
-  var relation: Option[String] = None
+  var descriptorFacet: Option[SlipNodeRep] = None
+  var descriptor: Option[SlipNodeRep] = None
+  var objectCategory: Option[SlipNodeRep] = None
+  var relation: Option[SlipNodeRep] = None
   var u: Double = 0.0
   var changed : WorkspaceObjectRep = null
   var obj2: WorkspaceObjectRep = null
@@ -70,7 +72,7 @@ class RuleScout(urgency: Int,
   def receive = LoggingReceive {
     // to the browser
     case Run(initialString, modifiedString, targetString,t) =>
-      log.debug(s"Run with initial $initialString, modified: $modifiedString and target: $targetString")
+      log.debug(s"RuleScout. Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
       temperature ! Register(self)
       runTemperature = t
@@ -94,6 +96,7 @@ class RuleScout(urgency: Int,
       coderack ! ProposeRule(ruleID,u)
 
     case GoWithRuleScoutResponse(c) =>
+      log.debug("GoWithRuleScoutResponse")
       changed = c
       slipnet ! SlipnetGoWithRuleScout
 
@@ -109,9 +112,11 @@ class RuleScout(urgency: Int,
       slipnet ! SlipnetCompleteSlippageList(slippagesShell)
 
     case SlipnetCompleteSlippageListResponse(slippage_list_rep) =>
-      workspace ! GoWithRuleScout3(slippage_list_rep, object_list, obj2)
+      workspace ! GoWithRuleScout3(slippage_list_rep, object_list, obj2, letter_category)
 
-    case GoWithRuleScout3Response(object_list) =>
+    case GoWithRuleScout3Response(object_list, lc ) =>
+      letter_category = lc
+
       if (object_list.isEmpty){
         print("no distinguishing descriptions could be found. fizzle");
         self ! Finished

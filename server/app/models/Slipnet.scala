@@ -19,7 +19,7 @@ import scala.concurrent.duration._
 import play.api.Play.current
 
 import javax.inject._
-import models.Workspace.{DataForStrengthUpdateResponse, GoWithBottomUpCorrespondenceScout2, InitializeWorkspaceStringsResponse, PostTopBottomCodeletsGetInfoResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell}
+import models.Workspace.{DataForStrengthUpdateResponse, GoWithBottomUpCorrespondenceScout2, InitializeWorkspaceStringsResponse, PostTopBottomCodeletsGetInfoResponse, PrepareBondFightingResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell}
 import play.api.Configuration
 import play.api.libs.concurrent.InjectedActorSupport
 import Description.DescriptionRep
@@ -33,7 +33,6 @@ import models.Letter.LetterSlipnetComplement
 import models.SlipNode.{GroupSlipnetInfo, SlipNodeRep, SlipnetInfo}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
-import models.codelet.BondStrengthTester.SlipnetGoWithBondStrengthTesterResponse
 import models.codelet.BottomUpDescriptionScout.SlipnetGoWithBottomUpDescriptionScoutResponse
 import models.codelet.{CodeletType, CodeletTypeString}
 import models.codelet.CorrespondenceBuilder.{SlipnetGoWithCorrespondenceBuilder4Response, SlipnetGoWithCorrespondenceBuilder5Response, SlipnetGoWithCorrespondenceBuilderResponse, SlipnetGoWithCorrespondenceBuilderResponse2, SlipnetGoWithCorrespondenceBuilderResponse3}
@@ -143,7 +142,7 @@ object Slipnet {
   case class SlipnetLookAHeadForNewBondCreation(s: ActorRef, group: GroupRep, index: Int, incg: List[String], newBondList: List[BondRep],                                                          from_obj_id: String,
                                                 to_obj_id: String
                                                )
-  case class SlipnetProposeRule(description: Option[String], relation: Option[String])
+  case class SlipnetProposeRule(description: Option[SlipNodeRep], relation: Option[SlipNodeRep])
   case class SlipnetProposeRuleResponse(
                                          urgency: Double,
                                          lengthSlipNode: SlipNodeRep,
@@ -155,7 +154,7 @@ object Slipnet {
   case class SlipnetCompleteSlippageListResponse(slippage_list_rep: List[ConceptMappingRep])
 
   case class SlipnetGoWithRuleScout3(
-                                      object_list: List[String],
+                                      object_list: List[SlipNodeRep],
                                       changedReplacementRelation: Option[String],
                                       letterCategory: SlipNodeRep,
                                       temperature: Double)
@@ -165,8 +164,12 @@ object Slipnet {
   case class GroupFlippedVersion(obj: GroupRep)
   case class GroupFlippedVersionResponse(fgr: Option[FutureGroupRep])
   case class SlipnetGoWithCorrespondenceBuilder(conceptMappingReps: List[ConceptMappingRep])
-  case class SlipnetGoWithCorrespondenceBuilder2(correspondence: CorrespondenceRep, correspondenceReps: List[CorrespondenceRep])
-  case class SlipnetGoWithCorrespondenceBuilder3(correspondence: CorrespondenceRep, incompatible_bond_base: Option[(BondRep,BondRep)])
+  case class SlipnetGoWithCorrespondenceBuilder2(
+                                                  correspondence: CorrespondenceRep,
+                                                  correspondenceReps: List[CorrespondenceRep],
+                                                  wCReps: List[CorrespondenceRep]
+                                                )
+  case class SlipnetGoWithCorrespondenceBuilder3(correspondence: CorrespondenceRep, incompatible_bond_base: Option[(BondRep,BondRep)], workspaceCorrespondences: List[CorrespondenceRep])
   case class SlipnetGoWithCorrespondenceBuilder4(c: CorrespondenceRep)
   case class CheckOnBothObjectsSpanningForStringDescriptionFlip(
                                                                  conceptMappingReps: List[ConceptMappingRep],
@@ -201,6 +204,9 @@ object Slipnet {
                                            unreplaced_objects_size: Double,
                                            uncorresponding_objects_size: Double
   )
+  case class SlipnetGoWithBondStrengthTesterResponse(bond_category_degree_of_association: Double)
+  case class PrepareBondFighting(groupID: String, bondReps: List[BondRep])
+
 
   object RelationType {
     val Sameness = "Sameness"
@@ -1135,8 +1141,8 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
 
     case SlipnetProposeRule(d, r) =>
-      val description = if (d.isDefined) Some(slipNodeRefs(d.get)) else None
-      val relation = if (r.isDefined) Some(slipNodeRefs(r.get)) else None
+      val description = if (d.isDefined) Some(slipNodeRefs(d.get.id)) else None
+      val relation = if (r.isDefined) Some(slipNodeRefs(r.get.id)) else None
       val urgency = if (description.isDefined && relation.isDefined) {
         (Math.sqrt((description.get.conceptual_depth + relation.get.conceptual_depth)/200.0))*100.0
       } else 100.0 // My guess !
@@ -1148,6 +1154,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       )
 
     case SlipnetGoWithRuleScout =>
+      log.debug("SlipnetGoWithRuleScout")
       sender() ! SlipnetGoWithRuleScoutResponse(string_position_category.slipNodeRep(), letter_category.slipNodeRep())
 
     case SlipnetCompleteSlippageList(slippagesShell: SlippageListShell) =>
@@ -1165,16 +1172,16 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       sender() ! SlipnetCompleteSlippageListResponse(slippage_list_rep)
 
     case SlipnetGoWithRuleScout3(ol, changedReplacementRelation, letterCategory, t) =>
-      println("choosing a description based on conceptual depth:")
+      println("SlipnetGoWithRuleScout3 choosing a description based on conceptual depth:" + letterCategory)
       val descriptor = {
-        val object_list = ol.map(slipNodeRefs(_))
+        val object_list = ol.map(sr => slipNodeRefs(sr.id))
         chooseSlipNodeWithTemperature(object_list,t)
       }
       println("Chosen descriptor: "+descriptor.id)
 
       // choose the relation(change the letmost object to..xxxx) i.e. "successor" or "d"
 
-      println("choosing relation based on conceptual depth:")
+      println("choosing relation based on conceptual depth:" + letterCategory)
       val relation = {
         val letterCategorySlipNode = slipNodeRefs(letterCategory.id)
         val object_list = if (changedReplacementRelation.isDefined) {
@@ -1190,10 +1197,10 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       println("change letter-cat of "+descriptor.id+" letter to "+ relation.id);
 
       sender() ! RuleScoutProposeRule(
-        Some(letter_category.id),
-        Some(descriptor.id),
-        Some(letter.id),
-        Some(relation.id)
+        Some(letter_category.slipNodeRep()),
+        Some(descriptor.slipNodeRep()),
+        Some(letter.slipNodeRep()),
+        Some(relation.slipNodeRep())
       )
 
       // Codelet.java.1327
@@ -1272,15 +1279,24 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       val updatedCorrespondenceCMReps = updatedCorrespondenceCMs.map(_.conceptMappingRep())
       sender() ! SlipnetGoWithCorrespondenceBuilderResponse(updatedCorrespondenceCMReps)
 
-    case SlipnetGoWithCorrespondenceBuilder2(correspondence, correspondenceReps) =>
+    case SlipnetGoWithCorrespondenceBuilder2(correspondence, correspondenceReps, workspaceCorrespondences) =>
       log.debug("Slipnet. SlipnetGoWithCorrespondenceBuilder2")
       val incc = get_incompatible_correspondences(correspondence, correspondenceReps)
-      sender() ! SlipnetGoWithCorrespondenceBuilderResponse2(incc)
+      val (internal_strength: Double, comap: Map[String, Boolean]) = correpondenceData(correspondence, workspaceCorrespondences)
 
-    case SlipnetGoWithCorrespondenceBuilder3(correspondence, incompatible_bond_base) =>
+      sender() ! SlipnetGoWithCorrespondenceBuilderResponse2(incc, internal_strength, comap)
+
+    case SlipnetGoWithCorrespondenceBuilder3(correspondence, incompatible_bond_base, workspaceCorrespondences) =>
       log.debug("Slipnet. SlipnetGoWithCorrespondenceBuilder3")
       val b = get_incompatible_bond(correspondence, incompatible_bond_base)
-      sender() ! SlipnetGoWithCorrespondenceBuilderResponse3(b)
+
+      val (internal_strength: Double, comap: Map[String, Boolean]) = correpondenceData(correspondence, workspaceCorrespondences)
+      val bond_degree_of_association = b.map(br => {
+        val bondCategorySlipNode = slipNodeRefs(br.bondCategorySlipNodeID)
+        bondCategorySlipNode.bond_degree_of_association()
+      })
+
+      sender() ! SlipnetGoWithCorrespondenceBuilderResponse3(b, internal_strength, comap, bond_degree_of_association)
 
     case SlipnetGoWithCorrespondenceBuilder4(c) =>
       log.debug("Slipnet. SlipnetGoWithCorrespondenceBuilder4")
@@ -1319,11 +1335,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       sender() ! SlipnetGoWithBondStrengthTesterResponse(bondCategorySlipNode.bond_degree_of_association())
 
     case SlipnetGoWithCorrespondenceStrengthTester(c: CorrespondenceRep, workspaceCorrespondences) =>
-      val relevant_dcms = relevant_distinguishing_cms(c)
-      val internal_strength = correspondence_internal_strength(relevant_dcms)
-
-      val cocouples  = for (co <- workspaceCorrespondences) yield (co.uuid,  supporting_correspondences(c, co))
-      val comap = cocouples.toMap
+      val (internal_strength: Double, comap: Map[String, Boolean]) = correpondenceData(c, workspaceCorrespondences)
 
 
       val cms = ConceptMapping.conceptMappingsWithReps(c.concept_mapping_list)
@@ -1371,7 +1383,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
         unreplaced_objects_size: Double,
         uncorresponding_objects_size: Double
     ) =>
-      var codeletToPost = List.empty[(String,Either[Double, Int])]
+      var codeletToPost = ListBuffer.empty[(String,Either[Double, Int], Option[String])]
       for (s <- slipNodes) {
         if (s.activation == 100.0) {
           for (st <- s.codelets) {
@@ -1384,7 +1396,8 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
                 val rawUrgency = s.activation * s.conceptual_depth / 100.0
                 System.out.println("PostTopBottomCodelets rawUrgency" + rawUrgency);
 
-                codeletToPost = (st, Left(rawUrgency)) :: codeletToPost
+                val tuple = (st, Left(rawUrgency), Some(s.slipNodeRep().id))
+                codeletToPost += tuple
               }
             }
           }
@@ -1392,19 +1405,36 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       }
       System.out.println("post_bottom_up_codelets");
 
-      codeletToPost = get_bottom_up_codelets(CodeletTypeString.BottomUpDescriptionScout,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size) ::: codeletToPost
-      codeletToPost = get_bottom_up_codelets(CodeletTypeString.BottomUpBondScout,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size) ::: codeletToPost
-      codeletToPost = get_bottom_up_codelets(CodeletTypeString.GroupScoutWholeString,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size) ::: codeletToPost
-      codeletToPost = get_bottom_up_codelets(CodeletTypeString.BottomUpCorrespondenceScout,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size) ::: codeletToPost
-      codeletToPost = get_bottom_up_codelets(CodeletTypeString.ImportantObjectCorrespondenceScout,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size) ::: codeletToPost
-      codeletToPost = get_bottom_up_codelets(CodeletTypeString.ReplacementFinder,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size) ::: codeletToPost
-      codeletToPost = get_bottom_up_codelets(CodeletTypeString.RuleScout,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size) ::: codeletToPost
-      codeletToPost = get_bottom_up_codelets(CodeletTypeString.RuleTranslator,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size) ::: codeletToPost
-      if (!remove_breaker_codelets) codeletToPost = get_bottom_up_codelets(CodeletTypeString.Breaker,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size) ::: codeletToPost
+      codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.BottomUpDescriptionScout,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.BottomUpBondScout,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.GroupScoutWholeString,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.BottomUpCorrespondenceScout,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.ImportantObjectCorrespondenceScout,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.ReplacementFinder,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.RuleScout,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.RuleTranslator,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      if (!remove_breaker_codelets) codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.Breaker,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      System.out.println("post_bottom_up_codelets codeletToPost " + codeletToPost);
 
-      workspace ! PostTopBottomCodeletsGetInfoResponse(codeletToPost)
+      workspace ! PostTopBottomCodeletsGetInfoResponse(codeletToPost.toList)
+
+    case PrepareBondFighting(groupID, bondReps) =>
+      val defOfAssos = bondReps.map(bondRep => {
+        val bondCategorySlipNode = slipNodeRefs(bondRep.bondCategorySlipNodeID)
+        (bondRep.uuid, bondCategorySlipNode.bond_degree_of_association())
+      }).toMap
+      sender() ! PrepareBondFightingResponse(groupID, bondReps, defOfAssos)
 
 
+  }
+
+  private def correpondenceData(c: CorrespondenceRep, workspaceCorrespondences: List[CorrespondenceRep]) = {
+    val relevant_dcms = relevant_distinguishing_cms(c)
+    val internal_strength = correspondence_internal_strength(relevant_dcms)
+
+    val cocouples = for (co <- workspaceCorrespondences) yield (co.uuid, supporting_correspondences(c, co))
+    val comap = cocouples.toMap
+    (internal_strength, comap)
   }
 
   def get_bottom_up_codelets(st: String,
@@ -1417,14 +1447,14 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
                              ungrouped_objects_size: Double,
                              unreplaced_objects_size: Double,
                              uncorresponding_objects_size: Double
-                            ): List[(String,Either[Double, Int])] = {
+                            ): ListBuffer[(String,Either[Double, Int], Option[String])] = {
     val prob = get_post_codelet_probability(st, t, intra_string_unhappiness, inter_string_unhappiness, unreplaced_objects_size, ruleTotalWeaknessOpt);
     var num = get_num_codelets_to_post(st, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
 
     if ((speed_up_bonds)&&(st.indexOf("bond") > -1)) num*=3;
     if ((speed_up_bonds)&&(st.indexOf("group") > -1)) num*=3;
 
-    var codeletToPost = List.empty[(String,Either[Double, Int])]
+    var codeletToPost = ListBuffer.empty[(String,Either[Double, Int], Option[String])]
 
     for (t <- 1 to num){
       var urgency = 3;
@@ -1434,10 +1464,13 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
       if (Random.rnd()<prob){
         System.out.println("post_bottom_up_codelets rawUrgency" + urgency.toDouble);
+        val tuple = (st, Right(urgency), None)
 
-        codeletToPost = (st, Right(urgency)) :: codeletToPost
+        codeletToPost += tuple
       }
     }
+    System.out.println("post_bottom_up_codelets codeletToPost " + codeletToPost);
+
     codeletToPost
   }
 

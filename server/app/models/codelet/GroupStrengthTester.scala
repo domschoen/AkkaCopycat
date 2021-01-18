@@ -4,7 +4,6 @@ import akka.event.LoggingReceive
 import akka.actor.ActorRef
 import models.Coderack.{PostBondBuilder, PostGroupBuilder}
 import models.Group.GroupRep
-import models.codelet.BondStrengthTester.GoWithBondStrengthTesterResponse
 
 object GroupStrengthTester  {
   case class GoWithGroupStrengthTesterResponse(g: GroupRep, strength: Double)
@@ -36,7 +35,7 @@ class GroupStrengthTester(urgency: Int,
   def receive = LoggingReceive {
     // to the browser
     case Run(initialString, modifiedString, targetString,t) =>
-      log.debug(s"Run with initial $initialString, modified: $modifiedString and target: $targetString")
+      log.debug(s"${getClass.getName}. Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
       temperature ! Register(self)
       runTemperature = t

@@ -4,13 +4,14 @@ import akka.actor.ActorRef
 import models.ConceptMapping.ConceptMappingRep
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.SetSlipNodeBufferValue
+import models.Workspace.SlippageListShell
 
 object Rule {
 
-    def apply_slippages(sn: Option[String], slippages: List[ConceptMappingRep]): Option[String] = {
-      val found = slippages.find(cm => sn.isDefined && sn.get == cm.descriptor1SlipNodeID)
+    def apply_slippages(sn: Option[SlipNodeRep], slippages: List[ConceptMappingRep]): Option[SlipNodeRep] = {
+      val found = slippages.find(cm => sn.isDefined && sn.get.id.equals(cm.descriptor1.id))
       found match {
-        case Some(cm) => Some(cm.descriptor2SlipNodeID)
+        case Some(cm) => Some(cm.descriptor2)
         case None => sn
       }
     }
@@ -22,10 +23,10 @@ object Rule {
                         objectCategorySlipNodeID: String,
                         relationSlipNodeID: String)*/
 case class Rule (
-                  var descriptorFacet: Option[String],
-                  var descriptor: Option[String],
-                  var objectCategory: Option[String],
-                  var relation: Option[String],
+                  var descriptorFacet: Option[SlipNodeRep],
+                  var descriptor: Option[SlipNodeRep],
+                  var objectCategory: Option[SlipNodeRep],
+                  var relation: Option[SlipNodeRep],
                   slipnet: ActorRef,
                   lengthSlipNode: SlipNodeRep,
                   predecessorSlipNode: SlipNodeRep,
@@ -49,7 +50,7 @@ case class Rule (
 
   def activate_rule_descriptions() = {
     (relation :: List(descriptorFacet,objectCategory,descriptor)).flatten.map(
-      sn => slipnet ! SetSlipNodeBufferValue(sn,100.0)
+      sn => slipnet ! SetSlipNodeBufferValue(sn.id,100.0)
     )
   }
 
@@ -87,7 +88,7 @@ case class Rule (
     // apply character changes
     val st = s.toList
     val ch = 36.toChar
-    val charname = relationVal.toList
+    val charname = relationVal.id.toList
 
 
     val biteTheLine = st.find(c => {
@@ -97,10 +98,10 @@ case class Rule (
     })
     if (biteTheLine.isDefined) "NULL" else {
       val listOfChars: List[Char] = st.map(c => {
-        (relationVal match {
+        (relationVal.id match {
           case r if r==predecessorSlipNode.id => c-1
           case r if r==successorSlipNode.id => c+1
-          case _ => relationVal.toList.head + 32
+          case _ => relationVal.id.toList.head + 32
         }).toChar
       })
       listOfChars.mkString
@@ -115,8 +116,8 @@ case class Rule (
       // generate the final string
       var final_answer = target_string;
       var changed_obOpt = target_object.find(wo => {
-        descriptor.isDefined && wo.has_slipnode_description_with_id(descriptor.get) &&
-        objectCategory.isDefined && wo.has_slipnode_description_with_id(objectCategory.get)
+        descriptor.isDefined && wo.has_slipnode_description(descriptor.get) &&
+        objectCategory.isDefined && wo.has_slipnode_description(objectCategory.get)
       })
       if (changed_obOpt.isDefined) {
         val changed_ob = changed_obOpt.get
@@ -144,48 +145,53 @@ case class Rule (
 //   GUI   workspace.Workspace_Comments.Change_Caption("translated rule : "+this.toString());
       Some(final_answer)
     }
-/* for slipnet
-    def calculate_internal_strength(){
-      double cdd = descriptor.conceptual_depth-relation.conceptual_depth;
-      if (cdd<0.0) cdd=-cdd;
-      cdd=100.0-cdd;
-      double av = (descriptor.conceptual_depth+relation.conceptual_depth)/2.0;
-      av=Math.pow(av,1.1);
 
-      double shared_descriptor_term = 0.0;
+  def update_strength_value(wInitialObjects: List[WorkspaceObject], slippage_list: SlippageListShell) = {
+    calculate_internal_strength(wInitialObjects, slippage_list)
+    calculate_external_strength()
+    calculate_total_strength()
+  };
+
+
+  def calculate_internal_strength(wInitialObjects: List[WorkspaceObject], slippage_list: SlippageListShell) = {
+      val cdd0 = descriptor.get.conceptual_depth - relation.get.conceptual_depth;
+      val cdd1 = if (cdd0 < 0.0) -cdd0 else cdd0
+      val cdd= 100.0-cdd1
+      val av0 = (descriptor.get.conceptual_depth + relation.get.conceptual_depth)/2.0
+      val av = Math.pow(av0,1.1)
+
+      var shared_descriptor_term = 0.0;
 
       // see if the object corresponds to an object
       // if so, see if the descriptor is present (modulo slippages) in the
       // corresponding object
 
-      workspace_object changed = null;
       // find changed object;
-      for (int i=0; i<workspace.initial.objects.size(); i++){
-        workspace_object wo=(workspace_object)workspace.initial.objects.elementAt(i);
-        if (wo.changed) changed=wo;
-      }
+      val changed = wInitialObjects.find(wo => wo.changed)
 
-      if ((changed!=null)&&(changed.correspondence!=null)){
+      val cont = if ((changed.isDefined)&&(changed.get.correspondence.isDefined)) {
 
-        workspace_object obj2 = changed.correspondence.obj2;
-        Vector slippages = workspace.slippage_list();
-        slipnode s = descriptor;
-        s=Rule.apply_slippages(s,slippages);
-        if (obj2.has_description(s))
-          shared_descriptor_term = 100.0;
-        else {
-          internal_strength = 0.0; return;
+        val obj2 = changed.get.correspondence.get.obj2
+        val s = Rule.apply_slippages(descriptor, slippage_list.sl);
+        if (s.isDefined && obj2.has_slipnode_description(s.get)) {
+          shared_descriptor_term = 100.0
+          true
+        } else {
+          internal_strength = 0.0;
+          false
         }
+      } else true
+
+      if (cont) {
+        val shared_descriptor_weight = Math.pow(((100.0-descriptor.get.conceptual_depth)/10.0),1.4);
+
+        internal_strength = Formulas.weighted_average(cdd,12,av,18,
+          shared_descriptor_term, shared_descriptor_weight);
+        if (internal_strength>100.0) internal_strength=100.0;
       }
-
-      double shared_descriptor_weight = Math.pow(((100.0-descriptor.conceptual_depth)/10.0),1.4);
-
-      internal_strength = formulas.weighted_average(cdd,12,av,18,
-        shared_descriptor_term, shared_descriptor_weight);
-      if (internal_strength>100.0) internal_strength=100.0;
     }
 
-    def calculate_external_strength(){
+   def calculate_external_strength() = {
       external_strength=internal_strength;
-    }*/
+    }
 }

@@ -14,6 +14,8 @@ object Utilities {
   def valueProportionalIndexInValueListAtValue(valueAcc: Double, index: Int, values: List[Double], value: Double): Int = {
     val nextValue = values.head
     val newValueAcc = valueAcc + nextValue
+    //System.out.println("Choose codelet at index " + index + " urgsum " + newValueAcc);
+
     if (newValueAcc >= value) {
       index
     } else {

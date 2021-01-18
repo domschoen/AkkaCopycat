@@ -3,8 +3,9 @@ package models.codelet
 import akka.actor.ActorRef
 import akka.event.LoggingReceive
 import models.Coderack.Step
+import models.Slipnet.SlipnetGoWithBondStrengthTester
 import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
-import models.Workspace.{GoWithBondBuilder}
+import models.Workspace.{GoWithBondBuilder, GoWithBondStrengthTester}
 
 
 class BondBuilder(urgency: Int, workspace: ActorRef,
@@ -13,20 +14,31 @@ class BondBuilder(urgency: Int, workspace: ActorRef,
                   arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet, temperature)  {
   import Codelet.{ Run, Finished }
   import models.Coderack.ChooseAndRun
+  import models.Workspace.{
+    GoWithBondStrengthTester,
+    GoWithBondStrengthTesterResponse
+  }
+  import models.Slipnet.SlipnetGoWithBondStrengthTesterResponse
 
   var runTemperature = 0.0
   def bondID() = arguments.get.asInstanceOf[String]
 
   def receive = LoggingReceive {
     // to the browser
-    case Run(initialString, modifiedString, targetString, t) => {
+    case Run(initialString, modifiedString, targetString, t) =>
       log.debug(s"BondBuilder. Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
       temperature ! Register(self)
       runTemperature = t
 
-      workspace ! GoWithBondBuilder(runTemperature, bondID)
-    }
+      workspace ! GoWithBondStrengthTester(runTemperature, bondID)
+
+    case GoWithBondStrengthTesterResponse(bondRep) =>
+      slipnet ! SlipnetGoWithBondStrengthTester(bondRep)
+
+    case SlipnetGoWithBondStrengthTesterResponse(bond_category_degree_of_association) =>
+      workspace ! GoWithBondBuilder(runTemperature, bondID(), bond_category_degree_of_association)
+
     case TemperatureResponse(value) =>
       t = value
 
