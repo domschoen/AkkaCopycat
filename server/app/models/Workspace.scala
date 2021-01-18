@@ -678,7 +678,11 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
             i_letter.replacement = Some(replacement)
             wsRefs += (replacement.uuid -> replacement)
 
-            if (relationOpt.isDefined && relationOpt.get == Slipnet.RelationType.Sameness) {
+            log.debug(s"Workspace | ReplaceLetter | relation " + relationOpt)
+
+            if (relationOpt.isDefined && relationOpt.get != Slipnet.RelationType.Sameness) {
+              log.debug(s"Workspace | ReplaceLetter | i_letter " + i_letter + " changed to true")
+
               i_letter.changed = true;
               changed_object = Some(i_letter)
             }
