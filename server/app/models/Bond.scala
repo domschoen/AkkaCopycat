@@ -84,8 +84,8 @@ class Bond (
     System.out.println("bond.break_bond " + this);
 
     if (workspaceString().isDefined) workspaceString().get.break_bond(this)
-    left_obj.right_bond = null;
-    right_obj.left_bond = null;
+    left_obj.right_bond = None;
+    right_obj.left_bond = None;
     left_obj.break_bond(this);
     right_obj.break_bond(this);
 // GUI   workspace.WorkspaceArea.Redraw = true;

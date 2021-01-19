@@ -1158,6 +1158,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       sender() ! SlipnetGoWithRuleScoutResponse(string_position_category.slipNodeRep(), letter_category.slipNodeRep())
 
     case SlipnetCompleteSlippageList(slippagesShell: SlippageListShell) =>
+      log.debug("SlipnetCompleteSlippageList")
       val sl = slippagesShell.sl.map(cm => ConceptMapping.conceptMappingRefs(cm.uuid))
       val slippageCandidates = ConceptMapping.conceptMappingsWithReps(slippagesShell.slippageCandidates)
       val filteredSlippageCandidates = slippageCandidates.filter(cm => cm.slippage())
@@ -1205,6 +1206,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
       // Codelet.java.1327
     case SlipnetGoWithImportantObjectCorrespondenceScout(rds, t) =>
+      log.debug("SlipnetGoWithImportantObjectCorrespondenceScout")
       val relevantDescriptors = rds.map(rd => slipNodeRefs(rd.id))
       val sOpt = choose_slipnode_by_conceptual_depth(relevantDescriptors,t)
       sender() ! SlipnetGoWithImportantObjectCorrespondenceScoutResponse(sOpt.map(_.slipNodeRep()))
@@ -1739,11 +1741,12 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
   }
 
   def slippage_list_accumulation(acc: List[ConceptMapping], candidates: List[ConceptMapping]): List[ConceptMapping] = {
-    val cm = candidates.head
-    val newAcc = if (!cm.in_vector(acc)) cm :: acc else acc
     candidates match {
-      case Nil => newAcc
-      case x :: xs => slippage_list_accumulation(newAcc,xs)
+      case Nil => acc
+      case x :: xs => {
+        val newAcc = if (!x.in_vector(acc)) x :: acc else acc
+        slippage_list_accumulation(newAcc,xs)
+      }
     }
   }
 

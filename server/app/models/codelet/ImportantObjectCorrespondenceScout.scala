@@ -65,11 +65,13 @@ class ImportantObjectCorrespondenceScout(urgency: Int,
 
 
     case GoWithImportantObjectCorrespondenceScoutResponse(o1, relevantDescriptors) =>
+      log.debug("GoWithImportantObjectCorrespondenceScoutResponse")
       obj1 = o1
       slipnet ! SlipnetGoWithImportantObjectCorrespondenceScout(relevantDescriptors, runTemperature)
 
       // Codelet.java.1328
     case SlipnetGoWithImportantObjectCorrespondenceScoutResponse(sn) =>
+      log.debug("SlipnetGoWithImportantObjectCorrespondenceScoutResponse")
       if (sn.isEmpty) {
         println("no relevant distinguishing descriptors found: fizzle");
         self ! Finished
@@ -80,6 +82,7 @@ class ImportantObjectCorrespondenceScout(urgency: Int,
 
       // Codelet.java.1333
     case GoWithImportantObjectCorrespondenceScout2Response(slippageListShell) =>
+      log.debug("GoWithImportantObjectCorrespondenceScout2Response")
       slipnet ! SlipnetCompleteSlippageList(slippageListShell)
 
     // Codelet.java.1333

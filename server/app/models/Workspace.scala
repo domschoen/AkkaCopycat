@@ -1871,7 +1871,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
       obj1Opt match {
         case Some(obj1) =>
-          print("object chosen from initial string: "+obj1);
+          println("object chosen from initial string: "+obj1);
           val v = obj1.relevant_distinguishing_descriptors(activationBySlipNodeID)
           sender() ! GoWithImportantObjectCorrespondenceScoutResponse(obj1.workspaceObjectRep(), v)
 
@@ -1882,11 +1882,13 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
       // Codelet.java.1333
     case GoWithImportantObjectCorrespondenceScout2 =>
+      log.debug("GoWithImportantObjectCorrespondenceScout2")
       val sShell = slippage_list()
       sender() ! GoWithImportantObjectCorrespondenceScout2Response(sShell)
 
     // Codelet.java.1334 - 1369
     case GoWithImportantObjectCorrespondenceScout3(slippage_list_rep: List[ConceptMappingRep], s, t, o1) =>
+      log.debug("GoWithImportantObjectCorrespondenceScout3")
       val obj1_descriptorRaw = slippage_list_rep.find(cm => {
         cm.descriptor1.id.equals(s.id)
       }).map(_.descriptor2)
