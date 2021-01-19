@@ -1,4 +1,4 @@
-/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=50140:/Applications/IntelliJ IDEA CE.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/tools.jar:/Users/dschoen/Documents/gitlab/copycat/JavaCopyCat/out/production/JavaCopyCat rungroup
+/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=51276:/Applications/IntelliJ IDEA CE.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/tools.jar:/Users/dschoen/Documents/gitlab/copycat/JavaCopyCat/out/production/JavaCopyCat rungroup
 Random rndseed=1
 Random rndseed=2
 Random rndseed=3
@@ -361,7 +361,7 @@ abd
 ijk
 Slipnet.Reset
 mainloop | codelets_run 0 clamp_time 30 last_update 0 time_step_length 15
-update_Everything
+update_Everything 27
 1T: 100.0
 description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 50.0 total strength:50.0
 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
@@ -1162,7 +1162,7 @@ Post.
 Post. Added Codelet
 Post. update_captions
 mainloop | codelets_run 15 clamp_time 30 last_update 0 time_step_length 15
-update_Everything
+update_Everything 28
 1T: 20.0
 description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
@@ -1284,6 +1284,17 @@ Random rndseed=55
 post_bottom_up_codelets
 get_bottom_up_codelets bottom-up-description-scout
 Random rndseed=56
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 6
 rough_num_of_objects. bond 6
 Random rndseed=57
 Random rndseed=58
@@ -1779,7 +1790,7 @@ Post.
 Post. Added Codelet
 Post. update_captions
 mainloop | codelets_run 30 clamp_time 30 last_update 15 time_step_length 15
-update_Everything
+update_Everything 28
 1T: 91.46666666666665
 description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
@@ -1912,6 +1923,17 @@ create codelet bottom-up-description-scout urgency 3
 Post.
 Post. Added Codelet
 Post. update_captions
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 6
 rough_num_of_objects. bond 6
 Random rndseed=135
 Random rndseed=136
@@ -2389,6 +2411,7 @@ string ijk
 calculate_external_strength 0.0
 predecessor bond between letter (2)2 and letter (3)3 internal_strength 69.57010852370435 external_strength 0.0 total strength:48.400000000000006
 strength = 48.400000000000006
+check for incompatible structures
 no incompatible bonds!
 no incompatible groups!
 building bond
@@ -2450,7 +2473,7 @@ Post.
 Post. Added Codelet
 Post. update_captions
 mainloop | codelets_run 45 clamp_time 30 last_update 30 time_step_length 15
-update_Everything
+update_Everything 29
 1T: 90.85714285714286
 description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
@@ -2591,6 +2614,17 @@ create codelet bottom-up-description-scout urgency 3
 Post.
 Post. Added Codelet
 Post. update_captions
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 5
 rough_num_of_objects. bond 5
 Random rndseed=215
 Random rndseed=216
@@ -2826,6 +2860,8 @@ ob sg activation 0.0
 ob smg activation 0.0
 ob id activation 12.5
 ob op activation 0.0
+
+/// here extract on scala
 ob l activation 50.0
 ob g activation 17.5
 Random rndseed=253
@@ -3098,6 +3134,7 @@ string ijk
 calculate_external_strength 0.0
 successor bond between letter (1)1 and letter (2)2 internal_strength 69.57010852370435 external_strength 0.0 total strength:48.400000000000006
 strength = 48.400000000000006
+check for incompatible structures
 no incompatible bonds!
 no incompatible groups!
 building bond
@@ -3184,7 +3221,7 @@ successor bond between letter (1)1 and letter (2)2 internal_strength 69.57010852
 strength = 48.400000000000006
 already exists: activate descriptors & Fizzle!
 mainloop | codelets_run 60 clamp_time 30 last_update 45 time_step_length 15
-update_Everything
+update_Everything 29
 1T: 92.40876385336745
 description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
@@ -3308,6 +3345,17 @@ ob.relative_importance 0.37037037037037035
 update the intra string unhappiness of initial and target strings
 5T: 92.40876385336745
 post_top_down_codelets
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 5
 rough_num_of_objects. bond 5
 Random rndseed=301
 Random rndseed=302
@@ -3348,6 +3396,17 @@ create codelet top-down-group-scout--direction urgency 4
 Post.
 Post. Added Codelet
 Post. update_captions
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 5
 rough_num_of_objects. bond 5
 Random rndseed=310
 Random rndseed=311
@@ -3383,6 +3442,17 @@ Post. update_captions
 post_bottom_up_codelets
 get_bottom_up_codelets bottom-up-description-scout
 Random rndseed=316
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 5
 rough_num_of_objects. bond 5
 Random rndseed=317
 Random rndseed=318
@@ -3996,7 +4066,7 @@ Post.
 Post. Added Codelet
 Post. update_captions
 mainloop | codelets_run 75 clamp_time 30 last_update 60 time_step_length 15
-update_Everything
+update_Everything 29
 1T: 93.24405739072407
 description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
@@ -4120,6 +4190,17 @@ ob.relative_importance 0.36923076923076925
 update the intra string unhappiness of initial and target strings
 5T: 93.24405739072407
 post_top_down_codelets
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 5
 rough_num_of_objects. bond 5
 Random rndseed=411
 Random rndseed=412
@@ -4157,6 +4238,17 @@ create codelet top-down-group-scout--direction urgency 4
 Post.
 Post. Added Codelet
 Post. update_captions
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 5
 rough_num_of_objects. bond 5
 Random rndseed=421
 Random rndseed=422
@@ -4193,6 +4285,17 @@ create codelet bottom-up-description-scout urgency 3
 Post.
 Post. Added Codelet
 Post. update_captions
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 5
 rough_num_of_objects. bond 5
 Random rndseed=428
 Random rndseed=429
@@ -4745,7 +4848,7 @@ successor bond between letter (1)1 and letter (2)2 internal_strength 69.57010852
 strength = 48.400000000000006
 already exists: activate descriptors & Fizzle!
 mainloop | codelets_run 90 clamp_time 30 last_update 75 time_step_length 15
-update_Everything
+update_Everything 29
 1T: 92.27384592336504
 description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
@@ -4886,6 +4989,17 @@ create codelet bottom-up-description-scout urgency 3
 Post.
 Post. Added Codelet
 Post. update_captions
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 5
 rough_num_of_objects. bond 5
 Random rndseed=522
 Random rndseed=523
@@ -5406,7 +5520,7 @@ search for the incompatible bond
 building correspondence
 Correspondence [letter -> letter, leftmost -> leftmost]
 mainloop | codelets_run 105 clamp_time 30 last_update 90 time_step_length 15
-update_Everything
+update_Everything 31
 1T: 91.45777777777778
 description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 90.0 total strength:70.0
 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
@@ -5546,6 +5660,17 @@ ob.relative_importance 0.3632286995515695
 update the intra string unhappiness of initial and target strings
 5T: 91.45777777777778
 post_top_down_codelets
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 5
 rough_num_of_objects. bond 5
 Random rndseed=606
 Random rndseed=607
@@ -5593,6 +5718,17 @@ create codelet top-down-group-scout--direction urgency 4
 Post.
 Post. Added Codelet
 Post. update_captions
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 5
 rough_num_of_objects. bond 5
 Random rndseed=616
 Random rndseed=617
@@ -5627,6 +5763,17 @@ create codelet bottom-up-description-scout urgency 3
 Post.
 Post. Added Codelet
 Post. update_captions
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 5
 rough_num_of_objects. bond 5
 Random rndseed=622
 Random rndseed=623
@@ -6103,6 +6250,7 @@ ob workspace_string@5f184fc6
 calculate_external_strength 0.0
 predecessor bond between letter (2)2 and letter (3)3 internal_strength 69.57010852370435 external_strength 0.0 total strength:48.400000000000006
 strength = 48.400000000000006
+check for incompatible structures
 no incompatible bonds!
 no incompatible groups!
 building bond
@@ -6185,7 +6333,7 @@ Post.
 Post. Added Codelet
 Post. update_captions
 mainloop | codelets_run 120 clamp_time 30 last_update 105 time_step_length 15
-update_Everything
+update_Everything 32
 1T: 71.10979624568279
 description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 70.0 total strength:60.0
 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
@@ -6347,6 +6495,17 @@ create codelet bottom-up-description-scout urgency 3
 Post.
 Post. Added Codelet
 Post. update_captions
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 3
 rough_num_of_objects. bond 3
 Random rndseed=715
 Random rndseed=716
@@ -6661,6 +6820,7 @@ string abc
 calculate_external_strength 0.0
 predecessor bond between letter (2)2 and letter (3)3 internal_strength 95.89577675789482 external_strength 0.0 total strength:91.96
 strength = 91.96
+check for incompatible structures
 no incompatible bonds!
 no incompatible groups!
 building bond
@@ -6839,6 +6999,7 @@ ob workspace_string@723279cf
 calculate_external_strength 0.0
 successor bond between letter (1)1 and letter (2)2 internal_strength 95.89577675789482 external_strength 0.0 total strength:91.96
 strength = 91.96
+check for incompatible structures
 no incompatible bonds!
 no incompatible groups!
 building bond
@@ -6904,7 +7065,7 @@ object chosen from initial string: letter (1)1
 Random rndseed=799
 no corresponding objects found: fizzle
 mainloop | codelets_run 135 clamp_time 30 last_update 120 time_step_length 15
-update_Everything
+update_Everything 35
 1T: 71.49315871902928
 description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
@@ -7091,6 +7252,17 @@ ob.relative_importance 0.3333333333333333
 update the intra string unhappiness of initial and target strings
 5T: 71.49315871902928
 post_top_down_codelets
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=800
 PostTopBottomCodelets top-down-bond-scout--direction
@@ -7123,6 +7295,17 @@ create codelet top-down-group-scout--direction urgency 4
 Post.
 Post. Added Codelet
 Post. update_captions
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=807
 PostTopBottomCodelets top-down-bond-scout--direction
@@ -7150,6 +7333,17 @@ Post. Added Codelet
 Post. update_captions
 PostTopBottomCodelets top-down-group-scout--direction
 Random rndseed=813
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=814
 PostTopBottomCodelets top-down-bond-scout--category
@@ -7159,6 +7353,17 @@ create codelet top-down-bond-scout--category urgency 4
 Post.
 Post. Added Codelet
 Post. update_captions
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=816
 PostTopBottomCodelets top-down-bond-scout--category
@@ -7187,6 +7392,17 @@ Post. Added Codelet
 Post. codelets.size > 100
 Random rndseed=820
 Post. update_captions
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=821
 get_bottom_up_codelets bottom-up-bond-scout
@@ -7770,7 +7986,7 @@ Post.
 Post. Added Codelet
 Post. update_captions
 mainloop | codelets_run 150 clamp_time 30 last_update 135 time_step_length 15
-update_Everything
+update_Everything 35
 1T: 62.04388888888889
 description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
@@ -7957,6 +8173,17 @@ ob.relative_importance 0.3373493975903614
 update the intra string unhappiness of initial and target strings
 5T: 62.04388888888889
 post_top_down_codelets
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=922
 PostTopBottomCodelets top-down-bond-scout--direction
@@ -7984,6 +8211,17 @@ create codelet top-down-group-scout--direction urgency 4
 Post.
 Post. Added Codelet
 Post. update_captions
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=929
 PostTopBottomCodelets top-down-bond-scout--direction
@@ -8022,6 +8260,17 @@ Post. Added Codelet
 Post. codelets.size > 100
 Random rndseed=938
 Post. update_captions
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=939
 PostTopBottomCodelets top-down-bond-scout--category
@@ -8033,6 +8282,17 @@ Post. Added Codelet
 Post. codelets.size > 100
 Random rndseed=941
 Post. update_captions
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=942
 PostTopBottomCodelets top-down-bond-scout--category
@@ -8058,6 +8318,17 @@ Post. Added Codelet
 Post. codelets.size > 100
 Random rndseed=947
 Post. update_captions
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=948
 get_bottom_up_codelets bottom-up-bond-scout
@@ -8314,6 +8585,7 @@ ob workspace_string@5f184fc6
 calculate_external_strength 1.0
 successor bond between letter (2)2 and letter (3)3 internal_strength 95.89577675789482 external_strength 70.71067811865476 total strength:94.862124085996
 strength = 94.862124085996
+check for incompatible structures
 trying to break incompatible bonds
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 string.bonds.size() 2
@@ -8660,7 +8932,7 @@ Post. Added Codelet
 Post. update_captions
 posting group builder codelet
 mainloop | codelets_run 165 clamp_time 30 last_update 150 time_step_length 15
-update_Everything
+update_Everything 34
 1T: 61.94432235724881
 description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
@@ -8828,6 +9100,17 @@ ob.relative_importance 0.3937007874015748
 update the intra string unhappiness of initial and target strings
 5T: 61.94432235724881
 post_top_down_codelets
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1038
 PostTopBottomCodelets top-down-bond-scout--direction
@@ -8855,6 +9138,17 @@ create codelet top-down-group-scout--direction urgency 4
 Post.
 Post. Added Codelet
 Post. update_captions
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1045
 PostTopBottomCodelets top-down-bond-scout--direction
@@ -8895,6 +9189,17 @@ Post. Added Codelet
 Post. codelets.size > 100
 Random rndseed=1055
 Post. update_captions
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1056
 PostTopBottomCodelets top-down-bond-scout--category
@@ -8906,6 +9211,17 @@ Post. Added Codelet
 Post. codelets.size > 100
 Random rndseed=1058
 Post. update_captions
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1059
 PostTopBottomCodelets top-down-bond-scout--category
@@ -8930,6 +9246,17 @@ Post. update_captions
 post_bottom_up_codelets
 get_bottom_up_codelets bottom-up-description-scout
 Random rndseed=1064
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1065
 get_bottom_up_codelets bottom-up-bond-scout
@@ -9194,6 +9521,7 @@ ob workspace_string@723279cf
 calculate_external_strength 1.0
 successor bond between letter (2)2 and letter (3)3 internal_strength 95.89577675789482 external_strength 70.71067811865476 total strength:94.862124085996
 strength = 94.862124085996
+check for incompatible structures
 trying to break incompatible bonds
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 string.bonds.size() 2
@@ -9414,6 +9742,7 @@ ob workspace_string@723279cf
 calculate_external_strength 0.0
 predecessor bond between letter (1)1 and letter (2)2 internal_strength 95.89577675789482 external_strength 0.0 total strength:91.96
 strength = 91.96
+check for incompatible structures
 trying to break incompatible bonds
 bond_degree_of_association pd clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 string.bonds.size() 2
@@ -9486,7 +9815,7 @@ Post. Added Codelet
 Post. update_captions
 posting group builder codelet
 mainloop | codelets_run 180 clamp_time 30 last_update 165 time_step_length 15
-update_Everything
+update_Everything 34
 1T: 78.96602816548506
 description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
@@ -9654,6 +9983,17 @@ ob.relative_importance 0.3170731707317073
 update the intra string unhappiness of initial and target strings
 5T: 78.96602816548506
 post_top_down_codelets
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1158
 PostTopBottomCodelets top-down-bond-scout--direction
@@ -9686,6 +10026,17 @@ create codelet top-down-group-scout--direction urgency 4
 Post.
 Post. Added Codelet
 Post. update_captions
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1165
 PostTopBottomCodelets top-down-bond-scout--direction
@@ -9713,6 +10064,17 @@ Post. Added Codelet
 Post. update_captions
 PostTopBottomCodelets top-down-group-scout--direction
 Random rndseed=1171
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1172
 PostTopBottomCodelets top-down-bond-scout--category
@@ -9724,6 +10086,17 @@ Post. Added Codelet
 Post. codelets.size > 100
 Random rndseed=1174
 Post. update_captions
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1175
 PostTopBottomCodelets top-down-bond-scout--category
@@ -9785,6 +10158,17 @@ Post. update_captions
 post_bottom_up_codelets
 get_bottom_up_codelets bottom-up-description-scout
 Random rndseed=1193
+unrelated_objects 9
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1194
 get_bottom_up_codelets bottom-up-bond-scout
@@ -10133,6 +10517,7 @@ ob workspace_string@5f184fc6
 calculate_external_strength 0.0
 predecessor bond between letter (1)1 and letter (2)2 internal_strength 95.89577675789482 external_strength 0.0 total strength:91.96
 strength = 91.96
+check for incompatible structures
 trying to break incompatible bonds
 bond_degree_of_association pd clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 string.bonds.size() 2
@@ -10335,7 +10720,7 @@ Post.
 Post. Added Codelet
 Post. update_captions
 mainloop | codelets_run 195 clamp_time 30 last_update 180 time_step_length 15
-update_Everything
+update_Everything 39
 1T: 76.26214977001906
 description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
@@ -10517,6 +10902,18 @@ ob.relative_importance 0.29795293405168227
 update the intra string unhappiness of initial and target strings
 5T: 76.26214977001906
 post_top_down_codelets
+unrelated_objects 10
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-2) ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects result 1
 rough_num_of_objects. bond 1
 Random rndseed=1291
 Random rndseed=1292
@@ -10550,6 +10947,18 @@ create codelet top-down-group-scout--direction urgency 4
 Post.
 Post. Added Codelet
 Post. update_captions
+unrelated_objects 10
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-2) ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects result 1
 rough_num_of_objects. bond 1
 Random rndseed=1299
 PostTopBottomCodelets top-down-bond-scout--direction
@@ -10583,6 +10992,18 @@ Post. Added Codelet
 Post. codelets.size > 100
 Random rndseed=1308
 Post. update_captions
+unrelated_objects 10
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-2) ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects result 1
 rough_num_of_objects. bond 1
 Random rndseed=1309
 Random rndseed=1310
@@ -10597,6 +11018,18 @@ Random rndseed=1312
 Post. update_captions
 PostTopBottomCodelets top-down-bond-scout--category
 Random rndseed=1313
+unrelated_objects 10
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-2) ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects result 1
 rough_num_of_objects. bond 1
 Random rndseed=1314
 Random rndseed=1315
@@ -10690,6 +11123,18 @@ Post. Added Codelet
 Post. codelets.size > 100
 Random rndseed=1338
 Post. update_captions
+unrelated_objects 10
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-2) ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects result 1
 rough_num_of_objects. bond 1
 Random rndseed=1339
 get_bottom_up_codelets bottom-up-bond-scout
@@ -11222,7 +11667,7 @@ group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total st
 Random rndseed=1436
 couldn't break incompatible groups: fizzle
 mainloop | codelets_run 210 clamp_time 30 last_update 195 time_step_length 15
-update_Everything
+update_Everything 44
 1T: 79.9212762670482
 description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
@@ -11418,6 +11863,19 @@ ob.relative_importance 0.45454545454545453
 update the intra string unhappiness of initial and target strings
 5T: 79.9212762670482
 post_top_down_codelets
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-2) ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 1
 rough_num_of_objects. bond 1
 Random rndseed=1437
 PostTopBottomCodelets top-down-bond-scout--direction
@@ -11430,6 +11888,19 @@ create codelet top-down-group-scout--direction urgency 4
 Post.
 Post. Added Codelet
 Post. update_captions
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-2) ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 1
 rough_num_of_objects. bond 1
 Random rndseed=1441
 Random rndseed=1442
@@ -11447,6 +11918,19 @@ create codelet top-down-bond-scout--category urgency 4
 Post.
 Post. Added Codelet
 Post. update_captions
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-2) ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 1
 rough_num_of_objects. bond 1
 Random rndseed=1445
 PostTopBottomCodelets top-down-bond-scout--category
@@ -11498,6 +11982,19 @@ Post. update_captions
 post_bottom_up_codelets
 get_bottom_up_codelets bottom-up-description-scout
 Random rndseed=1458
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-2) ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 1
 rough_num_of_objects. bond 1
 Random rndseed=1459
 Random rndseed=1460
@@ -12036,7 +12533,7 @@ Post. Added Codelet
 Post. update_captions
 posting group builder codelet
 mainloop | codelets_run 225 clamp_time 30 last_update 210 time_step_length 15
-update_Everything
+update_Everything 45
 1T: 70.68514857947585
 description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
@@ -12233,6 +12730,19 @@ ob.relative_importance 0.3620689655172414
 update the intra string unhappiness of initial and target strings
 5T: 70.68514857947585
 post_top_down_codelets
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-2) ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 1
 rough_num_of_objects. bond 1
 Random rndseed=1560
 Random rndseed=1561
@@ -12258,6 +12768,19 @@ create codelet top-down-group-scout--direction urgency 4
 Post.
 Post. Added Codelet
 Post. update_captions
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-2) ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 1
 rough_num_of_objects. bond 1
 Random rndseed=1566
 Random rndseed=1567
@@ -12297,6 +12820,19 @@ Post. update_captions
 post_bottom_up_codelets
 get_bottom_up_codelets bottom-up-description-scout
 Random rndseed=1575
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-2) ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 1
 rough_num_of_objects. bond 1
 Random rndseed=1576
 get_bottom_up_codelets bottom-up-bond-scout
@@ -12785,6 +13321,7 @@ ob workspace_string@723279cf
 calculate_external_strength 0.0
 predecessor bond between letter (2)2 and letter (3)3 internal_strength 69.57010852370435 external_strength 0.0 total strength:48.400000000000006
 strength = 48.400000000000006
+check for incompatible structures
 trying to break incompatible bonds
 bond_degree_of_association pd clamp_bdoa: false activation: 70.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 string.bonds.size() 2
@@ -12859,7 +13396,7 @@ Post.
 Post. Added Codelet
 Post. update_captions
 mainloop | codelets_run 240 clamp_time 30 last_update 225 time_step_length 15
-update_Everything
+update_Everything 46
 1T: 58.74439280135928
 description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
@@ -13075,6 +13612,19 @@ ob.relative_importance 0.4093567251461988
 update the intra string unhappiness of initial and target strings
 5T: 58.74439280135928
 post_top_down_codelets
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1668
 PostTopBottomCodelets top-down-bond-scout--direction
@@ -13092,6 +13642,19 @@ create codelet top-down-group-scout--direction urgency 4
 Post.
 Post. Added Codelet
 Post. update_captions
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1672
 PostTopBottomCodelets top-down-bond-scout--category
@@ -13105,6 +13668,19 @@ Random rndseed=1676
 post_bottom_up_codelets
 get_bottom_up_codelets bottom-up-description-scout
 Random rndseed=1677
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1678
 get_bottom_up_codelets bottom-up-bond-scout
@@ -13596,7 +14172,7 @@ Choose codelet at index 90 urgsum 167112.76189355782
 trying to build group (1-3) in initial string
 already exists...activate descriptors & fizzle
 mainloop | codelets_run 255 clamp_time 30 last_update 240 time_step_length 15
-update_Everything
+update_Everything 46
 1T: 28.4198988998509
 description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
@@ -13812,6 +14388,19 @@ ob.relative_importance 0.5047318611987381
 update the intra string unhappiness of initial and target strings
 5T: 28.4198988998509
 post_top_down_codelets
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1753
 PostTopBottomCodelets top-down-bond-scout--direction
@@ -13819,6 +14408,19 @@ Random rndseed=1754
 Random rndseed=1755
 PostTopBottomCodelets top-down-group-scout--direction
 Random rndseed=1756
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1757
 PostTopBottomCodelets top-down-bond-scout--category
@@ -13832,6 +14434,19 @@ Random rndseed=1761
 post_bottom_up_codelets
 get_bottom_up_codelets bottom-up-description-scout
 Random rndseed=1762
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1763
 get_bottom_up_codelets bottom-up-bond-scout
@@ -14086,6 +14701,7 @@ ob workspace_string@723279cf
 calculate_external_strength 0.0
 predecessor bond between letter (2)2 and letter (3)3 internal_strength 69.57010852370435 external_strength 0.0 total strength:48.400000000000006
 strength = 48.400000000000006
+check for incompatible structures
 trying to break incompatible bonds
 bond_degree_of_association pd clamp_bdoa: false activation: 47.5 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 string.bonds.size() 2
@@ -14316,7 +14932,7 @@ Post.
 Post. Added Codelet
 Post. update_captions
 mainloop | codelets_run 270 clamp_time 30 last_update 255 time_step_length 15
-update_Everything
+update_Everything 46
 1T: 30.48172967004266
 description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
@@ -14532,6 +15148,19 @@ ob.relative_importance 0.553314121037464
 update the intra string unhappiness of initial and target strings
 5T: 30.48172967004266
 post_top_down_codelets
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1837
 PostTopBottomCodelets top-down-bond-scout--direction
@@ -14544,6 +15173,19 @@ Post. update_captions
 Random rndseed=1839
 PostTopBottomCodelets top-down-group-scout--direction
 Random rndseed=1840
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1841
 PostTopBottomCodelets top-down-bond-scout--category
@@ -14557,6 +15199,19 @@ Random rndseed=1845
 post_bottom_up_codelets
 get_bottom_up_codelets bottom-up-description-scout
 Random rndseed=1846
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1847
 get_bottom_up_codelets bottom-up-bond-scout
@@ -15065,7 +15720,7 @@ Post. Added Codelet
 Post. update_captions
 posting group builder codelet
 mainloop | codelets_run 285 clamp_time 30 last_update 270 time_step_length 15
-update_Everything
+update_Everything 47
 1T: 31.59546907247469
 description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
@@ -15304,6 +15959,19 @@ ob.relative_importance 0.5812897366030881
 update the intra string unhappiness of initial and target strings
 5T: 31.59546907247469
 post_top_down_codelets
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1925
 PostTopBottomCodelets top-down-bond-scout--direction
@@ -15311,6 +15979,19 @@ Random rndseed=1926
 Random rndseed=1927
 PostTopBottomCodelets top-down-group-scout--direction
 Random rndseed=1928
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1929
 PostTopBottomCodelets top-down-bond-scout--category
@@ -15324,6 +16005,19 @@ Random rndseed=1933
 post_bottom_up_codelets
 get_bottom_up_codelets bottom-up-description-scout
 Random rndseed=1934
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1935
 get_bottom_up_codelets bottom-up-bond-scout
@@ -15812,7 +16506,7 @@ Post.
 Post. Added Codelet
 Post. update_captions
 mainloop | codelets_run 300 clamp_time 30 last_update 285 time_step_length 15
-update_Everything
+update_Everything 47
 1T: 10.01292249056722
 description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
@@ -16051,6 +16745,19 @@ ob.relative_importance 0.4269513008672448
 update the intra string unhappiness of initial and target strings
 5T: 10.01292249056722
 post_top_down_codelets
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=17
 PostTopBottomCodelets top-down-bond-scout--direction
@@ -16058,6 +16765,19 @@ Random rndseed=18
 Random rndseed=19
 PostTopBottomCodelets top-down-group-scout--direction
 Random rndseed=20
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=21
 PostTopBottomCodelets top-down-bond-scout--category
@@ -16071,6 +16791,19 @@ Random rndseed=25
 post_bottom_up_codelets
 get_bottom_up_codelets bottom-up-description-scout
 Random rndseed=26
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=27
 get_bottom_up_codelets bottom-up-bond-scout
@@ -16327,6 +17060,7 @@ ob workspace_string@5f184fc6
 calculate_external_strength 0.0
 predecessor bond between letter (1)1 and letter (2)2 internal_strength 69.57010852370435 external_strength 0.0 total strength:48.400000000000006
 strength = 48.400000000000006
+check for incompatible structures
 trying to break incompatible bonds
 bond_degree_of_association pd clamp_bdoa: false activation: 40.9375 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 string.bonds.size() 2
@@ -16547,7 +17281,7 @@ Post.
 Post. Added Codelet
 Post. update_captions
 mainloop | codelets_run 315 clamp_time 30 last_update 300 time_step_length 15
-update_Everything
+update_Everything 47
 1T: 12.853007782924017
 description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
@@ -16786,6 +17520,19 @@ ob.relative_importance 0.42174629324546953
 update the intra string unhappiness of initial and target strings
 5T: 12.853007782924017
 post_top_down_codelets
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=104
 PostTopBottomCodelets top-down-bond-scout--direction
@@ -16793,6 +17540,19 @@ Random rndseed=105
 Random rndseed=106
 PostTopBottomCodelets top-down-group-scout--direction
 Random rndseed=107
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=108
 PostTopBottomCodelets top-down-bond-scout--category
@@ -16811,6 +17571,19 @@ Random rndseed=112
 post_bottom_up_codelets
 get_bottom_up_codelets bottom-up-description-scout
 Random rndseed=113
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=114
 get_bottom_up_codelets bottom-up-bond-scout
@@ -17286,7 +18059,7 @@ Choose codelet at index 67 urgsum 812071.2005999777
 trying to build replace letter category of rightmost letter by successor
 already exists - activate concepts
 mainloop | codelets_run 330 clamp_time 30 last_update 315 time_step_length 15
-update_Everything
+update_Everything 47
 1T: 12.89941482217448
 description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
@@ -17525,6 +18298,19 @@ ob.relative_importance 0.47194739752965037
 update the intra string unhappiness of initial and target strings
 5T: 12.89941482217448
 post_top_down_codelets
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=195
 PostTopBottomCodelets top-down-bond-scout--direction
@@ -17532,6 +18318,19 @@ Random rndseed=196
 Random rndseed=197
 PostTopBottomCodelets top-down-group-scout--direction
 Random rndseed=198
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=199
 PostTopBottomCodelets top-down-bond-scout--category
@@ -17545,6 +18344,19 @@ Random rndseed=203
 post_bottom_up_codelets
 get_bottom_up_codelets bottom-up-description-scout
 Random rndseed=204
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=205
 get_bottom_up_codelets bottom-up-bond-scout
@@ -18021,6 +18833,7 @@ ob workspace_string@5f184fc6
 calculate_external_strength 0.0
 predecessor bond between letter (1)1 and letter (2)2 internal_strength 69.57010852370435 external_strength 0.0 total strength:48.400000000000006
 strength = 48.400000000000006
+check for incompatible structures
 trying to break incompatible bonds
 bond_degree_of_association pd clamp_bdoa: false activation: 40.234375 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 string.bonds.size() 2
@@ -18060,7 +18873,7 @@ End of check the slippability of concept mappings true
 find out if any are distinguishing
 no distinguishing mappings found: fizzle
 mainloop | codelets_run 345 clamp_time 30 last_update 330 time_step_length 15
-update_Everything
+update_Everything 47
 1T: 12.102747885886943
 description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
@@ -18299,6 +19112,19 @@ ob.relative_importance 0.43934670060925035
 update the intra string unhappiness of initial and target strings
 5T: 12.102747885886943
 post_top_down_codelets
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=286
 PostTopBottomCodelets top-down-bond-scout--direction
@@ -18306,6 +19132,19 @@ Random rndseed=287
 Random rndseed=288
 PostTopBottomCodelets top-down-group-scout--direction
 Random rndseed=289
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=290
 PostTopBottomCodelets top-down-bond-scout--category
@@ -18324,6 +19163,19 @@ Random rndseed=294
 post_bottom_up_codelets
 get_bottom_up_codelets bottom-up-description-scout
 Random rndseed=295
+unrelated_objects 11
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
+unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
+unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
+unrelated_objects letter (3)3 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.leftmost false wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects group (1-3) ok true wo.spans_string true right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost true
+unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=296
 get_bottom_up_codelets bottom-up-bond-scout

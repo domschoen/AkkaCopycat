@@ -366,6 +366,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
   }
 
   def addBond(b: Bond) = {
+    log.debug("addBond " + b)
     addStructure(b)
     b.build_bond()
   }
@@ -458,7 +459,8 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       slipnet ! DataForStrengthUpdate(brs,crs,t)
 
     case DataForStrengthUpdateResponse(bondData, correspondenceData, t) =>
-      log.debug("Workspace. update_Everything. DataForStrengthUpdateResponse")
+      log.debug("Workspace. update_Everything. DataForStrengthUpdateResponse " + structures.size)
+      log.debug("1T: " + t)
 
       for (ws <- structures) {
         updateStructureStrengthValue(bondData, correspondenceData, ws)
@@ -1017,6 +1019,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
     case SlipnetLookAHeadForNewBondCreationResponse(s, g_rep, i, incg, newBondList, bond_categoryOpt, from_obj_id, to_obj_id, bond_facet,slipnetLeft,
     slipnetRight) =>
+      log.debug("SlipnetLookAHeadForNewBondCreationResponse bond_categoryOpt " + bond_categoryOpt)
       bond_categoryOpt match {
         case Some(bond_category) =>
           val from_obj = objectRefs(from_obj_id)
@@ -1040,7 +1043,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       logTrying(b, b.left_obj)
 
       b.update_strength_value(activationBySlipNodeID, bond_category_degree_of_association, objects.toList);
-      print("strength = " + b.total_strength);
+      log.debug("strength = " + b.total_strength);
       //val competitors = b.get_incompatible_bonds();
 
       if ((objects.toList.contains(b.from_obj)) &&
@@ -1065,6 +1068,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
           sender() ! Finished
         } else {
           // check for incompatible structures
+          log.debug("check for incompatible structures")
           val incb = b.get_incompatible_bonds();
           val brokeIncb = if (!incb.isEmpty) {
             log.debug("trying to break incompatible bonds");
@@ -1079,68 +1083,79 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
               false;
             }
           } else {
-            print("no incompatible bonds!")
+            log.debug("no incompatible bonds!")
             true
           }
           if (!brokeIncb) {
+            log.debug("not  brokeIncb")
             sender() ! Finished
           } else {
+
+            // inverted groups and correspondences fighting
+            log.debug("fight all incompatible correspondences")
             // fight all incompatible correspondences
-            var incc: List[Correspondence] = if (b.left_obj.leftmost || b.right_obj.rightmost) {
-              // ignore if (b.direction_category!=null) {
-              //System.out.println("looking for incompatible correspondences")
-              b.get_incompatible_correspondences(initial)
-            } else List.empty[Correspondence]
-
-            if (!incc.isEmpty) {
-              log.debug("trying to break incompatible correspondences")
-              if (!fight_it_out(b, 2.0, incc, 3.0)) {
-                log.debug("lost the fight: Fizzle!")
-                sender() ! Finished
-              } else {
-                log.debug("won")
-
-                // fight all groups containing these objects
-                val incg = WorkspaceFormulas.get_common_groups(b.from_obj, b.to_obj);
-                if (incg.isEmpty) {
-                  log.debug("no incompatible groups!")
-                }
-                val failedFight = if (incg.isEmpty) false else {
-                  log.debug("trying to break incompatible groups")
-                  // try to break all incompatible groups
-                  if (fight_it_out(b, 1.0, incg, 1.0)) {
-                    // beat all competing groups
-                    log.debug("won");
+            var incc: List[Correspondence] = List.empty[Correspondence]
+            val wonOrContinue = if (b.left_obj.leftmost || b.right_obj.rightmost) {
+              if (b.direction_category.isDefined) {
+                incc = b.get_incompatible_correspondences(initial)
+                if (!incc.isEmpty) {
+                  log.debug("trying to break incompatible correspondences")
+                  if (!fight_it_out(b, 2.0, incc, 3.0)) {
                     false
-                  }
-                  else {
-                    print("failed: Fizzle!");
+                  } else {
+                    log.debug("won")
                     true
                   }
-                }
-                if (failedFight) {
-                  sender() ! Finished
-                } else {
+                } else true
+                //System.out.println("looking for incompatible correspondences")
+              } else true
+            } else true
 
-                  for (br <- incb) {
-                    break_bond(br)
-                  }
-                  for (gr <- incg) {
-                    break_group(gr)
-                  }
-                  for (c <- incc) {
-                    break_correspondence(c)
-                  }
-                  print("building bond");
-                  addBond(b)
-                  sender() ! Finished
+
+            if (!wonOrContinue) {
+              log.debug("lost the fight: Fizzle!")
+              sender() ! Finished
+            } else {
+              // fight all groups containing these objects
+              log.debug("fight all groups containing these objects")
+              val incg = WorkspaceFormulas.get_common_groups(b.from_obj, b.to_obj);
+              if (incg.isEmpty) {
+                log.debug("no incompatible groups!")
+              }
+              val failedFight = if (incg.isEmpty) false else {
+                log.debug("trying to break incompatible groups")
+                // try to break all incompatible groups
+                if (fight_it_out(b, 1.0, incg, 1.0)) {
+                  // beat all competing groups
+                  log.debug("won");
+                  false
+                }
+                else {
+                  print("failed: Fizzle!");
+                  true
                 }
               }
-            } else {
-              sender() ! Finished
+              if (failedFight) {
+                sender() ! Finished
+              } else {
+
+                for (br <- incb) {
+                  break_bond(br)
+                }
+                for (gr <- incg) {
+                  break_group(gr)
+                }
+                for (c <- incc) {
+                  break_correspondence(c)
+                }
+                print("building bond");
+                addBond(b)
+                sender() ! Finished
+              }
             }
           }
         }
+
       } else {
         log.debug("objects do no longer exists: Fizzle!");
         sender() ! Finished
@@ -2221,12 +2236,17 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
   def unrelated_objects(): List[WorkspaceObject] = {
     // returns a list of all objects in the workspace that have at least
     // one bond slot open
-    objects.toList.filter(wo => {
+    log.debug("unrelated_objects " + objects.size)
+    val result = objects.toList.filter(wo => {
       val ok = ((wo.wString.isDefined && wo.wString.get == initial) || (wo.wString.isDefined && wo.wString.get == target));
       val left = ((wo.left_bond.isEmpty)&&(!wo.leftmost));
       val right = ((wo.right_bond.isEmpty)&&(!wo.rightmost));
+      log.debug("unrelated_objects " + wo + " ok " + ok + " wo.spans_string " + wo.spans_string + " right " + right + " left " + left + " wo.left_bond.isEmpty " + wo.left_bond.isEmpty + " wo.leftmost " +wo.leftmost + " wo.right_bond.isEmpty " + wo.right_bond.isEmpty + " wo.rightmost " +wo.rightmost );
       ((ok)&&(!wo.spans_string) && ((right)||(left)))
     })
+    log.debug("unrelated_objects result " + result.size)
+
+    result
   }
 
   def ungrouped_objects(): List[WorkspaceObject] = {

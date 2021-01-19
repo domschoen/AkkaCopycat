@@ -1390,11 +1390,11 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
             val prob = get_post_codelet_probability(st, t, intra_string_unhappiness, inter_string_unhappiness, unreplaced_objects_size, ruleTotalWeaknessOpt);
             val num = get_num_codelets_to_post(st, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
             for (t <- 1 to num) {
-              System.out.println("PostTopBottomCodelets " + st);
+              log.debug("PostTopBottomCodelets " + st);
 
               if (Random.rnd() < prob) {
                 val rawUrgency = s.activation * s.conceptual_depth / 100.0
-                System.out.println("PostTopBottomCodelets rawUrgency" + rawUrgency);
+                log.debug("PostTopBottomCodelets rawUrgency" + rawUrgency);
 
                 val tuple = (st, Left(rawUrgency), Some(s.slipNodeRep().id))
                 codeletToPost += tuple
@@ -1403,18 +1403,18 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
           }
         }
       }
-      System.out.println("post_bottom_up_codelets");
+      log.debug("post_bottom_up_codelets");
 
-      codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.BottomUpDescriptionScout,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
-      codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.BottomUpBondScout,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
-      codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.GroupScoutWholeString,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
-      codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.BottomUpCorrespondenceScout,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
-      codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.ImportantObjectCorrespondenceScout,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
-      codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.ReplacementFinder,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
-      codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.RuleScout,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
-      codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.RuleTranslator,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
-      if (!remove_breaker_codelets) codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.Breaker,t,intra_string_unhappiness,inter_string_unhappiness: Double, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
-      System.out.println("post_bottom_up_codelets codeletToPost " + codeletToPost);
+      codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.BottomUpDescriptionScout,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.BottomUpBondScout,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.GroupScoutWholeString,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.BottomUpCorrespondenceScout,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.ImportantObjectCorrespondenceScout,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.ReplacementFinder,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.RuleScout,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.RuleTranslator,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      if (!remove_breaker_codelets) codeletToPost ++= get_bottom_up_codelets(CodeletTypeString.Breaker,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      log.debug("post_bottom_up_codelets codeletToPost " + codeletToPost);
 
       workspace ! PostTopBottomCodeletsGetInfoResponse(codeletToPost.toList)
 
@@ -1460,16 +1460,16 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       var urgency = 3;
       if (st.equals("breaker")) urgency = 1;
       if ((t < 25.0) && (st.indexOf("translator")> -1)) urgency=5;
-      System.out.println("get_bottom_up_codelets " + st);
+      log.debug("get_bottom_up_codelets " + st);
 
       if (Random.rnd()<prob){
-        System.out.println("post_bottom_up_codelets rawUrgency" + urgency.toDouble);
+        log.debug("post_bottom_up_codelets rawUrgency" + urgency.toDouble);
         val tuple = (st, Right(urgency), None)
 
         codeletToPost += tuple
       }
     }
-    System.out.println("post_bottom_up_codelets codeletToPost " + codeletToPost);
+    log.debug("post_bottom_up_codelets codeletToPost " + codeletToPost);
 
     codeletToPost
   }
@@ -1510,7 +1510,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
     // number of objects of the specified type in the workspace
     val n = if (structure_category.indexOf("bond") > -1) {
-      System.out.println("rough_num_of_objects. bond " + unrelated_objects_size);
+      log.debug("rough_num_of_objects. bond " + unrelated_objects_size);
 
       unrelated_objects_size
     }
