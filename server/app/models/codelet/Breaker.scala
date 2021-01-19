@@ -27,6 +27,7 @@ class Breaker(urgency: Int,
       log.debug(s"fizzle probability = $probability")
       if(Codelet.flipCoin(probability)) {
         log.debug("decided to fizzle!")
+        self ! Finished
       } else {
         log.debug("did not fizzle")
         coderack = sender()

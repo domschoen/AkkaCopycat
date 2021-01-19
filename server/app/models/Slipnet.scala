@@ -699,7 +699,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
 
     case SetSlipNodeBufferValue(slipNodeID: String, bufferValue: Double) =>
-      slipNodeRefs(slipNodeID).buffer = bufferValue
+      slipNodeRefs(slipNodeID).setBuffer(bufferValue)
 
     // bottom-up-bond-scout codelet.java.255
     case BondFromTo(from, to) =>
@@ -757,11 +757,11 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
           val isFromTo = bond_category==b1
           val urgency = bond_category.bond_degree_of_association();
 
-          bond_facet.buffer=100.0;
+          bond_facet.setBuffer(100.0);
           if (from_descriptor.isDefined)
-            from_descriptor.get.buffer=100.0;
+            from_descriptor.get.setBuffer(100.0);
           if (to_descriptor.isDefined)
-            to_descriptor.get.buffer=100.0;
+            to_descriptor.get.setBuffer(100.0);
 
           sender() ! SlipnetTopDownBondScoutCategory2Response(isFromTo,urgency, bond_category.slipNodeRep(),
             left.slipNodeRep(),
@@ -787,11 +787,11 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
           val urgency = bond_category.bond_degree_of_association();
 
-          bond_facet.buffer=100.0;
+          bond_facet.setBuffer(100.0);
         if (from_descriptor.isDefined)
-          from_descriptor.get.buffer=100.0
+          from_descriptor.get.setBuffer(100.0)
         if (to_descriptor.isDefined)
-          to_descriptor.get.buffer=100.0
+          to_descriptor.get.setBuffer(100.0)
 
           sender() ! SlipnetTopDownBondScoutDirection2Response(urgency, bond_category.slipNodeRep(),
             left.slipNodeRep(),
@@ -830,11 +830,11 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
           log.info(s"proposing ${adaptedBondCategory.name} bond ")
           // coderack.propose_bond(fromob,toob,bond_category,bond_facet,from_descriptor, to_descriptor,this);
           // coderack.java.274
-          bond_facet.buffer=100.0;
+          bond_facet.setBuffer(100.0)
           if (from_descriptorOpt.isDefined)
-            from_descriptorOpt.get.buffer=100.0
+            from_descriptorOpt.get.setBuffer(100.0)
           if (to_descriptorOpt.isDefined)
-            to_descriptorOpt.get.buffer=100.0
+            to_descriptorOpt.get.setBuffer(100.0)
 
           sender() ! BondFromTo2Response(
             adaptedBondCategory.slipNodeRep(),
@@ -1086,11 +1086,11 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       // match added compare to JavaCopycat
       bond_categoryOpt match {
         case Some(bond_category) =>
-          bond_category.buffer=100.0;
+          bond_category.setBuffer(100.0)
           dirCategoryIDOpt match {
             case Some(dirCategoryID) =>
               val dirCategory = slipNodeRefs(dirCategoryID)
-              dirCategory.buffer=100.0
+              dirCategory.setBuffer(100.0)
             case None =>
           }
           val urgency = bond_category.bond_degree_of_association()
@@ -1123,10 +1123,10 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       val group_cat = slipNodeRefs(g.group_category.id)
       val related = SlipnetFormulas.get_related_node(group_cat,group_category, identity)
       if (related.isDefined)
-        related.get.buffer = 100.0
+        related.get.setBuffer(100.0)
       if (g.direction_category.isDefined) {
         val direction_cat = slipNodeRefs(g.direction_category.get.id)
-        direction_cat.buffer = 100.0
+        direction_cat.setBuffer(100.0)
       }
       // GUI workspace.Workspace_Comments.text+=": succeeded ";
       // GUI if (!coderack.remove_terraced_scan) workspace.WorkspaceArea.AddObject(g,2);
@@ -1271,7 +1271,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       log.debug("Slipnet. SlipnetGoWithCorrespondenceBuilder")
       val existingConceptMappingList = ConceptMapping.conceptMappingsWithReps(conceptMappingReps)
       for (cm <- existingConceptMappingList) {
-        if (cm.label.isDefined) cm.label.get.buffer=100.0
+        if (cm.label.isDefined) cm.label.get.setBuffer(100.0)
       }
       val updatedCorrespondenceCMs = existingConceptMappingList.filter(cm => {
         !(cm.concept_mapping_present(existingConceptMappingList))
@@ -1325,6 +1325,8 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
     case SlipnetGoWithCorrespondenceBuilder6(cms) =>
       val conceptMappings = ConceptMapping.conceptMappingsWithReps(cms)
+      log.debug("SlipnetGoWithCorrespondenceBuilder6 cms " + conceptMappings)
+
       for (cm <- conceptMappings) {
         if (cm.label.isDefined) cm.label.get.setActivation(100.0)
       }
@@ -1336,16 +1338,6 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
     case SlipnetGoWithCorrespondenceStrengthTester(c: CorrespondenceRep, workspaceCorrespondences) =>
       val (internal_strength: Double, comap: Map[String, Boolean]) = correpondenceData(c, workspaceCorrespondences)
-
-
-      val cms = ConceptMapping.conceptMappingsWithReps(c.concept_mapping_list)
-
-      for (cm <- cms) {
-        cm.description_type1.buffer=100.0;
-        cm.descriptor1.buffer=100.0;
-        cm.description_type2.buffer=100.0;
-        cm.descriptor2.buffer=100.0;
-      }
       sender() ! SlipnetGoWithCorrespondenceStrengthTesterResponse(internal_strength, comap)
 
 
@@ -1759,10 +1751,10 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
   def activateConceptMappingList(concept_mapping_list: List[ConceptMapping]): Unit = {
     // activate some descriptions
     for (cm <- concept_mapping_list) {
-      cm.description_type1.buffer=100.0
-      cm.descriptor1.buffer=100.0
-      cm.description_type2.buffer=100.0
-      cm.descriptor2.buffer=100.0
+      cm.description_type1.setBuffer(100.0)
+      cm.descriptor1.setBuffer(100.0)
+      cm.description_type2.setBuffer(100.0)
+      cm.descriptor2.setBuffer(100.0)
     }
   }
 
@@ -1782,7 +1774,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
     number_of_updates=0;
     for (ob <- slipNodes){
-      ob.buffer = 0.0;
+      ob.setBuffer(0.0)
       ob.setActivation(0.0);
     }
     // clamp initially clamped slipnodes
@@ -1805,11 +1797,12 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
     }
 
     // for all nodes set old_activation to activation
+    System.out.println("for all nodes set old_activation to activation");
+
     for (ob <- slipNodes) {
       ob.old_activation=ob.activation
-      println(s"ob ${ob.id()} ob.buffer ${ob.buffer}")
-      ob.buffer-=ob.activation*((100.0-ob.conceptual_depth)/100.0)
-      println(s"ob ${ob.id()} conceptual_depth ${ob.conceptual_depth} ob.buffer ${ob.buffer} activation ${ob.activation}")
+      System.out.println("ob " + ob.id + " ob.buffer " + ob.buffer + " ob.activation " + ob.activation +  " ob.conceptual_depth " + ob.conceptual_depth);
+      ob.setBuffer(ob.buffer - (ob.activation*((100.0-ob.conceptual_depth)/100.0)))
 
       if (ob==successor){
         //System.out.println("activation ="+ob.activation+" buffer="+ob.buffer);
@@ -1825,35 +1818,43 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       //println(s"spreading activation ob ${ob.id()} size ${ob.outgoing_links.size}")
       for (sl <- ob.outgoing_links) {
         if (ob.activation == 100.0) {
-          //println(s"sl.to ${sl.to_node.id()} buffer ${sl.to_node.buffer} inc ${sl.intrinsic_degree_of_association()}")
+          val slidegassos = sl.intrinsic_degree_of_association()
+          println(s"sl.to ${sl.to_node.id()} buffer ${sl.to_node.buffer} inc ${slidegassos}")
 
-          sl.to_node.buffer += sl.intrinsic_degree_of_association()
+          sl.to_node.setBuffer(sl.to_node.buffer + slidegassos)
         }
       }
     }
+    log.debug("Slipnet. update. slipnodes")
     // for all nodes add the activation activation_buffer
     // if activation>100 or clamp=true, activation=100
     for (ob <- slipNodes) {
+      println(s"clamp ${ob.clamp} ob ${ob.id()} ob.buffer ${ob.buffer} activation ${ob.activation}")
+
       if (!ob.clamp) {
-        //println(s"Not clamp ob ${ob.id()} ob.buffer ${ob.buffer} activation ${ob.activation}")
         ob.setActivation( ob.activation + ob.buffer)
       }
       if (ob.activation>100.0) ob.setActivation(100.0)
       if (ob.activation<0.0) ob.setActivation(0.0)
-      println(s"ob ${ob.id()} clamp ${!ob.clamp} ob.buffer ${ob.buffer} activation ${ob.activation}")
+      //println(s"ob ${ob.id()} clamp ${!ob.clamp} ob.buffer ${ob.buffer} activation ${ob.activation}")
 
     }
 
 
     // check for probabablistic jump to 100%
+    System.out.println("check for probabablistic jump to 100%");
+
     var act = 0.0
     println("slipnodes.size()" + slipNodes.size)
     if (!remove_activation_jump) for (ob <- slipNodes) {
       act=ob.activation/100.0
       act=act*act*act
 
-      if ((ob.activation>55.0) && ( Random.rnd() < act) &&
-        (!ob.clamp)) ob.setActivation(100.0)
+      System.out.println("ob " + ob.id + " ob.activation " + ob.activation);
+
+      if ((ob.activation>55.0) && ( Random.rnd() < act) && (!ob.clamp)) {
+        ob.setActivation(100.0)
+      }
       println(s"ob ${ob.id()} activation ${ob.activation}")
 
     }
@@ -1861,9 +1862,10 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
 
     // check for redraw; and reset buffer values to 0
+    System.out.println("check for redraw; and reset buffer values to 0");
 
     for (ob <- slipNodes) {
-      ob.buffer = 0.0;
+      ob.setBuffer(0.0)
       //val obActAsInt = (ob.activation/10.0).toInt
       //if ((ob.activation/10.0).toInt != (ob.old_activation/10.0).toInt ) {
         // GUI ob.Redraw=true;

@@ -27,6 +27,10 @@ case class Correspondence (
     System.out.println("Correspondence. addConceptMapping " + cCMReps);
     concept_mapping_list = cCMReps ::: concept_mapping_list
   }
+  def addAccessoryConceptMappings(cCMReps: List[ConceptMappingRep]) = {
+    System.out.println("Correspondence. addAccessoryConceptMappings " + cCMReps);
+    accessory_concept_mapping_list =  accessory_concept_mapping_list ++ cCMReps
+  }
 
 
   import Correspondence.CorrespondenceRep
@@ -117,7 +121,7 @@ case class Correspondence (
   }
 
   // To be completed see below remark
-  def build_correspondence() = {
+  def build_correspondenceStep1() = {
     if (obj1.correspondence.isDefined) obj1.correspondence.get.break_correspondence()
     if (obj2.correspondence.isDefined) obj2.correspondence.get.break_correspondence()
     obj1.correspondence = Some(this)

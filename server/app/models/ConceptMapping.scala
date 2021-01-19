@@ -143,7 +143,7 @@ class ConceptMapping(val description_type1: SlipNode,
   val uuid = generateID()
   def generateID(): String = UUID.randomUUID().toString()
 
-  var label: Option[SlipNode] = SlipnetFormulas.get_bond_category(descriptor1,descriptor2, slipnetInfo.slipnetOpposite)  // if the concept_mapping has a linking concept
+  var label: Option[SlipNode] = SlipnetFormulas.get_bond_category(descriptor1,descriptor2, slipnetInfo.slipnetIdentity)  // if the concept_mapping has a linking concept
 
   def conceptMappingRep(): ConceptMappingRep = ConceptMappingRep(
       uuid,
@@ -163,7 +163,7 @@ class ConceptMapping(val description_type1: SlipNode,
   )
 
 
-  override def toString(): String = descriptor1.name + " -> " + descriptor2.name
+  override def toString(): String = descriptor1.name + " -> " + descriptor2.name + " label:"+ label.map(_.id()) + " label activation: " + (if (label.isDefined) label.get.activation else "None")
 
 
   def in_vector(cms: List[ConceptMapping]): Boolean = {

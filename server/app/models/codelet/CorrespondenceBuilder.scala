@@ -166,7 +166,7 @@ class CorrespondenceBuilder(urgency: Int,
       log.debug("CorrespondenceBuilder. SlipnetGoWithCorrespondenceBuilder4Response")
       workspace ! GoWithCorrespondenceBuilder7(corresponsdenceID, accessory_concept_mapping_list)
 
-    case GoWithCorrespondenceBuilder7Response(groupObjs) =>
+    case   GoWithCorrespondenceBuilder7Response(groupObjs) =>
       slipnet ! SlipnetGoWithCorrespondenceBuilder5(groupObjs)
 
     case SlipnetGoWithCorrespondenceBuilder5Response(accessory_concept_mapping_list) =>

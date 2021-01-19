@@ -1773,34 +1773,44 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
     case GoWithRuleBuilder(ruleID) =>
       val myrule = structureRefs(ruleID).asInstanceOf[Rule]
-      println("trying to build "+myrule.toString());
+      log.debug("trying to build "+myrule.toString());
       if (myrule.rule_equal(rule)){
         // rule already exists: fizzle, but activate concepts
-        print("already exists - activate concepts");
+        log.debug("already exists - activate concepts");
         myrule.activate_rule_descriptions()
         sender() ! Finished
       } else {
+        log.debug("GoWithRuleBuilder. does not exists")
         myrule.update_strength_value(initial.objects.toList, slippage_list())
         val strength = myrule.total_strength
         if (strength == 0.0) {
-          print("the rule is incompatible with correspondences: Fizzle");
+          log.debug("the rule is incompatible with correspondences: Fizzle");
           sender() ! Finished
         } else {
           // fight against other rules
-          if (rule.isDefined){
-            print("Fighting against existing rule");
-            print("existing rule strength: "+ rule.get.total_strength);
-            print("this rule strength: "+ rule.get.total_strength);
+          val anyLost = if (rule.isDefined){
+            log.debug("Fighting against existing rule");
+            log.debug("existing rule strength: "+ rule.get.total_strength);
+            log.debug("this rule strength: "+ rule.get.total_strength);
             if (!rule_vs_rule(
               myrule,1.0,rule.get,1.0)){
               // lost the fight
-              println("lost the fight: fizzle!");
-              sender() ! Finished
+              true
             }
-            else println("won!");
+            else {
+              println("won!")
+              false
+            };
+          } else false
+
+          if (anyLost) {
+            println("lost the fight: fizzle!");
+            sender() ! Finished
+          } else {
+            build_rule(myrule)
+            log.debug("building rule");
+            sender() ! Finished
           }
-          build_rule(myrule)
-          print("building rule");
 
         }
       }
@@ -2101,10 +2111,12 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
           break_rule(incompat_ruleOpt.get);
         }
         log.debug("building correspondence");
-        build_correspondence(c);
+        addStructure(c)
+        c.build_correspondenceStep1()
         sender() ! GoWithCorrespondenceBuilder6Response(c.correspondenceRep())
-
       }
+
+    // Second part of buid_correpondence
     case GoWithCorrespondenceBuilder7(correponsdenceID,accessory_concept_mapping_list) =>
       log.debug("Workspace. GoWithCorrespondenceBuilder7")
       val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
@@ -2112,6 +2124,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       val obj1 = c.obj1
       val obj2 = c.obj2
 
+      // we need to use the slipnet again so let's create a structure for it
       val groupObjs = if (obj1.isInstanceOf[Group] && obj2.isInstanceOf[Group]) {
         val group1 = obj1.asInstanceOf[Group]
         val group2 = obj2.asInstanceOf[Group]
@@ -2128,7 +2141,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
     case GoWithCorrespondenceBuilder8(correspondenceID,accessory_concept_mapping_list) =>
       val c = wsRefs(correspondenceID).asInstanceOf[Correspondence]
-      c.addConceptMappings(accessory_concept_mapping_list)
+      c.addAccessoryConceptMappings(accessory_concept_mapping_list)
       sender()! GoWithCorrespondenceBuilder8Response(c.concept_mapping_list)
 
     case GoWithCorrespondenceStrengthTester(correponsdenceID: String, futureGroupRep: FutureGroupRep, t:Double) =>
@@ -2150,6 +2163,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       }
 
     case GoWithCorrespondenceStrengthTester2(correponsdenceID: String, t:Double) =>
+      log.debug("GoWithCorrespondenceStrengthTester2. start update_strength_value")
       val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
       val wcreps = workspaceCorrespondences().map(_.correspondenceRep())
 
@@ -2419,11 +2433,11 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     }
   }
 
-  def build_correspondence(c: Correspondence) = {
-    addStructure(c)
-    c.build_correspondence()
-
-  }
+//  def build_correspondence(c: Correspondence) = {
+//    addStructure(c)
+//    c.build_correspondence()
+//
+//  }
 
   def build_group(group: Group) = {
     addStructure(group)
