@@ -81,6 +81,11 @@ class SlipNode(x: Int, y: Int, var conceptual_depth: Double, val name: String, v
     shrunk_link_length = len*0.4;
   }
 
+  override def toString(): String  = {
+     "slipnode "+ id() + " activation "+ activation +" buffer "+buffer+" conceptual_depth "+conceptual_depth
+  }
+
+
   def id() = shortName
 
   def slipNodeRep() = SlipNodeRep(id(), conceptual_depth)

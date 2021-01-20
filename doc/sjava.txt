@@ -1,0 +1,146 @@
+slipnodes.size()59
+ob A ob.activation 100.0
+Random rndseed=647
+ob A activation 100.0
+ob B ob.activation 100.0
+Random rndseed=648
+ob B activation 100.0
+ob C ob.activation 100.0
+Random rndseed=649
+ob C activation 100.0
+ob D ob.activation 100.0
+Random rndseed=650
+ob D activation 100.0
+ob E ob.activation 93.0
+Random rndseed=651
+setActivation slipnode id E activation 100.0
+ob E activation 100.0
+ob F ob.activation 100.0
+Random rndseed=652
+ob F activation 100.0
+ob G ob.activation 93.0
+Random rndseed=653
+ob G activation 93.0
+ob H ob.activation 100.0
+Random rndseed=654
+ob H activation 100.0
+ob I ob.activation 100.0
+Random rndseed=655
+ob I activation 100.0
+ob J ob.activation 100.0
+Random rndseed=656
+ob J activation 100.0
+ob K ob.activation 100.0
+Random rndseed=657
+ob K activation 100.0
+ob L ob.activation 93.0
+Random rndseed=658
+ob L activation 93.0
+ob M ob.activation 75.9765625
+Random rndseed=659
+ob M activation 75.9765625
+ob N ob.activation 5.9765625
+ob N activation 5.9765625
+ob O ob.activation 5.9765625
+ob O activation 5.9765625
+ob P ob.activation 5.9765625
+ob P activation 5.9765625
+ob Q ob.activation 5.9765625
+ob Q activation 5.9765625
+ob R ob.activation 5.9765625
+ob R activation 5.9765625
+ob S ob.activation 5.9765625
+ob S activation 5.9765625
+ob T ob.activation 5.9765625
+ob T activation 5.9765625
+ob U ob.activation 5.9765625
+ob U activation 5.9765625
+ob V ob.activation 5.9765625
+ob V activation 5.9765625
+ob W ob.activation 5.9765625
+ob W activation 5.9765625
+ob X ob.activation 5.9765625
+ob X activation 5.9765625
+ob Y ob.activation 5.9765625
+ob Y activation 5.9765625
+ob Z ob.activation 5.9765625
+ob Z activation 5.9765625
+ob 1 ob.activation 0.0
+ob 1 activation 0.0
+ob 2 ob.activation 0.0
+ob 2 activation 0.0
+ob 3 ob.activation 0.0
+ob 3 activation 0.0
+ob 4 ob.activation 0.0
+ob 4 activation 0.0
+ob 5 ob.activation 0.0
+ob 5 activation 0.0
+ob lm ob.activation 100.0
+Random rndseed=660
+ob lm activation 100.0
+ob rm ob.activation 80.0
+Random rndseed=661
+setActivation slipnode id rm activation 100.0
+ob rm activation 100.0
+ob md ob.activation 25.0
+ob md activation 25.0
+ob sl ob.activation 0.0
+ob sl activation 0.0
+ob wh ob.activation 0.0
+ob wh activation 0.0
+ob fs ob.activation 49.609375
+ob fs activation 49.609375
+ob ls ob.activation 0.0
+ob ls activation 0.0
+ob lf ob.activation 50.0
+ob lf activation 50.0
+ob rt ob.activation 60.0
+Random rndseed=662
+ob rt activation 60.0
+ob pd ob.activation 31.25
+ob pd activation 31.25
+ob sc ob.activation 50.0
+ob sc activation 50.0
+ob sm ob.activation 0.0
+ob sm activation 0.0
+ob pg ob.activation 5.0
+ob pg activation 5.0
+ob sg ob.activation 50.0
+ob sg activation 50.0
+ob smg ob.activation 0.0
+ob smg activation 0.0
+ob id ob.activation 50.0
+ob id activation 50.0
+ob op ob.activation 0.0
+ob op activation 0.0
+ob l ob.activation 100.0
+Random rndseed=663
+ob l activation 100.0
+ob g ob.activation 8.59375
+ob g activation 8.59375
+ob lc ob.activation 100.0
+Random rndseed=664
+ob lc activation 100.0
+ob spc ob.activation 100.0
+Random rndseed=665
+ob spc activation 100.0
+ob apc ob.activation 0.0
+ob apc activation 0.0
+ob dc ob.activation 95.0
+Random rndseed=666
+setActivation slipnode id dc activation 100.0
+ob dc activation 100.0
+ob bc ob.activation 95.0
+Random rndseed=667
+setActivation slipnode id bc activation 100.0
+ob bc activation 100.0
+ob gpc ob.activation 0.0
+ob gpc activation 0.0
+ob len ob.activation 9.9609375
+ob len activation 9.9609375
+ob obc ob.activation 40.0
+ob obc activation 40.0
+ob bf ob.activation 82.5
+Random rndseed=668
+setActivation slipnode id bf activation 100.0
+ob bf activation 100.0

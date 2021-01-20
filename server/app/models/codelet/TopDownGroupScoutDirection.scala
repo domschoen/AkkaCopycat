@@ -65,13 +65,14 @@ class TopDownGroupScoutDirection(urgency: Int,
       fromob = fb
       slipnet ! SlipnetGoWithTopDownGroupScoutCategory2(directionID, direction)
 
-    case SlipnetGoWithTopDownGroupScoutCategory2Response(slipNodeRep, direction) =>
-      workspace ! GoWithTopDownGroupScoutDirection(slipNodeRep, direction, fromob, runTemperature, groupSlipnetInfo)
+    case SlipnetGoWithTopDownGroupScoutCategory2Response(slipNodeRep, mydirection) =>
+      workspace ! GoWithTopDownGroupScoutDirection(slipNodeRep, mydirection, fromob, runTemperature, groupSlipnetInfo)
 
     case GoWithTopDownGroupScoutDirectionResponse(bc, fb) =>
+      log.debug("GoWithTopDownGroupScoutDirectionResponse")
       first_bond = fb
       bond_category = bc
-      slipnet ! SlipnetGoWithTopDownGroupScoutDirection(bond_category)
+      slipnet ! SlipnetGoWithTopDownGroupScoutDirection(bond_category, fb, fromob.uuid)
 
     /*case SlipnetGoWithTopDownGroupScoutDirectionResponse(group_category, gsi) =>
       groupSlipnetInfo = gsi

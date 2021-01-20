@@ -14,7 +14,7 @@ object ImportantObjectCorrespondenceScout {
   case class GoWithImportantObjectCorrespondenceScoutResponse(obj1: WorkspaceObjectRep, relevantDescriptors: List[SlipNodeRep])
   case class SlipnetGoWithImportantObjectCorrespondenceScoutResponse(s: Option[SlipNodeRep])
   case class GoWithImportantObjectCorrespondenceScout2Response(slippageListShell: SlippageListShell)
-  case class GoWithImportantObjectCorrespondenceScout3Response(obj2: WorkspaceObjectRep, obj2GroupRep: GroupRep)
+  case class GoWithImportantObjectCorrespondenceScout3Response(obj2: WorkspaceObjectRep, obj2GroupRep: WorkspaceObjectRep)
 }
 
 class ImportantObjectCorrespondenceScout(urgency: Int,
@@ -49,7 +49,7 @@ class ImportantObjectCorrespondenceScout(urgency: Int,
   var slipNode : SlipNodeRep = null
   var obj1: WorkspaceObjectRep = null
   var obj2: WorkspaceObjectRep = null
-  var obj2GroupRep: GroupRep = null
+  var obj2GroupRep: WorkspaceObjectRep = null
 
   def ruleID() = arguments.get.asInstanceOf[String]
 
@@ -87,10 +87,12 @@ class ImportantObjectCorrespondenceScout(urgency: Int,
 
     // Codelet.java.1333
     case SlipnetCompleteSlippageListResponse(slippage_list_rep: List[ConceptMappingRep]) =>
+      log.debug("SlipnetCompleteSlippageListResponse")
       workspace ! GoWithImportantObjectCorrespondenceScout3(slippage_list_rep, slipNode, runTemperature, obj1)
 
     // Codelet.java.1369
     case GoWithImportantObjectCorrespondenceScout3Response(o2, o2GroupRep) =>
+      log.debug("GoWithImportantObjectCorrespondenceScout3Response")
       obj2 = o2
       obj2GroupRep = o2GroupRep
       slipnet ! SlipnetGoWithImportantObjectCorrespondenceScout2(obj1, obj2, obj2GroupRep, runTemperature)

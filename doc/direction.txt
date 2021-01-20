@@ -1,0 +1,66 @@
+direction
+
+
+         bond_category = first_bond.bond_category;
+          
+         if (bond_category==null){
+            print("no bond in the "+direction.pname+" direction was found: fizzle.");
+            return false;
+         }
+         slipnode group_category= slipnet_formulas.get_related_node(bond_category,slipnet.group_category);
+
+         print("trying from "+fromob+" "+bond_category.pname);
+         
+         boolean search = true;
+         slipnode bond_facet = null; 
+         Vector object_list = new Vector();
+         Vector bond_list = new Vector();
+         // find leftmost object in group with these bonds
+         while (search){
+           search = false;
+           if (fromob.left_bond!=null){
+             if (fromob.left_bond.bond_category==bond_category){
+                if ((fromob.left_bond.direction_category==null)||
+                    (fromob.left_bond.direction_category==direction)){
+                   if ((bond_facet==null)||(bond_facet==fromob.left_bond.bond_facet)){
+                   bond_facet = fromob.left_bond.bond_facet;
+                   direction = fromob.left_bond.direction_category;
+                   fromob = fromob.left_bond.left_obj;
+                   search=true;}
+                }
+             }
+           }
+         }
+
+         // find rightmost object in group with these bonds
+         search = true; workspace_object toob = fromob;
+         while (search){
+           search = false;
+           if (toob.right_bond!=null){
+             if (toob.right_bond.bond_category==bond_category){
+                if ((toob.right_bond.direction_category==null)||
+                    (toob.right_bond.direction_category==direction)){
+                   if ((bond_facet==null)||(bond_facet==toob.right_bond.bond_facet)){
+                   bond_facet = toob.right_bond.bond_facet;
+                   direction = fromob.right_bond.direction_category;
+                   toob = toob.right_bond.right_obj;
+                   search=true;}
+                }
+             }
+           }
+         }
+       
+         if (toob == fromob) {
+            print("no possible group - fizzle");
+            return false;
+         }
+         print("proposing group from "+fromob+" to "+toob);
+         object_list.addElement(fromob);
+         while (fromob!=toob){
+           bond_list.addElement(fromob.right_bond);
+           object_list.addElement(fromob.right_bond.right_obj);
+           fromob=fromob.right_bond.right_obj;
+         }
+        
+         coderack.propose_group(object_list,bond_list,group_category,direction,bond_facet,this);
+      }

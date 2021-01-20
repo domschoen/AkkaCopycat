@@ -1,0 +1,12 @@
+
+
+
+
+
+Random rndseed=669
+sum 2608.4512535462814 chosen 933.8255487695687 codelets.size() 100
+Choose codelet at index 50 urgsum 967.6879299213934
+-
+Random rndseed=664
+sum 2673.4884021080466 chosen 2168.199094109626
+11:53:44 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Choose codelet at index 79

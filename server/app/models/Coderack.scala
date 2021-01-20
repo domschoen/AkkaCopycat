@@ -22,7 +22,7 @@ import play.api.Play.current
 import javax.inject._
 import models.SlipNode.SlipNodeRep
 import models.Temperature.CheckClamped
-import models.Workspace.{Initialize, UpdateEverythingFollowUp}
+import models.Workspace.{GetNumCodeletsResponse, Initialize, UpdateEverythingFollowUp}
 import models.codelet.CodeletType
 import models.codelet.Codelet
 import play.api.Configuration
@@ -49,7 +49,7 @@ object Coderack {
   case object Finish
   case object Step
   case object Initializing
-  case class Post(codelet: ActorRef, urgency: Int)
+  case class Post(codelet: ActorRef, urgency: Int, rndOpt: Option[Double])
   case class ProposeCorrespondence(
                                     correspondenceID: String,
                                     distiguishingConceptMappingSize: Int,
@@ -65,7 +65,14 @@ object Coderack {
   case class PostGroupBuilder(groupID: String, strength: Double)
   case class PostCorrespondenceBuilder(correspondenceID: String, strength: Double)
   case class PostRuleBuilder(ruleID: String, strength: Double)
-  case class PostCodelets(codeletToPost: List[(String,Either[Double, Int], Option[String])])
+  case class PostCodelets(codeletToPost: List[(String,Either[Double, Int], Option[String], Option[Double])])
+  case class GetNumCodelets(t:Double)
+
+  case class CodeletWrapper (
+                              codelet: ActorRef,
+                              time_stamp: Int,
+                              urgency: Int
+                            )
 }
 
 
@@ -80,7 +87,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
 //  static Caption[] Codelet_Captions;
 //  static Caption[] CodeletInfo_Captions;
 //  static Caption Codelet_Run;
-  var codelets = ListBuffer.empty[ActorRef]
+  var codelets = ListBuffer.empty[CodeletWrapper]
 
   var codelets_run = 0
   var number_of_bins = 7
@@ -95,7 +102,6 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
     CodeletType.BottomUpCorrespondenceScout)
   var number_of_objects = 0
   var runTemperature: Double = 100.0
-  var codeletsUrgency = Map.empty[ActorRef, Int]
   var initialString = ""
   var modifiedString =""
   var targetString = ""
@@ -188,20 +194,25 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
 
           //println("codeletsUrgency " + codeletsUrgency)
           for (newCodelet <- createdCodelets) {
-            self ! Post(newCodelet, 1)
+            self ! Post(newCodelet, 1, None)
           }
           self ! ChooseAndRun3
 
-        case Post(codelet: ActorRef, urgency) => {
-          // TODO
+        case Post(codelet: ActorRef, urgency, rndOpt) => {
+          log.debug(s"Coderack.Post codelets.size ${codelets.size} rndOpt $rndOpt")
+
           addCodelet(codelet, urgency)
           // Graphic stuff
           // Coderack_Pressure.AddCodelet(c);
 
           // removes a codelet if there are too many
           if (codelets.size > 100) {
-            val nc = chooseOldCodelet();
-            removeCodelet(nc)
+            val ncOpt = chooseOldCodelet(rndOpt)
+            ncOpt match {
+              case Some(nc) => removeCodelet(nc)
+              case None => ()
+            }
+
           }
 
           // Graphics
@@ -233,6 +244,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
 
 
         case UpdateEverythingResponse(t) =>
+          log.debug("Coderack. UpdateEverythingResponse")
           slipnet ! models.Slipnet.UpdateEverything(t)
 
         case SlipnetUpdateEverythingResponse(t) =>
@@ -259,8 +271,8 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
           val scale: Double = (100.0 - runTemperature + 10.0) / 15.0
           log.debug("Choose codelet codelets size " + codelets.size + " scale " + scale)
 
-          val urgues = codelets.map(c => codeletsUrgency(c))
-          val urgencies = codelets.map(c => Math.pow(codeletsUrgency(c),scale))
+          val urgues = codelets.map(c => c.urgency)
+          val urgencies = codelets.map(c => Math.pow(c.urgency,scale))
           log.debug(s"urgencies: $urgues")
           // then we choose a random number in the urgency sum and we choose the codelet at this random number looking
           // from first codelet up to this random number in terms of urgency
@@ -272,7 +284,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
           codelets = codelets.filter(e => e != chosenCodelet)
           log.debug("ChooseAndRun: codelets found " + chosenCodelet)
 
-          chosenCodelet ! Codelet.Run(initialString, modifiedString, targetString, runTemperature)
+          chosenCodelet.codelet ! Codelet.Run(initialString, modifiedString, targetString, runTemperature)
 
 
         case ProposeCorrespondence(
@@ -286,7 +298,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
           // this is GUI ncd.Pressure_Type = orig.Pressure_Type;
           val urgency = get_urgency_bin(urgencyRaw)
           val newCodelet = createCodelet(CodeletType.CorrespondenceStrengthTester, urgency, Some(correspondenceID))
-          self ! Post(newCodelet, urgency)
+          self ! Post(newCodelet, urgency, None)
           sender() ! Finished
 
         case ProposeBond(bondID, bond_degree_of_association) =>
@@ -296,27 +308,27 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
           println("propose_bond urgency " + urgency)
 
           val newCodelet = createCodelet(CodeletType.BondStrengthTester, urgency, Some(bondID))
-          self ! Post(newCodelet, urgency)
+          self ! Post(newCodelet, urgency, None)
           sender() ! Finished
 
         case ProposeGroup(groupID, urgencyRaw) =>
           val urgency = get_urgency_bin(urgencyRaw)
           val newCodelet = createCodelet(CodeletType.GroupStrengthTester, urgency, Some(groupID))
-          self ! Post(newCodelet, urgency)
+          self ! Post(newCodelet, urgency, None)
           sender() ! Finished
 
         case  ProposeDescription(descriptionID, urgencyRaw) =>
           val urgency = get_urgency_bin(urgencyRaw)
           val newCodelet = createCodelet(CodeletType.DescriptionStrengthTester, urgency, Some(descriptionID))
           // ignored ncd.Pressure_Type = orig.Pressure_Type;
-          self ! Post(newCodelet, urgency)
+          self ! Post(newCodelet, urgency, None)
           sender() ! Finished
 
         case ProposeRule(ruleID, urgencyRaw) =>
           val urgency = get_urgency_bin(urgencyRaw)
           log.debug("Coderack. ProposeRule " + ruleID)
           val newCodelet = createCodelet(CodeletType.RuleStrengthTester, urgency, Some(ruleID))
-          self ! Post(newCodelet, urgency)
+          self ! Post(newCodelet, urgency, None)
           sender() ! Finished
 
 
@@ -325,7 +337,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
 
           // Pressure_Type argument is missing
           val newCodelet = createCodelet(CodeletType.BondBuilder, urgency, Some(bondID))
-          self ! Post(newCodelet, urgency)
+          self ! Post(newCodelet, urgency, None)
           sender() ! Finished
 
         case PostDescriptionBuilder(descriptionID, strength) =>
@@ -333,7 +345,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
           val newCodelet = createCodelet(CodeletType.DescriptionBuilder, urgency, Some(descriptionID))
           // Pressure_Type argument is missing
 //          nc.Pressure_Type = this.Pressure_Type;
-          self ! Post(newCodelet, urgency)
+          self ! Post(newCodelet, urgency, None)
           sender() ! Finished
 
 
@@ -342,14 +354,14 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
 
           // Pressure_Type argument is missing
           val newCodelet = createCodelet(CodeletType.GroupBuilder, urgency, Some(groupID))
-          self ! Post(newCodelet, urgency)
+          self ! Post(newCodelet, urgency, None)
           sender() ! Finished
 
         case PostCorrespondenceBuilder(correspondenceID, strength) =>
           val urgency = get_urgency_bin(strength)
           // Pressure_Type argument is missing
           val newCodelet = createCodelet(CodeletType.CorrespondenceBuilder, urgency, Some(correspondenceID))
-          self ! Post(newCodelet, urgency)
+          self ! Post(newCodelet, urgency, None)
           sender() ! Finished
 
         case PostRuleBuilder(ruleID, strength) =>
@@ -357,11 +369,11 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
 
           // Pressure_Type argument is missing
           val newCodelet = createCodelet(CodeletType.RuleBuilder, urgency, Some(ruleID))
-          self ! Post(newCodelet,urgency)
+          self ! Post(newCodelet,urgency, None)
           sender() ! Finished
 
         case PostCodelets(codeletToPost) =>
-          for ((st, rawUrgency, argOpt) <- codeletToPost) {
+          for ((st, rawUrgency, argOpt, rndOpt) <- codeletToPost) {
             val codeletType = Codelet.codeletTypeWithString(st)
             val urgency = rawUrgency match {
               case Right(x) => x
@@ -370,9 +382,11 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
             System.out.println("PostCodelets " + codeletType + " rawUrgency" + rawUrgency + " urgency_bin " + urgency);
 
             val newCodelet = createCodelet(codeletType, urgency, argOpt)
-            self ! Post(newCodelet,urgency)
+            self ! Post(newCodelet,urgency, rndOpt)
           }
           workspace ! UpdateEverythingFollowUp
+        case GetNumCodelets(t) =>
+          sender() ! GetNumCodeletsResponse(codelets.size, t)
   }
 
   def total_num_of_codelets() = {
@@ -399,15 +413,33 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
       }
   }
 
-  private def chooseOldCodelet(): ActorRef = {
-    codelets(0)
+  private def chooseOldCodelet(rndOpt: Option[Double]): Option[CodeletWrapper] = {
+    // selects an old codelet to remove from the coderack
+    // more likely to select lower urgency codelets
+
+    if (codelets.isEmpty) {
+      None
+    } else {
+      var urgency_values = codelets.map( c =>  {
+        (codelets_run.toDouble - c.time_stamp) * (7.5 - c.urgency)
+      })
+      val urgsum = urgency_values.sum
+
+
+      val rndValue = rndOpt match {
+        case Some(rnd) => rnd
+        case None => Random.rnd()
+      }
+      val chosen = rndValue  * urgsum;
+      val index = Utilities.valueProportionalIndexInValueListAtValue(0.0, 0, urgency_values.toList, chosen)
+      Some(codelets(index))
+    }
   }
-  private def removeCodelet(nc: ActorRef) = {
+  private def removeCodelet(nc: CodeletWrapper) = {
     codelets -= nc
   }
   private def addCodelet(codelet: ActorRef, urgency: Int) = {
-    codelets += codelet
-    codeletsUrgency += (codelet -> urgency)
+    codelets += CodeletWrapper(codelet, codelets_run, urgency)
   }
 }
 

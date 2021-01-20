@@ -206,8 +206,8 @@ object Random {
     392,841,266,114,440,428,445,846,621,365)
   var  rndseed: Integer = 1
   def rnd(): Double = {
-    Thread.sleep(100)
-    if (rndseed == 23) {
+    Thread.sleep(1)
+    if (rndseed >= 1000) {
       try {
         throw new Exception("toto")
       } catch {

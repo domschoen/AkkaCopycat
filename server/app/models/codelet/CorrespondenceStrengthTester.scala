@@ -14,6 +14,7 @@ object CorrespondenceStrengthTester {
   case class GoWithCorrespondenceStrengthTesterResponse2(c: CorrespondenceRep, workspaceCorrespondences: List[CorrespondenceRep])
   case class GoWithCorrespondenceStrengthTesterResponse3(c: CorrespondenceRep, strenght: Double)
   case class SlipnetGoWithCorrespondenceStrengthTesterResponse(internal_strength: Double, supporting_correspondences:Map[String, Boolean])
+  case object SlipnetGoWithCorrespondenceStrengthTester2Response
 }
 class CorrespondenceStrengthTester(urgency: Int,              workspace: ActorRef,
                                    slipnet: ActorRef,
@@ -24,12 +25,17 @@ class CorrespondenceStrengthTester(urgency: Int,              workspace: ActorRe
   import models.Temperature.Register
   import CorrespondenceStrengthTester.{
     GoWithCorrespondenceStrengthTesterResponse,
-    SlipnetGoWithCorrespondenceStrengthTesterResponse
+    SlipnetGoWithCorrespondenceStrengthTesterResponse,
+    SlipnetGoWithCorrespondenceStrengthTester2Response
   }
   import models.Coderack.PostCorrespondenceBuilder
   import models.Workspace.GoWithCorrespondenceStrengthTester
+  import models.Slipnet.{
+    SlipnetGoWithCorrespondenceStrengthTester2
+  }
 
   var runTemperature: Double = 0.0
+  var strength = 0.0
 
   def correspondanceID() = arguments.get.asInstanceOf[String]
 
@@ -75,7 +81,11 @@ class CorrespondenceStrengthTester(urgency: Int,              workspace: ActorRe
       workspace ! GoWithCorrespondenceStrengthTester3(correspondanceID,internal_strength, supporting_correspondences, runTemperature)
 
 
-    case GoWithCorrespondenceStrengthTesterResponse3(c, strength) =>
+    case GoWithCorrespondenceStrengthTesterResponse3(c, s) =>
+      strength = s
+      slipnet ! SlipnetGoWithCorrespondenceStrengthTester2(c)
+
+    case SlipnetGoWithCorrespondenceStrengthTester2Response =>
       coderack ! PostCorrespondenceBuilder(correspondanceID, strength)
 
     case TemperatureResponse(value) =>

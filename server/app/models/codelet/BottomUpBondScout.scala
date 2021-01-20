@@ -79,7 +79,7 @@ class BottomUpBondScout(urgency: Int,              workspace: ActorRef,
       bondFacet = bf
       from_descriptor = fd
       to_descriptor = td
-      slipnet ! BondFromTo2(bondFrom, bondTo, from_descriptor, to_descriptor)
+      slipnet ! BondFromTo2(bondFrom, bondTo, from_descriptor, to_descriptor,bondFacet)
 
     case BondFromTo2Response(bondCategory: SlipNodeRep, bcda, slipnetLeft, slipnetRight) =>
       bondCategoryDegreeOfAssociation = bcda

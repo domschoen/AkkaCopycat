@@ -35,6 +35,7 @@ object GroupScoutWholeString {
                                                        object_list: List[WorkspaceObjectRep],
                                                        bond_list: List[BondRep]
                                                      )
+  case class GoWithGroupScoutWholeString3Response(leftMost: WorkspaceObjectRep)
 
   case class GetLeftAndRightResponse(slipnetLeft: SlipNodeRep, slipnetRight: SlipNodeRep)
 
@@ -52,11 +53,13 @@ class GroupScoutWholeString(urgency: Int,
     GoWithGroupScoutWholeStringResponse,
     SlipnetGoWithGroupScoutWholeStringResponse,
     GetLeftAndRightResponse,
-    GroupScoutWholeString3Response
+    GroupScoutWholeString3Response,
+    GoWithGroupScoutWholeString3Response
   }
   import models.Workspace.{
     GoWithGroupScoutWholeString,
     GoWithGroupScoutWholeString2,
+    GoWithGroupScoutWholeString3,
     WorkspaceProposeGroup
   }
   import models.Slipnet.GetLeftAndRight
@@ -103,7 +106,7 @@ class GroupScoutWholeString(urgency: Int,
             val leftmostGroupOpt = left_most.groupRep
             leftmostGroupOpt match {
               case Some(leftmostGroup) =>
-                self ! GoWithGroupScoutWholeStringResponse(leftmostGroup.workspaceObjectRep)
+                workspace ! GoWithGroupScoutWholeString3(leftmostGroup.uuid)
               case None =>
                 workspace ! GoWithGroupScoutWholeString2(left_most, slipnetLeft, slipnetRight)
             }
@@ -111,6 +114,8 @@ class GroupScoutWholeString(urgency: Int,
         case None =>
           workspace ! GoWithGroupScoutWholeString2(left_most, slipnetLeft, slipnetRight)
       }
+    case GoWithGroupScoutWholeString3Response(leftmostGroup) =>
+      self ! GoWithGroupScoutWholeStringResponse(leftmostGroup)
 
     case GroupScoutWholeString2Response(gc, dc, bf, ol, bl) =>
       group_category = gc

@@ -12,7 +12,7 @@ import scala.collection.mutable.ListBuffer
 object Group {
   case class GroupRep(
                        uuid: String,
-                       workspaceObjectRep: WorkspaceObjectRep,
+                       //workspaceObjectRep: WorkspaceObjectRep,
                        group_category: SlipNodeRep,
                        direction_category: Option[SlipNodeRep],
                        bond_facet: SlipNodeRep,
@@ -91,7 +91,7 @@ class Group (
 
   def groupRep(): GroupRep = GroupRep(
     uuid,
-    workspaceObjectRep(),
+    //workspaceObjectRep(),
     group_category, direction_category, bond_facet, bondReps)
 
 
