@@ -740,7 +740,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
     // codelet.java.127
     case GoWithBottomUpDescriptionScout(t) =>
-      val chosen_objectOpt: Option[WorkspaceObject] = chooseObjectFromList(objects.toList, TemperatureAjustmentVariable.Total_salience)
+      val chosen_objectOpt = chooseObject(objects.toList, TemperatureAjustmentVariable.Total_salience, t)
       chosen_objectOpt match {
         case None =>
           log.debug("GoWithBottomUpDescriptionScout | failed with empty chosen object")
