@@ -2216,6 +2216,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       sender() ! GoWithCorrespondenceStrengthTesterResponse2(c.correspondenceRep(), wcreps)
 
     case GoWithCorrespondenceStrengthTester3(correponsdenceID: String, internalStrength: Double, supporting_correspondences:Map[String, Boolean], t:Double) =>
+      log.debug("GoWithCorrespondenceStrengthTester3")
       val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
       c.update_strength_value(internalStrength, workspaceCorrespondences(), supporting_correspondences)
 

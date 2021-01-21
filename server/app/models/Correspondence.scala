@@ -12,7 +12,11 @@ object Correspondence {
                                 obj1: WorkspaceObjectRep,
                                 obj2: WorkspaceObjectRep,
                                 concept_mapping_list: List[ConceptMappingRep]
-                              )
+                              ) {
+    override def toString(): String = {
+      s"Correspondence between ${obj1} and ${obj2}"
+    }
+  }
 
 }
 
@@ -36,6 +40,10 @@ case class Correspondence (
   import Correspondence.CorrespondenceRep
   var accessory_concept_mapping_list = ListBuffer.empty[ConceptMappingRep]
 
+
+  override def toString(): String = {
+    s"Correspondence between ${obj1} and ${obj2}"
+  }
   def correspondenceRep() = CorrespondenceRep(
     uuid,
     obj1.workspaceObjectRep(),

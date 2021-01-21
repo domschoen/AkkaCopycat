@@ -23,6 +23,7 @@ object WorkspaceObject {
                                  right_bond: Option[BondRep]
                                )
 
+
   case class WorkspaceObjectRep2(
                                  uuid: String,
                                  descriptions: List[DescriptionRep],

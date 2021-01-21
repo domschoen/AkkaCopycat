@@ -1,4 +1,4 @@
-/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=49683:/Applications/IntelliJ IDEA CE.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/tools.jar:/Users/dschoen/Documents/gitlab/copycat/JavaCopyCat/out/production/JavaCopyCat rungroup
+/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=50155:/Applications/IntelliJ IDEA CE.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/tools.jar:/Users/dschoen/Documents/gitlab/copycat/JavaCopyCat/out/production/JavaCopyCat rungroup
 Random rndseed=1
 Random rndseed=2
 Random rndseed=3
@@ -1591,6 +1591,8 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -1717,6 +1719,8 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -1802,7 +1806,7 @@ Random rndseed=55
 <<<<
 
 5T: 20.0
-post_bottom_up_codelets
+------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.04000000000000001
 Random rndseed=56
 <<<<
@@ -2717,6 +2721,15 @@ support obj1 letter (1)1
 support obj1.spans_string false
 support obj2 letter (1)1
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (3)3 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [leftmost -> rightmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -2851,6 +2864,8 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -2938,7 +2953,7 @@ create codelet top-down-description-scout urgency 4
 <<<<
 
 5T: 91.46666666666665
-post_bottom_up_codelets
+------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.8366151111111109
 Random rndseed=134
 get_bottom_up_codelets rawUrgency3
@@ -3782,6 +3797,15 @@ support obj1 letter (3)3
 support obj1.spans_string false
 support obj2 letter (3)3
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [rightmost -> rightmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -3929,6 +3953,8 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -4024,7 +4050,7 @@ create codelet top-down-description-scout urgency 4
 <<<<
 
 5T: 90.85714285714286
-post_bottom_up_codelets
+------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.8255020408163266
 Random rndseed=214
 get_bottom_up_codelets rawUrgency3
@@ -4940,6 +4966,15 @@ support obj1 letter (1)1
 support obj1.spans_string false
 support obj2 letter (1)1
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (3)3 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [leftmost -> rightmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -5156,6 +5191,8 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -5329,7 +5366,7 @@ create codelet top-down-description-scout urgency 4
 <<<<
 
 5T: 92.40876385336745
-post_bottom_up_codelets
+------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.853937963690743
 Random rndseed=316
 <<<<
@@ -6224,6 +6261,15 @@ support obj1 letter (1)1
 support obj1.spans_string false
 support obj2 letter (1)1
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (3)3 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [leftmost -> rightmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -6408,6 +6454,15 @@ support obj1 letter (1)1
 support obj1.spans_string false
 support obj2 letter (1)1
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [leftmost -> leftmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -6430,8 +6485,6 @@ scale 1.1170628406183956urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 Random rndseed=407
 sum 225.95068623787768 chosen 6.77852058713633 codelets.size() 72
 Choose codelet at index 6 urgsum 7.0
-
-
 #### bottom-up-bond-scout ####
 Random rndseed=408
 Random rndseed=409
@@ -6439,14 +6492,12 @@ initial object chosen: letter (3)3 in initial string
 to object: letter (2)2
 Random rndseed=410
 chosen bond facet: letter category
-
 from object descriptor: C
 to object descriptior: B
 get_bond_category fromnode slipnode C activation 100.0 buffer 0.0 conceptual_depth 50.0
 get_bond_category tonode slipnode B activation 100.0 buffer 100.0 conceptual_depth 50.0
 get_bond_category slipnet_link slipnet_link@7b23ec81 l.to_node slipnode B activation 100.0 buffer 100.0 conceptual_depth 50.0
 proposing predecessor bond 
-
 setBuffer slipnode id lc buffer 100.0
 setBuffer slipnode id C buffer 100.0
 setBuffer slipnode id B buffer 100.0
@@ -6493,6 +6544,8 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -7420,6 +7473,13 @@ Random rndseed=476
 target string selected
 Random rndseed=477
 object chosen = letter (3)3
+define direction
+mydirection slipnode lf activation 60.0 buffer 0.0 conceptual_depth 50.0
+check possible group letter (3)3
+check possible group. first_bond null
+check possible group. direction slipnode rt activation 60.0 buffer 0.0 conceptual_depth 50.0
+check possible group. new first_bond null new first_bond direction_category firstbond null
+check possible group. newDirection2 slipnode rt activation 60.0 buffer 0.0 conceptual_depth 50.0
 no possible group: fizzle!
 mainloop | codelets_run 76 clamp_time 30 last_update 75 time_step_length 15
 choose T: 92.27384592336504
@@ -7436,6 +7496,13 @@ Random rndseed=479
 initial string selected
 Random rndseed=480
 object chosen = letter (3)3
+define direction
+mydirection slipnode lf activation 60.0 buffer 0.0 conceptual_depth 50.0
+check possible group letter (3)3
+check possible group. first_bond null
+check possible group. direction slipnode lf activation 60.0 buffer 0.0 conceptual_depth 50.0
+check possible group. new first_bond null new first_bond direction_category firstbond null
+check possible group. newDirection2 slipnode lf activation 60.0 buffer 0.0 conceptual_depth 50.0
 no possible group: fizzle!
 mainloop | codelets_run 77 clamp_time 30 last_update 75 time_step_length 15
 choose T: 92.27384592336504
@@ -7549,6 +7616,15 @@ support obj1 letter (3)3
 support obj1.spans_string false
 support obj2 letter (3)3
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [rightmost -> rightmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -7758,6 +7834,8 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -7853,7 +7931,7 @@ create codelet top-down-description-scout urgency 4
 <<<<
 
 5T: 92.27384592336504
-post_bottom_up_codelets
+------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.8514462641488912
 Random rndseed=521
 get_bottom_up_codelets rawUrgency3
@@ -8901,8 +8979,19 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [middle -> middle]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -8925,8 +9014,19 @@ support obj1 letter (1)1
 support obj1.spans_string false
 support obj2 letter (1)1
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [leftmost -> leftmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (1)1 and letter (1)1
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -9092,7 +9192,7 @@ create codelet top-down-description-scout urgency 4
 <<<<
 
 5T: 91.45777777777778
-post_bottom_up_codelets
+------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.8364525116049384
 Random rndseed=621
 get_bottom_up_codelets rawUrgency3
@@ -9152,8 +9252,6 @@ create codelet bottom-up-correspondence-scout urgency 3
 
 Random rndseed=633
 Random rndseed=634
-
-// couille
 >>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.8133333333333331
 Random rndseed=635
 get_bottom_up_codelets rawUrgency3
@@ -9855,8 +9953,19 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [middle -> middle]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -9957,6 +10066,13 @@ Random rndseed=686
 target string selected
 Random rndseed=687
 object chosen = letter (3)3
+define direction
+mydirection slipnode lf activation 50.0 buffer 0.0 conceptual_depth 50.0
+check possible group letter (3)3
+check possible group. first_bond null
+check possible group. direction slipnode rt activation 60.0 buffer 0.0 conceptual_depth 50.0
+check possible group. new first_bond null new first_bond direction_category firstbond null
+check possible group. newDirection2 slipnode rt activation 60.0 buffer 0.0 conceptual_depth 50.0
 no possible group: fizzle!
 mainloop | codelets_run 112 clamp_time 30 last_update 105 time_step_length 15
 choose T: 71.10979624568279
@@ -9964,9 +10080,6 @@ scale 2.592680250287814urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
 Random rndseed=688
 sum 2390.6610733036514 chosen 1936.4354693759578 codelets.size() 95
 Choose codelet at index 77 urgsum 1970.2378531384036
-
-
-// Couille
 #### top-down-group-scout--direction ####
 looking for right group
 about to choose string:
@@ -9976,7 +10089,14 @@ Random rndseed=689
 target string selected
 Random rndseed=690
 object chosen = letter (2)2
+define direction
 Random rndseed=691
+mydirection slipnode rt activation 60.0 buffer 0.0 conceptual_depth 50.0
+check possible group letter (2)2
+check possible group. first_bond null
+check possible group. direction slipnode rt activation 60.0 buffer 0.0 conceptual_depth 50.0
+check possible group. new first_bond successor bond between letter (1)1 and letter (2)2 new first_bond direction_category slipnode rt activation 60.0 buffer 0.0 conceptual_depth 50.0
+check possible group. newDirection2 slipnode rt activation 60.0 buffer 0.0 conceptual_depth 50.0
 trying from letter (2)2 successor
 proposing group from letter (1)1 to letter (2)2
 setBuffer slipnode id sc buffer 100.0
@@ -9999,6 +10119,13 @@ Random rndseed=694
 target string selected
 Random rndseed=695
 object chosen = letter (1)1
+define direction
+mydirection slipnode rt activation 60.0 buffer 100.0 conceptual_depth 50.0
+check possible group letter (1)1
+check possible group. first_bond successor bond between letter (1)1 and letter (2)2
+check possible group. direction slipnode lf activation 50.0 buffer 0.0 conceptual_depth 50.0
+check possible group. new first_bond null new first_bond direction_category firstbond null
+check possible group. newDirection2 slipnode lf activation 50.0 buffer 0.0 conceptual_depth 50.0
 no possible group: fizzle!
 mainloop | codelets_run 114 clamp_time 30 last_update 105 time_step_length 15
 choose T: 71.10979624568279
@@ -10034,7 +10161,12 @@ Random rndseed=699
 target string selected
 Random rndseed=700
 object chosen = letter (2)2
+define direction
 Random rndseed=701
+mydirection slipnode lf activation 50.0 buffer 0.0 conceptual_depth 50.0
+check possible group letter (2)2
+check possible group. first_bond successor bond between letter (1)1 and letter (2)2
+check possible group. direction slipnode rt activation 60.0 buffer 100.0 conceptual_depth 50.0
 trying from letter (2)2 successor
 proposing group from letter (1)1 to letter (2)2
 setBuffer slipnode id sc buffer 100.0
@@ -10086,8 +10218,18 @@ support obj1 letter (1)1
 support obj1.spans_string false
 support obj2 letter (1)1
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [leftmost -> leftmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (1)1 and letter (1)1
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -10155,8 +10297,24 @@ support obj1 letter (3)3
 support obj1.spans_string false
 support obj2 letter (3)3
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [rightmost -> rightmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [rightmost -> rightmost]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
 support support_sum 64.0
@@ -10208,8 +10366,19 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [middle -> middle]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -10233,8 +10402,19 @@ support obj1 letter (1)1
 support obj1.spans_string false
 support obj2 letter (1)1
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [leftmost -> leftmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (1)1 and letter (1)1
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -10329,7 +10509,7 @@ Random rndseed=713
 <<<<
 
 5T: 71.10979624568279
-post_bottom_up_codelets
+------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.5056603122102522
 Random rndseed=714
 get_bottom_up_codelets rawUrgency3
@@ -11170,8 +11350,19 @@ support obj1 letter (1)1
 support obj1.spans_string false
 support obj2 letter (1)1
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (3)3 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [leftmost -> rightmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (3)3 c2 Correspondence between letter (1)1 and letter (1)1
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -11260,8 +11451,24 @@ support obj1 letter (3)3
 support obj1.spans_string false
 support obj2 letter (3)3
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [rightmost -> rightmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [rightmost -> rightmost]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
 support support_sum 64.0
@@ -11367,10 +11574,29 @@ support obj1 letter (1)1
 support obj1.spans_string false
 support obj2 letter (1)1
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [leftmost -> leftmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (1)1 and letter (1)1
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [leftmost -> leftmost]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
 support support_sum 76.8
@@ -11464,10 +11690,29 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [middle -> middle]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [middle -> middle]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -11491,10 +11736,29 @@ support obj1 letter (1)1
 support obj1.spans_string false
 support obj2 letter (1)1
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [leftmost -> leftmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (1)1 and letter (1)1
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [leftmost -> leftmost]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
 support support_sum 76.8
@@ -11526,10 +11790,28 @@ support obj1 letter (3)3
 support obj1.spans_string false
 support obj2 letter (3)3
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [rightmost -> rightmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [rightmost -> rightmost]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (3)3 and letter (3)3
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 79.36
@@ -11740,7 +12022,7 @@ create codelet top-down-description-scout urgency 4
 <<<<
 
 5T: 71.49315871902928
-post_bottom_up_codelets
+------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.5111271743624313
 Random rndseed=819
 get_bottom_up_codelets rawUrgency3
@@ -12647,6 +12929,11 @@ Random rndseed=895
 target string selected
 Random rndseed=896
 object chosen = letter (3)3
+define direction
+mydirection slipnode lf activation 100.0 buffer 100.0 conceptual_depth 50.0
+check possible group letter (3)3
+check possible group. first_bond predecessor bond between letter (2)2 and letter (3)3
+check possible group. direction slipnode lf activation 100.0 buffer 100.0 conceptual_depth 50.0
 trying from letter (3)3 predecessor
 proposing group from letter (2)2 to letter (3)3
 setBuffer slipnode id pd buffer 100.0
@@ -12875,10 +13162,29 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [middle -> middle]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [middle -> middle]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -12902,10 +13208,29 @@ support obj1 letter (1)1
 support obj1.spans_string false
 support obj2 letter (1)1
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [leftmost -> leftmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (1)1 and letter (1)1
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [leftmost -> leftmost]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
 support support_sum 79.872
@@ -12937,10 +13262,28 @@ support obj1 letter (3)3
 support obj1.spans_string false
 support obj2 letter (3)3
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [rightmost -> rightmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [rightmost -> rightmost]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (3)3 and letter (3)3
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 79.9744
@@ -13159,7 +13502,7 @@ Random rndseed=945
 <<<<
 
 5T: 62.04388888888889
-post_bottom_up_codelets
+------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.384944414845679
 Random rndseed=946
 get_bottom_up_codelets rawUrgency3
@@ -13976,10 +14319,28 @@ support obj1 letter (3)3
 support obj1.spans_string false
 support obj2 letter (3)3
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [rightmost -> rightmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [rightmost -> rightmost]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (3)3 and letter (3)3
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 79.9744
@@ -14008,6 +14369,11 @@ Random rndseed=1001
 initial string selected
 Random rndseed=1002
 object chosen = letter (1)1
+define direction
+mydirection slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+check possible group letter (1)1
+check possible group. first_bond successor bond between letter (1)1 and letter (2)2
+check possible group. direction slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
 trying from letter (1)1 successor
 proposing group from letter (1)1 to letter (2)2
 setBuffer slipnode id sc buffer 100.0
@@ -14278,7 +14644,12 @@ Random rndseed=1032
 initial string selected
 Random rndseed=1033
 object chosen = letter (2)2
+define direction
 Random rndseed=1034
+mydirection slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+check possible group letter (2)2
+check possible group. first_bond predecessor bond between letter (2)2 and letter (3)3
+check possible group. direction slipnode lf activation 100.0 buffer 100.0 conceptual_depth 50.0
 trying from letter (2)2 predecessor
 proposing group from letter (2)2 to letter (3)3
 setBuffer slipnode id pd buffer 100.0
@@ -14340,8 +14711,19 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [middle -> middle]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -14365,8 +14747,19 @@ support obj1 letter (1)1
 support obj1.spans_string false
 support obj2 letter (1)1
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [leftmost -> leftmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (1)1 and letter (1)1
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -14609,7 +15002,7 @@ Random rndseed=1063
 <<<<
 
 5T: 61.94432235724881
-post_bottom_up_codelets
+------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.3837099072298754
 Random rndseed=1064
 <<<<
@@ -15522,8 +15915,19 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [middle -> middle]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -15555,6 +15959,11 @@ Random rndseed=1139
 target string selected
 Random rndseed=1140
 object chosen = letter (1)1
+define direction
+mydirection slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+check possible group letter (1)1
+check possible group. first_bond successor bond between letter (1)1 and letter (2)2
+check possible group. direction slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
 trying from letter (1)1 successor
 proposing group from letter (1)1 to letter (3)3
 setBuffer slipnode id sc buffer 100.0
@@ -15577,6 +15986,11 @@ Random rndseed=1143
 target string selected
 Random rndseed=1144
 object chosen = letter (1)1
+define direction
+mydirection slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+check possible group letter (1)1
+check possible group. first_bond successor bond between letter (1)1 and letter (2)2
+check possible group. direction slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
 trying from letter (1)1 successor
 proposing group from letter (1)1 to letter (3)3
 setBuffer slipnode id sc buffer 100.0
@@ -15723,8 +16137,19 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [middle -> middle]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -15748,8 +16173,19 @@ support obj1 letter (1)1
 support obj1.spans_string false
 support obj2 letter (1)1
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [leftmost -> leftmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (1)1 and letter (1)1
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -16024,7 +16460,7 @@ Random rndseed=1192
 <<<<
 
 5T: 78.96602816548506
-post_bottom_up_codelets
+------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.6235633604232179
 Random rndseed=1193
 <<<<
@@ -16956,6 +17392,13 @@ Random rndseed=1266
 initial string selected
 Random rndseed=1267
 object chosen = letter (3)3
+define direction
+mydirection slipnode lf activation 100.0 buffer 0.0 conceptual_depth 50.0
+check possible group letter (3)3
+check possible group. first_bond successor bond between letter (2)2 and letter (3)3
+check possible group. direction slipnode lf activation 100.0 buffer 0.0 conceptual_depth 50.0
+check possible group. new first_bond null new first_bond direction_category firstbond null
+check possible group. newDirection2 slipnode lf activation 100.0 buffer 0.0 conceptual_depth 50.0
 no possible group: fizzle!
 mainloop | codelets_run 188 clamp_time 30 last_update 180 time_step_length 15
 choose T: 76.26214977001906
@@ -17062,6 +17505,11 @@ Random rndseed=1280
 target string selected
 Random rndseed=1281
 object chosen = letter (3)3
+define direction
+mydirection slipnode lf activation 100.0 buffer 0.0 conceptual_depth 50.0
+check possible group letter (3)3
+check possible group. first_bond successor bond between letter (2)2 and letter (3)3
+check possible group. direction slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
 trying from letter (3)3 successor
 proposing group from letter (1)1 to letter (3)3
 setBuffer slipnode id sc buffer 100.0
@@ -17142,8 +17590,19 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [middle -> middle]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -17167,8 +17626,19 @@ support obj1 letter (1)1
 support obj1.spans_string false
 support obj2 letter (1)1
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [leftmost -> leftmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (1)1 and letter (1)1
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -17490,7 +17960,7 @@ Random rndseed=1336
 <<<<
 
 5T: 76.26214977001906
-post_bottom_up_codelets
+------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.5815915487544818
 Random rndseed=1337
 get_bottom_up_codelets rawUrgency3
@@ -18309,6 +18779,11 @@ Random rndseed=1397
 target string selected
 Random rndseed=1398
 object chosen = letter (1)1
+define direction
+mydirection slipnode rt activation 100.0 buffer 0.0 conceptual_depth 50.0
+check possible group letter (1)1
+check possible group. first_bond successor bond between letter (1)1 and letter (2)2
+check possible group. direction slipnode rt activation 100.0 buffer 0.0 conceptual_depth 50.0
 trying from letter (1)1 successor
 proposing group from letter (1)1 to letter (3)3
 setBuffer slipnode id sc buffer 100.0
@@ -18635,8 +19110,19 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [middle -> middle]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -18660,8 +19146,19 @@ support obj1 letter (1)1
 support obj1.spans_string false
 support obj2 letter (1)1
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [leftmost -> leftmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (1)1 and letter (1)1
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -18911,7 +19408,7 @@ Random rndseed=1457
 <<<<
 
 5T: 79.9212762670482
-post_bottom_up_codelets
+------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.6387410400153842
 Random rndseed=1458
 <<<<
@@ -19812,8 +20309,26 @@ support obj1 letter (3)3
 support obj1.spans_string false
 support obj2 letter (3)3
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [rightmost -> rightmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [rightmost -> rightmost]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
 support support_sum 64.0
@@ -19857,6 +20372,13 @@ Random rndseed=1538
 target string selected
 Random rndseed=1539
 object chosen = letter (3)3
+define direction
+mydirection slipnode lf activation 65.0 buffer 0.0 conceptual_depth 50.0
+check possible group letter (3)3
+check possible group. first_bond successor bond between letter (2)2 and letter (3)3
+check possible group. direction slipnode lf activation 65.0 buffer 0.0 conceptual_depth 50.0
+check possible group. new first_bond null new first_bond direction_category firstbond null
+check possible group. newDirection2 slipnode lf activation 65.0 buffer 0.0 conceptual_depth 50.0
 no possible group: fizzle!
 mainloop | codelets_run 218 clamp_time 30 last_update 210 time_step_length 15
 choose T: 70.68514857947585
@@ -19893,7 +20415,12 @@ Random rndseed=1543
 initial string selected
 Random rndseed=1544
 object chosen = letter (2)2
+define direction
 Random rndseed=1545
+mydirection slipnode lf activation 65.0 buffer 0.0 conceptual_depth 50.0
+check possible group letter (2)2
+check possible group. first_bond successor bond between letter (1)1 and letter (2)2
+check possible group. direction slipnode rt activation 100.0 buffer 0.0 conceptual_depth 50.0
 trying from letter (2)2 successor
 proposing group from letter (1)1 to letter (3)3
 setBuffer slipnode id sc buffer 100.0
@@ -20027,8 +20554,19 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [middle -> middle]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -20052,8 +20590,19 @@ support obj1 letter (1)1
 support obj1.spans_string false
 support obj2 letter (1)1
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [leftmost -> leftmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (1)1 and letter (1)1
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -20272,7 +20821,7 @@ create codelet top-down-description-scout urgency 4
 <<<<
 
 5T: 70.68514857947585
-post_bottom_up_codelets
+------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.49963902297025775
 Random rndseed=1575
 <<<<
@@ -21276,6 +21825,11 @@ Random rndseed=1649
 initial string selected
 Random rndseed=1650
 object chosen = letter (1)1
+define direction
+mydirection slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+check possible group letter (1)1
+check possible group. first_bond successor bond between letter (1)1 and letter (2)2
+check possible group. direction slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
 trying from letter (1)1 successor
 proposing group from letter (1)1 to letter (3)3
 setBuffer slipnode id sc buffer 100.0
@@ -21462,10 +22016,30 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [middle -> middle]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [middle -> middle]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -21489,10 +22063,30 @@ support obj1 letter (1)1
 support obj1.spans_string false
 support obj2 letter (1)1
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [leftmost -> leftmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (1)1 and letter (1)1
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [leftmost -> leftmost]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
 support support_sum 76.8
@@ -21539,10 +22133,30 @@ support obj1 letter (3)3
 support obj1.spans_string false
 support obj2 letter (3)3
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [rightmost -> rightmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [rightmost -> rightmost]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (3)3 and letter (3)3
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 79.36
@@ -21703,7 +22317,7 @@ Random rndseed=1676
 <<<<
 
 5T: 58.74439280135928
-post_bottom_up_codelets
+------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.3450903685600392
 Random rndseed=1677
 <<<<
@@ -22622,6 +23236,13 @@ Random rndseed=1734
 initial string selected
 Random rndseed=1735
 object chosen = letter (1)1
+define direction
+mydirection slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+check possible group letter (1)1
+check possible group. first_bond successor bond between letter (1)1 and letter (2)2
+check possible group. direction slipnode lf activation 46.25 buffer 0.0 conceptual_depth 50.0
+check possible group. new first_bond null new first_bond direction_category firstbond null
+check possible group. newDirection2 slipnode lf activation 46.25 buffer 0.0 conceptual_depth 50.0
 no possible group: fizzle!
 mainloop | codelets_run 248 clamp_time 30 last_update 240 time_step_length 15
 choose T: 28.4198988998509
@@ -22797,10 +23418,30 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [middle -> middle]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [middle -> middle]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -22824,10 +23465,30 @@ support obj1 letter (1)1
 support obj1.spans_string false
 support obj2 letter (1)1
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [leftmost -> leftmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (1)1 and letter (1)1
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [leftmost -> leftmost]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
 support support_sum 79.872
@@ -22874,10 +23535,30 @@ support obj1 letter (3)3
 support obj1.spans_string false
 support obj2 letter (3)3
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [rightmost -> rightmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [rightmost -> rightmost]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (3)3 and letter (3)3
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 79.9744
@@ -23034,7 +23715,7 @@ Random rndseed=1761
 <<<<
 
 5T: 28.4198988998509
-post_bottom_up_codelets
+------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.08076906534777463
 Random rndseed=1762
 <<<<
@@ -24014,7 +24695,12 @@ Random rndseed=1825
 initial string selected
 Random rndseed=1826
 object chosen = letter (2)2
+define direction
 Random rndseed=1827
+mydirection slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+check possible group letter (2)2
+check possible group. first_bond successor bond between letter (2)2 and letter (3)3
+check possible group. direction slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
 trying from letter (2)2 successor
 proposing group from letter (1)1 to letter (3)3
 setBuffer slipnode id sc buffer 100.0
@@ -24118,10 +24804,30 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [middle -> middle]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [middle -> middle]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -24145,10 +24851,30 @@ support obj1 letter (1)1
 support obj1.spans_string false
 support obj2 letter (1)1
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [leftmost -> leftmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (1)1 and letter (1)1
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [leftmost -> leftmost]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
 support support_sum 79.99488000000001
@@ -24195,10 +24921,30 @@ support obj1 letter (3)3
 support obj1.spans_string false
 support obj2 letter (3)3
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [rightmost -> rightmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [rightmost -> rightmost]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (3)3 and letter (3)3
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 79.998976
@@ -24357,7 +25103,7 @@ Random rndseed=1845
 <<<<
 
 5T: 30.48172967004266
-post_bottom_up_codelets
+------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.09291358436775592
 Random rndseed=1846
 <<<<
@@ -25104,7 +25850,14 @@ Random rndseed=1886
 initial string selected
 Random rndseed=1887
 object chosen = letter (2)2
+define direction
 Random rndseed=1888
+mydirection slipnode lf activation 41.5625 buffer 0.0 conceptual_depth 50.0
+check possible group letter (2)2
+check possible group. first_bond successor bond between letter (1)1 and letter (2)2
+check possible group. direction slipnode lf activation 41.5625 buffer 0.0 conceptual_depth 50.0
+check possible group. new first_bond successor bond between letter (2)2 and letter (3)3 new first_bond direction_category slipnode rt activation 100.0 buffer 0.0 conceptual_depth 50.0
+check possible group. newDirection2 slipnode lf activation 41.5625 buffer 0.0 conceptual_depth 50.0
 no possible group: fizzle!
 mainloop | codelets_run 271 clamp_time 30 last_update 270 time_step_length 15
 choose T: 31.59546907247469
@@ -25264,16 +26017,59 @@ update_strength_value
 average of the strengths of all
 num_of_concept_mappings 2.0 sum_strength 200.0 average_strength 100.0
 num_of_concept_mappings_factor 1.2
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings2 false
 correspondence_internal_strength average_strength 100.0 internal_coherence_factor 1.0 num_of_concept_mappings_factor 1.2
 calculate_internal_strength internal_strength 120.0
 support obj1 group (1-3)
 support obj1.spans_string true
 support obj2 group (1-3)
 support obj2.spans_string true
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm group -> group
+cm1 distinguishing true cm successor group -> successor group
+cm1 distinguishing true cm right -> right
+cm1 distinguishing false cm whole -> whole
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [successor group -> successor group, right -> right]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm group -> group
+cm1 distinguishing true cm successor group -> successor group
+cm1 distinguishing true cm right -> right
+cm1 distinguishing false cm whole -> whole
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [successor group -> successor group, right -> right]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm group -> group
+cm1 distinguishing true cm successor group -> successor group
+cm1 distinguishing true cm right -> right
+cm1 distinguishing false cm whole -> whole
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [successor group -> successor group, right -> right]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
 support support_sum 159.9987712
@@ -25490,12 +26286,45 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [middle -> middle]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [middle -> middle]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between group (1-3) and group (1-3)
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm group -> group
+cm2 distinguishing true cm successor group -> successor group
+cm2 distinguishing true cm right -> right
+cm2 distinguishing false cm whole -> whole
+dcm1 [middle -> middle]
+dcm2 [successor group -> successor group, right -> right]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -25519,12 +26348,45 @@ support obj1 letter (1)1
 support obj1.spans_string false
 support obj2 letter (1)1
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [leftmost -> leftmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (1)1 and letter (1)1
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [leftmost -> leftmost]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between group (1-3) and group (1-3)
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm group -> group
+cm2 distinguishing true cm successor group -> successor group
+cm2 distinguishing true cm right -> right
+cm2 distinguishing false cm whole -> whole
+dcm1 [leftmost -> leftmost]
+dcm2 [successor group -> successor group, right -> right]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
 support support_sum 179.9997952
@@ -25571,12 +26433,45 @@ support obj1 letter (3)3
 support obj1.spans_string false
 support obj2 letter (3)3
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [rightmost -> rightmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [rightmost -> rightmost]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (3)3 and letter (3)3
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between group (1-3) and group (1-3)
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm group -> group
+cm2 distinguishing true cm successor group -> successor group
+cm2 distinguishing true cm right -> right
+cm2 distinguishing false cm whole -> whole
+dcm1 [rightmost -> rightmost]
+dcm2 [successor group -> successor group, right -> right]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
 support support_sum 184.0
@@ -25589,18 +26484,63 @@ description(whole) of group (1-3) in target string internal_strength 50.0 extern
 average of the strengths of all
 num_of_concept_mappings 2.0 sum_strength 200.0 average_strength 100.0
 num_of_concept_mappings_factor 1.2
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings2 false
 correspondence_internal_strength average_strength 100.0 internal_coherence_factor 1.0 num_of_concept_mappings_factor 1.2
 calculate_internal_strength internal_strength 120.0
 support obj1 group (1-3)
 support obj1.spans_string true
 support obj2 group (1-3)
 support obj2.spans_string true
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm group -> group
+cm1 distinguishing true cm successor group -> successor group
+cm1 distinguishing true cm right -> right
+cm1 distinguishing false cm whole -> whole
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [successor group -> successor group, right -> right]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm group -> group
+cm1 distinguishing true cm successor group -> successor group
+cm1 distinguishing true cm right -> right
+cm1 distinguishing false cm whole -> whole
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [successor group -> successor group, right -> right]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm group -> group
+cm1 distinguishing true cm successor group -> successor group
+cm1 distinguishing true cm right -> right
+cm1 distinguishing false cm whole -> whole
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [successor group -> successor group, right -> right]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between group (1-3) and group (1-3)
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 168.0
@@ -25752,7 +26692,7 @@ Random rndseed=1933
 <<<<
 
 5T: 31.59546907247469
-post_bottom_up_codelets
+------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.09982736659097047
 Random rndseed=1934
 <<<<
@@ -26727,6 +27667,11 @@ Random rndseed=6
 target string selected
 Random rndseed=7
 object chosen = letter (1)1
+define direction
+mydirection slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+check possible group letter (1)1
+check possible group. first_bond successor bond between letter (1)1 and letter (2)2
+check possible group. direction slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
 trying from letter (1)1 successor
 proposing group from letter (1)1 to letter (3)3
 setBuffer slipnode id sc buffer 100.0
@@ -26831,12 +27776,45 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [middle -> middle]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [middle -> middle]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between group (1-3) and group (1-3)
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm group -> group
+cm2 distinguishing true cm successor group -> successor group
+cm2 distinguishing true cm right -> right
+cm2 distinguishing false cm whole -> whole
+dcm1 [middle -> middle]
+dcm2 [successor group -> successor group, right -> right]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -26860,12 +27838,45 @@ support obj1 letter (1)1
 support obj1.spans_string false
 support obj2 letter (1)1
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [leftmost -> leftmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (1)1 and letter (1)1
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [leftmost -> leftmost]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between group (1-3) and group (1-3)
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm group -> group
+cm2 distinguishing true cm successor group -> successor group
+cm2 distinguishing true cm right -> right
+cm2 distinguishing false cm whole -> whole
+dcm1 [leftmost -> leftmost]
+dcm2 [successor group -> successor group, right -> right]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
 support support_sum 184.0
@@ -26912,12 +27923,45 @@ support obj1 letter (3)3
 support obj1.spans_string false
 support obj2 letter (3)3
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [rightmost -> rightmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [rightmost -> rightmost]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (3)3 and letter (3)3
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between group (1-3) and group (1-3)
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm group -> group
+cm2 distinguishing true cm successor group -> successor group
+cm2 distinguishing true cm right -> right
+cm2 distinguishing false cm whole -> whole
+dcm1 [rightmost -> rightmost]
+dcm2 [successor group -> successor group, right -> right]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
 support support_sum 184.0
@@ -26930,18 +27974,63 @@ description(whole) of group (1-3) in target string internal_strength 50.0 extern
 average of the strengths of all
 num_of_concept_mappings 2.0 sum_strength 200.0 average_strength 100.0
 num_of_concept_mappings_factor 1.2
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings2 false
 correspondence_internal_strength average_strength 100.0 internal_coherence_factor 1.0 num_of_concept_mappings_factor 1.2
 calculate_internal_strength internal_strength 120.0
 support obj1 group (1-3)
 support obj1.spans_string true
 support obj2 group (1-3)
 support obj2.spans_string true
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm group -> group
+cm1 distinguishing true cm successor group -> successor group
+cm1 distinguishing true cm right -> right
+cm1 distinguishing false cm whole -> whole
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [successor group -> successor group, right -> right]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm group -> group
+cm1 distinguishing true cm successor group -> successor group
+cm1 distinguishing true cm right -> right
+cm1 distinguishing false cm whole -> whole
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [successor group -> successor group, right -> right]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm group -> group
+cm1 distinguishing true cm successor group -> successor group
+cm1 distinguishing true cm right -> right
+cm1 distinguishing false cm whole -> whole
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [successor group -> successor group, right -> right]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between group (1-3) and group (1-3)
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 168.0
@@ -27093,7 +28182,7 @@ Random rndseed=25
 <<<<
 
 5T: 10.01292249056722
-post_bottom_up_codelets
+------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.010025861680210687
 Random rndseed=26
 <<<<
@@ -28100,7 +29189,14 @@ Random rndseed=95
 target string selected
 Random rndseed=96
 object chosen = letter (2)2
+define direction
 Random rndseed=97
+mydirection slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+check possible group letter (2)2
+check possible group. first_bond successor bond between letter (2)2 and letter (3)3
+check possible group. direction slipnode lf activation 40.390625 buffer 0.0 conceptual_depth 50.0
+check possible group. new first_bond successor bond between letter (1)1 and letter (2)2 new first_bond direction_category slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+check possible group. newDirection2 slipnode lf activation 40.390625 buffer 0.0 conceptual_depth 50.0
 no possible group: fizzle!
 mainloop | codelets_run 313 clamp_time 30 last_update 300 time_step_length 15
 choose T: 12.853007782924017
@@ -28128,7 +29224,12 @@ Random rndseed=100
 target string selected
 Random rndseed=101
 object chosen = letter (2)2
+define direction
 Random rndseed=102
+mydirection slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+check possible group letter (2)2
+check possible group. first_bond successor bond between letter (2)2 and letter (3)3
+check possible group. direction slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
 trying from letter (2)2 successor
 proposing group from letter (1)1 to letter (3)3
 setBuffer slipnode id sc buffer 100.0
@@ -28175,12 +29276,45 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [middle -> middle]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [middle -> middle]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between group (1-3) and group (1-3)
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm group -> group
+cm2 distinguishing true cm successor group -> successor group
+cm2 distinguishing true cm right -> right
+cm2 distinguishing false cm whole -> whole
+dcm1 [middle -> middle]
+dcm2 [successor group -> successor group, right -> right]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -28204,12 +29338,45 @@ support obj1 letter (1)1
 support obj1.spans_string false
 support obj2 letter (1)1
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [leftmost -> leftmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (1)1 and letter (1)1
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [leftmost -> leftmost]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between group (1-3) and group (1-3)
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm group -> group
+cm2 distinguishing true cm successor group -> successor group
+cm2 distinguishing true cm right -> right
+cm2 distinguishing false cm whole -> whole
+dcm1 [leftmost -> leftmost]
+dcm2 [successor group -> successor group, right -> right]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
 support support_sum 184.0
@@ -28256,12 +29423,45 @@ support obj1 letter (3)3
 support obj1.spans_string false
 support obj2 letter (3)3
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [rightmost -> rightmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [rightmost -> rightmost]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (3)3 and letter (3)3
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between group (1-3) and group (1-3)
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm group -> group
+cm2 distinguishing true cm successor group -> successor group
+cm2 distinguishing true cm right -> right
+cm2 distinguishing false cm whole -> whole
+dcm1 [rightmost -> rightmost]
+dcm2 [successor group -> successor group, right -> right]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
 support support_sum 184.0
@@ -28274,18 +29474,63 @@ description(whole) of group (1-3) in target string internal_strength 50.0 extern
 average of the strengths of all
 num_of_concept_mappings 2.0 sum_strength 200.0 average_strength 100.0
 num_of_concept_mappings_factor 1.2
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings2 false
 correspondence_internal_strength average_strength 100.0 internal_coherence_factor 1.0 num_of_concept_mappings_factor 1.2
 calculate_internal_strength internal_strength 120.0
 support obj1 group (1-3)
 support obj1.spans_string true
 support obj2 group (1-3)
 support obj2.spans_string true
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm group -> group
+cm1 distinguishing true cm successor group -> successor group
+cm1 distinguishing true cm right -> right
+cm1 distinguishing false cm whole -> whole
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [successor group -> successor group, right -> right]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm group -> group
+cm1 distinguishing true cm successor group -> successor group
+cm1 distinguishing true cm right -> right
+cm1 distinguishing false cm whole -> whole
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [successor group -> successor group, right -> right]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm group -> group
+cm1 distinguishing true cm successor group -> successor group
+cm1 distinguishing true cm right -> right
+cm1 distinguishing false cm whole -> whole
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [successor group -> successor group, right -> right]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between group (1-3) and group (1-3)
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 168.0
@@ -28439,7 +29684,7 @@ Random rndseed=112
 <<<<
 
 5T: 12.853007782924017
-post_bottom_up_codelets
+------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.016519980906790535
 Random rndseed=113
 <<<<
@@ -29380,18 +30625,63 @@ update_strength_value
 average of the strengths of all
 num_of_concept_mappings 2.0 sum_strength 200.0 average_strength 100.0
 num_of_concept_mappings_factor 1.2
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings2 false
 correspondence_internal_strength average_strength 100.0 internal_coherence_factor 1.0 num_of_concept_mappings_factor 1.2
 calculate_internal_strength internal_strength 120.0
 support obj1 group (1-3)
 support obj1.spans_string true
 support obj2 group (1-3)
 support obj2.spans_string true
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm group -> group
+cm1 distinguishing true cm successor group -> successor group
+cm1 distinguishing true cm right -> right
+cm1 distinguishing false cm whole -> whole
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [successor group -> successor group, right -> right]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm group -> group
+cm1 distinguishing true cm successor group -> successor group
+cm1 distinguishing true cm right -> right
+cm1 distinguishing false cm whole -> whole
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [successor group -> successor group, right -> right]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm group -> group
+cm1 distinguishing true cm successor group -> successor group
+cm1 distinguishing true cm right -> right
+cm1 distinguishing false cm whole -> whole
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [successor group -> successor group, right -> right]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between group (1-3) and group (1-3)
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 168.0
@@ -29515,6 +30805,11 @@ Random rndseed=189
 initial string selected
 Random rndseed=190
 object chosen = letter (3)3
+define direction
+mydirection slipnode lf activation 40.1953125 buffer 0.0 conceptual_depth 50.0
+check possible group letter (3)3
+check possible group. first_bond successor bond between letter (2)2 and letter (3)3
+check possible group. direction slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
 trying from letter (3)3 successor
 proposing group from letter (1)1 to letter (3)3
 setBuffer slipnode id sc buffer 100.0
@@ -29587,12 +30882,45 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [middle -> middle]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [middle -> middle]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between group (1-3) and group (1-3)
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm group -> group
+cm2 distinguishing true cm successor group -> successor group
+cm2 distinguishing true cm right -> right
+cm2 distinguishing false cm whole -> whole
+dcm1 [middle -> middle]
+dcm2 [successor group -> successor group, right -> right]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -29616,12 +30944,45 @@ support obj1 letter (1)1
 support obj1.spans_string false
 support obj2 letter (1)1
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [leftmost -> leftmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (1)1 and letter (1)1
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [leftmost -> leftmost]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between group (1-3) and group (1-3)
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm group -> group
+cm2 distinguishing true cm successor group -> successor group
+cm2 distinguishing true cm right -> right
+cm2 distinguishing false cm whole -> whole
+dcm1 [leftmost -> leftmost]
+dcm2 [successor group -> successor group, right -> right]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
 support support_sum 184.0
@@ -29668,12 +31029,45 @@ support obj1 letter (3)3
 support obj1.spans_string false
 support obj2 letter (3)3
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [rightmost -> rightmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [rightmost -> rightmost]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (3)3 and letter (3)3
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between group (1-3) and group (1-3)
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm group -> group
+cm2 distinguishing true cm successor group -> successor group
+cm2 distinguishing true cm right -> right
+cm2 distinguishing false cm whole -> whole
+dcm1 [rightmost -> rightmost]
+dcm2 [successor group -> successor group, right -> right]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
 support support_sum 184.0
@@ -29686,18 +31080,63 @@ description(whole) of group (1-3) in target string internal_strength 50.0 extern
 average of the strengths of all
 num_of_concept_mappings 2.0 sum_strength 200.0 average_strength 100.0
 num_of_concept_mappings_factor 1.2
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings2 false
 correspondence_internal_strength average_strength 100.0 internal_coherence_factor 1.0 num_of_concept_mappings_factor 1.2
 calculate_internal_strength internal_strength 120.0
 support obj1 group (1-3)
 support obj1.spans_string true
 support obj2 group (1-3)
 support obj2.spans_string true
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm group -> group
+cm1 distinguishing true cm successor group -> successor group
+cm1 distinguishing true cm right -> right
+cm1 distinguishing false cm whole -> whole
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [successor group -> successor group, right -> right]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm group -> group
+cm1 distinguishing true cm successor group -> successor group
+cm1 distinguishing true cm right -> right
+cm1 distinguishing false cm whole -> whole
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [successor group -> successor group, right -> right]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm group -> group
+cm1 distinguishing true cm successor group -> successor group
+cm1 distinguishing true cm right -> right
+cm1 distinguishing false cm whole -> whole
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [successor group -> successor group, right -> right]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between group (1-3) and group (1-3)
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 168.0
@@ -29849,7 +31288,7 @@ Random rndseed=203
 <<<<
 
 5T: 12.89941482217448
-post_bottom_up_codelets
+------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.016639490275453465
 Random rndseed=204
 <<<<
@@ -30975,12 +32414,45 @@ support obj1 letter (2)2
 support obj1.spans_string false
 support obj2 letter (2)2
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [middle -> middle]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [middle -> middle]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between group (1-3) and group (1-3)
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm middle -> middle
+cm2 distinguishing false cm group -> group
+cm2 distinguishing true cm successor group -> successor group
+cm2 distinguishing true cm right -> right
+cm2 distinguishing false cm whole -> whole
+dcm1 [middle -> middle]
+dcm2 [successor group -> successor group, right -> right]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 0.0
@@ -31004,12 +32476,45 @@ support obj1 letter (1)1
 support obj1.spans_string false
 support obj2 letter (1)1
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [leftmost -> leftmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (1)1 and letter (1)1
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [leftmost -> leftmost]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between group (1-3) and group (1-3)
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm leftmost -> leftmost
+cm2 distinguishing false cm group -> group
+cm2 distinguishing true cm successor group -> successor group
+cm2 distinguishing true cm right -> right
+cm2 distinguishing false cm whole -> whole
+dcm1 [leftmost -> leftmost]
+dcm2 [successor group -> successor group, right -> right]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
 support support_sum 184.0
@@ -31056,12 +32561,45 @@ support obj1 letter (3)3
 support obj1.spans_string false
 support obj2 letter (3)3
 support obj2.spans_string false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [rightmost -> rightmost]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [rightmost -> rightmost]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between letter (3)3 and letter (3)3
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between letter (3)3 and letter (3)3 c2 Correspondence between group (1-3) and group (1-3)
+cm1 distinguishing false cm letter -> letter
+cm1 distinguishing true cm rightmost -> rightmost
+cm2 distinguishing false cm group -> group
+cm2 distinguishing true cm successor group -> successor group
+cm2 distinguishing true cm right -> right
+cm2 distinguishing false cm whole -> whole
+dcm1 [rightmost -> rightmost]
+dcm2 [successor group -> successor group, right -> right]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
 support support_sum 184.0
@@ -31074,18 +32612,63 @@ description(whole) of group (1-3) in target string internal_strength 50.0 extern
 average of the strengths of all
 num_of_concept_mappings 2.0 sum_strength 200.0 average_strength 100.0
 num_of_concept_mappings_factor 1.2
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings2 false
 correspondence_internal_strength average_strength 100.0 internal_coherence_factor 1.0 num_of_concept_mappings_factor 1.2
 calculate_internal_strength internal_strength 120.0
 support obj1 group (1-3)
 support obj1.spans_string true
 support obj2 group (1-3)
 support obj2.spans_string true
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between letter (2)2 and letter (2)2
+cm1 distinguishing false cm group -> group
+cm1 distinguishing true cm successor group -> successor group
+cm1 distinguishing true cm right -> right
+cm1 distinguishing false cm whole -> whole
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm middle -> middle
+dcm1 [successor group -> successor group, right -> right]
+dcm2 [middle -> middle]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings2 false
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) false
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between letter (1)1 and letter (1)1
+cm1 distinguishing false cm group -> group
+cm1 distinguishing true cm successor group -> successor group
+cm1 distinguishing true cm right -> right
+cm1 distinguishing false cm whole -> whole
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm leftmost -> leftmost
+dcm1 [successor group -> successor group, right -> right]
+dcm2 [leftmost -> leftmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between letter (3)3 and letter (3)3
+cm1 distinguishing false cm group -> group
+cm1 distinguishing true cm successor group -> successor group
+cm1 distinguishing true cm right -> right
+cm1 distinguishing false cm whole -> whole
+cm2 distinguishing false cm letter -> letter
+cm2 distinguishing true cm rightmost -> rightmost
+dcm1 [successor group -> successor group, right -> right]
+dcm2 [rightmost -> rightmost]
+supporting_concept_mappings
+supporting_concept_mappings2 false
+supporting_concept_mappings
+supporting_concept_mappings4 true
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
+supporting_correspondences c1 Correspondence between group (1-3) and group (1-3) c2 Correspondence between group (1-3) and group (1-3)
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 168.0
@@ -31239,7 +32822,7 @@ Random rndseed=294
 <<<<
 
 5T: 12.102747885886943
-post_bottom_up_codelets
+------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.014647650638934086
 Random rndseed=295
 <<<<

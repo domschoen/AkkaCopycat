@@ -334,6 +334,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
 
         case PostBondBuilder(bondID, strength) =>
           val urgency = get_urgency_bin(strength)
+          log.debug(s"PostBondBuilder urgency $strength get_urgency_bin $urgency")
 
           // Pressure_Type argument is missing
           val newCodelet = createCodelet(CodeletType.BondBuilder, urgency, Some(bondID))
@@ -359,6 +360,8 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
 
         case PostCorrespondenceBuilder(correspondenceID, strength) =>
           val urgency = get_urgency_bin(strength)
+          log.debug(s"PostCorrespondenceBuilder urgency $strength get_urgency_bin $urgency")
+
           // Pressure_Type argument is missing
           val newCodelet = createCodelet(CodeletType.CorrespondenceBuilder, urgency, Some(correspondenceID))
           self ! Post(newCodelet, urgency, None)

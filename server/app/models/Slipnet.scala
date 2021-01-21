@@ -1627,12 +1627,30 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
     // Returns t if c1 supports c2, nil otherwise.  For now, c1 is
     // defined to support c2 if c1 is not incompatible with c2, and
     // has a concept-mapping that supports the concept-mappings of c2.
-    if ((c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)) return false;
-    if (incompatible_correspondences(c1,c2)) return false;
+    log.debug("supporting_correspondences c1 c2")
+
+    if ((c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)) {
+      log.debug("(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)")
+      return false
+    };
+    if (incompatible_correspondences(c1,c2)) {
+      log.debug("incompatible_correspondences")
+      return false
+    };
     val c1dms = ConceptMapping.conceptMappingsWithReps(c1.concept_mapping_list)
     val c2dms = ConceptMapping.conceptMappingsWithReps(c2.concept_mapping_list)
+    for (cm <- c1dms) {
+      log.debug("cm1 distinguishing " + cm.distinguishing() + " cm " + cm);
+    }
+    for (cm <- c2dms) {
+      log.debug("cm2 distinguishing " + cm.distinguishing() + " cm " + cm);
+    }
+
     val dcm1 = distinguishing_concept_mappings(c1dms)
     val dcm2 = distinguishing_concept_mappings(c2dms)
+    log.debug("dcm1 " + dcm1);
+    log.debug("dcm2 " + dcm2);
+
     supporting_concept_mappingsWithXY(dcm1,dcm2,true)
   }
 
@@ -1677,20 +1695,33 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
     // If the two concept-mappings are the same, then return t.  This
     // means that letter->group supports letter->group, even though these
     // concept-mappings have no label.
-
-    if ((cm1.descriptor1==cm2.descriptor1)&&(cm1.descriptor2==cm2.descriptor2)) return true;
+    log.debug("supporting_concept_mappings");
+    if ((cm1.descriptor1==cm2.descriptor1)&&(cm1.descriptor2==cm2.descriptor2)) {
+      log.debug("supporting_concept_mappings1 true");
+      return true
+    };
     // if the descriptors are not related return false
     if (!(SlipnetFormulas.related(cm1.descriptor1,cm2.descriptor1)||
-      SlipnetFormulas.related(cm1.descriptor2,cm2.descriptor2))) return false;
-    if ((cm1.label==null)||(cm2.label==null)) return false;
-    if ((cm1.label).equals(cm2.label)) return true;
+      SlipnetFormulas.related(cm1.descriptor2,cm2.descriptor2))) {
+      log.debug("supporting_concept_mappings2 false");
+      return false
+    };
+    if ((cm1.label.isEmpty)||(cm2.label.isEmpty)) {
+      log.debug("supporting_concept_mappings3 false");
+      return false
+    };
+    if ((cm1.label).equals(cm2.label)) {
+      log.debug("supporting_concept_mappings4 true");
+      return true
+    };
+    log.debug("supporting_concept_mappings5 false");
     return false;
   }
 
   def supporting_concept_mappingsWithXY(dcm1: List[ConceptMapping], dcm2: List[ConceptMapping], takeEquals: Boolean): Boolean = {
     val couples = for (
       xcm <- dcm1;
-      ycm <- dcm2 if (!takeEquals && xcm != ycm)
+      ycm <- dcm2 if (takeEquals || (!takeEquals && xcm != ycm))
     ) yield (xcm, ycm)
 
     couples.find(c => supporting_concept_mappings(c._1, c._2)).isDefined
@@ -1970,7 +2001,9 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
     )
   )
 
-  def distinguishing_concept_mappings(concept_mapping_list: List[ConceptMapping]) = concept_mapping_list.filter(cm => cm.distinguishing())
+  def distinguishing_concept_mappings(concept_mapping_list: List[ConceptMapping]) = concept_mapping_list.filter(cm => {
+    cm.distinguishing()
+  })
 
   //def getDescriptor(workspaceObject: WorkspaceObject, node: SlipNode): Option[SlipNode] = ???
   //def getBondCategory(fromDescriptor: SlipNode, toDescriptor: SlipNode): Option[SlipNode] = ???
