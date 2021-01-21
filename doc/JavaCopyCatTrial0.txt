@@ -1,4 +1,4 @@
-/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=50769:/Applications/IntelliJ IDEA CE.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/tools.jar:/Users/dschoen/Documents/gitlab/copycat/JavaCopyCat/out/production/JavaCopyCat rungroup
+/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=51271:/Applications/IntelliJ IDEA CE.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/tools.jar:/Users/dschoen/Documents/gitlab/copycat/JavaCopyCat/out/production/JavaCopyCat rungroup
 Random rndseed=1
 Random rndseed=2
 Random rndseed=3
@@ -7727,6 +7727,20 @@ sum 278.33911857920106 chosen 105.4905259415172 codelets.size() 81
 Choose codelet at index 44 urgsum 107.68976164643794
 #### top-down-bond-scout--category ####
 searching for predecessor
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 3.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 50.0 buffer 0.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 3.0
 Random rndseed=510
 target string selected
 Random rndseed=511
@@ -8795,6 +8809,20 @@ sum 333.4677647476551 chosen 206.4165463787985 codelets.size() 90
 Choose codelet at index 62 urgsum 210.1456774080654
 #### top-down-bond-scout--category ####
 searching for successor
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 3.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 0.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 1.0 oll 3.0
 Random rndseed=583
 target string selected
 Random rndseed=584
@@ -10103,10 +10131,24 @@ check possible group. first_bond null
 check possible group. direction slipnode rt activation 60.0 buffer 0.0 conceptual_depth 50.0
 check possible group. new first_bond successor bond between letter (1)1 and letter (2)2 new first_bond direction_category slipnode rt activation 60.0 buffer 0.0 conceptual_depth 50.0
 check possible group. newDirection2 slipnode rt activation 60.0 buffer 0.0 conceptual_depth 50.0
+get_related_node slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0
 trying from letter (2)2 successor
 proposing group from letter (1)1 to letter (2)2
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=692
 bond_degree_of_association sc clamp_bdoa: false activation: 50.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 5
@@ -10173,10 +10215,24 @@ mydirection slipnode lf activation 50.0 buffer 0.0 conceptual_depth 50.0
 check possible group letter (2)2
 check possible group. first_bond successor bond between letter (1)1 and letter (2)2
 check possible group. direction slipnode rt activation 60.0 buffer 100.0 conceptual_depth 50.0
+get_related_node slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0
 trying from letter (2)2 successor
 proposing group from letter (1)1 to letter (2)2
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=702
 bond_degree_of_association sc clamp_bdoa: false activation: 50.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 5
@@ -11263,9 +11319,23 @@ about to choose string
 Random rndseed=765
 target string selected
 Random rndseed=766
+get_related_node slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0
 proposing predecessor group
+get_related_node slipnode bc activation 50.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 50.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id pd buffer 100.0
 setBuffer slipnode id lf buffer 100.0
+get_related_node slipnode bc activation 50.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 50.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=767
 bond_degree_of_association pd clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -12802,6 +12872,20 @@ sum 5460.486918508102 chosen 5072.7923472940265 codelets.size() 100
 Choose codelet at index 89 urgsum 5107.165926006272
 #### top-down-bond-scout--category ####
 searching for successor
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 0.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined predecessor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode pd activation 100.0 buffer 0.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 1.0 oll 3.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 0.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined predecessor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode pd activation 100.0 buffer 0.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 1.0 oll 3.0
 Random rndseed=871
 target string selected
 Random rndseed=872
@@ -12838,9 +12922,23 @@ about to choose string
 Random rndseed=876
 target string selected
 Random rndseed=877
+get_related_node slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0
 proposing successor group
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=878
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -12852,9 +12950,19 @@ sum 6349.486155627481 chosen 3904.9339857109007 codelets.size() 100
 Choose codelet at index 78 urgsum 4009.2060464431997
 #### group-strength-tester ####
 evaluating  group (1-3) in target string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 strength = 79.47368588732962, adjusted prob.= 0.7642257435161115
 Random rndseed=880
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id pd buffer 100.0
 setBuffer slipnode id lf buffer 100.0
 create codelet group-builder urgency 6
@@ -12878,6 +12986,11 @@ sum 6069.536294352162 chosen 2761.639013930234 codelets.size() 99
 Choose codelet at index 64 urgsum 2775.7300038766452
 #### group-strength-tester ####
 evaluating  group (1-2) in target string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-2) internal_strength 59.02881339031978 external_strength 0.0 total strength:34.84400810269196
 strength = 34.84400810269196, adjusted prob.= 0.3734544233566428
 Random rndseed=884
@@ -12923,9 +13036,23 @@ about to choose string
 Random rndseed=891
 target string selected
 Random rndseed=892
+get_related_node slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0
 proposing predecessor group
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id pd buffer 100.0
 setBuffer slipnode id lf buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=893
 bond_degree_of_association pd clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -12949,10 +13076,24 @@ mydirection slipnode lf activation 100.0 buffer 100.0 conceptual_depth 50.0
 check possible group letter (3)3
 check possible group. first_bond predecessor bond between letter (2)2 and letter (3)3
 check possible group. direction slipnode lf activation 100.0 buffer 100.0 conceptual_depth 50.0
+get_related_node slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0
 trying from letter (3)3 predecessor
 proposing group from letter (2)2 to letter (3)3
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id pd buffer 100.0
 setBuffer slipnode id lf buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=897
 bond_degree_of_association pd clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -13011,8 +13152,18 @@ sum 7591.772151106716 chosen 5496.443037401262 codelets.size() 97
 Choose codelet at index 92 urgsum 5578.50677290511
 #### group-builder ####
 trying to build group (1-3) in target string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 fighting incompatible bonds
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 string.bonds.size() 2
@@ -13033,6 +13184,20 @@ sum 7284.299007353126 chosen 2141.583908161819 codelets.size() 96
 Choose codelet at index 55 urgsum 2147.1506803692396
 #### top-down-bond-scout--category ####
 searching for successor
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined predecessor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode pd activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 1.0 oll 3.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined predecessor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode pd activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 1.0 oll 3.0
 Random rndseed=909
 initial string selected
 Random rndseed=910
@@ -13090,6 +13255,20 @@ sum 7703.5086914250205 chosen 577.7631518568766 codelets.size() 96
 Choose codelet at index 25 urgsum 608.6098959558026
 #### top-down-bond-scout--category ####
 searching for predecessor
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined predecessor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode pd activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 1.0 oll 3.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined predecessor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode pd activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 1.0 oll 3.0
 Random rndseed=916
 initial string selected
 Random rndseed=917
@@ -14278,8 +14457,6 @@ scale 3.2037118428500793urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3,
 Random rndseed=997
 sum 8868.99803894705 chosen 7627.338313494462 codelets.size() 100
 Choose codelet at index 82 urgsum 7867.635261683667
-
-
 #### bond-builder ####
 trying to build successor bond between letter (2)2 and letter (3)3 in target string
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
@@ -14316,9 +14493,6 @@ Random rndseed=998
 won
 fight all groups containing these objects
 no incompatible groups!
-
-
-
 fight all incompatible correspondences
 fight all incompatible correspondences 1
 fight all incompatible correspondences 2
@@ -14397,10 +14571,24 @@ mydirection slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
 check possible group letter (1)1
 check possible group. first_bond successor bond between letter (1)1 and letter (2)2
 check possible group. direction slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+get_related_node slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0
 trying from letter (1)1 successor
 proposing group from letter (1)1 to letter (2)2
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1003
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -14439,9 +14627,23 @@ about to choose string
 Random rndseed=1007
 initial string selected
 Random rndseed=1008
+get_related_node slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0
 proposing predecessor group
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id pd buffer 100.0
 setBuffer slipnode id lf buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1009
 bond_degree_of_association pd clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -14477,9 +14679,19 @@ sum 9399.928717131497 chosen 4502.565855505987 codelets.size() 99
 Choose codelet at index 73 urgsum 4656.049153195744
 #### group-strength-tester ####
 evaluating  group (1-3) in target string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 strength = 79.47368588732962, adjusted prob.= 0.7642899208030204
 Random rndseed=1014
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id pd buffer 100.0
 setBuffer slipnode id lf buffer 100.0
 create codelet group-builder urgency 6
@@ -14516,9 +14728,19 @@ sum 9201.220961237552 chosen 1913.8539599374108 codelets.size() 99
 Choose codelet at index 46 urgsum 2082.678868022711
 #### group-strength-tester ####
 evaluating  group (1-2) in target string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-2) internal_strength 59.02881339031978 external_strength 0.0 total strength:34.84400810269196
 strength = 34.84400810269196, adjusted prob.= 0.3734018080193884
 Random rndseed=1018
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
 create codelet group-builder urgency 3
@@ -14673,10 +14895,24 @@ mydirection slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
 check possible group letter (2)2
 check possible group. first_bond predecessor bond between letter (2)2 and letter (3)3
 check possible group. direction slipnode lf activation 100.0 buffer 100.0 conceptual_depth 50.0
+get_related_node slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0
 trying from letter (2)2 predecessor
 proposing group from letter (2)2 to letter (3)3
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id pd buffer 100.0
 setBuffer slipnode id lf buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1035
 bond_degree_of_association pd clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -14688,9 +14924,19 @@ sum 8942.837186621728 chosen 5857.558357237232 codelets.size() 97
 Choose codelet at index 88 urgsum 6211.475576894865
 #### group-strength-tester ####
 evaluating  group (1-3) in initial string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 strength = 79.47368588732962, adjusted prob.= 0.7642899208030204
 Random rndseed=1037
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id pd buffer 100.0
 setBuffer slipnode id lf buffer 100.0
 create codelet group-builder urgency 6
@@ -15848,9 +16094,23 @@ about to choose string
 Random rndseed=1123
 target string selected
 Random rndseed=1124
+get_related_node slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0
 proposing successor group
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1125
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -15862,6 +16122,11 @@ sum 1612.2979172117448 chosen 675.552827311721 codelets.size() 99
 Choose codelet at index 55 urgsum 723.4017237299843
 #### group-strength-tester ####
 evaluating  group (2-3) in target string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (2-3) internal_strength 59.02881339031978 external_strength 0.0 total strength:34.84400810269196
 strength = 34.84400810269196, adjusted prob.= 0.383713705276556
 Random rndseed=1127
@@ -15872,8 +16137,6 @@ scale 2.0689314556343295urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 4, 3, 3, 5, 3,
 Random rndseed=1128
 sum 1556.264137544677 chosen 326.81546888438214 codelets.size() 98
 Choose codelet at index 33 urgsum 347.47892856480877
-
-// Couille
 #### correspondence-builder ####
 trying correspondence from letter (1)1 to letter (1)1
 setBuffer slipnode id id buffer 100.0
@@ -15899,6 +16162,11 @@ sum 1518.622884436892 chosen 1473.0641979037853 codelets.size() 96
 Choose codelet at index 95 urgsum 1518.622884436892
 #### group-strength-tester ####
 evaluating  group (1-3) in target string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 strength = 79.47368588732962, adjusted prob.= 0.7517120371785917
 Random rndseed=1133
@@ -15911,8 +16179,18 @@ sum 1462.5891047698242 chosen 1196.3978877017162 codelets.size() 95
 Choose codelet at index 77 urgsum 1227.2970678648494
 #### group-builder ####
 trying to build group (1-3) in initial string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 fighting incompatible bonds
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 string.bonds.size() 2
@@ -15992,10 +16270,24 @@ mydirection slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
 check possible group letter (1)1
 check possible group. first_bond successor bond between letter (1)1 and letter (2)2
 check possible group. direction slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+get_related_node slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0
 trying from letter (1)1 successor
 proposing group from letter (1)1 to letter (3)3
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1141
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -16019,10 +16311,24 @@ mydirection slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
 check possible group letter (1)1
 check possible group. first_bond successor bond between letter (1)1 and letter (2)2
 check possible group. direction slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+get_related_node slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0
 trying from letter (1)1 successor
 proposing group from letter (1)1 to letter (3)3
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1145
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -16087,9 +16393,19 @@ sum 1414.5810067873558 chosen 879.8693862217353 codelets.size() 93
 Choose codelet at index 68 urgsum 894.5517692105218
 #### group-strength-tester ####
 evaluating  group (1-2) in initial string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-2) internal_strength 59.02881339031978 external_strength 0.0 total strength:34.84400810269196
 strength = 34.84400810269196, adjusted prob.= 0.383713705276556
 Random rndseed=1151
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
 create codelet group-builder urgency 3
@@ -16105,9 +16421,23 @@ about to choose string
 Random rndseed=1153
 initial string selected
 Random rndseed=1154
+get_related_node slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0
 proposing successor group
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1155
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -16119,9 +16449,19 @@ sum 1414.5810067873554 chosen 1366.4852525565852 codelets.size() 93
 Choose codelet at index 92 urgsum 1414.5810067873554
 #### group-strength-tester ####
 evaluating  group (1-3) in initial string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 strength = 79.47368588732962, adjusted prob.= 0.7517120371785917
 Random rndseed=1157
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
 create codelet group-builder urgency 6
@@ -17258,6 +17598,20 @@ sum 2073.945155674341 chosen 537.1517953196544 codelets.size() 100
 Choose codelet at index 32 urgsum 554.1965568463472
 #### top-down-bond-scout--category ####
 searching for predecessor
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 0.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 0.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 3.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 0.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 0.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 3.0
 Random rndseed=1247
 target string selected
 Random rndseed=1248
@@ -17291,9 +17645,19 @@ sum 2130.919859406749 chosen 658.4542365566854 codelets.size() 100
 Choose codelet at index 38 urgsum 682.1098069090926
 #### group-strength-tester ####
 evaluating  group (1-3) in target string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 strength = 79.47368588732962, adjusted prob.= 0.7539839486133841
 Random rndseed=1252
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
 create codelet group-builder urgency 6
@@ -17306,9 +17670,19 @@ sum 2107.604465886183 chosen 1424.7406189390597 codelets.size() 100
 Choose codelet at index 74 urgsum 1500.5048344098318
 #### group-strength-tester ####
 evaluating  group (1-3) in target string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 strength = 79.47368588732962, adjusted prob.= 0.7539839486133841
 Random rndseed=1254
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
 create codelet group-builder urgency 6
@@ -17388,9 +17762,23 @@ about to choose string
 Random rndseed=1260
 initial string selected
 Random rndseed=1261
+get_related_node slipnode gpc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode gpc activation 100.0 buffer 0.0 conceptual_depth 50.0
 proposing successor group
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1262
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -17436,6 +17824,11 @@ sum 2027.2508947500498 chosen 889.9631427952719 codelets.size() 97
 Choose codelet at index 52 urgsum 899.8474925655635
 #### group-builder ####
 trying to build group (1-2) in target string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-2) internal_strength 59.02881339031978 external_strength 0.0 total strength:34.84400810269196
 workspace_objects add group group (1-2)
 setBuffer slipnode id obc buffer 100.0
@@ -17490,9 +17883,19 @@ sum 2083.1593604884156 chosen 1970.668755022041 codelets.size() 96
 Choose codelet at index 94 urgsum 2003.5826333085897
 #### group-strength-tester ####
 evaluating  group (1-3) in initial string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 strength = 79.47368588732962, adjusted prob.= 0.7539839486133841
 Random rndseed=1274
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
 create codelet group-builder urgency 6
@@ -17505,6 +17908,28 @@ sum 2059.843966967849 chosen 1730.2689322529932 codelets.size() 96
 Choose codelet at index 84 urgsum 1739.4784544858655
 #### top-down-group-scout--category ####
 trying to build successor group group
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
+top-down-group-scout--category bond_category slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 2.0 oll 3.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-2)
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 2.0 oll 4.0
 about to choose string:
 initial string: relevance=100.0, unhappiness=78.91952798088978
 target string: relevance=66.66666666666667, unhappiness=78.91952798088978
@@ -17514,8 +17939,18 @@ Random rndseed=1277
 object chosen: letter (3)3
 trying from letter (3)3 successor checking to left first
 proposing group from letter (1)1 to letter (3)3
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1278
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -17539,10 +17974,24 @@ mydirection slipnode lf activation 100.0 buffer 0.0 conceptual_depth 50.0
 check possible group letter (3)3
 check possible group. first_bond successor bond between letter (2)2 and letter (3)3
 check possible group. direction slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+get_related_node slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0
 trying from letter (3)3 successor
 proposing group from letter (1)1 to letter (3)3
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1282
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -17557,9 +18006,23 @@ about to choose string
 Random rndseed=1284
 initial string selected
 Random rndseed=1285
+get_related_node slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0
 proposing successor group
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1286
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -17574,9 +18037,23 @@ about to choose string
 Random rndseed=1288
 initial string selected
 Random rndseed=1289
+get_related_node slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0
 proposing successor group
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1290
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -17699,6 +18176,11 @@ ob workspace_string@6acbcfc0
 ob workspace_string@6acbcfc0
 calculate_external_strength 1.0
 successor bond between letter (2)2 and letter (3)3 internal_strength 95.89577675789482 external_strength 70.71067811865476 total strength:94.862124085996
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-2) internal_strength 59.02881339031978 external_strength 0.0 total strength:34.84400810269196
 description(group) of group (1-2) in target string internal_strength 50.0 external_strength 95.0 total strength:72.5
 description(successor group) of group (1-2) in target string internal_strength 50.0 external_strength 50.0 total strength:50.0
@@ -18813,10 +19295,24 @@ mydirection slipnode rt activation 100.0 buffer 0.0 conceptual_depth 50.0
 check possible group letter (1)1
 check possible group. first_bond successor bond between letter (1)1 and letter (2)2
 check possible group. direction slipnode rt activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node slipnode gpc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode gpc activation 100.0 buffer 0.0 conceptual_depth 50.0
 trying from letter (1)1 successor
 proposing group from letter (1)1 to letter (3)3
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1399
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -18828,9 +19324,19 @@ sum 1775.228363566375 chosen 1310.1185323119848 codelets.size() 100
 Choose codelet at index 73 urgsum 1320.602606394667
 #### group-strength-tester ####
 evaluating  group (1-3) in initial string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 strength = 79.47368588732962, adjusted prob.= 0.7508747665086348
 Random rndseed=1401
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
 create codelet group-builder urgency 6
@@ -18843,9 +19349,19 @@ sum 1762.0655074228025 chosen 1217.5872656291565 codelets.size() 100
 Choose codelet at index 71 urgsum 1221.5966415378293
 #### group-strength-tester ####
 evaluating  group (1-3) in target string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 strength = 79.47368588732962, adjusted prob.= 0.7508747665086348
 Random rndseed=1403
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
 create codelet group-builder urgency 6
@@ -18985,6 +19501,11 @@ sum 1896.5768282040626 chosen 1136.0495200942335 codelets.size() 100
 Choose codelet at index 68 urgsum 1146.9247827149893
 #### group-builder ####
 trying to build group (1-3) in initial string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 workspace_objects add group group (1-3)
 setBuffer slipnode id obc buffer 100.0
@@ -19042,6 +19563,11 @@ sum 1851.1846599154824 chosen 1173.6510743864158 codelets.size() 98
 Choose codelet at index 68 urgsum 1200.5385792832467
 #### group-strength-tester ####
 evaluating  group (1-3) in initial string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 strength = 79.47368588732962, adjusted prob.= 0.7508747665086348
 Random rndseed=1428
@@ -19066,6 +19592,11 @@ sum 1776.4696148625949 chosen 477.87032639803806 codelets.size() 96
 Choose codelet at index 30 urgsum 482.6530835572429
 #### group-strength-tester ####
 evaluating  group (2-3) in initial string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (2-3) internal_strength 59.02881339031978 external_strength 0.0 total strength:34.84400810269196
 strength = 34.84400810269196, adjusted prob.= 0.38440013626787684
 Random rndseed=1431
@@ -19078,6 +19609,30 @@ sum 1726.966632434176 chosen 822.0361170386677 codelets.size() 95
 Choose codelet at index 54 urgsum 834.2052479623205
 #### top-down-group-scout--category ####
 trying to build predecessor group group
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
+top-down-group-scout--category bond_category slipnode pd activation 100.0 buffer 0.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 3.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-2)
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 4.0
 about to choose string:
 initial string: relevance=0.0, unhappiness=78.91952798088978
 target string: relevance=0.0, unhappiness=78.64759701558553
@@ -19095,9 +19650,24 @@ sum 1710.8497980434886 chosen 660.3880220447866 codelets.size() 94
 Choose codelet at index 45 urgsum 668.9304465519737
 #### group-builder ####
 trying to build group (1-2) in initial string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-2) internal_strength 59.02881339031978 external_strength 0.0 total strength:34.84400810269196
 fighting incompatible groups
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-2) internal_strength 59.02881339031978 external_strength 0.0 total strength:34.84400810269196
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 Random rndseed=1436
 couldn't break incompatible groups: fizzle
@@ -19220,11 +19790,21 @@ ob workspace_string@6acbcfc0
 ob workspace_string@6acbcfc0
 calculate_external_strength 1.0
 successor bond between letter (2)2 and letter (3)3 internal_strength 95.89577675789482 external_strength 70.71067811865476 total strength:94.862124085996
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-2) internal_strength 59.02881339031978 external_strength 0.0 total strength:34.84400810269196
 description(group) of group (1-2) in target string internal_strength 50.0 external_strength 95.0 total strength:72.5
 description(successor group) of group (1-2) in target string internal_strength 50.0 external_strength 50.0 total strength:50.0
 description(right) of group (1-2) in target string internal_strength 50.0 external_strength 50.0 total strength:50.0
 description(leftmost) of group (1-2) in target string internal_strength 50.0 external_strength 95.0 total strength:72.5
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 description(group) of group (1-3) in initial string internal_strength 50.0 external_strength 50.0 total strength:50.0
 description(successor group) of group (1-3) in initial string internal_strength 50.0 external_strength 50.0 total strength:50.0
@@ -20269,12 +20849,37 @@ sum 4495.7360193954855 chosen 1928.6707523206633 codelets.size() 100
 Choose codelet at index 52 urgsum 1994.344543159489
 #### group-builder ####
 trying to build group (1-3) in target string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 fighting incompatible groups
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-2) internal_strength 59.02881339031978 external_strength 0.0 total strength:34.84400810269196
 Random rndseed=1524
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-2) internal_strength 59.02881339031978 external_strength 0.0 total strength:34.84400810269196
 Random rndseed=1525
 couldn't break incompatible groups: fizzle
@@ -20286,6 +20891,30 @@ sum 4386.207625466035 chosen 2552.7728380212325 codelets.size() 99
 Choose codelet at index 62 urgsum 2553.522313613543
 #### top-down-group-scout--category ####
 trying to build predecessor group group
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
+top-down-group-scout--category bond_category slipnode pd activation 80.0 buffer 0.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 0.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 0.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 3.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 0.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 0.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-2)
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 4.0
 about to choose string:
 initial string: relevance=0.0, unhappiness=15.394735584502783
 target string: relevance=0.0, unhappiness=78.64759701558553
@@ -20451,10 +21080,24 @@ mydirection slipnode lf activation 65.0 buffer 0.0 conceptual_depth 50.0
 check possible group letter (2)2
 check possible group. first_bond successor bond between letter (1)1 and letter (2)2
 check possible group. direction slipnode rt activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node slipnode gpc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode gpc activation 100.0 buffer 0.0 conceptual_depth 50.0
 trying from letter (2)2 successor
 proposing group from letter (1)1 to letter (3)3
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1546
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -20478,9 +21121,19 @@ sum 4046.7007408214727 chosen 1885.7625452228065 codelets.size() 92
 Choose codelet at index 48 urgsum 2033.7135530114826
 #### group-strength-tester ####
 evaluating  group (1-3) in target string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 strength = 79.47368588732962, adjusted prob.= 0.7582927626069376
 Random rndseed=1551
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
 create codelet group-builder urgency 6
@@ -20505,6 +21158,24 @@ sum 3882.644184194951 chosen 3168.2376543030796 codelets.size() 91
 Choose codelet at index 74 urgsum 3184.680891702845
 #### top-down-bond-scout--category ####
 searching for predecessor
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 3.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-2)
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 4.0
 Random rndseed=1554
 target string selected
 Random rndseed=1555
@@ -20538,9 +21209,19 @@ sum 3912.719851975192 chosen 915.5764453621949 codelets.size() 91
 Choose codelet at index 30 urgsum 955.1676497875441
 #### group-strength-tester ####
 evaluating  group (1-3) in target string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 strength = 79.47368588732962, adjusted prob.= 0.7582927626069376
 Random rndseed=1559
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
 create codelet group-builder urgency 6
@@ -20664,11 +21345,21 @@ ob workspace_string@6acbcfc0
 ob workspace_string@6acbcfc0
 calculate_external_strength 1.0
 successor bond between letter (2)2 and letter (3)3 internal_strength 95.89577675789482 external_strength 70.71067811865476 total strength:94.862124085996
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-2) internal_strength 59.02881339031978 external_strength 0.0 total strength:34.84400810269196
 description(group) of group (1-2) in target string internal_strength 50.0 external_strength 95.0 total strength:72.5
 description(successor group) of group (1-2) in target string internal_strength 50.0 external_strength 50.0 total strength:50.0
 description(right) of group (1-2) in target string internal_strength 50.0 external_strength 50.0 total strength:50.0
 description(leftmost) of group (1-2) in target string internal_strength 50.0 external_strength 95.0 total strength:72.5
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 description(group) of group (1-3) in initial string internal_strength 50.0 external_strength 50.0 total strength:50.0
 description(successor group) of group (1-3) in initial string internal_strength 50.0 external_strength 50.0 total strength:50.0
@@ -21694,8 +22385,18 @@ Choose codelet at index 32 urgsum 2984.737873225255
 about to choose string
 Random rndseed=1633
 initial string selected
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1634
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -21708,12 +22409,37 @@ sum 13592.6350323864 chosen 10452.736339905143 codelets.size() 99
 Choose codelet at index 78 urgsum 10864.557934531524
 #### group-builder ####
 trying to build group (1-3) in target string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 fighting incompatible groups
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-2) internal_strength 59.02881339031978 external_strength 0.0 total strength:34.84400810269196
 Random rndseed=1636
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-2) internal_strength 59.02881339031978 external_strength 0.0 total strength:34.84400810269196
 Random rndseed=1637
 won
@@ -21863,10 +22589,24 @@ mydirection slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
 check possible group letter (1)1
 check possible group. first_bond successor bond between letter (1)1 and letter (2)2
 check possible group. direction slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+get_related_node slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0
 trying from letter (1)1 successor
 proposing group from letter (1)1 to letter (3)3
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1651
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -21878,9 +22618,19 @@ sum 12139.221931389031 chosen 8497.455351972321 codelets.size() 94
 Choose codelet at index 72 urgsum 8567.534458171438
 #### group-strength-tester ####
 evaluating  group (1-3) in initial string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 strength = 79.47368588732962, adjusted prob.= 0.7663095410073305
 Random rndseed=1653
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
 create codelet group-builder urgency 6
@@ -21893,6 +22643,24 @@ sum 11823.02403461621 chosen 1182.302403461621 codelets.size() 94
 Choose codelet at index 11 urgsum 1213.9986662257247
 #### top-down-bond-scout--category ####
 searching for predecessor
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 3.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 3.0
 Random rndseed=1655
 target string selected
 Random rndseed=1656
@@ -21986,6 +22754,24 @@ sum 11067.201055083648 chosen 4548.619633639379 codelets.size() 92
 Choose codelet at index 42 urgsum 4569.585460610337
 #### top-down-bond-scout--category ####
 searching for successor
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 2.0 oll 3.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 2.0 oll 3.0
 Random rndseed=1664
 initial string selected
 Random rndseed=1665
@@ -22151,6 +22937,11 @@ ob workspace_string@6acbcfc0
 ob workspace_string@6acbcfc0
 calculate_external_strength 1.0
 successor bond between letter (2)2 and letter (3)3 internal_strength 95.89577675789482 external_strength 70.71067811865476 total strength:94.862124085996
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 description(group) of group (1-3) in initial string internal_strength 50.0 external_strength 50.0 total strength:50.0
 description(successor group) of group (1-3) in initial string internal_strength 50.0 external_strength 50.0 total strength:50.0
@@ -22194,6 +22985,11 @@ support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 79.36
 Correspondence between letter (3)3 and letter (3)3 internal_strength 80.0 external_strength 79.36 total strength:79.872
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 description(group) of group (1-3) in target string internal_strength 50.0 external_strength 50.0 total strength:50.0
 description(successor group) of group (1-3) in target string internal_strength 50.0 external_strength 50.0 total strength:50.0
@@ -23285,9 +24081,19 @@ sum 234620.86474387563 chosen 194031.45514318513 codelets.size() 95
 Choose codelet at index 83 urgsum 215834.98803125933
 #### group-strength-tester ####
 evaluating  group (1-3) in initial string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 strength = 79.47368588732962, adjusted prob.= 0.7825019041172279
 Random rndseed=1737
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
 create codelet group-builder urgency 6
@@ -23300,9 +24106,19 @@ sum 212221.01879983454 chosen 176355.66662266248 codelets.size() 95
 Choose codelet at index 82 urgsum 176369.97629804697
 #### group-strength-tester ####
 evaluating  group (1-3) in initial string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 strength = 79.47368588732962, adjusted prob.= 0.7825019041172279
 Random rndseed=1739
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
 create codelet group-builder urgency 6
@@ -23328,6 +24144,24 @@ sum 187940.0911314386 chosen 82317.7599155701 codelets.size() 94
 Choose codelet at index 51 urgsum 83937.72453300943
 #### top-down-bond-scout--category ####
 searching for successor
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 2.0 oll 3.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 2.0 oll 3.0
 Random rndseed=1744
 target string selected
 Random rndseed=1745
@@ -23361,6 +24195,30 @@ sum 225524.02114029616 chosen 125165.83173286438 codelets.size() 94
 Choose codelet at index 69 urgsum 126625.37903155408
 #### top-down-group-scout--category ####
 trying to build predecessor group group
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
+top-down-group-scout--category bond_category slipnode pd activation 55.0 buffer 0.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 3.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 3.0
 about to choose string:
 initial string: relevance=0.0, unhappiness=15.394735584502783
 target string: relevance=0.0, unhappiness=15.394735584502783
@@ -23553,6 +24411,11 @@ ob workspace_string@6acbcfc0
 ob workspace_string@6acbcfc0
 calculate_external_strength 1.0
 successor bond between letter (2)2 and letter (3)3 internal_strength 95.89577675789482 external_strength 70.71067811865476 total strength:94.862124085996
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 description(group) of group (1-3) in initial string internal_strength 50.0 external_strength 50.0 total strength:50.0
 description(successor group) of group (1-3) in initial string internal_strength 50.0 external_strength 50.0 total strength:50.0
@@ -23596,6 +24459,11 @@ support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 79.9744
 Correspondence between letter (3)3 and letter (3)3 internal_strength 80.0 external_strength 79.9744 total strength:79.99488000000001
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 description(group) of group (1-3) in target string internal_strength 50.0 external_strength 50.0 total strength:50.0
 description(successor group) of group (1-3) in target string internal_strength 50.0 external_strength 50.0 total strength:50.0
@@ -24585,8 +25453,18 @@ Choose codelet at index 18 urgsum 22111.79332267841
 about to choose string
 Random rndseed=1809
 target string selected
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1810
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -24599,6 +25477,11 @@ sum 162465.11505032374 chosen 136308.23152722162 codelets.size() 89
 Choose codelet at index 88 urgsum 162465.11505032374
 #### group-strength-tester ####
 evaluating  group (1-3) in target string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 strength = 79.47368588732962, adjusted prob.= 0.7815264384990339
 Random rndseed=1812
@@ -24632,6 +25515,24 @@ sum 102059.27118866453 chosen 20003.617152978248 codelets.size() 87
 Choose codelet at index 16 urgsum 21435.159364565752
 #### top-down-bond-scout--category ####
 searching for successor
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 2.0 oll 3.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 2.0 oll 3.0
 Random rndseed=1815
 initial string selected
 Random rndseed=1816
@@ -24734,10 +25635,24 @@ mydirection slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
 check possible group letter (2)2
 check possible group. first_bond successor bond between letter (2)2 and letter (3)3
 check possible group. direction slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+get_related_node slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0
 trying from letter (2)2 successor
 proposing group from letter (1)1 to letter (3)3
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1828
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -24770,6 +25685,30 @@ sum 110738.46632700705 chosen 21040.30860213134 codelets.size() 84
 Choose codelet at index 22 urgsum 22040.770739843778
 #### top-down-group-scout--category ####
 trying to build successor group group
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
+top-down-group-scout--category bond_category slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 2.0 oll 3.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 2.0 oll 3.0
 about to choose string:
 initial string: relevance=100.0, unhappiness=15.394735584502783
 target string: relevance=100.0, unhappiness=15.394735584502783
@@ -24780,8 +25719,18 @@ object chosen: letter (2)2
 Random rndseed=1833
 trying from letter (2)2 successor checking to left first
 proposing group from letter (1)1 to letter (3)3
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1834
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -24939,6 +25888,11 @@ ob workspace_string@6acbcfc0
 ob workspace_string@6acbcfc0
 calculate_external_strength 1.0
 successor bond between letter (2)2 and letter (3)3 internal_strength 95.89577675789482 external_strength 70.71067811865476 total strength:94.862124085996
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 description(group) of group (1-3) in initial string internal_strength 50.0 external_strength 50.0 total strength:50.0
 description(successor group) of group (1-3) in initial string internal_strength 50.0 external_strength 50.0 total strength:50.0
@@ -24982,6 +25936,11 @@ support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
 support support_sum 79.998976
 Correspondence between letter (3)3 and letter (3)3 internal_strength 80.0 external_strength 79.998976 total strength:79.9997952
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 description(group) of group (1-3) in target string internal_strength 50.0 external_strength 50.0 total strength:50.0
 description(successor group) of group (1-3) in target string internal_strength 50.0 external_strength 50.0 total strength:50.0
@@ -25959,6 +26918,11 @@ sum 170322.31970605295 chosen 64892.803808006174 codelets.size() 86
 Choose codelet at index 77 urgsum 85372.94159475173
 #### group-strength-tester ####
 evaluating  group (1-3) in initial string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 strength = 79.47368588732962, adjusted prob.= 0.7809934995665724
 Random rndseed=1898
@@ -26216,6 +27180,24 @@ sum 126603.85781127885 chosen 23168.50597946403 codelets.size() 82
 Choose codelet at index 27 urgsum 23691.677451194035
 #### top-down-bond-scout--category ####
 searching for successor
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 2.0 oll 3.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 2.0 oll 3.0
 Random rndseed=1917
 target string selected
 Random rndseed=1918
@@ -26273,9 +27255,19 @@ sum 151340.9354515189 chosen 70827.55779131084 codelets.size() 82
 Choose codelet at index 73 urgsum 80853.18147684766
 #### group-strength-tester ####
 evaluating  group (1-3) in initial string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 strength = 79.47368588732962, adjusted prob.= 0.7809934995665724
 Random rndseed=1924
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
 create codelet group-builder urgency 6
@@ -26451,6 +27443,11 @@ ob workspace_string@6acbcfc0
 ob workspace_string@6acbcfc0
 calculate_external_strength 1.0
 successor bond between letter (2)2 and letter (3)3 internal_strength 95.89577675789482 external_strength 70.71067811865476 total strength:94.862124085996
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 description(group) of group (1-3) in initial string internal_strength 50.0 external_strength 50.0 total strength:50.0
 description(successor group) of group (1-3) in initial string internal_strength 50.0 external_strength 50.0 total strength:50.0
@@ -26509,6 +27506,11 @@ support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
 support support_sum 184.0
 Correspondence between letter (3)3 and letter (3)3 internal_strength 80.0 external_strength 100.0 total strength:84.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 description(group) of group (1-3) in target string internal_strength 50.0 external_strength 50.0 total strength:50.0
 description(successor group) of group (1-3) in target string internal_strength 50.0 external_strength 50.0 total strength:50.0
@@ -27558,6 +28560,30 @@ sum 589933.9675970487 chosen 234203.78513602837 codelets.size() 82
 Choose codelet at index 40 urgsum 243759.0725592812
 #### top-down-group-scout--category ####
 trying to build predecessor group group
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
+top-down-group-scout--category bond_category slipnode pd activation 41.875 buffer 0.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 3.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 3.0
 about to choose string:
 initial string: relevance=0.0, unhappiness=15.394735584502783
 target string: relevance=0.0, unhappiness=15.394735584502783
@@ -27602,6 +28628,24 @@ sum 569316.0596222095 chosen 223171.89537190614 codelets.size() 80
 Choose codelet at index 39 urgsum 233450.11857186168
 #### top-down-bond-scout--category ####
 searching for predecessor
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 3.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 3.0
 Random rndseed=1991
 target string selected
 Random rndseed=1992
@@ -27661,6 +28705,24 @@ sum 978490.7004735803 chosen 9784.907004735804 codelets.size() 79
 Choose codelet at index 2 urgsum 13338.847190027442
 #### top-down-bond-scout--category ####
 searching for successor
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 2.0 oll 3.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 2.0 oll 3.0
 Random rndseed=1
 initial string selected
 Random rndseed=2
@@ -27705,10 +28767,24 @@ mydirection slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
 check possible group letter (1)1
 check possible group. first_bond successor bond between letter (1)1 and letter (2)2
 check possible group. direction slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+get_related_node slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0
 trying from letter (1)1 successor
 proposing group from letter (1)1 to letter (3)3
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=8
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -27720,9 +28796,19 @@ sum 1817457.8901511608 chosen 1724767.5377534514 codelets.size() 79
 Choose codelet at index 78 urgsum 1817457.8901511608
 #### group-strength-tester ####
 evaluating  group (1-3) in target string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 strength = 79.47368588732962, adjusted prob.= 0.7906531184729899
 Random rndseed=10
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
 create codelet group-builder urgency 6
@@ -27941,6 +29027,11 @@ ob workspace_string@6acbcfc0
 ob workspace_string@6acbcfc0
 calculate_external_strength 1.0
 successor bond between letter (2)2 and letter (3)3 internal_strength 95.89577675789482 external_strength 70.71067811865476 total strength:94.862124085996
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 description(group) of group (1-3) in initial string internal_strength 50.0 external_strength 50.0 total strength:50.0
 description(successor group) of group (1-3) in initial string internal_strength 50.0 external_strength 50.0 total strength:50.0
@@ -27999,6 +29090,11 @@ support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
 support support_sum 184.0
 Correspondence between letter (3)3 and letter (3)3 internal_strength 80.0 external_strength 100.0 total strength:84.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 description(group) of group (1-3) in target string internal_strength 50.0 external_strength 50.0 total strength:50.0
 description(successor group) of group (1-3) in target string internal_strength 50.0 external_strength 50.0 total strength:50.0
@@ -29088,6 +30184,30 @@ sum 604140.5712198842 chosen 119015.69253031719 codelets.size() 76
 Choose codelet at index 26 urgsum 125772.95231515261
 #### top-down-group-scout--category ####
 trying to build successor group group
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
+top-down-group-scout--category bond_category slipnode sc activation 100.0 buffer 0.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 0.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 0.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 2.0 oll 3.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 0.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 0.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 2.0 oll 3.0
 about to choose string:
 initial string: relevance=100.0, unhappiness=15.394735584502783
 target string: relevance=100.0, unhappiness=15.394735584502783
@@ -29097,8 +30217,18 @@ Random rndseed=80
 object chosen: letter (1)1
 trying from letter (1)1 successor checking to right first
 proposing group from letter (1)1 to letter (3)3
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=81
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -29110,6 +30240,11 @@ sum 893548.4476581253 chosen 677309.723324859 codelets.size() 76
 Choose codelet at index 75 urgsum 893548.4476581253
 #### group-strength-tester ####
 evaluating  group (1-3) in initial string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 strength = 79.47368588732962, adjusted prob.= 0.7894538880233367
 Random rndseed=83
@@ -29263,10 +30398,24 @@ mydirection slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
 check possible group letter (2)2
 check possible group. first_bond successor bond between letter (2)2 and letter (3)3
 check possible group. direction slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+get_related_node slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0
 trying from letter (2)2 successor
 proposing group from letter (1)1 to letter (3)3
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=103
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -29441,6 +30590,11 @@ ob workspace_string@6acbcfc0
 ob workspace_string@6acbcfc0
 calculate_external_strength 1.0
 successor bond between letter (2)2 and letter (3)3 internal_strength 95.89577675789482 external_strength 70.71067811865476 total strength:94.862124085996
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 description(group) of group (1-3) in initial string internal_strength 50.0 external_strength 50.0 total strength:50.0
 description(successor group) of group (1-3) in initial string internal_strength 50.0 external_strength 50.0 total strength:50.0
@@ -29499,6 +30653,11 @@ support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
 support support_sum 184.0
 Correspondence between letter (3)3 and letter (3)3 internal_strength 80.0 external_strength 100.0 total strength:84.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 25.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 description(group) of group (1-3) in target string internal_strength 50.0 external_strength 50.0 total strength:50.0
 description(successor group) of group (1-3) in target string internal_strength 50.0 external_strength 50.0 total strength:50.0
@@ -30468,9 +31627,19 @@ sum 543883.0782280549 chosen 534637.065898178 codelets.size() 73
 Choose codelet at index 70 urgsum 535986.9625427645
 #### group-strength-tester ####
 evaluating  group (1-3) in target string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 strength = 79.47368588732962, adjusted prob.= 0.7894341315761129
 Random rndseed=156
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
 create codelet group-builder urgency 6
@@ -30506,8 +31675,18 @@ Choose codelet at index 27 urgsum 113136.32945820355
 about to choose string
 Random rndseed=159
 initial string selected
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=160
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -30520,9 +31699,19 @@ sum 542656.8154790737 chosen 268072.4668466624 codelets.size() 72
 Choose codelet at index 71 urgsum 542656.8154790737
 #### group-strength-tester ####
 evaluating  group (1-3) in initial string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 strength = 79.47368588732962, adjusted prob.= 0.7894341315761129
 Random rndseed=162
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
 create codelet group-builder urgency 6
@@ -30747,6 +31936,30 @@ sum 573677.1711840807 chosen 127930.00917404999 codelets.size() 71
 Choose codelet at index 30 urgsum 128927.5608287844
 #### top-down-group-scout--category ####
 trying to build predecessor group group
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
+top-down-group-scout--category bond_category slipnode pd activation 40.46875 buffer 0.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 3.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 3.0
 about to choose string:
 initial string: relevance=0.0, unhappiness=15.394735584502783
 target string: relevance=0.0, unhappiness=15.394735584502783
@@ -30764,6 +31977,24 @@ sum 565782.0554987902 chosen 40736.307995912895 codelets.size() 70
 Choose codelet at index 12 urgsum 48060.41766932074
 #### top-down-bond-scout--category ####
 searching for predecessor
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 3.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 3.0
 Random rndseed=181
 target string selected
 Random rndseed=182
@@ -30843,10 +32074,24 @@ mydirection slipnode lf activation 40.1953125 buffer 0.0 conceptual_depth 50.0
 check possible group letter (3)3
 check possible group. first_bond successor bond between letter (2)2 and letter (3)3
 check possible group. direction slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+get_related_node slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0
 trying from letter (3)3 successor
 proposing group from letter (1)1 to letter (3)3
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=191
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -31047,6 +32292,11 @@ ob workspace_string@6acbcfc0
 ob workspace_string@6acbcfc0
 calculate_external_strength 1.0
 successor bond between letter (2)2 and letter (3)3 internal_strength 95.89577675789482 external_strength 70.71067811865476 total strength:94.862124085996
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 description(group) of group (1-3) in initial string internal_strength 50.0 external_strength 50.0 total strength:50.0
 description(successor group) of group (1-3) in initial string internal_strength 50.0 external_strength 50.0 total strength:50.0
@@ -31105,6 +32355,11 @@ support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
 support support_sum 184.0
 Correspondence between letter (3)3 and letter (3)3 internal_strength 80.0 external_strength 100.0 total strength:84.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 100.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 description(group) of group (1-3) in target string internal_strength 50.0 external_strength 50.0 total strength:50.0
 description(successor group) of group (1-3) in target string internal_strength 50.0 external_strength 50.0 total strength:50.0
@@ -32061,9 +33316,19 @@ sum 566570.7020396597 chosen 239092.8362607364 codelets.size() 69
 Choose codelet at index 66 urgsum 565269.7600142364
 #### group-strength-tester ####
 evaluating  group (1-3) in initial string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 strength = 79.47368588732962, adjusted prob.= 0.7897725624187117
 Random rndseed=247
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
 create codelet group-builder urgency 6
@@ -32150,6 +33415,24 @@ sum 558072.3526146546 chosen 65294.46525591459 codelets.size() 68
 Choose codelet at index 18 urgsum 73788.80825469186
 #### top-down-bond-scout--category ####
 searching for predecessor
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 3.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 3.0
 Random rndseed=257
 initial string selected
 Random rndseed=258
@@ -32185,8 +33468,18 @@ Choose codelet at index 3 urgsum 12398.175501274989
 about to choose string
 Random rndseed=262
 target string selected
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=263
 bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_length: 24.0 intrinsic_link_length: 60.0
 create codelet group-strength-tester urgency 7
@@ -32199,6 +33492,30 @@ sum 912465.676587709 chosen 70259.8570972536 codelets.size() 68
 Choose codelet at index 17 urgsum 72488.86622926855
 #### top-down-group-scout--category ####
 trying to build predecessor group group
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
+top-down-group-scout--category bond_category slipnode pd activation 40.234375 buffer 0.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 3.0
+local_bond_category_relevance wo letter (1)1
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (1)1 and letter (2)2 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (2)2
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined successor bond between letter (2)2 and letter (3)3 bondFlavor(wo.right_bond.get) slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+local_bond_category_relevance wo letter (3)3
+local_bond_category_relevance wo.spans_string false wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance wo group (1-3)
+local_bond_category_relevance wo.spans_string true wo.right_bond.isDefined null bondFlavor(wo.right_bond.get) null
+local_bond_category_relevance bc 0.0 oll 3.0
 about to choose string:
 initial string: relevance=0.0, unhappiness=15.394735584502783
 target string: relevance=0.0, unhappiness=15.394735584502783
@@ -32285,9 +33602,19 @@ sum 520312.4510547455 chosen 387632.77603578544 codelets.size() 66
 Choose codelet at index 63 urgsum 503315.75220473536
 #### group-strength-tester ####
 evaluating  group (1-3) in target string
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 strength = 79.47368588732962, adjusted prob.= 0.7897725624187117
 Random rndseed=273
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
 create codelet group-builder urgency 6
@@ -32579,6 +33906,11 @@ ob workspace_string@6acbcfc0
 ob workspace_string@6acbcfc0
 calculate_external_strength 1.0
 successor bond between letter (2)2 and letter (3)3 internal_strength 95.89577675789482 external_strength 70.71067811865476 total strength:94.862124085996
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 description(group) of group (1-3) in initial string internal_strength 50.0 external_strength 50.0 total strength:50.0
 description(successor group) of group (1-3) in initial string internal_strength 50.0 external_strength 50.0 total strength:50.0
@@ -32637,6 +33969,11 @@ support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
 support support_sum 184.0
 Correspondence between letter (3)3 and letter (3)3 internal_strength 80.0 external_strength 100.0 total strength:84.0
+get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
+get_related_node category.outgoing_links l.label null
+get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
 description(group) of group (1-3) in target string internal_strength 50.0 external_strength 50.0 total strength:50.0
 description(successor group) of group (1-3) in target string internal_strength 50.0 external_strength 50.0 total strength:50.0
@@ -33623,5 +34960,3 @@ Slippages used in translation:
 letter -> letter
 rightmost -> rightmost
 ijl 346 12.476294107581666
-
-Process finished with exit code 0

@@ -269,11 +269,19 @@ object WorkspaceFormulas {
 
     if (wString.objects.size == 1) 0.0 else {
       val oll = wString.objects.filter(wo => !wo.spans_string).size
-      val bc = wString.objects.filter(wo =>
+      val bc = wString.objects.filter(wo => {
+        System.out.println("local_bond_category_relevance wo " + wo);
+        val bcs = if (wo.right_bond.isDefined) bondFlavor(wo.right_bond.get) else "null"
+        System.out.println("local_bond_category_relevance wo.spans_string " + wo.spans_string
+          + " wo.right_bond.isDefined " + wo.right_bond.isDefined + " bondFlavor(wo.right_bond.get) " + bcs);
+
         !wo.spans_string &&
-        wo.right_bond.isDefined &&
-          bondFlavor(wo.right_bond.get).map(_.id) == categoryID).size
-        100.0 * bc / (oll-1.0)
+          wo.right_bond.isDefined &&
+          bondFlavor(wo.right_bond.get).map(_.id) == categoryID
+      }).size
+      System.out.println("local_bond_category_relevance bc " + bc + " oll " + oll);
+
+      100.0 * bc / (oll-1.0)
     }
 
 /* Merge into 1 method

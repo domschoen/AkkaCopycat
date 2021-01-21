@@ -1065,6 +1065,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       val bond_categoryOpt = SlipnetFormulas.get_related_node(group_cat, bond_category, identity)
       bond_categoryOpt match {
         case Some(bond_category) =>
+          log.debug("top-down-group-scout--category bond_category " + bond_category)
           sender() ! SlipnetGoWithTopDownGroupScoutCategoryResponse(bond_category.slipNodeRep(), groupSlipnetInfo())
         case None =>
           log.debug("<c> no bond-category found")

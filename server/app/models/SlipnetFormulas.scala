@@ -17,10 +17,17 @@ object SlipnetFormulas {
 
     def get_related_node(category: SlipNode, relation: SlipNode, identity: SlipNode): Option[SlipNode] = {
       // return the node that is linked to this node via this relation
+      System.out.println("get_related_node " + relation + " identity " + identity);
+
       if (relation==identity) {
         Some(category)
       } else {
-        category.outgoing_links.find(l => l.label == relation).map(_.to_node)
+
+        category.outgoing_links.find(l => {
+          System.out.println("get_related_node category.outgoing_links l.label " + l.label);
+
+          l.label == relation
+        }).map(_.to_node)
       }
     }
 
