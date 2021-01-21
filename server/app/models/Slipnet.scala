@@ -19,7 +19,7 @@ import scala.concurrent.duration._
 import play.api.Play.current
 
 import javax.inject._
-import models.Workspace.{CommonSubProcessing, DataForStrengthUpdateResponse, GoWithBottomUpCorrespondenceScout2, InitializeWorkspaceStringsResponse, PostTopBottomCodeletsGetInfoResponse, PrepareBondFightingResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell}
+import models.Workspace.{CommonSubProcessing, DataForStrengthUpdateResponse, GoWithBottomUpCorrespondenceScout2, InitializeWorkspaceStringsResponse, PostTopBottomCodeletsGetInfoResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell}
 import play.api.Configuration
 import play.api.libs.concurrent.InjectedActorSupport
 import Description.DescriptionRep
@@ -37,8 +37,9 @@ import models.codelet.BottomUpDescriptionScout.SlipnetGoWithBottomUpDescriptionS
 import models.codelet.{CodeletType, CodeletTypeString}
 import models.codelet.CorrespondenceBuilder.{SlipnetGoWithCorrespondenceBuilder4Response, SlipnetGoWithCorrespondenceBuilder5Response, SlipnetGoWithCorrespondenceBuilderResponse, SlipnetGoWithCorrespondenceBuilderResponse2, SlipnetGoWithCorrespondenceBuilderResponse3}
 import models.codelet.CorrespondenceStrengthTester.{SlipnetGoWithCorrespondenceStrengthTester2Response, SlipnetGoWithCorrespondenceStrengthTesterResponse}
+import models.codelet.GroupBuilder.PrepareBondFightingResponse
 import models.codelet.GroupScoutWholeString.{GetLeftAndRightResponse, SlipnetGoWithGroupScoutWholeStringResponse}
-import models.codelet.GroupStrengthTester.SlipnetGoWithGroupStrengthTesterResponse
+import models.codelet.GroupStrengthTester.{SlipnetGoWithGroupStrengthTesterResponse, SlipnetGoWithGroupStrengthTesterResponse2}
 import models.codelet.ImportantObjectCorrespondenceScout.SlipnetGoWithImportantObjectCorrespondenceScoutResponse
 import models.codelet.RuleScout.{RuleScoutProposeRule, SlipnetGoWithRuleScoutResponse}
 import models.codelet.TopDownBondScoutCategory.SlipnetTopDownBondScoutCategory2Response
@@ -139,7 +140,8 @@ object Slipnet {
   case class GetRelatedNodeOf(slipnodeID: String, lookingAtSlipNodeID: String)
   case class GetRelatedNodeOfResponse(related: Option[SlipNodeRep])
   case object GetLeftAndRight
-  case class SlipnetGoWithGroupStrengthTester(g: GroupRep, strength: Double)
+  case class SlipnetGoWithGroupStrengthTester(group_category_id: String)
+  case class SlipnetGoWithGroupStrengthTester2(g: GroupRep, strength: Double)
   case class SlipnetLookAHeadForNewBondCreation(s: ActorRef, group: GroupRep, index: Int, incg: List[String], newBondList: List[BondRep],                                                          from_obj_id: String,
                                                 to_obj_id: String
                                                )
@@ -1133,14 +1135,20 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       val bond_cat = slipNodeRefs(bc.id)
 
       val related = SlipnetFormulas.get_related_node(bond_cat,group_category, identity)
+      log.debug("SlipnetGoWithGroupScoutWholeString " + related)
       sender() ! SlipnetGoWithGroupScoutWholeStringResponse(related.map(_.slipNodeRep()),groupSlipnetInfo())
 
     case GetLeftAndRight =>
       sender() ! GetLeftAndRightResponse(left.slipNodeRep(), right.slipNodeRep())
 
 
-    case SlipnetGoWithGroupStrengthTester(g: GroupRep, strength: Double) =>
+    case SlipnetGoWithGroupStrengthTester(group_category_id: String) =>
+      val group_cat = slipNodeRefs(group_category_id)
+      val related = SlipnetFormulas.get_related_node(group_cat,bond_category, identity)
+      sender() ! SlipnetGoWithGroupStrengthTesterResponse(related.get.degree_of_association())
 
+    case SlipnetGoWithGroupStrengthTester2(g: GroupRep, strength: Double) =>
+      log.debug("SlipnetGoWithGroupStrengthTester2")
       // TODO same code as above
       val group_cat = slipNodeRefs(g.group_category.id)
       val related = SlipnetFormulas.get_related_node(group_cat,group_category, identity)
@@ -1152,7 +1160,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       }
       // GUI workspace.Workspace_Comments.text+=": succeeded ";
       // GUI if (!coderack.remove_terraced_scan) workspace.WorkspaceArea.AddObject(g,2);
-      sender() ! SlipnetGoWithGroupStrengthTesterResponse
+      sender() ! SlipnetGoWithGroupStrengthTesterResponse2
 
     case SlipnetLookAHeadForNewBondCreation(s: ActorRef, g, index: Int, incg, newBondList, from_obj_id, to_obj_id) =>
       val group_cat = slipNodeRefs(g.group_category.id)
@@ -1465,11 +1473,12 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       workspace ! PostTopBottomCodeletsGetInfoResponse(codeletToPost.toList)
 
     case PrepareBondFighting(groupID, bondReps) =>
+      log.debug("PrepareBondFighting")
       val defOfAssos = bondReps.map(bondRep => {
         val bondCategorySlipNode = slipNodeRefs(bondRep.bondCategorySlipNodeID)
         (bondRep.uuid, bondCategorySlipNode.bond_degree_of_association())
       }).toMap
-      sender() ! PrepareBondFightingResponse(groupID, bondReps, defOfAssos)
+      sender() ! PrepareBondFightingResponse(bondReps, defOfAssos)
 
 
   }

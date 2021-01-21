@@ -67,6 +67,7 @@ class GroupScoutWholeString(urgency: Int,
   var runTemperature: Double = 0.0
   var left_most: WorkspaceObjectRep = null
   var group_category: SlipNodeRep = null
+  var group_category2: SlipNodeRep = null
   var direction_category: Option[SlipNodeRep] = None
   var bond_facet: SlipNodeRep = null
   var object_list =  List.empty[WorkspaceObjectRep]
@@ -92,10 +93,13 @@ class GroupScoutWholeString(urgency: Int,
       workspace ! GoWithGroupScoutWholeString(runTemperature)
 
     case GoWithGroupScoutWholeStringResponse(lm) =>
+      log.debug("GoWithGroupScoutWholeStringResponse")
       left_most = lm
       if (left_most.groupRep.isDefined) {
+        log.debug("GoWithGroupScoutWholeStringResponse. GetRelatedNodeOf")
         slipnet ! GetRelatedNodeOf(left_most.groupRep.get.group_category.id, "bc")
       } else {
+        log.debug("GoWithGroupScoutWholeStringResponse. GoWithGroupScoutWholeString2")
         workspace ! GoWithGroupScoutWholeString2(left_most, slipnetLeft, slipnetRight)
       }
 
@@ -137,6 +141,7 @@ class GroupScoutWholeString(urgency: Int,
       groupSlipnetInfo = gsi
       relatedOpt match {
         case Some(group_cat) =>
+          group_category2 = group_cat
           slipnet ! CompleteProposeGroup(group_cat, direction_category)
         case None =>
           self ! Finished
@@ -147,7 +152,7 @@ class GroupScoutWholeString(urgency: Int,
       workspace ! WorkspaceProposeGroup(
         object_list,
         bond_list,
-        group_category,
+        group_category2,
         direction_category,
         bond_facet,
         bc,

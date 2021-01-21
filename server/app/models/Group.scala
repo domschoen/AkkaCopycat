@@ -168,6 +168,36 @@ class Group (
     ws.break_group(this)
   }
 
+  def update_strength_value(degree_of_association: Double) = {
+    calculate_internal_strength(degree_of_association)
+    calculate_external_strength()
+    calculate_total_strength()
+  };
+
+  //    val bc = (slipnet_formulas.get_related_node(group_category,slipnet.bond_category)).degree_of_association();
+  def calculate_internal_strength(degree_of_association: Double) = {
+    val bff = if (bond_facet.id == SlipNode.id.letter_category) 1.0 else 0.5
+    //System.out.println("related node:"+(slipnet_formulas.get_related_node(group_category,slipnet.bond_category)).pname);
+    val len = object_list.size;
+    val lc = len match {
+      case 1 => 5.0
+      case 2 => 20.0
+      case 3 => 60.0
+      case _ => 90.0
+    }
+
+    val bcw = Math.pow(degree_of_association,0.98);
+    val lcw = 100.0-bcw;
+    internal_strength = Formulas.weighted_average(degree_of_association,bcw,lc,lcw);
+    //System.out.println(this+" bc:"+bc+" bcw:"+bcw+" lc:"+lc+" lcw:"+" internal strength = "+internal_strength);
+  }
+
+  def calculate_external_strength(){
+    if (spans_string) external_strength = 100.0;
+    else external_strength = local_support();
+    //System.out.println(this+" external strength = "+external_strength);
+  }
+
   def local_support(): Double = {
     val num = number_of_local_supporting_groups().toDouble
     if (num==0.0) 0.0 else {
@@ -182,13 +212,13 @@ class Group (
 
   def number_of_local_supporting_groups() = {
     val grs = ws.objects.filter(wo =>
-      if (wo.isInstanceOf[Group]) false else {
+      if (wo.isInstanceOf[Group])  {
         val g = wo.asInstanceOf[Group]
         ((g.right_string_position<left_string_position)||
           (g.left_string_position>right_string_position)) &&
         ((g.group_category == group_category)&&
             (g.direction_category == direction_category))
-    })
+    } else false)
     grs.size
   }
   def local_density() = {
