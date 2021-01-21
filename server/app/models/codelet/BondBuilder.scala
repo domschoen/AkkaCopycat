@@ -34,9 +34,11 @@ class BondBuilder(urgency: Int, workspace: ActorRef,
       workspace ! GoWithBondStrengthTester(runTemperature, bondID)
 
     case GoWithBondStrengthTesterResponse(bondRep) =>
+      log.debug("GoWithBondStrengthTesterResponse")
       slipnet ! SlipnetGoWithBondStrengthTester(bondRep)
 
     case SlipnetGoWithBondStrengthTesterResponse(bond_category_degree_of_association) =>
+      log.debug("BondBuilder. SlipnetGoWithBondStrengthTesterResponse")
       workspace ! GoWithBondBuilder(runTemperature, bondID(), bond_category_degree_of_association)
 
     case TemperatureResponse(value) =>

@@ -1378,6 +1378,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       sender() ! Finished
 
     case SlipnetGoWithBondStrengthTester(bondRep) =>
+      log.debug("SlipnetGoWithBondStrengthTester")
       val bondCategorySlipNode = slipNodeRefs(bondRep.bondCategorySlipNodeID)
       sender() ! SlipnetGoWithBondStrengthTesterResponse(bondCategorySlipNode.bond_degree_of_association())
 

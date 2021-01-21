@@ -100,23 +100,22 @@ class Bond (
   }
 
   def correspondenceInDirection(
-    cwo: WorkspaceObject,
-    dirMost: WorkspaceObject => Boolean,
-    sideBond: WorkspaceObject => Option[Bond],
-    initial: WorkspaceString): Option[Correspondence] = {
-    if ((dirMost(left_obj)) && (cwo.correspondence.isDefined)) {
+                                  cwo: WorkspaceObject,
+                                  dirMost: WorkspaceObject => Boolean,
+                                  sideBond: WorkspaceObject => Option[Bond],
+                                  initial: WorkspaceString
+                               ): Option[Correspondence] = {
+    if ((dirMost(cwo)) && (cwo.correspondence.isDefined)) {
       val locOpt = cwo.correspondence;
       if (locOpt.isDefined) {
         val loc = locOpt.get
         val wo = if (workspaceString() == initial) loc.obj2 else loc.obj1
-        if ((wo.leftmost) && (wo.right_bond.isDefined)) {
-          if (sideBond(wo).isDefined) {
+        if ((dirMost(wo)) && (sideBond(wo).isDefined)) {
             val rb = sideBond(wo).get
             // ignore test on rb.direction_category != null
             if (rb.direction_category != direction_category) {
               Some(loc)
             } else None
-          } else None
         } else None
       } else None
     } else None
@@ -226,11 +225,11 @@ class Bond (
 
     val num : Double = number_of_local_supporting_bonds()
     println("calculate_external_strength " + num)
-    val extstr = if (num > 0.0){
+    val extstr = if (num > 0.0) {
       val density = Math.sqrt(local_density(wos) / 100) * 100.0
       val nf1 = Math.pow(0.6,(1.0/(num*num*num)));
       val nf = if (nf1 < 1.0) 1.0 else nf1
-      nf1 * density
+      nf * density
     } else 0.0
 
     external_strength = extstr;

@@ -15722,6 +15722,9 @@ wString ijk
 ob Some(models.WorkspaceString@4ed285c4)
 ob Some(models.WorkspaceString@4ed285c4)
 calculate_external_strength 1.0
+
+// Couille
+
 class models.Bond internal_strength 95.89577675789482 external_strength 42.42640687119285 total strength: 93.7012744515976
 18:28:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - strength = 93.7012744515976
 18:28:29 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Workspace] - check for incompatible structures

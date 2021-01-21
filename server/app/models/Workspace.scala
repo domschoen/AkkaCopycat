@@ -1120,14 +1120,41 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
             log.debug("not  brokeIncb")
             sender() ! Finished
           } else {
+            // fight all groups containing these objects
+            log.debug("fight all groups containing these objects")
+            val incg = WorkspaceFormulas.get_common_groups(b.from_obj, b.to_obj);
+            val failedFight = if (incg.isEmpty) {
+              log.debug("no incompatible groups!")
+              false
+            } else {
+              log.debug("trying to break incompatible groups")
+              // try to break all incompatible groups
+              if (fight_it_out(b, 1.0, incg, 1.0)) {
+                // beat all competing groups
+                log.debug("won");
+                false
+              }
+              else {
+                print("failed: Fizzle!");
+                true
+              }
+            }
+            if (failedFight) {
+              sender() ! Finished
+            } else {
 
             // inverted groups and correspondences fighting
             log.debug("fight all incompatible correspondences")
             // fight all incompatible correspondences
             var incc: List[Correspondence] = List.empty[Correspondence]
             val wonOrContinue = if (b.left_obj.leftmost || b.right_obj.rightmost) {
+              log.debug("fight all incompatible correspondences 1")
+
               if (b.direction_category.isDefined) {
+                log.debug("fight all incompatible correspondences 2")
                 incc = b.get_incompatible_correspondences(initial)
+                log.debug("fight all incompatible correspondences incc " + incc)
+
                 if (!incc.isEmpty) {
                   log.debug("trying to break incompatible correspondences")
                   if (!fight_it_out(b, 2.0, incc, 3.0)) {
@@ -1146,28 +1173,6 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
               log.debug("lost the fight: Fizzle!")
               sender() ! Finished
             } else {
-              // fight all groups containing these objects
-              log.debug("fight all groups containing these objects")
-              val incg = WorkspaceFormulas.get_common_groups(b.from_obj, b.to_obj);
-              if (incg.isEmpty) {
-                log.debug("no incompatible groups!")
-              }
-              val failedFight = if (incg.isEmpty) false else {
-                log.debug("trying to break incompatible groups")
-                // try to break all incompatible groups
-                if (fight_it_out(b, 1.0, incg, 1.0)) {
-                  // beat all competing groups
-                  log.debug("won");
-                  false
-                }
-                else {
-                  print("failed: Fizzle!");
-                  true
-                }
-              }
-              if (failedFight) {
-                sender() ! Finished
-              } else {
 
                 for (br <- incb) {
                   break_bond(br)
@@ -1214,6 +1219,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
     // codelet.java.395
     case GoWithBondStrengthTester(temperature, bondID) =>
+      log.debug("GoWithBondStrengthTester")
       val b = wsRefs(bondID).asInstanceOf[Bond]
       sender() ! GoWithBondStrengthTesterResponse(b.bondRep())
 
