@@ -77,6 +77,12 @@ abstract class WorkspaceObject(ws: WorkspaceString) extends WorkspaceStructure {
   var clamp_salience = false
   var name = ""
 
+
+  def setRightBond(b: Option[Bond]) = {
+    println("setRightBond " + this + " bond " + b)
+    right_bond = b
+  }
+
   def workspaceObjectRep(): WorkspaceObjectRep = WorkspaceObjectRep(
     uuid,
     descriptionReps(),

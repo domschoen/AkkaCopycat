@@ -964,7 +964,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
           } else {
             log.debug("GoWithGroupBuilder. no fightNeeded")
 
-            self.forward(AfterFighting(groupID, bondReps))
+            self.forward(AfterFighting(groupID, incompatibleBondList.map(b => b.bondRep())))
           }
         }
       }
@@ -993,7 +993,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       // fight all groups containing these objects
       val incg = WorkspaceFormulas.get_incompatible_groups(g);
       val incgFightSucceeded = if (incg.size != 0){
-        print("fighting incompatible groups");
+        log.debug("fighting incompatible groups");
         // try to break all incompatible groups
         if (fight_it_out(g,1.0, incg,1.0)){
           // beat all competing groups
@@ -1001,11 +1001,12 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
           true
         }
         else {
-          print("couldn't break incompatible groups: fizzle");
+          log.debug("couldn't break incompatible groups: fizzle");
           false
         }
       } else true
       if (incgFightSucceeded) {
+        log.debug("destroy incompatible bonds " + incompatibleBondList.size)
         // destroy incompatible bonds
         for (b <- incompatibleBondList) b.break_bond()
 

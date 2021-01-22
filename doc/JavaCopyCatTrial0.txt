@@ -1,4 +1,4 @@
-/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=51271:/Applications/IntelliJ IDEA CE.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/tools.jar:/Users/dschoen/Documents/gitlab/copycat/JavaCopyCat/out/production/JavaCopyCat rungroup
+/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=51756:/Applications/IntelliJ IDEA CE.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/tools.jar:/Users/dschoen/Documents/gitlab/copycat/JavaCopyCat/out/production/JavaCopyCat rungroup
 Random rndseed=1
 Random rndseed=2
 Random rndseed=3
@@ -3852,6 +3852,7 @@ building bond
 bond.build_bond | string.bonds.add this ijk this predecessor bond between letter (2)2 and letter (3)3
 setBuffer slipnode id pd buffer 100.0
 setBuffer slipnode id lf buffer 100.0
+setRightBond letter (2)2 bond predecessor bond between letter (2)2 and letter (3)3
 mainloop | codelets_run 42 clamp_time 30 last_update 30 time_step_length 15
 choose T: 90.85714285714286
 scale 1.2761904761904759urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5] flag 43
@@ -4950,6 +4951,7 @@ break probability = 0.5
 Random rndseed=280
 bond.break_bond predecessor bond between letter (2)2 and letter (3)3
 break_bond. remove bond
+setRightBond letter (2)2 bond null
 Succeeded
 mainloop | codelets_run 52 clamp_time 30 last_update 45 time_step_length 15
 choose T: 92.40876385336745
@@ -5066,6 +5068,7 @@ building bond
 bond.build_bond | string.bonds.add this ijk this successor bond between letter (1)1 and letter (2)2
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+setRightBond letter (1)1 bond successor bond between letter (1)1 and letter (2)2
 mainloop | codelets_run 56 clamp_time 30 last_update 45 time_step_length 15
 choose T: 92.40876385336745
 scale 1.1727490764421702urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 1, 5, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7, 2, 5, 7, 5] flag 57
@@ -10265,6 +10268,7 @@ building bond
 bond.build_bond | string.bonds.add this ijk this predecessor bond between letter (2)2 and letter (3)3
 setBuffer slipnode id pd buffer 100.0
 setBuffer slipnode id lf buffer 100.0
+setRightBond letter (2)2 bond predecessor bond between letter (2)2 and letter (3)3
 mainloop | codelets_run 117 clamp_time 30 last_update 105 time_step_length 15
 choose T: 71.10979624568279
 scale 2.592680250287814urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 7, 5, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5] flag 118
@@ -11391,6 +11395,7 @@ building bond
 bond.build_bond | string.bonds.add this abc this predecessor bond between letter (2)2 and letter (3)3
 setBuffer slipnode id pd buffer 100.0
 setBuffer slipnode id lf buffer 100.0
+setRightBond letter (2)2 bond predecessor bond between letter (2)2 and letter (3)3
 mainloop | codelets_run 123 clamp_time 30 last_update 120 time_step_length 15
 choose T: 71.49315871902928
 scale 2.5671227520647144urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 1, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 7, 5, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 5, 6, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 7, 7] flag 124
@@ -11641,6 +11646,7 @@ building bond
 bond.build_bond | string.bonds.add this abc this successor bond between letter (1)1 and letter (2)2
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+setRightBond letter (1)1 bond successor bond between letter (1)1 and letter (2)2
 mainloop | codelets_run 132 clamp_time 30 last_update 120 time_step_length 15
 choose T: 71.49315871902928
 scale 2.5671227520647144urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 1, 3, 3, 3, 3, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 5, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 7, 7, 7] flag 133
@@ -14546,11 +14552,13 @@ Random rndseed=999
 won
 bond.break_bond predecessor bond between letter (2)2 and letter (3)3
 break_bond. remove bond
+setRightBond letter (2)2 bond null
 break_correspondence. remove correspondence
 building bond
 bond.build_bond | string.bonds.add this ijk this successor bond between letter (2)2 and letter (3)3
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+setRightBond letter (2)2 bond successor bond between letter (2)2 and letter (3)3
 mainloop | codelets_run 151 clamp_time 30 last_update 150 time_step_length 15
 choose T: 61.94432235724881
 scale 3.2037118428500793urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 5, 4, 4, 3, 3, 3, 1, 5, 3, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 5, 5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 7, 7, 7, 7, 7, 7, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1] flag 152
@@ -16079,10 +16087,12 @@ fight all incompatible correspondences 2
 fight all incompatible correspondences incc null
 bond.break_bond predecessor bond between letter (2)2 and letter (3)3
 break_bond. remove bond
+setRightBond letter (2)2 bond null
 building bond
 bond.build_bond | string.bonds.add this abc this successor bond between letter (2)2 and letter (3)3
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+setRightBond letter (2)2 bond successor bond between letter (2)2 and letter (3)3
 mainloop | codelets_run 166 clamp_time 30 last_update 165 time_step_length 15
 choose T: 78.96602816548506
 scale 2.0689314556343295urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 4, 3, 3, 5, 3, 1, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 4, 4, 3, 3, 3, 3, 5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 6, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 7, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 7, 5, 6, 3, 7, 7, 5, 7, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1] flag 167
@@ -17822,6 +17832,9 @@ scale 2.2491900153320623urgencies: [1, 1, 1, 4, 3, 3, 5, 1, 3, 3, 3, 3, 3, 3, 1,
 Random rndseed=1268
 sum 2027.2508947500498 chosen 889.9631427952719 codelets.size() 97
 Choose codelet at index 52 urgsum 899.8474925655635
+
+
+// Couille
 #### group-builder ####
 trying to build group (1-2) in target string
 get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
@@ -20847,6 +20860,9 @@ scale 2.62099009470161urgencies: [5, 3, 3, 3, 4, 4, 3, 3, 3, 6, 4, 4, 4, 3, 1, 4
 Random rndseed=1523
 sum 4495.7360193954855 chosen 1928.6707523206633 codelets.size() 100
 Choose codelet at index 52 urgsum 1994.344543159489
+
+
+// Couille
 #### group-builder ####
 trying to build group (1-3) in target string
 get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
@@ -34960,3 +34976,5 @@ Slippages used in translation:
 letter -> letter
 rightmost -> rightmost
 ijl 346 12.476294107581666
+
+Process finished with exit code 0

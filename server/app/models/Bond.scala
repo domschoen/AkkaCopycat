@@ -73,7 +73,7 @@ class Bond (
     workspaceString().get.addBond(this);
 
     activateDescriptor()
-    left_obj.right_bond = Some(this);
+    left_obj.setRightBond(Some(this));
     right_obj.left_bond = Some(this);
     left_obj.addBond(this)
     right_obj.addBond(this)
@@ -84,7 +84,7 @@ class Bond (
     System.out.println("bond.break_bond " + this);
 
     if (workspaceString().isDefined) workspaceString().get.break_bond(this)
-    left_obj.right_bond = None;
+    left_obj.setRightBond(None);
     right_obj.left_bond = None;
     left_obj.break_bond(this);
     right_obj.break_bond(this);
