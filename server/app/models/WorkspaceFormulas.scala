@@ -329,7 +329,7 @@ object WorkspaceFormulas {
     }
   }
 
-  def get_incompatible_groups(obj: Group): List[WorkspaceObject] = {
+  def get_incompatible_groups(obj: Group): List[Group] = {
     val v = obj.object_list.toList.map(wo => {
       wo.relatedGroups()
     })

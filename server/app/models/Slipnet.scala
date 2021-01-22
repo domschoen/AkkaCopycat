@@ -37,7 +37,7 @@ import models.codelet.BottomUpDescriptionScout.SlipnetGoWithBottomUpDescriptionS
 import models.codelet.{CodeletType, CodeletTypeString}
 import models.codelet.CorrespondenceBuilder.{SlipnetGoWithCorrespondenceBuilder4Response, SlipnetGoWithCorrespondenceBuilder5Response, SlipnetGoWithCorrespondenceBuilderResponse, SlipnetGoWithCorrespondenceBuilderResponse2, SlipnetGoWithCorrespondenceBuilderResponse3}
 import models.codelet.CorrespondenceStrengthTester.{SlipnetGoWithCorrespondenceStrengthTester2Response, SlipnetGoWithCorrespondenceStrengthTesterResponse}
-import models.codelet.GroupBuilder.PrepareBondFightingResponse
+import models.codelet.GroupBuilder.{PrepareBondFightingResponse, SlipnetGoWithGroupBuilderResponse, SlipnetPrepareGroupFightingResponse}
 import models.codelet.GroupScoutWholeString.{GetLeftAndRightResponse, SlipnetGoWithGroupScoutWholeStringResponse}
 import models.codelet.GroupStrengthTester.{SlipnetGoWithGroupStrengthTesterResponse, SlipnetGoWithGroupStrengthTesterResponse2}
 import models.codelet.ImportantObjectCorrespondenceScout.SlipnetGoWithImportantObjectCorrespondenceScoutResponse
@@ -129,7 +129,8 @@ object Slipnet {
   case class SlipnetGoWithTopDownGroupScoutDirection(bond_category: SlipNodeRep, first_bond: String, fromob: String)
 
   case class SlipnetGoWithGroupScoutWholeString(bc: SlipNodeRep)
-
+  case class SlipnetGoWithGroupBuilder(group_category_id: String)
+  case class SlipnetPrepareGroupFighting(group_category_id: String, group_category_id_by_group_id: Map[String, String])
   case class InflatedDescriptionRep(
                                      uuid :String,
                                      descriptionTypeSlipNode: SlipNode,
@@ -1437,10 +1438,12 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       for (s <- slipNodes) {
         if (s.activation == 100.0) {
           for (st <- s.codelets) {
+            log.debug(">>>> post_top_down_codelets " + st);
+
             val prob = get_post_codelet_probability(st, t, intra_string_unhappiness, inter_string_unhappiness, unreplaced_objects_size, ruleTotalWeaknessOpt);
             val num = get_num_codelets_to_post(st, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+            log.debug("prob " + prob + " num " + num);
             for (t <- 1 to num) {
-              log.debug(">>>> post_top_down_codelets " + st);
 
               if (Random.rnd() < prob) {
                 val rawUrgency = s.activation * s.conceptual_depth / 100.0
@@ -1481,6 +1484,43 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
         (bondRep.uuid, bondCategorySlipNode.bond_degree_of_association())
       }).toMap
       sender() ! PrepareBondFightingResponse(bondReps, defOfAssos)
+
+    case SlipnetGoWithGroupBuilder(group_category_id) =>
+      val grCategory = slipNodeRefs(group_category_id)
+      val bond_categoryOpt = SlipnetFormulas.get_related_node(grCategory,bond_category, identity)
+      bond_categoryOpt match {
+        case Some(bond_category) =>
+          sender() ! SlipnetGoWithGroupBuilderResponse(bond_category.degree_of_association())
+        case None =>
+          log.debug("SlipnetGoWithGroupBuilder. SlipnetFormulas.get_related_node null")
+          sender() ! Finished
+      }
+
+    case SlipnetPrepareGroupFighting(group_category_id, group_category_id_by_group_id) =>
+      val grCategory = slipNodeRefs(group_category_id)
+      val bond_categoryOpt = SlipnetFormulas.get_related_node(grCategory,bond_category, identity)
+      bond_categoryOpt match {
+        case Some(bond_category) =>
+          val degree_of_association1 = bond_category.degree_of_association()
+          val degree_of_association2Tuples = group_category_id_by_group_id.keys.map(groupID => {
+            val grCategory2 = slipNodeRefs(group_category_id_by_group_id(groupID))
+            val bond_categoryOpt2 = SlipnetFormulas.get_related_node(grCategory2,bond_category, identity)
+            bond_categoryOpt2 match {
+              case Some(bond_category2) => Some((groupID, bond_category2.degree_of_association()))
+              case None => None
+            }
+          })
+          val degree_of_association2TuplesFlatten = degree_of_association2Tuples.flatten
+          if (degree_of_association2Tuples.size != degree_of_association2TuplesFlatten) {
+            log.debug("SlipnetPrepareGroupFighting. SlipnetFormulas.get_related_node null")
+            sender() ! Finished
+          } else {
+            sender() ! SlipnetPrepareGroupFightingResponse(bond_category.degree_of_association(), degree_of_association2TuplesFlatten.toMap)
+          }
+        case None =>
+          log.debug("SlipnetPrepareGroupFighting. SlipnetFormulas.get_related_node null")
+          sender() ! Finished
+      }
 
 
   }

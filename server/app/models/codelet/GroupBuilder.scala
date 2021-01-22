@@ -7,9 +7,13 @@ import models.Bond.BondRep
 
 // codelet.java.880
 object GroupBuilder {
-  case class GoWithGroupBuilderResponse(bondReps: List[BondRep])
+  case class GoWithGroupBuilderResponse(incompatibleBondList: List[BondRep], group_category_id: String)
+  case object GoWithGroupBuilderResponse2
   case class PrepareBondFightingResponse(bondReps: List[BondRep], degOfAssos: Map[String, Double])
-
+  case class SlipnetGoWithGroupBuilderResponse(degree_of_association: Double)
+  case class PrepareGroupFighting(group_category_id_by_group_id: Map[String, String])
+  case class SlipnetPrepareGroupFightingResponse(degree_of_association1: Double, degree_of_association2: Map[String, Double])
+  case class GroupBuilderNoGroupFighting(incg: List[String])
 }
 
 class GroupBuilder(urgency: Int,
@@ -20,17 +24,33 @@ class GroupBuilder(urgency: Int,
   import Codelet.{ Run, Finished }
   import models.Workspace.{
     GoWithGroupBuilder,
-    GoWithGroupBuilder2
+    GoWithGroupBuilder2,
+    GoWithGroupBuilder3,
+    GoWithGroupBuilder4,
+    GoWithGroupBuilder5
   }
   import models.Coderack.ChooseAndRun
   import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
   import GroupBuilder.{
     GoWithGroupBuilderResponse,
-    PrepareBondFightingResponse
+    PrepareBondFightingResponse,
+    GoWithGroupBuilderResponse2,
+    SlipnetGoWithGroupBuilderResponse,
+    PrepareGroupFighting,
+    SlipnetPrepareGroupFightingResponse,
+    GroupBuilderNoGroupFighting
   }
-  import models.Slipnet.PrepareBondFighting
+  import models.Slipnet.{
+    PrepareBondFighting,
+    SlipnetGoWithGroupBuilder,
+    SlipnetPrepareGroupFighting
+  }
 
   var runTemperature = 0.0
+  var incompatibleBondList: List[BondRep] = null
+  var group_category_id: String = null
+  var incg: List[String] = null
+
   def groupID() = arguments.get.asInstanceOf[String]
 
   def receive = LoggingReceive {
@@ -44,15 +64,33 @@ class GroupBuilder(urgency: Int,
 
       workspace ! GoWithGroupBuilder(runTemperature, groupID)
 
+    case GoWithGroupBuilderResponse(incBondList, group_cat_id) =>
+      incompatibleBondList = incBondList
+      group_category_id = group_cat_id
+      slipnet ! SlipnetGoWithGroupBuilder(group_category_id)
 
-    case GoWithGroupBuilderResponse(bondReps) =>
+    case SlipnetGoWithGroupBuilderResponse(degree_of_association) =>
+      workspace ! GoWithGroupBuilder2(groupID, degree_of_association, incompatibleBondList)
+
+
+    case GoWithGroupBuilderResponse2 =>
       log.debug("GoWithGroupBuilderResponse")
-      slipnet ! PrepareBondFighting(groupID, bondReps)
+      slipnet ! PrepareBondFighting(groupID, incompatibleBondList)
 
     case PrepareBondFightingResponse(bondReps: List[BondRep], degOfAssos: Map[String, Double]) =>
       log.debug("PrepareBondFightingResponse")
-      workspace ! GoWithGroupBuilder2(groupID(), bondReps, degOfAssos)
+      workspace ! GoWithGroupBuilder3(groupID(), bondReps, degOfAssos)
 
+    case GroupBuilderNoGroupFighting(incgIds) =>
+      incg = incgIds
+      workspace ! GoWithGroupBuilder5(groupID(), incompatibleBondList, incg)
+
+
+    case PrepareGroupFighting(group_category_id_by_group_id: Map[String, String]) =>
+      slipnet ! SlipnetPrepareGroupFighting(group_category_id, group_category_id_by_group_id)
+
+    case SlipnetPrepareGroupFightingResponse(degree_of_association1: Double, degree_of_association2: Map[String, Double]) =>
+      workspace ! GoWithGroupBuilder4(groupID(), degree_of_association1, degree_of_association2, incompatibleBondList)
 
 
     case TemperatureResponse(value) =>

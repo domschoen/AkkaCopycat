@@ -220,7 +220,12 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
         }
         case ChooseAndRun(nbobjs, temperature) =>
           codelets_run += 1
-          self ! ProcessChooseAndRun(nbobjs, temperature)
+          if(Random.rndseed > 1998) {
+            log.debug("On arrete pour l'instant")
+          } else {
+            self ! ProcessChooseAndRun(nbobjs, temperature)
+
+          }
 
 
         case ProcessChooseAndRun(nbobjs, temperature) =>

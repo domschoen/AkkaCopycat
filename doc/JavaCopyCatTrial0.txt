@@ -1,4 +1,4 @@
-/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=51756:/Applications/IntelliJ IDEA CE.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/tools.jar:/Users/dschoen/Documents/gitlab/copycat/JavaCopyCat/out/production/JavaCopyCat rungroup
+/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=49905:/Applications/IntelliJ IDEA CE.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/tools.jar:/Users/dschoen/Documents/gitlab/copycat/JavaCopyCat/out/production/JavaCopyCat rungroup
 Random rndseed=1
 Random rndseed=2
 Random rndseed=3
@@ -738,7 +738,7 @@ update_object_value 0.0 group.isDefined null changed false
 update_object_value : raw_importance 0.0
 update_object_value : intra_string_happiness 0.0
 3T: 100.0
-te the relative importances of initial and target strings
+update the relative importances of initial and target strings
 update_relative_importance 0.0
 ob letter (1)1
 ob.relative_importance 0.0
@@ -1782,7 +1782,7 @@ update_object_value 300.0 group.isDefined null changed false
 update_object_value : raw_importance 300.0
 update_object_value : intra_string_happiness 0.0
 3T: 20.0
-te the relative importances of initial and target strings
+update the relative importances of initial and target strings
 update_relative_importance 900.0
 ob letter (1)1
 ob.relative_importance 0.3333333333333333
@@ -1802,10 +1802,11 @@ update the intra string unhappiness of initial and target strings
 5T: 20.0
 post_top_down_codelets
 >>>> post_top_down_codelets top-down-description-scout
+prob 0.04000000000000001 num 1
 Random rndseed=55
 <<<<
 
-5T: 20.0
+6T: 20.0
 ------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.04000000000000001
 Random rndseed=56
@@ -2927,7 +2928,7 @@ update_object_value 270.0 group.isDefined null changed false
 update_object_value : raw_importance 270.0
 update_object_value : intra_string_happiness 0.0
 3T: 91.46666666666665
-te the relative importances of initial and target strings
+update the relative importances of initial and target strings
 update_relative_importance 840.0
 ob letter (1)1
 ob.relative_importance 0.32142857142857145
@@ -2947,12 +2948,13 @@ update the intra string unhappiness of initial and target strings
 5T: 91.46666666666665
 post_top_down_codelets
 >>>> post_top_down_codelets top-down-description-scout
+prob 0.8366151111111109 num 1
 Random rndseed=133
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-description-scout urgency 4
 <<<<
 
-5T: 91.46666666666665
+6T: 91.46666666666665
 ------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.8366151111111109
 Random rndseed=134
@@ -4028,7 +4030,7 @@ update_object_value 300.0 group.isDefined null changed false
 update_object_value : raw_importance 300.0
 update_object_value : intra_string_happiness 8.066666666666668
 3T: 90.85714285714286
-te the relative importances of initial and target strings
+update the relative importances of initial and target strings
 update_relative_importance 1150.0
 ob letter (1)1
 ob.relative_importance 0.2608695652173913
@@ -4048,12 +4050,13 @@ update the intra string unhappiness of initial and target strings
 5T: 90.85714285714286
 post_top_down_codelets
 >>>> post_top_down_codelets top-down-description-scout
+prob 0.8255020408163266 num 1
 Random rndseed=213
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-description-scout urgency 4
 <<<<
 
-5T: 90.85714285714286
+6T: 90.85714285714286
 ------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.8255020408163266
 Random rndseed=214
@@ -5271,7 +5274,7 @@ update_object_value 250.0 group.isDefined null changed false
 update_object_value : raw_importance 250.0
 update_object_value : intra_string_happiness 0.0
 3T: 92.40876385336745
-te the relative importances of initial and target strings
+update the relative importances of initial and target strings
 update_relative_importance 925.0
 ob letter (1)1
 ob.relative_importance 0.2702702702702703
@@ -5290,6 +5293,7 @@ ob.relative_importance 0.37037037037037035
 update the intra string unhappiness of initial and target strings
 5T: 92.40876385336745
 post_top_down_codelets
+>>>> post_top_down_codelets top-down-bond-scout--direction
 unrelated_objects 9
 unrelated_objects letter (1)1 ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
@@ -5304,38 +5308,37 @@ unrelated_objects result 5
 rough_num_of_objects. bond 5
 Random rndseed=301
 Random rndseed=302
->>>> post_top_down_codelets top-down-bond-scout--direction
+prob 0.9739019607843139 num 2
 Random rndseed=303
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--direction urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-bond-scout--direction
 Random rndseed=304
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--direction urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=305
 Random rndseed=306
->>>> post_top_down_codelets top-down-group-scout--direction
+prob 0.9739019607843139 num 3
 Random rndseed=307
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=308
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=309
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--category
 unrelated_objects 9
 unrelated_objects letter (1)1 ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
@@ -5350,31 +5353,30 @@ unrelated_objects result 5
 rough_num_of_objects. bond 5
 Random rndseed=310
 Random rndseed=311
->>>> post_top_down_codelets top-down-bond-scout--category
+prob 0.9739019607843139 num 3
 Random rndseed=312
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--category urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-bond-scout--category
 Random rndseed=313
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--category urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-bond-scout--category
 Random rndseed=314
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--category urgency 4
 <<<<
 
 >>>> post_top_down_codelets top-down-description-scout
+prob 0.853937963690743 num 1
 Random rndseed=315
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-description-scout urgency 4
 <<<<
 
-5T: 92.40876385336745
+6T: 92.40876385336745
 ------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.853937963690743
 Random rndseed=316
@@ -6624,7 +6626,7 @@ update_object_value 300.0 group.isDefined null changed false
 update_object_value : raw_importance 300.0
 update_object_value : intra_string_happiness 0.0
 3T: 93.24405739072407
-te the relative importances of initial and target strings
+update the relative importances of initial and target strings
 update_relative_importance 1112.5
 ob letter (1)1
 ob.relative_importance 0.2696629213483146
@@ -6643,6 +6645,7 @@ ob.relative_importance 0.36923076923076925
 update the intra string unhappiness of initial and target strings
 5T: 93.24405739072407
 post_top_down_codelets
+>>>> post_top_down_codelets top-down-bond-scout--direction
 unrelated_objects 9
 unrelated_objects letter (1)1 ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
@@ -6657,40 +6660,38 @@ unrelated_objects result 5
 rough_num_of_objects. bond 5
 Random rndseed=411
 Random rndseed=412
->>>> post_top_down_codelets top-down-bond-scout--direction
+prob 0.9746049382716049 num 3
 Random rndseed=413
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--direction urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-bond-scout--direction
 Random rndseed=414
 <<<<
 
->>>> post_top_down_codelets top-down-bond-scout--direction
 Random rndseed=415
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--direction urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=416
 Random rndseed=417
->>>> post_top_down_codelets top-down-group-scout--direction
+prob 0.9746049382716049 num 3
 Random rndseed=418
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=419
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=420
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--category
 unrelated_objects 9
 unrelated_objects letter (1)1 ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
@@ -6705,29 +6706,28 @@ unrelated_objects result 5
 rough_num_of_objects. bond 5
 Random rndseed=421
 Random rndseed=422
->>>> post_top_down_codelets top-down-bond-scout--category
+prob 0.9746049382716049 num 3
 Random rndseed=423
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--category urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-bond-scout--category
 Random rndseed=424
 <<<<
 
->>>> post_top_down_codelets top-down-bond-scout--category
 Random rndseed=425
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--category urgency 4
 <<<<
 
 >>>> post_top_down_codelets top-down-description-scout
+prob 0.8694454238684644 num 1
 Random rndseed=426
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-description-scout urgency 4
 <<<<
 
-5T: 93.24405739072407
+6T: 93.24405739072407
 ------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.8694454238684644
 Random rndseed=427
@@ -7928,7 +7928,7 @@ update_object_value 300.0 group.isDefined null changed false
 update_object_value : raw_importance 300.0
 update_object_value : intra_string_happiness 0.0
 3T: 92.27384592336504
-te the relative importances of initial and target strings
+update the relative importances of initial and target strings
 update_relative_importance 1200.0
 ob letter (1)1
 ob.relative_importance 0.25
@@ -7948,12 +7948,13 @@ update the intra string unhappiness of initial and target strings
 5T: 92.27384592336504
 post_top_down_codelets
 >>>> post_top_down_codelets top-down-description-scout
+prob 0.8514462641488912 num 1
 Random rndseed=520
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-description-scout urgency 4
 <<<<
 
-5T: 92.27384592336504
+6T: 92.27384592336504
 ------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.8514462641488912
 Random rndseed=521
@@ -9125,7 +9126,7 @@ update_object_value 202.5 group.isDefined null changed false
 update_object_value : raw_importance 202.5
 update_object_value : intra_string_happiness 0.0
 3T: 91.45777777777778
-te the relative importances of initial and target strings
+update the relative importances of initial and target strings
 update_relative_importance 760.0
 ob letter (1)1
 ob.relative_importance 0.26644736842105265
@@ -9144,6 +9145,7 @@ ob.relative_importance 0.3632286995515695
 update the intra string unhappiness of initial and target strings
 5T: 91.45777777777778
 post_top_down_codelets
+>>>> post_top_down_codelets top-down-bond-scout--direction
 unrelated_objects 9
 unrelated_objects letter (1)1 ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
@@ -9158,44 +9160,42 @@ unrelated_objects result 5
 rough_num_of_objects. bond 5
 Random rndseed=606
 Random rndseed=607
->>>> post_top_down_codelets top-down-bond-scout--direction
+prob 0.973111111111111 num 3
 Random rndseed=608
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--direction urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-bond-scout--direction
 Random rndseed=609
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--direction urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-bond-scout--direction
 Random rndseed=610
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--direction urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=611
 Random rndseed=612
->>>> post_top_down_codelets top-down-group-scout--direction
+prob 0.973111111111111 num 3
 Random rndseed=613
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=614
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=615
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--category
 unrelated_objects 9
 unrelated_objects letter (1)1 ok true wo.spans_string false right true left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty null wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right true left true wo.left_bond.isEmpty null wo.leftmost false wo.right_bond.isEmpty null wo.rightmost false
@@ -9210,25 +9210,25 @@ unrelated_objects result 5
 rough_num_of_objects. bond 5
 Random rndseed=616
 Random rndseed=617
->>>> post_top_down_codelets top-down-bond-scout--category
+prob 0.973111111111111 num 2
 Random rndseed=618
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--category urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-bond-scout--category
 Random rndseed=619
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--category urgency 4
 <<<<
 
 >>>> post_top_down_codelets top-down-description-scout
+prob 0.8364525116049384 num 1
 Random rndseed=620
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-description-scout urgency 4
 <<<<
 
-5T: 91.45777777777778
+6T: 91.45777777777778
 ------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.8364525116049384
 Random rndseed=621
@@ -10554,7 +10554,7 @@ update_object_value 205.0 group.isDefined null changed false
 update_object_value : raw_importance 205.0
 update_object_value : intra_string_happiness 8.066666666666668
 3T: 71.10979624568279
-te the relative importances of initial and target strings
+update the relative importances of initial and target strings
 update_relative_importance 745.0
 ob letter (1)1
 ob.relative_importance 0.2751677852348993
@@ -10574,10 +10574,11 @@ update the intra string unhappiness of initial and target strings
 5T: 71.10979624568279
 post_top_down_codelets
 >>>> post_top_down_codelets top-down-description-scout
+prob 0.5056603122102522 num 1
 Random rndseed=713
 <<<<
 
-5T: 71.10979624568279
+6T: 71.10979624568279
 ------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.5056603122102522
 Random rndseed=714
@@ -11973,7 +11974,7 @@ update_object_value 300.0 group.isDefined null changed false
 update_object_value : raw_importance 300.0
 update_object_value : intra_string_happiness 15.326666666666666
 3T: 71.49315871902928
-te the relative importances of initial and target strings
+update the relative importances of initial and target strings
 update_relative_importance 1200.0
 ob letter (1)1
 ob.relative_importance 0.25
@@ -11992,6 +11993,7 @@ ob.relative_importance 0.3333333333333333
 update the intra string unhappiness of initial and target strings
 5T: 71.49315871902928
 post_top_down_codelets
+>>>> post_top_down_codelets top-down-bond-scout--direction
 unrelated_objects 9
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -12005,32 +12007,32 @@ unrelated_objects letter (3)3 ok true wo.spans_string false right false left fal
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=800
->>>> post_top_down_codelets top-down-bond-scout--direction
+prob 0.9499567901234569 num 1
 Random rndseed=801
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--direction urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=802
 Random rndseed=803
->>>> post_top_down_codelets top-down-group-scout--direction
+prob 0.9499567901234569 num 3
 Random rndseed=804
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=805
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=806
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--direction
 unrelated_objects 9
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -12044,30 +12046,30 @@ unrelated_objects letter (3)3 ok true wo.spans_string false right false left fal
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=807
->>>> post_top_down_codelets top-down-bond-scout--direction
+prob 0.9499567901234569 num 1
 Random rndseed=808
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--direction urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=809
 Random rndseed=810
->>>> post_top_down_codelets top-down-group-scout--direction
+prob 0.9499567901234569 num 3
 Random rndseed=811
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=812
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=813
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--category
 unrelated_objects 9
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -12081,12 +12083,13 @@ unrelated_objects letter (3)3 ok true wo.spans_string false right false left fal
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=814
->>>> post_top_down_codelets top-down-bond-scout--category
+prob 0.9499567901234569 num 1
 Random rndseed=815
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--category urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--category
 unrelated_objects 9
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -12100,19 +12103,20 @@ unrelated_objects letter (3)3 ok true wo.spans_string false right false left fal
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=816
->>>> post_top_down_codelets top-down-bond-scout--category
+prob 0.9499567901234569 num 1
 Random rndseed=817
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--category urgency 4
 <<<<
 
 >>>> post_top_down_codelets top-down-description-scout
+prob 0.5111271743624313 num 1
 Random rndseed=818
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-description-scout urgency 4
 <<<<
 
-5T: 71.49315871902928
+6T: 71.49315871902928
 ------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.5111271743624313
 Random rndseed=819
@@ -13158,6 +13162,10 @@ sum 7591.772151106716 chosen 5496.443037401262 codelets.size() 97
 Choose codelet at index 92 urgsum 5578.50677290511
 #### group-builder ####
 trying to build group (1-3) in target string
+check to see if all objects are still there
+check to see if bonds are there of the same direction
+complete incb. part 2
+if incompatible bonds exist - fight
 get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
 get_related_node category.outgoing_links l.label null
 get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
@@ -13554,7 +13562,7 @@ update_object_value 280.0 group.isDefined null changed false
 update_object_value : raw_importance 280.0
 update_object_value : intra_string_happiness 15.326666666666666
 3T: 62.04388888888889
-te the relative importances of initial and target strings
+update the relative importances of initial and target strings
 update_relative_importance 1110.0
 ob letter (1)1
 ob.relative_importance 0.2702702702702703
@@ -13573,6 +13581,7 @@ ob.relative_importance 0.3373493975903614
 update the intra string unhappiness of initial and target strings
 5T: 62.04388888888889
 post_top_down_codelets
+>>>> post_top_down_codelets top-down-bond-scout--direction
 unrelated_objects 9
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -13586,30 +13595,30 @@ unrelated_objects letter (3)3 ok true wo.spans_string false right false left fal
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=922
->>>> post_top_down_codelets top-down-bond-scout--direction
+prob 0.8020305555555555 num 1
 Random rndseed=923
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--direction urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=924
 Random rndseed=925
->>>> post_top_down_codelets top-down-group-scout--direction
+prob 0.8020305555555555 num 3
 Random rndseed=926
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=927
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=928
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--direction
 unrelated_objects 9
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -13623,15 +13632,16 @@ unrelated_objects letter (3)3 ok true wo.spans_string false right false left fal
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=929
->>>> post_top_down_codelets top-down-bond-scout--direction
+prob 0.8020305555555555 num 1
 Random rndseed=930
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--direction urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=931
 Random rndseed=932
->>>> post_top_down_codelets top-down-group-scout--direction
+prob 0.8020305555555555 num 3
 Random rndseed=933
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
@@ -13639,7 +13649,6 @@ Post. codelets.size > 100
 Random rndseed=934
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=935
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
@@ -13647,7 +13656,6 @@ Post. codelets.size > 100
 Random rndseed=936
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=937
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
@@ -13655,6 +13663,7 @@ Post. codelets.size > 100
 Random rndseed=938
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--category
 unrelated_objects 9
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -13668,7 +13677,7 @@ unrelated_objects letter (3)3 ok true wo.spans_string false right false left fal
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=939
->>>> post_top_down_codelets top-down-bond-scout--category
+prob 0.8020305555555555 num 1
 Random rndseed=940
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--category urgency 4
@@ -13676,6 +13685,7 @@ Post. codelets.size > 100
 Random rndseed=941
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--category
 unrelated_objects 9
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -13689,11 +13699,12 @@ unrelated_objects letter (3)3 ok true wo.spans_string false right false left fal
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=942
->>>> post_top_down_codelets top-down-bond-scout--category
+prob 0.8020305555555555 num 1
 Random rndseed=943
 <<<<
 
 >>>> post_top_down_codelets top-down-description-scout
+prob 0.384944414845679 num 1
 Random rndseed=944
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-description-scout urgency 4
@@ -13701,7 +13712,7 @@ Post. codelets.size > 100
 Random rndseed=945
 <<<<
 
-5T: 62.04388888888889
+6T: 62.04388888888889
 ------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.384944414845679
 Random rndseed=946
@@ -15125,7 +15136,7 @@ update_object_value 250.0 group.isDefined null changed false
 update_object_value : raw_importance 250.0
 update_object_value : intra_string_happiness 15.810354014332667
 3T: 61.94432235724881
-te the relative importances of initial and target strings
+update the relative importances of initial and target strings
 update_relative_importance 885.0
 ob letter (1)1
 ob.relative_importance 0.23728813559322035
@@ -15144,6 +15155,7 @@ ob.relative_importance 0.3937007874015748
 update the intra string unhappiness of initial and target strings
 5T: 61.94432235724881
 post_top_down_codelets
+>>>> post_top_down_codelets top-down-bond-scout--direction
 unrelated_objects 9
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -15157,30 +15169,30 @@ unrelated_objects letter (3)3 ok true wo.spans_string false right false left fal
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1038
->>>> post_top_down_codelets top-down-bond-scout--direction
+prob 0.8063912442563044 num 1
 Random rndseed=1039
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--direction urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=1040
 Random rndseed=1041
->>>> post_top_down_codelets top-down-group-scout--direction
+prob 0.8063912442563044 num 3
 Random rndseed=1042
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=1043
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=1044
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--direction
 unrelated_objects 9
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -15194,7 +15206,7 @@ unrelated_objects letter (3)3 ok true wo.spans_string false right false left fal
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1045
->>>> post_top_down_codelets top-down-bond-scout--direction
+prob 0.8063912442563044 num 1
 Random rndseed=1046
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--direction urgency 4
@@ -15202,9 +15214,10 @@ Post. codelets.size > 100
 Random rndseed=1047
 <<<<
 
+>>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=1048
 Random rndseed=1049
->>>> post_top_down_codelets top-down-group-scout--direction
+prob 0.8063912442563044 num 3
 Random rndseed=1050
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
@@ -15212,7 +15225,6 @@ Post. codelets.size > 100
 Random rndseed=1051
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=1052
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
@@ -15220,7 +15232,6 @@ Post. codelets.size > 100
 Random rndseed=1053
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=1054
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
@@ -15228,6 +15239,7 @@ Post. codelets.size > 100
 Random rndseed=1055
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--category
 unrelated_objects 9
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -15241,7 +15253,7 @@ unrelated_objects letter (3)3 ok true wo.spans_string false right false left fal
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1056
->>>> post_top_down_codelets top-down-bond-scout--category
+prob 0.8063912442563044 num 1
 Random rndseed=1057
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--category urgency 4
@@ -15249,6 +15261,7 @@ Post. codelets.size > 100
 Random rndseed=1058
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--category
 unrelated_objects 9
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty predecessor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -15262,7 +15275,7 @@ unrelated_objects letter (3)3 ok true wo.spans_string false right false left fal
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1059
->>>> post_top_down_codelets top-down-bond-scout--category
+prob 0.8063912442563044 num 1
 Random rndseed=1060
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--category urgency 4
@@ -15271,6 +15284,7 @@ Random rndseed=1061
 <<<<
 
 >>>> post_top_down_codelets top-down-description-scout
+prob 0.3837099072298754 num 1
 Random rndseed=1062
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-description-scout urgency 4
@@ -15278,7 +15292,7 @@ Post. codelets.size > 100
 Random rndseed=1063
 <<<<
 
-5T: 61.94432235724881
+6T: 61.94432235724881
 ------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.3837099072298754
 Random rndseed=1064
@@ -16189,6 +16203,10 @@ sum 1462.5891047698242 chosen 1196.3978877017162 codelets.size() 95
 Choose codelet at index 77 urgsum 1227.2970678648494
 #### group-builder ####
 trying to build group (1-3) in initial string
+check to see if all objects are still there
+check to see if bonds are there of the same direction
+complete incb. part 2
+if incompatible bonds exist - fight
 get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 12.5 buffer 100.0 conceptual_depth 50.0
 get_related_node category.outgoing_links l.label null
 get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
@@ -16652,7 +16670,7 @@ update_object_value 260.0 group.isDefined null changed false
 update_object_value : raw_importance 260.0
 update_object_value : intra_string_happiness 15.810354014332667
 3T: 78.96602816548506
-te the relative importances of initial and target strings
+update the relative importances of initial and target strings
 update_relative_importance 1080.0
 ob letter (1)1
 ob.relative_importance 0.24074074074074073
@@ -16671,6 +16689,7 @@ ob.relative_importance 0.3170731707317073
 update the intra string unhappiness of initial and target strings
 5T: 78.96602816548506
 post_top_down_codelets
+>>>> post_top_down_codelets top-down-bond-scout--direction
 unrelated_objects 9
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -16684,32 +16703,32 @@ unrelated_objects letter (3)3 ok true wo.spans_string false right false left fal
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1158
->>>> post_top_down_codelets top-down-bond-scout--direction
+prob 0.807375491716645 num 1
 Random rndseed=1159
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--direction urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=1160
 Random rndseed=1161
->>>> post_top_down_codelets top-down-group-scout--direction
+prob 0.807375491716645 num 3
 Random rndseed=1162
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=1163
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=1164
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--direction
 unrelated_objects 9
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -16723,30 +16742,30 @@ unrelated_objects letter (3)3 ok true wo.spans_string false right false left fal
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1165
->>>> post_top_down_codelets top-down-bond-scout--direction
+prob 0.807375491716645 num 1
 Random rndseed=1166
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--direction urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=1167
 Random rndseed=1168
->>>> post_top_down_codelets top-down-group-scout--direction
+prob 0.807375491716645 num 3
 Random rndseed=1169
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=1170
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=1171
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--category
 unrelated_objects 9
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -16760,7 +16779,7 @@ unrelated_objects letter (3)3 ok true wo.spans_string false right false left fal
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1172
->>>> post_top_down_codelets top-down-bond-scout--category
+prob 0.807375491716645 num 1
 Random rndseed=1173
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--category urgency 4
@@ -16768,6 +16787,7 @@ Post. codelets.size > 100
 Random rndseed=1174
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--category
 unrelated_objects 9
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -16781,7 +16801,7 @@ unrelated_objects letter (3)3 ok true wo.spans_string false right false left fal
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1175
->>>> post_top_down_codelets top-down-bond-scout--category
+prob 0.807375491716645 num 1
 Random rndseed=1176
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--category urgency 4
@@ -16789,13 +16809,13 @@ Post. codelets.size > 100
 Random rndseed=1177
 <<<<
 
+>>>> post_top_down_codelets top-down-group-scout--category
 Random rndseed=1178
 Random rndseed=1179
->>>> post_top_down_codelets top-down-group-scout--category
+prob 0.807375491716645 num 3
 Random rndseed=1180
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--category
 Random rndseed=1181
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--category urgency 4
@@ -16803,13 +16823,13 @@ Post. codelets.size > 100
 Random rndseed=1182
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--category
 Random rndseed=1183
 <<<<
 
+>>>> post_top_down_codelets top-down-group-scout--category
 Random rndseed=1184
 Random rndseed=1185
->>>> post_top_down_codelets top-down-group-scout--category
+prob 0.807375491716645 num 3
 Random rndseed=1186
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--category urgency 4
@@ -16817,7 +16837,6 @@ Post. codelets.size > 100
 Random rndseed=1187
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--category
 Random rndseed=1188
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--category urgency 4
@@ -16825,11 +16844,11 @@ Post. codelets.size > 100
 Random rndseed=1189
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--category
 Random rndseed=1190
 <<<<
 
 >>>> post_top_down_codelets top-down-description-scout
+prob 0.6235633604232179 num 1
 Random rndseed=1191
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-description-scout urgency 4
@@ -16837,7 +16856,7 @@ Post. codelets.size > 100
 Random rndseed=1192
 <<<<
 
-5T: 78.96602816548506
+6T: 78.96602816548506
 ------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.6235633604232179
 Random rndseed=1193
@@ -17832,17 +17851,23 @@ scale 2.2491900153320623urgencies: [1, 1, 1, 4, 3, 3, 5, 1, 3, 3, 3, 3, 3, 3, 1,
 Random rndseed=1268
 sum 2027.2508947500498 chosen 889.9631427952719 codelets.size() 97
 Choose codelet at index 52 urgsum 899.8474925655635
-
-
-// Couille
 #### group-builder ####
 trying to build group (1-2) in target string
+check to see if all objects are still there
+check to see if bonds are there of the same direction
+complete incb. part 2
+if incompatible bonds exist - fight
 get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
 get_related_node category.outgoing_links l.label null
 get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
 get_related_node category.outgoing_links l.label null
 get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-2) internal_strength 59.02881339031978 external_strength 0.0 total strength:34.84400810269196
+fight incompatible groups
+destroy incompatible bonds 0
+create new bonds g.object_list 2
+destroy incompatible groups 0
+build_group 
 workspace_objects add group group (1-2)
 setBuffer slipnode id obc buffer 100.0
 setBuffer slipnode id g buffer 100.0
@@ -17856,11 +17881,12 @@ setBuffer slipnode id g buffer 100.0
 setBuffer slipnode id sg buffer 100.0
 setBuffer slipnode id rt buffer 100.0
 setBuffer slipnode id lm buffer 100.0
+activate_descriptions 
 setBuffer slipnode id g buffer 100.0
 setBuffer slipnode id sg buffer 100.0
 setBuffer slipnode id rt buffer 100.0
 setBuffer slipnode id lm buffer 100.0
-building group
+group-builder finished
 mainloop | codelets_run 189 clamp_time 30 last_update 180 time_step_length 15
 choose T: 76.26214977001906
 scale 2.2491900153320623urgencies: [1, 1, 1, 4, 3, 3, 5, 1, 3, 3, 3, 3, 3, 3, 1, 5, 4, 4, 4, 3, 3, 3, 3, 5, 3, 3, 3, 6, 4, 4, 4, 4, 4, 3, 3, 3, 1, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 6, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 5, 3, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 6, 7] flag 190
@@ -18263,7 +18289,7 @@ update_object_value 254.6435546875 group.isDefined null changed false
 update_object_value : raw_importance 254.6435546875
 update_object_value : intra_string_happiness 0.0
 3T: 76.26214977001906
-te the relative importances of initial and target strings
+update the relative importances of initial and target strings
 update_relative_importance 1020.0
 ob letter (1)1
 ob.relative_importance 0.23529411764705882
@@ -18284,6 +18310,7 @@ ob.relative_importance 0.29795293405168227
 update the intra string unhappiness of initial and target strings
 5T: 76.26214977001906
 post_top_down_codelets
+>>>> post_top_down_codelets top-down-bond-scout--direction
 unrelated_objects 10
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -18299,32 +18326,32 @@ unrelated_objects result 1
 rough_num_of_objects. bond 1
 Random rndseed=1291
 Random rndseed=1292
->>>> post_top_down_codelets top-down-bond-scout--direction
+prob 0.791016255542256 num 2
 Random rndseed=1293
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--direction urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-bond-scout--direction
 Random rndseed=1294
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--direction urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=1295
 Random rndseed=1296
->>>> post_top_down_codelets top-down-group-scout--direction
+prob 0.791016255542256 num 2
 Random rndseed=1297
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=1298
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--direction
 unrelated_objects 10
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -18339,7 +18366,7 @@ unrelated_objects group (1-2) ok true wo.spans_string false right true left fals
 unrelated_objects result 1
 rough_num_of_objects. bond 1
 Random rndseed=1299
->>>> post_top_down_codelets top-down-bond-scout--direction
+prob 0.791016255542256 num 1
 Random rndseed=1300
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--direction urgency 4
@@ -18347,13 +18374,13 @@ Post. codelets.size > 100
 Random rndseed=1301
 <<<<
 
+>>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=1302
 Random rndseed=1303
->>>> post_top_down_codelets top-down-group-scout--direction
+prob 0.791016255542256 num 3
 Random rndseed=1304
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=1305
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
@@ -18361,7 +18388,6 @@ Post. codelets.size > 100
 Random rndseed=1306
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=1307
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
@@ -18369,6 +18395,7 @@ Post. codelets.size > 100
 Random rndseed=1308
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--category
 unrelated_objects 10
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -18384,7 +18411,7 @@ unrelated_objects result 1
 rough_num_of_objects. bond 1
 Random rndseed=1309
 Random rndseed=1310
->>>> post_top_down_codelets top-down-bond-scout--category
+prob 0.791016255542256 num 2
 Random rndseed=1311
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--category urgency 4
@@ -18392,10 +18419,10 @@ Post. codelets.size > 100
 Random rndseed=1312
 <<<<
 
->>>> post_top_down_codelets top-down-bond-scout--category
 Random rndseed=1313
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--category
 unrelated_objects 10
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -18411,7 +18438,7 @@ unrelated_objects result 1
 rough_num_of_objects. bond 1
 Random rndseed=1314
 Random rndseed=1315
->>>> post_top_down_codelets top-down-bond-scout--category
+prob 0.791016255542256 num 2
 Random rndseed=1316
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--category urgency 4
@@ -18419,7 +18446,6 @@ Post. codelets.size > 100
 Random rndseed=1317
 <<<<
 
->>>> post_top_down_codelets top-down-bond-scout--category
 Random rndseed=1318
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--category urgency 4
@@ -18427,9 +18453,10 @@ Post. codelets.size > 100
 Random rndseed=1319
 <<<<
 
+>>>> post_top_down_codelets top-down-group-scout--category
 Random rndseed=1320
 Random rndseed=1321
->>>> post_top_down_codelets top-down-group-scout--category
+prob 0.791016255542256 num 3
 Random rndseed=1322
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--category urgency 4
@@ -18437,7 +18464,6 @@ Post. codelets.size > 100
 Random rndseed=1323
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--category
 Random rndseed=1324
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--category urgency 4
@@ -18445,7 +18471,6 @@ Post. codelets.size > 100
 Random rndseed=1325
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--category
 Random rndseed=1326
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--category urgency 4
@@ -18453,9 +18478,10 @@ Post. codelets.size > 100
 Random rndseed=1327
 <<<<
 
+>>>> post_top_down_codelets top-down-group-scout--category
 Random rndseed=1328
 Random rndseed=1329
->>>> post_top_down_codelets top-down-group-scout--category
+prob 0.791016255542256 num 3
 Random rndseed=1330
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--category urgency 4
@@ -18463,7 +18489,6 @@ Post. codelets.size > 100
 Random rndseed=1331
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--category
 Random rndseed=1332
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--category urgency 4
@@ -18471,7 +18496,6 @@ Post. codelets.size > 100
 Random rndseed=1333
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--category
 Random rndseed=1334
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--category urgency 4
@@ -18480,10 +18504,11 @@ Random rndseed=1335
 <<<<
 
 >>>> post_top_down_codelets top-down-description-scout
+prob 0.5815915487544818 num 1
 Random rndseed=1336
 <<<<
 
-5T: 76.26214977001906
+6T: 76.26214977001906
 ------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.5815915487544818
 Random rndseed=1337
@@ -19514,12 +19539,21 @@ sum 1896.5768282040626 chosen 1136.0495200942335 codelets.size() 100
 Choose codelet at index 68 urgsum 1146.9247827149893
 #### group-builder ####
 trying to build group (1-3) in initial string
+check to see if all objects are still there
+check to see if bonds are there of the same direction
+complete incb. part 2
+if incompatible bonds exist - fight
 get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 0.0 conceptual_depth 50.0
 get_related_node category.outgoing_links l.label null
 get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
 get_related_node category.outgoing_links l.label null
 get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
+fight incompatible groups
+destroy incompatible bonds 0
+create new bonds g.object_list 3
+destroy incompatible groups 0
+build_group 
 workspace_objects add group group (1-3)
 setBuffer slipnode id obc buffer 100.0
 setBuffer slipnode id g buffer 100.0
@@ -19533,11 +19567,12 @@ setBuffer slipnode id g buffer 100.0
 setBuffer slipnode id sg buffer 100.0
 setBuffer slipnode id rt buffer 100.0
 setBuffer slipnode id wh buffer 100.0
+activate_descriptions 
 setBuffer slipnode id g buffer 100.0
 setBuffer slipnode id sg buffer 100.0
 setBuffer slipnode id rt buffer 100.0
 setBuffer slipnode id wh buffer 100.0
-building group
+group-builder finished
 mainloop | codelets_run 204 clamp_time 30 last_update 195 time_step_length 15
 choose T: 79.9212762670482
 scale 2.0052482488634533urgencies: [5, 3, 3, 3, 5, 4, 4, 3, 5, 3, 3, 3, 6, 4, 4, 4, 4, 3, 3, 1, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 5, 7, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 5, 3, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 6, 6, 7, 7, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 7, 7, 6, 6, 7, 7, 7, 7] flag 205
@@ -19663,12 +19698,17 @@ sum 1710.8497980434886 chosen 660.3880220447866 codelets.size() 94
 Choose codelet at index 45 urgsum 668.9304465519737
 #### group-builder ####
 trying to build group (1-2) in initial string
+check to see if all objects are still there
+check to see if bonds are there of the same direction
+complete incb. part 2
+if incompatible bonds exist - fight
 get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 100.0 conceptual_depth 50.0
 get_related_node category.outgoing_links l.label null
 get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
 get_related_node category.outgoing_links l.label null
 get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-2) internal_strength 59.02881339031978 external_strength 0.0 total strength:34.84400810269196
+fight incompatible groups
 fighting incompatible groups
 get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 50.0 buffer 100.0 conceptual_depth 50.0
 get_related_node category.outgoing_links l.label null
@@ -19894,7 +19934,7 @@ update_object_value 300.0 group.isDefined null changed false
 update_object_value : raw_importance 300.0
 update_object_value : intra_string_happiness 100.0
 3T: 79.9212762670482
-te the relative importances of initial and target strings
+update the relative importances of initial and target strings
 update_relative_importance 840.0
 ob letter (1)1
 ob.relative_importance 0.1984126984126984
@@ -19917,6 +19957,7 @@ ob.relative_importance 0.45454545454545453
 update the intra string unhappiness of initial and target strings
 5T: 79.9212762670482
 post_top_down_codelets
+>>>> post_top_down_codelets top-down-bond-scout--direction
 unrelated_objects 11
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -19932,17 +19973,19 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 1
 rough_num_of_objects. bond 1
 Random rndseed=1437
->>>> post_top_down_codelets top-down-bond-scout--direction
+prob 0.802236708044164 num 1
 Random rndseed=1438
 <<<<
 
-Random rndseed=1439
 >>>> post_top_down_codelets top-down-group-scout--direction
+Random rndseed=1439
+prob 0.802236708044164 num 1
 Random rndseed=1440
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--category
 unrelated_objects 11
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -19959,18 +20002,18 @@ unrelated_objects result 1
 rough_num_of_objects. bond 1
 Random rndseed=1441
 Random rndseed=1442
->>>> post_top_down_codelets top-down-bond-scout--category
+prob 0.802236708044164 num 2
 Random rndseed=1443
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--category urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-bond-scout--category
 Random rndseed=1444
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--category urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--category
 unrelated_objects 11
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -19986,43 +20029,43 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 1
 rough_num_of_objects. bond 1
 Random rndseed=1445
->>>> post_top_down_codelets top-down-bond-scout--category
+prob 0.802236708044164 num 1
 Random rndseed=1446
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--category urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-group-scout--category
 Random rndseed=1447
 Random rndseed=1448
->>>> post_top_down_codelets top-down-group-scout--category
+prob 0.802236708044164 num 2
 Random rndseed=1449
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--category urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--category
 Random rndseed=1450
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--category urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-group-scout--category
 Random rndseed=1451
 Random rndseed=1452
->>>> post_top_down_codelets top-down-group-scout--category
+prob 0.802236708044164 num 3
 Random rndseed=1453
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--category
 Random rndseed=1454
 <<<<
 
->>>> post_top_down_codelets top-down-group-scout--category
 Random rndseed=1455
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--category urgency 4
 <<<<
 
 >>>> post_top_down_codelets top-down-description-scout
+prob 0.6387410400153842 num 1
 Random rndseed=1456
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-description-scout urgency 4
@@ -20030,7 +20073,7 @@ Post. codelets.size > 100
 Random rndseed=1457
 <<<<
 
-5T: 79.9212762670482
+6T: 79.9212762670482
 ------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.6387410400153842
 Random rndseed=1458
@@ -20860,17 +20903,19 @@ scale 2.62099009470161urgencies: [5, 3, 3, 3, 4, 4, 3, 3, 3, 6, 4, 4, 4, 3, 1, 4
 Random rndseed=1523
 sum 4495.7360193954855 chosen 1928.6707523206633 codelets.size() 100
 Choose codelet at index 52 urgsum 1994.344543159489
-
-
-// Couille
 #### group-builder ####
 trying to build group (1-3) in target string
+check to see if all objects are still there
+check to see if bonds are there of the same direction
+complete incb. part 2
+if incompatible bonds exist - fight
 get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
 get_related_node category.outgoing_links l.label null
 get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
 get_related_node category.outgoing_links l.label null
 get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
+fight incompatible groups
 fighting incompatible groups
 get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
 get_related_node category.outgoing_links l.label null
@@ -21453,7 +21498,7 @@ update_object_value 400.0 group.isDefined null changed false
 update_object_value : raw_importance 400.0
 update_object_value : intra_string_happiness 100.0
 3T: 70.68514857947585
-te the relative importances of initial and target strings
+update the relative importances of initial and target strings
 update_relative_importance 1116.6666666666665
 ob letter (1)1
 ob.relative_importance 0.1492537313432836
@@ -21476,6 +21521,7 @@ ob.relative_importance 0.3620689655172414
 update the intra string unhappiness of initial and target strings
 5T: 70.68514857947585
 post_top_down_codelets
+>>>> post_top_down_codelets top-down-bond-scout--direction
 unrelated_objects 11
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -21492,25 +21538,26 @@ unrelated_objects result 1
 rough_num_of_objects. bond 1
 Random rndseed=1560
 Random rndseed=1561
->>>> post_top_down_codelets top-down-bond-scout--direction
+prob 0.4905053378635198 num 2
 Random rndseed=1562
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--direction urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-bond-scout--direction
 Random rndseed=1563
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--direction urgency 4
 <<<<
 
-Random rndseed=1564
 >>>> post_top_down_codelets top-down-group-scout--direction
+Random rndseed=1564
+prob 0.4905053378635198 num 1
 Random rndseed=1565
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--category
 unrelated_objects 11
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -21527,37 +21574,39 @@ unrelated_objects result 1
 rough_num_of_objects. bond 1
 Random rndseed=1566
 Random rndseed=1567
->>>> post_top_down_codelets top-down-bond-scout--category
+prob 0.4905053378635198 num 2
 Random rndseed=1568
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--category urgency 4
 <<<<
 
->>>> post_top_down_codelets top-down-bond-scout--category
 Random rndseed=1569
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--category urgency 4
 <<<<
 
-Random rndseed=1570
 >>>> post_top_down_codelets top-down-group-scout--category
+Random rndseed=1570
+prob 0.4905053378635198 num 1
 Random rndseed=1571
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--category urgency 4
 <<<<
 
-Random rndseed=1572
 >>>> post_top_down_codelets top-down-group-scout--category
+Random rndseed=1572
+prob 0.4905053378635198 num 1
 Random rndseed=1573
 <<<<
 
 >>>> post_top_down_codelets top-down-description-scout
+prob 0.49963902297025775 num 1
 Random rndseed=1574
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-description-scout urgency 4
 <<<<
 
-5T: 70.68514857947585
+6T: 70.68514857947585
 ------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.49963902297025775
 Random rndseed=1575
@@ -22425,12 +22474,17 @@ sum 13592.6350323864 chosen 10452.736339905143 codelets.size() 99
 Choose codelet at index 78 urgsum 10864.557934531524
 #### group-builder ####
 trying to build group (1-3) in target string
+check to see if all objects are still there
+check to see if bonds are there of the same direction
+complete incb. part 2
+if incompatible bonds exist - fight
 get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
 get_related_node category.outgoing_links l.label null
 get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
 get_related_node category.outgoing_links l.label null
 get_related_node category.outgoing_links l.label slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0
 group (1-3) internal_strength 71.15108954009136 external_strength 100.0 total strength:79.47368588732962
+fight incompatible groups
 fighting incompatible groups
 get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
 get_related_node category.outgoing_links l.label null
@@ -22459,6 +22513,9 @@ get_related_node category.outgoing_links l.label slipnode bc activation 100.0 bu
 group (1-2) internal_strength 59.02881339031978 external_strength 0.0 total strength:34.84400810269196
 Random rndseed=1637
 won
+destroy incompatible bonds 0
+create new bonds g.object_list 3
+destroy incompatible groups 2
 breaking group group (1-2)
 break_description. remove description
 break_description. remove description
@@ -22467,6 +22524,7 @@ break_description. remove description
 workspace_objects remove group group (1-2)
 breaking group group (1-2)
 workspace_objects remove group group (1-2)
+build_group 
 workspace_objects add group group (1-3)
 setBuffer slipnode id obc buffer 100.0
 setBuffer slipnode id g buffer 100.0
@@ -22480,11 +22538,12 @@ setBuffer slipnode id g buffer 100.0
 setBuffer slipnode id sg buffer 100.0
 setBuffer slipnode id rt buffer 100.0
 setBuffer slipnode id wh buffer 100.0
+activate_descriptions 
 setBuffer slipnode id g buffer 100.0
 setBuffer slipnode id sg buffer 100.0
 setBuffer slipnode id rt buffer 100.0
 setBuffer slipnode id wh buffer 100.0
-building group
+group-builder finished
 mainloop | codelets_run 229 clamp_time 30 last_update 225 time_step_length 15
 choose T: 58.74439280135928
 scale 3.417040479909381urgencies: [5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 6, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 6, 7, 7, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7] flag 230
@@ -23082,7 +23141,7 @@ update_object_value 350.0 group.isDefined null changed false
 update_object_value : raw_importance 350.0
 update_object_value : intra_string_happiness 100.0
 3T: 58.74439280135928
-te the relative importances of initial and target strings
+update the relative importances of initial and target strings
 update_relative_importance 1055.0
 ob letter (1)1
 ob.relative_importance 0.15481832543443916
@@ -23105,6 +23164,7 @@ ob.relative_importance 0.4093567251461988
 update the intra string unhappiness of initial and target strings
 5T: 58.74439280135928
 post_top_down_codelets
+>>>> post_top_down_codelets top-down-bond-scout--direction
 unrelated_objects 11
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -23120,19 +23180,21 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1668
->>>> post_top_down_codelets top-down-bond-scout--direction
+prob 0.4844003610771367 num 1
 Random rndseed=1669
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--direction urgency 4
 <<<<
 
-Random rndseed=1670
 >>>> post_top_down_codelets top-down-group-scout--direction
+Random rndseed=1670
+prob 0.4844003610771367 num 1
 Random rndseed=1671
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--category
 unrelated_objects 11
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -23148,20 +23210,22 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1672
->>>> post_top_down_codelets top-down-bond-scout--category
+prob 0.4844003610771367 num 1
 Random rndseed=1673
 <<<<
 
-Random rndseed=1674
 >>>> post_top_down_codelets top-down-group-scout--category
+Random rndseed=1674
+prob 0.4844003610771367 num 1
 Random rndseed=1675
 <<<<
 
 >>>> post_top_down_codelets top-down-description-scout
+prob 0.3450903685600392 num 1
 Random rndseed=1676
 <<<<
 
-5T: 58.74439280135928
+6T: 58.74439280135928
 ------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.3450903685600392
 Random rndseed=1677
@@ -24556,7 +24620,7 @@ update_object_value 400.0 group.isDefined null changed false
 update_object_value : raw_importance 400.0
 update_object_value : intra_string_happiness 100.0
 3T: 28.4198988998509
-te the relative importances of initial and target strings
+update the relative importances of initial and target strings
 update_relative_importance 939.1666666666666
 ob letter (1)1
 ob.relative_importance 0.14374445430346053
@@ -24579,6 +24643,7 @@ ob.relative_importance 0.5047318611987381
 update the intra string unhappiness of initial and target strings
 5T: 28.4198988998509
 post_top_down_codelets
+>>>> post_top_down_codelets top-down-bond-scout--direction
 unrelated_objects 11
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -24594,15 +24659,17 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1753
->>>> post_top_down_codelets top-down-bond-scout--direction
+prob 0.12920182916572626 num 1
 Random rndseed=1754
 <<<<
 
-Random rndseed=1755
 >>>> post_top_down_codelets top-down-group-scout--direction
+Random rndseed=1755
+prob 0.12920182916572626 num 1
 Random rndseed=1756
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--category
 unrelated_objects 11
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -24618,20 +24685,22 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1757
->>>> post_top_down_codelets top-down-bond-scout--category
+prob 0.12920182916572626 num 1
 Random rndseed=1758
 <<<<
 
-Random rndseed=1759
 >>>> post_top_down_codelets top-down-group-scout--category
+Random rndseed=1759
+prob 0.12920182916572626 num 1
 Random rndseed=1760
 <<<<
 
 >>>> post_top_down_codelets top-down-description-scout
+prob 0.08076906534777463 num 1
 Random rndseed=1761
 <<<<
 
-5T: 28.4198988998509
+6T: 28.4198988998509
 ------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.08076906534777463
 Random rndseed=1762
@@ -26033,7 +26102,7 @@ update_object_value 400.0 group.isDefined null changed false
 update_object_value : raw_importance 400.0
 update_object_value : intra_string_happiness 100.0
 3T: 30.48172967004266
-te the relative importances of initial and target strings
+update the relative importances of initial and target strings
 update_relative_importance 842.9166666666666
 ob letter (1)1
 ob.relative_importance 0.12753336628769155
@@ -26056,6 +26125,7 @@ ob.relative_importance 0.553314121037464
 update the intra string unhappiness of initial and target strings
 5T: 30.48172967004266
 post_top_down_codelets
+>>>> post_top_down_codelets top-down-bond-scout--direction
 unrelated_objects 11
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -26071,17 +26141,19 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1837
->>>> post_top_down_codelets top-down-bond-scout--direction
+prob 0.10974995718759172 num 1
 Random rndseed=1838
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-bond-scout--direction urgency 4
 <<<<
 
-Random rndseed=1839
 >>>> post_top_down_codelets top-down-group-scout--direction
+Random rndseed=1839
+prob 0.10974995718759172 num 1
 Random rndseed=1840
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--category
 unrelated_objects 11
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -26097,20 +26169,22 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1841
->>>> post_top_down_codelets top-down-bond-scout--category
+prob 0.10974995718759172 num 1
 Random rndseed=1842
 <<<<
 
-Random rndseed=1843
 >>>> post_top_down_codelets top-down-group-scout--category
+Random rndseed=1843
+prob 0.10974995718759172 num 1
 Random rndseed=1844
 <<<<
 
 >>>> post_top_down_codelets top-down-description-scout
+prob 0.09291358436775592 num 1
 Random rndseed=1845
 <<<<
 
-5T: 30.48172967004266
+6T: 30.48172967004266
 ------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.09291358436775592
 Random rndseed=1846
@@ -27667,7 +27741,7 @@ update_object_value 400.0 group.isDefined null changed false
 update_object_value : raw_importance 400.0
 update_object_value : intra_string_happiness 100.0
 3T: 31.59546907247469
-te the relative importances of initial and target strings
+update the relative importances of initial and target strings
 update_relative_importance 794.7916666666666
 ob letter (1)1
 ob.relative_importance 0.1179554390563565
@@ -27690,6 +27764,7 @@ ob.relative_importance 0.5812897366030881
 update the intra string unhappiness of initial and target strings
 5T: 31.59546907247469
 post_top_down_codelets
+>>>> post_top_down_codelets top-down-bond-scout--direction
 unrelated_objects 11
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -27705,15 +27780,17 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1925
->>>> post_top_down_codelets top-down-bond-scout--direction
+prob 0.09977257528802913 num 1
 Random rndseed=1926
 <<<<
 
-Random rndseed=1927
 >>>> post_top_down_codelets top-down-group-scout--direction
+Random rndseed=1927
+prob 0.09977257528802913 num 1
 Random rndseed=1928
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--category
 unrelated_objects 11
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -27729,20 +27806,22 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1929
->>>> post_top_down_codelets top-down-bond-scout--category
+prob 0.09977257528802913 num 1
 Random rndseed=1930
 <<<<
 
-Random rndseed=1931
 >>>> post_top_down_codelets top-down-group-scout--category
+Random rndseed=1931
+prob 0.09977257528802913 num 1
 Random rndseed=1932
 <<<<
 
 >>>> post_top_down_codelets top-down-description-scout
+prob 0.09982736659097047 num 1
 Random rndseed=1933
 <<<<
 
-5T: 31.59546907247469
+6T: 31.59546907247469
 ------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.09982736659097047
 Random rndseed=1934
@@ -29251,7 +29330,7 @@ update_object_value 400.0 group.isDefined null changed false
 update_object_value : raw_importance 400.0
 update_object_value : intra_string_happiness 100.0
 3T: 10.01292249056722
-te the relative importances of initial and target strings
+update the relative importances of initial and target strings
 update_relative_importance 1136.875
 ob letter (1)1
 ob.relative_importance 0.12039582188015394
@@ -29274,6 +29353,7 @@ ob.relative_importance 0.4269513008672448
 update the intra string unhappiness of initial and target strings
 5T: 10.01292249056722
 post_top_down_codelets
+>>>> post_top_down_codelets top-down-bond-scout--direction
 unrelated_objects 11
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -29289,15 +29369,17 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=17
->>>> post_top_down_codelets top-down-bond-scout--direction
+prob 0.09395240078157233 num 1
 Random rndseed=18
 <<<<
 
-Random rndseed=19
 >>>> post_top_down_codelets top-down-group-scout--direction
+Random rndseed=19
+prob 0.09395240078157233 num 1
 Random rndseed=20
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--category
 unrelated_objects 11
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -29313,20 +29395,22 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=21
->>>> post_top_down_codelets top-down-bond-scout--category
+prob 0.09395240078157233 num 1
 Random rndseed=22
 <<<<
 
-Random rndseed=23
 >>>> post_top_down_codelets top-down-group-scout--category
+Random rndseed=23
+prob 0.09395240078157233 num 1
 Random rndseed=24
 <<<<
 
 >>>> post_top_down_codelets top-down-description-scout
+prob 0.010025861680210687 num 1
 Random rndseed=25
 <<<<
 
-5T: 10.01292249056722
+6T: 10.01292249056722
 ------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.010025861680210687
 Random rndseed=26
@@ -30814,7 +30898,7 @@ update_object_value 400.0 group.isDefined null changed false
 update_object_value : raw_importance 400.0
 update_object_value : intra_string_happiness 100.0
 3T: 12.853007782924017
-te the relative importances of initial and target strings
+update the relative importances of initial and target strings
 update_relative_importance 1148.4375
 ob letter (1)1
 ob.relative_importance 0.1292517006802721
@@ -30837,6 +30921,7 @@ ob.relative_importance 0.42174629324546953
 update the intra string unhappiness of initial and target strings
 5T: 12.853007782924017
 post_top_down_codelets
+>>>> post_top_down_codelets top-down-bond-scout--direction
 unrelated_objects 11
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -30852,15 +30937,17 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=104
->>>> post_top_down_codelets top-down-bond-scout--direction
+prob 0.1253343952548218 num 1
 Random rndseed=105
 <<<<
 
-Random rndseed=106
 >>>> post_top_down_codelets top-down-group-scout--direction
+Random rndseed=106
+prob 0.1253343952548218 num 1
 Random rndseed=107
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--category
 unrelated_objects 11
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -30876,22 +30963,24 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=108
->>>> post_top_down_codelets top-down-bond-scout--category
+prob 0.1253343952548218 num 1
 Random rndseed=109
 <<<<
 
-Random rndseed=110
 >>>> post_top_down_codelets top-down-group-scout--category
+Random rndseed=110
+prob 0.1253343952548218 num 1
 Random rndseed=111
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--category urgency 4
 <<<<
 
 >>>> post_top_down_codelets top-down-description-scout
+prob 0.016519980906790535 num 1
 Random rndseed=112
 <<<<
 
-5T: 12.853007782924017
+6T: 12.853007782924017
 ------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.016519980906790535
 Random rndseed=113
@@ -32516,7 +32605,7 @@ update_object_value 400.0 group.isDefined null changed false
 update_object_value : raw_importance 400.0
 update_object_value : intra_string_happiness 100.0
 3T: 12.89941482217448
-te the relative importances of initial and target strings
+update the relative importances of initial and target strings
 update_relative_importance 989.5520833333333
 ob letter (1)1
 ob.relative_importance 0.12418286893270314
@@ -32539,6 +32628,7 @@ ob.relative_importance 0.47194739752965037
 update the intra string unhappiness of initial and target strings
 5T: 12.89941482217448
 post_top_down_codelets
+>>>> post_top_down_codelets top-down-bond-scout--direction
 unrelated_objects 11
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -32554,15 +32644,17 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=195
->>>> post_top_down_codelets top-down-bond-scout--direction
+prob 0.12623215046182876 num 1
 Random rndseed=196
 <<<<
 
-Random rndseed=197
 >>>> post_top_down_codelets top-down-group-scout--direction
+Random rndseed=197
+prob 0.12623215046182876 num 1
 Random rndseed=198
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--category
 unrelated_objects 11
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -32578,20 +32670,22 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=199
->>>> post_top_down_codelets top-down-bond-scout--category
+prob 0.12623215046182876 num 1
 Random rndseed=200
 <<<<
 
-Random rndseed=201
 >>>> post_top_down_codelets top-down-group-scout--category
+Random rndseed=201
+prob 0.12623215046182876 num 1
 Random rndseed=202
 <<<<
 
 >>>> post_top_down_codelets top-down-description-scout
+prob 0.016639490275453465 num 1
 Random rndseed=203
 <<<<
 
-5T: 12.89941482217448
+6T: 12.89941482217448
 ------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.016639490275453465
 Random rndseed=204
@@ -34130,7 +34224,7 @@ update_object_value 400.0 group.isDefined null changed false
 update_object_value : raw_importance 400.0
 update_object_value : intra_string_happiness 100.0
 3T: 12.102747885886943
-te the relative importances of initial and target strings
+update the relative importances of initial and target strings
 update_relative_importance 1110.4427083333333
 ob letter (1)1
 ob.relative_importance 0.12947632560212002
@@ -34153,6 +34247,7 @@ ob.relative_importance 0.43934670060925035
 update the intra string unhappiness of initial and target strings
 5T: 12.102747885886943
 post_top_down_codelets
+>>>> post_top_down_codelets top-down-bond-scout--direction
 unrelated_objects 11
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -34168,15 +34263,17 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=286
->>>> post_top_down_codelets top-down-bond-scout--direction
+prob 0.1153403672544604 num 1
 Random rndseed=287
 <<<<
 
-Random rndseed=288
 >>>> post_top_down_codelets top-down-group-scout--direction
+Random rndseed=288
+prob 0.1153403672544604 num 1
 Random rndseed=289
 <<<<
 
+>>>> post_top_down_codelets top-down-bond-scout--category
 unrelated_objects 11
 unrelated_objects letter (1)1 ok true wo.spans_string false right false left false wo.left_bond.isEmpty null wo.leftmost true wo.right_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.rightmost false
 unrelated_objects letter (2)2 ok true wo.spans_string false right false left false wo.left_bond.isEmpty successor bond between letter (1)1 and letter (2)2 wo.leftmost false wo.right_bond.isEmpty successor bond between letter (2)2 and letter (3)3 wo.rightmost false
@@ -34192,22 +34289,24 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=290
->>>> post_top_down_codelets top-down-bond-scout--category
+prob 0.1153403672544604 num 1
 Random rndseed=291
 <<<<
 
-Random rndseed=292
 >>>> post_top_down_codelets top-down-group-scout--category
+Random rndseed=292
+prob 0.1153403672544604 num 1
 Random rndseed=293
 post_top_down_codelets rawUrgency50.0 urgency_bin 4
 create codelet top-down-group-scout--category urgency 4
 <<<<
 
 >>>> post_top_down_codelets top-down-description-scout
+prob 0.014647650638934086 num 1
 Random rndseed=294
 <<<<
 
-5T: 12.102747885886943
+6T: 12.102747885886943
 ------------------------ post_bottom_up_codelets
 >>>> get_bottom_up_codelets bottom-up-description-scout prob 0.014647650638934086
 Random rndseed=295
