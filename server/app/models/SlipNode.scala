@@ -51,6 +51,7 @@ object SlipNode {
     val letter = "l"
     val group = "g"
     val letter_category = "lc"
+    val bond_category = "bc"
   }
 }
 

@@ -133,7 +133,7 @@ object Workspace {
                                                  temperature: Double
                                                )
   case class GoWithTopDownBondScoutCategory(slipNodeID: String, temperature: Double)
-  case class GoWithTopDownBondScout2(fromob: WorkspaceObjectRep, toob: WorkspaceObjectRep, todtypes: List[SlipNodeRep])
+  case class GoWithTopDownBondScout2(fromob: WorkspaceObjectRep, toob: WorkspaceObjectRep, bond_facets: List[SlipNodeRep])
   case class GoWithTopDownBondScoutDirection(slipNodeID: String, temperature: Double)
 
   case class GoWithTopDownBondScoutWithResponse(from: WorkspaceObjectRep, to: WorkspaceObjectRep, fromdtypes: List[SlipNodeRep], todtypes: List[SlipNodeRep])
@@ -143,7 +143,7 @@ object Workspace {
   case class GoWithGroupBuilder(temperature: Double, groupID: String)
   case class GoWithGroupBuilder2(groupID: String, degree_of_association: Double, incompatibleBondList: List[BondRep])
   case class GoWithGroupBuilder3(groupID: String, bondReps: List[BondRep], degOfAssos: Map[String, Double])
-  case class GoWithGroupBuilder4(groupID: String, degree_of_association1: Double, degree_of_association2: Map[String, Double], incompatibleBondList: List[BondRep])
+  case class GoWithGroupBuilder4(groupID: String, incg: List[String],degree_of_association1: Double, degree_of_association2: Map[String, Double], incompatibleBondList: List[BondRep])
   case class GoWithGroupBuilder5(groupID: String, incompatibleBondList: List[BondRep], incg: List[String])
 
   case class GoWithDescriptionStrengthTester(temperature: Double, descriptionID: String)
@@ -690,6 +690,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     case WorkspaceProposeBond(bondFromRep, bondToRep, bondCategory, bondFacet, fromDescriptor, toDescriptor, slipnetLeft, slipnetRight) =>
       val bondFrom = objectRefs(bondFromRep.uuid)
       val bondTo = objectRefs(bondToRep.uuid)
+      log.debug("WorkspaceProposeBond bondFacet " + bondFacet + " bondCategory " + bondCategory)
       val nb = new Bond(bondFrom, bondTo, bondCategory, bondFacet, fromDescriptor, toDescriptor, slipnetLeft, slipnetRight, slipnet)
       // if (!remove_terraced_scan) workspace.WorkspaceArea.AddObject(nb,1);
       wsRefs += (nb.uuid -> nb)
@@ -1013,26 +1014,26 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
       // fight all groups containing these objects
       val incg = WorkspaceFormulas.get_incompatible_groups(g);
+      val incgIds = incg.map(gr => gr.uuid)
       if (!incg.isEmpty) {
-        log.debug("fighting incompatible groups");
-        sender() ! PrepareGroupFighting(incg.map(gr => (gr.uuid, gr.group_category.id)).toMap)
+        log.debug("fighting incompatible groups: " + incg);
+        sender() ! PrepareGroupFighting(incgIds, incg.map(gr => (gr.uuid, gr.group_category.id)).toMap)
       } else {
         log.debug("Continue not group fighting");
-        sender() ! GroupBuilderNoGroupFighting(incg.map(gr => gr.uuid))
+        sender() ! GroupBuilderNoGroupFighting(incgIds)
       }
 
       // Group Fighting
-    case GoWithGroupBuilder4(groupID, degree_of_association1, degree_of_association2, incompatibleBondList) =>
+    case GoWithGroupBuilder4(groupID, incgIds, degree_of_association1, degree_of_association2, incompatibleBondList) =>
       val g = objectRefs(groupID).asInstanceOf[Group]
-      val incg = degree_of_association2.keys.toList.map(gid => objectRefs(gid).asInstanceOf[Group])
-      val incb = incompatibleBondList.map(br => wsRefs(br.uuid).asInstanceOf[Bond])
+      val incg = incgIds.map(gid => objectRefs(gid).asInstanceOf[Group])
 
       log.debug("fighting incompatible groups");
       // try to break all incompatible groups
       if (fight_it_out_group_groups(g,1.0, incg,1.0, degree_of_association1, degree_of_association2)){
           // beat all competing groups
           print("won");
-          self.forward(GoWithGroupBuilder5)
+          self.forward(GoWithGroupBuilder5(groupID, incompatibleBondList, incgIds))
       } else {
         log.debug("couldn't break incompatible groups: fizzle");
         sender() ! Finished
@@ -1254,8 +1255,8 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
     // codelet.java.395
     case GoWithBondStrengthTester(temperature, bondID) =>
-      log.debug("GoWithBondStrengthTester")
       val b = wsRefs(bondID).asInstanceOf[Bond]
+      log.debug("GoWithBondStrengthTester " + b)
       sender() ! GoWithBondStrengthTesterResponse(b.bondRep())
 
     case GoWithBondStrengthTester2(temperature, bondID, bond_category_degree_of_association) =>
@@ -1328,10 +1329,12 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       fromob.wString match {
         case Some(fromobString) =>
           val object_probs = bond_facets.map(ob => {
-            total_description_type_support(ob, fromobString)
+            val t = total_description_type_support(ob, fromobString)
+            log.debug("object_probs " + ob.id + " t " + t);
+            t
           })
           val bond_facet = bond_facets(Utilities.valueProportionalRandomIndexInValueList(object_probs))
-          print("chosen bond facet :" + bond_facet.id)
+          log.debug("chosen bond facet :" + bond_facet.id)
           val toob = objectRefs(toobrep.uuid)
 
           val fromDescriptorOpt = fromob.get_descriptor(bond_facet)
@@ -1363,7 +1366,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
           sender() ! Finished
         case Some(fromob) =>
           // choose neighbour
-          print("initial object: " + fromob);
+          log.debug("initial object: " + fromob);
           val conditional = if (directionID == "lf") conditionalLeftNeighbor else conditionalRightNeighbor
           val toOpt = chooseNeighbor(fromob, conditional)
           toOpt match {
@@ -1651,16 +1654,18 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       }
 
     case GoWithGroupScoutWholeString(t: Double) =>
-      log.debug("GoWithGroupScoutWholeString " + t);
+      log.debug("GoWithGroupScoutWholeString t:" + t);
       log.debug("about to choose string");
       val wString = if (Random.rnd() > 0.5) target else initial
       val wStringText = if (wString == initial) "initial" else "target"
       log.debug(s"${wStringText} string selected")
 
       // find leftmost object & the highest group to which it belongs
-      val leftmost = wString.objects.find(w => w.leftmost).get
+      var leftmost = wString.objects.find(w => w.leftmost).get
 
-      // Codelet.java.805
+      while ((leftmost.group.isDefined)&&(leftmost.group.get.bond_category.id==SlipNode.id.sameness))
+        leftmost=leftmost.group.get
+
       sender() ! GoWithGroupScoutWholeStringResponse(leftmost.workspaceObjectRep())
 
 

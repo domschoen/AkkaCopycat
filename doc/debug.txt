@@ -2,11 +2,43 @@
 
 
 
+setBuffer slipnode id bf buffer 50.0
 
-Random rndseed=669
-sum 2608.4512535462814 chosen 933.8255487695687 codelets.size() 100
-Choose codelet at index 50 urgsum 967.6879299213934
+
+setBuffer slipnode id bf buffer 90.0
+
+
 -
-Random rndseed=664
-sum 2673.4884021080466 chosen 2168.199094109626
-11:53:44 DEBUG [akka://application/user/$a/flowActor/ExecutionRun/Coderack] - Choose codelet at index 79
+setActivation slipnode id bf activation 190.0
+setActivation slipnode id bf activation 100.0
+
+
+ob bf ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
+setBuffer slipnode id bf buffer -50.0
+-
+ob bf ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
+
+
+
+sl.to bf buffer -50.0 inc 40.0
+setBuffer slipnode id bf buffer -10.0
+-
+sl.to bf buffer 50.0 inc 40.0
+
+
+clamp false ob bf ob.buffer -10.0 activation 100.0
+setActivation slipnode id bf activation 90.0
+-
+clamp false ob bf ob.buffer 90.0 activation 100.0
+
+
+
+ob bf ob.activation 90.0
+Random rndseed=1519
+setActivation slipnode id bf activation 100.0
+ob bf activation 100.0
+
+
+ob bf ob.activation 100.0
+Random rndseed=1519
+ob bf activation 100.0

@@ -80,8 +80,8 @@ object Slipnet {
 
   case class BondFromTo(from: WorkspaceObjectRep, to: WorkspaceObjectRep)
   case class SlipnetTopDownBondScout(fromdtypes: List[SlipNodeRep], todtypes: List[SlipNodeRep])
-  case class SlipnetTopDownBondScoutCategory2(bondCategory: String, from_descriptor: Option[SlipNodeRep], to_descriptor: Option[SlipNodeRep])
-  case class SlipnetTopDownBondScoutDirection2(bondCategory: String, from_descriptor: Option[SlipNodeRep], to_descriptor: Option[SlipNodeRep])
+  case class SlipnetTopDownBondScoutCategory2(bondCategory: String, from_descriptor: Option[SlipNodeRep], to_descriptor: Option[SlipNodeRep], bondFacet: SlipNodeRep)
+  case class SlipnetTopDownBondScoutDirection2(bondCategory: String, from_descriptor: Option[SlipNodeRep], to_descriptor: Option[SlipNodeRep], bondFacet: SlipNodeRep)
 
   case class BondFromTo2(
                           from: WorkspaceObjectRep,
@@ -113,7 +113,7 @@ object Slipnet {
   case class SetSlipNodeBufferValue(slipNodeID: String, bufferValue: Double)
   case class SlipnetGoWithBottomUpDescriptionScout(slipNodeRep: SlipNodeRep, temperature: Double)
 
-  case class SlipnetTopDownBondScoutResponse(fromdtypes: List[SlipNodeRep], todtypes: List[SlipNodeRep])
+  case class SlipnetTopDownBondScoutResponse(bondfacets: List[SlipNodeRep])
 
   case class TosInfo(slipNodeRef: SlipNodeRep, tos: List[SlipNodeRep])
   case class DescriptionTypeInstanceLinksToNodeInfo(
@@ -130,7 +130,7 @@ object Slipnet {
 
   case class SlipnetGoWithGroupScoutWholeString(bc: SlipNodeRep)
   case class SlipnetGoWithGroupBuilder(group_category_id: String)
-  case class SlipnetPrepareGroupFighting(group_category_id: String, group_category_id_by_group_id: Map[String, String])
+  case class SlipnetPrepareGroupFighting(group_category_id: String, incg: List[String], group_category_id_by_group_id: Map[String, String])
   case class InflatedDescriptionRep(
                                      uuid :String,
                                      descriptionTypeSlipNode: SlipNode,
@@ -323,7 +323,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
   val alphabetic_position_category = add_slipnode(22, 12, 80.0, "alphabetic position", "apc")
   alphabetic_position_category.codelets += CodeletTypeString.TopDownDescriptionScout
   val direction_category = add_slipnode(22, 25, 70.0, "direction category", "dc")
-  val bond_category = add_slipnode(10, 33, 80.0, "bond category", "bc")
+  val bond_category = add_slipnode(10, 33, 80.0, "bond category", SlipNode.id.bond_category)
   val group_category = add_slipnode(17, 29, 80.0, "group category", "gpc")
   val length = add_slipnode(36, 32, 60.0, "length", "len")
   val object_category = add_slipnode(4, 34, 90.0, "object category", "obc")
@@ -731,17 +731,18 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       } else {
         // We are in the middle of WorkspaceFormulas.choose_bond_facet but we need to go back to workspace
         sender() ! SlipnetTopDownBondScoutResponse(
-          fromob_facets.map(sn => sn.slipNodeRep()),
           local_bond_facets.map(sn => sn.slipNodeRep()),
         )
       }
-    case SlipnetTopDownBondScoutCategory2(bondCategory, fromDescriptor, toDescriptor) =>
+
+    case SlipnetTopDownBondScoutCategory2(bondCategory, fromDescriptor, toDescriptor, bondFacetRep) =>
       val from_descriptor = if (fromDescriptor.isEmpty) None else Some(slipNodeRefs(fromDescriptor.get.id))
       val to_descriptor = if (toDescriptor.isEmpty) None else Some(slipNodeRefs(toDescriptor.get.id))
 
       val descriptorDefined = from_descriptor.isDefined && to_descriptor.isDefined
       val bc1 = if (descriptorDefined) SlipnetFormulas.get_bond_category(from_descriptor.get,to_descriptor.get, identity) else None
       val bc2 = if (descriptorDefined) SlipnetFormulas.get_bond_category(to_descriptor.get,from_descriptor.get, identity) else None
+      val bondFacet = slipNodeRefs(bondFacetRep.id)
 
       // Added test  compare to JavaCopycat
       if (bc1.isEmpty || bc2.isEmpty) {
@@ -754,33 +755,33 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
         val b1 = if (b1r == identity) sameness else b1r
         val b2 = if (b1r == identity) sameness else b2r
 
-        val bond_category = slipNodeRefs(bondCategory)
+        val bondCat = slipNodeRefs(bondCategory)
 
-        if ((bond_category!=b1)&&(bond_category!=b2)){
+        if ((bondCat!=b1)&&(bondCat!=b2)){
           print("no suitable link: Fizzle!");
           sender() ! Finished
         } else {
-          val isFromTo = bond_category==b1
-          val urgency = bond_category.bond_degree_of_association();
+          val isFromTo = bondCat==b1
+          val urgency = bondCat.bond_degree_of_association();
 
-          bond_facet.setBuffer(100.0);
+          bondFacet.setBuffer(100.0);
           if (from_descriptor.isDefined)
             from_descriptor.get.setBuffer(100.0);
           if (to_descriptor.isDefined)
             to_descriptor.get.setBuffer(100.0);
 
-          sender() ! SlipnetTopDownBondScoutCategory2Response(isFromTo,urgency, bond_category.slipNodeRep(),
+          sender() ! SlipnetTopDownBondScoutCategory2Response(isFromTo,urgency, bondCat.slipNodeRep(),
             left.slipNodeRep(),
             right.slipNodeRep()
           )
         }
       }
-    case SlipnetTopDownBondScoutDirection2(bondCategory, fromDescriptor, toDescriptor) =>
+    case SlipnetTopDownBondScoutDirection2(bondCategory, fromDescriptor, toDescriptor, bondFacetRep) =>
       val from_descriptor = if (fromDescriptor.isEmpty) None else Some(slipNodeRefs(fromDescriptor.get.id))
       val to_descriptor = if (toDescriptor.isEmpty) None else Some(slipNodeRefs(toDescriptor.get.id))
       val descriptorDefined = from_descriptor.isDefined && to_descriptor.isDefined
       val bond_categoryOpt = if (descriptorDefined) SlipnetFormulas.get_bond_category(from_descriptor.get,to_descriptor.get, identity) else None
-
+      val bondFacet = slipNodeRefs(bondFacetRep.id)
       // Added test  compare to JavaCopycat
       if (bond_categoryOpt.isEmpty) {
         print("Oups Bond category empty: Fizzle")
@@ -788,18 +789,16 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       } else {
         val bc = bond_categoryOpt.get
 
-        val bond_category = if (bc == identity) sameness else bc
-
-
-          val urgency = bond_category.bond_degree_of_association();
-
-          bond_facet.setBuffer(100.0);
+        val bondCategory = if (bc == identity) sameness else bc
+        val urgency = bondCategory.bond_degree_of_association();
+        log.debug("urgency " + urgency)
+        bondFacet.setBuffer(100.0);
         if (from_descriptor.isDefined)
           from_descriptor.get.setBuffer(100.0)
         if (to_descriptor.isDefined)
           to_descriptor.get.setBuffer(100.0)
 
-          sender() ! SlipnetTopDownBondScoutDirection2Response(urgency, bond_category.slipNodeRep(),
+          sender() ! SlipnetTopDownBondScoutDirection2Response(urgency, bondCategory.slipNodeRep(),
             left.slipNodeRep(),
             right.slipNodeRep()
           )
@@ -1128,6 +1127,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
           sender() ! Finished
       }
     case GetRelatedNodeOf(slipnodeID: String, lookingAtSlipNodeID: String) =>
+      log.debug("GetRelatedNodeOf")
       val fromSlipNode = slipNodeRefs(slipnodeID)
       val slipNode = slipNodeRefs(lookingAtSlipNodeID)
       val related = SlipnetFormulas.get_related_node(fromSlipNode,slipNode,identity);
@@ -1153,7 +1153,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       log.debug("SlipnetGoWithGroupStrengthTester2")
       // TODO same code as above
       val group_cat = slipNodeRefs(g.group_category.id)
-      val related = SlipnetFormulas.get_related_node(group_cat,group_category, identity)
+      val related = SlipnetFormulas.get_related_node(group_cat,bond_category, identity)
       if (related.isDefined)
         related.get.setBuffer(100.0)
       if (g.direction_category.isDefined) {
@@ -1496,13 +1496,13 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
           sender() ! Finished
       }
 
-    case SlipnetPrepareGroupFighting(group_category_id, group_category_id_by_group_id) =>
+    case SlipnetPrepareGroupFighting(group_category_id, incg: List[String], group_category_id_by_group_id) =>
       val grCategory = slipNodeRefs(group_category_id)
       val bond_categoryOpt = SlipnetFormulas.get_related_node(grCategory,bond_category, identity)
       bond_categoryOpt match {
-        case Some(bond_category) =>
-          val degree_of_association1 = bond_category.degree_of_association()
-          val degree_of_association2Tuples = group_category_id_by_group_id.keys.map(groupID => {
+        case Some(bc) =>
+          val degree_of_association1 = bc.degree_of_association()
+          val degree_of_association2Tuples = incg.map(groupID => {
             val grCategory2 = slipNodeRefs(group_category_id_by_group_id(groupID))
             val bond_categoryOpt2 = SlipnetFormulas.get_related_node(grCategory2,bond_category, identity)
             bond_categoryOpt2 match {
@@ -1511,11 +1511,11 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
             }
           })
           val degree_of_association2TuplesFlatten = degree_of_association2Tuples.flatten
-          if (degree_of_association2Tuples.size != degree_of_association2TuplesFlatten) {
+          if (degree_of_association2Tuples.size != degree_of_association2TuplesFlatten.size) {
             log.debug("SlipnetPrepareGroupFighting. SlipnetFormulas.get_related_node null")
             sender() ! Finished
           } else {
-            sender() ! SlipnetPrepareGroupFightingResponse(bond_category.degree_of_association(), degree_of_association2TuplesFlatten.toMap)
+            sender() ! SlipnetPrepareGroupFightingResponse(bc.degree_of_association(), degree_of_association2TuplesFlatten.toMap)
           }
         case None =>
           log.debug("SlipnetPrepareGroupFighting. SlipnetFormulas.get_related_node null")

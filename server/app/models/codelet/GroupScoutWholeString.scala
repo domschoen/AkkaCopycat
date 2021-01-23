@@ -88,25 +88,33 @@ class GroupScoutWholeString(urgency: Int,
       slipnet ! GetLeftAndRight
 
     case GetLeftAndRightResponse(sl: SlipNodeRep, sr: SlipNodeRep) =>
+      log.debug("GetLeftAndRightResponse")
       slipnetLeft = sl
       slipnetRight = sr
       workspace ! GoWithGroupScoutWholeString(runTemperature)
 
+      
     case GoWithGroupScoutWholeStringResponse(lm) =>
       log.debug("GoWithGroupScoutWholeStringResponse")
       left_most = lm
+      workspace ! GoWithGroupScoutWholeString2(left_most, slipnetLeft, slipnetRight)
+
+      /*
       if (left_most.groupRep.isDefined) {
         log.debug("GoWithGroupScoutWholeStringResponse. GetRelatedNodeOf")
         slipnet ! GetRelatedNodeOf(left_most.groupRep.get.group_category.id, "bc")
       } else {
         log.debug("GoWithGroupScoutWholeStringResponse. GoWithGroupScoutWholeString2")
         workspace ! GoWithGroupScoutWholeString2(left_most, slipnetLeft, slipnetRight)
-      }
+      }*/
 
     case GetRelatedNodeOfResponse(relatedOpt) =>
+      log.debug("GetRelatedNodeOfResponse")
       relatedOpt match {
         case Some(related) =>
           if (related == "sm") { // sameness
+            log.debug("GetRelatedNodeOfResponse sameness")
+
             val leftmostGroupOpt = left_most.groupRep
             leftmostGroupOpt match {
               case Some(leftmostGroup) =>

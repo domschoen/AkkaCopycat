@@ -56,15 +56,15 @@ class TopDownBondScoutCategory(urgency: Int,
       // continue in slipnet with codelet.java.255
       slipnet ! SlipnetTopDownBondScout(fromdtypes, todtypes)
 
-    case SlipnetTopDownBondScoutResponse(fromdtypes, todtypes) =>
-      workspace ! GoWithTopDownBondScout2(bondFrom, bondTo, todtypes)
+    case SlipnetTopDownBondScoutResponse(bondfacets) =>
+      workspace ! GoWithTopDownBondScout2(bondFrom, bondTo, bondfacets)
 
 
     case GoWithTopDownBondScout2Response(bf, from_d, to_d) =>
       from_descriptor = from_d
       to_descriptor = to_d
       bond_facet = bf
-      slipnet ! SlipnetTopDownBondScoutCategory2(bondCategoryID, from_descriptor, to_descriptor)
+      slipnet ! SlipnetTopDownBondScoutCategory2(bondCategoryID, from_descriptor, to_descriptor, bond_facet)
 
     case SlipnetTopDownBondScoutCategory2Response(isFromTo, urgency, bond_category, slipnetLeft, slipnetRight) =>
       bond_urgency = urgency

@@ -11,7 +11,7 @@ object GroupBuilder {
   case object GoWithGroupBuilderResponse2
   case class PrepareBondFightingResponse(bondReps: List[BondRep], degOfAssos: Map[String, Double])
   case class SlipnetGoWithGroupBuilderResponse(degree_of_association: Double)
-  case class PrepareGroupFighting(group_category_id_by_group_id: Map[String, String])
+  case class PrepareGroupFighting(incg: List[String], group_category_id_by_group_id: Map[String, String])
   case class SlipnetPrepareGroupFightingResponse(degree_of_association1: Double, degree_of_association2: Map[String, Double])
   case class GroupBuilderNoGroupFighting(incg: List[String])
 }
@@ -86,11 +86,14 @@ class GroupBuilder(urgency: Int,
       workspace ! GoWithGroupBuilder5(groupID(), incompatibleBondList, incg)
 
 
-    case PrepareGroupFighting(group_category_id_by_group_id: Map[String, String]) =>
-      slipnet ! SlipnetPrepareGroupFighting(group_category_id, group_category_id_by_group_id)
+    case PrepareGroupFighting(incgIds: List[String], group_category_id_by_group_id: Map[String, String]) =>
+      log.debug("group_category_id_by_group_id " + group_category_id_by_group_id)
+      incg = incgIds
+
+      slipnet ! SlipnetPrepareGroupFighting(group_category_id, incg, group_category_id_by_group_id)
 
     case SlipnetPrepareGroupFightingResponse(degree_of_association1: Double, degree_of_association2: Map[String, Double]) =>
-      workspace ! GoWithGroupBuilder4(groupID(), degree_of_association1, degree_of_association2, incompatibleBondList)
+      workspace ! GoWithGroupBuilder4(groupID(), incg, degree_of_association1, degree_of_association2, incompatibleBondList)
 
 
     case TemperatureResponse(value) =>
