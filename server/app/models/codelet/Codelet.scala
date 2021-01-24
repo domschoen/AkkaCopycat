@@ -43,11 +43,21 @@ object CodeletType {
 }
 
 object CodeletTypeString {
+  val BondBuilder = "bond-builder"
+  val DescriptionBuilder = "description-builder"
   val TopDownBondScoutDirection = "top-down-bond-scout--direction"
   val TopDownGroupScoutDirection = "top-down-group-scout--direction"
   val TopDownBondScoutCategory = "top-down-bond-scout--category"
   val TopDownGroupScoutCategory = "top-down-group-scout--category"
   val TopDownDescriptionScout = "top-down-description-scout"
+  val CorrespondenceStrengthTester = "correspondence-strength-tester"
+  val DescriptionStrengthTester = "description-strength-tester"
+  val BondStrengthTester = "bond-strength-tester"
+  val GroupStrengthTester = "group-strength-tester"
+  val GroupBuilder = "group-builder"
+  val CorrespondenceBuilder = "correspondence-builder"
+  val RuleStrengthTester = "rule-strength-tester"
+  val RuleBuilder = "bond-builder"
   val Breaker = "breaker"
   val RuleTranslator = "rule-translator"
   val RuleScout = "rule-scout"
@@ -90,6 +100,36 @@ object Codelet {
       case CodeletTypeString.GroupScoutWholeString => CodeletType.GroupScoutWholeString
       case CodeletTypeString.BottomUpBondScout => CodeletType.BottomUpBondScout
       case CodeletTypeString.BottomUpDescriptionScout => CodeletType.BottomUpDescriptionScout
+
+    }
+  }
+
+  def stringWithCodeletType(ct: CodeletType) = {
+    ct match {
+      case CodeletType.BondBuilder => CodeletTypeString.BondBuilder
+      case CodeletType.DescriptionBuilder => CodeletTypeString.DescriptionBuilder
+      case CodeletType.BottomUpBondScout => CodeletTypeString.BottomUpBondScout
+      case CodeletType.ReplacementFinder => CodeletTypeString.ReplacementFinder
+      case CodeletType.BottomUpCorrespondenceScout => CodeletTypeString.BottomUpCorrespondenceScout
+      case CodeletType.CorrespondenceStrengthTester => CodeletTypeString.CorrespondenceStrengthTester
+      case CodeletType.DescriptionStrengthTester => CodeletTypeString.DescriptionStrengthTester
+      case CodeletType.BondStrengthTester => CodeletTypeString.BondStrengthTester
+      case CodeletType.GroupStrengthTester => CodeletTypeString.GroupStrengthTester
+      case CodeletType.GroupBuilder => CodeletTypeString.GroupBuilder
+      case CodeletType.CorrespondenceBuilder => CodeletTypeString.CorrespondenceBuilder
+      case CodeletType.RuleStrengthTester => CodeletTypeString.RuleStrengthTester
+      case CodeletType.RuleBuilder => CodeletTypeString.RuleBuilder
+      case CodeletType.TopDownBondScoutDirection => CodeletTypeString.TopDownBondScoutDirection
+      case CodeletType.TopDownGroupScoutDirection => CodeletTypeString.TopDownGroupScoutDirection
+      case CodeletType.TopDownBondScoutCategory => CodeletTypeString.TopDownBondScoutCategory
+      case CodeletType.TopDownGroupScoutCategory => CodeletTypeString.TopDownGroupScoutCategory
+      case CodeletType.TopDownDescriptionScout => CodeletTypeString.TopDownDescriptionScout
+      case CodeletType.Breaker => CodeletTypeString.Breaker
+      case CodeletType.RuleTranslator => CodeletTypeString.RuleTranslator
+      case CodeletType.RuleScout => CodeletTypeString.RuleScout
+      case CodeletType.ImportantObjectCorrespondenceScout => CodeletTypeString.ImportantObjectCorrespondenceScout
+      case CodeletType.GroupScoutWholeString => CodeletTypeString.GroupScoutWholeString
+      case CodeletType.BottomUpDescriptionScout => CodeletTypeString.BottomUpDescriptionScout
 
     }
   }

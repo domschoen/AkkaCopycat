@@ -93,7 +93,7 @@ class GroupScoutWholeString(urgency: Int,
       slipnetRight = sr
       workspace ! GoWithGroupScoutWholeString(runTemperature)
 
-      
+
     case GoWithGroupScoutWholeStringResponse(lm) =>
       log.debug("GoWithGroupScoutWholeStringResponse")
       left_most = lm
