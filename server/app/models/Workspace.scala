@@ -637,7 +637,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
           sender() ! Finished
         case Some(from) =>
           //log.debug(s"BondWithNeighbor | from ${from}")
-          val toOpt = chooseNeighbor(from, conditionalNeighbor)
+          val toOpt = chooseNeighbor(from, conditionalNeighbor, temperature)
           toOpt match {
             case None =>
               log.debug("BondWithNeighbor | object has no neighbour - fizzle")
@@ -797,7 +797,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
     // codelet.java.165
     case GoWithTopDownDescriptionScout(descriptionTypeID, t) =>
-      val chosen_objectOpt: Option[WorkspaceObject] = chooseObjectFromList(objects.toList, TemperatureAjustmentVariable.Total_salience)
+      val chosen_objectOpt: Option[WorkspaceObject] = chooseObjectFromList(objects.toList, TemperatureAjustmentVariable.Total_salience,t)
       chosen_objectOpt match {
         case None =>
           log.debug("GoWithTopDownDescriptionScout | failed with empty chosen_object")
@@ -849,14 +849,14 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
     // codelet.java.1233
     case GoWithBottomUpCorrespondenceScout(t) =>
-      val obj1Opt: Option[WorkspaceObject] = chooseObjectFromList(initial.objects.toList, TemperatureAjustmentVariable.Inter_string_salience)
+      val obj1Opt: Option[WorkspaceObject] = chooseObjectFromList(initial.objects.toList, TemperatureAjustmentVariable.Inter_string_salience,t)
       obj1Opt match {
         case None =>
           log.debug("GoWithBottomUpCorrespondenceScout | failed with empty obj1")
           sender() ! Finished
 
         case Some(obj1) =>
-          val obj2Opt = chooseObjectFromList(target.objects.toList, TemperatureAjustmentVariable.Inter_string_salience)
+          val obj2Opt = chooseObjectFromList(target.objects.toList, TemperatureAjustmentVariable.Inter_string_salience,t)
           obj2Opt match {
             case None =>
               log.debug("GoWithBottomUpCorrespondenceScout | failed with empty obj2")
@@ -1300,7 +1300,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
           // choose neighbour
           print("initial object: " + fromob);
 
-          val toOpt = chooseNeighbor(fromob, conditionalNeighbor)
+          val toOpt = chooseNeighbor(fromob, conditionalNeighbor, temperature)
           toOpt match {
             case None =>
               log.debug("GoWithTopDownBondScoutCategory | object has no neighbour - fizzle")
@@ -1368,7 +1368,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
           // choose neighbour
           log.debug("initial object: " + fromob);
           val conditional = if (directionID == "lf") conditionalLeftNeighbor else conditionalRightNeighbor
-          val toOpt = chooseNeighbor(fromob, conditional)
+          val toOpt = chooseNeighbor(fromob, conditional, temperature)
           toOpt match {
             case None =>
               log.debug("GoWithTopDownBondScoutCategory | object has no neighbour - fizzle")
@@ -2647,21 +2647,21 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     //log.debug("objects.toList " + objects.toList)
     val nonModifieds = wos.filter(wo =>
       {
-        //println("chooseObject " + wo.workspaceString + " modified " + modified)
+        println("chooseObject " + wo.workspaceString + " modified " + modified)
         wo.wString.isDefined && wo.wString.get != modified
       })
-    //log.debug("nonModifieds " + nonModifieds)
+    log.debug("nonModifieds " + nonModifieds + " variable " + variable)
 
-    chooseObjectFromList(nonModifieds, variable)
+    chooseObjectFromList(nonModifieds, variable, temperature)
   }
-  def chooseNeighbor(from: WorkspaceObject, conditional: (WorkspaceObject,WorkspaceObject) => Boolean ) : Option[WorkspaceObject] = {
+  def chooseNeighbor(from: WorkspaceObject, conditional: (WorkspaceObject,WorkspaceObject) => Boolean , t: Double) : Option[WorkspaceObject] = {
     //println("workspace_objects " + objects.toList);
 
     val nonModifieds = objects.toList.filter(wo =>
       wo.workspaceString() == from.workspaceString() && conditional(from, wo)
     )
     //println("nonModifieds " + nonModifieds)
-    chooseObjectFromList(nonModifieds, TemperatureAjustmentVariable.Intra_string_salience)
+    chooseObjectFromList(nonModifieds, TemperatureAjustmentVariable.Intra_string_salience,t)
   }
 
   object TemperatureAjustmentVariable {
@@ -2671,7 +2671,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     val Relative_importance = "relative_importance"
   }
 
-  def chooseObjectFromList(list: List[WorkspaceObject], variable: String): Option[WorkspaceObject] = {
+  def chooseObjectFromList(list: List[WorkspaceObject], variable: String, t: Double): Option[WorkspaceObject] = {
     // chooses an object from the the list by a variable
     // eg "intra-string-salience" probabilistically adjusted for temperature
     if (list.isEmpty) {
@@ -2683,7 +2683,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
         case TemperatureAjustmentVariable.Total_salience => wo: WorkspaceObject => wo.total_salience
         case TemperatureAjustmentVariable.Relative_importance => wo: WorkspaceObject => wo.relative_importance
       }
-      val oProbs = list.map(wo => adjustment(wo))
+      val oProbs = list.map(wo => Formulas.temperatureAdjustedValue(adjustment(wo), t))
       val index = Utilities.valueProportionalRandomIndexInValueList(oProbs)
       Option(list(index))
     }
