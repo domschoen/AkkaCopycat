@@ -22984,6 +22984,11 @@ choose_old_codelet c.time_stamp 225 c.urgency 3 name important-object-correspond
 choose_old_codelet c.time_stamp 225 c.urgency 3 name rule-scout
 Random rndseed=1594
 choose_old_codelet chosen 5319.4439999999995 codelets_run 225 rndValue 0.344 urgsum 15463.5
+
+
+
+
+
 printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 3, 4, 4, 4, 3, 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 6, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 6, 7, 7, 7, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 6, 7, 6, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
@@ -23952,9 +23957,12 @@ scale 3.417040479909381urgencies: [5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 4, 3, 3, 
 Random rndseed=1632
 sum 12863.118802948036 chosen 2971.3804434809967 codelets.size() 99
 Choose codelet at index 32 urgsum 2984.737873225255
+
+
 #### group-scout--whole-string ####
 about to choose string
 Random rndseed=1633
+
 initial string selected
 leftmost iterate letter (1)1 leftmost true
 leftmost iterate letter (2)2 leftmost false
@@ -23962,6 +23970,9 @@ leftmost iterate letter (3)3 leftmost false
 leftmost iterate group (1-3) leftmost true
 leftmost group (1-3)
 leftmost2 group (1-3)
+
+
+
 get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
 get_related_node category.outgoing_links l.label null
 get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
@@ -23979,6 +23990,9 @@ bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_le
 create codelet group-strength-tester urgency 7 time_stamp 228
 printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 6, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 6, 7, 7, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 6, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7]
 selected object already spans string: propose
+
+
+
 mainloop | codelets_run 228 clamp_time 30 last_update 225 time_step_length 15
 choose T: 58.74439280135928
 scale 3.417040479909381urgencies: [5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 6, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 6, 7, 7, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 6, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7] flag 229
@@ -25528,6 +25542,9 @@ Finish update_Everything T: 28.4198988998509
 choose T: 28.4198988998509
 scale 5.438673406676608urgencies: [5, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3, 3, 3, 3, 3, 1] flag 241
 Random rndseed=1722
+
+// Broken
+
 sum 332890.6012432353 chosen 56591.40221135 codelets.size() 100
 Choose codelet at index 33 urgsum 86246.14053712071
 #### bond-strength-tester ####

@@ -376,12 +376,12 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
 
   def addObject(wo: WorkspaceObject): Unit = {
-    log.debug("workspace_objects add " + wo);
+    log.debug("workspace_objects add " + wo + " uuid " + wo.uuid);
     objectRefs += (wo.uuid -> wo)
     objects += wo
   }
   def removeObject(wo: WorkspaceObject): Unit = {
-    log.debug("workspace_objects remove " + wo);
+    log.debug("workspace_objects remove " + wo + " uuid " + wo.uuid);
     objectRefs -= wo.uuid
     objects -= wo
   }
@@ -1087,7 +1087,8 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
         }
       } else {
         // destroy incompatible groups
-        for (gr <- incg) {
+        val incgSet: Set[String] = incg.toSet
+        for (gr <- incgSet) {
           val grp = objectRefs(gr).asInstanceOf[Group]
           break_group(grp)
         }
