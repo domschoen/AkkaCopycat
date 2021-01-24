@@ -1661,10 +1661,17 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       log.debug(s"${wStringText} string selected")
 
       // find leftmost object & the highest group to which it belongs
-      var leftmost = wString.objects.find(w => w.leftmost).get
+      var leftmost: WorkspaceObject = null
+      for (w <- wString.objects) {
+        log.debug("leftmost iterate " + w + " leftmost " + w.leftmost);
+
+        if (w.leftmost) leftmost = w;
+      }
+      log.debug("leftmost " + leftmost);
 
       while ((leftmost.group.isDefined)&&(leftmost.group.get.bond_category.id==SlipNode.id.sameness))
         leftmost=leftmost.group.get
+      log.debug("leftmost2 " + leftmost);
 
       sender() ! GoWithGroupScoutWholeStringResponse(leftmost.workspaceObjectRep())
 
@@ -1703,6 +1710,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
           leftmost = right_bond.right_obj
           object_list += leftmost
         }
+        log.debug("leftmost.rightmost " + leftmost.rightmost);
         if (!(leftmost.rightmost)){
           log.debug("no spanning bonds - fizzle");
           sender() ! Finished
