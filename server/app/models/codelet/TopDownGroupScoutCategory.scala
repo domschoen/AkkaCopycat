@@ -35,11 +35,13 @@ class TopDownGroupScoutCategory(urgency: Int,
     GoWithTopDownGroupScoutCategoryResponse,
     SlipnetGoWithTopDownGroupScoutCategory2Response,
     GoWithTopDownGroupScoutCategory2Response
+
   }
   import models.Workspace.{
     GoWithTopDownGroupScoutCategory,
     GoWithTopDownGroupScoutCategory2,
     WorkspaceProposeGroupResponse
+
   }
   import models.Slipnet.{
     CompleteProposeGroup
@@ -93,6 +95,7 @@ class TopDownGroupScoutCategory(urgency: Int,
       slipnet ! CompleteProposeGroup(group_category, direction_category)
 
     case CompleteProposeGroupResponse(u, bond_category) =>
+      log.debug("TopDownGroupScoutCategory. CompleteProposeGroupResponse")
       groupUrgency = u
       workspace ! WorkspaceProposeGroup(
         object_list, bond_list, group_category, direction_category, bond_facet, bond_category,groupSlipnetInfo,runTemperature)

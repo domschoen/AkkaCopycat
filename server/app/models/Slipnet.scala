@@ -1106,6 +1106,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
     // Coderack.java.292, propose_group
     case CompleteProposeGroup(grCategoryRep, dirCategoryRepOpt) =>
+      log.debug("CompleteProposeGroup")
       val grCategory = slipNodeRefs(grCategoryRep.id)
       val bond_categoryOpt = SlipnetFormulas.get_related_node(grCategory,bond_category, identity)
       // match added compare to JavaCopycat
@@ -1141,7 +1142,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       sender() ! SlipnetGoWithGroupScoutWholeStringResponse(related.map(_.slipNodeRep()),groupSlipnetInfo())
 
     case GetLeftAndRight =>
-      sender() ! GetLeftAndRightResponse(left.slipNodeRep(), right.slipNodeRep())
+      sender() ! GetLeftAndRightResponse(left.slipNodeRep(), right.slipNodeRep(), groupSlipnetInfo())
 
 
     case SlipnetGoWithGroupStrengthTester(group_category_id: String) =>

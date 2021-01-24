@@ -5,11 +5,11 @@ import akka.actor.ActorRef
 import models.Bond.BondRep
 import models.Coderack.ProposeGroup
 import models.Group.GroupRep
+import models.Random
 import models.SlipNode.{GroupSlipnetInfo, SlipNodeRep}
 import models.Slipnet.{CompleteProposeGroup, CompleteProposeGroupResponse, GetRelatedNodeOf, GetRelatedNodeOfResponse, SlipnetGoWithGroupScoutWholeString}
-import models.Workspace.WorkspaceProposeGroupResponse
+import models.Workspace.WorkspaceProposeGroup2
 import models.WorkspaceObject.WorkspaceObjectRep
-import models.codelet.GroupScoutWholeString.GroupScoutWholeString2Response
 import models.codelet.TopDownGroupScoutCategory.GoWithTopDownGroupScoutCategory2Response
 
 
@@ -37,7 +37,7 @@ object GroupScoutWholeString {
                                                      )
   case class GoWithGroupScoutWholeString3Response(leftMost: WorkspaceObjectRep)
 
-  case class GetLeftAndRightResponse(slipnetLeft: SlipNodeRep, slipnetRight: SlipNodeRep)
+  case class GetLeftAndRightResponse(slipnetLeft: SlipNodeRep, slipnetRight: SlipNodeRep, gsi: GroupSlipnetInfo)
 
 }
 class GroupScoutWholeString(urgency: Int,
@@ -48,11 +48,13 @@ class GroupScoutWholeString(urgency: Int,
   import Codelet.{ Run, Finished }
   import models.Coderack.ChooseAndRun
   import models.Coderack.ProposeCorrespondence
+
   import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
   import models.codelet.GroupScoutWholeString.{
     GoWithGroupScoutWholeStringResponse,
     SlipnetGoWithGroupScoutWholeStringResponse,
     GetLeftAndRightResponse,
+    GroupScoutWholeString2Response,
     GroupScoutWholeString3Response,
     GoWithGroupScoutWholeString3Response
   }
@@ -60,6 +62,7 @@ class GroupScoutWholeString(urgency: Int,
     GoWithGroupScoutWholeString,
     GoWithGroupScoutWholeString2,
     GoWithGroupScoutWholeString3,
+    WorkspaceProposeGroupResponse,
     WorkspaceProposeGroup
   }
   import models.Slipnet.GetLeftAndRight
@@ -87,10 +90,11 @@ class GroupScoutWholeString(urgency: Int,
 
       slipnet ! GetLeftAndRight
 
-    case GetLeftAndRightResponse(sl: SlipNodeRep, sr: SlipNodeRep) =>
+    case GetLeftAndRightResponse(sl: SlipNodeRep, sr: SlipNodeRep, gsi) =>
       log.debug("GetLeftAndRightResponse")
       slipnetLeft = sl
       slipnetRight = sr
+      groupSlipnetInfo = gsi
       workspace ! GoWithGroupScoutWholeString(runTemperature)
 
 
@@ -130,6 +134,7 @@ class GroupScoutWholeString(urgency: Int,
       self ! GoWithGroupScoutWholeStringResponse(leftmostGroup)
 
     case GroupScoutWholeString2Response(gc, dc, bf, ol, bl) =>
+      log.debug("GroupScoutWholeString2Response")
       group_category = gc
       direction_category = dc
       bond_facet = bf
@@ -155,21 +160,26 @@ class GroupScoutWholeString(urgency: Int,
           self ! Finished
       }
 
+
     case CompleteProposeGroupResponse(u, bc) =>
-      groupUrgency = u
-      workspace ! WorkspaceProposeGroup(
-        object_list,
-        bond_list,
-        group_category2,
-        direction_category,
-        bond_facet,
-        bc,
-        groupSlipnetInfo,
-        runTemperature
+      log.debug("CompleteProposeGroupResponse   " + Random.rndseed)
+
+        groupUrgency = u
+
+        workspace ! WorkspaceProposeGroup(
+                object_list,
+                bond_list,
+                group_category2,
+                direction_category,
+                bond_facet,
+                bc,
+                groupSlipnetInfo,
+                runTemperature
       )
 
-    case WorkspaceProposeGroupResponse(groupID) =>
-      coderack ! ProposeGroup(groupID, groupUrgency)
+    case WorkspaceProposeGroupResponse(groupUUID) =>
+      log.debug("WorkspaceProposeGroupResponse")
+      coderack ! ProposeGroup(groupUUID, groupUrgency)
 
     case TemperatureResponse(value) =>
       t = value
@@ -178,7 +188,9 @@ class GroupScoutWholeString(urgency: Int,
       t = value
 
     case Finished =>
+        log.debug("GoWithGroupScoutWholeString.Finished")
       workspace ! models.Workspace.Step(runTemperature)
+
   }
 
 

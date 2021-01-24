@@ -26,7 +26,7 @@ import models.Correspondence.CorrespondenceRep
 import models.Group.{FutureGroupRep, GroupRep}
 import models.SlipNode.{GroupSlipnetInfo, SlipNodeRep}
 import models.Slipnet.{CorrespondenceUpdateStrengthData, DescriptionTypeInstanceLinksToNodeInfo}
-import models.Workspace.{DataForStrengthUpdateResponse, GoWithBondStrengthTester2, GoWithBottomUpCorrespondenceScout2Response, GoWithBottomUpCorrespondenceScout3, GoWithBottomUpCorrespondenceScout3Response, GoWithCorrespondenceBuilder, GoWithCorrespondenceBuilder2, GoWithCorrespondenceBuilder3, GoWithCorrespondenceBuilder4, GoWithCorrespondenceBuilder5, GoWithCorrespondenceBuilder6, GoWithCorrespondenceBuilder7, GoWithCorrespondenceBuilder8, GoWithCorrespondenceStrengthTester, GoWithCorrespondenceStrengthTester2, GoWithCorrespondenceStrengthTester3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithImportantObjectCorrespondenceScout, GoWithImportantObjectCorrespondenceScout2, GoWithImportantObjectCorrespondenceScout3, GoWithRuleBuilder, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3, GoWithRuleStrengthTester, GoWithRuleTranslator, GoWithRuleTranslator2, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, PostTopBottomCodeletsGetInfoResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, UpdateEverything, UpdateEverythingFollowUp, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
+import models.Workspace.{DataForStrengthUpdateResponse, GoWithBondStrengthTester2, GoWithBottomUpCorrespondenceScout2Response, GoWithBottomUpCorrespondenceScout3, GoWithBottomUpCorrespondenceScout3Response, GoWithCorrespondenceBuilder, GoWithCorrespondenceBuilder2, GoWithCorrespondenceBuilder3, GoWithCorrespondenceBuilder4, GoWithCorrespondenceBuilder5, GoWithCorrespondenceBuilder6, GoWithCorrespondenceBuilder7, GoWithCorrespondenceBuilder8, GoWithCorrespondenceStrengthTester, GoWithCorrespondenceStrengthTester2, GoWithCorrespondenceStrengthTester3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithImportantObjectCorrespondenceScout, GoWithImportantObjectCorrespondenceScout2, GoWithImportantObjectCorrespondenceScout3, GoWithRuleBuilder, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3, GoWithRuleStrengthTester, GoWithRuleTranslator, GoWithRuleTranslator2, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, PostTopBottomCodeletsGetInfoResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, StepX, UpdateEverything, UpdateEverythingFollowUp, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
 import models.codelet.BondStrengthTester.GoWithBondStrengthTesterResponse2
@@ -73,6 +73,8 @@ object Workspace {
                                                  targetDescriptions: List[WorkspaceObjectRep]
                                                )
   case class Step(temperature: Double)
+  case class StepX(temperature: Double)
+
   case object Found
   case class GoWithBreaker(temperature: Double)
   case class BondWithNeighbor(temperatGoWithBottomUpBondScout2Debugure: Double)
@@ -99,8 +101,17 @@ object Workspace {
                                     groupSlipnetInfo: GroupSlipnetInfo,
                                     t: Double
                                   )
-
   case class WorkspaceProposeGroupResponse(groupID: String)
+
+  case class WorkspaceProposeGroup2(
+  object_rep_list: List[WorkspaceObjectRep],
+  bls: List[BondRep],
+  group_category: SlipNodeRep,
+  direction_category: Option[SlipNodeRep],
+    bond_facet: SlipNodeRep,
+  bond_category: SlipNodeRep
+                                   )
+
 
   case object GoWithReplacementFinder
   case class GoWithTopDownGroupScoutCategory(slipNodeID: String, bondFocus: String, t: Double, groupSlipnetInfo: GroupSlipnetInfo)
@@ -262,6 +273,8 @@ object Workspace {
 
 class Workspace(temperature: ActorRef) extends Actor with ActorLogging with InjectedActorSupport {
   import Workspace.{
+    WorkspaceProposeGroup2,
+    WorkspaceProposeGroupResponse,
     Initialize,
     Found,
     Step,
@@ -274,7 +287,6 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     GoWithTopDownGroupScoutCategory,
     GoWithTopDownGroupScoutCategory2,
     WorkspaceProposeGroup,
-    WorkspaceProposeGroupResponse,
     PrepareDescription,
     GoWithReplacementFinder,
     GoWithBondBuilder,
@@ -553,11 +565,14 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       log.debug("Step...")
 
       if (found_answer) {
-        executionRunActor ! ExecutionRun.Found
+        log.debug("Workspace Found answer")
+
+        //executionRunActor ! ExecutionRun.Found
       } else {
         val dd = objects.toList
         log.debug(s"Step2 <$dd>")
 
+        log.debug("Workspace Step")
         coderack ! ChooseAndRun(dd.size,temperature)
       }
 
@@ -1565,6 +1580,21 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
         }
       }
 
+
+    case  WorkspaceProposeGroup2(
+          object_rep_list,
+          bls,
+          group_category,
+          direction_category,
+            bond_facet,
+    bond_category
+    ) =>
+      log.debug("WorkspaceProposeGroup2")
+
+
+
+
+
     // Corerack.java.298, propose_group
     case WorkspaceProposeGroup(
       object_rep_list,
@@ -1576,6 +1606,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       groupSlipnetInfo: GroupSlipnetInfo,
       t: Double
     ) =>
+      log.debug("WorkspaceProposeGroup")
       val wStringFromWo = object_rep_list.head
       val wString = objectRefs(wStringFromWo.uuid).wString.get
       val object_list = object_rep_list.map(ol => objectRefs(ol.uuid)).to[ListBuffer]
@@ -1597,7 +1628,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       )
       log.debug("WorkspaceProposeGroup. Register group " + ng.uuid)
       objectRefs += (ng.uuid -> ng)
-      sender ! WorkspaceProposeGroupResponse(ng.uuid)
+      sender() ! WorkspaceProposeGroupResponse(ng.uuid)
 
     case GoWithTopDownGroupScoutDirection(direction, mydirection: SlipNodeRep, fromobrep: WorkspaceObjectRep, t, gsi) =>
       var fromob = objectRefs(fromobrep.uuid)
@@ -1689,7 +1720,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
         // the object already spans the string - propose this object
         val g = leftmost.asInstanceOf[Group]
 
-        print("selected object already spans string: propose");
+        log.debug("selected object already spans string: propose");
 
         sender() ! GroupScoutWholeString2Response(
           g.group_category,

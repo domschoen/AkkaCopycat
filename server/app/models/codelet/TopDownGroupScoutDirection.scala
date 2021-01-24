@@ -6,7 +6,7 @@ import models.Bond.BondRep
 import models.Coderack.ProposeGroup
 import models.SlipNode.{GroupSlipnetInfo, SlipNodeRep}
 import models.Slipnet.{CompleteProposeGroup, CompleteProposeGroupResponse, SlipnetGoWithTopDownGroupScoutCategory2, SlipnetGoWithTopDownGroupScoutDirection, SlipnetGoWithTopDownGroupScoutDirection0}
-import models.Workspace.{GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutCategory2, GoWithTopDownGroupScoutDirection, GoWithTopDownGroupScoutDirection2, WorkspaceProposeGroup, WorkspaceProposeGroupResponse}
+import models.Workspace.{GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutCategory2, GoWithTopDownGroupScoutDirection, GoWithTopDownGroupScoutDirection2, WorkspaceProposeGroup}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.codelet.TopDownGroupScoutCategory.{GoWithTopDownGroupScoutCategory2Response, GoWithTopDownGroupScoutCategoryResponse, SlipnetGoWithTopDownGroupScoutCategory2Response}
 
@@ -31,6 +31,7 @@ class TopDownGroupScoutDirection(urgency: Int,
     SlipnetGoWithTopDownGroupScoutDirection0Response,
     GoWithTopDownGroupScoutDirectionResponse
   }
+  import models.Workspace.WorkspaceProposeGroupResponse
 
   var runTemperature: Double = 0.0
   var fromob: WorkspaceObjectRep = null
