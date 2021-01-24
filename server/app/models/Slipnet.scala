@@ -1538,7 +1538,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
   def get_bottom_up_codelets(f: () => Unit,
                              codeletsCount: Double,
                              st: String,
-                             t: Double,
+                             temperature: Double,
                              intra_string_unhappiness: Double,
                              inter_string_unhappiness: Double,
                              ruleTotalWeaknessOpt: Option[Double],
@@ -1548,7 +1548,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
                              unreplaced_objects_size: Double,
                              uncorresponding_objects_size: Double
                             ): ListBuffer[(String,Either[Double, Int], Option[String], Option[Double])] = {
-    val prob = get_post_codelet_probability(st, t, intra_string_unhappiness, inter_string_unhappiness, unreplaced_objects_size, ruleTotalWeaknessOpt);
+    val prob = get_post_codelet_probability(st, temperature, intra_string_unhappiness, inter_string_unhappiness, unreplaced_objects_size, ruleTotalWeaknessOpt);
     var num = get_num_codelets_to_post(st, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
 
     if ((speed_up_bonds)&&(st.indexOf("bond") > -1)) num*=3;
@@ -1560,8 +1560,8 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
     for (t <- 1 to num){
       var urgency = 3;
       if (st.equals("breaker")) urgency = 1;
-      if ((t < 25.0) && (st.indexOf("translator")> -1)) urgency=5;
-      log.debug(">>>> get_bottom_up_codelets " + st + " prob " + prob);
+      if ((temperature < 25.0) && (st.indexOf("translator")> -1)) urgency=5;
+      log.debug(">>>> get_bottom_up_codelets " + st + " prob " + prob + " t " + temperature + " index " + st.indexOf("translator"));
 
       if (Random.rnd()<prob){
         log.debug("get_bottom_up_codelets rawUrgency" + urgency);

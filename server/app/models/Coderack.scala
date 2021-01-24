@@ -217,7 +217,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
               case None => ()
             }
           }
-          System.out.println("printUrgencies urgencies: " + codelets.map(_.urgency));
+          log.debug("printUrgencies urgencies: " + codelets.map(_.urgency));
 
 
           // Graphics
@@ -435,7 +435,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
       None
     } else {
       var urgency_values = codelets.map( c =>  {
-        if (codelets_run == 210 && false) {
+        if (codelets_run == 225) {
           log.debug("choose_old_codelet c.time_stamp " + c.time_stamp + " c.urgency " + c.urgency + " name " + c.name);
         }
         (codelets_run - c.time_stamp).toDouble * (7.5 - c.urgency).toDouble
