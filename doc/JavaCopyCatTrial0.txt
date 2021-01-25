@@ -1,4 +1,4 @@
-/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=50349:/Applications/IntelliJ IDEA CE.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/tools.jar:/Users/dschoen/Documents/gitlab/copycat/JavaCopyCat/out/production/JavaCopyCat rungroup
+/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=51203:/Applications/IntelliJ IDEA CE.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/tools.jar:/Users/dschoen/Documents/gitlab/copycat/JavaCopyCat/out/production/JavaCopyCat rungroup
 Random rndseed=1
 Random rndseed=2
 Random rndseed=3
@@ -1885,7 +1885,7 @@ Random rndseed=55
 
 6T: 20.0
 ------------------------ post_bottom_up_codelets
->>>> get_bottom_up_codelets bottom-up-description-scout prob 0.04000000000000001
+>>>> get_bottom_up_codelets bottom-up-description-scout prob 0.04000000000000001 t 20.0 index -1
 Random rndseed=56
 <<<<
 
@@ -1903,63 +1903,63 @@ unrelated_objects result 6
 rough_num_of_objects. bond 6
 Random rndseed=57
 Random rndseed=58
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.0
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.0 t 20.0 index -1
 Random rndseed=59
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.0
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.0 t 20.0 index -1
 Random rndseed=60
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.0
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.0 t 20.0 index -1
 Random rndseed=61
 <<<<
 
 Random rndseed=62
 Random rndseed=63
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.0
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.0 t 20.0 index -1
 Random rndseed=64
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.0
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.0 t 20.0 index -1
 Random rndseed=65
 <<<<
 
 Random rndseed=66
 Random rndseed=67
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.0
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.0 t 20.0 index -1
 Random rndseed=68
 <<<<
 
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.0
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.0 t 20.0 index -1
 Random rndseed=69
 <<<<
 
 Random rndseed=70
->>>> get_bottom_up_codelets replacement-finder prob 1.0
+>>>> get_bottom_up_codelets replacement-finder prob 1.0 t 20.0 index -1
 Random rndseed=71
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 46
 create codelet replacement-finder urgency 3 time_stamp 15
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 1.0
+>>>> get_bottom_up_codelets rule-scout prob 1.0 t 20.0 index -1
 Random rndseed=72
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 47
 create codelet rule-scout urgency 3 time_stamp 15
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 1.0
+>>>> get_bottom_up_codelets rule-scout prob 1.0 t 20.0 index -1
 Random rndseed=73
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 48
 create codelet rule-scout urgency 3 time_stamp 15
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets breaker prob 1.0
+>>>> get_bottom_up_codelets breaker prob 1.0 t 20.0 index -1
 Random rndseed=74
-get_bottom_up_codelets rawUrgency1
+get_bottom_up_codelets rawUrgency1 count 49
 create codelet breaker urgency 1 time_stamp 15
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 3, 3, 3, 1]
 <<<<
@@ -3060,9 +3060,9 @@ printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 
 6T: 91.46666666666665
 ------------------------ post_bottom_up_codelets
->>>> get_bottom_up_codelets bottom-up-description-scout prob 0.8366151111111109
+>>>> get_bottom_up_codelets bottom-up-description-scout prob 0.8366151111111109 t 91.46666666666665 index -1
 Random rndseed=134
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 42
 create codelet bottom-up-description-scout urgency 3 time_stamp 30
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 4, 7, 2, 4, 3]
 <<<<
@@ -3081,99 +3081,99 @@ unrelated_objects result 6
 rough_num_of_objects. bond 6
 Random rndseed=135
 Random rndseed=136
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9999999999999997
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9999999999999997 t 91.46666666666665 index -1
 Random rndseed=137
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 43
 create codelet bottom-up-bond-scout urgency 3 time_stamp 30
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 4, 7, 2, 4, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9999999999999997
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9999999999999997 t 91.46666666666665 index -1
 Random rndseed=138
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 44
 create codelet bottom-up-bond-scout urgency 3 time_stamp 30
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 4, 7, 2, 4, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9999999999999997
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9999999999999997 t 91.46666666666665 index -1
 Random rndseed=139
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 45
 create codelet bottom-up-bond-scout urgency 3 time_stamp 30
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 4, 7, 2, 4, 3, 3, 3, 3]
 <<<<
 
 Random rndseed=140
 Random rndseed=141
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.7866666666666666
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.7866666666666666 t 91.46666666666665 index -1
 Random rndseed=142
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 46
 create codelet bottom-up-correspondence-scout urgency 3 time_stamp 30
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 4, 7, 2, 4, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.7866666666666666
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.7866666666666666 t 91.46666666666665 index -1
 Random rndseed=143
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 47
 create codelet bottom-up-correspondence-scout urgency 3 time_stamp 30
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 4, 7, 2, 4, 3, 3, 3, 3, 3, 3]
 <<<<
 
 Random rndseed=144
 Random rndseed=145
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.7866666666666666
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.7866666666666666 t 91.46666666666665 index -1
 Random rndseed=146
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 48
 create codelet important-object-correspondence-scout urgency 3 time_stamp 30
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 4, 7, 2, 4, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.7866666666666666
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.7866666666666666 t 91.46666666666665 index -1
 Random rndseed=147
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 49
 create codelet important-object-correspondence-scout urgency 3 time_stamp 30
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 4, 7, 2, 4, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.7866666666666666
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.7866666666666666 t 91.46666666666665 index -1
 Random rndseed=148
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 50
 create codelet important-object-correspondence-scout urgency 3 time_stamp 30
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 4, 7, 2, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
 Random rndseed=149
 Random rndseed=150
->>>> get_bottom_up_codelets replacement-finder prob 1.0
+>>>> get_bottom_up_codelets replacement-finder prob 1.0 t 91.46666666666665 index -1
 Random rndseed=151
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 51
 create codelet replacement-finder urgency 3 time_stamp 30
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 4, 7, 2, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets replacement-finder prob 1.0
+>>>> get_bottom_up_codelets replacement-finder prob 1.0 t 91.46666666666665 index -1
 Random rndseed=152
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 52
 create codelet replacement-finder urgency 3 time_stamp 30
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 4, 7, 2, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 1.0
+>>>> get_bottom_up_codelets rule-scout prob 1.0 t 91.46666666666665 index -1
 Random rndseed=153
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 53
 create codelet rule-scout urgency 3 time_stamp 30
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 4, 7, 2, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 1.0
+>>>> get_bottom_up_codelets rule-scout prob 1.0 t 91.46666666666665 index -1
 Random rndseed=154
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 54
 create codelet rule-scout urgency 3 time_stamp 30
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 4, 7, 2, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets breaker prob 1.0
+>>>> get_bottom_up_codelets breaker prob 1.0 t 91.46666666666665 index -1
 Random rndseed=155
-get_bottom_up_codelets rawUrgency1
+get_bottom_up_codelets rawUrgency1 count 55
 create codelet breaker urgency 1 time_stamp 30
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 4, 7, 2, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1]
 <<<<
@@ -4195,9 +4195,9 @@ printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 
 6T: 90.85714285714286
 ------------------------ post_bottom_up_codelets
->>>> get_bottom_up_codelets bottom-up-description-scout prob 0.8255020408163266
+>>>> get_bottom_up_codelets bottom-up-description-scout prob 0.8255020408163266 t 90.85714285714286 index -1
 Random rndseed=214
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 48
 create codelet bottom-up-description-scout urgency 3 time_stamp 45
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 4, 3]
 <<<<
@@ -4216,105 +4216,105 @@ unrelated_objects result 5
 rough_num_of_objects. bond 5
 Random rndseed=215
 Random rndseed=216
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 1.0
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 1.0 t 90.85714285714286 index -1
 Random rndseed=217
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 49
 create codelet bottom-up-bond-scout urgency 3 time_stamp 45
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 4, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 1.0
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 1.0 t 90.85714285714286 index -1
 Random rndseed=218
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 50
 create codelet bottom-up-bond-scout urgency 3 time_stamp 45
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 4, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 1.0
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 1.0 t 90.85714285714286 index -1
 Random rndseed=219
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 51
 create codelet bottom-up-bond-scout urgency 3 time_stamp 45
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 4, 3, 3, 3, 3]
 <<<<
 
 Random rndseed=220
 Random rndseed=221
->>>> get_bottom_up_codelets group-scout--whole-string prob 1.0
+>>>> get_bottom_up_codelets group-scout--whole-string prob 1.0 t 90.85714285714286 index -1
 Random rndseed=222
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 52
 create codelet group-scout--whole-string urgency 3 time_stamp 45
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 4, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets group-scout--whole-string prob 1.0
+>>>> get_bottom_up_codelets group-scout--whole-string prob 1.0 t 90.85714285714286 index -1
 Random rndseed=223
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 53
 create codelet group-scout--whole-string urgency 3 time_stamp 45
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 4, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets group-scout--whole-string prob 1.0
+>>>> get_bottom_up_codelets group-scout--whole-string prob 1.0 t 90.85714285714286 index -1
 Random rndseed=224
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 54
 create codelet group-scout--whole-string urgency 3 time_stamp 45
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
 Random rndseed=225
 Random rndseed=226
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.7714285714285714
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.7714285714285714 t 90.85714285714286 index -1
 Random rndseed=227
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 55
 create codelet bottom-up-correspondence-scout urgency 3 time_stamp 45
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.7714285714285714
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.7714285714285714 t 90.85714285714286 index -1
 Random rndseed=228
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.7714285714285714
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.7714285714285714 t 90.85714285714286 index -1
 Random rndseed=229
 <<<<
 
 Random rndseed=230
 Random rndseed=231
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.7714285714285714
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.7714285714285714 t 90.85714285714286 index -1
 Random rndseed=232
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 56
 create codelet important-object-correspondence-scout urgency 3 time_stamp 45
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.7714285714285714
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.7714285714285714 t 90.85714285714286 index -1
 Random rndseed=233
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 57
 create codelet important-object-correspondence-scout urgency 3 time_stamp 45
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
 Random rndseed=234
->>>> get_bottom_up_codelets replacement-finder prob 0.0
+>>>> get_bottom_up_codelets replacement-finder prob 0.0 t 90.85714285714286 index -1
 Random rndseed=235
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 1.0
+>>>> get_bottom_up_codelets rule-scout prob 1.0 t 90.85714285714286 index -1
 Random rndseed=236
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 58
 create codelet rule-scout urgency 3 time_stamp 45
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 1.0
+>>>> get_bottom_up_codelets rule-scout prob 1.0 t 90.85714285714286 index -1
 Random rndseed=237
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 59
 create codelet rule-scout urgency 3 time_stamp 45
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets breaker prob 1.0
+>>>> get_bottom_up_codelets breaker prob 1.0 t 90.85714285714286 index -1
 Random rndseed=238
-get_bottom_up_codelets rawUrgency1
+get_bottom_up_codelets rawUrgency1 count 60
 create codelet breaker urgency 1 time_stamp 45
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1]
 <<<<
@@ -5560,7 +5560,7 @@ printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 
 6T: 92.40876385336745
 ------------------------ post_bottom_up_codelets
->>>> get_bottom_up_codelets bottom-up-description-scout prob 0.853937963690743
+>>>> get_bottom_up_codelets bottom-up-description-scout prob 0.853937963690743 t 92.40876385336745 index -1
 Random rndseed=316
 <<<<
 
@@ -5578,115 +5578,115 @@ unrelated_objects result 5
 rough_num_of_objects. bond 5
 Random rndseed=317
 Random rndseed=318
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9739019607843139
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9739019607843139 t 92.40876385336745 index -1
 Random rndseed=319
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 63
 create codelet bottom-up-bond-scout urgency 3 time_stamp 60
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 1, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7, 2, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3]
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9739019607843139
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9739019607843139 t 92.40876385336745 index -1
 Random rndseed=320
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 64
 create codelet bottom-up-bond-scout urgency 3 time_stamp 60
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 1, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7, 2, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9739019607843139
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9739019607843139 t 92.40876385336745 index -1
 Random rndseed=321
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 65
 create codelet bottom-up-bond-scout urgency 3 time_stamp 60
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 1, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7, 2, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3]
 <<<<
 
 Random rndseed=322
 Random rndseed=323
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.9739019607843139
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.9739019607843139 t 92.40876385336745 index -1
 Random rndseed=324
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 66
 create codelet group-scout--whole-string urgency 3 time_stamp 60
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 1, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7, 2, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.9739019607843139
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.9739019607843139 t 92.40876385336745 index -1
 Random rndseed=325
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 67
 create codelet group-scout--whole-string urgency 3 time_stamp 60
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 1, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7, 2, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.9739019607843139
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.9739019607843139 t 92.40876385336745 index -1
 Random rndseed=326
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 68
 create codelet group-scout--whole-string urgency 3 time_stamp 60
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 1, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7, 2, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3]
 <<<<
 
 Random rndseed=327
 Random rndseed=328
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.8363171355498722
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.8363171355498722 t 92.40876385336745 index -1
 Random rndseed=329
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.8363171355498722
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.8363171355498722 t 92.40876385336745 index -1
 Random rndseed=330
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 69
 create codelet bottom-up-correspondence-scout urgency 3 time_stamp 60
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 1, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7, 2, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.8363171355498722
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.8363171355498722 t 92.40876385336745 index -1
 Random rndseed=331
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 70
 create codelet bottom-up-correspondence-scout urgency 3 time_stamp 60
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 1, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7, 2, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
 Random rndseed=332
 Random rndseed=333
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.8363171355498722
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.8363171355498722 t 92.40876385336745 index -1
 Random rndseed=334
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 71
 create codelet important-object-correspondence-scout urgency 3 time_stamp 60
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 1, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7, 2, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.8363171355498722
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.8363171355498722 t 92.40876385336745 index -1
 Random rndseed=335
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 72
 create codelet important-object-correspondence-scout urgency 3 time_stamp 60
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 1, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7, 2, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.8363171355498722
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.8363171355498722 t 92.40876385336745 index -1
 Random rndseed=336
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 73
 create codelet important-object-correspondence-scout urgency 3 time_stamp 60
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 1, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7, 2, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
 Random rndseed=337
->>>> get_bottom_up_codelets replacement-finder prob 0.0
+>>>> get_bottom_up_codelets replacement-finder prob 0.0 t 92.40876385336745 index -1
 Random rndseed=338
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 1.0
+>>>> get_bottom_up_codelets rule-scout prob 1.0 t 92.40876385336745 index -1
 Random rndseed=339
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 74
 create codelet rule-scout urgency 3 time_stamp 60
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 1, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7, 2, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 1.0
+>>>> get_bottom_up_codelets rule-scout prob 1.0 t 92.40876385336745 index -1
 Random rndseed=340
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 75
 create codelet rule-scout urgency 3 time_stamp 60
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 1, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7, 2, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets breaker prob 1.0
+>>>> get_bottom_up_codelets breaker prob 1.0 t 92.40876385336745 index -1
 Random rndseed=341
-get_bottom_up_codelets rawUrgency1
+get_bottom_up_codelets rawUrgency1 count 76
 create codelet breaker urgency 1 time_stamp 60
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 1, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7, 2, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1]
 <<<<
@@ -6966,9 +6966,9 @@ printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 
 6T: 93.24405739072407
 ------------------------ post_bottom_up_codelets
->>>> get_bottom_up_codelets bottom-up-description-scout prob 0.8694454238684644
+>>>> get_bottom_up_codelets bottom-up-description-scout prob 0.8694454238684644 t 93.24405739072407 index -1
 Random rndseed=427
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 79
 create codelet bottom-up-description-scout urgency 3 time_stamp 75
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 5, 5, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 7, 5, 7, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 3]
 <<<<
@@ -6987,95 +6987,95 @@ unrelated_objects result 5
 rough_num_of_objects. bond 5
 Random rndseed=428
 Random rndseed=429
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9746049382716049
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9746049382716049 t 93.24405739072407 index -1
 Random rndseed=430
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 80
 create codelet bottom-up-bond-scout urgency 3 time_stamp 75
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 5, 5, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 7, 5, 7, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9746049382716049
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9746049382716049 t 93.24405739072407 index -1
 Random rndseed=431
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 81
 create codelet bottom-up-bond-scout urgency 3 time_stamp 75
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 5, 5, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 7, 5, 7, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3]
 <<<<
 
 Random rndseed=432
 Random rndseed=433
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.9746049382716049
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.9746049382716049 t 93.24405739072407 index -1
 Random rndseed=434
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 82
 create codelet group-scout--whole-string urgency 3 time_stamp 75
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 5, 5, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 7, 5, 7, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.9746049382716049
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.9746049382716049 t 93.24405739072407 index -1
 Random rndseed=435
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 83
 create codelet group-scout--whole-string urgency 3 time_stamp 75
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 5, 5, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 7, 5, 7, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.9746049382716049
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.9746049382716049 t 93.24405739072407 index -1
 Random rndseed=436
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 84
 create codelet group-scout--whole-string urgency 3 time_stamp 75
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 5, 5, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 7, 5, 7, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3]
 <<<<
 
 Random rndseed=437
 Random rndseed=438
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.8564964964964966
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.8564964964964966 t 93.24405739072407 index -1
 Random rndseed=439
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.8564964964964966
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.8564964964964966 t 93.24405739072407 index -1
 Random rndseed=440
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 85
 create codelet bottom-up-correspondence-scout urgency 3 time_stamp 75
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 5, 5, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 7, 5, 7, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.8564964964964966
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.8564964964964966 t 93.24405739072407 index -1
 Random rndseed=441
 <<<<
 
 Random rndseed=442
 Random rndseed=443
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.8564964964964966
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.8564964964964966 t 93.24405739072407 index -1
 Random rndseed=444
 <<<<
 
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.8564964964964966
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.8564964964964966 t 93.24405739072407 index -1
 Random rndseed=445
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 86
 create codelet important-object-correspondence-scout urgency 3 time_stamp 75
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 5, 5, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 7, 5, 7, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
 Random rndseed=446
->>>> get_bottom_up_codelets replacement-finder prob 0.0
+>>>> get_bottom_up_codelets replacement-finder prob 0.0 t 93.24405739072407 index -1
 Random rndseed=447
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 1.0
+>>>> get_bottom_up_codelets rule-scout prob 1.0 t 93.24405739072407 index -1
 Random rndseed=448
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 87
 create codelet rule-scout urgency 3 time_stamp 75
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 5, 5, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 7, 5, 7, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 1.0
+>>>> get_bottom_up_codelets rule-scout prob 1.0 t 93.24405739072407 index -1
 Random rndseed=449
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 88
 create codelet rule-scout urgency 3 time_stamp 75
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 5, 5, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 7, 5, 7, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets breaker prob 1.0
+>>>> get_bottom_up_codelets breaker prob 1.0 t 93.24405739072407 index -1
 Random rndseed=450
-get_bottom_up_codelets rawUrgency1
+get_bottom_up_codelets rawUrgency1 count 89
 create codelet breaker urgency 1 time_stamp 75
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 5, 5, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 7, 5, 7, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1]
 <<<<
@@ -8239,9 +8239,9 @@ printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 
 6T: 92.27384592336504
 ------------------------ post_bottom_up_codelets
->>>> get_bottom_up_codelets bottom-up-description-scout prob 0.8514462641488912
+>>>> get_bottom_up_codelets bottom-up-description-scout prob 0.8514462641488912 t 92.27384592336504 index -1
 Random rndseed=521
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 81
 create codelet bottom-up-description-scout urgency 3 time_stamp 90
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 5, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 5, 5, 5, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 5, 5, 4, 3]
 <<<<
@@ -8260,101 +8260,101 @@ unrelated_objects result 5
 rough_num_of_objects. bond 5
 Random rndseed=522
 Random rndseed=523
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9516620512820514
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9516620512820514 t 92.27384592336504 index -1
 Random rndseed=524
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 82
 create codelet bottom-up-bond-scout urgency 3 time_stamp 90
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 5, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 5, 5, 5, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 5, 5, 4, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9516620512820514
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9516620512820514 t 92.27384592336504 index -1
 Random rndseed=525
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 83
 create codelet bottom-up-bond-scout urgency 3 time_stamp 90
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 5, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 5, 5, 5, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 5, 5, 4, 3, 3, 3]
 <<<<
 
 Random rndseed=526
 Random rndseed=527
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.9516620512820514
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.9516620512820514 t 92.27384592336504 index -1
 Random rndseed=528
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 84
 create codelet group-scout--whole-string urgency 3 time_stamp 90
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 5, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 5, 5, 5, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 5, 5, 4, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.9516620512820514
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.9516620512820514 t 92.27384592336504 index -1
 Random rndseed=529
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 85
 create codelet group-scout--whole-string urgency 3 time_stamp 90
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 5, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 5, 5, 5, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 5, 5, 4, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.9516620512820514
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.9516620512820514 t 92.27384592336504 index -1
 Random rndseed=530
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 86
 create codelet group-scout--whole-string urgency 3 time_stamp 90
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 5, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 5, 5, 5, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 5, 5, 4, 3, 3, 3, 3, 3, 3]
 <<<<
 
 Random rndseed=531
 Random rndseed=532
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.8551840968020744
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.8551840968020744 t 92.27384592336504 index -1
 Random rndseed=533
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.8551840968020744
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.8551840968020744 t 92.27384592336504 index -1
 Random rndseed=534
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 87
 create codelet bottom-up-correspondence-scout urgency 3 time_stamp 90
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 5, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 5, 5, 5, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
 Random rndseed=535
 Random rndseed=536
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.8551840968020744
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.8551840968020744 t 92.27384592336504 index -1
 Random rndseed=537
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 88
 create codelet important-object-correspondence-scout urgency 3 time_stamp 90
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 5, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 5, 5, 5, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.8551840968020744
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.8551840968020744 t 92.27384592336504 index -1
 Random rndseed=538
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 89
 create codelet important-object-correspondence-scout urgency 3 time_stamp 90
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 5, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 5, 5, 5, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.8551840968020744
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.8551840968020744 t 92.27384592336504 index -1
 Random rndseed=539
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 90
 create codelet important-object-correspondence-scout urgency 3 time_stamp 90
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 5, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 5, 5, 5, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
 Random rndseed=540
->>>> get_bottom_up_codelets replacement-finder prob 0.0
+>>>> get_bottom_up_codelets replacement-finder prob 0.0 t 92.27384592336504 index -1
 Random rndseed=541
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 1.0
+>>>> get_bottom_up_codelets rule-scout prob 1.0 t 92.27384592336504 index -1
 Random rndseed=542
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 91
 create codelet rule-scout urgency 3 time_stamp 90
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 5, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 5, 5, 5, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 1.0
+>>>> get_bottom_up_codelets rule-scout prob 1.0 t 92.27384592336504 index -1
 Random rndseed=543
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 92
 create codelet rule-scout urgency 3 time_stamp 90
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 5, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 5, 5, 5, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets breaker prob 1.0
+>>>> get_bottom_up_codelets breaker prob 1.0 t 92.27384592336504 index -1
 Random rndseed=544
-get_bottom_up_codelets rawUrgency1
+get_bottom_up_codelets rawUrgency1 count 93
 create codelet breaker urgency 1 time_stamp 90
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 5, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 5, 5, 5, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1]
 <<<<
@@ -9558,9 +9558,9 @@ printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 
 6T: 91.45777777777778
 ------------------------ post_bottom_up_codelets
->>>> get_bottom_up_codelets bottom-up-description-scout prob 0.8364525116049384
+>>>> get_bottom_up_codelets bottom-up-description-scout prob 0.8364525116049384 t 91.45777777777778 index -1
 Random rndseed=621
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 94
 create codelet bottom-up-description-scout urgency 3 time_stamp 105
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3]
 <<<<
@@ -9579,53 +9579,53 @@ unrelated_objects result 5
 rough_num_of_objects. bond 5
 Random rndseed=622
 Random rndseed=623
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.973111111111111
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.973111111111111 t 91.45777777777778 index -1
 Random rndseed=624
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.973111111111111
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.973111111111111 t 91.45777777777778 index -1
 Random rndseed=625
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 95
 create codelet bottom-up-bond-scout urgency 3 time_stamp 105
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3]
 <<<<
 
 Random rndseed=626
 Random rndseed=627
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.973111111111111
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.973111111111111 t 91.45777777777778 index -1
 Random rndseed=628
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 96
 create codelet group-scout--whole-string urgency 3 time_stamp 105
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.973111111111111
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.973111111111111 t 91.45777777777778 index -1
 Random rndseed=629
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 97
 create codelet group-scout--whole-string urgency 3 time_stamp 105
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.973111111111111
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.973111111111111 t 91.45777777777778 index -1
 Random rndseed=630
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 98
 create codelet group-scout--whole-string urgency 3 time_stamp 105
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3]
 <<<<
 
 Random rndseed=631
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.8133333333333331
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.8133333333333331 t 91.45777777777778 index -1
 Random rndseed=632
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 99
 create codelet bottom-up-correspondence-scout urgency 3 time_stamp 105
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3]
 <<<<
 
 Random rndseed=633
 Random rndseed=634
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.8133333333333331
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.8133333333333331 t 91.45777777777778 index -1
 Random rndseed=635
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet important-object-correspondence-scout urgency 3 time_stamp 105
 Post. codelets.size > 100
 Random rndseed=636
@@ -9633,9 +9633,9 @@ choose_old_codelet chosen 18808.005999999998 codelets_run 105 rndValue 0.721 urg
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.8133333333333331
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.8133333333333331 t 91.45777777777778 index -1
 Random rndseed=637
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet important-object-correspondence-scout urgency 3 time_stamp 105
 Post. codelets.size > 100
 Random rndseed=638
@@ -9643,9 +9643,9 @@ choose_old_codelet chosen 671.216 codelets_run 105 rndValue 0.026 urgsum 25816.0
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.8133333333333331
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.8133333333333331 t 91.45777777777778 index -1
 Random rndseed=639
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet important-object-correspondence-scout urgency 3 time_stamp 105
 Post. codelets.size > 100
 Random rndseed=640
@@ -9653,9 +9653,9 @@ choose_old_codelet chosen 19327.661500000002 codelets_run 105 rndValue 0.769 urg
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 0.47982406464139765
+>>>> get_bottom_up_codelets rule-scout prob 0.47982406464139765 t 91.45777777777778 index -1
 Random rndseed=641
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet rule-scout urgency 3 time_stamp 105
 Post. codelets.size > 100
 Random rndseed=642
@@ -9663,17 +9663,17 @@ choose_old_codelet chosen 124.31750000000001 codelets_run 105 rndValue 0.005 urg
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 0.47982406464139765
+>>>> get_bottom_up_codelets rule-scout prob 0.47982406464139765 t 91.45777777777778 index -1
 Random rndseed=643
 <<<<
 
->>>> get_bottom_up_codelets rule-translator prob 0.47982406464139765
+>>>> get_bottom_up_codelets rule-translator prob 0.47982406464139765 t 91.45777777777778 index 5
 Random rndseed=644
 <<<<
 
->>>> get_bottom_up_codelets breaker prob 1.0
+>>>> get_bottom_up_codelets breaker prob 1.0 t 91.45777777777778 index -1
 Random rndseed=645
-get_bottom_up_codelets rawUrgency1
+get_bottom_up_codelets rawUrgency1 count 100
 create codelet breaker urgency 1 time_stamp 105
 Post. codelets.size > 100
 Random rndseed=646
@@ -10943,9 +10943,9 @@ Random rndseed=713
 
 6T: 71.10979624568279
 ------------------------ post_bottom_up_codelets
->>>> get_bottom_up_codelets bottom-up-description-scout prob 0.5056603122102522
+>>>> get_bottom_up_codelets bottom-up-description-scout prob 0.5056603122102522 t 71.10979624568279 index -1
 Random rndseed=714
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 92
 create codelet bottom-up-description-scout urgency 3 time_stamp 120
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 1, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 7, 5, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 5, 6, 3]
 <<<<
@@ -10964,64 +10964,64 @@ unrelated_objects result 3
 rough_num_of_objects. bond 3
 Random rndseed=715
 Random rndseed=716
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9512020926756354
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9512020926756354 t 71.10979624568279 index -1
 Random rndseed=717
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 93
 create codelet bottom-up-bond-scout urgency 3 time_stamp 120
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 1, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 7, 5, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 5, 6, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9512020926756354
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9512020926756354 t 71.10979624568279 index -1
 Random rndseed=718
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 94
 create codelet bottom-up-bond-scout urgency 3 time_stamp 120
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 1, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 7, 5, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 5, 6, 3, 3, 3]
 <<<<
 
 Random rndseed=719
 Random rndseed=720
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.9512020926756354
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.9512020926756354 t 71.10979624568279 index -1
 Random rndseed=721
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 95
 create codelet group-scout--whole-string urgency 3 time_stamp 120
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 1, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 7, 5, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 5, 6, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.9512020926756354
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.9512020926756354 t 71.10979624568279 index -1
 Random rndseed=722
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 96
 create codelet group-scout--whole-string urgency 3 time_stamp 120
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 1, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 7, 5, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 5, 6, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.9512020926756354
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.9512020926756354 t 71.10979624568279 index -1
 Random rndseed=723
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 97
 create codelet group-scout--whole-string urgency 3 time_stamp 120
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 1, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 7, 5, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 5, 6, 3, 3, 3, 3, 3, 3]
 <<<<
 
 Random rndseed=724
 Random rndseed=725
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.6467594996459759
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.6467594996459759 t 71.10979624568279 index -1
 Random rndseed=726
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 98
 create codelet bottom-up-correspondence-scout urgency 3 time_stamp 120
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 1, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 7, 5, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 5, 6, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.6467594996459759
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.6467594996459759 t 71.10979624568279 index -1
 Random rndseed=727
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 99
 create codelet bottom-up-correspondence-scout urgency 3 time_stamp 120
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 1, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 7, 5, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 5, 6, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
 Random rndseed=728
 Random rndseed=729
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.6467594996459759
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.6467594996459759 t 71.10979624568279 index -1
 Random rndseed=730
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet important-object-correspondence-scout urgency 3 time_stamp 120
 Post. codelets.size > 100
 Random rndseed=731
@@ -11029,17 +11029,17 @@ choose_old_codelet chosen 908.912 codelets_run 120 rndValue 0.032 urgsum 28403.5
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 1, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 7, 5, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 5, 6, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.6467594996459759
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.6467594996459759 t 71.10979624568279 index -1
 Random rndseed=732
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 0.47982406464139765
+>>>> get_bottom_up_codelets rule-scout prob 0.47982406464139765 t 71.10979624568279 index -1
 Random rndseed=733
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 0.47982406464139765
+>>>> get_bottom_up_codelets rule-scout prob 0.47982406464139765 t 71.10979624568279 index -1
 Random rndseed=734
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet rule-scout urgency 3 time_stamp 120
 Post. codelets.size > 100
 Random rndseed=735
@@ -11047,13 +11047,13 @@ choose_old_codelet chosen 3287.1965 codelets_run 120 rndValue 0.119 urgsum 27623
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 1, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 7, 5, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 5, 6, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-translator prob 0.47982406464139765
+>>>> get_bottom_up_codelets rule-translator prob 0.47982406464139765 t 71.10979624568279 index 5
 Random rndseed=736
 <<<<
 
->>>> get_bottom_up_codelets breaker prob 1.0
+>>>> get_bottom_up_codelets breaker prob 1.0 t 71.10979624568279 index -1
 Random rndseed=737
-get_bottom_up_codelets rawUrgency1
+get_bottom_up_codelets rawUrgency1 count 100
 create codelet breaker urgency 1 time_stamp 120
 Post. codelets.size > 100
 Random rndseed=738
@@ -12522,9 +12522,9 @@ printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 
 6T: 71.49315871902928
 ------------------------ post_bottom_up_codelets
->>>> get_bottom_up_codelets bottom-up-description-scout prob 0.5111271743624313
+>>>> get_bottom_up_codelets bottom-up-description-scout prob 0.5111271743624313 t 71.49315871902928 index -1
 Random rndseed=819
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet bottom-up-description-scout urgency 3 time_stamp 135
 Post. codelets.size > 100
 Random rndseed=820
@@ -12545,9 +12545,9 @@ unrelated_objects letter (3)3 ok true wo.spans_string false right false left fal
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=821
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9499567901234569
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.9499567901234569 t 71.49315871902928 index -1
 Random rndseed=822
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet bottom-up-bond-scout urgency 3 time_stamp 135
 Post. codelets.size > 100
 Random rndseed=823
@@ -12557,9 +12557,9 @@ printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 
 Random rndseed=824
 Random rndseed=825
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.9499567901234569
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.9499567901234569 t 71.49315871902928 index -1
 Random rndseed=826
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet group-scout--whole-string urgency 3 time_stamp 135
 Post. codelets.size > 100
 Random rndseed=827
@@ -12567,13 +12567,13 @@ choose_old_codelet chosen 14609.84 codelets_run 135 rndValue 0.49 urgsum 29816.0
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 1, 3, 3, 3, 3, 5, 4, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 5, 5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 7, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.9499567901234569
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.9499567901234569 t 71.49315871902928 index -1
 Random rndseed=828
 <<<<
 
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.9499567901234569
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.9499567901234569 t 71.49315871902928 index -1
 Random rndseed=829
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet group-scout--whole-string urgency 3 time_stamp 135
 Post. codelets.size > 100
 Random rndseed=830
@@ -12582,9 +12582,9 @@ printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3,
 <<<<
 
 Random rndseed=831
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.657588864031817
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.657588864031817 t 71.49315871902928 index -1
 Random rndseed=832
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet bottom-up-correspondence-scout urgency 3 time_stamp 135
 Post. codelets.size > 100
 Random rndseed=833
@@ -12593,9 +12593,9 @@ printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3,
 <<<<
 
 Random rndseed=834
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.657588864031817
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.657588864031817 t 71.49315871902928 index -1
 Random rndseed=835
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet important-object-correspondence-scout urgency 3 time_stamp 135
 Post. codelets.size > 100
 Random rndseed=836
@@ -12604,13 +12604,13 @@ printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3,
 <<<<
 
 Random rndseed=837
->>>> get_bottom_up_codelets replacement-finder prob 0.0
+>>>> get_bottom_up_codelets replacement-finder prob 0.0 t 71.49315871902928 index -1
 Random rndseed=838
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 1.0
+>>>> get_bottom_up_codelets rule-scout prob 1.0 t 71.49315871902928 index -1
 Random rndseed=839
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet rule-scout urgency 3 time_stamp 135
 Post. codelets.size > 100
 Random rndseed=840
@@ -12618,9 +12618,9 @@ choose_old_codelet chosen 27148.602 codelets_run 135 rndValue 0.962 urgsum 28221
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 3, 3, 3, 3, 5, 4, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 5, 5, 5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 7, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 1.0
+>>>> get_bottom_up_codelets rule-scout prob 1.0 t 71.49315871902928 index -1
 Random rndseed=841
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet rule-scout urgency 3 time_stamp 135
 Post. codelets.size > 100
 Random rndseed=842
@@ -12628,9 +12628,9 @@ choose_old_codelet chosen 13844.844 codelets_run 135 rndValue 0.494 urgsum 28026
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 3, 3, 3, 3, 5, 4, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 5, 5, 5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 7, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets breaker prob 1.0
+>>>> get_bottom_up_codelets breaker prob 1.0 t 71.49315871902928 index -1
 Random rndseed=843
-get_bottom_up_codelets rawUrgency1
+get_bottom_up_codelets rawUrgency1 count 100
 create codelet breaker urgency 1 time_stamp 135
 Post. codelets.size > 100
 Random rndseed=844
@@ -14192,9 +14192,9 @@ printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 3, 3, 3,
 
 6T: 62.04388888888889
 ------------------------ post_bottom_up_codelets
->>>> get_bottom_up_codelets bottom-up-description-scout prob 0.384944414845679
+>>>> get_bottom_up_codelets bottom-up-description-scout prob 0.384944414845679 t 62.04388888888889 index -1
 Random rndseed=946
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet bottom-up-description-scout urgency 3 time_stamp 150
 Post. codelets.size > 100
 Random rndseed=947
@@ -14215,9 +14215,9 @@ unrelated_objects letter (3)3 ok true wo.spans_string false right false left fal
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=948
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.8020305555555555
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.8020305555555555 t 62.04388888888889 index -1
 Random rndseed=949
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet bottom-up-bond-scout urgency 3 time_stamp 150
 Post. codelets.size > 100
 Random rndseed=950
@@ -14227,9 +14227,9 @@ printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 3, 3, 3, 3,
 
 Random rndseed=951
 Random rndseed=952
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.8020305555555555
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.8020305555555555 t 62.04388888888889 index -1
 Random rndseed=953
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet group-scout--whole-string urgency 3 time_stamp 150
 Post. codelets.size > 100
 Random rndseed=954
@@ -14237,9 +14237,9 @@ choose_old_codelet chosen 11804.145 codelets_run 150 rndValue 0.43 urgsum 27451.
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 5, 4, 4, 4, 3, 3, 3, 1, 5, 3, 3, 3, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 5, 5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 7, 7, 7, 7, 7, 7, 7, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.8020305555555555
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.8020305555555555 t 62.04388888888889 index -1
 Random rndseed=955
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet group-scout--whole-string urgency 3 time_stamp 150
 Post. codelets.size > 100
 Random rndseed=956
@@ -14247,9 +14247,9 @@ choose_old_codelet chosen 18461.289 codelets_run 150 rndValue 0.686 urgsum 26911
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 5, 4, 4, 4, 3, 3, 3, 1, 5, 3, 3, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 5, 5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 7, 7, 7, 7, 7, 7, 7, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.8020305555555555
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.8020305555555555 t 62.04388888888889 index -1
 Random rndseed=957
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet group-scout--whole-string urgency 3 time_stamp 150
 Post. codelets.size > 100
 Random rndseed=958
@@ -14258,23 +14258,23 @@ printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 5, 4,
 <<<<
 
 Random rndseed=959
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.24906666666666666
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.24906666666666666 t 62.04388888888889 index -1
 Random rndseed=960
 <<<<
 
 Random rndseed=961
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.24906666666666666
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.24906666666666666 t 62.04388888888889 index -1
 Random rndseed=962
 <<<<
 
 Random rndseed=963
->>>> get_bottom_up_codelets replacement-finder prob 0.0
+>>>> get_bottom_up_codelets replacement-finder prob 0.0 t 62.04388888888889 index -1
 Random rndseed=964
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 1.0
+>>>> get_bottom_up_codelets rule-scout prob 1.0 t 62.04388888888889 index -1
 Random rndseed=965
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet rule-scout urgency 3 time_stamp 150
 Post. codelets.size > 100
 Random rndseed=966
@@ -14282,9 +14282,9 @@ choose_old_codelet chosen 5170.9980000000005 codelets_run 150 rndValue 0.202 urg
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 5, 4, 4, 4, 3, 3, 3, 1, 5, 3, 3, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 5, 5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 7, 7, 7, 7, 7, 7, 7, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 1.0
+>>>> get_bottom_up_codelets rule-scout prob 1.0 t 62.04388888888889 index -1
 Random rndseed=967
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet rule-scout urgency 3 time_stamp 150
 Post. codelets.size > 100
 Random rndseed=968
@@ -14292,9 +14292,9 @@ choose_old_codelet chosen 16227.216 codelets_run 150 rndValue 0.659 urgsum 24624
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 5, 4, 4, 4, 3, 3, 3, 1, 5, 3, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 5, 5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 7, 7, 7, 7, 7, 7, 7, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets breaker prob 1.0
+>>>> get_bottom_up_codelets breaker prob 1.0 t 62.04388888888889 index -1
 Random rndseed=969
-get_bottom_up_codelets rawUrgency1
+get_bottom_up_codelets rawUrgency1 count 100
 create codelet breaker urgency 1 time_stamp 150
 Post. codelets.size > 100
 Random rndseed=970
@@ -15830,7 +15830,7 @@ printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 4, 4, 3, 3,
 
 6T: 61.94432235724881
 ------------------------ post_bottom_up_codelets
->>>> get_bottom_up_codelets bottom-up-description-scout prob 0.3837099072298754
+>>>> get_bottom_up_codelets bottom-up-description-scout prob 0.3837099072298754 t 61.94432235724881 index -1
 Random rndseed=1064
 <<<<
 
@@ -15847,9 +15847,9 @@ unrelated_objects letter (3)3 ok true wo.spans_string false right false left fal
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1065
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.8063912442563044
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.8063912442563044 t 61.94432235724881 index -1
 Random rndseed=1066
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet bottom-up-bond-scout urgency 3 time_stamp 165
 Post. codelets.size > 100
 Random rndseed=1067
@@ -15859,9 +15859,9 @@ printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 4, 3, 3, 3,
 
 Random rndseed=1068
 Random rndseed=1069
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.8063912442563044
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.8063912442563044 t 61.94432235724881 index -1
 Random rndseed=1070
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet group-scout--whole-string urgency 3 time_stamp 165
 Post. codelets.size > 100
 Random rndseed=1071
@@ -15869,9 +15869,9 @@ choose_old_codelet chosen 13712.212500000001 codelets_run 165 rndValue 0.525 urg
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 4, 3, 3, 1, 5, 3, 1, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 4, 4, 3, 3, 3, 3, 5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 6, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 7, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 7, 5, 6, 7, 3, 7, 7, 5, 7, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.8063912442563044
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.8063912442563044 t 61.94432235724881 index -1
 Random rndseed=1072
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet group-scout--whole-string urgency 3 time_stamp 165
 Post. codelets.size > 100
 Random rndseed=1073
@@ -15879,9 +15879,9 @@ choose_old_codelet chosen 5847.2880000000005 codelets_run 165 rndValue 0.228 urg
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 4, 3, 3, 1, 5, 3, 1, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 4, 4, 3, 3, 3, 3, 5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 6, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 7, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 7, 5, 6, 7, 3, 7, 7, 5, 7, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.8063912442563044
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.8063912442563044 t 61.94432235724881 index -1
 Random rndseed=1074
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet group-scout--whole-string urgency 3 time_stamp 165
 Post. codelets.size > 100
 Random rndseed=1075
@@ -15891,31 +15891,31 @@ printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 4, 3, 3, 1, 5, 3,
 
 Random rndseed=1076
 Random rndseed=1077
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.24221681467491585
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.24221681467491585 t 61.94432235724881 index -1
 Random rndseed=1078
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.24221681467491585
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.24221681467491585 t 61.94432235724881 index -1
 Random rndseed=1079
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.24221681467491585
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.24221681467491585 t 61.94432235724881 index -1
 Random rndseed=1080
 <<<<
 
 Random rndseed=1081
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.24221681467491585
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.24221681467491585 t 61.94432235724881 index -1
 Random rndseed=1082
 <<<<
 
 Random rndseed=1083
->>>> get_bottom_up_codelets replacement-finder prob 0.0
+>>>> get_bottom_up_codelets replacement-finder prob 0.0 t 61.94432235724881 index -1
 Random rndseed=1084
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 1.0
+>>>> get_bottom_up_codelets rule-scout prob 1.0 t 61.94432235724881 index -1
 Random rndseed=1085
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet rule-scout urgency 3 time_stamp 165
 Post. codelets.size > 100
 Random rndseed=1086
@@ -15923,9 +15923,9 @@ choose_old_codelet chosen 446.519 codelets_run 165 rndValue 0.019 urgsum 23501.0
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 4, 3, 3, 1, 5, 3, 1, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 4, 4, 3, 3, 3, 3, 5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 6, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 7, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 7, 5, 6, 7, 3, 7, 7, 5, 7, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 1.0
+>>>> get_bottom_up_codelets rule-scout prob 1.0 t 61.94432235724881 index -1
 Random rndseed=1087
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet rule-scout urgency 3 time_stamp 165
 Post. codelets.size > 100
 Random rndseed=1088
@@ -15933,9 +15933,9 @@ choose_old_codelet chosen 9352.6845 codelets_run 165 rndValue 0.417 urgsum 22428
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 4, 3, 3, 1, 5, 3, 1, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 4, 4, 3, 3, 3, 3, 5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 6, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 7, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 7, 5, 6, 7, 3, 7, 7, 5, 7, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets breaker prob 1.0
+>>>> get_bottom_up_codelets breaker prob 1.0 t 61.94432235724881 index -1
 Random rndseed=1089
-get_bottom_up_codelets rawUrgency1
+get_bottom_up_codelets rawUrgency1 count 100
 create codelet breaker urgency 1 time_stamp 165
 Post. codelets.size > 100
 Random rndseed=1090
@@ -17452,7 +17452,7 @@ printUrgencies urgencies: [1, 1, 1, 1, 1, 4, 3, 3, 5, 3, 1, 3, 3, 3, 3, 3, 3, 3,
 
 6T: 78.96602816548506
 ------------------------ post_bottom_up_codelets
->>>> get_bottom_up_codelets bottom-up-description-scout prob 0.6235633604232179
+>>>> get_bottom_up_codelets bottom-up-description-scout prob 0.6235633604232179 t 78.96602816548506 index -1
 Random rndseed=1193
 <<<<
 
@@ -17469,15 +17469,15 @@ unrelated_objects letter (3)3 ok true wo.spans_string false right false left fal
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1194
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.807375491716645
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.807375491716645 t 78.96602816548506 index -1
 Random rndseed=1195
 <<<<
 
 Random rndseed=1196
 Random rndseed=1197
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.807375491716645
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.807375491716645 t 78.96602816548506 index -1
 Random rndseed=1198
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet group-scout--whole-string urgency 3 time_stamp 180
 Post. codelets.size > 100
 Random rndseed=1199
@@ -17485,9 +17485,9 @@ choose_old_codelet chosen 15658.913 codelets_run 180 rndValue 0.746 urgsum 20990
 printUrgencies urgencies: [1, 1, 1, 1, 1, 4, 3, 3, 5, 3, 1, 3, 3, 3, 3, 3, 3, 3, 1, 5, 4, 4, 4, 3, 3, 3, 3, 5, 3, 3, 3, 3, 6, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 6, 3, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 5, 3, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3]
 <<<<
 
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.807375491716645
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.807375491716645 t 78.96602816548506 index -1
 Random rndseed=1200
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet group-scout--whole-string urgency 3 time_stamp 180
 Post. codelets.size > 100
 Random rndseed=1201
@@ -17495,14 +17495,14 @@ choose_old_codelet chosen 10339.5295 codelets_run 180 rndValue 0.499 urgsum 2072
 printUrgencies urgencies: [1, 1, 1, 1, 1, 4, 3, 3, 5, 3, 1, 3, 3, 3, 3, 3, 3, 1, 5, 4, 4, 4, 3, 3, 3, 3, 5, 3, 3, 3, 3, 6, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 6, 3, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 5, 3, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.807375491716645
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.807375491716645 t 78.96602816548506 index -1
 Random rndseed=1202
 <<<<
 
 Random rndseed=1203
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.6667752124204813
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.6667752124204813 t 78.96602816548506 index -1
 Random rndseed=1204
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet bottom-up-correspondence-scout urgency 3 time_stamp 180
 Post. codelets.size > 100
 Random rndseed=1205
@@ -17511,9 +17511,9 @@ printUrgencies urgencies: [1, 1, 1, 1, 1, 4, 3, 3, 5, 1, 3, 3, 3, 3, 3, 3, 1, 5,
 <<<<
 
 Random rndseed=1206
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.6667752124204813
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.6667752124204813 t 78.96602816548506 index -1
 Random rndseed=1207
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet important-object-correspondence-scout urgency 3 time_stamp 180
 Post. codelets.size > 100
 Random rndseed=1208
@@ -17522,13 +17522,13 @@ printUrgencies urgencies: [1, 1, 1, 1, 4, 3, 3, 5, 1, 3, 3, 3, 3, 3, 3, 1, 5, 4,
 <<<<
 
 Random rndseed=1209
->>>> get_bottom_up_codelets replacement-finder prob 0.0
+>>>> get_bottom_up_codelets replacement-finder prob 0.0 t 78.96602816548506 index -1
 Random rndseed=1210
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 1.0
+>>>> get_bottom_up_codelets rule-scout prob 1.0 t 78.96602816548506 index -1
 Random rndseed=1211
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet rule-scout urgency 3 time_stamp 180
 Post. codelets.size > 100
 Random rndseed=1212
@@ -17536,9 +17536,9 @@ choose_old_codelet chosen 15946.742 codelets_run 180 rndValue 0.854 urgsum 18673
 printUrgencies urgencies: [1, 1, 1, 1, 4, 3, 3, 5, 1, 3, 3, 3, 3, 3, 3, 1, 5, 4, 4, 4, 3, 3, 3, 3, 5, 3, 3, 3, 3, 6, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 6, 3, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 5, 3, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 1.0
+>>>> get_bottom_up_codelets rule-scout prob 1.0 t 78.96602816548506 index -1
 Random rndseed=1213
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet rule-scout urgency 3 time_stamp 180
 Post. codelets.size > 100
 Random rndseed=1214
@@ -17546,9 +17546,9 @@ choose_old_codelet chosen 12737.648000000001 codelets_run 180 rndValue 0.686 urg
 printUrgencies urgencies: [1, 1, 1, 1, 4, 3, 3, 5, 1, 3, 3, 3, 3, 3, 3, 1, 5, 4, 4, 4, 3, 3, 3, 3, 5, 3, 3, 3, 6, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 6, 3, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 5, 3, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets breaker prob 1.0
+>>>> get_bottom_up_codelets breaker prob 1.0 t 78.96602816548506 index -1
 Random rndseed=1215
-get_bottom_up_codelets rawUrgency1
+get_bottom_up_codelets rawUrgency1 count 100
 create codelet breaker urgency 1 time_stamp 180
 Post. codelets.size > 100
 Random rndseed=1216
@@ -19188,9 +19188,9 @@ Random rndseed=1336
 
 6T: 76.26214977001906
 ------------------------ post_bottom_up_codelets
->>>> get_bottom_up_codelets bottom-up-description-scout prob 0.5815915487544818
+>>>> get_bottom_up_codelets bottom-up-description-scout prob 0.5815915487544818 t 76.26214977001906 index -1
 Random rndseed=1337
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet bottom-up-description-scout urgency 3 time_stamp 195
 Post. codelets.size > 100
 Random rndseed=1338
@@ -19212,9 +19212,9 @@ unrelated_objects group (1-2) ok true wo.spans_string false right true left fals
 unrelated_objects result 1
 rough_num_of_objects. bond 1
 Random rndseed=1339
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.791016255542256
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.791016255542256 t 76.26214977001906 index -1
 Random rndseed=1340
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet bottom-up-bond-scout urgency 3 time_stamp 195
 Post. codelets.size > 100
 Random rndseed=1341
@@ -19224,9 +19224,9 @@ printUrgencies urgencies: [1, 4, 3, 5, 3, 3, 3, 3, 3, 5, 4, 4, 3, 5, 3, 3, 3, 6,
 
 Random rndseed=1342
 Random rndseed=1343
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.791016255542256
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.791016255542256 t 76.26214977001906 index -1
 Random rndseed=1344
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet group-scout--whole-string urgency 3 time_stamp 195
 Post. codelets.size > 100
 Random rndseed=1345
@@ -19234,9 +19234,9 @@ choose_old_codelet chosen 672.946 codelets_run 195 rndValue 0.047 urgsum 14318.0
 printUrgencies urgencies: [4, 3, 5, 3, 3, 3, 3, 3, 5, 4, 4, 3, 5, 3, 3, 3, 6, 4, 4, 4, 4, 3, 3, 1, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 5, 3, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 6, 7, 6, 7, 7, 7, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.791016255542256
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.791016255542256 t 76.26214977001906 index -1
 Random rndseed=1346
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet group-scout--whole-string urgency 3 time_stamp 195
 Post. codelets.size > 100
 Random rndseed=1347
@@ -19245,9 +19245,9 @@ printUrgencies urgencies: [4, 3, 5, 3, 3, 3, 3, 5, 4, 4, 3, 5, 3, 3, 3, 6, 4, 4,
 <<<<
 
 Random rndseed=1348
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.6155374887082203
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.6155374887082203 t 76.26214977001906 index -1
 Random rndseed=1349
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet bottom-up-correspondence-scout urgency 3 time_stamp 195
 Post. codelets.size > 100
 Random rndseed=1350
@@ -19257,22 +19257,22 @@ printUrgencies urgencies: [4, 3, 5, 3, 3, 3, 3, 5, 4, 4, 3, 5, 3, 3, 3, 6, 4, 4,
 
 Random rndseed=1351
 Random rndseed=1352
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.6155374887082203
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.6155374887082203 t 76.26214977001906 index -1
 Random rndseed=1353
 <<<<
 
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.6155374887082203
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.6155374887082203 t 76.26214977001906 index -1
 Random rndseed=1354
 <<<<
 
 Random rndseed=1355
->>>> get_bottom_up_codelets replacement-finder prob 0.0
+>>>> get_bottom_up_codelets replacement-finder prob 0.0 t 76.26214977001906 index -1
 Random rndseed=1356
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 1.0
+>>>> get_bottom_up_codelets rule-scout prob 1.0 t 76.26214977001906 index -1
 Random rndseed=1357
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet rule-scout urgency 3 time_stamp 195
 Post. codelets.size > 100
 Random rndseed=1358
@@ -19280,9 +19280,9 @@ choose_old_codelet chosen 10469.963 codelets_run 195 rndValue 0.826 urgsum 12675
 printUrgencies urgencies: [4, 3, 5, 3, 3, 3, 3, 5, 4, 4, 3, 5, 3, 3, 3, 6, 4, 4, 4, 4, 3, 3, 1, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 5, 7, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 5, 3, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 6, 6, 7, 6, 7, 7, 7, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 1.0
+>>>> get_bottom_up_codelets rule-scout prob 1.0 t 76.26214977001906 index -1
 Random rndseed=1359
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet rule-scout urgency 3 time_stamp 195
 Post. codelets.size > 100
 Random rndseed=1360
@@ -19290,9 +19290,9 @@ choose_old_codelet chosen 389.6855 codelets_run 195 rndValue 0.031 urgsum 12570.
 printUrgencies urgencies: [3, 5, 3, 3, 3, 3, 5, 4, 4, 3, 5, 3, 3, 3, 6, 4, 4, 4, 4, 3, 3, 1, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 5, 7, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 5, 3, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 6, 6, 7, 6, 7, 7, 7, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets breaker prob 1.0
+>>>> get_bottom_up_codelets breaker prob 1.0 t 76.26214977001906 index -1
 Random rndseed=1361
-get_bottom_up_codelets rawUrgency1
+get_bottom_up_codelets rawUrgency1 count 100
 create codelet breaker urgency 1 time_stamp 195
 Post. codelets.size > 100
 Random rndseed=1362
@@ -20808,7 +20808,7 @@ printUrgencies urgencies: [5, 3, 3, 3, 5, 4, 4, 3, 5, 3, 3, 3, 6, 4, 4, 4, 3, 1,
 
 6T: 79.9212762670482
 ------------------------ post_bottom_up_codelets
->>>> get_bottom_up_codelets bottom-up-description-scout prob 0.6387410400153842
+>>>> get_bottom_up_codelets bottom-up-description-scout prob 0.6387410400153842 t 79.9212762670482 index -1
 Random rndseed=1458
 <<<<
 
@@ -20828,9 +20828,9 @@ unrelated_objects result 1
 rough_num_of_objects. bond 1
 Random rndseed=1459
 Random rndseed=1460
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.802236708044164
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.802236708044164 t 79.9212762670482 index -1
 Random rndseed=1461
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet bottom-up-bond-scout urgency 3 time_stamp 210
 Post. codelets.size > 100
 Random rndseed=1462
@@ -20838,9 +20838,9 @@ choose_old_codelet chosen 1999.755 codelets_run 210 rndValue 0.135 urgsum 14813.
 printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 3, 5, 3, 3, 3, 6, 4, 4, 4, 3, 1, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 5, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 7, 5, 6, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 6, 6, 7, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 7, 7, 6, 6, 7, 7, 7, 7, 4, 4, 4, 4, 4, 4, 4, 4, 3]
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.802236708044164
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.802236708044164 t 79.9212762670482 index -1
 Random rndseed=1463
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet bottom-up-bond-scout urgency 3 time_stamp 210
 Post. codelets.size > 100
 Random rndseed=1464
@@ -20850,9 +20850,9 @@ printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 3, 5, 3, 3, 3, 6, 4, 4, 4, 3, 1, 4,
 
 Random rndseed=1465
 Random rndseed=1466
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.802236708044164
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.802236708044164 t 79.9212762670482 index -1
 Random rndseed=1467
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet group-scout--whole-string urgency 3 time_stamp 210
 Post. codelets.size > 100
 Random rndseed=1468
@@ -20860,9 +20860,9 @@ choose_old_codelet chosen 10028.436 codelets_run 210 rndValue 0.697 urgsum 14388
 printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 3, 5, 3, 3, 3, 6, 4, 4, 4, 3, 1, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 7, 5, 6, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 6, 6, 7, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 7, 7, 6, 6, 7, 7, 7, 7, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.802236708044164
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.802236708044164 t 79.9212762670482 index -1
 Random rndseed=1469
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet group-scout--whole-string urgency 3 time_stamp 210
 Post. codelets.size > 100
 Random rndseed=1470
@@ -20872,13 +20872,13 @@ printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 3, 5, 3, 3, 3, 6, 4, 4, 4, 3, 1, 4,
 
 Random rndseed=1471
 Random rndseed=1472
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.6957951986320405
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.6957951986320405 t 79.9212762670482 index -1
 Random rndseed=1473
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.6957951986320405
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.6957951986320405 t 79.9212762670482 index -1
 Random rndseed=1474
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet bottom-up-correspondence-scout urgency 3 time_stamp 210
 Post. codelets.size > 100
 Random rndseed=1475
@@ -20888,13 +20888,13 @@ printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 3, 5, 3, 3, 6, 4, 4, 4, 3, 1, 4, 4,
 
 Random rndseed=1476
 Random rndseed=1477
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.6957951986320405
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.6957951986320405 t 79.9212762670482 index -1
 Random rndseed=1478
 <<<<
 
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.6957951986320405
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.6957951986320405 t 79.9212762670482 index -1
 Random rndseed=1479
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet important-object-correspondence-scout urgency 3 time_stamp 210
 Post. codelets.size > 100
 Random rndseed=1480
@@ -20903,13 +20903,13 @@ printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 3, 5, 3, 3, 6, 4, 4, 4, 3, 1, 4, 4,
 <<<<
 
 Random rndseed=1481
->>>> get_bottom_up_codelets replacement-finder prob 0.0
+>>>> get_bottom_up_codelets replacement-finder prob 0.0 t 79.9212762670482 index -1
 Random rndseed=1482
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 1.0
+>>>> get_bottom_up_codelets rule-scout prob 1.0 t 79.9212762670482 index -1
 Random rndseed=1483
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet rule-scout urgency 3 time_stamp 210
 Post. codelets.size > 100
 Random rndseed=1484
@@ -20917,9 +20917,9 @@ choose_old_codelet chosen 6383.052000000001 codelets_run 210 rndValue 0.468 urgs
 printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 3, 5, 3, 3, 6, 4, 4, 4, 3, 1, 4, 4, 4, 4, 3, 3, 3, 3, 3, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 7, 5, 6, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 6, 6, 7, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 7, 6, 6, 7, 7, 7, 7, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 1.0
+>>>> get_bottom_up_codelets rule-scout prob 1.0 t 79.9212762670482 index -1
 Random rndseed=1485
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet rule-scout urgency 3 time_stamp 210
 Post. codelets.size > 100
 Random rndseed=1486
@@ -20927,9 +20927,9 @@ choose_old_codelet chosen 3236.3889999999997 codelets_run 210 rndValue 0.241 urg
 printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 3, 3, 3, 6, 4, 4, 4, 3, 1, 4, 4, 4, 4, 3, 3, 3, 3, 3, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 7, 5, 6, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 6, 6, 7, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 7, 6, 6, 7, 7, 7, 7, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets breaker prob 1.0
+>>>> get_bottom_up_codelets breaker prob 1.0 t 79.9212762670482 index -1
 Random rndseed=1487
-get_bottom_up_codelets rawUrgency1
+get_bottom_up_codelets rawUrgency1 count 100
 create codelet breaker urgency 1 time_stamp 210
 Post. codelets.size > 100
 Random rndseed=1488
@@ -22390,7 +22390,7 @@ printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 3, 3, 4, 4, 4, 3, 1, 4, 4, 4, 3, 3,
 
 6T: 70.68514857947585
 ------------------------ post_bottom_up_codelets
->>>> get_bottom_up_codelets bottom-up-description-scout prob 0.49963902297025775
+>>>> get_bottom_up_codelets bottom-up-description-scout prob 0.49963902297025775 t 70.68514857947585 index -1
 Random rndseed=1575
 <<<<
 
@@ -22409,30 +22409,30 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 1
 rough_num_of_objects. bond 1
 Random rndseed=1576
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.4905053378635198
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.4905053378635198 t 70.68514857947585 index -1
 Random rndseed=1577
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 98
 create codelet bottom-up-bond-scout urgency 3 time_stamp 225
 printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 3, 3, 4, 4, 4, 3, 1, 4, 4, 4, 3, 3, 3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 6, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 6, 7, 7, 7, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 6, 7, 6, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3]
 <<<<
 
 Random rndseed=1578
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.4905053378635198
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.4905053378635198 t 70.68514857947585 index -1
 Random rndseed=1579
 <<<<
 
 Random rndseed=1580
 Random rndseed=1581
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.7766233766233767
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.7766233766233767 t 70.68514857947585 index -1
 Random rndseed=1582
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 99
 create codelet bottom-up-correspondence-scout urgency 3 time_stamp 225
 printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 3, 3, 4, 4, 4, 3, 1, 4, 4, 4, 3, 3, 3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 6, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 6, 7, 7, 7, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 6, 7, 6, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.7766233766233767
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.7766233766233767 t 70.68514857947585 index -1
 Random rndseed=1583
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet bottom-up-correspondence-scout urgency 3 time_stamp 225
 Post. codelets.size > 100
 choose_old_codelet c.time_stamp 70 c.urgency 5 name rule-strength-tester
@@ -22543,9 +22543,9 @@ printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 3, 3, 4, 4, 4, 3, 1, 4, 4, 4, 3, 3,
 
 Random rndseed=1585
 Random rndseed=1586
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.7766233766233767
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.7766233766233767 t 70.68514857947585 index -1
 Random rndseed=1587
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet important-object-correspondence-scout urgency 3 time_stamp 225
 Post. codelets.size > 100
 choose_old_codelet c.time_stamp 70 c.urgency 5 name rule-strength-tester
@@ -22654,9 +22654,9 @@ choose_old_codelet chosen 3219.177 codelets_run 225 rndValue 0.197 urgsum 16341.
 printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 3, 4, 4, 4, 3, 1, 4, 4, 4, 3, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 6, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 6, 7, 7, 7, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 6, 7, 6, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.7766233766233767
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.7766233766233767 t 70.68514857947585 index -1
 Random rndseed=1589
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet important-object-correspondence-scout urgency 3 time_stamp 225
 Post. codelets.size > 100
 choose_old_codelet c.time_stamp 70 c.urgency 5 name rule-strength-tester
@@ -22765,9 +22765,9 @@ choose_old_codelet chosen 10219.314 codelets_run 225 rndValue 0.644 urgsum 15868
 printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 3, 4, 4, 4, 3, 1, 4, 4, 4, 3, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 6, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 6, 7, 7, 7, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 6, 7, 6, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.7766233766233767
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.7766233766233767 t 70.68514857947585 index -1
 Random rndseed=1591
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet important-object-correspondence-scout urgency 3 time_stamp 225
 Post. codelets.size > 100
 choose_old_codelet c.time_stamp 70 c.urgency 5 name rule-strength-tester
@@ -22876,9 +22876,9 @@ choose_old_codelet chosen 6336.201 codelets_run 225 rndValue 0.401 urgsum 15801.
 printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 3, 4, 4, 4, 3, 1, 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 6, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 6, 7, 7, 7, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 6, 7, 6, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 0.47982406464139765
+>>>> get_bottom_up_codelets rule-scout prob 0.47982406464139765 t 70.68514857947585 index -1
 Random rndseed=1593
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet rule-scout urgency 3 time_stamp 225
 Post. codelets.size > 100
 choose_old_codelet c.time_stamp 70 c.urgency 5 name rule-strength-tester
@@ -22984,21 +22984,16 @@ choose_old_codelet c.time_stamp 225 c.urgency 3 name important-object-correspond
 choose_old_codelet c.time_stamp 225 c.urgency 3 name rule-scout
 Random rndseed=1594
 choose_old_codelet chosen 5319.4439999999995 codelets_run 225 rndValue 0.344 urgsum 15463.5
-
-
-
-
-
 printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 3, 4, 4, 4, 3, 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 6, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 6, 7, 7, 7, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 6, 7, 6, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 0.47982406464139765
+>>>> get_bottom_up_codelets rule-scout prob 0.47982406464139765 t 70.68514857947585 index -1
 Random rndseed=1595
 <<<<
 
->>>> get_bottom_up_codelets rule-translator prob 0.47982406464139765
+>>>> get_bottom_up_codelets rule-translator prob 0.47982406464139765 t 70.68514857947585 index 5
 Random rndseed=1596
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 100
 create codelet rule-translator urgency 3 time_stamp 225
 Post. codelets.size > 100
 choose_old_codelet c.time_stamp 70 c.urgency 5 name rule-strength-tester
@@ -23107,9 +23102,9 @@ choose_old_codelet chosen 3481.5690000000004 codelets_run 225 rndValue 0.234 urg
 printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 6, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 6, 7, 7, 7, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 6, 7, 6, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets breaker prob 1.0
+>>>> get_bottom_up_codelets breaker prob 1.0 t 70.68514857947585 index -1
 Random rndseed=1598
-get_bottom_up_codelets rawUrgency1
+get_bottom_up_codelets rawUrgency1 count 100
 create codelet breaker urgency 1 time_stamp 225
 Post. codelets.size > 100
 choose_old_codelet c.time_stamp 70 c.urgency 5 name rule-strength-tester
@@ -23957,12 +23952,9 @@ scale 3.417040479909381urgencies: [5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 4, 3, 3, 
 Random rndseed=1632
 sum 12863.118802948036 chosen 2971.3804434809967 codelets.size() 99
 Choose codelet at index 32 urgsum 2984.737873225255
-
-
 #### group-scout--whole-string ####
 about to choose string
 Random rndseed=1633
-
 initial string selected
 leftmost iterate letter (1)1 leftmost true
 leftmost iterate letter (2)2 leftmost false
@@ -23970,9 +23962,6 @@ leftmost iterate letter (3)3 leftmost false
 leftmost iterate group (1-3) leftmost true
 leftmost group (1-3)
 leftmost2 group (1-3)
-
-
-
 get_related_node slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0 identity slipnode id activation 100.0 buffer 0.0 conceptual_depth 50.0
 get_related_node category.outgoing_links l.label null
 get_related_node category.outgoing_links l.label slipnode op activation 0.0 buffer 0.0 conceptual_depth 50.0
@@ -23990,9 +23979,6 @@ bond_degree_of_association sc clamp_bdoa: false activation: 100.0 shrunk_link_le
 create codelet group-strength-tester urgency 7 time_stamp 228
 printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 6, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 6, 7, 7, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 6, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7]
 selected object already spans string: propose
-
-
-
 mainloop | codelets_run 228 clamp_time 30 last_update 225 time_step_length 15
 choose T: 58.74439280135928
 scale 3.417040479909381urgencies: [5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 6, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 6, 7, 7, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 6, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7] flag 229
@@ -24773,7 +24759,7 @@ Random rndseed=1676
 
 6T: 58.74439280135928
 ------------------------ post_bottom_up_codelets
->>>> get_bottom_up_codelets bottom-up-description-scout prob 0.3450903685600392
+>>>> get_bottom_up_codelets bottom-up-description-scout prob 0.3450903685600392 t 58.74439280135928 index -1
 Random rndseed=1677
 <<<<
 
@@ -24792,67 +24778,67 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1678
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.4844003610771367
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.4844003610771367 t 58.74439280135928 index -1
 Random rndseed=1679
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 94
 create codelet bottom-up-bond-scout urgency 3 time_stamp 240
 printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3]
 <<<<
 
 Random rndseed=1680
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.4844003610771367
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.4844003610771367 t 58.74439280135928 index -1
 Random rndseed=1681
 <<<<
 
 Random rndseed=1682
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.804426145136387
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.804426145136387 t 58.74439280135928 index -1
 Random rndseed=1683
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 95
 create codelet bottom-up-correspondence-scout urgency 3 time_stamp 240
 printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3]
 <<<<
 
 Random rndseed=1684
 Random rndseed=1685
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.804426145136387
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.804426145136387 t 58.74439280135928 index -1
 Random rndseed=1686
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 96
 create codelet important-object-correspondence-scout urgency 3 time_stamp 240
 printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.804426145136387
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.804426145136387 t 58.74439280135928 index -1
 Random rndseed=1687
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 97
 create codelet important-object-correspondence-scout urgency 3 time_stamp 240
 printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.804426145136387
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.804426145136387 t 58.74439280135928 index -1
 Random rndseed=1688
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 98
 create codelet important-object-correspondence-scout urgency 3 time_stamp 240
 printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137
+>>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137 t 58.74439280135928 index -1
 Random rndseed=1689
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137
+>>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137 t 58.74439280135928 index -1
 Random rndseed=1690
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 99
 create codelet rule-scout urgency 3 time_stamp 240
 printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3, 3, 3, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-translator prob 0.29552873137276137
+>>>> get_bottom_up_codelets rule-translator prob 0.29552873137276137 t 58.74439280135928 index 5
 Random rndseed=1691
 <<<<
 
->>>> get_bottom_up_codelets breaker prob 1.0
+>>>> get_bottom_up_codelets breaker prob 1.0 t 58.74439280135928 index -1
 Random rndseed=1692
-get_bottom_up_codelets rawUrgency1
+get_bottom_up_codelets rawUrgency1 count 100
 create codelet breaker urgency 1 time_stamp 240
 Post. codelets.size > 100
 Random rndseed=1693
@@ -25542,9 +25528,6 @@ Finish update_Everything T: 28.4198988998509
 choose T: 28.4198988998509
 scale 5.438673406676608urgencies: [5, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3, 3, 3, 3, 3, 1] flag 241
 Random rndseed=1722
-
-// Broken
-
 sum 332890.6012432353 chosen 56591.40221135 codelets.size() 100
 Choose codelet at index 33 urgsum 86246.14053712071
 #### bond-strength-tester ####
@@ -26273,7 +26256,7 @@ Random rndseed=1761
 
 6T: 28.4198988998509
 ------------------------ post_bottom_up_codelets
->>>> get_bottom_up_codelets bottom-up-description-scout prob 0.08076906534777463
+>>>> get_bottom_up_codelets bottom-up-description-scout prob 0.08076906534777463 t 28.4198988998509 index -1
 Random rndseed=1762
 <<<<
 
@@ -26292,40 +26275,40 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1763
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.12920182916572626
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.12920182916572626 t 28.4198988998509 index -1
 Random rndseed=1764
 <<<<
 
 Random rndseed=1765
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.12920182916572626
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.12920182916572626 t 28.4198988998509 index -1
 Random rndseed=1766
 <<<<
 
 Random rndseed=1767
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.5219410548488124
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.5219410548488124 t 28.4198988998509 index -1
 Random rndseed=1768
 <<<<
 
 Random rndseed=1769
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.5219410548488124
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.5219410548488124 t 28.4198988998509 index -1
 Random rndseed=1770
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137
+>>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137 t 28.4198988998509 index -1
 Random rndseed=1771
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137
+>>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137 t 28.4198988998509 index -1
 Random rndseed=1772
 <<<<
 
->>>> get_bottom_up_codelets rule-translator prob 0.29552873137276137
+>>>> get_bottom_up_codelets rule-translator prob 0.29552873137276137 t 28.4198988998509 index 5
 Random rndseed=1773
 <<<<
 
->>>> get_bottom_up_codelets breaker prob 1.0
+>>>> get_bottom_up_codelets breaker prob 1.0 t 28.4198988998509 index -1
 Random rndseed=1774
-get_bottom_up_codelets rawUrgency1
+get_bottom_up_codelets rawUrgency1 count 91
 create codelet breaker urgency 1 time_stamp 255
 printUrgencies urgencies: [5, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 4, 4, 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 7, 1]
 <<<<
@@ -27777,7 +27760,7 @@ Random rndseed=1845
 
 6T: 30.48172967004266
 ------------------------ post_bottom_up_codelets
->>>> get_bottom_up_codelets bottom-up-description-scout prob 0.09291358436775592
+>>>> get_bottom_up_codelets bottom-up-description-scout prob 0.09291358436775592 t 30.48172967004266 index -1
 Random rndseed=1846
 <<<<
 
@@ -27796,46 +27779,46 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1847
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.10974995718759172
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.10974995718759172 t 30.48172967004266 index -1
 Random rndseed=1848
 <<<<
 
 Random rndseed=1849
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.10974995718759172
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.10974995718759172 t 30.48172967004266 index -1
 Random rndseed=1850
 <<<<
 
 Random rndseed=1851
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.5929386960817409
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.5929386960817409 t 30.48172967004266 index -1
 Random rndseed=1852
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 85
 create codelet bottom-up-correspondence-scout urgency 3 time_stamp 270
 printUrgencies urgencies: [3, 3, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 3, 3, 3, 1, 4, 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 4, 3, 3, 3, 3, 3, 3, 1, 1, 7, 7, 7, 4, 3]
 <<<<
 
 Random rndseed=1853
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.5929386960817409
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.5929386960817409 t 30.48172967004266 index -1
 Random rndseed=1854
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 86
 create codelet important-object-correspondence-scout urgency 3 time_stamp 270
 printUrgencies urgencies: [3, 3, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 3, 3, 3, 1, 4, 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 4, 3, 3, 3, 3, 3, 3, 1, 1, 7, 7, 7, 4, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137
+>>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137 t 30.48172967004266 index -1
 Random rndseed=1855
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137
+>>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137 t 30.48172967004266 index -1
 Random rndseed=1856
 <<<<
 
->>>> get_bottom_up_codelets rule-translator prob 0.29552873137276137
+>>>> get_bottom_up_codelets rule-translator prob 0.29552873137276137 t 30.48172967004266 index 5
 Random rndseed=1857
 <<<<
 
->>>> get_bottom_up_codelets breaker prob 1.0
+>>>> get_bottom_up_codelets breaker prob 1.0 t 30.48172967004266 index -1
 Random rndseed=1858
-get_bottom_up_codelets rawUrgency1
+get_bottom_up_codelets rawUrgency1 count 87
 create codelet breaker urgency 1 time_stamp 270
 printUrgencies urgencies: [3, 3, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 3, 3, 3, 1, 4, 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 4, 3, 3, 3, 3, 3, 3, 1, 1, 7, 7, 7, 4, 3, 3, 1]
 <<<<
@@ -29438,7 +29421,7 @@ Random rndseed=1933
 
 6T: 31.59546907247469
 ------------------------ post_bottom_up_codelets
->>>> get_bottom_up_codelets bottom-up-description-scout prob 0.09982736659097047
+>>>> get_bottom_up_codelets bottom-up-description-scout prob 0.09982736659097047 t 31.59546907247469 index -1
 Random rndseed=1934
 <<<<
 
@@ -29457,46 +29440,46 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=1935
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.09977257528802913
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.09977257528802913 t 31.59546907247469 index -1
 Random rndseed=1936
 <<<<
 
 Random rndseed=1937
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.09977257528802913
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.09977257528802913 t 31.59546907247469 index -1
 Random rndseed=1938
 <<<<
 
 Random rndseed=1939
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.630759563042104
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.630759563042104 t 31.59546907247469 index -1
 Random rndseed=1940
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 82
 create codelet bottom-up-correspondence-scout urgency 3 time_stamp 285
 printUrgencies urgencies: [3, 3, 4, 4, 3, 4, 4, 3, 3, 3, 4, 4, 3, 3, 3, 1, 4, 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 1, 4, 3, 3, 1, 5, 6, 7, 7, 6, 3]
 <<<<
 
 Random rndseed=1941
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.630759563042104
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.630759563042104 t 31.59546907247469 index -1
 Random rndseed=1942
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137
+>>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137 t 31.59546907247469 index -1
 Random rndseed=1943
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137
+>>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137 t 31.59546907247469 index -1
 Random rndseed=1944
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 83
 create codelet rule-scout urgency 3 time_stamp 285
 printUrgencies urgencies: [3, 3, 4, 4, 3, 4, 4, 3, 3, 3, 4, 4, 3, 3, 3, 1, 4, 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 1, 4, 3, 3, 1, 5, 6, 7, 7, 6, 3, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-translator prob 0.29552873137276137
+>>>> get_bottom_up_codelets rule-translator prob 0.29552873137276137 t 31.59546907247469 index 5
 Random rndseed=1945
 <<<<
 
->>>> get_bottom_up_codelets breaker prob 1.0
+>>>> get_bottom_up_codelets breaker prob 1.0 t 31.59546907247469 index -1
 Random rndseed=1946
-get_bottom_up_codelets rawUrgency1
+get_bottom_up_codelets rawUrgency1 count 84
 create codelet breaker urgency 1 time_stamp 285
 printUrgencies urgencies: [3, 3, 4, 4, 3, 4, 4, 3, 3, 3, 4, 4, 3, 3, 3, 1, 4, 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 1, 4, 3, 3, 1, 5, 6, 7, 7, 6, 3, 3, 1]
 <<<<
@@ -31052,7 +31035,7 @@ Random rndseed=25
 
 6T: 10.01292249056722
 ------------------------ post_bottom_up_codelets
->>>> get_bottom_up_codelets bottom-up-description-scout prob 0.010025861680210687
+>>>> get_bottom_up_codelets bottom-up-description-scout prob 0.010025861680210687 t 10.01292249056722 index -1
 Random rndseed=26
 <<<<
 
@@ -31071,43 +31054,43 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=27
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.09395240078157233
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.09395240078157233 t 10.01292249056722 index -1
 Random rndseed=28
 <<<<
 
 Random rndseed=29
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.09395240078157233
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.09395240078157233 t 10.01292249056722 index -1
 Random rndseed=30
 <<<<
 
 Random rndseed=31
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.09701607300087414
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.09701607300087414 t 10.01292249056722 index -1
 Random rndseed=32
 <<<<
 
 Random rndseed=33
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.09701607300087414
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.09701607300087414 t 10.01292249056722 index -1
 Random rndseed=34
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137
+>>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137 t 10.01292249056722 index -1
 Random rndseed=35
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137
+>>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137 t 10.01292249056722 index -1
 Random rndseed=36
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 78
 create codelet rule-scout urgency 3 time_stamp 300
 printUrgencies urgencies: [3, 3, 4, 3, 4, 4, 3, 3, 3, 4, 4, 3, 3, 3, 1, 4, 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 4, 4, 4, 3, 3, 3, 3, 3, 1, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 4, 3, 3, 3, 3, 3, 3, 1, 1, 4, 3, 3, 1, 6, 3, 3, 1, 5, 7, 6, 7, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-translator prob 0.29552873137276137
+>>>> get_bottom_up_codelets rule-translator prob 0.29552873137276137 t 10.01292249056722 index 5
 Random rndseed=37
 <<<<
 
->>>> get_bottom_up_codelets breaker prob 1.0
+>>>> get_bottom_up_codelets breaker prob 1.0 t 10.01292249056722 index -1
 Random rndseed=38
-get_bottom_up_codelets rawUrgency1
+get_bottom_up_codelets rawUrgency1 count 79
 create codelet breaker urgency 1 time_stamp 300
 printUrgencies urgencies: [3, 3, 4, 3, 4, 4, 3, 3, 3, 4, 4, 3, 3, 3, 1, 4, 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 4, 4, 4, 3, 3, 3, 3, 3, 1, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 4, 3, 3, 3, 3, 3, 3, 1, 1, 4, 3, 3, 1, 6, 3, 3, 1, 5, 7, 6, 7, 3, 1]
 <<<<
@@ -32638,7 +32621,7 @@ Random rndseed=112
 
 6T: 12.853007782924017
 ------------------------ post_bottom_up_codelets
->>>> get_bottom_up_codelets bottom-up-description-scout prob 0.016519980906790535
+>>>> get_bottom_up_codelets bottom-up-description-scout prob 0.016519980906790535 t 12.853007782924017 index -1
 Random rndseed=113
 <<<<
 
@@ -32657,40 +32640,40 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=114
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.1253343952548218
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.1253343952548218 t 12.853007782924017 index -1
 Random rndseed=115
 <<<<
 
 Random rndseed=116
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.1253343952548218
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.1253343952548218 t 12.853007782924017 index -1
 Random rndseed=117
 <<<<
 
 Random rndseed=118
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.1366362108365445
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.1366362108365445 t 12.853007782924017 index -1
 Random rndseed=119
 <<<<
 
 Random rndseed=120
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.1366362108365445
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.1366362108365445 t 12.853007782924017 index -1
 Random rndseed=121
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137
+>>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137 t 12.853007782924017 index -1
 Random rndseed=122
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137
+>>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137 t 12.853007782924017 index -1
 Random rndseed=123
 <<<<
 
->>>> get_bottom_up_codelets rule-translator prob 0.29552873137276137
+>>>> get_bottom_up_codelets rule-translator prob 0.29552873137276137 t 12.853007782924017 index 5
 Random rndseed=124
 <<<<
 
->>>> get_bottom_up_codelets breaker prob 1.0
+>>>> get_bottom_up_codelets breaker prob 1.0 t 12.853007782924017 index -1
 Random rndseed=125
-get_bottom_up_codelets rawUrgency1
+get_bottom_up_codelets rawUrgency1 count 72
 create codelet breaker urgency 1 time_stamp 315
 printUrgencies urgencies: [3, 4, 3, 3, 3, 3, 4, 4, 3, 3, 3, 1, 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 4, 4, 4, 3, 3, 3, 3, 3, 1, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 3, 3, 3, 3, 3, 3, 1, 1, 4, 3, 3, 1, 3, 3, 1, 5, 3, 1, 7, 4, 1]
 <<<<
@@ -34368,7 +34351,7 @@ Random rndseed=203
 
 6T: 12.89941482217448
 ------------------------ post_bottom_up_codelets
->>>> get_bottom_up_codelets bottom-up-description-scout prob 0.016639490275453465
+>>>> get_bottom_up_codelets bottom-up-description-scout prob 0.016639490275453465 t 12.89941482217448 index -1
 Random rndseed=204
 <<<<
 
@@ -34387,43 +34370,43 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=205
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.12623215046182876
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.12623215046182876 t 12.89941482217448 index -1
 Random rndseed=206
 <<<<
 
 Random rndseed=207
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.12623215046182876
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.12623215046182876 t 12.89941482217448 index -1
 Random rndseed=208
 <<<<
 
 Random rndseed=209
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.13689863161079915
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.13689863161079915 t 12.89941482217448 index -1
 Random rndseed=210
 <<<<
 
 Random rndseed=211
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.13689863161079915
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.13689863161079915 t 12.89941482217448 index -1
 Random rndseed=212
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137
+>>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137 t 12.89941482217448 index -1
 Random rndseed=213
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 67
 create codelet rule-scout urgency 3 time_stamp 330
 printUrgencies urgencies: [4, 3, 3, 3, 3, 4, 4, 3, 3, 3, 1, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 1, 4, 4, 3, 3, 3, 3, 1, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 3, 3, 3, 3, 3, 3, 1, 1, 4, 3, 3, 1, 3, 3, 1, 3, 1, 4, 1, 5, 7, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137
+>>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137 t 12.89941482217448 index -1
 Random rndseed=214
 <<<<
 
->>>> get_bottom_up_codelets rule-translator prob 0.29552873137276137
+>>>> get_bottom_up_codelets rule-translator prob 0.29552873137276137 t 12.89941482217448 index 5
 Random rndseed=215
 <<<<
 
->>>> get_bottom_up_codelets breaker prob 1.0
+>>>> get_bottom_up_codelets breaker prob 1.0 t 12.89941482217448 index -1
 Random rndseed=216
-get_bottom_up_codelets rawUrgency1
+get_bottom_up_codelets rawUrgency1 count 68
 create codelet breaker urgency 1 time_stamp 330
 printUrgencies urgencies: [4, 3, 3, 3, 3, 4, 4, 3, 3, 3, 1, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 1, 4, 4, 3, 3, 3, 3, 1, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 3, 3, 3, 3, 3, 3, 1, 1, 4, 3, 3, 1, 3, 3, 1, 3, 1, 4, 1, 5, 7, 3, 1]
 <<<<
@@ -36021,7 +36004,7 @@ Random rndseed=294
 
 6T: 12.102747885886943
 ------------------------ post_bottom_up_codelets
->>>> get_bottom_up_codelets bottom-up-description-scout prob 0.014647650638934086
+>>>> get_bottom_up_codelets bottom-up-description-scout prob 0.014647650638934086 t 12.102747885886943 index -1
 Random rndseed=295
 <<<<
 
@@ -36040,46 +36023,46 @@ unrelated_objects group (1-3) ok true wo.spans_string true right false left fals
 unrelated_objects result 0
 rough_num_of_objects. bond 0
 Random rndseed=296
->>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.1153403672544604
+>>>> get_bottom_up_codelets bottom-up-bond-scout prob 0.1153403672544604 t 12.102747885886943 index -1
 Random rndseed=297
 <<<<
 
 Random rndseed=298
->>>> get_bottom_up_codelets group-scout--whole-string prob 0.1153403672544604
+>>>> get_bottom_up_codelets group-scout--whole-string prob 0.1153403672544604 t 12.102747885886943 index -1
 Random rndseed=299
 <<<<
 
 Random rndseed=300
->>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.12787374141097907
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout prob 0.12787374141097907 t 12.102747885886943 index -1
 Random rndseed=301
 <<<<
 
 Random rndseed=302
->>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.12787374141097907
+>>>> get_bottom_up_codelets important-object-correspondence-scout prob 0.12787374141097907 t 12.102747885886943 index -1
 Random rndseed=303
-get_bottom_up_codelets rawUrgency3
+get_bottom_up_codelets rawUrgency3 count 64
 create codelet important-object-correspondence-scout urgency 3 time_stamp 345
 printUrgencies urgencies: [3, 3, 3, 4, 4, 3, 3, 3, 1, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 3, 1, 4, 4, 3, 3, 3, 3, 1, 4, 4, 3, 3, 3, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 1, 1, 4, 3, 3, 1, 3, 3, 1, 3, 1, 4, 1, 3, 1, 4, 5, 4, 3]
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137
+>>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137 t 12.102747885886943 index -1
 Random rndseed=304
 <<<<
 
->>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137
+>>>> get_bottom_up_codelets rule-scout prob 0.29552873137276137 t 12.102747885886943 index -1
 Random rndseed=305
 <<<<
 
->>>> get_bottom_up_codelets rule-translator prob 0.29552873137276137
+>>>> get_bottom_up_codelets rule-translator prob 0.29552873137276137 t 12.102747885886943 index 5
 Random rndseed=306
-get_bottom_up_codelets rawUrgency5
+get_bottom_up_codelets rawUrgency5 count 65
 create codelet rule-translator urgency 5 time_stamp 345
 printUrgencies urgencies: [3, 3, 3, 4, 4, 3, 3, 3, 1, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 3, 1, 4, 4, 3, 3, 3, 3, 1, 4, 4, 3, 3, 3, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 1, 1, 4, 3, 3, 1, 3, 3, 1, 3, 1, 4, 1, 3, 1, 4, 5, 4, 3, 5]
 <<<<
 
->>>> get_bottom_up_codelets breaker prob 1.0
+>>>> get_bottom_up_codelets breaker prob 1.0 t 12.102747885886943 index -1
 Random rndseed=307
-get_bottom_up_codelets rawUrgency1
+get_bottom_up_codelets rawUrgency1 count 66
 create codelet breaker urgency 1 time_stamp 345
 printUrgencies urgencies: [3, 3, 3, 4, 4, 3, 3, 3, 1, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 3, 1, 4, 4, 3, 3, 3, 3, 1, 4, 4, 3, 3, 3, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 1, 1, 4, 3, 3, 1, 3, 3, 1, 3, 1, 4, 1, 3, 1, 4, 5, 4, 3, 5, 1]
 <<<<
@@ -36791,5 +36774,3 @@ Slippages used in translation:
 letter -> letter
 rightmost -> rightmost
 ijl 346 12.476294107581666
-
-Process finished with exit code 0

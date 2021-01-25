@@ -1565,10 +1565,11 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       log.debug(">>>> get_bottom_up_codelets " + st + " prob " + prob + " t " + temperature + " index " + st.indexOf("translator"));
 
       if (Random.rnd()<prob){
-        log.debug("get_bottom_up_codelets rawUrgency" + urgency);
 
         f()
         count = count + 1
+        log.debug("get_bottom_up_codelets rawUrgency" + urgency + " count " + count);
+
         val rnd = if (count > 100) {
           Some(Random.rnd())
         } else None
