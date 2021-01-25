@@ -263,7 +263,7 @@ object Workspace {
   case class DataForStrengthUpdateResponse(bondData: Map[String,Double], correpondenceData: Map[String, CorrespondenceUpdateStrengthData], t: Double)
   case class UpdateEverything(codelets_run: Int, t: Double)
   case object UpdateEverythingFollowUp
-  case class PostTopBottomCodeletsGetInfoResponse(codeletToPost: List[(String,Either[Double, Int], Option[String], Option[Double])])
+  case class PostTopBottomCodeletsGetInfoResponse(codeletToPost: List[(String,Either[Double, Int], Option[String], Option[Double])], t: Double)
   case class GetNumCodeletsResponse(codeletsSize: Int, t:Double)
   case class InitializeWorkspace(slipnet: ActorRef)
 
@@ -541,12 +541,12 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
         codeletsSize
       )
 
-    case PostTopBottomCodeletsGetInfoResponse(codeletToPost) =>
+    case PostTopBottomCodeletsGetInfoResponse(codeletToPost, t) =>
       if (codelets_run>0){
         System.out.println("post_top_down_codelets");
-        coderack ! PostCodelets(codeletToPost)
+        coderack ! PostCodelets(codeletToPost,t)
       } else {
-        self ! UpdateEverythingFollowUp
+        slipnet ! models.Slipnet.UpdateEverything(t)
       }
 
 
@@ -555,7 +555,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       val newT = update_temperature()
       println("Finish update_Everything T: " + newT);
 
-      coderack ! UpdateEverythingResponse(newT)
+      coderack ! SlipnetUpdateEverythingResponse(newT)
 
     case Found =>
       found_answer = true

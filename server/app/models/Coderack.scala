@@ -39,7 +39,6 @@ object Coderack {
   case class Run(initialString: String, modifiedString: String, targetString: String)
   case class FinishInitializingWorkspaceStrings(number_of_objects: Int)
   case class PostInitialCodelets(number_of_objects: Int)
-  case class UpdateEverythingResponse(t: Double)
   case class SlipnetUpdateEverythingResponse(t: Double)
   case class ProcessChooseAndRun(number_of_objects: Int, temperature: Double)
   case class ChooseAndRun(number_of_objects: Int, temperature: Double)
@@ -64,7 +63,7 @@ object Coderack {
   case class PostGroupBuilder(groupID: String, strength: Double)
   case class PostCorrespondenceBuilder(correspondenceID: String, strength: Double)
   case class PostRuleBuilder(ruleID: String, strength: Double)
-  case class PostCodelets(codeletToPost: List[(String,Either[Double, Int], Option[String], Option[Double])])
+  case class PostCodelets(codeletToPost: List[(String,Either[Double, Int], Option[String], Option[Double])], t: Double)
   case class GetNumCodelets(t:Double)
 
   case class CodeletWrapper (
@@ -201,15 +200,15 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
           self ! ChooseAndRun3
 
         case Post(codelet: CodeletWrapper, rndOpt) => {
-          log.debug(s"Coderack.Post codelets.size ${codelets.size} rndOpt $rndOpt name ${codelet.name}")
 
           addCodelet(codelet)
           // Graphic stuff
           // Coderack_Pressure.AddCodelet(c);
+          log.debug(s"Post Codelet codelets size ${codelets.size} rndOpt $rndOpt name ${codelet.name}")
 
           // removes a codelet if there are too many
           if (codelets.size > 100) {
-            System.out.println("Post. codelets.size > 100");
+            log.debug("Post. codelets.size > 100");
             val ncOpt = chooseOldCodelet(rndOpt)
             ncOpt match {
               case Some(nc) => removeCodelet(nc)
@@ -255,9 +254,6 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
           }
 
 
-        case UpdateEverythingResponse(t) =>
-          log.debug("Coderack. UpdateEverythingResponse")
-          slipnet ! models.Slipnet.UpdateEverything(t)
 
         case SlipnetUpdateEverythingResponse(t) =>
           last_update = codelets_run
@@ -388,7 +384,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
           self ! Post(newCodelet,None)
           sender() ! Finished
 
-        case PostCodelets(codeletToPost) =>
+        case PostCodelets(codeletToPost, t) =>
           for ((st, rawUrgency, argOpt, rndOpt) <- codeletToPost) {
             val codeletType = Codelet.codeletTypeWithString(st)
             val urgency = rawUrgency match {
@@ -400,7 +396,10 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
             val newCodelet = createCodelet(codeletType, urgency, argOpt)
             self ! Post(newCodelet, rndOpt)
           }
-          workspace ! UpdateEverythingFollowUp
+          slipnet ! models.Slipnet.UpdateEverything(t)
+
+
+
         case GetNumCodelets(t) =>
           sender() ! GetNumCodeletsResponse(codelets.size, t)
   }
@@ -458,6 +457,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
   }
   private def removeCodelet(nc: CodeletWrapper) = {
     codelets -= nc
+    log.debug("removeCodelet codelets size " + codelets.size)
   }
   private def addCodelet(codelet: CodeletWrapper) = {
     codelets += codelet

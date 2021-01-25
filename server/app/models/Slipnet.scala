@@ -19,7 +19,7 @@ import scala.concurrent.duration._
 import play.api.Play.current
 
 import javax.inject._
-import models.Workspace.{CommonSubProcessing, DataForStrengthUpdateResponse, GoWithBottomUpCorrespondenceScout2, InitializeWorkspaceStringsResponse, PostTopBottomCodeletsGetInfoResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell}
+import models.Workspace.{CommonSubProcessing, DataForStrengthUpdateResponse, GoWithBottomUpCorrespondenceScout2, InitializeWorkspaceStringsResponse, PostTopBottomCodeletsGetInfoResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, UpdateEverythingFollowUp}
 import play.api.Configuration
 import play.api.libs.concurrent.InjectedActorSupport
 import Description.DescriptionRep
@@ -208,7 +208,7 @@ object Slipnet {
                                            ungrouped_objects_size: Double,
                                            unreplaced_objects_size: Double,
                                            uncorresponding_objects_size: Double,
-                                             codeletsSize:Double
+                                             codeletsSize:Int
   )
   case class SlipnetGoWithBondStrengthTesterResponse(bond_category_degree_of_association: Double)
   case class PrepareBondFighting(groupID: String, bondReps: List[BondRep])
@@ -694,7 +694,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
     case UpdateEverything(t) =>
       log.debug("Slipnet. UpdateEverything")
       update()
-      sender() ! SlipnetUpdateEverythingResponse(t)
+      workspace ! UpdateEverythingFollowUp
 
     case InitializeWorkspaceStrings(initialWos, modifiedWos, targetWos) =>
       log.debug("Slipnet: InitializeWorkspaceStrings")
@@ -1432,9 +1432,10 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
         ungrouped_objects_size: Double,
         unreplaced_objects_size: Double,
         uncorresponding_objects_size: Double,
-        codeletsSize: Double
+        codeletsSize: Int
     ) =>
       var codeletToPost = ListBuffer.empty[(String,Either[Double, Int], Option[String], Option[Double])]
+      log.debug("Post Top/Bottom Codelets codelets size " + codeletsSize)
       var codeletsCount = codeletsSize
       for (s <- slipNodes) {
         if (s.activation == 100.0) {
@@ -1448,12 +1449,23 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
               if (Random.rnd() < prob) {
                 val rawUrgency = s.activation * s.conceptual_depth / 100.0
-                log.debug("post_top_down_codelets rawUrgency" + rawUrgency);
 
+
+                log.debug("post_top_down_codelets rawUrgency" + rawUrgency + " count " + codeletsCount);
+
+
+                // Simulate Aadd of the codelet to codelets
                 codeletsCount = codeletsCount + 1
+
+                log.debug("Post Codelet codelets size " + codeletsCount);
+
                 val rnd = if (codeletsCount > 100) {
+                  log.debug("Post. codelets.size > 100");
+
                   Some(Random.rnd())
                 } else None
+
+
                 val tuple = (st, Left(rawUrgency), Some(s.slipNodeRep().id), rnd)
                 codeletToPost += tuple
               }
@@ -1476,7 +1488,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       if (!remove_breaker_codelets) codeletToPost ++= get_bottom_up_codelets(f,codeletsCount,CodeletTypeString.Breaker,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
       log.debug("post_bottom_up_codelets codeletToPost " + codeletToPost);
 
-      workspace ! PostTopBottomCodeletsGetInfoResponse(codeletToPost.toList)
+      workspace ! PostTopBottomCodeletsGetInfoResponse(codeletToPost.toList, t)
 
     case PrepareBondFighting(groupID, bondReps) =>
       log.debug("PrepareBondFighting")
@@ -1537,7 +1549,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
   }
 
   def get_bottom_up_codelets(f: () => Unit,
-                             codeletsCount: Double,
+                             codeletsCount: Int,
                              st: String,
                              temperature: Double,
                              intra_string_unhappiness: Double,
@@ -1552,6 +1564,8 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
     val prob = get_post_codelet_probability(st, temperature, intra_string_unhappiness, inter_string_unhappiness, unreplaced_objects_size, ruleTotalWeaknessOpt);
     var num = get_num_codelets_to_post(st, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
 
+    log.debug("get_bottom_up_codelets prob " + prob + " num " + num);
+
     if ((speed_up_bonds)&&(st.indexOf("bond") > -1)) num*=3;
     if ((speed_up_bonds)&&(st.indexOf("group") > -1)) num*=3;
 
@@ -1562,17 +1576,25 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       var urgency = 3;
       if (st.equals("breaker")) urgency = 1;
       if ((temperature < 25.0) && (st.indexOf("translator")> -1)) urgency=5;
-      log.debug(">>>> get_bottom_up_codelets " + st + " prob " + prob + " t " + temperature + " index " + st.indexOf("translator"));
+      val rnd = Random.rnd()
+      log.debug(">>>> get_bottom_up_codelets " + st + " rnd " + rnd + " prob " + prob + " t " + temperature + " index " + st.indexOf("translator"));
 
-      if (Random.rnd()<prob){
+      if (rnd < prob){
+
+
+        log.debug("get_bottom_up_codelets rawUrgency" + urgency + " count " + count);
 
         f()
         count = count + 1
-        log.debug("get_bottom_up_codelets rawUrgency" + urgency + " count " + count);
+
+        log.debug("Post Codelet codelets size " + count);
 
         val rnd = if (count > 100) {
+          log.debug("Post. codelets.size > 100");
+
           Some(Random.rnd())
         } else None
+
 
         val tuple = (st, Right(urgency), None, rnd)
 
@@ -1585,7 +1607,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
     codeletToPost
   }
-
+// 1722
 
   def get_num_codelets_to_post(structure_category: String,
                                ruleTotalWeaknessOpt : Option[Double],
@@ -1653,6 +1675,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
     } else if (structure_category.indexOf("replacement") > -1) {  // Will never happen !
       if (unreplaced_objects_size > 0) 1.0 else 0.0
     } else if (structure_category.indexOf("rule") > -1) {
+      log.debug("get_post_codelet_probability rule ruleTotalWeaknessOpt " + ruleTotalWeaknessOpt)
       ruleTotalWeaknessOpt match {
         case Some(ruleTotalWeakness) => ruleTotalWeakness / 100.0
         case None => 1.0
