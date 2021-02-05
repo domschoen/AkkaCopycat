@@ -1303,7 +1303,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
     // codelet.java.278
     case GoWithTopDownBondScoutCategory(bondCategoryID: String, temperature) =>
-      log.info("searching for " + bondCategoryID);
+      log.info("GoWithTopDownBondScoutCategory. searching for " + bondCategoryID);
       val i_relevance = WorkspaceFormulas.local_relevance(initial, Some(bondCategoryID), (b: Bond) => Some(b.bond_category))
       val t_relevance = WorkspaceFormulas.local_relevance(target, Some(bondCategoryID), (b: Bond) => Some(b.bond_category))
 
@@ -1314,7 +1314,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
           sender() ! Finished
         case Some(fromob) =>
           // choose neighbour
-          print("initial object: " + fromob);
+          log.debug("initial object: " + fromob);
 
           val toOpt = chooseNeighbor(fromob, conditionalNeighbor, temperature)
           toOpt match {
@@ -2512,18 +2512,24 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
   }
 
   def total_description_type_support(description: SlipNodeRep, workspaceString: WorkspaceString): Double = {
-    (Workspace.activationWithSlipNodeRep(activationBySlipNodeID,description) + local_description_type_support(description,workspaceString)) / 2.0
+    val activation = Workspace.activationWithSlipNodeRep(activationBySlipNodeID,description)
+    val local_description_type_sup = local_description_type_support(description,workspaceString)
+    log.debug(s"total_description_type_support activation $activation local_description_type_support $local_description_type_sup")
+    (activation + local_description_type_sup) / 2.0
   }
   def local_description_type_support(description_type: SlipNodeRep, workspaceString: WorkspaceString): Double = {
     // returns the proportion of objects in the string that have
     // a description with this description_type
-    val objectsWithSameString = objectRefs.values.filter(ob => ob.wString.isDefined && ob.wString.get == workspaceString)
-    val number_of_objects = objectsWithSameString.size.toDouble
+    log.debug(s"workspaceString ${workspaceString.s}")
+    val objectsWithSameString = objects.filter(ob => ob.wString.isDefined && ob.wString.get == workspaceString)
+    val total_number_of_objects = objectsWithSameString.size.toDouble
+    objectsWithSameString.foreach(ob => log.debug(s"ob $ob"))
 
     val sameDescriptionTypeDescriptions: List[List[Description]] = objectsWithSameString.toList.map (ob => {
       ob.descriptions.toList.filter(d => d.description_type.id == description_type.id)
     })
-    val total_number_of_objects: Double = sameDescriptionTypeDescriptions.map(_.size).sum
+    val number_of_objects: Double = sameDescriptionTypeDescriptions.map(_.size).sum
+    log.debug(s"number_of_objects $number_of_objects total_number_of_objects $total_number_of_objects")
     number_of_objects/total_number_of_objects
   }
 

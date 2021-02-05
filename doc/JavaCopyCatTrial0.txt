@@ -1,4 +1,4 @@
-/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=53997:/Applications/IntelliJ IDEA CE.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/tools.jar:/Users/dschoen/Documents/gitlab/copycat/JavaCopyCat/out/production/JavaCopyCat rungroup
+/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=50799:/Applications/IntelliJ IDEA CE.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/tools.jar:/Users/dschoen/Documents/gitlab/copycat/JavaCopyCat/out/production/JavaCopyCat rungroup
 Random rndseed=1
 Random rndseed=2
 Random rndseed=3
@@ -651,14 +651,6 @@ setBuffer slipnode id lc buffer 100.0
 setBuffer slipnode id K buffer 100.0
 setBuffer slipnode id spc buffer 100.0
 setBuffer slipnode id rm buffer 100.0
-
-
-
-
-
-
-
------- First update everything
 mainloop | codelets_run 0 clamp_time 30 last_update 0 time_step_length 15
 update_Everything 27
 1T: 100.0
@@ -689,8 +681,6 @@ description(middle) of letter (2)2 in target string internal_strength 50.0 exter
 description(letter) of letter (3)3 in target string internal_strength 50.0 external_strength 50.0 total strength:50.0
 description(K) of letter (3)3 in target string internal_strength 50.0 external_strength 100.0 total strength:75.0
 description(rightmost) of letter (3)3 in target string internal_strength 50.0 external_strength 100.0 total strength:75.0
-
-
 2T: 100.0
 update the the object values of all objects in the workspace
 update_object_value description(letter) of letter (1)1 in initial string d.description_type.activation 0.0 d.descriptor.activation 0.0
@@ -747,8 +737,6 @@ update_object_value description(rightmost) of letter (3)3 in target string d.des
 update_object_value 0.0 group.isDefined null changed false
 update_object_value : raw_importance 0.0
 update_object_value : intra_string_happiness 0.0
-
-
 3T: 100.0
 update the relative importances of initial and target strings
 update_relative_importance 0.0
@@ -765,13 +753,8 @@ ob letter (2)2
 ob.relative_importance 0.0
 ob letter (3)3
 ob.relative_importance 0.0
-
-
-
 4T: 100.0
 update the intra string unhappiness of initial and target strings
-
-
 5T: 100.0
 slipnet.Update
 for all nodes set old_activation to activation
@@ -1455,13 +1438,6 @@ Post Codelet codelets size 54
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 choose T: 20.0
 scale 6.0urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] flag 1
-
-
-
-
-
------ start
-
 Random rndseed=14
 sum 54.0 chosen 30.455999999999996 codelets.size() 54
 Choose codelet at index 30 urgsum 31.0
@@ -1484,6 +1460,8 @@ Random rndseed=17
 Random rndseed=18
 initial object chosen: letter (2)2 in target string
 to object: letter (3)3
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=19
 chosen bond facet: letter category
@@ -1534,6 +1512,8 @@ Random rndseed=23
 Random rndseed=24
 initial object chosen: letter (3)3 in initial string
 to object: letter (2)2
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=25
 chosen bond facet: letter category
@@ -1764,6 +1744,8 @@ Random rndseed=44
 Random rndseed=45
 initial object chosen: letter (2)2 in initial string
 to object: letter (1)1
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=46
 chosen bond facet: letter category
@@ -1823,6 +1805,8 @@ Random rndseed=52
 Random rndseed=53
 initial object chosen: letter (2)2 in target string
 to object: letter (1)1
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=54
 chosen bond facet: letter category
@@ -2680,6 +2664,8 @@ Random rndseed=95
 Random rndseed=96
 initial object chosen: letter (2)2 in target string
 to object: letter (3)3
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=97
 chosen bond facet: letter category
@@ -2721,6 +2707,8 @@ Random rndseed=100
 Random rndseed=101
 initial object chosen: letter (1)1 in target string
 to object: letter (2)2
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=102
 chosen bond facet: letter category
@@ -3891,6 +3879,8 @@ Random rndseed=175
 Random rndseed=176
 initial object chosen: letter (1)1 in target string
 to object: letter (2)2
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=177
 chosen bond facet: letter category
@@ -3937,6 +3927,8 @@ Random rndseed=181
 Random rndseed=182
 initial object chosen: letter (3)3 in target string
 to object: letter (2)2
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=183
 chosen bond facet: letter category
@@ -4177,6 +4169,8 @@ Random rndseed=210
 Random rndseed=211
 initial object chosen: letter (3)3 in target string
 to object: letter (2)2
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=212
 chosen bond facet: letter category
@@ -5333,6 +5327,8 @@ Random rndseed=284
 Random rndseed=285
 initial object chosen: letter (3)3 in target string
 to object: letter (2)2
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=286
 chosen bond facet: letter category
@@ -5364,6 +5360,8 @@ Random rndseed=288
 Random rndseed=289
 initial object chosen: letter (1)1 in target string
 to object: letter (2)2
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=290
 chosen bond facet: letter category
@@ -6572,6 +6570,8 @@ Random rndseed=369
 Random rndseed=370
 initial object chosen: letter (1)1 in target string
 to object: letter (2)2
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=371
 chosen bond facet: letter category
@@ -6651,6 +6651,8 @@ Random rndseed=377
 Random rndseed=378
 initial object chosen: letter (1)1 in initial string
 to object: letter (2)2
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=379
 chosen bond facet: letter category
@@ -6728,6 +6730,8 @@ Random rndseed=385
 Random rndseed=386
 initial object chosen: letter (2)2 in initial string
 to object: letter (1)1
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=387
 chosen bond facet: letter category
@@ -6946,6 +6950,8 @@ Random rndseed=408
 Random rndseed=409
 initial object chosen: letter (3)3 in initial string
 to object: letter (2)2
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=410
 chosen bond facet: letter category
@@ -8024,6 +8030,8 @@ Random rndseed=482
 Random rndseed=483
 initial object chosen: letter (3)3 in initial string
 to object: letter (2)2
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=484
 chosen bond facet: letter category
@@ -8055,6 +8063,8 @@ Random rndseed=486
 Random rndseed=487
 initial object chosen: letter (3)3 in initial string
 to object: letter (2)2
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=488
 chosen bond facet: letter category
@@ -8277,6 +8287,8 @@ Random rndseed=511
 initial object: letter (3)3
 Random rndseed=512
 to object : letter (2)2
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=513
 chosen bond facet :letter category
@@ -8315,6 +8327,8 @@ Random rndseed=516
 initial object: letter (2)2
 Random rndseed=517
 to object: letter (1)1
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=518
 chosen bond facet = letter category
@@ -9417,6 +9431,8 @@ Random rndseed=584
 initial object: letter (2)2
 Random rndseed=585
 to object : letter (1)1
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=586
 chosen bond facet :letter category
@@ -9466,6 +9482,8 @@ Random rndseed=591
 Random rndseed=592
 initial object chosen: letter (1)1 in initial string
 to object: letter (2)2
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=593
 chosen bond facet: letter category
@@ -10721,6 +10739,8 @@ Random rndseed=679
 initial object: letter (2)2
 Random rndseed=680
 to object: letter (3)3
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=681
 chosen bond facet = letter category
@@ -13709,6 +13729,8 @@ Random rndseed=872
 initial object: letter (3)3
 Random rndseed=873
 to object : letter (2)2
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=874
 chosen bond facet :letter category
@@ -13843,6 +13865,8 @@ Random rndseed=887
 initial object: letter (1)1
 Random rndseed=888
 to object: letter (2)2
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=889
 chosen bond facet = letter category
@@ -13961,6 +13985,8 @@ Random rndseed=900
 initial object: letter (1)1
 Random rndseed=901
 to object: letter (2)2
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=902
 chosen bond facet = letter category
@@ -14064,6 +14090,8 @@ Random rndseed=910
 initial object: letter (2)2
 Random rndseed=911
 to object : letter (3)3
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=912
 chosen bond facet :letter category
@@ -14142,6 +14170,8 @@ Random rndseed=917
 initial object: letter (1)1
 Random rndseed=918
 to object : letter (2)2
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=919
 chosen bond facet :letter category
@@ -18761,6 +18791,8 @@ Random rndseed=1248
 initial object: letter (1)1
 Random rndseed=1249
 to object : letter (2)2
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=1250
 chosen bond facet :letter category
@@ -19035,6 +19067,8 @@ Random rndseed=1270
 Random rndseed=1271
 initial object chosen: letter (2)2 in initial string
 to object: letter (3)3
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=1272
 chosen bond facet: letter category
@@ -20545,6 +20579,8 @@ Random rndseed=1393
 initial object: letter (2)2
 Random rndseed=1394
 to object: letter (1)1
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=1395
 chosen bond facet = letter category
@@ -20676,6 +20712,8 @@ Random rndseed=1405
 Random rndseed=1406
 initial object chosen: letter (2)2 in target string
 to object: letter (1)1
+number_of_objects 3.0 total_number_of_objects 4.0
+total_description_type_support activation 100.0 local_description_type_support 0.75
 object_probs lc t 50.375
 Random rndseed=1407
 chosen bond facet: letter category
@@ -20710,6 +20748,8 @@ Random rndseed=1410
 initial object: letter (3)3
 Random rndseed=1411
 to object: letter (2)2
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=1412
 chosen bond facet = letter category
@@ -20791,6 +20831,8 @@ Random rndseed=1419
 initial object: letter (2)2
 Random rndseed=1420
 to object: letter (1)1
+number_of_objects 3.0 total_number_of_objects 3.0
+total_description_type_support activation 100.0 local_description_type_support 1.0
 object_probs lc t 50.5
 Random rndseed=1421
 chosen bond facet = letter category
@@ -22606,6 +22648,8 @@ Random rndseed=1555
 initial object: letter (1)1
 Random rndseed=1556
 to object : letter (2)2
+number_of_objects 3.0 total_number_of_objects 4.0
+total_description_type_support activation 100.0 local_description_type_support 0.75
 object_probs lc t 50.375
 Random rndseed=1557
 chosen bond facet :letter category
@@ -24893,6 +24937,8 @@ Random rndseed=1656
 initial object: letter (3)3
 Random rndseed=1657
 to object : letter (2)2
+number_of_objects 3.0 total_number_of_objects 4.0
+total_description_type_support activation 100.0 local_description_type_support 0.75
 object_probs lc t 50.375
 Random rndseed=1658
 chosen bond facet :letter category
@@ -24981,10 +25027,6 @@ choose T: 58.74439280135928
 scale 3.417040479909381urgencies: [5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5] flag 240
 Random rndseed=1663
 sum 11067.201055083648 chosen 4548.619633639379 codelets.size() 92
-
-
-
----- Oups
 Choose codelet at index 42 urgsum 4569.585460610337
 #### top-down-bond-scout--category ####
 searching for successor
@@ -25013,6 +25055,8 @@ Random rndseed=1665
 initial object: letter (2)2
 Random rndseed=1666
 to object : letter (1)1
+number_of_objects 3.0 total_number_of_objects 4.0
+total_description_type_support activation 100.0 local_description_type_support 0.75
 object_probs lc t 50.375
 Random rndseed=1667
 chosen bond facet :letter category
@@ -26458,6 +26502,8 @@ Random rndseed=1745
 initial object: letter (2)2
 Random rndseed=1746
 to object : letter (1)1
+number_of_objects 3.0 total_number_of_objects 4.0
+total_description_type_support activation 100.0 local_description_type_support 0.75
 object_probs lc t 50.375
 Random rndseed=1747
 chosen bond facet :letter category
@@ -27864,6 +27910,8 @@ Random rndseed=1816
 initial object: letter (2)2
 Random rndseed=1817
 to object : letter (1)1
+number_of_objects 3.0 total_number_of_objects 4.0
+total_description_type_support activation 100.0 local_description_type_support 0.75
 object_probs lc t 50.375
 Random rndseed=1818
 chosen bond facet :letter category
@@ -29499,6 +29547,8 @@ Random rndseed=1911
 initial object: letter (2)2
 Random rndseed=1912
 to object: letter (3)3
+number_of_objects 3.0 total_number_of_objects 4.0
+total_description_type_support activation 100.0 local_description_type_support 0.75
 object_probs lc t 50.375
 Random rndseed=1913
 chosen bond facet = letter category
@@ -29589,6 +29639,8 @@ Random rndseed=1918
 initial object: letter (2)2
 Random rndseed=1919
 to object : letter (1)1
+number_of_objects 3.0 total_number_of_objects 4.0
+total_description_type_support activation 100.0 local_description_type_support 0.75
 object_probs lc t 50.375
 Random rndseed=1920
 chosen bond facet :letter category
@@ -31076,6 +31128,8 @@ Random rndseed=1992
 initial object: letter (1)1
 Random rndseed=1993
 to object : letter (2)2
+number_of_objects 3.0 total_number_of_objects 4.0
+total_description_type_support activation 100.0 local_description_type_support 0.75
 object_probs lc t 50.375
 Random rndseed=1994
 chosen bond facet :letter category
@@ -31161,6 +31215,8 @@ Random rndseed=2
 initial object: letter (2)2
 Random rndseed=3
 to object : letter (1)1
+number_of_objects 3.0 total_number_of_objects 4.0
+total_description_type_support activation 100.0 local_description_type_support 0.75
 object_probs lc t 50.375
 Random rndseed=4
 chosen bond facet :letter category
@@ -31283,6 +31339,8 @@ Random rndseed=14
 initial object: letter (2)2
 Random rndseed=15
 to object: letter (3)3
+number_of_objects 3.0 total_number_of_objects 4.0
+total_description_type_support activation 100.0 local_description_type_support 0.75
 object_probs lc t 50.375
 Random rndseed=16
 chosen bond facet = letter category
@@ -32558,6 +32616,8 @@ Random rndseed=71
 Random rndseed=72
 initial object chosen: letter (3)3 in initial string
 to object: letter (2)2
+number_of_objects 3.0 total_number_of_objects 4.0
+total_description_type_support activation 100.0 local_description_type_support 0.75
 object_probs lc t 50.375
 Random rndseed=73
 chosen bond facet: letter category
@@ -34533,6 +34593,8 @@ Random rndseed=182
 initial object: letter (2)2
 Random rndseed=183
 to object : letter (1)1
+number_of_objects 3.0 total_number_of_objects 4.0
+total_description_type_support activation 100.0 local_description_type_support 0.75
 object_probs lc t 50.375
 Random rndseed=184
 chosen bond facet :letter category
@@ -35913,6 +35975,8 @@ Random rndseed=250
 initial object: letter (1)1
 Random rndseed=251
 to object: letter (2)2
+number_of_objects 3.0 total_number_of_objects 4.0
+total_description_type_support activation 100.0 local_description_type_support 0.75
 object_probs lc t 50.375
 Random rndseed=252
 chosen bond facet = letter category
@@ -36012,6 +36076,8 @@ Random rndseed=258
 initial object: letter (3)3
 Random rndseed=259
 to object : letter (2)2
+number_of_objects 3.0 total_number_of_objects 4.0
+total_description_type_support activation 100.0 local_description_type_support 0.75
 object_probs lc t 50.375
 Random rndseed=260
 chosen bond facet :letter category
@@ -36248,6 +36314,8 @@ Random rndseed=277
 initial object: letter (3)3
 Random rndseed=278
 to object: letter (2)2
+number_of_objects 3.0 total_number_of_objects 4.0
+total_description_type_support activation 100.0 local_description_type_support 0.75
 object_probs lc t 50.375
 Random rndseed=279
 chosen bond facet = letter category
