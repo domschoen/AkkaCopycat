@@ -484,13 +484,13 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     case models.Workspace.UpdateEverything(cr, t) =>
       codelets_run = cr
 
-      log.debug("update_Everything")
+      log.debug("Workspace. update_Everything")
       val brs = bondReps()
       val crs = correspondenceReps()
       slipnet ! DataForStrengthUpdate(brs,crs,t)
 
     case DataForStrengthUpdateResponse(bondData, correspondenceData, t) =>
-      log.debug("update_Everything " + structures.size)
+      log.debug("Workspace update_Everything " + structures.size)
       log.debug("1T: " + t)
 
       for (ws <- structures) {
@@ -523,7 +523,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       if (codelets_run>0) {
         coderack ! GetNumCodelets(t)
       } else {
-        self ! UpdateEverythingFollowUp
+        slipnet ! models.Slipnet.UpdateEverything(t)
       }
 
     case GetNumCodeletsResponse(codeletsSize: Int, t:Double) =>
@@ -1780,7 +1780,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     case GoWithGroupStrengthTester(temperature: Double, groupID: String) =>
       log.debug(s"GoWithGroupStrengthTester groupID $groupID")
       val g = objectRefs(groupID).asInstanceOf[Group]
-      log.debug(s"GoWithGroupStrengthTester groupID ${g.group_category}")
+      log.debug(s"GoWithGroupStrengthTester g.group_category ${g.group_category}")
 
       sender() ! GoWithGroupStrengthTesterResponse(g.group_category.id)
 

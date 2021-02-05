@@ -171,6 +171,9 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
     case Temperature.TemperatureResponse(t) =>
       log.debug("TemperatureResponse " + t)
       runTemperature = t
+
+      Random.setseed(0)
+
       // At beginning we post initial codelets because anyway codelets is empty
       context.become(startingRun)
       self ! ProcessChooseAndRun(number_of_objects,t)

@@ -42,7 +42,6 @@ class ExecutionRun extends Actor with ActorLogging  { //with InjectedActorSuppor
       targetString = ts
 
       log.debug(s"ExecutionRun: Run with initial $initialString, modified: $modifiedString and target: $targetString")
-      Random.setseed(0)
       workspace = context.actorOf(Workspace.props(temperature),"Workspace")
 
       slipnet = context.actorOf(Slipnet.props(workspace),"Slipnet")

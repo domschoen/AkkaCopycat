@@ -651,6 +651,14 @@ setBuffer slipnode id lc buffer 100.0
 setBuffer slipnode id K buffer 100.0
 setBuffer slipnode id spc buffer 100.0
 setBuffer slipnode id rm buffer 100.0
+
+
+
+
+
+
+
+------ First update everything
 mainloop | codelets_run 0 clamp_time 30 last_update 0 time_step_length 15
 update_Everything 27
 1T: 100.0
@@ -681,6 +689,8 @@ description(middle) of letter (2)2 in target string internal_strength 50.0 exter
 description(letter) of letter (3)3 in target string internal_strength 50.0 external_strength 50.0 total strength:50.0
 description(K) of letter (3)3 in target string internal_strength 50.0 external_strength 100.0 total strength:75.0
 description(rightmost) of letter (3)3 in target string internal_strength 50.0 external_strength 100.0 total strength:75.0
+
+
 2T: 100.0
 update the the object values of all objects in the workspace
 update_object_value description(letter) of letter (1)1 in initial string d.description_type.activation 0.0 d.descriptor.activation 0.0
@@ -737,6 +747,8 @@ update_object_value description(rightmost) of letter (3)3 in target string d.des
 update_object_value 0.0 group.isDefined null changed false
 update_object_value : raw_importance 0.0
 update_object_value : intra_string_happiness 0.0
+
+
 3T: 100.0
 update the relative importances of initial and target strings
 update_relative_importance 0.0
@@ -753,8 +765,13 @@ ob letter (2)2
 ob.relative_importance 0.0
 ob letter (3)3
 ob.relative_importance 0.0
+
+
+
 4T: 100.0
 update the intra string unhappiness of initial and target strings
+
+
 5T: 100.0
 slipnet.Update
 for all nodes set old_activation to activation
@@ -1438,6 +1455,13 @@ Post Codelet codelets size 54
 printUrgencies urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 choose T: 20.0
 scale 6.0urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] flag 1
+
+
+
+
+
+----- start
+
 Random rndseed=14
 sum 54.0 chosen 30.455999999999996 codelets.size() 54
 Choose codelet at index 30 urgsum 31.0
@@ -24957,6 +24981,10 @@ choose T: 58.74439280135928
 scale 3.417040479909381urgencies: [5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5] flag 240
 Random rndseed=1663
 sum 11067.201055083648 chosen 4548.619633639379 codelets.size() 92
+
+
+
+---- Oups
 Choose codelet at index 42 urgsum 4569.585460610337
 #### top-down-bond-scout--category ####
 searching for successor
