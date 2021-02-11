@@ -1,5 +1,6 @@
 package models
 
+import akka.event.LoggingAdapter
 import models.Bond.BondRep
 import models.ConceptMapping.ConceptMappingRep
 import models.WorkspaceObject.WorkspaceObjectRep
@@ -20,12 +21,12 @@ object Correspondence {
 
 }
 
-case class Correspondence (
+case class Correspondence (log: LoggingAdapter,
                             val obj1: WorkspaceObject,
                             val obj2: WorkspaceObject,
                             var concept_mapping_list : List[ConceptMappingRep],
                             val flip_obj2: Boolean
-                          ) extends WorkspaceStructure {
+                          ) extends WorkspaceStructure(log) {
   def addConceptMappings(cCMReps: List[ConceptMappingRep]) = {
     System.out.println("Correspondence. addConceptMapping concept_mapping_list " + concept_mapping_list);
     System.out.println("Correspondence. addConceptMapping " + cCMReps);

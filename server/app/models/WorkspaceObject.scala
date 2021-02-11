@@ -38,7 +38,7 @@ object WorkspaceObject {
 }
 
 
-abstract class WorkspaceObject(log: LoggingAdapter, ws: WorkspaceString) extends WorkspaceStructure {
+abstract class WorkspaceObject(log: LoggingAdapter, ws: WorkspaceString) extends WorkspaceStructure(log) {
 
   wString = Some(ws)
   var left_string_position: Int = 0
@@ -151,7 +151,7 @@ abstract class WorkspaceObject(log: LoggingAdapter, ws: WorkspaceString) extends
 
 
   def add_description(descriptionType: SlipNodeRep, descriptor: Option[SlipNodeRep]) = {
-    val description = new Description(this, ws, descriptionType, descriptor)
+    val description = new Description(log, this, ws, descriptionType, descriptor)
     descriptions += description
   }
 

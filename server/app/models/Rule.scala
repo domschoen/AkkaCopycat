@@ -1,6 +1,7 @@
 package models
 
 import akka.actor.ActorRef
+import akka.event.LoggingAdapter
 import models.ConceptMapping.ConceptMappingRep
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.SetSlipNodeBufferValue
@@ -22,7 +23,7 @@ object Rule {
                         descriptorSlipNodeID: String,
                         objectCategorySlipNodeID: String,
                         relationSlipNodeID: String)*/
-case class Rule (
+case class Rule (log: LoggingAdapter,
                   var descriptorFacet: Option[SlipNodeRep],
                   var descriptor: Option[SlipNodeRep],
                   var objectCategory: Option[SlipNodeRep],
@@ -32,7 +33,7 @@ case class Rule (
                   predecessorSlipNode: SlipNodeRep,
                   successorSlipNode: SlipNodeRep
 
-                ) extends WorkspaceStructure {
+                ) extends WorkspaceStructure(log) {
 
   def rule_equal(rOpt: Option[Rule]): Boolean = {
     if (rOpt.isEmpty) {
@@ -55,7 +56,12 @@ case class Rule (
   }
 
   override def toString(): String = {
-    s"replace ${descriptorFacet} of ${descriptor} ${objectCategory} by ${relation}"
+    val descriptorFacetString = SlipNode.displayStringWithOptionalSlipNodeRep(descriptorFacet)
+    val descriptorString = SlipNode.displayStringWithOptionalSlipNodeRep(descriptor)
+    val objectCategoryString = SlipNode.displayStringWithOptionalSlipNodeRep(objectCategory)
+    val relationString = SlipNode.displayStringWithOptionalSlipNodeRep(relation)
+
+    s"replace ${descriptorFacetString} of ${descriptorString} ${objectCategoryString} by ${relationString}"
   }
 
   def build_rule() = {

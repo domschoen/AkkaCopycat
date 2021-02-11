@@ -44,6 +44,31 @@ object SlipNode {
                          conceptual_depth: Double
                         )
 
+  def displayStringWithOptionalSlipNodeRep(slipNodeRepOpt: Option[SlipNodeRep]) = slipNodeRepOpt match {
+    case Some(sn) => SlipNode.longNameWithId(sn.id)
+    case None => ""
+  }
+
+
+  def longNameWithId(id: String) = {
+    if (id == SlipNode.id.letter) {
+      "letter"
+    } else if (id == SlipNode.id.leftmost) {
+      "leftmost"
+    } else if (id == SlipNode.id.rightmost) {
+      "rightmost"
+    } else if (id == SlipNode.id.middle) {
+      "middle"
+    } else if (id == SlipNode.id.letter_category) {
+      "letter_category"
+    } else if (id == SlipNode.id.successor) {
+      "successor"
+    } else {
+      id
+    }
+
+  }
+
   object id {
     val right = "rt"
     val sameness = "sm"

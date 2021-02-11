@@ -1,6 +1,7 @@
 package models
 
 import akka.actor.ActorRef
+import akka.event.LoggingAdapter
 import models.SlipNode.SlipNodeRep
 
 object WorkspaceFormulas {
@@ -428,7 +429,7 @@ object WorkspaceFormulas {
   }
 */
   val SlipnetSamenessID = "sm"
-  def possible_group_bond_list(
+  def possible_group_bond_list(log: LoggingAdapter,
                                 bond_cat: SlipNodeRep,
                                 direction: Option[SlipNodeRep],
                                 bond_facet: SlipNodeRep,
@@ -452,7 +453,7 @@ object WorkspaceFormulas {
             if (b.bond_category.id == SlipnetSamenessID) {
               None
             } else {
-              val newB = new Bond(
+              val newB = new Bond(log,
                 b.to_obj,
                 b.from_obj,
                 bond_cat,

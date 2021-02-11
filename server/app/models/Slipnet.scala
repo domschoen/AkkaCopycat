@@ -214,11 +214,11 @@ object Slipnet {
   case class PrepareBondFighting(groupID: String, bondReps: List[BondRep])
 
 
-  object RelationType {
+  /*object RelationType {
     val Sameness = "Sameness"
     val Successor = "Successor"
     val Predecessor = "Predecessor"
-  }
+  }*/
   val time_step_length = 15
 
 
@@ -1221,7 +1221,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
         val letterCategorySlipNode = slipNodeRefs(letterCategory.id)
         val object_list = if (changedReplacementRelation.isDefined) {
           val relation = slipNodeRefs(changedReplacementRelation.get)
-          List(letterCategorySlipNode, relation)
+          List(relation, letterCategorySlipNode)
         } else List(letterCategorySlipNode)
 
         object_list.foreach(sln => {
@@ -1438,7 +1438,6 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
         codeletsSize: Int
     ) =>
       var codeletToPost = ListBuffer.empty[(String,Either[Double, Int], Option[String], Option[Double])]
-      log.debug("Post Top/Bottom Codelets codelets size " + codeletsSize)
       var codeletsCount = codeletsSize
       for (s <- slipNodes) {
         if (s.activation == 100.0) {

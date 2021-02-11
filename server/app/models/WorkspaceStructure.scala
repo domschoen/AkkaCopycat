@@ -1,7 +1,8 @@
 package models
 
-import java.util.UUID
+import akka.event.LoggingAdapter
 
+import java.util.UUID
 import models.WorkspaceStructure.WorkspaceStructureRep
 
 object WorkspaceStructure {
@@ -13,7 +14,7 @@ object WorkspaceStructure {
 
 
 // Bond, Correspondence, Description, Replacement, Rule, WorkSpaceObject (Group, Letter)
-abstract class WorkspaceStructure {
+abstract class WorkspaceStructure(log: LoggingAdapter) {
   var wString = Option.empty[WorkspaceString]
 
   val uuid = generateID()

@@ -1,5 +1,5 @@
-update_Everything 28
-1T: 20.0
+update_Everything 31
+1T: 91.45777777777778
 Workspace structure update_strength_value description(letter) of letter (1)1 in initial string
 Workspace structure update_strength_value description(A) of letter (1)1 in initial string
 Workspace structure update_strength_value description(leftmost) of letter (1)1 in initial string
@@ -23,647 +23,855 @@ Workspace structure update_strength_value description(I) of letter (1)1 in targe
 Workspace structure update_strength_value description(leftmost) of letter (1)1 in target string
 Workspace structure update_strength_value description(letter) of letter (2)2 in target string
 Workspace structure update_strength_value description(J) of letter (2)2 in target string
+from_obj.wString Some(ijk)
+wString ijk
 Workspace structure update_strength_value description(middle) of letter (2)2 in target string
 Workspace structure update_strength_value description(letter) of letter (3)3 in target string
+ob Some(models.WorkspaceString@6d6a229)
 Workspace structure update_strength_value description(K) of letter (3)3 in target string
 Workspace structure update_strength_value description(rightmost) of letter (3)3 in target string
 Workspace structure update_strength_value Correspondence between letter (2)2 and letter (2)2
-2T: 20.0
+Workspace structure update_strength_value sc bond between letter (1)1 and letter (2)2
+string.bonds.size() 1
+Workspace structure update_strength_value replace letter_category of C letter by D
+Workspace structure update_strength_value Correspondence between letter (1)1 and letter (1)1
+2T: 91.45777777777778
 update the the object values of all objects in the workspace
-update_object_value description(letter) of letter (1)1 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(letter) of letter (1)1 in initial string d.description_type.activation 80.0 d.descriptor.activation 50.0
 update_object_value description(A) of letter (1)1 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(leftmost) of letter (1)1 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 300.0 group.isDefined false changed true
-update_object_value : raw_importance 600.0
+update_object_value 202.5 group.isDefined false changed false
+update_object_value : raw_importance 202.5
 update_object_value : intra_string_happiness 0.0
-update_object_value description(letter) of letter (2)2 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(letter) of letter (2)2 in initial string d.description_type.activation 80.0 d.descriptor.activation 50.0
 update_object_value description(B) of letter (2)2 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(middle) of letter (2)2 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 300.0 group.isDefined false changed true
-update_object_value : raw_importance 600.0
+update_object_value description(middle) of letter (2)2 in initial string d.description_type.activation 100.0 d.descriptor.activation 50.0
+update_object_value 152.5 group.isDefined false changed false
+update_object_value : raw_importance 152.5
 update_object_value : intra_string_happiness 0.0
-update_object_value description(letter) of letter (3)3 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(letter) of letter (3)3 in initial string d.description_type.activation 80.0 d.descriptor.activation 50.0
 update_object_value description(C) of letter (3)3 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(rightmost) of letter (3)3 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 300.0 group.isDefined false changed false
-update_object_value : raw_importance 300.0
+update_object_value 202.5 group.isDefined false changed true
+update_object_value : raw_importance 405.0
 update_object_value : intra_string_happiness 0.0
-update_object_value description(letter) of letter (1)1 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(letter) of letter (1)1 in modified string d.description_type.activation 80.0 d.descriptor.activation 50.0
 update_object_value description(A) of letter (1)1 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(leftmost) of letter (1)1 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 300.0 group.isDefined false changed false
-update_object_value : raw_importance 300.0
+update_object_value 202.5 group.isDefined false changed false
+update_object_value : raw_importance 202.5
 update_object_value : intra_string_happiness 0.0
-update_object_value description(letter) of letter (2)2 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(letter) of letter (2)2 in modified string d.description_type.activation 80.0 d.descriptor.activation 50.0
 update_object_value description(B) of letter (2)2 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(middle) of letter (2)2 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 300.0 group.isDefined false changed false
-update_object_value : raw_importance 300.0
+update_object_value description(middle) of letter (2)2 in modified string d.description_type.activation 100.0 d.descriptor.activation 50.0
+update_object_value 152.5 group.isDefined false changed false
+update_object_value : raw_importance 152.5
 update_object_value : intra_string_happiness 0.0
-update_object_value description(letter) of letter (3)3 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(letter) of letter (3)3 in modified string d.description_type.activation 80.0 d.descriptor.activation 50.0
 update_object_value description(D) of letter (3)3 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(rightmost) of letter (3)3 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 300.0 group.isDefined false changed false
-update_object_value : raw_importance 300.0
+update_object_value 202.5 group.isDefined false changed false
+update_object_value : raw_importance 202.5
 update_object_value : intra_string_happiness 0.0
-update_object_value description(letter) of letter (1)1 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(letter) of letter (1)1 in target string d.description_type.activation 80.0 d.descriptor.activation 50.0
 update_object_value description(I) of letter (1)1 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(leftmost) of letter (1)1 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 300.0 group.isDefined false changed false
-update_object_value : raw_importance 300.0
-update_object_value : intra_string_happiness 0.0
-update_object_value description(letter) of letter (2)2 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value 202.5 group.isDefined false changed false
+update_object_value : raw_importance 202.5
+update_object_value : intra_string_happiness 15.326666666666666
+update_object_value description(letter) of letter (2)2 in target string d.description_type.activation 80.0 d.descriptor.activation 50.0
 update_object_value description(J) of letter (2)2 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(middle) of letter (2)2 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 300.0 group.isDefined false changed false
-update_object_value : raw_importance 300.0
-update_object_value : intra_string_happiness 0.0
-update_object_value description(letter) of letter (3)3 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(middle) of letter (2)2 in target string d.description_type.activation 100.0 d.descriptor.activation 50.0
+update_object_value 152.5 group.isDefined false changed false
+update_object_value : raw_importance 152.5
+update_object_value : intra_string_happiness 15.326666666666666
+update_object_value description(letter) of letter (3)3 in target string d.description_type.activation 80.0 d.descriptor.activation 50.0
 update_object_value description(K) of letter (3)3 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(rightmost) of letter (3)3 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 300.0 group.isDefined false changed false
-update_object_value : raw_importance 300.0
+update_object_value 202.5 group.isDefined false changed false
+update_object_value : raw_importance 202.5
 update_object_value : intra_string_happiness 0.0
-3T: 20.0
+3T: 91.45777777777778
 update the relative importances of initial and target strings
-update_relative_importance 1500.0
+update_relative_importance 760.0
 ob letter (1)1
-2ob.relative_importance 0.4
+2ob.relative_importance 0.26644736842105265
 ob letter (2)2
-2ob.relative_importance 0.4
+2ob.relative_importance 0.20065789473684212
 ob letter (3)3
-2ob.relative_importance 0.2
-update_relative_importance 900.0
+2ob.relative_importance 0.5328947368421053
+update_relative_importance 557.5
 ob letter (1)1
-2ob.relative_importance 0.3333333333333333
+2ob.relative_importance 0.3632286995515695
 ob letter (2)2
-2ob.relative_importance 0.3333333333333333
+2ob.relative_importance 0.273542600896861
 ob letter (3)3
-2ob.relative_importance 0.3333333333333333
-4T: 20.0
+2ob.relative_importance 0.3632286995515695
+4T: 91.45777777777778
 update the intra string unhappiness of initial and target strings
-5T: 20.0
-Workspace rule None None
-unrelated_objects 9
-unrelated_objects letter (1)1 ok true wo.spans_string false right true left false wo.left_bond.isEmpty true wo.leftmost true wo.right_bond.isEmpty true wo.rightmost false
-unrelated_objects letter (2)2 ok true wo.spans_string false right true left true wo.left_bond.isEmpty true wo.leftmost false wo.right_bond.isEmpty true wo.rightmost false
-unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty true wo.leftmost false wo.right_bond.isEmpty true wo.rightmost true
-unrelated_objects letter (1)1 ok false wo.spans_string false right true left false wo.left_bond.isEmpty true wo.leftmost true wo.right_bond.isEmpty true wo.rightmost false
-unrelated_objects letter (2)2 ok false wo.spans_string false right true left true wo.left_bond.isEmpty true wo.leftmost false wo.right_bond.isEmpty true wo.rightmost false
-unrelated_objects letter (3)3 ok false wo.spans_string false right false left true wo.left_bond.isEmpty true wo.leftmost false wo.right_bond.isEmpty true wo.rightmost true
-unrelated_objects letter (1)1 ok true wo.spans_string false right true left false wo.left_bond.isEmpty true wo.leftmost true wo.right_bond.isEmpty true wo.rightmost false
-unrelated_objects letter (2)2 ok true wo.spans_string false right true left true wo.left_bond.isEmpty true wo.leftmost false wo.right_bond.isEmpty true wo.rightmost false
-unrelated_objects letter (3)3 ok true wo.spans_string false right false left true wo.left_bond.isEmpty true wo.leftmost false wo.right_bond.isEmpty true wo.rightmost true
-unrelated_objects result 6
-Post Top/Bottom Codelets codelets size 46
+5T: 91.45777777777778
+post_top_down_codelets
+Post Top/Bottom Codelets codeletsSize 85
+>>>> post_top_down_codelets top-down-bond-scout--direction
+L'autre
+rough_num_of_objects. bond 5.0
+Random rndseed=606
+Random rndseed=607
+prob 0.973111111111111 num 3
+Random rndseed=608
+post_top_down_codelets rawUrgency50.0 count 85
+Post Codelet codelets size 86
+<<<<
+
+Random rndseed=609
+post_top_down_codelets rawUrgency50.0 count 86
+Post Codelet codelets size 87
+<<<<
+
+Random rndseed=610
+post_top_down_codelets rawUrgency50.0 count 87
+Post Codelet codelets size 88
+<<<<
+
+>>>> post_top_down_codelets top-down-group-scout--direction
+L'autre
+Random rndseed=611
+Random rndseed=612
+prob 0.973111111111111 num 3
+Random rndseed=613
+post_top_down_codelets rawUrgency50.0 count 88
+Post Codelet codelets size 89
+<<<<
+
+Random rndseed=614
+post_top_down_codelets rawUrgency50.0 count 89
+Post Codelet codelets size 90
+<<<<
+
+Random rndseed=615
+post_top_down_codelets rawUrgency50.0 count 90
+Post Codelet codelets size 91
+<<<<
+
+>>>> post_top_down_codelets top-down-bond-scout--category
+L'autre
+rough_num_of_objects. bond 5.0
+Random rndseed=616
+Random rndseed=617
+prob 0.973111111111111 num 2
+Random rndseed=618
+post_top_down_codelets rawUrgency50.0 count 91
+Post Codelet codelets size 92
+<<<<
+
+Random rndseed=619
+post_top_down_codelets rawUrgency50.0 count 92
+Post Codelet codelets size 93
+<<<<
+
 >>>> post_top_down_codelets top-down-description-scout
 description
-prob 0.04000000000000001 num 1
-Random rndseed=55
+prob 0.8364525116049384 num 1
+Random rndseed=620
+post_top_down_codelets rawUrgency50.0 count 93
+Post Codelet codelets size 94
 <<<<
 
 ------------------------ post_bottom_up_codelets
 get_bottom_up_codelets bottom-up-description-scout
 description
-get_bottom_up_codelets prob 0.04000000000000001 num 1
-Random rndseed=56
->>>> get_bottom_up_codelets bottom-up-description-scout rnd 0.376 prob 0.04000000000000001 t 20.0 index -1
+get_bottom_up_codelets prob 0.8364525116049384 num 1
+Random rndseed=621
+>>>> get_bottom_up_codelets bottom-up-description-scout rnd 0.402 prob 0.8364525116049384 t 91.45777777777778 index -1
+get_bottom_up_codelets rawUrgency3 count 94
+Post Codelet codelets size 95
 <<<<
 
 get_bottom_up_codelets bottom-up-bond-scout
 L'autre
-rough_num_of_objects. bond 6.0
-Random rndseed=57
-Random rndseed=58
-get_bottom_up_codelets prob 0.0 num 3
-Random rndseed=59
->>>> get_bottom_up_codelets bottom-up-bond-scout rnd 0.279 prob 0.0 t 20.0 index -1
+rough_num_of_objects. bond 5.0
+Random rndseed=622
+Random rndseed=623
+get_bottom_up_codelets prob 0.973111111111111 num 2
+Random rndseed=624
+>>>> get_bottom_up_codelets bottom-up-bond-scout rnd 0.977 prob 0.973111111111111 t 91.45777777777778 index -1
 <<<<
 
-Random rndseed=60
->>>> get_bottom_up_codelets bottom-up-bond-scout rnd 0.17 prob 0.0 t 20.0 index -1
-<<<<
-
-Random rndseed=61
->>>> get_bottom_up_codelets bottom-up-bond-scout rnd 0.805 prob 0.0 t 20.0 index -1
+Random rndseed=625
+>>>> get_bottom_up_codelets bottom-up-bond-scout rnd 0.46 prob 0.973111111111111 t 91.45777777777778 index -1
+get_bottom_up_codelets rawUrgency3 count 95
+Post Codelet codelets size 96
 <<<<
 
 get_bottom_up_codelets group-scout--whole-string
 L'autre
-get_bottom_up_codelets prob 0.0 num 0
-get_bottom_up_codelets bottom-up-correspondence-scout
-correspondence 0.0
-Random rndseed=62
-Random rndseed=63
-get_bottom_up_codelets prob 0.0 num 2
-Random rndseed=64
->>>> get_bottom_up_codelets bottom-up-correspondence-scout rnd 0.408 prob 0.0 t 20.0 index -1
+Random rndseed=626
+Random rndseed=627
+get_bottom_up_codelets prob 0.973111111111111 num 3
+Random rndseed=628
+>>>> get_bottom_up_codelets group-scout--whole-string rnd 0.239 prob 0.973111111111111 t 91.45777777777778 index -1
+get_bottom_up_codelets rawUrgency3 count 96
+Post Codelet codelets size 97
 <<<<
 
-Random rndseed=65
->>>> get_bottom_up_codelets bottom-up-correspondence-scout rnd 0.24 prob 0.0 t 20.0 index -1
+Random rndseed=629
+>>>> get_bottom_up_codelets group-scout--whole-string rnd 0.214 prob 0.973111111111111 t 91.45777777777778 index -1
+get_bottom_up_codelets rawUrgency3 count 97
+Post Codelet codelets size 98
+<<<<
+
+Random rndseed=630
+>>>> get_bottom_up_codelets group-scout--whole-string rnd 0.657 prob 0.973111111111111 t 91.45777777777778 index -1
+get_bottom_up_codelets rawUrgency3 count 98
+Post Codelet codelets size 99
+<<<<
+
+get_bottom_up_codelets bottom-up-correspondence-scout
+correspondence 81.33333333333331
+Random rndseed=631
+get_bottom_up_codelets prob 0.8133333333333331 num 1
+Random rndseed=632
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout rnd 0.242 prob 0.8133333333333331 t 91.45777777777778 index -1
+get_bottom_up_codelets rawUrgency3 count 99
+Post Codelet codelets size 100
 <<<<
 
 get_bottom_up_codelets important-object-correspondence-scout
-correspondence 0.0
-Random rndseed=66
-Random rndseed=67
-get_bottom_up_codelets prob 0.0 num 2
-Random rndseed=68
->>>> get_bottom_up_codelets important-object-correspondence-scout rnd 0.494 prob 0.0 t 20.0 index -1
+correspondence 81.33333333333331
+Random rndseed=633
+Random rndseed=634
+get_bottom_up_codelets prob 0.8133333333333331 num 3
+Random rndseed=635
+>>>> get_bottom_up_codelets important-object-correspondence-scout rnd 0.253 prob 0.8133333333333331 t 91.45777777777778 index -1
+Random rndseed=636
+get_bottom_up_codelets rawUrgency3 count 100
+Post Codelet codelets size 101
+Post. codelets.size > 100
 <<<<
 
-Random rndseed=69
->>>> get_bottom_up_codelets important-object-correspondence-scout rnd 0.983 prob 0.0 t 20.0 index -1
+Random rndseed=637
+>>>> get_bottom_up_codelets important-object-correspondence-scout rnd 0.378 prob 0.8133333333333331 t 91.45777777777778 index -1
+get_bottom_up_codelets rawUrgency3 count 101
+Post Codelet codelets size 102
+Post. codelets.size > 100
+Random rndseed=638
+<<<<
+
+Random rndseed=639
+>>>> get_bottom_up_codelets important-object-correspondence-scout rnd 0.307 prob 0.8133333333333331 t 91.45777777777778 index -1
+get_bottom_up_codelets rawUrgency3 count 102
+Post Codelet codelets size 103
+Post. codelets.size > 100
+Random rndseed=640
 <<<<
 
 get_bottom_up_codelets replacement-finder
 replacement
-Random rndseed=70
-get_bottom_up_codelets prob 1.0 num 1
-Random rndseed=71
->>>> get_bottom_up_codelets replacement-finder rnd 0.409 prob 1.0 t 20.0 index -1
-get_bottom_up_codelets rawUrgency3 count 46
-Post Codelet codelets size 47
-<<<<
-
+get_bottom_up_codelets prob 0.0 num 0
 get_bottom_up_codelets rule-scout
-get_post_codelet_probability rule ruleTotalWeaknessOpt None
-get_bottom_up_codelets prob 1.0 num 2
-Random rndseed=72
->>>> get_bottom_up_codelets rule-scout rnd 0.069 prob 1.0 t 20.0 index -1
-get_bottom_up_codelets rawUrgency3 count 47
-Post Codelet codelets size 48
+get_post_codelet_probability rule ruleTotalWeaknessOpt Some(47.982406464139764)
+get_bottom_up_codelets prob 0.47982406464139765 num 2
+Random rndseed=641
+>>>> get_bottom_up_codelets rule-scout rnd 0.052 prob 0.47982406464139765 t 91.45777777777778 index -1
+get_bottom_up_codelets rawUrgency3 count 103
+Post Codelet codelets size 104
+Post. codelets.size > 100
+Random rndseed=642
 <<<<
 
-Random rndseed=73
->>>> get_bottom_up_codelets rule-scout rnd 0.073 prob 1.0 t 20.0 index -1
-get_bottom_up_codelets rawUrgency3 count 48
-Post Codelet codelets size 49
+Random rndseed=643
+>>>> get_bottom_up_codelets rule-scout rnd 0.743 prob 0.47982406464139765 t 91.45777777777778 index -1
 <<<<
 
 get_bottom_up_codelets rule-translator
-get_post_codelet_probability rule ruleTotalWeaknessOpt None
-get_bottom_up_codelets prob 1.0 num 0
+get_post_codelet_probability rule ruleTotalWeaknessOpt Some(47.982406464139764)
+get_bottom_up_codelets prob 0.47982406464139765 num 1
+Random rndseed=644
+>>>> get_bottom_up_codelets rule-translator rnd 0.781 prob 0.47982406464139765 t 91.45777777777778 index 5
+<<<<
+
 get_bottom_up_codelets breaker
 breaker
 get_bottom_up_codelets prob 1.0 num 1
-Random rndseed=74
->>>> get_bottom_up_codelets breaker rnd 0.254 prob 1.0 t 20.0 index -1
-get_bottom_up_codelets rawUrgency1 count 49
-Post Codelet codelets size 50
+Random rndseed=645
+>>>> get_bottom_up_codelets breaker rnd 0.872 prob 1.0 t 91.45777777777778 index -1
+get_bottom_up_codelets rawUrgency1 count 104
+Post Codelet codelets size 105
+Post. codelets.size > 100
+Random rndseed=646
 <<<<
 
-post_bottom_up_codelets codeletToPost ListBuffer((replacement-finder,Right(3),None,None), (rule-scout,Right(3),None,None), (rule-scout,Right(3),None,None), (breaker,Right(1),None,None))
 post_top_down_codelets
-PostCodelets ReplacementFinder rawUrgencyRight(3) urgency_bin 3
-create codelet replacement-finder urgency 3 time_stamp 15
+post_bottom_up_codelets codeletToPost ListBuffer((top-down-bond-scout--direction,Left(50.0),Some(rt),None), (top-down-bond-scout--direction,Left(50.0),Some(rt),None), (top-down-bond-scout--direction,Left(50.0),Some(rt),None), (top-down-group-scout--direction,Left(50.0),Some(rt),None), (top-down-group-scout--direction,Left(50.0),Some(rt),None), (top-down-group-scout--direction,Left(50.0),Some(rt),None), (top-down-bond-scout--category,Left(50.0),Some(sc),None), (top-down-bond-scout--category,Left(50.0),Some(sc),None), (top-down-description-scout,Left(50.0),Some(spc),None), (bottom-up-description-scout,Right(3),None,None), (bottom-up-bond-scout,Right(3),None,None), (group-scout--whole-string,Right(3),None,None), (group-scout--whole-string,Right(3),None,None), (group-scout--whole-string,Right(3),None,None), (bottom-up-correspondence-scout,Right(3),None,None), (important-object-correspondence-scout,Right(3),None,Some(0.721)), (important-object-correspondence-scout,Right(3),None,Some(0.026)), (important-object-correspondence-scout,Right(3),None,Some(0.769)), (rule-scout,Right(3),None,Some(0.005)), (breaker,Right(1),None,Some(0.873)))
+PostCodelets TopDownBondScoutDirection rawUrgencyLeft(50.0) urgency_bin 4
+create codelet top-down-bond-scout--direction urgency 4 time_stamp 105
+PostCodelets TopDownBondScoutDirection rawUrgencyLeft(50.0) urgency_bin 4
+create codelet top-down-bond-scout--direction urgency 4 time_stamp 105
+PostCodelets TopDownBondScoutDirection rawUrgencyLeft(50.0) urgency_bin 4
+create codelet top-down-bond-scout--direction urgency 4 time_stamp 105
+PostCodelets TopDownGroupScoutDirection rawUrgencyLeft(50.0) urgency_bin 4
+create codelet top-down-group-scout--direction urgency 4 time_stamp 105
+PostCodelets TopDownGroupScoutDirection rawUrgencyLeft(50.0) urgency_bin 4
+create codelet top-down-group-scout--direction urgency 4 time_stamp 105
+PostCodelets TopDownGroupScoutDirection rawUrgencyLeft(50.0) urgency_bin 4
+create codelet top-down-group-scout--direction urgency 4 time_stamp 105
+PostCodelets TopDownBondScoutCategory rawUrgencyLeft(50.0) urgency_bin 4
+create codelet top-down-bond-scout--category urgency 4 time_stamp 105
+PostCodelets TopDownBondScoutCategory rawUrgencyLeft(50.0) urgency_bin 4
+create codelet top-down-bond-scout--category urgency 4 time_stamp 105
+PostCodelets TopDownDescriptionScout rawUrgencyLeft(50.0) urgency_bin 4
+create codelet top-down-description-scout urgency 4 time_stamp 105
+PostCodelets BottomUpDescriptionScout rawUrgencyRight(3) urgency_bin 3
+create codelet bottom-up-description-scout urgency 3 time_stamp 105
+PostCodelets BottomUpBondScout rawUrgencyRight(3) urgency_bin 3
+create codelet bottom-up-bond-scout urgency 3 time_stamp 105
+PostCodelets GroupScoutWholeString rawUrgencyRight(3) urgency_bin 3
+create codelet group-scout--whole-string urgency 3 time_stamp 105
+PostCodelets GroupScoutWholeString rawUrgencyRight(3) urgency_bin 3
+create codelet group-scout--whole-string urgency 3 time_stamp 105
+PostCodelets GroupScoutWholeString rawUrgencyRight(3) urgency_bin 3
+create codelet group-scout--whole-string urgency 3 time_stamp 105
+PostCodelets BottomUpCorrespondenceScout rawUrgencyRight(3) urgency_bin 3
+create codelet bottom-up-correspondence-scout urgency 3 time_stamp 105
+PostCodelets ImportantObjectCorrespondenceScout rawUrgencyRight(3) urgency_bin 3
+create codelet important-object-correspondence-scout urgency 3 time_stamp 105
+PostCodelets ImportantObjectCorrespondenceScout rawUrgencyRight(3) urgency_bin 3
+create codelet important-object-correspondence-scout urgency 3 time_stamp 105
+PostCodelets ImportantObjectCorrespondenceScout rawUrgencyRight(3) urgency_bin 3
+create codelet important-object-correspondence-scout urgency 3 time_stamp 105
 PostCodelets RuleScout rawUrgencyRight(3) urgency_bin 3
-create codelet rule-scout urgency 3 time_stamp 15
-PostCodelets RuleScout rawUrgencyRight(3) urgency_bin 3
-create codelet rule-scout urgency 3 time_stamp 15
+create codelet rule-scout urgency 3 time_stamp 105
 PostCodelets Breaker rawUrgencyRight(1) urgency_bin 1
-create codelet breaker urgency 1 time_stamp 15
-setBuffer slipnode id A buffer 50.0
+create codelet breaker urgency 1 time_stamp 105
 Slipnet. UpdateEverything
-setBuffer slipnode id B buffer 50.0
-setBuffer slipnode id C buffer 50.0
-setBuffer slipnode id D buffer -50.0
-setBuffer slipnode id E buffer -1.5
-setBuffer slipnode id F buffer -1.5
-setBuffer slipnode id G buffer -1.5
+setBuffer slipnode id A buffer 50.0
 Slipnet.update()
-setBuffer slipnode id H buffer -1.5
+setBuffer slipnode id B buffer 50.0
+for all nodes set old_activation to activation
+setBuffer slipnode id C buffer 50.0
+setBuffer slipnode id D buffer 50.0
+ob A ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
+setBuffer slipnode id E buffer -50.0
+setBuffer slipnode id F buffer -46.5
+ob B ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
+setBuffer slipnode id G buffer -50.0
+setBuffer slipnode id H buffer -50.0
 setBuffer slipnode id I buffer 50.0
 setBuffer slipnode id J buffer 50.0
-setBuffer slipnode id K buffer 50.0
-for all nodes set old_activation to activation
-setBuffer slipnode id L buffer -1.5
-setBuffer slipnode id M buffer -1.5
-setBuffer slipnode id N buffer -1.5
-setBuffer slipnode id O buffer -1.5
-setBuffer slipnode id P buffer -1.5
-setBuffer slipnode id Q buffer -1.5
-setBuffer slipnode id R buffer -1.5
-setBuffer slipnode id S buffer -1.5
-setBuffer slipnode id T buffer -1.5
-setBuffer slipnode id U buffer -1.5
-setBuffer slipnode id V buffer -1.5
-setBuffer slipnode id W buffer -1.5
-ob A ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
-setBuffer slipnode id X buffer -1.5
-setBuffer slipnode id Y buffer -1.5
-setBuffer slipnode id Z buffer -1.5
+setBuffer slipnode id K buffer -50.0
+setBuffer slipnode id L buffer -50.0
+setBuffer slipnode id M buffer -32.9765625
+setBuffer slipnode id N buffer -2.9765625
+setBuffer slipnode id O buffer -2.9765625
+setBuffer slipnode id P buffer -2.9765625
+ob C ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
+setBuffer slipnode id Q buffer -2.9765625
+setBuffer slipnode id R buffer -2.9765625
+setBuffer slipnode id S buffer -2.9765625
+ob D ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
+setBuffer slipnode id T buffer -2.9765625
+setBuffer slipnode id U buffer -2.9765625
+setBuffer slipnode id V buffer -2.9765625
+ob E ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
+setBuffer slipnode id W buffer -2.9765625
+setBuffer slipnode id X buffer -2.9765625
+setBuffer slipnode id Y buffer -2.9765625
+setBuffer slipnode id Z buffer -2.9765625
 setBuffer slipnode id 1 buffer 0.0
 setBuffer slipnode id 2 buffer 0.0
 setBuffer slipnode id 3 buffer 0.0
+ob F ob.buffer 0.0 ob.activation 93.0 ob.conceptual_depth 50.0
 setBuffer slipnode id 4 buffer 0.0
-Post Codelet codelets size 47 rndOpt None name replacement-finder
 setBuffer slipnode id 5 buffer 0.0
-setBuffer slipnode id lm buffer -50.0
+ob G ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
+setBuffer slipnode id lm buffer 50.0
 setBuffer slipnode id rm buffer -50.0
-setBuffer slipnode id md buffer 50.0
-ob B ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
+setBuffer slipnode id md buffer -25.0
+ob H ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setBuffer slipnode id sl buffer 0.0
-ob C ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setBuffer slipnode id wh buffer 0.0
-setBuffer slipnode id fs buffer 0.0
+setBuffer slipnode id fs buffer -24.609375
 setBuffer slipnode id ls buffer 0.0
-ob D ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-setBuffer slipnode id lf buffer 0.0
-setBuffer slipnode id rt buffer 0.0
-setBuffer slipnode id pd buffer 0.0
-setBuffer slipnode id sc buffer 0.0
-ob E ob.buffer 0.0 ob.activation 3.0 ob.conceptual_depth 50.0
+ob I ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
+setBuffer slipnode id lf buffer -20.0
+setBuffer slipnode id rt buffer -50.0
+ob J ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
+setBuffer slipnode id pd buffer -11.25
+setBuffer slipnode id sc buffer -50.0
 setBuffer slipnode id sm buffer 0.0
-setBuffer slipnode id pg buffer 0.0
-setBuffer slipnode id sg buffer 0.0
+setBuffer slipnode id pg buffer -5.0
+setBuffer slipnode id sg buffer -10.0
 setBuffer slipnode id smg buffer 0.0
-ob F ob.buffer 0.0 ob.activation 3.0 ob.conceptual_depth 50.0
 setBuffer slipnode id id buffer -50.0
+ob K ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setBuffer slipnode id op buffer 0.0
-setBuffer slipnode id l buffer 50.0
-setBuffer slipnode id g buffer 0.0
-ob G ob.buffer 0.0 ob.activation 3.0 ob.conceptual_depth 50.0
+setBuffer slipnode id l buffer 75.0
+setBuffer slipnode id g buffer -8.59375
 setBuffer slipnode id lc buffer 50.0
 setBuffer slipnode id spc buffer 50.0
 setBuffer slipnode id apc buffer 0.0
-setBuffer slipnode id dc buffer 0.0
-setBuffer slipnode id bc buffer 0.0
+setBuffer slipnode id dc buffer -25.0
+setBuffer slipnode id bc buffer -25.0
 setBuffer slipnode id gpc buffer 0.0
-ob H ob.buffer 0.0 ob.activation 3.0 ob.conceptual_depth 50.0
-setBuffer slipnode id len buffer -2.5
-setBuffer slipnode id obc buffer 50.0
-setBuffer slipnode id bf buffer -20.0
-printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 3)
+setBuffer slipnode id len buffer -4.9609375
+setBuffer slipnode id obc buffer -40.0
+ob L ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
+setBuffer slipnode id bf buffer -42.5
 setBuffer slipnode id B buffer 90.0
-Post Codelet codelets size 48 rndOpt None name rule-scout
 setBuffer slipnode id lc buffer 130.0
-setBuffer slipnode id fs buffer 25.0
-ob I ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
+ob M ob.buffer 0.0 ob.activation 65.953125 ob.conceptual_depth 50.0
+setBuffer slipnode id fs buffer 0.390625
 setBuffer slipnode id A buffer 90.0
 setBuffer slipnode id C buffer 90.0
+ob N ob.buffer 0.0 ob.activation 5.953125 ob.conceptual_depth 50.0
 setBuffer slipnode id lc buffer 210.0
-ob J ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setBuffer slipnode id B buffer 130.0
-setBuffer slipnode id D buffer -10.0
+ob O ob.buffer 0.0 ob.activation 5.953125 ob.conceptual_depth 50.0
+setBuffer slipnode id D buffer 90.0
 setBuffer slipnode id lc buffer 290.0
-ob K ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
+ob P ob.buffer 0.0 ob.activation 5.953125 ob.conceptual_depth 50.0
 setBuffer slipnode id C buffer 130.0
-setBuffer slipnode id E buffer 38.5
-printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 3, 3)
+setBuffer slipnode id E buffer -10.0
+ob Q ob.buffer 0.0 ob.activation 5.953125 ob.conceptual_depth 50.0
 setBuffer slipnode id lc buffer 370.0
-Post Codelet codelets size 49 rndOpt None name rule-scout
-setBuffer slipnode id H buffer 38.5
-setBuffer slipnode id J buffer 90.0
+setBuffer slipnode id D buffer 130.0
+setBuffer slipnode id F buffer -6.5
+ob R ob.buffer 0.0 ob.activation 5.953125 ob.conceptual_depth 50.0
 setBuffer slipnode id lc buffer 450.0
-ob L ob.buffer 0.0 ob.activation 3.0 ob.conceptual_depth 50.0
-setBuffer slipnode id I buffer 90.0
-setBuffer slipnode id K buffer 90.0
+ob S ob.buffer 0.0 ob.activation 5.953125 ob.conceptual_depth 50.0
+setBuffer slipnode id F buffer 33.5
+Post Codelet codelets size 86 rndOpt None name top-down-bond-scout--direction
+setBuffer slipnode id H buffer -10.0
 setBuffer slipnode id lc buffer 530.0
-setBuffer slipnode id J buffer 130.0
-setBuffer slipnode id L buffer 38.5
+setBuffer slipnode id G buffer -10.0
+setBuffer slipnode id I buffer 90.0
 setBuffer slipnode id lc buffer 610.0
-ob M ob.buffer 0.0 ob.activation 3.0 ob.conceptual_depth 50.0
-ob N ob.buffer 0.0 ob.activation 3.0 ob.conceptual_depth 50.0
-ob O ob.buffer 0.0 ob.activation 3.0 ob.conceptual_depth 50.0
+ob T ob.buffer 0.0 ob.activation 5.953125 ob.conceptual_depth 50.0
+setBuffer slipnode id H buffer 30.0
+setBuffer slipnode id J buffer 90.0
+setBuffer slipnode id lc buffer 690.0
+setBuffer slipnode id I buffer 130.0
+ob U ob.buffer 0.0 ob.activation 5.953125 ob.conceptual_depth 50.0
+setBuffer slipnode id K buffer -10.0
+setBuffer slipnode id lc buffer 770.0
+setBuffer slipnode id J buffer 130.0
+setBuffer slipnode id L buffer -10.0
+setBuffer slipnode id lc buffer 850.0
+ob V ob.buffer 0.0 ob.activation 5.953125 ob.conceptual_depth 50.0
+setBuffer slipnode id K buffer 30.0
+setBuffer slipnode id M buffer 7.0234375
+ob W ob.buffer 0.0 ob.activation 5.953125 ob.conceptual_depth 50.0
+setBuffer slipnode id lc buffer 930.0
+ob X ob.buffer 0.0 ob.activation 5.953125 ob.conceptual_depth 50.0
+printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4)
 setBuffer slipnode id rm buffer -30.0
-printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 3, 3, 3)
 setBuffer slipnode id spc buffer 120.0
-setBuffer slipnode id lf buffer 10.0
-setBuffer slipnode id rt buffer 0.0
-setBuffer slipnode id fs buffer 25.0
+setBuffer slipnode id lf buffer -10.0
+setBuffer slipnode id rt buffer -50.0
+setBuffer slipnode id fs buffer 0.390625
 setBuffer slipnode id ls buffer 0.0
-setBuffer slipnode id lm buffer -30.0
+setBuffer slipnode id lm buffer 70.0
 setBuffer slipnode id spc buffer 190.0
-Post Codelet codelets size 50 rndOpt None name breaker
-setBuffer slipnode id rt buffer 10.0
-setBuffer slipnode id lf buffer 10.0
-setBuffer slipnode id fs buffer 25.0
+setBuffer slipnode id rt buffer -40.0
+setBuffer slipnode id lf buffer -10.0
+setBuffer slipnode id fs buffer 0.390625
+ob Y ob.buffer 0.0 ob.activation 5.953125 ob.conceptual_depth 50.0
 setBuffer slipnode id ls buffer 0.0
-setBuffer slipnode id spc buffer 260.0
-ob P ob.buffer 0.0 ob.activation 3.0 ob.conceptual_depth 50.0
-ob Q ob.buffer 0.0 ob.activation 3.0 ob.conceptual_depth 50.0
-ob R ob.buffer 0.0 ob.activation 3.0 ob.conceptual_depth 50.0
-setBuffer slipnode id obc buffer 80.0
-setBuffer slipnode id g buffer 10.0
-ob S ob.buffer 0.0 ob.activation 3.0 ob.conceptual_depth 50.0
+Post Codelet codelets size 87 rndOpt None name top-down-bond-scout--direction
+setBuffer slipnode id lf buffer 10.0
+setBuffer slipnode id dc buffer 45.0
+ob Z ob.buffer 0.0 ob.activation 5.953125 ob.conceptual_depth 50.0
+setBuffer slipnode id lm buffer 70.0
+setBuffer slipnode id rm buffer -20.0
+ob 1 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
+setBuffer slipnode id pd buffer 8.75
+setBuffer slipnode id bc buffer 45.0
+ob 2 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
+setBuffer slipnode id sg buffer 30.0
+ob 3 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
 setBuffer slipnode id A buffer 93.0
 setBuffer slipnode id B buffer 133.0
-ob T ob.buffer 0.0 ob.activation 3.0 ob.conceptual_depth 50.0
+printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4)
 setBuffer slipnode id C buffer 133.0
-setBuffer slipnode id D buffer -7.0
-setBuffer slipnode id E buffer 41.5
-setBuffer slipnode id F buffer 1.5
-printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 3, 3, 3, 1)
-setBuffer slipnode id G buffer 1.5
-setBuffer slipnode id H buffer 41.5
-setBuffer slipnode id I buffer 93.0
+setBuffer slipnode id D buffer 133.0
+ob 4 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
+setBuffer slipnode id E buffer -7.0
+setBuffer slipnode id F buffer 36.5
+setBuffer slipnode id G buffer -7.0
+setBuffer slipnode id H buffer 33.0
+setBuffer slipnode id I buffer 133.0
 setBuffer slipnode id J buffer 133.0
-setBuffer slipnode id K buffer 93.0
-setBuffer slipnode id L buffer 41.5
-setBuffer slipnode id M buffer 1.5
-setBuffer slipnode id N buffer 1.5
-setBuffer slipnode id O buffer 1.5
-setBuffer slipnode id P buffer 1.5
-ob U ob.buffer 0.0 ob.activation 3.0 ob.conceptual_depth 50.0
-setBuffer slipnode id Q buffer 1.5
-setBuffer slipnode id R buffer 1.5
-setBuffer slipnode id S buffer 1.5
-setBuffer slipnode id T buffer 1.5
-ob V ob.buffer 0.0 ob.activation 3.0 ob.conceptual_depth 50.0
-setBuffer slipnode id U buffer 1.5
-setBuffer slipnode id V buffer 1.5
-setBuffer slipnode id W buffer 1.5
-setBuffer slipnode id X buffer 1.5
-setBuffer slipnode id Y buffer 1.5
-setBuffer slipnode id Z buffer 1.5
-setBuffer slipnode id bf buffer 20.0
-ob W ob.buffer 0.0 ob.activation 3.0 ob.conceptual_depth 50.0
-setBuffer slipnode id len buffer 2.5
-setBuffer slipnode id lm buffer -30.0
-ob X ob.buffer 0.0 ob.activation 3.0 ob.conceptual_depth 50.0
-setBuffer slipnode id rm buffer -30.0
-setBuffer slipnode id md buffer 50.0
+Post Codelet codelets size 88 rndOpt None name top-down-bond-scout--direction
+setBuffer slipnode id K buffer 33.0
+setBuffer slipnode id L buffer -7.0
+setBuffer slipnode id M buffer 10.0234375
+setBuffer slipnode id N buffer 0.0234375
+setBuffer slipnode id O buffer 0.0234375
+ob 5 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
+setBuffer slipnode id P buffer 0.0234375
+setBuffer slipnode id Q buffer 0.0234375
+setBuffer slipnode id R buffer 0.0234375
+setBuffer slipnode id S buffer 0.0234375
+setBuffer slipnode id T buffer 0.0234375
+setBuffer slipnode id U buffer 0.0234375
+setBuffer slipnode id V buffer 0.0234375
+setBuffer slipnode id W buffer 0.0234375
+setBuffer slipnode id X buffer 0.0234375
+setBuffer slipnode id Y buffer 0.0234375
+setBuffer slipnode id Z buffer 0.0234375
+setBuffer slipnode id bf buffer -2.5
+setBuffer slipnode id len buffer 0.0390625
+setBuffer slipnode id lm buffer 70.0
+printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4)
+setBuffer slipnode id rm buffer -20.0
+setBuffer slipnode id md buffer -25.0
 setBuffer slipnode id sl buffer 0.0
 setBuffer slipnode id wh buffer 0.0
-ob Y ob.buffer 0.0 ob.activation 3.0 ob.conceptual_depth 50.0
-setBuffer slipnode id l buffer 50.0
-setBuffer slipnode id g buffer 10.0
+Post Codelet codelets size 89 rndOpt None name top-down-group-scout--direction
 setActivation slipnode id A activation 193.0
 setActivation slipnode id A activation 100.0
-ob Z ob.buffer 0.0 ob.activation 3.0 ob.conceptual_depth 50.0
 setActivation slipnode id B activation 233.0
 setActivation slipnode id B activation 100.0
 setActivation slipnode id C activation 233.0
-ob 1 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
 setActivation slipnode id C activation 100.0
-setActivation slipnode id D activation 93.0
-setActivation slipnode id E activation 44.5
-setActivation slipnode id F activation 4.5
-ob 2 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-setActivation slipnode id G activation 4.5
-setActivation slipnode id H activation 44.5
-setActivation slipnode id I activation 193.0
-ob 3 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-setActivation slipnode id I activation 100.0
-setActivation slipnode id J activation 233.0
-setActivation slipnode id J activation 100.0
-setActivation slipnode id K activation 193.0
-setActivation slipnode id K activation 100.0
-setActivation slipnode id L activation 44.5
-setActivation slipnode id M activation 4.5
-setActivation slipnode id N activation 4.5
-ob 4 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-setActivation slipnode id O activation 4.5
-ob 5 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-setActivation slipnode id P activation 4.5
-setActivation slipnode id Q activation 4.5
-ob lm ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-setActivation slipnode id R activation 4.5
-setActivation slipnode id S activation 4.5
-setActivation slipnode id T activation 4.5
+setActivation slipnode id D activation 233.0
+ob lm ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
+setActivation slipnode id D activation 100.0
+setActivation slipnode id E activation 93.0
+setActivation slipnode id F activation 129.5
+setActivation slipnode id F activation 100.0
+setActivation slipnode id G activation 93.0
+setActivation slipnode id H activation 133.0
 ob rm ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-setActivation slipnode id U activation 4.5
-setActivation slipnode id V activation 4.5
-setActivation slipnode id W activation 4.5
-setActivation slipnode id X activation 4.5
-ob md ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
-setActivation slipnode id Y activation 4.5
-setActivation slipnode id Z activation 4.5
-setActivation slipnode id lm activation 70.0
-setActivation slipnode id rm activation 70.0
-setActivation slipnode id md activation 150.0
+setActivation slipnode id H activation 100.0
+setActivation slipnode id I activation 233.0
+setActivation slipnode id I activation 100.0
+printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4)
+setActivation slipnode id J activation 233.0
+ob md ob.buffer 0.0 ob.activation 50.0 ob.conceptual_depth 50.0
+setActivation slipnode id J activation 100.0
+Post Codelet codelets size 90 rndOpt None name top-down-group-scout--direction
+setActivation slipnode id K activation 133.0
+setActivation slipnode id K activation 100.0
+setActivation slipnode id L activation 93.0
+setActivation slipnode id M activation 75.9765625
 ob sl ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-setActivation slipnode id md activation 100.0
-setActivation slipnode id fs activation 25.0
-setActivation slipnode id lf activation 10.0
-setActivation slipnode id rt activation 10.0
+setActivation slipnode id N activation 5.9765625
+printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4)
+Post Codelet codelets size 91 rndOpt None name top-down-group-scout--direction
+setActivation slipnode id O activation 5.9765625
+setActivation slipnode id P activation 5.9765625
+setActivation slipnode id Q activation 5.9765625
+setActivation slipnode id R activation 5.9765625
+printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4)
+setActivation slipnode id S activation 5.9765625
+setActivation slipnode id T activation 5.9765625
+setActivation slipnode id U activation 5.9765625
+Post Codelet codelets size 92 rndOpt None name top-down-bond-scout--category
+setActivation slipnode id V activation 5.9765625
 ob wh ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-setActivation slipnode id id activation 50.0
-ob fs ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-setActivation slipnode id l activation 150.0
-setActivation slipnode id l activation 100.0
-setActivation slipnode id g activation 10.0
+setActivation slipnode id W activation 5.9765625
+ob fs ob.buffer 0.0 ob.activation 49.21875 ob.conceptual_depth 50.0
+setActivation slipnode id X activation 5.9765625
+setActivation slipnode id Y activation 5.9765625
+printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 4)
+setActivation slipnode id Z activation 5.9765625
+Post Codelet codelets size 93 rndOpt None name top-down-bond-scout--category
 ob ls ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-setActivation slipnode id len activation 7.5
-ob lf ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-setActivation slipnode id obc activation 180.0
-setActivation slipnode id obc activation 100.0
-setActivation slipnode id bf activation 60.0
-ob rt ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-ob pd ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-ob sc ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
+setActivation slipnode id lm activation 170.0
+setActivation slipnode id lm activation 100.0
+printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4)
+setActivation slipnode id rm activation 80.0
+Post Codelet codelets size 94 rndOpt None name top-down-description-scout
+setActivation slipnode id md activation 25.0
+ob lf ob.buffer 0.0 ob.activation 40.0 ob.conceptual_depth 50.0
+setActivation slipnode id fs activation 49.609375
+setActivation slipnode id lf activation 50.0
+printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4)
+setActivation slipnode id rt activation 60.0
+setActivation slipnode id pd activation 31.25
+setActivation slipnode id sc activation 50.0
+Post Codelet codelets size 95 rndOpt None name bottom-up-description-scout
+setActivation slipnode id pg activation 5.0
+setActivation slipnode id sg activation 50.0
+setActivation slipnode id id activation 50.0
+setActivation slipnode id l activation 125.0
+setActivation slipnode id l activation 100.0
+printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3)
+setActivation slipnode id g activation 8.59375
+setActivation slipnode id dc activation 95.0
+Post Codelet codelets size 96 rndOpt None name bottom-up-bond-scout
+setActivation slipnode id bc activation 95.0
+ob rt ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
+setActivation slipnode id len activation 9.9609375
+setActivation slipnode id obc activation 40.0
+printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3)
+setActivation slipnode id bf activation 82.5
+Post Codelet codelets size 97 rndOpt None name group-scout--whole-string
+ob pd ob.buffer 0.0 ob.activation 22.5 ob.conceptual_depth 50.0
+printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3)
+ob sc ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
+Post Codelet codelets size 98 rndOpt None name group-scout--whole-string
 ob sm ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-ob pg ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-ob sg ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
+ob pg ob.buffer 0.0 ob.activation 10.0 ob.conceptual_depth 50.0
+printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3)
+Post Codelet codelets size 99 rndOpt None name group-scout--whole-string
+ob sg ob.buffer 0.0 ob.activation 20.0 ob.conceptual_depth 50.0
 ob smg ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
 ob id ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
+printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3)
 ob op ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-ob l ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob g ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
+Post Codelet codelets size 100 rndOpt None name bottom-up-correspondence-scout
+ob l ob.buffer 100.0 ob.activation 50.0 ob.conceptual_depth 50.0
+ob g ob.buffer 0.0 ob.activation 17.1875 ob.conceptual_depth 50.0
+printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3)
+Post Codelet codelets size 101 rndOpt Some(0.721) name important-object-correspondence-scout
+Post. codelets.size > 100
 ob lc ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob spc ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob apc ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-ob dc ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-ob bc ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
+ob dc ob.buffer 0.0 ob.activation 50.0 ob.conceptual_depth 50.0
+ob bc ob.buffer 0.0 ob.activation 50.0 ob.conceptual_depth 50.0
 ob gpc ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-ob len ob.buffer 0.0 ob.activation 5.0 ob.conceptual_depth 50.0
-ob obc ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob bf ob.buffer 0.0 ob.activation 40.0 ob.conceptual_depth 50.0
+ob len ob.buffer 0.0 ob.activation 9.921875 ob.conceptual_depth 50.0
+ob obc ob.buffer 0.0 ob.activation 80.0 ob.conceptual_depth 50.0
+ob bf ob.buffer 0.0 ob.activation 85.0 ob.conceptual_depth 50.0
 sl.to B buffer 50.0 inc 40.0
 sl.to lc buffer 50.0 inc 80.0
-sl.to fs buffer 0.0 inc 25.0
+sl.to fs buffer -24.609375 inc 25.0
 sl.to A buffer 50.0 inc 40.0
 sl.to C buffer 50.0 inc 40.0
 sl.to lc buffer 130.0 inc 80.0
 sl.to B buffer 90.0 inc 40.0
-sl.to D buffer -50.0 inc 40.0
+sl.to D buffer 50.0 inc 40.0
 sl.to lc buffer 210.0 inc 80.0
 sl.to C buffer 90.0 inc 40.0
-sl.to E buffer -1.5 inc 40.0
+sl.to E buffer -50.0 inc 40.0
 sl.to lc buffer 290.0 inc 80.0
-sl.to H buffer -1.5 inc 40.0
-sl.to J buffer 50.0 inc 40.0
+sl.to D buffer 90.0 inc 40.0
+sl.to F buffer -46.5 inc 40.0
 sl.to lc buffer 370.0 inc 80.0
-sl.to I buffer 50.0 inc 40.0
-sl.to K buffer 50.0 inc 40.0
+sl.to F buffer -6.5 inc 40.0
+sl.to H buffer -50.0 inc 40.0
 sl.to lc buffer 450.0 inc 80.0
-sl.to J buffer 90.0 inc 40.0
-sl.to L buffer -1.5 inc 40.0
+sl.to G buffer -50.0 inc 40.0
+sl.to I buffer 50.0 inc 40.0
 sl.to lc buffer 530.0 inc 80.0
+sl.to H buffer -10.0 inc 40.0
+sl.to J buffer 50.0 inc 40.0
+sl.to lc buffer 610.0 inc 80.0
+sl.to I buffer 90.0 inc 40.0
+sl.to K buffer -50.0 inc 40.0
+sl.to lc buffer 690.0 inc 80.0
+sl.to J buffer 90.0 inc 40.0
+sl.to L buffer -50.0 inc 40.0
+sl.to lc buffer 770.0 inc 80.0
+sl.to K buffer -10.0 inc 40.0
+sl.to M buffer -32.9765625 inc 40.0
+sl.to lc buffer 850.0 inc 80.0
 sl.to rm buffer -50.0 inc 20.0
 sl.to spc buffer 50.0 inc 70.0
-sl.to lf buffer 0.0 inc 10.0
-sl.to rt buffer 0.0 inc 0.0
-sl.to fs buffer 25.0 inc 0.0
+sl.to lf buffer -20.0 inc 10.0
+sl.to rt buffer -50.0 inc 0.0
+sl.to fs buffer 0.390625 inc 0.0
 sl.to ls buffer 0.0 inc 0.0
-sl.to lm buffer -50.0 inc 20.0
+sl.to lm buffer 50.0 inc 20.0
 sl.to spc buffer 120.0 inc 70.0
-sl.to rt buffer 0.0 inc 10.0
-sl.to lf buffer 10.0 inc 0.0
-sl.to fs buffer 25.0 inc 0.0
+sl.to rt buffer -50.0 inc 10.0
+sl.to lf buffer -10.0 inc 0.0
+sl.to fs buffer 0.390625 inc 0.0
 sl.to ls buffer 0.0 inc 0.0
-sl.to spc buffer 190.0 inc 70.0
-sl.to obc buffer 50.0 inc 30.0
-sl.to g buffer 0.0 inc 10.0
+sl.to lf buffer -10.0 inc 20.0
+sl.to dc buffer -25.0 inc 70.0
+sl.to lm buffer 70.0 inc 0.0
+sl.to rm buffer -30.0 inc 10.0
+sl.to pd buffer -11.25 inc 20.0
+sl.to bc buffer -25.0 inc 70.0
+sl.to sg buffer -10.0 inc 40.0
 sl.to A buffer 90.0 inc 3.0
 sl.to B buffer 130.0 inc 3.0
 sl.to C buffer 130.0 inc 3.0
-sl.to D buffer -10.0 inc 3.0
-sl.to E buffer 38.5 inc 3.0
-sl.to F buffer -1.5 inc 3.0
-sl.to G buffer -1.5 inc 3.0
-sl.to H buffer 38.5 inc 3.0
-sl.to I buffer 90.0 inc 3.0
+sl.to D buffer 130.0 inc 3.0
+sl.to E buffer -10.0 inc 3.0
+sl.to F buffer 33.5 inc 3.0
+sl.to G buffer -10.0 inc 3.0
+sl.to H buffer 30.0 inc 3.0
+sl.to I buffer 130.0 inc 3.0
 sl.to J buffer 130.0 inc 3.0
-sl.to K buffer 90.0 inc 3.0
-sl.to L buffer 38.5 inc 3.0
-sl.to M buffer -1.5 inc 3.0
-sl.to N buffer -1.5 inc 3.0
-sl.to O buffer -1.5 inc 3.0
-sl.to P buffer -1.5 inc 3.0
-sl.to Q buffer -1.5 inc 3.0
-sl.to R buffer -1.5 inc 3.0
-sl.to S buffer -1.5 inc 3.0
-sl.to T buffer -1.5 inc 3.0
-sl.to U buffer -1.5 inc 3.0
-sl.to V buffer -1.5 inc 3.0
-sl.to W buffer -1.5 inc 3.0
-sl.to X buffer -1.5 inc 3.0
-sl.to Y buffer -1.5 inc 3.0
-sl.to Z buffer -1.5 inc 3.0
-sl.to bf buffer -20.0 inc 40.0
-sl.to len buffer -2.5 inc 5.0
-sl.to lm buffer -30.0 inc 0.0
-sl.to rm buffer -30.0 inc 0.0
-Random rndseed=75
-sl.to md buffer 50.0 inc 0.0
+sl.to K buffer 30.0 inc 3.0
+sl.to L buffer -10.0 inc 3.0
+sl.to M buffer 7.0234375 inc 3.0
+sl.to N buffer -2.9765625 inc 3.0
+sl.to O buffer -2.9765625 inc 3.0
+sl.to P buffer -2.9765625 inc 3.0
+Random rndseed=647
+sl.to Q buffer -2.9765625 inc 3.0
+sl.to R buffer -2.9765625 inc 3.0
+sl.to S buffer -2.9765625 inc 3.0
+choose_old_codelet chosen 18808.005999999998 codelets_run 105 rndValue 0.721 urgsum 26086.0
+sl.to T buffer -2.9765625 inc 3.0
+sl.to U buffer -2.9765625 inc 3.0
+sl.to V buffer -2.9765625 inc 3.0
+sl.to W buffer -2.9765625 inc 3.0
+sl.to X buffer -2.9765625 inc 3.0
+sl.to Y buffer -2.9765625 inc 3.0
+sl.to Z buffer -2.9765625 inc 3.0
+sl.to bf buffer -42.5 inc 40.0
+sl.to len buffer -4.9609375 inc 5.0
+sl.to lm buffer 70.0 inc 0.0
+sl.to rm buffer -20.0 inc 0.0
+sl.to md buffer -25.0 inc 0.0
 sl.to sl buffer 0.0 inc 0.0
 sl.to wh buffer 0.0 inc 0.0
-sl.to l buffer 50.0 inc 0.0
-sl.to g buffer 10.0 inc 0.0
+removeCodelet codelets size 100
 Slipnet. update. slipnodes
 clamp false ob A ob.buffer 93.0 activation 100.0
+printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3)
+Post Codelet codelets size 101 rndOpt Some(0.026) name important-object-correspondence-scout
+Post. codelets.size > 100
 clamp false ob B ob.buffer 133.0 activation 100.0
 clamp false ob C ob.buffer 133.0 activation 100.0
-clamp false ob D ob.buffer -7.0 activation 100.0
-clamp false ob E ob.buffer 41.5 activation 3.0
-clamp false ob F ob.buffer 1.5 activation 3.0
-clamp false ob G ob.buffer 1.5 activation 3.0
-clamp false ob H ob.buffer 41.5 activation 3.0
-clamp false ob I ob.buffer 93.0 activation 100.0
+clamp false ob D ob.buffer 133.0 activation 100.0
+choose_old_codelet chosen 671.216 codelets_run 105 rndValue 0.026 urgsum 25816.0
+removeCodelet codelets size 100
+clamp false ob E ob.buffer -7.0 activation 100.0
+clamp false ob F ob.buffer 36.5 activation 93.0
+printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3)
+Post Codelet codelets size 101 rndOpt Some(0.769) name important-object-correspondence-scout
+Post. codelets.size > 100
+clamp false ob G ob.buffer -7.0 activation 100.0
+clamp false ob H ob.buffer 33.0 activation 100.0
+clamp false ob I ob.buffer 133.0 activation 100.0
 clamp false ob J ob.buffer 133.0 activation 100.0
-clamp false ob K ob.buffer 93.0 activation 100.0
-clamp false ob L ob.buffer 41.5 activation 3.0
-clamp false ob M ob.buffer 1.5 activation 3.0
-clamp false ob N ob.buffer 1.5 activation 3.0
-clamp false ob O ob.buffer 1.5 activation 3.0
-clamp false ob P ob.buffer 1.5 activation 3.0
-clamp false ob Q ob.buffer 1.5 activation 3.0
-clamp false ob R ob.buffer 1.5 activation 3.0
-clamp false ob S ob.buffer 1.5 activation 3.0
-clamp false ob T ob.buffer 1.5 activation 3.0
-clamp false ob U ob.buffer 1.5 activation 3.0
-clamp false ob V ob.buffer 1.5 activation 3.0
-clamp false ob W ob.buffer 1.5 activation 3.0
-clamp false ob X ob.buffer 1.5 activation 3.0
-clamp false ob Y ob.buffer 1.5 activation 3.0
-clamp false ob Z ob.buffer 1.5 activation 3.0
+choose_old_codelet chosen 19327.661500000002 codelets_run 105 rndValue 0.769 urgsum 25133.5
+removeCodelet codelets size 100
+printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3)
+Post Codelet codelets size 101 rndOpt Some(0.005) name rule-scout
+Post. codelets.size > 100
+clamp false ob K ob.buffer 33.0 activation 100.0
+choose_old_codelet chosen 124.31750000000001 codelets_run 105 rndValue 0.005 urgsum 24863.5
+clamp false ob L ob.buffer -7.0 activation 100.0
+removeCodelet codelets size 100
+clamp false ob M ob.buffer 10.0234375 activation 65.953125
+clamp false ob N ob.buffer 0.0234375 activation 5.953125
+printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3)
+Post Codelet codelets size 101 rndOpt Some(0.873) name breaker
+Post. codelets.size > 100
+clamp false ob O ob.buffer 0.0234375 activation 5.953125
+clamp false ob P ob.buffer 0.0234375 activation 5.953125
+clamp false ob Q ob.buffer 0.0234375 activation 5.953125
+clamp false ob R ob.buffer 0.0234375 activation 5.953125
+clamp false ob S ob.buffer 0.0234375 activation 5.953125
+clamp false ob T ob.buffer 0.0234375 activation 5.953125
+clamp false ob U ob.buffer 0.0234375 activation 5.953125
+clamp false ob V ob.buffer 0.0234375 activation 5.953125
+choose_old_codelet chosen 21110.013 codelets_run 105 rndValue 0.873 urgsum 24181.0
+clamp false ob W ob.buffer 0.0234375 activation 5.953125
+clamp false ob X ob.buffer 0.0234375 activation 5.953125
+removeCodelet codelets size 100
+clamp false ob Y ob.buffer 0.0234375 activation 5.953125
+clamp false ob Z ob.buffer 0.0234375 activation 5.953125
+printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1)
 clamp false ob 1 ob.buffer 0.0 activation 0.0
 clamp false ob 2 ob.buffer 0.0 activation 0.0
 clamp false ob 3 ob.buffer 0.0 activation 0.0
 clamp false ob 4 ob.buffer 0.0 activation 0.0
 clamp false ob 5 ob.buffer 0.0 activation 0.0
-clamp false ob lm ob.buffer -30.0 activation 100.0
-clamp false ob rm ob.buffer -30.0 activation 100.0
-clamp false ob md ob.buffer 50.0 activation 100.0
+clamp false ob lm ob.buffer 70.0 activation 100.0
+clamp false ob rm ob.buffer -20.0 activation 100.0
+clamp false ob md ob.buffer -25.0 activation 50.0
 clamp false ob sl ob.buffer 0.0 activation 0.0
 clamp false ob wh ob.buffer 0.0 activation 0.0
-clamp false ob fs ob.buffer 25.0 activation 0.0
+clamp false ob fs ob.buffer 0.390625 activation 49.21875
 clamp false ob ls ob.buffer 0.0 activation 0.0
-clamp false ob lf ob.buffer 10.0 activation 0.0
-clamp false ob rt ob.buffer 10.0 activation 0.0
-clamp false ob pd ob.buffer 0.0 activation 0.0
-clamp false ob sc ob.buffer 0.0 activation 0.0
+clamp false ob lf ob.buffer 10.0 activation 40.0
+clamp false ob rt ob.buffer -40.0 activation 100.0
+clamp false ob pd ob.buffer 8.75 activation 22.5
+clamp false ob sc ob.buffer -50.0 activation 100.0
 clamp false ob sm ob.buffer 0.0 activation 0.0
-clamp false ob pg ob.buffer 0.0 activation 0.0
-clamp false ob sg ob.buffer 0.0 activation 0.0
+clamp false ob pg ob.buffer -5.0 activation 10.0
+clamp false ob sg ob.buffer 30.0 activation 20.0
 clamp false ob smg ob.buffer 0.0 activation 0.0
 clamp false ob id ob.buffer -50.0 activation 100.0
 clamp false ob op ob.buffer 0.0 activation 0.0
-clamp false ob l ob.buffer 50.0 activation 100.0
-clamp false ob g ob.buffer 10.0 activation 0.0
-clamp true ob lc ob.buffer 610.0 activation 100.0
-clamp true ob spc ob.buffer 260.0 activation 100.0
+clamp false ob l ob.buffer 75.0 activation 50.0
+clamp false ob g ob.buffer -8.59375 activation 17.1875
+clamp true ob lc ob.buffer 930.0 activation 100.0
+clamp true ob spc ob.buffer 190.0 activation 100.0
 clamp false ob apc ob.buffer 0.0 activation 0.0
-clamp false ob dc ob.buffer 0.0 activation 0.0
-clamp false ob bc ob.buffer 0.0 activation 0.0
+clamp false ob dc ob.buffer 45.0 activation 50.0
+clamp false ob bc ob.buffer 45.0 activation 50.0
 clamp false ob gpc ob.buffer 0.0 activation 0.0
-clamp false ob len ob.buffer 2.5 activation 5.0
-clamp false ob obc ob.buffer 80.0 activation 100.0
-clamp false ob bf ob.buffer 20.0 activation 40.0
+clamp false ob len ob.buffer 0.0390625 activation 9.921875
+clamp false ob obc ob.buffer -40.0 activation 80.0
+clamp false ob bf ob.buffer -2.5 activation 85.0
 check for probabablistic jump to 100%
 slipnodes.size()59
 ob A ob.activation 100.0
 ob A activation 100.0
 ob B ob.activation 100.0
-Random rndseed=76
+Random rndseed=648
 ob B activation 100.0
 ob C ob.activation 100.0
-Random rndseed=77
+Random rndseed=649
 ob C activation 100.0
-ob D ob.activation 93.0
-Random rndseed=78
-setActivation slipnode id D activation 100.0
+ob D ob.activation 100.0
+Random rndseed=650
 ob D activation 100.0
-ob E ob.activation 44.5
-ob E activation 44.5
-ob F ob.activation 4.5
-ob F activation 4.5
-ob G ob.activation 4.5
-ob G activation 4.5
-ob H ob.activation 44.5
-ob H activation 44.5
+ob E ob.activation 93.0
+Random rndseed=651
+setActivation slipnode id E activation 100.0
+ob E activation 100.0
+ob F ob.activation 100.0
+Random rndseed=652
+ob F activation 100.0
+ob G ob.activation 93.0
+Random rndseed=653
+ob G activation 93.0
+ob H ob.activation 100.0
+Random rndseed=654
+ob H activation 100.0
 ob I ob.activation 100.0
-Random rndseed=79
+Random rndseed=655
 ob I activation 100.0
 ob J ob.activation 100.0
-Random rndseed=80
+Random rndseed=656
 ob J activation 100.0
 ob K ob.activation 100.0
-Random rndseed=81
+Random rndseed=657
 ob K activation 100.0
-ob L ob.activation 44.5
-ob L activation 44.5
-ob M ob.activation 4.5
-ob M activation 4.5
-ob N ob.activation 4.5
-ob N activation 4.5
-ob O ob.activation 4.5
-ob O activation 4.5
-ob P ob.activation 4.5
-ob P activation 4.5
-ob Q ob.activation 4.5
-ob Q activation 4.5
-ob R ob.activation 4.5
-ob R activation 4.5
-ob S ob.activation 4.5
-ob S activation 4.5
-ob T ob.activation 4.5
-ob T activation 4.5
-ob U ob.activation 4.5
-ob U activation 4.5
-ob V ob.activation 4.5
-ob V activation 4.5
-ob W ob.activation 4.5
-ob W activation 4.5
-ob X ob.activation 4.5
-ob X activation 4.5
-ob Y ob.activation 4.5
-ob Y activation 4.5
-ob Z ob.activation 4.5
-ob Z activation 4.5
+ob L ob.activation 93.0
+Random rndseed=658
+ob L activation 93.0
+ob M ob.activation 75.9765625
+Random rndseed=659
+ob M activation 75.9765625
+ob N ob.activation 5.9765625
+ob N activation 5.9765625
+ob O ob.activation 5.9765625
+ob O activation 5.9765625
+ob P ob.activation 5.9765625
+ob P activation 5.9765625
+ob Q ob.activation 5.9765625
+ob Q activation 5.9765625
+ob R ob.activation 5.9765625
+ob R activation 5.9765625
+ob S ob.activation 5.9765625
+ob S activation 5.9765625
+ob T ob.activation 5.9765625
+ob T activation 5.9765625
+ob U ob.activation 5.9765625
+ob U activation 5.9765625
+ob V ob.activation 5.9765625
+ob V activation 5.9765625
+ob W ob.activation 5.9765625
+ob W activation 5.9765625
+ob X ob.activation 5.9765625
+ob X activation 5.9765625
+ob Y ob.activation 5.9765625
+ob Y activation 5.9765625
+ob Z ob.activation 5.9765625
+ob Z activation 5.9765625
 ob 1 ob.activation 0.0
 ob 1 activation 0.0
 ob 2 ob.activation 0.0
@@ -674,37 +882,38 @@ ob 4 ob.activation 0.0
 ob 4 activation 0.0
 ob 5 ob.activation 0.0
 ob 5 activation 0.0
-ob lm ob.activation 70.0
-Random rndseed=82
-ob lm activation 70.0
-ob rm ob.activation 70.0
-Random rndseed=83
-ob rm activation 70.0
-ob md ob.activation 100.0
-Random rndseed=84
-ob md activation 100.0
+ob lm ob.activation 100.0
+Random rndseed=660
+ob lm activation 100.0
+ob rm ob.activation 80.0
+Random rndseed=661
+setActivation slipnode id rm activation 100.0
+ob rm activation 100.0
+ob md ob.activation 25.0
+ob md activation 25.0
 ob sl ob.activation 0.0
 ob sl activation 0.0
 ob wh ob.activation 0.0
 ob wh activation 0.0
-ob fs ob.activation 25.0
-ob fs activation 25.0
+ob fs ob.activation 49.609375
+ob fs activation 49.609375
 ob ls ob.activation 0.0
 ob ls activation 0.0
-ob lf ob.activation 10.0
-ob lf activation 10.0
-ob rt ob.activation 10.0
-ob rt activation 10.0
-ob pd ob.activation 0.0
-ob pd activation 0.0
-ob sc ob.activation 0.0
-ob sc activation 0.0
+ob lf ob.activation 50.0
+ob lf activation 50.0
+ob rt ob.activation 60.0
+Random rndseed=662
+ob rt activation 60.0
+ob pd ob.activation 31.25
+ob pd activation 31.25
+ob sc ob.activation 50.0
+ob sc activation 50.0
 ob sm ob.activation 0.0
 ob sm activation 0.0
-ob pg ob.activation 0.0
-ob pg activation 0.0
-ob sg ob.activation 0.0
-ob sg activation 0.0
+ob pg ob.activation 5.0
+ob pg activation 5.0
+ob sg ob.activation 50.0
+ob sg activation 50.0
 ob smg ob.activation 0.0
 ob smg activation 0.0
 ob id ob.activation 50.0
@@ -712,38 +921,43 @@ ob id activation 50.0
 ob op ob.activation 0.0
 ob op activation 0.0
 ob l ob.activation 100.0
-Random rndseed=85
+Random rndseed=663
 ob l activation 100.0
-ob g ob.activation 10.0
-ob g activation 10.0
+ob g ob.activation 8.59375
+ob g activation 8.59375
 ob lc ob.activation 100.0
-Random rndseed=86
+Random rndseed=664
 ob lc activation 100.0
 ob spc ob.activation 100.0
-Random rndseed=87
+Random rndseed=665
 ob spc activation 100.0
 ob apc ob.activation 0.0
 ob apc activation 0.0
-ob dc ob.activation 0.0
-ob dc activation 0.0
-ob bc ob.activation 0.0
-ob bc activation 0.0
+ob dc ob.activation 95.0
+Random rndseed=666
+setActivation slipnode id dc activation 100.0
+ob dc activation 100.0
+ob bc ob.activation 95.0
+Random rndseed=667
+setActivation slipnode id bc activation 100.0
+ob bc activation 100.0
 ob gpc ob.activation 0.0
 ob gpc activation 0.0
-ob len ob.activation 7.5
-ob len activation 7.5
-ob obc ob.activation 100.0
-Random rndseed=88
-ob obc activation 100.0
-ob bf ob.activation 60.0
-Random rndseed=89
+ob len ob.activation 9.9609375
+ob len activation 9.9609375
+ob obc ob.activation 40.0
+ob obc activation 40.0
+ob bf ob.activation 82.5
+Random rndseed=668
 setActivation slipnode id bf activation 100.0
 setBuffer slipnode id A buffer 0.0
 setBuffer slipnode id B buffer 0.0
 setBuffer slipnode id C buffer 0.0
+ob bf activation 100.0
 setBuffer slipnode id D buffer 0.0
 setBuffer slipnode id E buffer 0.0
 setBuffer slipnode id F buffer 0.0
+check for redraw; and reset buffer values to 0
 setBuffer slipnode id G buffer 0.0
 setBuffer slipnode id H buffer 0.0
 setBuffer slipnode id I buffer 0.0
@@ -755,7 +969,6 @@ setBuffer slipnode id N buffer 0.0
 setBuffer slipnode id O buffer 0.0
 setBuffer slipnode id P buffer 0.0
 setBuffer slipnode id Q buffer 0.0
-ob bf activation 100.0
 setBuffer slipnode id R buffer 0.0
 setBuffer slipnode id S buffer 0.0
 setBuffer slipnode id T buffer 0.0
@@ -766,7 +979,6 @@ setBuffer slipnode id X buffer 0.0
 setBuffer slipnode id Y buffer 0.0
 setBuffer slipnode id Z buffer 0.0
 setBuffer slipnode id 1 buffer 0.0
-check for redraw; and reset buffer values to 0
 setBuffer slipnode id 2 buffer 0.0
 setBuffer slipnode id 3 buffer 0.0
 setBuffer slipnode id 4 buffer 0.0
@@ -799,20 +1011,20 @@ setBuffer slipnode id gpc buffer 0.0
 setBuffer slipnode id len buffer 0.0
 setBuffer slipnode id obc buffer 0.0
 setBuffer slipnode id bf buffer 0.0
-workspace calculate_string_unhappiness isu 99.99999999999997
-intra_string_unhappiness 99.99999999999997 inter_string_unhappiness 76.53333333333333 total_unhappiness 88.26666666666665
-rule_weakness 100.0
-formulas.actual_temperature 90.61333333333333
+workspace calculate_string_unhappiness isu 95.12020926756354
+workspace intra string unhappiness = 95.12020926756354
+intra_string_unhappiness 95.12020926756354 inter_string_unhappiness 64.67594996459759 total_unhappiness 79.89807961608057
+workspace calculate_string_unhappiness isu 64.67594996459759
+workspace inter string unhappiness = 64.67594996459759
+workspace calculate_string_unhappiness isu 79.89807961608057
+workspace total string unhappiness = 79.89807961608057
+rule_weakness 35.95666276409162
+formulas.actual_temperature 71.10979624568279
 clamp_temperature false
-formulas.actual_temperature 90.61333333333333
-Finish update_Everything T: 90.61333333333333
-workspace intra string unhappiness = 99.99999999999997
-workspace calculate_string_unhappiness isu 76.53333333333333
-workspace inter string unhappiness = 76.53333333333333
-workspace calculate_string_unhappiness isu 88.26666666666665
-workspace total string unhappiness = 88.26666666666665
-ChooseAndRun2 50 T: 90.61333333333333
-choose T: 90.61333333333333
-Choose codelet codelets size 50 scale 1.2924444444444447
-urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 3, 3, 3, 1)
-Random rndseed=90
+formulas.actual_temperature 71.10979624568279
+Finish update_Everything T: 71.10979624568279
+ChooseAndRun2 100 T: 71.10979624568279
+choose T: 71.10979624568279
+Choose codelet codelets size 100 scale 2.592680250287814
+urgencies: ListBuffer(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 2, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 4, 7, 5, 7, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 5, 7, 7, 7, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1)
+Random rndseed=669

@@ -60,9 +60,9 @@ class Group (
 
   if (!bond_list.isEmpty){
     val bbf = bond_list(0).bond_facet;
-    add_bond_description(new Description(this,groupSlipnetInfo.bond_facet,Some(bbf)))
+    add_bond_description(new Description(log, this,groupSlipnetInfo.bond_facet,Some(bbf)))
   }
-  add_bond_description(new Description(this,groupSlipnetInfo.bond_category,Some(bond_category)))
+  add_bond_description(new Description(log,this,groupSlipnetInfo.bond_category,Some(bond_category)))
   add_description(groupSlipnetInfo.object_category, Some(groupSlipnetInfo.group))
   add_description(groupSlipnetInfo.group_category, Some(group_category))
   if (direction_category.isEmpty){

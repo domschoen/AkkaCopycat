@@ -1,6 +1,7 @@
 package models
 
 import akka.actor.ActorRef
+import akka.event.LoggingAdapter
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.SetSlipNodeBufferValue
 
@@ -19,6 +20,7 @@ object Bond {
 }
 
 class Bond (
+             log: LoggingAdapter,
              val from_obj: WorkspaceObject,
              val to_obj: WorkspaceObject,
              val bond_category: SlipNodeRep,
@@ -28,7 +30,7 @@ class Bond (
              slipnetLeft: SlipNodeRep,
              slipnetRight: SlipNodeRep,
              slipnet: ActorRef
-           ) extends WorkspaceStructure {
+           ) extends WorkspaceStructure(log) {
 
   import Bond.BondRep
 
@@ -155,9 +157,8 @@ class Bond (
   def number_of_local_supporting_bonds(): Int = {
     wString match {
       case Some(ws) =>
-        println("ws.bonds " + ws.bonds.size);
-        println("from_obj.wString " + from_obj.wString);
-        println("wString " + ws);
+        log.debug("string.bonds.size() " + ws.bonds.size);
+        println("from_obj.wString " + from_obj.wString.map(_.s))
         println("wString " + ws.s);
         ws.bonds.filter(ob => {
           println("ob " + ob.wString);
@@ -224,7 +225,7 @@ class Bond (
     // equals the local support
 
     val num : Double = number_of_local_supporting_bonds()
-    println("calculate_external_strength " + num)
+//    println("calculate_external_strength " + num)
     val extstr = if (num > 0.0) {
       val density = Math.sqrt(local_density(wos) / 100) * 100.0
       val nf1 = Math.pow(0.6,(1.0/(num*num*num)));

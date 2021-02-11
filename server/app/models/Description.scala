@@ -1,5 +1,6 @@
 package models
 
+import akka.event.LoggingAdapter
 import models.SlipNode.SlipNodeRep
 
 
@@ -12,11 +13,11 @@ object Description {
 
 }
 
-case class Description (
+case class Description (log: LoggingAdapter,
                          var wObject: WorkspaceObject,
                          var description_type : SlipNodeRep,
                          var descriptor : Option[SlipNodeRep]
-                       ) extends WorkspaceStructure {
+                       ) extends WorkspaceStructure(log) {
   //val descriptionTypeSlipNodeIDOpt = Option.empty[String]
   import Description.DescriptionRep
 
@@ -25,8 +26,8 @@ case class Description (
   // this is for GUI
   var visible = false
 
-  def this(ob: WorkspaceObject, ws: WorkspaceString, dt: SlipNodeRep, dc: Option[SlipNodeRep]) = {
-    this(ob, dt, dc)
+  def this(log: LoggingAdapter, ob: WorkspaceObject, ws: WorkspaceString, dt: SlipNodeRep, dc: Option[SlipNodeRep]) = {
+    this(log, ob, dt, dc)
     wString = Some(ws)
   }
 
@@ -35,18 +36,7 @@ case class Description (
 
   override def toString(): String = {
     val descriptorString = descriptor match {
-      case Some(sn) =>
-        if (sn.id == SlipNode.id.letter) {
-          "letter"
-        } else if (sn.id == SlipNode.id.leftmost) {
-          "leftmost"
-        } else if (sn.id == SlipNode.id.rightmost) {
-          "rightmost"
-        } else if (sn.id == SlipNode.id.middle) {
-          "middle"
-        } else {
-          sn.id
-        }
+      case Some(sn) => SlipNode.longNameWithId(sn.id)
       case None => ""
     }
     val stringLocation = wObject.wString match {

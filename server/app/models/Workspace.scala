@@ -528,13 +528,15 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       log.debug("5T: " + t)
 
       if (codelets_run>0) {
+        log.debug("post_top_down_codelets")
         coderack ! GetNumCodelets(t)
       } else {
         slipnet ! models.Slipnet.UpdateEverything(t)
       }
 
     case GetNumCodeletsResponse(codeletsSize: Int, t:Double) =>
-      log.debug("Workspace rule " + rule.map(_.total_strength) + " " + rule)
+      //log.debug("Workspace rule " + rule.map(_.total_strength) + " " + rule)
+      log.debug("Post Top/Bottom Codelets codeletsSize " + codeletsSize)
 
 
       val ruleTotalWeaknessOpt = rule.map(_.total_weakness())
@@ -716,7 +718,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       val bondFrom = objectRefs(bondFromRep.uuid)
       val bondTo = objectRefs(bondToRep.uuid)
       log.debug("WorkspaceProposeBond bondFacet " + bondFacet + " bondCategory " + bondCategory)
-      val nb = new Bond(bondFrom, bondTo, bondCategory, bondFacet, fromDescriptor, toDescriptor, slipnetLeft, slipnetRight, slipnet)
+      val nb = new Bond(log,bondFrom, bondTo, bondCategory, bondFacet, fromDescriptor, toDescriptor, slipnetLeft, slipnetRight, slipnet)
       // if (!remove_terraced_scan) workspace.WorkspaceArea.AddObject(nb,1);
       wsRefs += (nb.uuid -> nb)
 
@@ -760,13 +762,13 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
             } else {
               log.debug(s"Workspace | ReplaceLetter | no relation found")
             }
-            val replacement = new Replacement(i_letter, m_letter, relationOpt)
+            val replacement = new Replacement(log, i_letter, m_letter, relationOpt)
             i_letter.replacement = Some(replacement)
             wsRefs += (replacement.uuid -> replacement)
 
             log.debug(s"Workspace | ReplaceLetter | relation " + relationOpt)
 
-            if (relationOpt.isDefined && relationOpt.get != Slipnet.RelationType.Sameness) {
+            if (relationOpt.isDefined && relationOpt.get != SlipNode.id.sameness) {
               log.debug(s"Workspace | ReplaceLetter | i_letter " + i_letter + " changed to true")
 
               i_letter.changed = true;
@@ -813,7 +815,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       val ob = objectRefs(chosen_object.uuid)
 
       val descriptor = chosen_propertyRep
-      val d = new models.Description(ob, description_typeRep, Some(descriptor))
+      val d = new models.Description(log, ob, description_typeRep, Some(descriptor))
       slipnet ! SetSlipNodeBufferValue(descriptor.id, 100.0)
 
       val urgency = Workspace.activationWithSlipNodeRep(activationBySlipNodeID, description_typeRep)
@@ -921,7 +923,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       val obj1 = objectRefs(obj1Rep.uuid)
       val obj2 = objectRefs(obj2Rep.uuid)
 
-      val nc = new Correspondence(obj1, obj2, concept_mapping_list, flip_obj2);
+      val nc = new Correspondence(log,obj1, obj2, concept_mapping_list, flip_obj2);
       // TODO if (!remove_terraced_scan) WorkspaceArea.AddObject(nc,1);
       wsRefs += (nc.uuid -> nc)
 
@@ -1120,7 +1122,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
           val from_obj_descriptor = from_obj.get_description(bond_facet)
           val to_obj_descriptor = to_obj.get_description(bond_facet)
 
-          val nb = new Bond(from_obj,to_obj,bond_category,bond_facet, from_obj_descriptor,to_obj_descriptor, slipnetLeft,slipnetRight, slipnet)
+          val nb = new Bond(log,from_obj,to_obj,bond_category,bond_facet, from_obj_descriptor,to_obj_descriptor, slipnetLeft,slipnetRight, slipnet)
           addBond(nb)
           self ! LookAHeadForNewBondCreation(s, g.uuid, i + 1, incg, nb.bondRep() :: newBondList)
 
@@ -1765,7 +1767,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
           val bond_category = chosen_bond.bond_category
           val direction_category = chosen_bond.direction_category;
           val bond_facet = chosen_bond.bond_facet;
-          val bond_listOpt = WorkspaceFormulas.possible_group_bond_list(bond_category,
+          val bond_listOpt = WorkspaceFormulas.possible_group_bond_list(log, bond_category,
             direction_category, bond_facet, bond_list.toList, slipnetLeft, slipnetRight, slipnet)
           if (bond_listOpt.isEmpty){
             log.debug("no possible group - fizzle");
@@ -1852,7 +1854,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       }
 
     case WorkspaceProposeRule(facet, description, objectCategory, relation, lengthSplipNode, predecessorSlipNode, successorSlipNode) =>
-      val r = new Rule(facet, description, objectCategory, relation, slipnet, lengthSplipNode, predecessorSlipNode, successorSlipNode)
+      val r = new Rule(log, facet, description, objectCategory, relation, slipnet, lengthSplipNode, predecessorSlipNode, successorSlipNode)
       log.debug(s"New Rule created ${r.uuid}")
       structureRefs += (r.uuid -> r)
       sender() ! WorkspaceProposeRuleResponse(r.uuid)
@@ -2429,15 +2431,15 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
   def unrelated_objects(): List[WorkspaceObject] = {
     // returns a list of all objects in the workspace that have at least
     // one bond slot open
-    log.debug("unrelated_objects " + objects.size)
+//    log.debug("unrelated_objects " + objects.size)
     val result = objects.toList.filter(wo => {
       val ok = ((wo.wString.isDefined && wo.wString.get == initial) || (wo.wString.isDefined && wo.wString.get == target));
       val left = ((wo.left_bond.isEmpty)&&(!wo.leftmost));
       val right = ((wo.right_bond.isEmpty)&&(!wo.rightmost));
-      log.debug("unrelated_objects " + wo + " ok " + ok + " wo.spans_string " + wo.spans_string + " right " + right + " left " + left + " wo.left_bond.isEmpty " + wo.left_bond.isEmpty + " wo.leftmost " +wo.leftmost + " wo.right_bond.isEmpty " + wo.right_bond.isEmpty + " wo.rightmost " +wo.rightmost );
+//      log.debug("unrelated_objects " + wo + " ok " + ok + " wo.spans_string " + wo.spans_string + " right " + right + " left " + left + " wo.left_bond.isEmpty " + wo.left_bond.isEmpty + " wo.leftmost " +wo.leftmost + " wo.right_bond.isEmpty " + wo.right_bond.isEmpty + " wo.rightmost " +wo.rightmost );
       ((ok)&&(!wo.spans_string) && ((right)||(left)))
     })
-    log.debug("unrelated_objects result " + result.size)
+//    log.debug("unrelated_objects result " + result.size)
 
     result
   }

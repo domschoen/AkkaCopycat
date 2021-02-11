@@ -1,7 +1,9 @@
 package models
 
-case class Replacement (
+import akka.event.LoggingAdapter
+
+case class Replacement (log: LoggingAdapter,
                          from: WorkspaceObject,
                          to : WorkspaceObject,
                          relation: Option[String]
-                       ) extends WorkspaceStructure
+                       ) extends WorkspaceStructure(log)
