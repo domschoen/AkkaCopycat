@@ -33,6 +33,29 @@ case class Description (
   def descriptionRep(): DescriptionRep = DescriptionRep(uuid, description_type, descriptor)
 
 
+  override def toString(): String = {
+    val descriptorString = descriptor match {
+      case Some(sn) =>
+        if (sn.id == SlipNode.id.letter) {
+          "letter"
+        } else if (sn.id == SlipNode.id.leftmost) {
+          "leftmost"
+        } else if (sn.id == SlipNode.id.rightmost) {
+          "rightmost"
+        } else if (sn.id == SlipNode.id.middle) {
+          "middle"
+        } else {
+          sn.id
+        }
+      case None => ""
+    }
+    val stringLocation = wObject.wString match {
+      case Some(ws) => ws.description
+      case None => ""
+    }
+    s"description(${descriptorString}) of $wObject in ${stringLocation} string"
+  }
+
   override def calculate_internal_strength() = {
     internal_strength = descriptor match {
       case Some(d) => d.conceptual_depth

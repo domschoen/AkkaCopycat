@@ -1,6 +1,6 @@
 package models
 
-import akka.actor.ActorRef
+import akka.actor.{ActorRef, ActorSystem}
 import akka.protobuf.DescriptorProtos.DescriptorProto
 import models.Bond.BondRep
 import models.Description.DescriptionRep
@@ -10,6 +10,7 @@ import models.Slipnet.DescriptionTypeInstanceLinksToNodeInfo
 import models.WorkspaceObject.{WorkspaceObjectRep, WorkspaceObjectRep2}
 
 import scala.collection.mutable.ListBuffer
+import akka.event.{LoggingAdapter}
 
 object WorkspaceObject {
   case class WorkspaceObjectRep(
@@ -37,7 +38,7 @@ object WorkspaceObject {
 }
 
 
-abstract class WorkspaceObject(ws: WorkspaceString) extends WorkspaceStructure {
+abstract class WorkspaceObject(log: LoggingAdapter, ws: WorkspaceString) extends WorkspaceStructure {
 
   wString = Some(ws)
   var left_string_position: Int = 0
@@ -79,7 +80,7 @@ abstract class WorkspaceObject(ws: WorkspaceString) extends WorkspaceStructure {
 
 
   def setRightBond(b: Option[Bond]) = {
-    println("setRightBond " + this + " bond " + b)
+    log.debug("setRightBond " + this + " bond " + b)
     right_bond = b
   }
 
@@ -141,7 +142,7 @@ abstract class WorkspaceObject(ws: WorkspaceString) extends WorkspaceStructure {
 
   override def toString(): String = {
     if (left_string_position==right_string_position)
-      s"letter ($left_string_position) $right_string_position"
+      s"letter ($left_string_position)$right_string_position"
     else
       s"group ($left_string_position-$right_string_position)"
   }
@@ -251,7 +252,7 @@ abstract class WorkspaceObject(ws: WorkspaceString) extends WorkspaceStructure {
       val descriptorActivation = Workspace.activationWithSlipNodeRep(activationBySlipNodeID, d.descriptor.get)
       val description_typeActivation = Workspace.activationWithSlipNodeRep(activationBySlipNodeID, d.description_type)
 
-      System.out.println("update_object_value " + d + " d.description_type.activation " + description_typeActivation + " d.descriptor.activation " + descriptorActivation);
+      log.debug("update_object_value " + d + " d.description_type.activation " + description_typeActivation + " d.descriptor.activation " + descriptorActivation);
 
       if (description_typeActivation == 100.0) {
         descriptorActivation
@@ -259,12 +260,12 @@ abstract class WorkspaceObject(ws: WorkspaceString) extends WorkspaceStructure {
         descriptorActivation / 20.0
       }
     }).sum
-    System.out.println("update_object_value " + rawSum + " group.isDefined " + group.isDefined + " changed " +changed);
+    log.debug("update_object_value " + rawSum + " group.isDefined " + group.isDefined + " changed " +changed);
 
     val groupAdaptedSum = if (group.isDefined) rawSum * 2.0 / 3.0 else rawSum
     val sum = if (changed) groupAdaptedSum * 2.0 else groupAdaptedSum
     raw_importance = sum;
-    System.out.println("update_object_value : raw_importance " + raw_importance);
+    log.debug("update_object_value : raw_importance " + raw_importance);
 
     // calculate the intra-string-happiness of the object
     val result = if (spans_string) {
@@ -274,12 +275,12 @@ abstract class WorkspaceObject(ws: WorkspaceString) extends WorkspaceStructure {
         group.get.total_strength
       } else {
         val bondstrengthRaw = bonds.map(b => b.total_strength).sum
-        System.out.println("update_object_value : bondstrengthRaw " + bondstrengthRaw);
+        //System.out.println("update_object_value : bondstrengthRaw " + bondstrengthRaw);
 
         if (spans_string) bondstrengthRaw / 3.0 else bondstrengthRaw / 6.0
       }
     }
-    System.out.println("update_object_value : intra_string_happiness " + result);
+    log.debug("update_object_value : intra_string_happiness " + result);
 
     intra_string_happiness = result;
 

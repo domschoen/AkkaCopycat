@@ -47,11 +47,16 @@ object SlipNode {
   object id {
     val right = "rt"
     val sameness = "sm"
+    val successor = "sc"
+    val predecessor = "pd"
     val whole = "wh"
     val letter = "l"
     val group = "g"
     val letter_category = "lc"
     val bond_category = "bc"
+    val leftmost = "lm"
+    val rightmost = "rm"
+    val middle = "md"
   }
 }
 

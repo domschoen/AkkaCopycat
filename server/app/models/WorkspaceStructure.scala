@@ -43,7 +43,7 @@ abstract class WorkspaceStructure {
     total_strength = Formulas.weighted_average(internal_strength,
       internal_strength, external_strength, (100.0-internal_strength));
 
-    println(s"${this.getClass} internal_strength $internal_strength external_strength $external_strength total strength: $total_strength")
+    //println(s"${this.getClass} internal_strength $internal_strength external_strength $external_strength total strength: $total_strength")
   }
   def total_weakness(): Double = {
     100.0-Math.pow(total_strength,0.95)

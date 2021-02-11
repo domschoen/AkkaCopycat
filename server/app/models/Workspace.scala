@@ -200,7 +200,12 @@ object Workspace {
                                  )
   case class WorkspaceProposeRuleResponse(ruleID: String)
   case class GoWithRuleScout2(changed: WorkspaceObjectRep, string_position_category: SlipNodeRep, letter_category: SlipNodeRep)
-  case class GoWithRuleScout3(slippage_list_rep: List[ConceptMappingRep], object_list: List[SlipNodeRep],obj2: WorkspaceObjectRep, letterCategory: SlipNodeRep)
+  case class GoWithRuleScout3(slippage_list_rep: List[ConceptMappingRep],
+                              object_list: List[SlipNodeRep],
+                              obj2: WorkspaceObjectRep,
+                              letterCategory: SlipNodeRep,
+                              changedReplacementRelation: Option[String]
+                             )
 
   case class SlippageListShell(
                                 sl: List[ConceptMappingRep],
@@ -328,8 +333,8 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
   var found_answer = false;
   // var structures = ListBuffer.empty[WorkspaceStructure]
-  // initial ---> target
-  // modified ----> ?
+  // initial ---> modified
+  // target ----> ?
   var initial: WorkspaceString = null
   var target: WorkspaceString = null
   var modified: WorkspaceString = null
@@ -490,15 +495,17 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       slipnet ! DataForStrengthUpdate(brs,crs,t)
 
     case DataForStrengthUpdateResponse(bondData, correspondenceData, t) =>
-      log.debug("Workspace update_Everything " + structures.size)
+      log.debug("update_Everything " + structures.size)
       log.debug("1T: " + t)
 
       for (ws <- structures) {
+        //log.debug(s"Workspace structure update_strength_value ${ws.uuid} $ws")
+        log.debug(s"Workspace structure update_strength_value $ws")
         updateStructureStrengthValue(bondData, correspondenceData, ws)
       }
       log.debug("2T: " + t)
 
-      log.debug("Workspace. update_Everything. activationBySlipNodeID " + (activationBySlipNodeID == null))
+      //log.debug("Workspace. update_Everything. activationBySlipNodeID " + (activationBySlipNodeID == null))
       // update the the object values of all objects in the workspace
       log.debug("update the the object values of all objects in the workspace")
       for (wo <- objects.toList) {
@@ -527,6 +534,9 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       }
 
     case GetNumCodeletsResponse(codeletsSize: Int, t:Double) =>
+      log.debug("Workspace rule " + rule.map(_.total_strength) + " " + rule)
+
+
       val ruleTotalWeaknessOpt = rule.map(_.total_weakness())
       slipnet ! PostTopBottomCodeletsGetInfo(
         t,
@@ -740,9 +750,9 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
             val index = position - 1
             val modifiedChar: Char = modified.s(index)
             val relationOpt = initial.s(index) match {
-              case mc if mc == modifiedChar => Some(Slipnet.RelationType.Sameness)
-              case mc if mc == (modifiedChar - 1).toChar => Some(Slipnet.RelationType.Successor)
-              case mc if mc == (modifiedChar + 1).toChar => Some(Slipnet.RelationType.Predecessor)
+              case mc if mc == modifiedChar => Some(SlipNode.id.sameness)
+              case mc if mc == (modifiedChar - 1).toChar => Some(SlipNode.id.successor)
+              case mc if mc == (modifiedChar + 1).toChar => Some(SlipNode.id.predecessor)
               case _ => None
             }
             if (relationOpt.isDefined) {
@@ -1456,7 +1466,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
             val letter_category = "lc"
 
             // This group is fake. It is just for prob
-            val g = new Group(
+            val g = new Group(log,
               fromob.wString.get,
               group_category = groupSlipnetInfo.samegrp,
               direction_category = None,
@@ -1614,7 +1624,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       val bond_list = bls.map(ol => wsRefs(ol.uuid).asInstanceOf[Bond]).to[ListBuffer]
 
 
-      val ng = new Group(
+      val ng = new Group(log,
         wString,
         group_category,
         direction_category,
@@ -1816,7 +1826,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
           log.debug("rule-scout " + wo + " changed " + wo.changed)
           if (wo.changed) changedOpt = Some(wo)
         }
-        log.debug("rule-scout changed " + changedOpt);
+        log.debug("rule-scout changedOpt " + changedOpt);
 
         // if there are no changed objects, propose a rule with no changes
         if (changedOpt.isEmpty) {
@@ -1843,6 +1853,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
     case WorkspaceProposeRule(facet, description, objectCategory, relation, lengthSplipNode, predecessorSlipNode, successorSlipNode) =>
       val r = new Rule(facet, description, objectCategory, relation, slipnet, lengthSplipNode, predecessorSlipNode, successorSlipNode)
+      log.debug(s"New Rule created ${r.uuid}")
       structureRefs += (r.uuid -> r)
       sender() ! WorkspaceProposeRuleResponse(r.uuid)
 
@@ -1893,13 +1904,13 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
               letterCategory.get
             )
           } else {
-            sender() ! GoWithRuleScout3Response(object_list.toList, letterCategory.get)
+            sender() ! GoWithRuleScout3Response(object_list.toList, letterCategory.get, replacement.relation)
           }
         }
 
       }
 
-    case GoWithRuleScout3(slippage_list_rep, object_list,obj2_rep, letterCategory) =>
+    case GoWithRuleScout3(slippage_list_rep, object_list,obj2_rep, letterCategory, lcr) =>
       val obj2 = objectRefs(obj2_rep.uuid)
       val new_object_list = object_list.map(s => {
         val sID = Rule.apply_slippages(Some(s), slippage_list_rep)
@@ -1907,7 +1918,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
             Some(sID.get)
         else None
       }).flatten
-      sender() ! GoWithRuleScout3Response(new_object_list, letterCategory)
+      sender() ! GoWithRuleScout3Response(new_object_list, letterCategory,lcr)
 
     case GoWithRuleStrengthTester(temperature: Double, ruleID) =>
       val rule = structureRefs(ruleID).asInstanceOf[Rule]
@@ -1928,6 +1939,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     case GoWithRuleBuilder(ruleID) =>
       val myrule = structureRefs(ruleID).asInstanceOf[Rule]
       log.debug("trying to build "+myrule.toString());
+      log.debug("trying to build "+ruleID);
       if (myrule.rule_equal(rule)){
         // rule already exists: fizzle, but activate concepts
         log.debug("already exists - activate concepts");
@@ -2361,7 +2373,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     } else if (ws.isInstanceOf[Correspondence]) {
       val c = ws.asInstanceOf[Correspondence]
       val cData = correspondenceData(c.uuid)
-      log.debug("cData.internal_strength " + cData.internal_strength)
+      //log.debug("cData.internal_strength " + cData.internal_strength)
       c.update_strength_value(cData.internal_strength, workspaceCorrespondences(), cData.supporting_correspondences)
     } else if (ws.isInstanceOf[Rule]) {
       val r = ws.asInstanceOf[Rule]
@@ -2387,7 +2399,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
   def flippedGroupWithFutureGroup(group: Group, futureGroupRep: FutureGroupRep, t: Double) = {
     val bond_list = futureGroupRep.bond_list.map(bondRep => structureRefs(bondRep.uuid).asInstanceOf[Bond]).to[ListBuffer]
 
-    new Group(
+    new Group(log,
       group.wString.get,
       futureGroupRep.group_category,
       futureGroupRep.direction_category,
@@ -2536,11 +2548,13 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
 
   def reset(initial_string: String, modified_string: String, target_string: String) = {
-    initial = new WorkspaceString(initial_string,50,200,350,300)
+    initial = new WorkspaceString(log, initial_string,50,200,350,300,"initial")
     updateWorkspaceObjectRefs(initial)
-    modified = new WorkspaceString(modified_string,650,200,950,300)
+
+    modified = new WorkspaceString(log, modified_string,650,200,950,300, "modified")
     updateWorkspaceObjectRefs(modified)
-    target = new WorkspaceString(target_string,50,610,450,710)
+
+    target = new WorkspaceString(log, target_string,50,610,450,710,"target")
     updateWorkspaceObjectRefs(target)
   }
 

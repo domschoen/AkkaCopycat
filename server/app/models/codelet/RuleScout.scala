@@ -23,9 +23,12 @@ object RuleScout {
                                        changedReplacementRelation: Option[String],
                                        letterCategory: SlipNodeRep
                                      )
-  case class SlipnetGoWithRuleScoutResponse(string_position_category: SlipNodeRep, letter_category: SlipNodeRep)
+  case class SlipnetGoWithRuleScoutResponse(string_position_category: SlipNodeRep,
+                                            letter_category: SlipNodeRep
+  )
   case class GoWithRuleScout3Response(object_list: List[SlipNodeRep],
-                                      letterCategory: SlipNodeRep
+                                      letterCategory: SlipNodeRep,
+                                      changedReplacementRelation: Option[String]
                                      )
 
 }
@@ -101,6 +104,7 @@ class RuleScout(urgency: Int,
       slipnet ! SlipnetGoWithRuleScout
 
     case SlipnetGoWithRuleScoutResponse(string_position_category, letter_category) =>
+
       workspace ! GoWithRuleScout2(changed, string_position_category, letter_category)
 
 
@@ -112,9 +116,10 @@ class RuleScout(urgency: Int,
       slipnet ! SlipnetCompleteSlippageList(slippagesShell)
 
     case SlipnetCompleteSlippageListResponse(slippage_list_rep) =>
-      workspace ! GoWithRuleScout3(slippage_list_rep, object_list, obj2, letter_category)
+      workspace ! GoWithRuleScout3(slippage_list_rep, object_list, obj2, letter_category,changedReplacementRelation)
 
-    case GoWithRuleScout3Response(object_list, lc ) =>
+    case GoWithRuleScout3Response(object_list, lc, crr ) =>
+      changedReplacementRelation = crr
       letter_category = lc
 
       if (object_list.isEmpty){

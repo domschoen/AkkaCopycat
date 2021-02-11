@@ -273,9 +273,9 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
   var number_of_updates = 0
 
   // string positions
-  val leftmost = add_slipnode(17, 18, 40.0, "leftmost", "lm")
-  val rightmost = add_slipnode(27, 18, 40.0, "rightmost", "rm")
-  val middle = add_slipnode(27, 26, 40.0, "middle", "md")
+  val leftmost = add_slipnode(17, 18, 40.0, "leftmost", SlipNode.id.leftmost)
+  val rightmost = add_slipnode(27, 18, 40.0, "rightmost", SlipNode.id.rightmost)
+  val middle = add_slipnode(27, 26, 40.0, "middle", SlipNode.id.middle)
   val single = add_slipnode(33, 26, 40.0, "single", "sl")
   val whole = add_slipnode(30, 26, 40.0, "whole", "wh")
 
@@ -292,10 +292,10 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
   right.codelets += CodeletTypeString.TopDownGroupScoutDirection
 
   // bond types
-  val predecessor = add_slipnode_with_len(14, 38, 50.0, "predecessor", "pd" ,60.0)
+  val predecessor = add_slipnode_with_len(14, 38, 50.0, "predecessor", SlipNode.id.predecessor  ,60.0)
   predecessor.codelets += CodeletTypeString.TopDownBondScoutCategory
 
-  val successor = add_slipnode_with_len(14, 33, 50.0, "successor", "sc" , 60.0)
+  val successor = add_slipnode_with_len(14, 33, 50.0, "successor", SlipNode.id.successor , 60.0)
   successor.codelets += CodeletTypeString.TopDownBondScoutCategory
   val sameness = add_slipnode_with_len(10, 29, 80.0, "sameness", SlipNode.id.sameness,0.0)
   sameness.codelets += CodeletTypeString.TopDownBondScoutCategory
@@ -1207,16 +1207,16 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       sender() ! SlipnetCompleteSlippageListResponse(slippage_list_rep)
 
     case SlipnetGoWithRuleScout3(ol, changedReplacementRelation, letterCategory, t) =>
-      println("SlipnetGoWithRuleScout3 choosing a description based on conceptual depth:" + letterCategory)
+      log.debug("SlipnetGoWithRuleScout3 choosing a description based on conceptual depth:" + letterCategory + " with chanded replacement relation " + changedReplacementRelation)
       val descriptor = {
         val object_list = ol.map(sr => slipNodeRefs(sr.id))
         chooseSlipNodeWithTemperature(object_list,t)
       }
-      println("Chosen descriptor: "+descriptor.id)
+      log.debug("Chosen descriptor: "+descriptor.id)
 
       // choose the relation(change the letmost object to..xxxx) i.e. "successor" or "d"
 
-      println("choosing relation based on conceptual depth:" + letterCategory)
+      log.debug("choosing relation based on conceptual depth:" + letterCategory)
       val relation = {
         val letterCategorySlipNode = slipNodeRefs(letterCategory.id)
         val object_list = if (changedReplacementRelation.isDefined) {
@@ -1224,12 +1224,15 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
           List(letterCategorySlipNode, relation)
         } else List(letterCategorySlipNode)
 
+        object_list.foreach(sln => {
+          log.debug("Rule scout object_list slipnode " + sln.conceptual_depth + " slipnode " + sln)
+        })
         chooseSlipNodeWithTemperature(object_list,t)
       }
-      println("Chosen relation: "+relation.id);
+      log.debug("Chosen relation: "+relation.id);
 
-      println("proposing rule:");
-      println("change letter-cat of "+descriptor.id+" letter to "+ relation.id);
+      log.debug("proposing rule:");
+      log.debug("change letter-cat of "+descriptor.id+" letter to "+ relation.id);
 
       sender() ! RuleScoutProposeRule(
         Some(letter_category.slipNodeRep()),
@@ -1477,7 +1480,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       }
       log.debug("------------------------ post_bottom_up_codelets");
       val f = () => { codeletsCount = codeletsCount + 1 }
-      codeletToPost ++= get_bottom_up_codelets(f, codeletsCount,CodeletTypeString.BottomUpDescriptionScout,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      codeletToPost ++= get_bottom_up_codelets(f,codeletsCount,CodeletTypeString.BottomUpDescriptionScout,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
       codeletToPost ++= get_bottom_up_codelets(f,codeletsCount,CodeletTypeString.BottomUpBondScout,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
       codeletToPost ++= get_bottom_up_codelets(f,codeletsCount,CodeletTypeString.GroupScoutWholeString,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
       codeletToPost ++= get_bottom_up_codelets(f,codeletsCount,CodeletTypeString.BottomUpCorrespondenceScout,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
@@ -1561,6 +1564,8 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
                              unreplaced_objects_size: Double,
                              uncorresponding_objects_size: Double
                             ): ListBuffer[(String,Either[Double, Int], Option[String], Option[Double])] = {
+    log.debug("get_bottom_up_codelets " + st);
+
     val prob = get_post_codelet_probability(st, temperature, intra_string_unhappiness, inter_string_unhappiness, unreplaced_objects_size, ruleTotalWeaknessOpt);
     var num = get_num_codelets_to_post(st, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
 
@@ -1667,12 +1672,16 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
                                    ruleTotalWeaknessOpt: Option[Double]
                                   ): Double = {
     if (structure_category.equals("breaker")) {
+      log.debug("breaker")
       1.0
     } else if (structure_category.indexOf("description") > -1) {
+      log.debug("description")
       (t/100.0)*(t/100.0)
     } else if (structure_category.indexOf("correspondence") > -1) {
+      log.debug("correspondence " + inter_string_unhappiness)
       inter_string_unhappiness / 100.0
     } else if (structure_category.indexOf("replacement") > -1) {  // Will never happen !
+      log.debug("replacement")
       if (unreplaced_objects_size > 0) 1.0 else 0.0
     } else if (structure_category.indexOf("rule") > -1) {
       log.debug("get_post_codelet_probability rule ruleTotalWeaknessOpt " + ruleTotalWeaknessOpt)
@@ -1681,11 +1690,13 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
         case None => 1.0
       }
     } else if (structure_category.indexOf("translated") > -1) { // will never happen !
+      log.debug("translated")
       ruleTotalWeaknessOpt match {
         case Some(ruleTotalWeakness) => 1.0
         case None => 0.0
       }
     } else {
+      log.debug("L'autre")
       intra_string_unhappiness / 100.0
     }
   }

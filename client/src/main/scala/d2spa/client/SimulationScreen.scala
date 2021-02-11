@@ -86,14 +86,14 @@ object SimulationScreen {
                 "Initial: ",
                 <.input.text(^.placeholder := "Initial...", ^.value := initialString,
                   ^.onChange ==> { e: ReactEventFromInput => handleInitialStringChange(e)}),
-                "Modified: ",
-                <.input.text(^.placeholder := "Modified...", ^.value := modifiedString,
+                "Target: ",
+                <.input.text(^.placeholder := "Target...", ^.value := modifiedString,
                   ^.onChange ==> { e: ReactEventFromInput => handleModifiedStringChange(e)}),
               )
             ),
             <.div(
               <.span(
-                "Target: ",
+                "Modified: ",
                 <.input.text(^.placeholder := "Target...", ^.value := targetString,
                   ^.onChange ==> { e: ReactEventFromInput => handleTargetStringChange(e)})
               )

@@ -1,6 +1,7 @@
 package models
 
 import akka.actor.ActorRef
+import akka.event.LoggingAdapter
 import models.Bond.BondRep
 import models.Group.GroupRep
 import models.SlipNode.{GroupSlipnetInfo, SlipNodeRep}
@@ -32,6 +33,7 @@ object Group {
 }
 
 class Group (
+              log: LoggingAdapter,
               ws: WorkspaceString,
               val group_category: SlipNodeRep,
               val direction_category: Option[SlipNodeRep],
@@ -43,7 +45,7 @@ class Group (
               temperature: Double,
               slipnet: ActorRef,
               activationBySlipNodeID: Map[String, Double]
-            ) extends WorkspaceObject(ws) {
+            ) extends WorkspaceObject(log, ws) {
   import Slipnet.SetSlipNodeBufferValue
 
   //var bond_category: Option[SlipNodeRep] = None

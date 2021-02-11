@@ -1,5 +1,7 @@
 package models
 
+import akka.event.LoggingAdapter
+
 object Letter {
 
   case class LetterSlipnetComplement(
@@ -12,10 +14,11 @@ object Letter {
 }
 
 class Letter (
+               log: LoggingAdapter,
                ws: WorkspaceString,
                lf: Int,
                rt: Int
-             ) extends WorkspaceObject(ws) {
+             ) extends WorkspaceObject(log, ws) {
 
   import Letter.LetterSlipnetComplement
 

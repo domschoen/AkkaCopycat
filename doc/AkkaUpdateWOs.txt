@@ -1,0 +1,58 @@
+update_object_value description(letter) of letter (1) 1 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(A) of letter (1) 1 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(leftmost) of letter (1) 1 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value 300.0 group.isDefined false changed true
+update_object_value : raw_importance 600.0
+update_object_value : intra_string_happiness 0.0
+update_object_value description(letter) of letter (2) 2 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(B) of letter (2) 2 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(middle) of letter (2) 2 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value 300.0 group.isDefined false changed true
+update_object_value : raw_importance 600.0
+update_object_value : intra_string_happiness 0.0
+update_object_value description(letter) of letter (3) 3 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(C) of letter (3) 3 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(rightmost) of letter (3) 3 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value 300.0 group.isDefined false changed false
+update_object_value : raw_importance 300.0
+update_object_value : intra_string_happiness 0.0
+update_object_value description(letter) of letter (1) 1 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(A) of letter (1) 1 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(leftmost) of letter (1) 1 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value 300.0 group.isDefined false changed false
+update_object_value : raw_importance 300.0
+update_object_value : intra_string_happiness 0.0
+update_object_value description(letter) of letter (2) 2 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(B) of letter (2) 2 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(middle) of letter (2) 2 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value 300.0 group.isDefined false changed false
+update_object_value : raw_importance 300.0
+update_object_value : intra_string_happiness 0.0
+update_object_value description(letter) of letter (3) 3 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(D) of letter (3) 3 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(rightmost) of letter (3) 3 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value 300.0 group.isDefined false changed false
+update_object_value : raw_importance 300.0
+update_object_value : intra_string_happiness 0.0
+update_object_value description(letter) of letter (1) 1 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(I) of letter (1) 1 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(leftmost) of letter (1) 1 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value 300.0 group.isDefined false changed false
+update_object_value : raw_importance 300.0
+update_object_value : bondstrengthRaw 0.0
+update_object_value : intra_string_happiness 0.0
+update_object_value description(letter) of letter (2) 2 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(J) of letter (2) 2 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(middle) of letter (2) 2 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value 300.0 group.isDefined false changed false
+update_object_value : raw_importance 300.0
+update_object_value : bondstrengthRaw 0.0
+update_object_value : intra_string_happiness 0.0
+update_object_value description(letter) of letter (3) 3 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(K) of letter (3) 3 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(rightmost) of letter (3) 3 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value 300.0 group.isDefined false changed false
+update_object_value : raw_importance 300.0
+update_object_value : bondstrengthRaw 0.0
+update_object_value : intra_string_happiness 0.0
+update_relative_importance 1500.0

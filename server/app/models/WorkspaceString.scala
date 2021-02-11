@@ -2,8 +2,9 @@ package models
 
 import scala.collection.mutable.ListBuffer
 import Letter.LetterSlipnetComplement
+import akka.event.LoggingAdapter
 
-class WorkspaceString (val s: String, x1: Int, y1: Int, x2: Int, y2: Int) {
+class WorkspaceString (log: LoggingAdapter, val s: String, x1: Int, y1: Int, x2: Int, y2: Int, val description: String) {
   val length = s.length
   var intra_string_unhappiness = 0.0
 
@@ -13,7 +14,7 @@ class WorkspaceString (val s: String, x1: Int, y1: Int, x2: Int, y2: Int) {
   println("WorkspaceString " + s)
 
   var objects: ListBuffer[WorkspaceObject] = (for (i <- 0 to s.length -1) yield {
-    new Letter(this, i+1, i+1).asInstanceOf[WorkspaceObject]
+    new Letter(log,this, i+1, i+1).asInstanceOf[WorkspaceObject]
   }).to[ListBuffer]
 
   def letterSlipnetComplements(): List[LetterSlipnetComplement] = {
@@ -29,19 +30,19 @@ class WorkspaceString (val s: String, x1: Int, y1: Int, x2: Int, y2: Int) {
   def update_relative_importance() = {
     // updates the normalized importances of all the objects in the string
     val total_raw_importance = objects.map(ob => ob.raw_importance).sum
-    System.out.println("update_relative_importance " + total_raw_importance);
+    log.debug("update_relative_importance " + total_raw_importance);
 
 
     for (ob <- objects){
-      System.out.println("ob " + ob);
+      log.debug("ob " + ob);
 
       if (total_raw_importance==0.0) {
         ob.relative_importance=0.0
-        System.out.println("1ob.relative_importance " + ob.relative_importance);
+        log.debug("1ob.relative_importance " + ob.relative_importance);
 
       } else {
         ob.relative_importance=ob.raw_importance/total_raw_importance
-        System.out.println("2ob.relative_importance " + ob.relative_importance);
+        log.debug("2ob.relative_importance " + ob.relative_importance);
 
       };
     }
