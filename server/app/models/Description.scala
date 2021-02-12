@@ -15,23 +15,35 @@ object Description {
 
 case class Description (log: LoggingAdapter,
                          var wObject: WorkspaceObject,
+                          wsOpt: Option[WorkspaceString],
                          var description_type : SlipNodeRep,
                          var descriptor : Option[SlipNodeRep]
                        ) extends WorkspaceStructure(log) {
   //val descriptionTypeSlipNodeIDOpt = Option.empty[String]
   import Description.DescriptionRep
+  wString = wsOpt
 
-  log.debug(s"New Description string: ${wString.map(_.description)} wo: ${wObject} " +
-    s"description type: ${SlipNode.displayStringWithOptionalSlipNodeRep(Some(description_type))} " +
-    s"descriptor: ${SlipNode.displayStringWithOptionalSlipNodeRep(descriptor)}")
   //var wObject : WorkspaceObject = null;
 
   // this is for GUI
   var visible = false
 
+  def this(log: LoggingAdapter, ob: WorkspaceObject,  dt: SlipNodeRep, dc: Option[SlipNodeRep]) = {
+    this(log, ob, ob.wString, dt, dc)
+    printNewDescription()
+  }
+
   def this(log: LoggingAdapter, ob: WorkspaceObject, ws: WorkspaceString, dt: SlipNodeRep, dc: Option[SlipNodeRep]) = {
-    this(log, ob, dt, dc)
-    wString = Some(ws)
+    this(log, ob, Some(ws), dt, dc)
+    printNewDescription()
+  }
+
+
+  def printNewDescription() = {
+    log.debug(s"New Description string: ${wString.map(_.description)} wo: ${wObject} " +
+      s"description type: ${SlipNode.displayStringWithOptionalSlipNodeRep(Some(description_type))} " +
+      s"descriptor: ${SlipNode.displayStringWithOptionalSlipNodeRep(descriptor)}")
+
   }
 
   def descriptionRep(): DescriptionRep = DescriptionRep(uuid, description_type, descriptor)

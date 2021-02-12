@@ -40,14 +40,14 @@ Workspace structure update_strength_value sc bond between letter (2)2 and letter
 string.bonds.size() 2
 Workspace structure update_strength_value group (1-3)
 Workspace structure update_strength_value description(group) of group (1-3) in initial string
-Workspace structure update_strength_value description(sg) of group (1-3) in initial string
+Workspace structure update_strength_value description(successor group) of group (1-3) in initial string
 Workspace structure update_strength_value description(right) of group (1-3) in initial string
 Workspace structure update_strength_value description(whole) of group (1-3) in initial string
 Workspace structure update_strength_value replace letter category of rightmost letter by successor
 Workspace structure update_strength_value Correspondence between letter (3)3 and letter (3)3
 Workspace structure update_strength_value group (1-3)
 Workspace structure update_strength_value description(group) of group (1-3) in target string
-Workspace structure update_strength_value description(sg) of group (1-3) in target string
+Workspace structure update_strength_value description(successor group) of group (1-3) in target string
 Workspace structure update_strength_value description(right) of group (1-3) in target string
 Workspace structure update_strength_value description(whole) of group (1-3) in target string
 2T: 58.74439280135928
@@ -76,6 +76,7 @@ update_object_value description(leftmost) of letter (1)1 in modified string d.de
 update_object_value 245.0 group.isDefined false changed false
 update_object_value : raw_importance 245.0
 update_object_value : intra_string_happiness 0.0
+Random rndseed=1668
 update_object_value description(letter) of letter (2)2 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(B) of letter (2)2 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(middle) of letter (2)2 in modified string d.description_type.activation 100.0 d.descriptor.activation 12.5
@@ -107,22 +108,22 @@ update_object_value 300.0 group.isDefined true changed false
 update_object_value : raw_importance 200.0
 update_object_value : intra_string_happiness 79.47368588732962
 update_object_value description(group) of group (1-3) in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(sg) of group (1-3) in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(successor group) of group (1-3) in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(right) of group (1-3) in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(whole) of group (1-3) in initial string d.description_type.activation 100.0 d.descriptor.activation 50.0
 update_object_value 350.0 group.isDefined false changed false
 update_object_value : raw_importance 350.0
 update_object_value : intra_string_happiness 100.0
 update_object_value description(group) of group (1-3) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(sg) of group (1-3) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(successor group) of group (1-3) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(right) of group (1-3) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(whole) of group (1-3) in target string d.description_type.activation 100.0 d.descriptor.activation 50.0
 update_object_value description(group) of group (1-3) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(sg) of group (1-3) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(successor group) of group (1-3) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(right) of group (1-3) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(whole) of group (1-3) in target string d.description_type.activation 100.0 d.descriptor.activation 50.0
 update_object_value description(group) of group (1-3) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(sg) of group (1-3) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(successor group) of group (1-3) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(right) of group (1-3) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(whole) of group (1-3) in target string d.description_type.activation 100.0 d.descriptor.activation 50.0
 update_object_value 1050.0 group.isDefined false changed false
@@ -156,7 +157,6 @@ Post Top/Bottom Codelets codeletsSize 92
 >>>> post_top_down_codelets top-down-bond-scout--direction
 L'autre
 rough_num_of_objects. bond 0.0
-Random rndseed=1668
 prob 0.4844003610771367 num 1
 Random rndseed=1669
 post_top_down_codelets rawUrgency50.0 count 92
@@ -293,11 +293,11 @@ get_bottom_up_codelets rawUrgency1 count 102
 Post Codelet codelets size 103
 Post. codelets.size > 100
 Random rndseed=1695
-<<<<
 post_top_down_codelets
-
+<<<<
 PostCodelets TopDownBondScoutDirection rawUrgencyLeft(50.0) urgency_bin 4
 create codelet top-down-bond-scout--direction urgency 4 time_stamp 240
+
 post_bottom_up_codelets codeletToPost ListBuffer((top-down-bond-scout--direction,Left(50.0),Some(rt),None), (top-down-group-scout--direction,Left(50.0),Some(rt),None), (bottom-up-bond-scout,Right(3),None,None), (bottom-up-correspondence-scout,Right(3),None,None), (important-object-correspondence-scout,Right(3),None,None), (important-object-correspondence-scout,Right(3),None,None), (important-object-correspondence-scout,Right(3),None,None), (rule-scout,Right(3),None,None), (rule-scout,Right(3),None,Some(0.298)), (rule-translator,Right(3),None,Some(0.064)), (breaker,Right(1),None,Some(0.009)))
 PostCodelets TopDownGroupScoutDirection rawUrgencyLeft(50.0) urgency_bin 4
 create codelet top-down-group-scout--direction urgency 4 time_stamp 240
@@ -320,14 +320,23 @@ create codelet rule-translator urgency 3 time_stamp 240
 PostCodelets Breaker rawUrgencyRight(1) urgency_bin 1
 create codelet breaker urgency 1 time_stamp 240
 setBuffer slipnode id A buffer 50.0
-setBuffer slipnode id B buffer 50.0
 Slipnet. UpdateEverything
+Post Codelet codelets size 93 rndOpt None name top-down-bond-scout--direction
+Slipnet.update()
+for all nodes set old_activation to activation
+ob A ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
+setBuffer slipnode id B buffer 50.0
+printUrgencies urgencies: ListBuffer(5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4)
 setBuffer slipnode id C buffer 50.0
+Post Codelet codelets size 94 rndOpt None name top-down-group-scout--direction
 setBuffer slipnode id D buffer -50.0
+printUrgencies urgencies: ListBuffer(5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4)
 setBuffer slipnode id E buffer -50.0
 setBuffer slipnode id F buffer -50.0
 setBuffer slipnode id G buffer -50.0
+Post Codelet codelets size 95 rndOpt None name bottom-up-bond-scout
 setBuffer slipnode id H buffer -50.0
+printUrgencies urgencies: ListBuffer(5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3)
 setBuffer slipnode id I buffer 50.0
 setBuffer slipnode id J buffer 50.0
 setBuffer slipnode id K buffer 50.0
@@ -335,178 +344,183 @@ setBuffer slipnode id L buffer -50.0
 setBuffer slipnode id M buffer -50.0
 setBuffer slipnode id N buffer -22.999954223632812
 setBuffer slipnode id O buffer -2.9999542236328125
-Slipnet.update()
 setBuffer slipnode id P buffer -2.9999542236328125
 setBuffer slipnode id Q buffer -2.9999542236328125
-for all nodes set old_activation to activation
 setBuffer slipnode id R buffer -2.9999542236328125
-ob A ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setBuffer slipnode id S buffer -2.9999542236328125
+Post Codelet codelets size 96 rndOpt None name bottom-up-correspondence-scout
 setBuffer slipnode id T buffer -2.9999542236328125
 setBuffer slipnode id U buffer -2.9999542236328125
 setBuffer slipnode id V buffer -2.9999542236328125
+printUrgencies urgencies: ListBuffer(5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3)
 setBuffer slipnode id W buffer -2.9999542236328125
 setBuffer slipnode id X buffer -2.9999542236328125
+Post Codelet codelets size 97 rndOpt None name important-object-correspondence-scout
 setBuffer slipnode id Y buffer -2.9999542236328125
 setBuffer slipnode id Z buffer -2.9999542236328125
-ob B ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setBuffer slipnode id 1 buffer 0.0
+printUrgencies urgencies: ListBuffer(5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3, 3)
 setBuffer slipnode id 2 buffer 0.0
 setBuffer slipnode id 3 buffer 0.0
 setBuffer slipnode id 4 buffer 0.0
 setBuffer slipnode id 5 buffer 0.0
+Post Codelet codelets size 98 rndOpt None name important-object-correspondence-scout
 setBuffer slipnode id lm buffer -22.5
 setBuffer slipnode id rm buffer -50.0
 setBuffer slipnode id md buffer -6.25
-ob C ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setBuffer slipnode id sl buffer -5.0
+printUrgencies urgencies: ListBuffer(5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3, 3, 3)
 setBuffer slipnode id wh buffer 75.0
+Post Codelet codelets size 99 rndOpt None name important-object-correspondence-scout
 setBuffer slipnode id fs buffer -24.999237060546875
 setBuffer slipnode id ls buffer 0.0
-ob D ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setBuffer slipnode id lf buffer -26.25
+printUrgencies urgencies: ListBuffer(5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3, 3, 3, 3)
 setBuffer slipnode id rt buffer 50.0
 setBuffer slipnode id pd buffer -35.0
-Post Codelet codelets size 93 rndOpt None name top-down-bond-scout--direction
 setBuffer slipnode id sc buffer 50.0
 setBuffer slipnode id sm buffer 0.0
 setBuffer slipnode id pg buffer -35.0
-ob E ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setBuffer slipnode id sg buffer 50.0
+Post Codelet codelets size 100 rndOpt None name rule-scout
 setBuffer slipnode id smg buffer 0.0
 setBuffer slipnode id id buffer -50.0
-ob F ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setBuffer slipnode id op buffer 0.0
+printUrgencies urgencies: ListBuffer(5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3, 3, 3, 3, 3)
 setBuffer slipnode id l buffer -50.0
 setBuffer slipnode id g buffer 50.0
-ob G ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setBuffer slipnode id lc buffer 50.0
 setBuffer slipnode id spc buffer 50.0
+Post Codelet codelets size 101 rndOpt Some(0.298) name rule-scout
 setBuffer slipnode id apc buffer 0.0
 setBuffer slipnode id dc buffer 50.0
-ob H ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setBuffer slipnode id bc buffer -50.0
 setBuffer slipnode id gpc buffer 50.0
-ob I ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob J ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
+Post. codelets.size > 100
 setBuffer slipnode id len buffer -14.374923706054688
-ob K ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setBuffer slipnode id obc buffer 50.0
 setBuffer slipnode id bf buffer -50.0
-ob L ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob M ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setBuffer slipnode id B buffer 90.0
-ob N ob.buffer 0.0 ob.activation 45.999908447265625 ob.conceptual_depth 50.0
 setBuffer slipnode id lc buffer 130.0
-ob O ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
+ob B ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setBuffer slipnode id fs buffer 7.62939453125E-4
 setBuffer slipnode id A buffer 90.0
 setBuffer slipnode id C buffer 90.0
 setBuffer slipnode id lc buffer 210.0
+choose_old_codelet chosen 5492.5869999999995 codelets_run 240 rndValue 0.298 urgsum 18431.5
 setBuffer slipnode id B buffer 130.0
-ob P ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
+ob C ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setBuffer slipnode id D buffer -10.0
 setBuffer slipnode id lc buffer 290.0
 setBuffer slipnode id C buffer 130.0
 setBuffer slipnode id E buffer -10.0
+removeCodelet codelets size 100
 setBuffer slipnode id lc buffer 370.0
 setBuffer slipnode id D buffer 30.0
 setBuffer slipnode id F buffer -10.0
 setBuffer slipnode id lc buffer 450.0
-printUrgencies urgencies: ListBuffer(5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4)
 setBuffer slipnode id E buffer 30.0
 setBuffer slipnode id G buffer -10.0
+printUrgencies urgencies: ListBuffer(5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3, 3, 3, 3, 3, 3)
 setBuffer slipnode id lc buffer 530.0
 setBuffer slipnode id F buffer 30.0
 setBuffer slipnode id H buffer -10.0
 setBuffer slipnode id lc buffer 610.0
 setBuffer slipnode id G buffer 30.0
 setBuffer slipnode id I buffer 90.0
+Post Codelet codelets size 101 rndOpt Some(0.064) name rule-translator
 setBuffer slipnode id lc buffer 690.0
-Post Codelet codelets size 94 rndOpt None name top-down-group-scout--direction
 setBuffer slipnode id H buffer 30.0
 setBuffer slipnode id J buffer 90.0
 setBuffer slipnode id lc buffer 770.0
-printUrgencies urgencies: ListBuffer(5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4)
 setBuffer slipnode id I buffer 130.0
 setBuffer slipnode id K buffer 90.0
+Post. codelets.size > 100
 setBuffer slipnode id lc buffer 850.0
-Post Codelet codelets size 95 rndOpt None name bottom-up-bond-scout
 setBuffer slipnode id J buffer 130.0
 setBuffer slipnode id L buffer -10.0
+choose_old_codelet chosen 1159.4560000000001 codelets_run 240 rndValue 0.064 urgsum 18116.5
 setBuffer slipnode id lc buffer 930.0
 setBuffer slipnode id K buffer 130.0
 setBuffer slipnode id M buffer -10.0
-printUrgencies urgencies: ListBuffer(5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3)
+removeCodelet codelets size 100
 setBuffer slipnode id lc buffer 1010.0
 setBuffer slipnode id L buffer 30.0
 setBuffer slipnode id N buffer 17.000045776367188
+ob D ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setBuffer slipnode id lc buffer 1090.0
-Post Codelet codelets size 96 rndOpt None name bottom-up-correspondence-scout
-ob Q ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
 setBuffer slipnode id lm buffer -2.5
+printUrgencies urgencies: ListBuffer(5, 3, 3, 4, 4, 4, 4, 4, 3, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3)
 setBuffer slipnode id spc buffer 120.0
 setBuffer slipnode id rt buffer 60.0
+Post Codelet codelets size 101 rndOpt Some(0.009) name breaker
 setBuffer slipnode id lf buffer -26.25
-ob R ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
 setBuffer slipnode id fs buffer 7.62939453125E-4
 setBuffer slipnode id ls buffer 0.0
-printUrgencies urgencies: ListBuffer(5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3)
+Post. codelets.size > 100
 setBuffer slipnode id lf buffer -6.25
 setBuffer slipnode id dc buffer 120.0
-Post Codelet codelets size 97 rndOpt None name important-object-correspondence-scout
 setBuffer slipnode id lm buffer -2.5
+choose_old_codelet chosen 156.9735 codelets_run 240 rndValue 0.009 urgsum 17441.5
 setBuffer slipnode id rm buffer -40.0
 setBuffer slipnode id pd buffer -15.0
 setBuffer slipnode id bc buffer 20.0
+removeCodelet codelets size 100
 setBuffer slipnode id sg buffer 90.0
-printUrgencies urgencies: ListBuffer(5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3, 3)
 setBuffer slipnode id len buffer -9.374923706054688
 setBuffer slipnode id pg buffer -15.0
+printUrgencies urgencies: ListBuffer(3, 3, 4, 4, 4, 4, 4, 3, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1)
 setBuffer slipnode id gpc buffer 120.0
 setBuffer slipnode id sc buffer 60.0
+ob E ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setBuffer slipnode id obc buffer 80.0
 setBuffer slipnode id g buffer 60.0
 setBuffer slipnode id obc buffer 170.0
 setBuffer slipnode id l buffer -40.0
+ob F ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setBuffer slipnode id A buffer 93.0
 setBuffer slipnode id B buffer 133.0
 setBuffer slipnode id C buffer 133.0
 setBuffer slipnode id D buffer 33.0
+ob G ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setBuffer slipnode id E buffer 33.0
+ob H ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setBuffer slipnode id F buffer 33.0
 setBuffer slipnode id G buffer 33.0
-Post Codelet codelets size 98 rndOpt None name important-object-correspondence-scout
 setBuffer slipnode id H buffer 33.0
+ob I ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
+ob J ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setBuffer slipnode id I buffer 133.0
 setBuffer slipnode id J buffer 133.0
 setBuffer slipnode id K buffer 133.0
-ob S ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
 setBuffer slipnode id L buffer 33.0
+ob K ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setBuffer slipnode id M buffer -7.0
+ob L ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setBuffer slipnode id N buffer 20.000045776367188
-printUrgencies urgencies: ListBuffer(5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3, 3, 3)
 setBuffer slipnode id O buffer 4.57763671875E-5
+ob M ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setBuffer slipnode id P buffer 4.57763671875E-5
-Post Codelet codelets size 99 rndOpt None name important-object-correspondence-scout
 setBuffer slipnode id Q buffer 4.57763671875E-5
 setBuffer slipnode id R buffer 4.57763671875E-5
 setBuffer slipnode id S buffer 4.57763671875E-5
+ob N ob.buffer 0.0 ob.activation 45.999908447265625 ob.conceptual_depth 50.0
 setBuffer slipnode id T buffer 4.57763671875E-5
 setBuffer slipnode id U buffer 4.57763671875E-5
-ob T ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
 setBuffer slipnode id V buffer 4.57763671875E-5
+ob O ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
 setBuffer slipnode id W buffer 4.57763671875E-5
 setBuffer slipnode id X buffer 4.57763671875E-5
-ob U ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
 setBuffer slipnode id Y buffer 4.57763671875E-5
+ob P ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
 setBuffer slipnode id Z buffer 4.57763671875E-5
 setBuffer slipnode id bf buffer -10.0
-printUrgencies urgencies: ListBuffer(5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3, 3, 3, 3)
 setBuffer slipnode id len buffer -4.3749237060546875
+ob Q ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
 setBuffer slipnode id lm buffer -2.5
 setBuffer slipnode id rm buffer -40.0
 setBuffer slipnode id md buffer -6.25
+ob R ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
 setBuffer slipnode id sl buffer -5.0
 setBuffer slipnode id wh buffer 75.0
 setBuffer slipnode id lf buffer -6.25
@@ -514,26 +528,25 @@ setBuffer slipnode id rt buffer 60.0
 setBuffer slipnode id pd buffer -15.0
 setBuffer slipnode id sc buffer 60.0
 setBuffer slipnode id sm buffer 0.0
-Post Codelet codelets size 100 rndOpt None name rule-scout
 setBuffer slipnode id pg buffer -15.0
 setBuffer slipnode id sg buffer 90.0
 setBuffer slipnode id smg buffer 0.0
-ob V ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
 setBuffer slipnode id l buffer -40.0
 setBuffer slipnode id g buffer 60.0
 setBuffer slipnode id lc buffer 1090.0
+ob S ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
 setBuffer slipnode id len buffer -4.3749237060546875
-printUrgencies urgencies: ListBuffer(5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3, 3, 3, 3, 3)
-ob W ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
 setActivation slipnode id A activation 193.0
-ob X ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
 setActivation slipnode id A activation 100.0
-Post Codelet codelets size 101 rndOpt Some(0.298) name rule-scout
+ob T ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
+ob U ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
+ob V ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
 setActivation slipnode id B activation 233.0
+ob W ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
 setActivation slipnode id B activation 100.0
 setActivation slipnode id C activation 233.0
-Post. codelets.size > 100
 setActivation slipnode id C activation 100.0
+ob X ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
 setActivation slipnode id D activation 133.0
 setActivation slipnode id D activation 100.0
 setActivation slipnode id E activation 133.0
@@ -545,105 +558,92 @@ setActivation slipnode id G activation 133.0
 ob Z ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
 setActivation slipnode id G activation 100.0
 setActivation slipnode id H activation 133.0
-ob 1 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-ob 2 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-ob 3 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
 setActivation slipnode id H activation 100.0
-ob 4 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
+ob 1 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
 setActivation slipnode id I activation 233.0
 setActivation slipnode id I activation 100.0
 setActivation slipnode id J activation 233.0
+ob 2 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
 setActivation slipnode id J activation 100.0
 setActivation slipnode id K activation 233.0
 setActivation slipnode id K activation 100.0
+ob 3 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
 setActivation slipnode id L activation 133.0
 setActivation slipnode id L activation 100.0
 setActivation slipnode id M activation 93.0
-ob 5 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
 setActivation slipnode id N activation 65.99995422363281
+ob 4 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
 setActivation slipnode id O activation 5.9999542236328125
-ob lm ob.buffer 0.0 ob.activation 45.0 ob.conceptual_depth 50.0
 setActivation slipnode id P activation 5.9999542236328125
 setActivation slipnode id Q activation 5.9999542236328125
-ob rm ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setActivation slipnode id R activation 5.9999542236328125
 setActivation slipnode id S activation 5.9999542236328125
+ob 5 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
 setActivation slipnode id T activation 5.9999542236328125
 setActivation slipnode id U activation 5.9999542236328125
-choose_old_codelet chosen 5492.5869999999995 codelets_run 240 rndValue 0.298 urgsum 18431.5
 setActivation slipnode id V activation 5.9999542236328125
+ob lm ob.buffer 0.0 ob.activation 45.0 ob.conceptual_depth 50.0
 setActivation slipnode id W activation 5.9999542236328125
 setActivation slipnode id X activation 5.9999542236328125
 setActivation slipnode id Y activation 5.9999542236328125
+ob rm ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setActivation slipnode id Z activation 5.9999542236328125
 setActivation slipnode id lm activation 42.5
+ob md ob.buffer 0.0 ob.activation 12.5 ob.conceptual_depth 50.0
 setActivation slipnode id rm activation 60.0
 setActivation slipnode id md activation 6.25
+ob sl ob.buffer 0.0 ob.activation 10.0 ob.conceptual_depth 50.0
 setActivation slipnode id sl activation 5.0
 setActivation slipnode id wh activation 125.0
 setActivation slipnode id wh activation 100.0
-ob md ob.buffer 0.0 ob.activation 12.5 ob.conceptual_depth 50.0
+ob wh ob.buffer 100.0 ob.activation 50.0 ob.conceptual_depth 50.0
 setActivation slipnode id fs activation 49.999237060546875
 setActivation slipnode id lf activation 46.25
-ob sl ob.buffer 0.0 ob.activation 10.0 ob.conceptual_depth 50.0
 setActivation slipnode id rt activation 160.0
 setActivation slipnode id rt activation 100.0
 setActivation slipnode id pd activation 55.0
-ob wh ob.buffer 100.0 ob.activation 50.0 ob.conceptual_depth 50.0
 setActivation slipnode id sc activation 160.0
 setActivation slipnode id sc activation 100.0
-setActivation slipnode id pg activation 55.0
 ob fs ob.buffer 0.0 ob.activation 49.99847412109375 ob.conceptual_depth 50.0
+setActivation slipnode id pg activation 55.0
 setActivation slipnode id sg activation 190.0
 setActivation slipnode id sg activation 100.0
 setActivation slipnode id id activation 50.0
-ob ls ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
 setActivation slipnode id l activation 60.0
 setActivation slipnode id g activation 160.0
 setActivation slipnode id g activation 100.0
-ob lf ob.buffer 0.0 ob.activation 52.5 ob.conceptual_depth 50.0
+ob ls ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
 setActivation slipnode id dc activation 220.0
-ob rt ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setActivation slipnode id dc activation 100.0
 setActivation slipnode id bc activation 120.0
 setActivation slipnode id bc activation 100.0
-ob pd ob.buffer 0.0 ob.activation 70.0 ob.conceptual_depth 50.0
 setActivation slipnode id gpc activation 220.0
+ob lf ob.buffer 0.0 ob.activation 52.5 ob.conceptual_depth 50.0
 setActivation slipnode id gpc activation 100.0
 setActivation slipnode id len activation 24.374923706054688
+ob rt ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setActivation slipnode id obc activation 270.0
 setActivation slipnode id obc activation 100.0
-ob sc ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 setActivation slipnode id bf activation 90.0
+ob pd ob.buffer 0.0 ob.activation 70.0 ob.conceptual_depth 50.0
+ob sc ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob sm ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-removeCodelet codelets size 100
 ob pg ob.buffer 0.0 ob.activation 70.0 ob.conceptual_depth 50.0
 ob sg ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob smg ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
 ob id ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob op ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-printUrgencies urgencies: ListBuffer(5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3, 3, 3, 3, 3, 3)
 ob l ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-Post Codelet codelets size 101 rndOpt Some(0.064) name rule-translator
 ob g ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
-Post. codelets.size > 100
 ob lc ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob spc ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob apc ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-choose_old_codelet chosen 1159.4560000000001 codelets_run 240 rndValue 0.064 urgsum 18116.5
 ob dc ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob bc ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob gpc ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob len ob.buffer 0.0 ob.activation 28.749847412109375 ob.conceptual_depth 50.0
-removeCodelet codelets size 100
-printUrgencies urgencies: ListBuffer(5, 3, 3, 4, 4, 4, 4, 4, 3, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3)
-Post Codelet codelets size 101 rndOpt Some(0.009) name breaker
-Post. codelets.size > 100
 ob obc ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob bf ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-choose_old_codelet chosen 156.9735 codelets_run 240 rndValue 0.009 urgsum 17441.5
-removeCodelet codelets size 100
-printUrgencies urgencies: ListBuffer(3, 3, 4, 4, 4, 4, 4, 3, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1)
 sl.to B buffer 50.0 inc 40.0
 sl.to lc buffer 50.0 inc 80.0
 sl.to fs buffer -24.999237060546875 inc 25.0
@@ -679,7 +679,6 @@ sl.to L buffer -50.0 inc 40.0
 sl.to lc buffer 850.0 inc 80.0
 sl.to K buffer 90.0 inc 40.0
 sl.to M buffer -50.0 inc 40.0
-Random rndseed=1696
 sl.to lc buffer 930.0 inc 80.0
 sl.to L buffer -10.0 inc 40.0
 sl.to N buffer -22.999954223632812 inc 40.0
@@ -745,6 +744,7 @@ sl.to sc buffer 60.0 inc 0.0
 sl.to sm buffer 0.0 inc 0.0
 sl.to pg buffer -15.0 inc 0.0
 sl.to sg buffer 90.0 inc 0.0
+Random rndseed=1696
 sl.to smg buffer 0.0 inc 0.0
 sl.to l buffer -40.0 inc 0.0
 sl.to g buffer 60.0 inc 0.0
@@ -786,7 +786,6 @@ clamp false ob lm ob.buffer -2.5 activation 45.0
 clamp false ob rm ob.buffer -40.0 activation 100.0
 clamp false ob md ob.buffer -6.25 activation 12.5
 clamp false ob sl ob.buffer -5.0 activation 10.0
-Random rndseed=1697
 clamp false ob wh ob.buffer 75.0 activation 50.0
 clamp false ob fs ob.buffer 7.62939453125E-4 activation 49.99847412109375
 clamp false ob ls ob.buffer 0.0 activation 0.0
@@ -816,6 +815,7 @@ slipnodes.size()59
 ob A ob.activation 100.0
 ob A activation 100.0
 ob B ob.activation 100.0
+Random rndseed=1697
 ob B activation 100.0
 ob C ob.activation 100.0
 Random rndseed=1698
@@ -964,14 +964,13 @@ setBuffer slipnode id B buffer 0.0
 setBuffer slipnode id C buffer 0.0
 setBuffer slipnode id D buffer 0.0
 setBuffer slipnode id E buffer 0.0
-ob bf activation 100.0
 setBuffer slipnode id F buffer 0.0
 setBuffer slipnode id G buffer 0.0
 setBuffer slipnode id H buffer 0.0
 setBuffer slipnode id I buffer 0.0
 setBuffer slipnode id J buffer 0.0
 setBuffer slipnode id K buffer 0.0
-check for redraw; and reset buffer values to 0
+ob bf activation 100.0
 setBuffer slipnode id L buffer 0.0
 setBuffer slipnode id M buffer 0.0
 setBuffer slipnode id N buffer 0.0
@@ -985,6 +984,7 @@ setBuffer slipnode id U buffer 0.0
 setBuffer slipnode id V buffer 0.0
 setBuffer slipnode id W buffer 0.0
 setBuffer slipnode id X buffer 0.0
+check for redraw; and reset buffer values to 0
 setBuffer slipnode id Y buffer 0.0
 setBuffer slipnode id Z buffer 0.0
 setBuffer slipnode id 1 buffer 0.0
@@ -1025,13 +1025,13 @@ intra_string_unhappiness 10.191369227913526 inter_string_unhappiness 62.19852059
 workspace intra string unhappiness = 10.191369227913526
 workspace calculate_string_unhappiness isu 62.198520595541055
 workspace inter string unhappiness = 62.198520595541055
-workspace calculate_string_unhappiness isu 36.19494491172729
-workspace total string unhappiness = 36.19494491172729
 rule_weakness 100.0
+workspace calculate_string_unhappiness isu 36.19494491172729
 formulas.actual_temperature 48.95595592938183
 clamp_temperature false
 formulas.actual_temperature 48.95595592938183
 Finish update_Everything T: 48.95595592938183
+workspace total string unhappiness = 36.19494491172729
 ChooseAndRun2 100 T: 48.95595592938183
 choose T: 48.95595592938183
 Choose codelet codelets size 100 scale 4.0696029380412115

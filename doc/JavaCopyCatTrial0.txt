@@ -1,4 +1,4 @@
-/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=52974:/Applications/IntelliJ IDEA CE.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/tools.jar:/Users/dschoen/Documents/gitlab/copycat/JavaCopyCat/out/production/JavaCopyCat rungroup
+/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=49688:/Applications/IntelliJ IDEA CE.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/lib/tools.jar:/Users/dschoen/Documents/gitlab/copycat/JavaCopyCat/out/production/JavaCopyCat rungroup
 Random rndseed=1
 Random rndseed=2
 Random rndseed=3
@@ -476,54 +476,81 @@ setBuffer slipnode id obc buffer 0.0
 setBuffer slipnode id bf buffer 0.0
 setActivation slipnode id lc activation 100.0
 setActivation slipnode id spc activation 100.0
+New Description string: abc wo: letter (1)1description type: slipnode obc activation 0.0 buffer 0.0 conceptual_depth 90.0descriptor: slipnode l activation 0.0 buffer 0.0 conceptual_depth 20.0
+New Description string: abc wo: letter (1)1description type: slipnode lc activation 100.0 buffer 0.0 conceptual_depth 30.0descriptor: slipnode A activation 0.0 buffer 0.0 conceptual_depth 10.0
+New Description string: abc wo: letter (1)1description type: slipnode spc activation 100.0 buffer 0.0 conceptual_depth 70.0descriptor: slipnode lm activation 0.0 buffer 0.0 conceptual_depth 40.0
 setBuffer slipnode id obc buffer 100.0
 setBuffer slipnode id l buffer 100.0
 setBuffer slipnode id lc buffer 100.0
 setBuffer slipnode id A buffer 100.0
 setBuffer slipnode id spc buffer 100.0
 setBuffer slipnode id lm buffer 100.0
+New Description string: abc wo: letter (2)2description type: slipnode obc activation 0.0 buffer 100.0 conceptual_depth 90.0descriptor: slipnode l activation 0.0 buffer 100.0 conceptual_depth 20.0
+New Description string: abc wo: letter (2)2description type: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 30.0descriptor: slipnode B activation 0.0 buffer 0.0 conceptual_depth 10.0
+New Description string: abc wo: letter (2)2description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 70.0descriptor: slipnode md activation 0.0 buffer 0.0 conceptual_depth 40.0
 setBuffer slipnode id obc buffer 100.0
 setBuffer slipnode id l buffer 100.0
 setBuffer slipnode id lc buffer 100.0
 setBuffer slipnode id B buffer 100.0
 setBuffer slipnode id spc buffer 100.0
 setBuffer slipnode id md buffer 100.0
+New Description string: abc wo: letter (3)3description type: slipnode obc activation 0.0 buffer 100.0 conceptual_depth 90.0descriptor: slipnode l activation 0.0 buffer 100.0 conceptual_depth 20.0
+New Description string: abc wo: letter (3)3description type: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 30.0descriptor: slipnode C activation 0.0 buffer 0.0 conceptual_depth 10.0
+New Description string: abc wo: letter (3)3description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 70.0descriptor: slipnode rm activation 0.0 buffer 0.0 conceptual_depth 40.0
 setBuffer slipnode id obc buffer 100.0
 setBuffer slipnode id l buffer 100.0
 setBuffer slipnode id lc buffer 100.0
 setBuffer slipnode id C buffer 100.0
 setBuffer slipnode id spc buffer 100.0
 setBuffer slipnode id rm buffer 100.0
+New Description string: abd wo: letter (1)1description type: slipnode obc activation 0.0 buffer 100.0 conceptual_depth 90.0descriptor: slipnode l activation 0.0 buffer 100.0 conceptual_depth 20.0
+New Description string: abd wo: letter (1)1description type: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 30.0descriptor: slipnode A activation 0.0 buffer 100.0 conceptual_depth 10.0
+New Description string: abd wo: letter (1)1description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 70.0descriptor: slipnode lm activation 0.0 buffer 100.0 conceptual_depth 40.0
 setBuffer slipnode id obc buffer 100.0
 setBuffer slipnode id l buffer 100.0
 setBuffer slipnode id lc buffer 100.0
 setBuffer slipnode id A buffer 100.0
 setBuffer slipnode id spc buffer 100.0
 setBuffer slipnode id lm buffer 100.0
+New Description string: abd wo: letter (2)2description type: slipnode obc activation 0.0 buffer 100.0 conceptual_depth 90.0descriptor: slipnode l activation 0.0 buffer 100.0 conceptual_depth 20.0
+New Description string: abd wo: letter (2)2description type: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 30.0descriptor: slipnode B activation 0.0 buffer 100.0 conceptual_depth 10.0
+New Description string: abd wo: letter (2)2description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 70.0descriptor: slipnode md activation 0.0 buffer 100.0 conceptual_depth 40.0
 setBuffer slipnode id obc buffer 100.0
 setBuffer slipnode id l buffer 100.0
 setBuffer slipnode id lc buffer 100.0
 setBuffer slipnode id B buffer 100.0
 setBuffer slipnode id spc buffer 100.0
 setBuffer slipnode id md buffer 100.0
+New Description string: abd wo: letter (3)3description type: slipnode obc activation 0.0 buffer 100.0 conceptual_depth 90.0descriptor: slipnode l activation 0.0 buffer 100.0 conceptual_depth 20.0
+New Description string: abd wo: letter (3)3description type: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 30.0descriptor: slipnode D activation 0.0 buffer 0.0 conceptual_depth 10.0
+New Description string: abd wo: letter (3)3description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 70.0descriptor: slipnode rm activation 0.0 buffer 100.0 conceptual_depth 40.0
 setBuffer slipnode id obc buffer 100.0
 setBuffer slipnode id l buffer 100.0
 setBuffer slipnode id lc buffer 100.0
 setBuffer slipnode id D buffer 100.0
 setBuffer slipnode id spc buffer 100.0
 setBuffer slipnode id rm buffer 100.0
+New Description string: ijk wo: letter (1)1description type: slipnode obc activation 0.0 buffer 100.0 conceptual_depth 90.0descriptor: slipnode l activation 0.0 buffer 100.0 conceptual_depth 20.0
+New Description string: ijk wo: letter (1)1description type: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 30.0descriptor: slipnode I activation 0.0 buffer 0.0 conceptual_depth 10.0
+New Description string: ijk wo: letter (1)1description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 70.0descriptor: slipnode lm activation 0.0 buffer 100.0 conceptual_depth 40.0
 setBuffer slipnode id obc buffer 100.0
 setBuffer slipnode id l buffer 100.0
 setBuffer slipnode id lc buffer 100.0
 setBuffer slipnode id I buffer 100.0
 setBuffer slipnode id spc buffer 100.0
 setBuffer slipnode id lm buffer 100.0
+New Description string: ijk wo: letter (2)2description type: slipnode obc activation 0.0 buffer 100.0 conceptual_depth 90.0descriptor: slipnode l activation 0.0 buffer 100.0 conceptual_depth 20.0
+New Description string: ijk wo: letter (2)2description type: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 30.0descriptor: slipnode J activation 0.0 buffer 0.0 conceptual_depth 10.0
+New Description string: ijk wo: letter (2)2description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 70.0descriptor: slipnode md activation 0.0 buffer 100.0 conceptual_depth 40.0
 setBuffer slipnode id obc buffer 100.0
 setBuffer slipnode id l buffer 100.0
 setBuffer slipnode id lc buffer 100.0
 setBuffer slipnode id J buffer 100.0
 setBuffer slipnode id spc buffer 100.0
 setBuffer slipnode id md buffer 100.0
+New Description string: ijk wo: letter (3)3description type: slipnode obc activation 0.0 buffer 100.0 conceptual_depth 90.0descriptor: slipnode l activation 0.0 buffer 100.0 conceptual_depth 20.0
+New Description string: ijk wo: letter (3)3description type: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 30.0descriptor: slipnode K activation 0.0 buffer 0.0 conceptual_depth 10.0
+New Description string: ijk wo: letter (3)3description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 70.0descriptor: slipnode rm activation 0.0 buffer 100.0 conceptual_depth 40.0
 setBuffer slipnode id obc buffer 100.0
 setBuffer slipnode id l buffer 100.0
 setBuffer slipnode id lc buffer 100.0
@@ -597,54 +624,81 @@ setBuffer slipnode id obc buffer 0.0
 setBuffer slipnode id bf buffer 0.0
 setActivation slipnode id lc activation 100.0
 setActivation slipnode id spc activation 100.0
+New Description string: abc wo: letter (1)1description type: slipnode obc activation 0.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode l activation 0.0 buffer 0.0 conceptual_depth 50.0
+New Description string: abc wo: letter (1)1description type: slipnode lc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode A activation 0.0 buffer 0.0 conceptual_depth 50.0
+New Description string: abc wo: letter (1)1description type: slipnode spc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lm activation 0.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id obc buffer 100.0
 setBuffer slipnode id l buffer 100.0
 setBuffer slipnode id lc buffer 100.0
 setBuffer slipnode id A buffer 100.0
 setBuffer slipnode id spc buffer 100.0
 setBuffer slipnode id lm buffer 100.0
+New Description string: abc wo: letter (2)2description type: slipnode obc activation 0.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode l activation 0.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: letter (2)2description type: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode B activation 0.0 buffer 0.0 conceptual_depth 50.0
+New Description string: abc wo: letter (2)2description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode md activation 0.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id obc buffer 100.0
 setBuffer slipnode id l buffer 100.0
 setBuffer slipnode id lc buffer 100.0
 setBuffer slipnode id B buffer 100.0
 setBuffer slipnode id spc buffer 100.0
 setBuffer slipnode id md buffer 100.0
+New Description string: abc wo: letter (3)3description type: slipnode obc activation 0.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode l activation 0.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: letter (3)3description type: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode C activation 0.0 buffer 0.0 conceptual_depth 50.0
+New Description string: abc wo: letter (3)3description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode rm activation 0.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id obc buffer 100.0
 setBuffer slipnode id l buffer 100.0
 setBuffer slipnode id lc buffer 100.0
 setBuffer slipnode id C buffer 100.0
 setBuffer slipnode id spc buffer 100.0
 setBuffer slipnode id rm buffer 100.0
+New Description string: abd wo: letter (1)1description type: slipnode obc activation 0.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode l activation 0.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abd wo: letter (1)1description type: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode A activation 0.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abd wo: letter (1)1description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode lm activation 0.0 buffer 100.0 conceptual_depth 50.0
 setBuffer slipnode id obc buffer 100.0
 setBuffer slipnode id l buffer 100.0
 setBuffer slipnode id lc buffer 100.0
 setBuffer slipnode id A buffer 100.0
 setBuffer slipnode id spc buffer 100.0
 setBuffer slipnode id lm buffer 100.0
+New Description string: abd wo: letter (2)2description type: slipnode obc activation 0.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode l activation 0.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abd wo: letter (2)2description type: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode B activation 0.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abd wo: letter (2)2description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode md activation 0.0 buffer 100.0 conceptual_depth 50.0
 setBuffer slipnode id obc buffer 100.0
 setBuffer slipnode id l buffer 100.0
 setBuffer slipnode id lc buffer 100.0
 setBuffer slipnode id B buffer 100.0
 setBuffer slipnode id spc buffer 100.0
 setBuffer slipnode id md buffer 100.0
+New Description string: abd wo: letter (3)3description type: slipnode obc activation 0.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode l activation 0.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abd wo: letter (3)3description type: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode D activation 0.0 buffer 0.0 conceptual_depth 50.0
+New Description string: abd wo: letter (3)3description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode rm activation 0.0 buffer 100.0 conceptual_depth 50.0
 setBuffer slipnode id obc buffer 100.0
 setBuffer slipnode id l buffer 100.0
 setBuffer slipnode id lc buffer 100.0
 setBuffer slipnode id D buffer 100.0
 setBuffer slipnode id spc buffer 100.0
 setBuffer slipnode id rm buffer 100.0
+New Description string: ijk wo: letter (1)1description type: slipnode obc activation 0.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode l activation 0.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: letter (1)1description type: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode I activation 0.0 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: letter (1)1description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode lm activation 0.0 buffer 100.0 conceptual_depth 50.0
 setBuffer slipnode id obc buffer 100.0
 setBuffer slipnode id l buffer 100.0
 setBuffer slipnode id lc buffer 100.0
 setBuffer slipnode id I buffer 100.0
 setBuffer slipnode id spc buffer 100.0
 setBuffer slipnode id lm buffer 100.0
+New Description string: ijk wo: letter (2)2description type: slipnode obc activation 0.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode l activation 0.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: letter (2)2description type: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode J activation 0.0 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: letter (2)2description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode md activation 0.0 buffer 100.0 conceptual_depth 50.0
 setBuffer slipnode id obc buffer 100.0
 setBuffer slipnode id l buffer 100.0
 setBuffer slipnode id lc buffer 100.0
 setBuffer slipnode id J buffer 100.0
 setBuffer slipnode id spc buffer 100.0
 setBuffer slipnode id md buffer 100.0
+New Description string: ijk wo: letter (3)3description type: slipnode obc activation 0.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode l activation 0.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: letter (3)3description type: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode K activation 0.0 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: letter (3)3description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode rm activation 0.0 buffer 100.0 conceptual_depth 50.0
 setBuffer slipnode id obc buffer 100.0
 setBuffer slipnode id l buffer 100.0
 setBuffer slipnode id lc buffer 100.0
@@ -10346,6 +10400,12 @@ trying from letter (2)2 successor
 proposing group from letter (1)1 to letter (2)2
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: ijk wo: group (1-2)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-2)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 50.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-2)description type: slipnode obc activation 40.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode g activation 8.59375 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-2)description type: slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sg activation 50.0 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-2)description type: slipnode dc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode rt activation 60.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-2)description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode lm activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=692
 create codelet group-strength-tester urgency 5 time_stamp 113
 Post Codelet codelets size 95
@@ -10412,6 +10472,12 @@ trying from letter (2)2 successor
 proposing group from letter (1)1 to letter (2)2
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: ijk wo: group (1-2)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-2)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 50.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-2)description type: slipnode obc activation 40.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode g activation 8.59375 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-2)description type: slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sg activation 50.0 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-2)description type: slipnode dc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode rt activation 60.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-2)description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode lm activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=702
 create codelet group-strength-tester urgency 5 time_stamp 116
 Post Codelet codelets size 93
@@ -11426,6 +11492,12 @@ Random rndseed=766
 proposing predecessor group
 setBuffer slipnode id pd buffer 100.0
 setBuffer slipnode id lf buffer 100.0
+New Description string: ijk wo: group (1-3)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode bc activation 50.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode pd activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode obc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode g activation 14.296875 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode pg activation 2.5 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode dc activation 50.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lf activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode spc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode wh activation 0.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=767
 create codelet group-strength-tester urgency 7 time_stamp 121
 Post Codelet codelets size 100
@@ -12795,6 +12867,12 @@ Random rndseed=877
 proposing successor group
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: ijk wo: group (1-3)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode obc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode g activation 17.1484375 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sg activation 52.5 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode dc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode spc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode wh activation 0.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=878
 create codelet group-strength-tester urgency 7 time_stamp 137
 Post Codelet codelets size 100
@@ -12899,6 +12977,12 @@ Random rndseed=892
 proposing predecessor group
 setBuffer slipnode id pd buffer 100.0
 setBuffer slipnode id lf buffer 100.0
+New Description string: ijk wo: group (1-3)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode pd activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode obc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode g activation 17.1484375 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode pg activation 41.25 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode dc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lf activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode spc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode wh activation 0.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=893
 create codelet group-strength-tester urgency 7 time_stamp 142
 Post Codelet codelets size 98
@@ -12928,6 +13012,12 @@ trying from letter (3)3 predecessor
 proposing group from letter (2)2 to letter (3)3
 setBuffer slipnode id pd buffer 100.0
 setBuffer slipnode id lf buffer 100.0
+New Description string: ijk wo: group (2-3)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (2-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode pd activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (2-3)description type: slipnode obc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode g activation 17.1484375 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: group (2-3)description type: slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode pg activation 41.25 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: group (2-3)description type: slipnode dc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lf activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (2-3)description type: slipnode spc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode rm activation 80.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=897
 create codelet group-strength-tester urgency 7 time_stamp 143
 Post Codelet codelets size 98
@@ -14234,6 +14324,12 @@ trying from letter (1)1 successor
 proposing group from letter (1)1 to letter (2)2
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: abc wo: group (1-2)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 0.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-2)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-2)description type: slipnode obc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode g activation 18.57421875 buffer 0.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-2)description type: slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sg activation 66.25 buffer 0.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-2)description type: slipnode dc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-2)description type: slipnode spc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lm activation 60.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1003
 create codelet group-strength-tester urgency 7 time_stamp 152
 Post Codelet codelets size 99
@@ -14276,6 +14372,12 @@ Random rndseed=1008
 proposing predecessor group
 setBuffer slipnode id pd buffer 100.0
 setBuffer slipnode id lf buffer 100.0
+New Description string: abc wo: group (1-3)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode pd activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode obc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode g activation 18.57421875 buffer 0.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode pg activation 60.625 buffer 0.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode dc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lf activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode spc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode wh activation 0.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1009
 create codelet group-strength-tester urgency 7 time_stamp 154
 Post Codelet codelets size 99
@@ -14497,6 +14599,12 @@ trying from letter (2)2 predecessor
 proposing group from letter (2)2 to letter (3)3
 setBuffer slipnode id pd buffer 100.0
 setBuffer slipnode id lf buffer 100.0
+New Description string: abc wo: group (2-3)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (2-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode pd activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (2-3)description type: slipnode obc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode g activation 18.57421875 buffer 0.0 conceptual_depth 50.0
+New Description string: abc wo: group (2-3)description type: slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode pg activation 60.625 buffer 0.0 conceptual_depth 50.0
+New Description string: abc wo: group (2-3)description type: slipnode dc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lf activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (2-3)description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode rm activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1035
 create codelet group-strength-tester urgency 7 time_stamp 164
 Post Codelet codelets size 97
@@ -15598,6 +15706,12 @@ Random rndseed=1124
 proposing successor group
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: ijk wo: group (1-3)description type: slipnode bf activation 90.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode obc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode g activation 9.287109375 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sg activation 100.0 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode dc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode spc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode wh activation 0.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1125
 create codelet group-strength-tester urgency 7 time_stamp 167
 Post Codelet codelets size 99
@@ -15712,6 +15826,12 @@ trying from letter (1)1 successor
 proposing group from letter (1)1 to letter (3)3
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: ijk wo: group (1-3)description type: slipnode bf activation 90.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode obc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode g activation 9.287109375 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sg activation 100.0 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode dc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode wh activation 0.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1141
 create codelet group-strength-tester urgency 7 time_stamp 174
 Post Codelet codelets size 94
@@ -15741,6 +15861,12 @@ trying from letter (1)1 successor
 proposing group from letter (1)1 to letter (3)3
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: ijk wo: group (1-3)description type: slipnode bf activation 90.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode obc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode g activation 9.287109375 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sg activation 100.0 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode dc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode wh activation 0.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1145
 create codelet group-strength-tester urgency 7 time_stamp 175
 Post Codelet codelets size 94
@@ -15812,6 +15938,12 @@ Random rndseed=1154
 proposing successor group
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: abc wo: group (1-3)description type: slipnode bf activation 90.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 0.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode obc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode g activation 9.287109375 buffer 0.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode gpc activation 0.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sg activation 100.0 buffer 0.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode dc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode wh activation 0.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1155
 create codelet group-strength-tester urgency 7 time_stamp 179
 Post Codelet codelets size 93
@@ -17045,6 +17177,12 @@ Random rndseed=1261
 proposing successor group
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: abc wo: group (1-3)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode obc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode g activation 14.6435546875 buffer 0.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode gpc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sg activation 100.0 buffer 0.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode dc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode spc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode wh activation 0.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1262
 create codelet group-strength-tester urgency 7 time_stamp 186
 Post Codelet codelets size 99
@@ -17212,6 +17350,12 @@ trying from letter (3)3 successor checking to left first
 proposing group from letter (1)1 to letter (3)3
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: ijk wo: group (1-3)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode obc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode g activation 14.6435546875 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode sg activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode dc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode wh activation 0.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1278
 create codelet group-strength-tester urgency 7 time_stamp 192
 Post Codelet codelets size 96
@@ -17241,6 +17385,12 @@ trying from letter (3)3 successor
 proposing group from letter (1)1 to letter (3)3
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: ijk wo: group (1-3)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode obc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode g activation 14.6435546875 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode sg activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode dc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode wh activation 0.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1282
 create codelet group-strength-tester urgency 7 time_stamp 193
 Post Codelet codelets size 96
@@ -17265,6 +17415,12 @@ Random rndseed=1285
 proposing successor group
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: abc wo: group (1-3)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode obc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode g activation 14.6435546875 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode sg activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode dc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode wh activation 0.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1286
 create codelet group-strength-tester urgency 7 time_stamp 194
 Post Codelet codelets size 96
@@ -17289,6 +17445,12 @@ Random rndseed=1289
 proposing successor group
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: abc wo: group (1-3)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode obc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode g activation 14.6435546875 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode sg activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode dc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode wh activation 0.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1290
 create codelet group-strength-tester urgency 7 time_stamp 195
 Post Codelet codelets size 96
@@ -18492,6 +18654,12 @@ trying from letter (1)1 successor
 proposing group from letter (1)1 to letter (3)3
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: ijk wo: group (1-3)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode obc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode g activation 100.0 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode gpc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sg activation 100.0 buffer 0.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode dc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode spc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode wh activation 0.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1399
 create codelet group-strength-tester urgency 7 time_stamp 197
 Post Codelet codelets size 100
@@ -20135,6 +20303,12 @@ trying from letter (2)2 successor
 proposing group from letter (1)1 to letter (3)3
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: abc wo: group (1-3)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode obc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode g activation 100.0 buffer 0.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode gpc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sg activation 100.0 buffer 0.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode dc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode wh activation 100.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1546
 create codelet group-strength-tester urgency 7 time_stamp 220
 Post Codelet codelets size 93
@@ -22065,6 +22239,12 @@ leftmost group (1-3)
 leftmost2 group (1-3)
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: abc wo: group (1-3)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode obc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode g activation 100.0 buffer 0.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode gpc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sg activation 100.0 buffer 0.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode dc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode spc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode wh activation 50.0 buffer 0.0 conceptual_depth 50.0
 Random rndseed=1634
 create codelet group-strength-tester urgency 7 time_stamp 228
 Post Codelet codelets size 99
@@ -22241,6 +22421,12 @@ trying from letter (1)1 successor
 proposing group from letter (1)1 to letter (3)3
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: abc wo: group (1-3)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode obc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode g activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode sg activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode dc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode wh activation 50.0 buffer 100.0 conceptual_depth 50.0
 Random rndseed=1651
 create codelet group-strength-tester urgency 7 time_stamp 235
 Post Codelet codelets size 94
@@ -24710,6 +24896,12 @@ leftmost group (1-3)
 leftmost2 group (1-3)
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: ijk wo: group (1-3)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode obc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode g activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode sg activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode dc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode wh activation 100.0 buffer 100.0 conceptual_depth 50.0
 Random rndseed=1810
 create codelet group-strength-tester urgency 7 time_stamp 260
 Post Codelet codelets size 89
@@ -24876,6 +25068,12 @@ trying from letter (2)2 successor
 proposing group from letter (1)1 to letter (3)3
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: abc wo: group (1-3)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode obc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode g activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode sg activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode dc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode wh activation 100.0 buffer 100.0 conceptual_depth 50.0
 Random rndseed=1828
 create codelet group-strength-tester urgency 7 time_stamp 267
 Post Codelet codelets size 85
@@ -24933,6 +25131,12 @@ trying from letter (2)2 successor checking to left first
 proposing group from letter (1)1 to letter (3)3
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: abc wo: group (1-3)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode obc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode g activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode sg activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode dc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode wh activation 100.0 buffer 100.0 conceptual_depth 50.0
 Random rndseed=1834
 create codelet group-strength-tester urgency 7 time_stamp 269
 Post Codelet codelets size 84
@@ -25945,6 +26149,7 @@ Random rndseed=1893
 chosen object: letter (2)2 from initial string
 looking for string position descriptor
 Random rndseed=1894
+New Description string: abc wo: letter (2)2description type: slipnode spc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode md activation 1.5625 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id md buffer 100.0
 create codelet description-strength-tester urgency 7 time_stamp 273
 Post Codelet codelets size 87
@@ -27320,6 +27525,7 @@ Random rndseed=1986
 chosen object: letter (2)2 from target string
 looking for string position descriptor
 Random rndseed=1987
+New Description string: ijk wo: letter (2)2description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode md activation 100.0 buffer 0.0 conceptual_depth 50.0
 setBuffer slipnode id md buffer 100.0
 create codelet description-strength-tester urgency 7 time_stamp 291
 Post Codelet codelets size 81
@@ -27513,6 +27719,12 @@ trying from letter (1)1 successor
 proposing group from letter (1)1 to letter (3)3
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: ijk wo: group (1-3)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode obc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode g activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode sg activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode dc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode wh activation 100.0 buffer 100.0 conceptual_depth 50.0
 Random rndseed=8
 create codelet group-strength-tester urgency 7 time_stamp 297
 Post Codelet codelets size 79
@@ -28663,6 +28875,12 @@ trying from letter (1)1 successor checking to right first
 proposing group from letter (1)1 to letter (3)3
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: abc wo: group (1-3)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode obc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode g activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode sg activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode dc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode wh activation 100.0 buffer 100.0 conceptual_depth 50.0
 Random rndseed=81
 create codelet group-strength-tester urgency 7 time_stamp 306
 Post Codelet codelets size 76
@@ -28720,6 +28938,7 @@ Random rndseed=89
 chosen object: letter (2)2 from initial string
 looking for string position descriptor
 Random rndseed=90
+New Description string: abc wo: letter (2)2description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode md activation 100.0 buffer 100.0 conceptual_depth 50.0
 setBuffer slipnode id md buffer 100.0
 create codelet description-strength-tester urgency 7 time_stamp 310
 Post Codelet codelets size 74
@@ -28815,6 +29034,12 @@ trying from letter (2)2 successor
 proposing group from letter (1)1 to letter (3)3
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: ijk wo: group (1-3)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode obc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode g activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode sg activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode dc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode wh activation 100.0 buffer 100.0 conceptual_depth 50.0
 Random rndseed=103
 create codelet group-strength-tester urgency 7 time_stamp 315
 Post Codelet codelets size 71
@@ -29812,6 +30037,12 @@ leftmost group (1-3)
 leftmost2 group (1-3)
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: abc wo: group (1-3)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 0.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode obc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode g activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode sg activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode dc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode wh activation 100.0 buffer 100.0 conceptual_depth 50.0
 Random rndseed=160
 create codelet group-strength-tester urgency 7 time_stamp 318
 Post Codelet codelets size 72
@@ -30141,6 +30372,12 @@ trying from letter (3)3 successor
 proposing group from letter (1)1 to letter (3)3
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: abc wo: group (1-3)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode obc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode g activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode sg activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode dc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: abc wo: group (1-3)description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode wh activation 100.0 buffer 100.0 conceptual_depth 50.0
 Random rndseed=191
 create codelet group-strength-tester urgency 7 time_stamp 328
 Post Codelet codelets size 68
@@ -31272,6 +31509,12 @@ leftmost group (1-3)
 leftmost2 group (1-3)
 setBuffer slipnode id sc buffer 100.0
 setBuffer slipnode id rt buffer 100.0
+New Description string: ijk wo: group (1-3)description type: slipnode bf activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode lc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode bc activation 100.0 buffer 0.0 conceptual_depth 50.0descriptor: slipnode sc activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode obc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode g activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode gpc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode sg activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode dc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode rt activation 100.0 buffer 100.0 conceptual_depth 50.0
+New Description string: ijk wo: group (1-3)description type: slipnode spc activation 100.0 buffer 100.0 conceptual_depth 50.0descriptor: slipnode wh activation 100.0 buffer 100.0 conceptual_depth 50.0
 Random rndseed=263
 create codelet group-strength-tester urgency 7 time_stamp 336
 Post Codelet codelets size 68
