@@ -69,8 +69,6 @@ class GroupScoutWholeString(urgency: Int,
 
   var runTemperature: Double = 0.0
   var left_most: WorkspaceObjectRep = null
-  var group_category: SlipNodeRep = null
-  var group_category2: SlipNodeRep = null
   var direction_category: Option[SlipNodeRep] = None
   var bond_facet: SlipNodeRep = null
   var object_list =  List.empty[WorkspaceObjectRep]
@@ -133,14 +131,16 @@ class GroupScoutWholeString(urgency: Int,
     case GoWithGroupScoutWholeString3Response(leftmostGroup) =>
       self ! GoWithGroupScoutWholeStringResponse(leftmostGroup)
 
-    case GroupScoutWholeString2Response(gc, dc, bf, ol, bl) =>
+    case GroupScoutWholeString2Response(group_category, dc, bf, ol, bl) =>
       log.debug("GroupScoutWholeString2Response")
-      group_category = gc
       direction_category = dc
       bond_facet = bf
       object_list = ol
       bond_list = bl
 
+      if (group_category == null) {
+        log.debug("GroupScoutWholeString2Response receive null group category")
+      }
       slipnet ! CompleteProposeGroup(group_category, direction_category)
 
     case GroupScoutWholeString3Response(bc, dc, bf, ol, bl) =>
@@ -154,14 +154,13 @@ class GroupScoutWholeString(urgency: Int,
       groupSlipnetInfo = gsi
       relatedOpt match {
         case Some(group_cat) =>
-          group_category2 = group_cat
           slipnet ! CompleteProposeGroup(group_cat, direction_category)
         case None =>
           self ! Finished
       }
 
 
-    case CompleteProposeGroupResponse(u, bc) =>
+    case CompleteProposeGroupResponse(u, bc, group_cat) =>
       log.debug("CompleteProposeGroupResponse   " + Random.rndseed)
 
         groupUrgency = u
@@ -169,7 +168,7 @@ class GroupScoutWholeString(urgency: Int,
         workspace ! WorkspaceProposeGroup(
                 object_list,
                 bond_list,
-                group_category2,
+                group_cat,
                 direction_category,
                 bond_facet,
                 bc,

@@ -86,7 +86,7 @@ object ConceptMapping {
     val goodCouples = couples.filter(c => {
       val d1 = c._1
       val d2 = c._2
-      println(s"get_concept_mapping_list ${d1.descriptorSlipNode.map(_.id())} -> ${d2.descriptorSlipNode.map(_.id())}")
+//      println(s"get_concept_mapping_list ${d1.descriptorSlipNode.map(_.id())} -> ${d2.descriptorSlipNode.map(_.id())}")
       d1.descriptionTypeSlipNode.equals(d2.descriptionTypeSlipNode) &&
         (
           d1.descriptorSlipNode.equals(d2.descriptorSlipNode) ||

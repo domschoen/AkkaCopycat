@@ -158,10 +158,10 @@ class Bond (
     wString match {
       case Some(ws) =>
         log.debug("string.bonds.size() " + ws.bonds.size);
-        println("from_obj.wString " + from_obj.wString.map(_.s))
-        println("wString " + ws.s);
+//        log.debug("from_obj.wString " + from_obj.wString.map(_.s))
+//        log.debug("wString " + ws.s);
         ws.bonds.filter(ob => {
-          println("ob " + ob.wString);
+//          log.debug("ob " + ob.wString);
 
           (ob.wString.equals(from_obj.wString)) &&
            (

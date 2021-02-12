@@ -104,7 +104,7 @@ object Slipnet {
                                        codelet: ActorRef
                                       )*/
   case class CompleteProposeGroup(grCategory: SlipNodeRep, dirCategoryID: Option[SlipNodeRep])
-  case class CompleteProposeGroupResponse(urgency: Double, bond_category: SlipNodeRep)
+  case class CompleteProposeGroupResponse(urgency: Double, bond_category: SlipNodeRep, group_category: SlipNodeRep)
 
   case class SlipnetGoWithTopDownDescriptionScout(chosen_object: WorkspaceObjectRep, descriptionTypeID: String)
   case class GoWithTopDownDescriptionScoutResponse2(chosen_property: SlipNodeRep)
@@ -284,7 +284,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
   val last = add_slipnode(25, 15, 60.0, "last", "ls")
 
   // directions
-  val left = add_slipnode(17, 22, 40.0, "left", "lf")
+  val left = add_slipnode(17, 22, 40.0, "left", SlipNode.id.left)
   left.codelets += CodeletTypeString.TopDownBondScoutDirection
   left.codelets += CodeletTypeString.TopDownGroupScoutDirection
   val right = add_slipnode(27, 22, 40.0, "right", SlipNode.id.right)
@@ -303,7 +303,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
   // group types
   val predgrp = add_slipnode(20, 38, 50.0, "predecessor group", "pg")
   predgrp.codelets += CodeletTypeString.TopDownGroupScoutCategory
-  val succgrp = add_slipnode(20, 33, 50.0, "successor group", "sg")
+  val succgrp = add_slipnode(20, 33, 50.0, "successor group", SlipNode.id.successor_group)
   succgrp.codelets += CodeletTypeString.TopDownGroupScoutCategory
   val samegrp = add_slipnode(10, 25, 80.0, "sameness group", "smg")
   samegrp.codelets += CodeletTypeString.TopDownGroupScoutCategory
@@ -1121,7 +1121,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
           }
           val urgency = bond_category.bond_degree_of_association()
 
-          sender() ! CompleteProposeGroupResponse(urgency, bond_category.slipNodeRep())
+          sender() ! CompleteProposeGroupResponse(urgency, bond_category.slipNodeRep(), grCategoryRep)
 
         case None =>
           log.debug("<c> no bond-category found")

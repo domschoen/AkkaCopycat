@@ -21,6 +21,9 @@ case class Description (log: LoggingAdapter,
   //val descriptionTypeSlipNodeIDOpt = Option.empty[String]
   import Description.DescriptionRep
 
+  log.debug(s"New Description string: ${wString.map(_.description)} wo: ${wObject} " +
+    s"description type: ${SlipNode.displayStringWithOptionalSlipNodeRep(Some(description_type))} " +
+    s"descriptor: ${SlipNode.displayStringWithOptionalSlipNodeRep(descriptor)}")
   //var wObject : WorkspaceObject = null;
 
   // this is for GUI

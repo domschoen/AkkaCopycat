@@ -53,16 +53,28 @@ object SlipNode {
   def longNameWithId(id: String) = {
     if (id == SlipNode.id.letter) {
       "letter"
+    } else if (id == SlipNode.id.group) {
+      "group"
     } else if (id == SlipNode.id.leftmost) {
       "leftmost"
+    } else if (id == SlipNode.id.right) {
+      "right"
+    } else if (id == SlipNode.id.left) {
+      "left"
     } else if (id == SlipNode.id.rightmost) {
       "rightmost"
+    } else if (id == SlipNode.id.leftmost) {
+      "leftmost"
+    } else if (id == SlipNode.id.whole) {
+      "whole"
     } else if (id == SlipNode.id.middle) {
       "middle"
     } else if (id == SlipNode.id.letter_category) {
-      "letter_category"
+      "letter category"
     } else if (id == SlipNode.id.successor) {
       "successor"
+    } else if (id == SlipNode.id.successor_group) {
+      "successor group"
     } else {
       id
     }
@@ -71,9 +83,11 @@ object SlipNode {
 
   object id {
     val right = "rt"
+    val left = "lf"
     val sameness = "sm"
     val successor = "sc"
     val predecessor = "pd"
+    val successor_group = "sg"
     val whole = "wh"
     val letter = "l"
     val group = "g"

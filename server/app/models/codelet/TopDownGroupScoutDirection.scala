@@ -37,7 +37,6 @@ class TopDownGroupScoutDirection(urgency: Int,
   var fromob: WorkspaceObjectRep = null
   var first_bond: String = null
   var bond_category: SlipNodeRep = null
-  var group_category: SlipNodeRep = null
   var direction_category: Option[SlipNodeRep] = None
   var bond_facet: SlipNodeRep = null
   var object_list =  List.empty[WorkspaceObjectRep]
@@ -79,8 +78,7 @@ class TopDownGroupScoutDirection(urgency: Int,
       groupSlipnetInfo = gsi
       workspace ! GoWithTopDownGroupScoutDirection2(group_category, fromob, first_bond, bond_category)*/
 
-    case GoWithTopDownGroupScoutCategory2Response(gc, dc, bf, ol, bl) =>
-      group_category = gc
+    case GoWithTopDownGroupScoutCategory2Response(group_category, dc, bf, ol, bl) =>
       direction_category = dc
       bond_facet = bf
       object_list = ol
@@ -88,7 +86,7 @@ class TopDownGroupScoutDirection(urgency: Int,
 
       slipnet ! CompleteProposeGroup(group_category, direction_category)
 
-    case CompleteProposeGroupResponse(u,bond_category) =>
+    case CompleteProposeGroupResponse(u,bond_category, group_category) =>
       groupUrgency = u
       workspace ! WorkspaceProposeGroup(
         object_list, bond_list, group_category, direction_category, bond_facet,bond_category, groupSlipnetInfo, runTemperature)
