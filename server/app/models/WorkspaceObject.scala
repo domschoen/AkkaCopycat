@@ -186,7 +186,7 @@ abstract class WorkspaceObject(log: LoggingAdapter, ws: WorkspaceString) extends
       description.description_type.id.equals(d.description_type.id) &&
         description.descriptor.isDefined &&
         d.descriptor.isDefined &&
-        description.descriptor.get.equals(d.descriptor.get.id)
+        description.descriptor.get.id.equals(d.descriptor.get.id)
     ).isDefined
   }
 
