@@ -43,7 +43,7 @@ import models.codelet.ImportantObjectCorrespondenceScout.{GoWithImportantObjectC
 import models.codelet.RuleScout.{GoWithRuleScout2Response, GoWithRuleScout3Response, GoWithRuleScoutResponse, RuleScoutProposeRule}
 import models.codelet.RuleStrengthTester.GoWithRuleStrengthTesterResponse
 import models.codelet.RuleTranslator.GoWithRuleTranslatorResponse
-import models.codelet.TopDownDescriptionScout.GoWithTopDownDescriptionScoutResponse
+import models.codelet.TopDownDescriptionScout.{GoWithTopDownDescriptionScoutResponse, GoWithTopDownDescriptionScoutResponse2}
 import models.codelet.TopDownGroupScoutCategory.{GoWithTopDownGroupScoutCategory2Response, GoWithTopDownGroupScoutCategoryResponse}
 import models.codelet.TopDownGroupScoutDirection.GoWithTopDownGroupScoutDirectionResponse
 import models.codelet.{Codelet, CodeletType}
@@ -130,8 +130,9 @@ object Workspace {
   case class GoWithTopDownDescriptionScout2(chosen_object: WorkspaceObjectRep, i: DescriptionTypeInstanceLinksToNodeInfo)
 
   case class PrepareDescription(chosen_object: WorkspaceObjectRep,
-                                chosen_propertyRep: SlipNodeRep,
-                                description_typeRep: SlipNodeRep)
+                                description_typeRep: SlipNodeRep,
+                                chosen_propertyRep: SlipNodeRep
+                                )
   case class GoWithBottomUpCorrespondenceScout(temperature: Double)
   case class GoWithBottomUpCorrespondenceScout3(fg: FutureGroupRep, obj2: WorkspaceObjectRep, t: Double)
   case class GoWithBottomUpCorrespondenceScout2(
@@ -816,7 +817,8 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
               sender() ! Finished
           }
       }
-    case PrepareDescription(chosen_object, chosen_propertyRep, description_typeRep) =>
+    case PrepareDescription(chosen_object, description_typeRep, chosen_propertyRep) =>
+      log.debug("PrepareDescription")
       val ob = objectRefs(chosen_object.uuid)
 
       val descriptor = chosen_propertyRep
@@ -829,13 +831,14 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
     // codelet.java.165
     case GoWithTopDownDescriptionScout(descriptionTypeID, t) =>
-      val chosen_objectOpt: Option[WorkspaceObject] = chooseObjectFromList(objects.toList, TemperatureAjustmentVariable.Total_salience,t)
+      val chosen_objectOpt: Option[WorkspaceObject] = chooseObject(objects.toList, TemperatureAjustmentVariable.Total_salience, t)
+
       chosen_objectOpt match {
         case None =>
           log.debug("GoWithTopDownDescriptionScout | failed with empty chosen_object")
           sender() ! Finished
         case Some(chosen_object) =>
-          log.debug(s"chosen object: ${chosen_object} from ${initialOrTargetText(chosen_object)} string. looking for ${descriptionTypeID} descriptor")
+          log.debug(s"chosen object: ${chosen_object} from ${chosen_object.wString.map(_.description)} string. looking for ${descriptionTypeID} descriptor")
           sender() ! GoWithTopDownDescriptionScoutResponse(chosen_object.workspaceObjectRep())
       }
 
@@ -843,14 +846,23 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     // codelet.java.173
     //
     case GoWithTopDownDescriptionScout2(chosen_objectRep, i: DescriptionTypeInstanceLinksToNodeInfo) =>
+      log.debug("GoWithTopDownDescriptionScout2")
       val chosen_object = objectRefs(chosen_objectRep.uuid)
+      log.debug("GoWithTopDownDescriptionScout2 chosen_object: " + chosen_object)
+
       val v = chosen_object.get_possible_descriptions(i)
+      log.debug("GoWithTopDownDescriptionScout2 v: " + v)
+
       if (v.isEmpty) {
         log.debug("couldn't find any descriptions");
         sender() ! Finished
       } else {
+        log.debug("GoWithTopDownDescriptionScout2 v not Empty")
+
         val act = v.map(sn => Workspace.activationWithSlipNodeRep(activationBySlipNodeID, sn))
+        log.debug("GoWithTopDownDescriptionScout2 act " + act)
         val chosen_property = v(Utilities.valueProportionalRandomIndexInValueList(act))
+        log.debug("GoWithTopDownDescriptionScout2 chosen_property " + chosen_property)
         sender() ! GoWithTopDownDescriptionScoutResponse2(chosen_property)
       }
 
@@ -2706,10 +2718,10 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     //log.debug("objects.toList " + objects.toList)
     val nonModifieds = wos.filter(wo =>
       {
-        println("chooseObject " + wo.workspaceString + " modified " + modified)
+        //log.debug("chooseObject " + wo.workspaceString + " modified " + modified)
         wo.wString.isDefined && wo.wString.get != modified
       })
-    log.debug("nonModifieds " + nonModifieds + " variable " + variable)
+    //log.debug("nonModifieds " + nonModifieds + " variable " + variable)
 
     chooseObjectFromList(nonModifieds, variable, temperature)
   }

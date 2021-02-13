@@ -31,6 +31,7 @@ class TopDownDescriptionScout(urgency: Int,
     SlipnetGoWithTopDownDescriptionScoutResponse2
   }
   import Codelet.PrepareDescriptionResponse
+  import models.Slipnet.SlipnetGoWithTopDownDescriptionScout2
 
   var chosen_object: WorkspaceObjectRep = null
   var runTemperature : Double = 0.0
@@ -48,17 +49,22 @@ class TopDownDescriptionScout(urgency: Int,
       workspace ! GoWithTopDownDescriptionScout(descriptionTypeID, t)
 
     case GoWithTopDownDescriptionScoutResponse(co) =>
+      log.debug("GoWithTopDownDescriptionScoutResponse")
       chosen_object = co
       slipnet ! SlipnetGoWithTopDownDescriptionScout(chosen_object, descriptionTypeID)
 
     case SlipnetGoWithTopDownDescriptionScoutResponse(i) =>
+      log.debug("SlipnetGoWithTopDownDescriptionScoutResponse")
+
       workspace ! GoWithTopDownDescriptionScout2(chosen_object,i)
+
 
     case GoWithTopDownDescriptionScoutResponse2(cp) =>
       chosen_property = cp
-      slipnet ! SlipnetGoWithTopDownDescriptionScoutResponse2(chosen_property)
+      slipnet ! SlipnetGoWithTopDownDescriptionScout2(chosen_property)
 
     case SlipnetGoWithTopDownDescriptionScoutResponse2(chosen_property_category) =>
+      log.debug("SlipnetGoWithTopDownDescriptionScoutResponse2")
       workspace ! PrepareDescription(chosen_object, chosen_property_category, chosen_property)
 
 

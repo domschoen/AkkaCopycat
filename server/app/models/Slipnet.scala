@@ -107,7 +107,9 @@ object Slipnet {
   case class CompleteProposeGroupResponse(urgency: Double, bond_category: SlipNodeRep, group_category: SlipNodeRep)
 
   case class SlipnetGoWithTopDownDescriptionScout(chosen_object: WorkspaceObjectRep, descriptionTypeID: String)
-  case class GoWithTopDownDescriptionScoutResponse2(chosen_property: SlipNodeRep)
+  case class SlipnetGoWithTopDownDescriptionScout2(chosen_property: SlipNodeRep)
+
+
   case class GoWithTopDownBondScout2Response(bond_facet: SlipNodeRep, from_descriptor: Option[SlipNodeRep], to_descriptor: Option[SlipNodeRep])
 
   case class SetSlipNodeBufferValue(slipNodeID: String, bufferValue: Double)
@@ -873,22 +875,26 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
       if (concept_mapping_list.isEmpty) {
         // no possible mappings
-        print("no possible mappings exist: fizzle")
+        log.debug("no possible mappings exist: fizzle")
         sender() ! Finished
 
       } else {
         if (cm_possible.isEmpty) {
           //cannot make necessary slippages
-          print("cannot make appropriate slippage: fizzle");
+          log.debug("cannot make appropriate slippage: fizzle");
           sender() ! Finished
 
         } else {
           //find out if any are distinguishing
-          val distinguishing_mappings = concept_mapping_list.filter(cm => cm.distinguishing())
+          val distinguishing_mappings = concept_mapping_list.filter(cm => {
+            val distinguishing = cm.distinguishing(log)
+            log.debug("concept_mapping " + cm + " distinguishing " + distinguishing)
+            distinguishing
+          })
 
           if (distinguishing_mappings.isEmpty) {
             // no distinguishing mappings
-            print("no distinguishing mappings found: fizzle");
+            log.debug("no distinguishing mappings found: fizzle");
             sender() ! Finished
 
           } else {
@@ -1038,7 +1044,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
         val dtOpt = chosen_property.category()
         dtOpt match {
           case Some(cat) =>
-            sender() ! SlipnetGoWithBottomUpDescriptionScoutResponse(chosen_propertyRep, cat.slipNodeRep())
+            sender() ! SlipnetGoWithBottomUpDescriptionScoutResponse(cat.slipNodeRep(), chosen_propertyRep)
 
           case None =>
             sender() ! Finished
@@ -1046,11 +1052,13 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       }
 
     case SlipnetGoWithTopDownDescriptionScout(chosen_object, descriptonTypeID) =>
+      log.debug("SlipnetGoWithTopDownDescriptionScout")
       val description_type = slipNodeRefs(descriptonTypeID)
       val info = get_description_type_instance_links_to_node_info(description_type);
       sender() ! SlipnetGoWithTopDownDescriptionScoutResponse(info)
 
-    case GoWithTopDownDescriptionScoutResponse2(cp) =>
+    case SlipnetGoWithTopDownDescriptionScout2(cp) =>
+      log.debug("GoWithTopDownDescriptionScoutResponse2")
       val chosen_property = slipNodeRefs(cp.id)
       chosen_property.category() match {
         case Some(cat) =>
@@ -1289,7 +1297,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
         } else {
           //find out if any are distinguishing
           val distinguishing_mappings = concept_mapping_list.filter(cm => {
-            cm.distinguishing()
+            cm.distinguishing(log)
           })
           if (distinguishing_mappings.isEmpty) {
             // no distinguishing mappings
@@ -1731,10 +1739,10 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
     val c1dms = ConceptMapping.conceptMappingsWithReps(c1.concept_mapping_list)
     val c2dms = ConceptMapping.conceptMappingsWithReps(c2.concept_mapping_list)
     for (cm <- c1dms) {
-      log.debug("cm1 distinguishing " + cm.distinguishing() + " cm " + cm);
+      log.debug("cm1 distinguishing " + cm.distinguishing(log) + " cm " + cm);
     }
     for (cm <- c2dms) {
-      log.debug("cm2 distinguishing " + cm.distinguishing() + " cm " + cm);
+      log.debug("cm2 distinguishing " + cm.distinguishing(log) + " cm " + cm);
     }
 
     val dcm1 = distinguishing_concept_mappings(c1dms)
@@ -1827,8 +1835,9 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
   def relevant_distinguishing_cms(c: CorrespondenceRep): List[ConceptMapping] = {
     val cms = ConceptMapping.conceptMappingsWithReps(c.concept_mapping_list)
     val result = cms.filter(cm => {
-      log.debug(s"relevant_distinguishing_cms ${c.uuid} $cm relevant ${cm.relevant()} distinguishing ${cm.distinguishing()}")
-      cm.relevant() && cm.distinguishing()
+      val distinguishing = cm.distinguishing(log)
+      log.debug(s"relevant_distinguishing_cms ${c.uuid} $cm relevant ${cm.relevant()} distinguishing ${distinguishing}")
+      cm.relevant() && distinguishing
     })
     log.debug("result " + result)
     result
@@ -2093,7 +2102,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
   )
 
   def distinguishing_concept_mappings(concept_mapping_list: List[ConceptMapping]) = concept_mapping_list.filter(cm => {
-    cm.distinguishing()
+    cm.distinguishing(log)
   })
 
   //def getDescriptor(workspaceObject: WorkspaceObject, node: SlipNode): Option[SlipNode] = ???

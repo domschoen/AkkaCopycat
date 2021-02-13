@@ -11,7 +11,7 @@ import models.WorkspaceObject.WorkspaceObjectRep
 
 object BottomUpDescriptionScout{
   case class GoWithBottomUpDescriptionScoutResponse(chosen_object: WorkspaceObjectRep, d: SlipNodeRep)
-  case class SlipnetGoWithBottomUpDescriptionScoutResponse(chosen_propertyRep: SlipNodeRep, description_typeRep: SlipNodeRep)
+  case class SlipnetGoWithBottomUpDescriptionScoutResponse(description_typeRep: SlipNodeRep, chosen_propertyRep: SlipNodeRep)
 }
 class BottomUpDescriptionScout(urgency: Int,
                                workspace: ActorRef,
@@ -46,9 +46,9 @@ class BottomUpDescriptionScout(urgency: Int,
       slipnet ! SlipnetGoWithBottomUpDescriptionScout(d, runTemperature)
 
 
-    case SlipnetGoWithBottomUpDescriptionScoutResponse(chosen_propertyRep, description_typeRep) =>
+    case SlipnetGoWithBottomUpDescriptionScoutResponse(description_typeRep, chosen_propertyRep ) =>
       chosen_property = chosen_propertyRep
-      workspace ! PrepareDescription(chosen_object, chosen_propertyRep, description_typeRep)
+      workspace ! PrepareDescription(chosen_object, description_typeRep, chosen_propertyRep)
 
     case PrepareDescriptionResponse(descriptionID, urgency) =>
       log.debug("proposing description " + chosen_property.id)

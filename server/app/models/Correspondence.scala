@@ -116,7 +116,7 @@ case class Correspondence (log: LoggingAdapter,
     Vector v = new Vector();
     for (int x=0; x<concept_mapping_list.size(); x++){
       concept_mapping cm = (concept_mapping)concept_mapping_list.elementAt(x);
-      if ((cm.relevant())&&(cm.distinguishing())) v.addElement(cm);
+      if ((cm.relevant())&&(cm.distinguishing(null))) v.addElement(cm);
     }
     return v;
   }
@@ -162,7 +162,7 @@ case class Correspondence (log: LoggingAdapter,
   }
 //
 //  def relevant_distinguishing_cms() = {
-//    concept_mapping_list.filter(cm => cm.relevant() && cm.distinguishing())
+//    concept_mapping_list.filter(cm => cm.relevant() && cm.distinguishing(null))
 //  }
 
 

@@ -1,5 +1,7 @@
 package models
 
+import akka.event.LoggingAdapter
+
 import java.util.UUID
 import models.SlipNode.{SlipNodeRep, SlipnetInfo}
 import models.Slipnet.InflatedDescriptionRep
@@ -223,25 +225,39 @@ class ConceptMapping(val description_type1: SlipNode,
     }
   }
 
-  def distinguishing(): Boolean = {
+  def distinguishing(log: LoggingAdapter): Boolean = {
     if ((descriptor1== slipnetInfo.slipnetWhole)&&(descriptor2== slipnetInfo.slipnetWhole)) {
+//      log.debug("distinguishing whole " + this)
       false
     } else {
-      (distinguishing_descriptor(obj1, descriptor1)) &&
-        (distinguishing_descriptor(obj2, descriptor2))
+      val distinguishing_descriptor1 = distinguishing_descriptor(log, obj1, descriptor1)
+      val distinguishing_descriptor2 = distinguishing_descriptor(log, obj2, descriptor2)
+//      log.debug("distinguishing else distinguishing_descriptor1 " + distinguishing_descriptor1 + " distinguishing_descriptor2 "+  distinguishing_descriptor2 + " " + this)
+
+      distinguishing_descriptor1 && distinguishing_descriptor2
     }
   }
 
-  def distinguishing_descriptor(obj: WorkspaceObjectRep, descriptor: SlipNode): Boolean = {
+  def distinguishing_descriptor(log: LoggingAdapter, obj: WorkspaceObjectRep, descriptor: SlipNode): Boolean = {
+//    log.debug("distinguishing_descriptor " + descriptor);
+
     if (descriptor== slipnetInfo.slipnetLetter) return false;
     if (descriptor== slipnetInfo.slipnetGroup) return false;
 
     if (slipnetInfo.slipnet_numbers.find(sn => sn == descriptor).isDefined) {
       false
     } else {
-      !obj.letterOrGroupCompanionReps.find(lgc => lgc.descriptions.find(d =>
-        d.descriptor.isDefined &&
-        d.descriptor.get.id.equals(descriptor.id)).isDefined).isDefined
+//      log.debug("distinguishing_descriptor obs size " + obj.letterOrGroupCompanionReps.size);
+
+      !obj.letterOrGroupCompanionReps.find(lgc => {
+//        log.debug("distinguishing_descriptor wo: " + lgc);
+
+        lgc.descriptions.find(d => {
+//          log.debug("distinguishing_descriptor d descriptor: " + d.descriptor);
+          d.descriptor.isDefined &&
+            d.descriptor.get.id.equals(descriptor.id)
+        }).isDefined
+      }).isDefined
     }
   }
 

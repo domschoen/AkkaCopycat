@@ -350,8 +350,8 @@ abstract class WorkspaceObject(log: LoggingAdapter, ws: WorkspaceString) extends
   def letterOrGroupCompanions(): List[WorkspaceObject] = {
       ws.objects.filter(wo =>
         (wo != this) &&
-          (isInstanceOf[Letter] && wo.isInstanceOf[Letter]) ||
-          (isInstanceOf[Group] && wo.isInstanceOf[Group])
+          ((isInstanceOf[Letter] && wo.isInstanceOf[Letter]) ||
+          (isInstanceOf[Group] && wo.isInstanceOf[Group]))
       ).toList
   }
   def letterOrGroupCompanionReps(): List[WorkspaceObjectRep2] = letterOrGroupCompanions().map(_.workspaceObjectRep2())
