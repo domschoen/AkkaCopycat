@@ -206,7 +206,7 @@ case class Correspondence (log: LoggingAdapter,
   def update_strength_value(internal_strength: Double, cs: List[Correspondence], supporting_correspondences:Map[String, Boolean]) = {
     calculate_internal_strength(internal_strength)
     calculate_external_strength(cs, supporting_correspondences)
-    calculate_total_strength()
+    calculate_total_strength(null)
   };
 
   def calculate_internal_strength(internalStrength: Double) = {

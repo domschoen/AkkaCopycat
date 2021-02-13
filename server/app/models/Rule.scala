@@ -153,17 +153,20 @@ case class Rule (log: LoggingAdapter,
     }
 
   def update_strength_value(wInitialObjects: List[WorkspaceObject], slippage_list: SlippageListShell) = {
+    //log.debug("update_strength_value: " + this.uuid)
     calculate_internal_strength(wInitialObjects, slippage_list)
     calculate_external_strength()
-    calculate_total_strength()
+    calculate_total_strength(log)
   };
 
 
   def calculate_internal_strength(wInitialObjects: List[WorkspaceObject], slippage_list: SlippageListShell) = {
+//    log.debug("calculate_internal_strength wInitialObjects " + wInitialObjects)
+//    log.debug("calculate_internal_strength slippage_list " + slippage_list)
       val cdd0 = descriptor.get.conceptual_depth - relation.get.conceptual_depth;
-      val cdd1 = if (cdd0 < 0.0) -cdd0 else cdd0
-      val cdd= 100.0-cdd1
-      val av0 = (descriptor.get.conceptual_depth + relation.get.conceptual_depth)/2.0
+      val cdd1 = if (cdd0 < 0.0) - cdd0 else cdd0
+      val cdd= 100.0 - cdd1
+      val av0 = (descriptor.get.conceptual_depth + relation.get.conceptual_depth) / 2.0
       val av = Math.pow(av0,1.1)
 
       var shared_descriptor_term = 0.0;
@@ -174,12 +177,17 @@ case class Rule (log: LoggingAdapter,
 
       // find changed object;
       val changed = wInitialObjects.find(wo => wo.changed)
+//    log.debug("calculate_internal_strength cdd: " + cdd + " av " + av + " changed " + changed);
 
       val cont = if ((changed.isDefined)&&(changed.get.correspondence.isDefined)) {
+//        log.debug("calculate_internal_strength correspondence: " +changed.get.correspondence);
 
         val obj2 = changed.get.correspondence.get.obj2
         val s = Rule.apply_slippages(descriptor, slippage_list.sl);
+//        log.debug("calculate_internal_strength s: " +s);
         if (s.isDefined && obj2.has_slipnode_description(s.get)) {
+//          log.debug("calculate_internal_strength has_slipnode_description");
+
           shared_descriptor_term = 100.0
           true
         } else {
@@ -190,6 +198,7 @@ case class Rule (log: LoggingAdapter,
 
       if (cont) {
         val shared_descriptor_weight = Math.pow(((100.0-descriptor.get.conceptual_depth)/10.0),1.4);
+//        log.debug("calculate_internal_strength shared_descriptor_weight: " +shared_descriptor_weight);
 
         internal_strength = Formulas.weighted_average(cdd,12,av,18,
           shared_descriptor_term, shared_descriptor_weight);
@@ -200,4 +209,9 @@ case class Rule (log: LoggingAdapter,
    def calculate_external_strength() = {
       external_strength=internal_strength;
     }
+
+  override def calculate_total_strength(log: LoggingAdapter) = {
+    super.calculate_total_strength(log)
+    log.debug("Rule calculate_total_strength "+ uuid + " rule: " + this + " total_strength " + total_strength)
+  }
 }

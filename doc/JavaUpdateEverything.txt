@@ -31,6 +31,7 @@ Workspace structure update_strength_value Correspondence between letter (2)2 and
 Workspace structure update_strength_value sc bond between letter (1)1 and letter (2)2
 string.bonds.size() 2
 Workspace structure update_strength_value replace letter category of C letter by D
+Rule calculate_total_strength rule: replace letter category of C letter by D total_strength 0.0
 Workspace structure update_strength_value Correspondence between letter (1)1 and letter (1)1
 Workspace structure update_strength_value sc bond between letter (1)1 and letter (2)2
 string.bonds.size() 2
@@ -44,6 +45,7 @@ Workspace structure update_strength_value description(successor group) of group 
 Workspace structure update_strength_value description(right) of group (1-3) in initial string
 Workspace structure update_strength_value description(whole) of group (1-3) in initial string
 Workspace structure update_strength_value replace letter category of rightmost letter by successor
+Rule calculate_total_strength rule: replace letter category of rightmost letter by successor total_strength 88.12908230365319
 Workspace structure update_strength_value Correspondence between letter (3)3 and letter (3)3
 Workspace structure update_strength_value group (1-3)
 Workspace structure update_strength_value description(group) of group (1-3) in target string
@@ -144,26 +146,25 @@ ob group (1-3)
 update the intra string unhappiness of initial and target strings
 5T: 58.74439280135928
 post_top_down_codelets
+Workspace rule replace letter category of rightmost letter by successor total_weakness 88.12908230365319
 Post Top/Bottom Codelets codeletsSize 92
 >>>> post_top_down_codelets top-down-bond-scout--direction
 rough_num_of_objects. bond 0
 Random rndseed=1668
 prob 0.4844003610771367 num 1
 Random rndseed=1669
-post_top_down_codelets rawUrgency50.0 urgency_bin 4 count 92
-create codelet top-down-bond-scout--direction urgency 4 time_stamp 240
+post_top_down_codelets rawUrgency 50.0 count 92
+create codelet top-down-bond-scout--direction
 Post Codelet codelets size 93
-printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4]
 <<<<
 
 >>>> post_top_down_codelets top-down-group-scout--direction
 Random rndseed=1670
 prob 0.4844003610771367 num 1
 Random rndseed=1671
-post_top_down_codelets rawUrgency50.0 urgency_bin 4 count 93
-create codelet top-down-group-scout--direction urgency 4 time_stamp 240
+post_top_down_codelets rawUrgency 50.0 count 93
+create codelet top-down-group-scout--direction
 Post Codelet codelets size 94
-printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4]
 <<<<
 
 >>>> post_top_down_codelets top-down-bond-scout--category
@@ -184,8 +185,6 @@ prob 0.3450903685600392 num 1
 Random rndseed=1676
 <<<<
 
-6T: 58.74439280135928
-Workspace rule 88.12908230365319 replace letter category of rightmost letter by successor
 ------------------------ post_bottom_up_codelets
 get_bottom_up_codelets bottom-up-description-scout
 get_bottom_up_codelets prob 0.3450903685600392 num 1
@@ -200,9 +199,7 @@ get_bottom_up_codelets prob 0.4844003610771367 num 1
 Random rndseed=1679
 >>>> get_bottom_up_codelets bottom-up-bond-scout rnd 0.382 prob 0.4844003610771367 t 58.74439280135928 index -1
 get_bottom_up_codelets rawUrgency3 count 94
-create codelet bottom-up-bond-scout urgency 3 time_stamp 240
 Post Codelet codelets size 95
-printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3]
 <<<<
 
 get_bottom_up_codelets group-scout--whole-string
@@ -218,9 +215,7 @@ get_bottom_up_codelets prob 0.804426145136387 num 1
 Random rndseed=1683
 >>>> get_bottom_up_codelets bottom-up-correspondence-scout rnd 0.733 prob 0.804426145136387 t 58.74439280135928 index -1
 get_bottom_up_codelets rawUrgency3 count 95
-create codelet bottom-up-correspondence-scout urgency 3 time_stamp 240
 Post Codelet codelets size 96
-printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3]
 <<<<
 
 get_bottom_up_codelets important-object-correspondence-scout
@@ -230,31 +225,25 @@ get_bottom_up_codelets prob 0.804426145136387 num 3
 Random rndseed=1686
 >>>> get_bottom_up_codelets important-object-correspondence-scout rnd 0.465 prob 0.804426145136387 t 58.74439280135928 index -1
 get_bottom_up_codelets rawUrgency3 count 96
-create codelet important-object-correspondence-scout urgency 3 time_stamp 240
 Post Codelet codelets size 97
-printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3, 3]
 <<<<
 
 Random rndseed=1687
 >>>> get_bottom_up_codelets important-object-correspondence-scout rnd 0.693 prob 0.804426145136387 t 58.74439280135928 index -1
 get_bottom_up_codelets rawUrgency3 count 97
-create codelet important-object-correspondence-scout urgency 3 time_stamp 240
 Post Codelet codelets size 98
-printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3, 3, 3]
 <<<<
 
 Random rndseed=1688
 >>>> get_bottom_up_codelets important-object-correspondence-scout rnd 0.419 prob 0.804426145136387 t 58.74439280135928 index -1
 get_bottom_up_codelets rawUrgency3 count 98
-create codelet important-object-correspondence-scout urgency 3 time_stamp 240
 Post Codelet codelets size 99
-printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3, 3, 3, 3]
 <<<<
 
 get_bottom_up_codelets replacement-finder
 get_bottom_up_codelets prob 0.0 num 0
 get_bottom_up_codelets rule-scout
-get_post_codelet_probability rule ruleTotalWeaknessOpt replace letter category of rightmost letter by successor
+get_post_codelet_probability workspace rule total_weakness 29.552873137276137
 get_bottom_up_codelets prob 0.29552873137276137 num 2
 Random rndseed=1689
 >>>> get_bottom_up_codelets rule-scout rnd 0.327 prob 0.29552873137276137 t 58.74439280135928 index -1
@@ -263,13 +252,11 @@ Random rndseed=1689
 Random rndseed=1690
 >>>> get_bottom_up_codelets rule-scout rnd 0.013 prob 0.29552873137276137 t 58.74439280135928 index -1
 get_bottom_up_codelets rawUrgency3 count 99
-create codelet rule-scout urgency 3 time_stamp 240
 Post Codelet codelets size 100
-printUrgencies urgencies: [5, 3, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3, 3, 3, 3, 3]
 <<<<
 
 get_bottom_up_codelets rule-translator
-get_post_codelet_probability rule ruleTotalWeaknessOpt replace letter category of rightmost letter by successor
+get_post_codelet_probability workspace rule total_weakness 29.552873137276137
 get_bottom_up_codelets prob 0.29552873137276137 num 1
 Random rndseed=1691
 >>>> get_bottom_up_codelets rule-translator rnd 0.298 prob 0.29552873137276137 t 58.74439280135928 index 5
@@ -280,12 +267,10 @@ get_bottom_up_codelets prob 1.0 num 1
 Random rndseed=1692
 >>>> get_bottom_up_codelets breaker rnd 0.616 prob 1.0 t 58.74439280135928 index -1
 get_bottom_up_codelets rawUrgency1 count 100
-create codelet breaker urgency 1 time_stamp 240
 Post Codelet codelets size 101
 Post. codelets.size > 100
 Random rndseed=1693
 choose_old_codelet chosen 1179.616 codelets_run 240 rndValue 0.064 urgsum 18431.5
-printUrgencies urgencies: [5, 3, 3, 4, 4, 4, 4, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 3, 1, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 6, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 4, 7, 7, 6, 5, 7, 4, 4, 3, 3, 3, 3, 3, 3, 1]
 <<<<
 
 slipnet.Update
@@ -958,6 +943,7 @@ setBuffer slipnode id obc buffer 0.0
 setBuffer slipnode id bf buffer 0.0
 workspace_formulas.update_temperature
 intra_string_unhappiness 12.920182916572625 inter_string_unhappiness 52.194105484881234 total_unhappiness 32.557144200726924
+Rule calculate_total_strength rule: replace letter category of rightmost letter by successor total_strength 88.12908230365319
 rule_weakness 11.870917696346808
 formulas.actual_temperature 28.4198988998509
 formulas.actual_temperature 28.4198988998509

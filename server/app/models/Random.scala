@@ -1,5 +1,7 @@
 package models
 
+import akka.event.LoggingAdapter
+
 import java.io.{PrintWriter, StringWriter}
 
 object Random {
@@ -205,9 +207,17 @@ object Random {
     914,920,397,690,295,535,703,741,911,815,
     392,841,266,114,440,428,445,846,621,365)
   var  rndseed: Integer = 1
-  def rnd(): Double = {
+  def rnd(log: LoggingAdapter): Double = {
     Thread.sleep(1)
-    if (rndseed >= 10000) {
+    printSeed(log)
+    val value = numbers(rndseed) / 1000.0
+    rndseed += 1
+    if (rndseed>1999) rndseed = 0
+    value
+  }
+
+  private def printSeed(log: LoggingAdapter) = {
+    if (rndseed == -1) {
       try {
         throw new Exception("toto")
       } catch {
@@ -217,11 +227,12 @@ object Random {
           println("H" + sw.toString)
       }
     }
-    println(s"Random rndseed=$rndseed")
-    val value = numbers(rndseed) / 1000.0
-    rndseed += 1
-    if (rndseed>1999) rndseed = 0
-    value
+    if (log == null) {
+      println(s"Random rndseed=$rndseed")
+    } else {
+      log.debug(s"Random rndseed=$rndseed")
+    }
   }
+
   def setseed(value: Integer) = {  rndseed = value }
 }

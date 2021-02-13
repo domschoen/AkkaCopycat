@@ -1,5 +1,7 @@
 package models
 
+import akka.event.LoggingAdapter
+
 object Formulas {
 
   def weighted_average(v1: Double, w1: Double, v2: Double, w2: Double) = {
@@ -56,9 +58,9 @@ object Formulas {
     //System.out.println("Temperature adjusted value.  Temp="+Temperature.value+" t:"+t+" inital val="+val+" adjusted val="+rval);
     return rval;
   }
-  def blur(value: Double): Double = {
+  def blur(log: LoggingAdapter, value: Double): Double = {
     val sq = Math.sqrt(value);
-    if (Random.rnd()<0.5) value + sq else value - sq
+    if (Random.rnd(log)<0.5) value + sq else value - sq
   }
 
 }

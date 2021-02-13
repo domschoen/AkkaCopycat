@@ -174,9 +174,13 @@ abstract class WorkspaceObject(log: LoggingAdapter, ws: WorkspaceString) extends
     has_slipnode_description_with_id(ds.id)
   }
   def has_slipnode_description_with_id(ds_id: String): Boolean = {
-    descriptions.find(d =>
+    //log.debug("has_slipnode_description_with_id ds_id " + ds_id)
+
+    descriptions.find(d => {
+      //log.debug("has_slipnode_description_with_id " + d)
       d.descriptor.isDefined &&
-        d.descriptor.get.equals(ds_id)
+        d.descriptor.get.id.equals(ds_id)
+    }
     ).isDefined
   }
 

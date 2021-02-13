@@ -31,20 +31,23 @@ abstract class WorkspaceStructure(log: LoggingAdapter) {
   }
 
 
-  def update_strength_value(activationBySlipNodeID: Map[String, Double], wos: List[WorkspaceObject]) = {
+  def update_strength_value(log: LoggingAdapter, activationBySlipNodeID: Map[String, Double], wos: List[WorkspaceObject]) = {
     calculate_internal_strength()
     calculate_external_strength(activationBySlipNodeID, wos)
-    calculate_total_strength()
+    calculate_total_strength(log)
   };
 
   // See subclass implementation in Bond, Correspondence, Description, Rule, WorkSpaceObject (Group)
   def calculate_internal_strength() = {}
   def calculate_external_strength(activationBySlipNodeID: Map[String, Double], wos: List[WorkspaceObject]) = {}
-  def calculate_total_strength() = {
+  def calculate_total_strength(log: LoggingAdapter) = {
     total_strength = Formulas.weighted_average(internal_strength,
       internal_strength, external_strength, (100.0-internal_strength));
-
-    //println(s"${this.getClass} internal_strength $internal_strength external_strength $external_strength total strength: $total_strength")
+//    if (log == null) {
+//      println(s"${this.getClass} internal_strength $internal_strength external_strength $external_strength total strength: $total_strength")
+//    } else {
+//      log.debug(s"${this.getClass} internal_strength $internal_strength external_strength $external_strength total strength: $total_strength")
+//    }
   }
   def total_weakness(): Double = {
     100.0-Math.pow(total_strength,0.95)

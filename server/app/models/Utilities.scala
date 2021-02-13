@@ -5,7 +5,7 @@ object Utilities {
   // Same as WorkspaceFormulas.select_list_position
   def valueProportionalRandomIndexInValueList(values: List[Double]): Int = {
     val sum = values.sum
-    val chosen = Random.rnd() * sum
+    val chosen = Random.rnd(null) * sum
 
     println(s"sum $sum chosen $chosen")
 

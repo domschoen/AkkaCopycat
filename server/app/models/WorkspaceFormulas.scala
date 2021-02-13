@@ -45,7 +45,7 @@ object WorkspaceFormulas {
   }
 
   def flip_coin(value: Double): Boolean = {
-    Random.rnd() < value
+    Random.rnd(null) < value
   }
 
   /* slip
@@ -72,7 +72,7 @@ object WorkspaceFormulas {
         totalval+=((double)list.elementAt(i));
      }
 
-     double pos = totalval*random.rnd();
+     double pos = totalval*Random.rnd(null);
      int listpos = -1;
      totalval=0.0;
      for (int i=0; i<list.size(); i++){
@@ -250,7 +250,7 @@ object WorkspaceFormulas {
     val v2 = s2.total_strength*w2;
     v1=temperature_adjusted_value(v1);
     v2=temperature_adjusted_value(v2);
-    !(((v1+v2) * Random.rnd())>v1)
+    !(((v1+v2) * Random.rnd(null))>v1)
   }
 */
   // See workspace

@@ -391,10 +391,12 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     objects -= wo
   }
   def addStructure(ws: WorkspaceStructure): Unit = {
+    log.debug("Workspace add structure " + ws)
     structureRefs += (ws.uuid -> ws)
     structures += ws
   }
   def removeStructure(ws: WorkspaceStructure): Unit = {
+    log.debug("Workspace remove structure " + ws)
     structureRefs -= ws.uuid
     structures -= ws
 
@@ -535,11 +537,14 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       }
 
     case GetNumCodeletsResponse(codeletsSize: Int, t:Double) =>
+      val ruleTotalWeaknessOpt = rule.map(_.total_weakness())
+      val ruleTotal_strengthOpt = rule.map(_.total_strength)
+
       //log.debug("Workspace rule " + rule.map(_.total_strength) + " " + rule)
+      log.debug("Workspace rule " + rule.map(_.uuid) + " rule: " + rule + " total_strength " + ruleTotal_strengthOpt)
       log.debug("Post Top/Bottom Codelets codeletsSize " + codeletsSize)
 
 
-      val ruleTotalWeaknessOpt = rule.map(_.total_weakness())
       slipnet ! PostTopBottomCodeletsGetInfo(
         t,
         intra_string_unhappiness,
@@ -602,7 +607,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       } else {
         val wsize = candidateStructures.size
         // Codelet.java.84
-        val p = (Random.rnd() * wsize).toInt
+        val p = (Random.rnd(null) * wsize).toInt
         val pos = if (p >= wsize) 0 else p
         val ws = candidateStructures(pos);
         log.debug("Breaker pos " + pos + " ws " + ws)
@@ -728,7 +733,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     case GoWithReplacementFinder =>
       val initialLetters = lettersOf(initial)
       val size = initialLetters.size
-      val posBase = size * Random.rnd()
+      val posBase = size * Random.rnd(null)
       val pos = if (posBase >= size) size - 1.0 else posBase
       val i_letter = initialLetters(pos.toInt)
       log.debug(s"selected letter in initial string = ${i_letter}")
@@ -1059,7 +1064,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       // try to break all incompatible groups
       if (fight_it_out_group_groups(g,1.0, incg,1.0, degree_of_association1, degree_of_association2)){
           // beat all competing groups
-          print("won");
+          log.debug("won");
           self.forward(GoWithGroupBuilder5(groupID, incompatibleBondList, incgIds))
       } else {
         log.debug("couldn't break incompatible groups: fizzle");
@@ -1105,9 +1110,9 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
           break_group(grp)
         }
 
+        log.debug("building group");
         build_group(g)
 // already done in build_group        g.activate_descriptions();
-        print("building group");
         s ! Finished
       }
 
@@ -1263,7 +1268,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     case GoWithDescriptionStrengthTester(temperature, descriptionID) =>
       slipnet ! SetSlipNodeBufferValue(descriptionID, 100.0)
       val d = structureRefs(descriptionID).asInstanceOf[Description]
-      d.update_strength_value(activationBySlipNodeID, objects.toList)
+      d.update_strength_value(log, activationBySlipNodeID, objects.toList)
 
       val strength = d.total_strength
       log.debug("GoWithDescriptionStrengthTester" + d.toString())
@@ -1483,7 +1488,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
             )
 
             val prob = g.single_letter_group_probability(Workspace.activationWithSlipNodeRep(activationBySlipNodeID, groupSlipnetInfo.length), t)
-            if (Random.rnd() < prob) {
+            if (Random.rnd(null) < prob) {
               // propose single letter group
               log.debug("single letter group proposed");
 
@@ -1700,7 +1705,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     case GoWithGroupScoutWholeString(t: Double) =>
       log.debug("GoWithGroupScoutWholeString t:" + t);
       log.debug("about to choose string");
-      val wString = if (Random.rnd() > 0.5) target else initial
+      val wString = if (Random.rnd(null) > 0.5) target else initial
       val wStringText = if (wString == initial) "initial" else "target"
       log.debug(s"${wStringText} string selected")
 
@@ -1760,7 +1765,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
           sender() ! Finished
         } else {
           // choose a random bond from list
-          val posRaw = (Random.rnd() * bond_list.size).toInt
+          val posRaw = (Random.rnd(null) * bond_list.size).toInt
           val pos = if (posRaw >= bond_list.size) 0 else posRaw
 
           val chosen_bond = bond_list(pos)
@@ -1806,7 +1811,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
       val prob = WorkspaceFormulas.temperature_adjusted_probability(strength / 100.0, temperature)
       log.info(s"strength = $strength, adjusted prob.= $prob")
-      if (Random.rnd() > prob){
+      if (Random.rnd(null) > prob){
         println("not strong enough: fizzled!");
         sender() ! Finished
       } else {
@@ -1930,7 +1935,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       val strength = rule.total_strength
       val prob = WorkspaceFormulas.temperature_adjusted_probability(strength / 100.0, temperature)
       log.info(s"strength = $strength, adjusted prob.= $prob")
-      if (Random.rnd() > prob){
+      if (Random.rnd(null) > prob){
         log.debug("not strong enough: fizzled!");
         sender() ! Finished
       } else {
@@ -2357,7 +2362,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       val strength = c.total_strength
       val prob = WorkspaceFormulas.temperature_adjusted_probability(strength / 100.0, t)
       log.info(s"strength = $strength, adjusted prob.= $prob")
-      if (Random.rnd() > prob){
+      if (Random.rnd(null) > prob){
         print("not strong enough: fizzled!");
         sender() ! Finished
       } else {
@@ -2381,7 +2386,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       val r = ws.asInstanceOf[Rule]
       r.update_strength_value(initial.objects.toList, slippage_list())
     } else {
-      ws.update_strength_value(activationBySlipNodeID, objects.toList)
+      ws.update_strength_value(log, activationBySlipNodeID, objects.toList)
     }
   }
 
@@ -2507,7 +2512,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
                                          t_relevance: Double,
                                          t_unhappiness:Double
                                        ): WorkspaceString = if (
-    (Random.rnd() * (i_relevance + i_unhappiness + t_relevance + t_unhappiness)) >
+    (Random.rnd(null) * (i_relevance + i_unhappiness + t_relevance + t_unhappiness)) >
       (i_relevance + i_unhappiness)) target else initial
 
   def choose_bond_facet(fromob: WorkspaceObject, toob: WorkspaceObject) = {
@@ -2611,14 +2616,14 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       slipnet ! SetSlipNodeBufferValue(description.description_type.id, 100.0)
       slipnet ! SetSlipNodeBufferValue(descriptor.id, 100.0)
 
-      if (!description.wObject.has_slipnode_description(descriptor)) {
+      //if (!description.wObject.has_slipnode_description(descriptor)) {
         if (!structures.contains(description)) {
           // GUI area.AddObject(d);
           //log.debug("add description " + description)
 
           addStructure(description)
         }
-      }
+      //}
     }
   }
 
@@ -2786,7 +2791,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
                                        supporting_correspondences:Map[String, Boolean]
                                       ): Boolean = {
     s1.update_strength_value(internal_strength, workspaceCorrespondences(), supporting_correspondences)
-    s2.update_strength_value(activationBySlipNodeID, objects.toList)
+    s2.update_strength_value(log, activationBySlipNodeID, objects.toList)
     complete_structure_vs_structure(s1,w1,s2,w2)
   }
 
@@ -2807,7 +2812,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
                              w2: Double,
                              bond_category_degree_of_association: Double
                             ): Boolean = {
-    s1.update_strength_value(activationBySlipNodeID, objects.toList)
+    s1.update_strength_value(log, activationBySlipNodeID, objects.toList)
     s2.update_strength_value(activationBySlipNodeID, bond_category_degree_of_association, objects.toList)
     complete_structure_vs_structure(s1,w1,s2,w2)
   }
@@ -2817,8 +2822,8 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
                              w1: Double,
                              s2: WorkspaceStructure,
                              w2: Double): Boolean = {
-    s1.update_strength_value(activationBySlipNodeID, objects.toList)
-    s2.update_strength_value(activationBySlipNodeID, objects.toList)
+    s1.update_strength_value(log, activationBySlipNodeID, objects.toList)
+    s2.update_strength_value(log, activationBySlipNodeID, objects.toList)
     complete_structure_vs_structure(s1,w1,s2,w2)
   }
 
@@ -2832,7 +2837,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     val vs2 = s2.total_strength*w2;
     val v1 = Formulas.temperatureAdjustedValue(vs1, chaleur)
     val v2 = Formulas.temperatureAdjustedValue(vs2, chaleur)
-    !(((v1+v2) * Random.rnd())>v1)
+    !(((v1+v2) * Random.rnd(null))>v1)
   }
 
   def group_vs_group(s1: Group,

@@ -108,7 +108,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
 
   // define the codelet types
   def get_urgency_bin(urgency: Double): Int = {
-    //int bin = (int)(urgency*random.rnd());
+    //int bin = (int)(urgency*Random.rnd(null));
     val bin = ((urgency.toInt * number_of_bins) / 100).toInt
     val udjustedBin = if (bin>=number_of_bins) number_of_bins-1 else bin
     udjustedBin + 1
@@ -453,7 +453,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
 
       val rndValue = rndOpt match {
         case Some(rnd) => rnd
-        case None => Random.rnd()
+        case None => Random.rnd(null)
       }
       val chosen = rndValue  * urgsum;
       log.debug("choose_old_codelet chosen " + chosen + " codelets_run " + codelets_run + " rndValue " + rndValue + " urgsum " + urgsum);

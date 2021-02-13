@@ -82,7 +82,7 @@ class Group (
 
   // check whether or not to add length description category
   val prob = length_description_probability(activationBySlipNodeID,temperature);
-  if (Random.rnd() < prob){
+  if (Random.rnd(null) < prob){
     val length = object_list.size
     if (length<6) add_description(groupSlipnetInfo.length, Some(groupSlipnetInfo.slipnet_numbers(length-1)))
   }
@@ -173,7 +173,7 @@ class Group (
   def update_strength_value(degree_of_association: Double) = {
     calculate_internal_strength(degree_of_association)
     calculate_external_strength()
-    calculate_total_strength()
+    calculate_total_strength(null)
   };
 
   //    val bc = (slipnet_formulas.get_related_node(group_category,slipnet.bond_category)).degree_of_association();

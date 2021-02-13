@@ -81,7 +81,7 @@ object Codelet {
 
 
   def flipCoin(value: Double): Boolean = {
-    Random.rnd() < value
+    Random.rnd(null) < value
   }
 
   def codeletTypeWithString(s: String): CodeletType = {
