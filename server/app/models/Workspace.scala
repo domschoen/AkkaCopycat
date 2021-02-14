@@ -2917,22 +2917,22 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     calculate_intra_string_unhappiness()
     calculate_inter_string_unhappiness()
     calculate_total_unhappiness()
-    System.out.println("intra_string_unhappiness " + intra_string_unhappiness + " inter_string_unhappiness " + inter_string_unhappiness + " total_unhappiness " + total_unhappiness);
+    log.debug("intra_string_unhappiness " + intra_string_unhappiness + " inter_string_unhappiness " + inter_string_unhappiness + " total_unhappiness " + total_unhappiness);
 
     val rule_weakness = if (rule.isDefined){
       rule.get.update_strength_value(initial.objects.toList, slippage_list());
       100.0-rule.get.total_strength
     } else 100.0
-    System.out.println("rule_weakness " +rule_weakness);
+    log.debug("rule_weakness " +rule_weakness);
 
     actual_temperature = if (clamp_temperature) 100.0 else Formulas.weighted_average(total_unhappiness,0.8, rule_weakness,0.2)
     // Not useful Temperature.Update(actual_temperature);
-    System.out.println("formulas.actual_temperature " + actual_temperature);
+    log.debug("formulas.actual_temperature " + actual_temperature);
 
-    System.out.println("clamp_temperature " + clamp_temperature);
+    log.debug("clamp_temperature " + clamp_temperature);
 
     chaleur = if (!clamp_temperature) actual_temperature else chaleur;
-    System.out.println("formulas.actual_temperature " + actual_temperature);
+    log.debug("formulas.actual_temperature " + actual_temperature);
 
     // GUI Temperature.Update(chaleur);
     total_happiness_values += 100.0 - total_unhappiness
