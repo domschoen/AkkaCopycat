@@ -824,6 +824,8 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
       val descriptor = chosen_propertyRep
       val d = new models.Description(log, ob, description_typeRep, Some(descriptor))
+      structureRefs += (d.uuid -> d)
+
       slipnet ! SetSlipNodeBufferValue(descriptor.id, 100.0)
 
       val urgency = Workspace.activationWithSlipNodeRep(activationBySlipNodeID, description_typeRep)
@@ -1279,8 +1281,13 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       }
 
     case GoWithDescriptionStrengthTester(temperature, descriptionID) =>
-      slipnet ! SetSlipNodeBufferValue(descriptionID, 100.0)
       val d = structureRefs(descriptionID).asInstanceOf[Description]
+      d.descriptor match {
+        case Some(descriptor) =>
+          slipnet ! SetSlipNodeBufferValue(descriptor.id, 100.0)
+        case None =>
+      }
+
       d.update_strength_value(log, activationBySlipNodeID, objects.toList)
 
       val strength = d.total_strength
