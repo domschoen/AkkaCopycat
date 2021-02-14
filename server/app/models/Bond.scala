@@ -107,17 +107,24 @@ class Bond (
                                   sideBond: WorkspaceObject => Option[Bond],
                                   initial: WorkspaceString
                                ): Option[Correspondence] = {
-    if ((dirMost(cwo)) && (cwo.correspondence.isDefined)) {
-      val locOpt = cwo.correspondence;
-      if (locOpt.isDefined) {
-        val loc = locOpt.get
-        val wo = if (workspaceString() == initial) loc.obj2 else loc.obj1
-        if ((dirMost(wo)) && (sideBond(wo).isDefined)) {
-            val rb = sideBond(wo).get
-            // ignore test on rb.direction_category != null
-            if (rb.direction_category != direction_category) {
-              Some(loc)
-            } else None
+    log.debug("correspondenceInDirection dirMost(cwo) " + dirMost(cwo))
+    log.debug("correspondenceInDirection cwo.correspondence " + cwo.correspondence)
+
+    if (dirMost(cwo) && cwo.correspondence.isDefined) {
+      val loc = cwo.correspondence.get
+
+      log.debug("correspondenceInDirection loc " + loc)
+      val wo = if (wString.isDefined && wString.get == initial) loc.obj2 else loc.obj1
+      val rbOpt = sideBond(wo)
+      log.debug("correspondenceInDirection wo " + wo)
+      log.debug("correspondenceInDirection rbOpt " + rbOpt)
+
+      if ((dirMost(wo)) && (rbOpt.isDefined)) {
+        val rb = rbOpt.get
+        // ignore test on rb.direction_category != null
+        if (rb.direction_category.isDefined && rb.direction_category != direction_category) {
+          log.debug("correspondenceInDirection direction_category " + direction_category + " rb.direction_category " + rb.direction_category)
+          Some(loc)
         } else None
       } else None
     } else None
@@ -125,11 +132,15 @@ class Bond (
 
   def get_incompatible_correspondences(initial: WorkspaceString): List[Correspondence] = {
     // returns a list of correspondences that are incompatible with this bond
+    log.debug("get_incompatible_correspondences left")
+
     val locOpt = correspondenceInDirection(
       left_obj,
       (wo: WorkspaceObject) => wo.leftmost,
       (wo: WorkspaceObject) => wo.right_bond,
       initial)
+    log.debug("get_incompatible_correspondences right")
+
     val rocOpt = correspondenceInDirection(
       right_obj,
       (wo: WorkspaceObject) => wo.rightmost,

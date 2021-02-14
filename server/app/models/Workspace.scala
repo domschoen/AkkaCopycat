@@ -2549,8 +2549,8 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
   def initialOrTargetText(ws: WorkspaceStructure) = if (ws.workspaceString().equals(initial)) "initial" else "target"
 
   def logTrying(wo: WorkspaceStructure, typeSource: WorkspaceStructure) = {
-    val stringType = initialOrTargetText(typeSource)
-    log.debug(s"trying to build ${wo.toString()} in ${stringType} string")
+    //val stringType = initialOrTargetText(typeSource)
+    log.debug(s"trying to build ${wo.toString()} in ${typeSource.wString.map(_.description)} string")
   }
 
   def total_description_type_support(description: SlipNodeRep, workspaceString: WorkspaceString): Double = {
