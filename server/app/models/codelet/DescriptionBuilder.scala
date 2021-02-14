@@ -34,6 +34,7 @@ class DescriptionBuilder(urgency: Int,
       log.debug(s"${getClass.getName}. Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
       temperature ! Register(self)
+      runTemperature = t
       workspace ! GoWithDescriptionBuilder(descriptionTypeID, t)
 
 

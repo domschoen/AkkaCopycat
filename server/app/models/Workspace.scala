@@ -879,7 +879,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
         d.descriptor match {
           case Some(descriptor) =>
             if (d.wObject.has_slipnode_description(descriptor)) {
-              print("description already exists: Fizzle!");
+              log.debug("description already exists: Fizzle!");
 
               slipnet ! SetSlipNodeBufferValue(d.description_type.id, 100.0)
               slipnet ! SetSlipNodeBufferValue(descriptor.id, 100.0)
@@ -1178,7 +1178,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
         if (!existingBonds.isEmpty) {
           // bond already exists
           b.activateDescriptor()
-          print("already exists: activate descriptors & Fizzle!");
+          log.debug("already exists: activate descriptors & Fizzle!");
           sender() ! Finished
         } else {
           // check for incompatible structures
@@ -1219,7 +1219,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
                 false
               }
               else {
-                print("failed: Fizzle!");
+                log.debug("failed: Fizzle!");
                 true
               }
             }
@@ -1267,7 +1267,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
                 for (c <- incc) {
                   break_correspondence(c)
                 }
-                print("building bond");
+                log.debug("building bond");
                 addBond(b)
                 sender() ! Finished
               }
@@ -1299,11 +1299,12 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       if (!WorkspaceFormulas.flip_coin(prob)) {
         log.debug("not strong enough: Fizzle!");
         sender() ! Finished
-      }
-      // it is strong enough - post builder  & activate nodes
+      } else {
+        // it is strong enough - post builder  & activate nodes
 
-      log.debug("succeeded: posting description-builder")
-      sender() ! GoWithDescriptionStrengthTesterResponse(strength)
+        log.debug("succeeded: posting description-builder")
+        sender() ! GoWithDescriptionStrengthTesterResponse(strength)
+      }
 
 
     // codelet.java.395
@@ -1584,15 +1585,15 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
         }
       }
       if (bond_facetOpt.isEmpty) {
-        print("bond_facet is empty - fizzle");
+        log.debug("bond_facet is empty - fizzle");
         sender() ! Finished
       } else {
         val bond_facet = bond_facetOpt.get
         if (toob == fromob) {
-          print("no possible group - fizzle");
+          log.debug("no possible group - fizzle");
           sender() ! Finished
         } else {
-          print("proposing group from " + fromob + " to " + toob);
+          log.debug("proposing group from " + fromob + " to " + toob);
           var object_list = ListBuffer(fromob)
           var bond_list = ListBuffer.empty[Bond]
           breakable {
@@ -1718,7 +1719,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
         case Some(group_category) =>
           self.forward(CommonSubProcessing(group_category, fromob.uuid, firstBondUUID, bond_category))
         case None =>
-          print("Look's like we can't go this way ? : fizzle!")
+          log.debug("Look's like we can't go this way ? : fizzle!")
           sender() ! Finished
       }
 
@@ -2039,8 +2040,8 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
           println("not high enough: Fizzle")
           sender() ! Finished
         } else {
-          print("building translated rule!");
-          print("Slippages used in translation:");
+          log.debug("building translated rule!");
+          log.debug("Slippages used in translation:");
           val slippagesShell = slippage_list()
 
           sender() ! GoWithRuleTranslatorResponse(slippagesShell)
@@ -2253,24 +2254,24 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       var incompatible_group = Option.empty[Group]
       val anyLostFight = if (incompatible_bondOpt.isDefined){
         val incompatible_bond = wsRefs(incompatible_bondOpt.get.uuid).asInstanceOf[Bond]
-        print("fighting incompatible bond");
+        log.debug("fighting incompatible bond");
         // bond found - fight against it
         if (!(correspondence_vs_bond(
           c,3.0,incompatible_bond,2.0, internal_strength, supporting_correspondences, bond_category_degree_of_associationOpt.get))){
-          print("lost: fizzle!");
+          log.debug("lost: fizzle!");
           true  // fizzle as it has lost
         } else {
-          print("won");
+          log.debug("won");
           // won against incompatible bond
           incompatible_group = (c.obj2).group;
           if (incompatible_group.isDefined){
-            print("fighting incompatible group");
+            log.debug("fighting incompatible group");
             if (!(correspondence_vs_group(
               c,1.0,incompatible_group.get,1.0, internal_strength, supporting_correspondences))){
-              print("lost: fizzle!");
+              log.debug("lost: fizzle!");
               true  // fizzle as it has lost
             }
-            print("won");
+            log.debug("won");
             false
           } else false
         }
@@ -2291,13 +2292,13 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
       val anyLostFight = incompat_ruleOpt match {
         case Some(r) =>
-          print("Fighting against incompatible Rule")
+          log.debug("Fighting against incompatible Rule")
           if (!(correspondence_vs_rule(
             c,1.0,rule.get,1.0, internal_strength, supporting_correspondences))){
-            print("lost: fizzle!");
+            log.debug("lost: fizzle!");
             true  // fizzle as it has lost
           } else {
-            print("won");
+            log.debug("won");
             false
           }
         case None => false
@@ -2372,7 +2373,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       val prob = WorkspaceFormulas.temperature_adjusted_probability(strength / 100.0, t)
       log.info(s"strength = $strength, adjusted prob.= $prob")
       if (Random.rnd(null) > prob){
-        print("not strong enough: fizzled!");
+        log.debug("not strong enough: fizzled!");
         sender() ! Finished
       } else {
         // it is strong enough - post builder  & activate nodes
