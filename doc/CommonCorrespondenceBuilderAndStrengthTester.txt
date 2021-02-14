@@ -1,0 +1,29 @@
+S !	W.GoWithCorrespondenceBuilder
+	a) S ! Finished
+	b) S ! GoWithCorrespondenceBuilder9Response
+	c) S ! W.GoWithCorrespondenceBuilderResponse
+		a) SN ! GroupFlippedVersion
+			S ! SN.GroupFlippedVersionResponse
+				a) self ! Finished
+				b) W ! GoWithCorrespondenceBuilder2
+					a) S ! Finished
+					b) S ! GoWithCorrespondenceBuilder9Response
+						W ! GoWithCorrespondenceStrengthTester2 (follow up, specific)
+		b) W ! W.GoWithCorrespondenceStrengthTester2 (follow up, specific)
+			
+			
+S !	W.GoWithCorrespondenceBuilder
+	a) S ! Finished
+	b) S ! GoWithCorrespondenceBuilder9Response
+	c) S ! W.GoWithCorrespondenceBuilderResponse
+		a) SN ! GroupFlippedVersion
+			S ! SN.GroupFlippedVersionResponse
+				a) self ! Finished
+				b) W ! GoWithCorrespondenceBuilder2
+					a) S ! Finished
+					b) S ! GoWithCorrespondenceBuilder9Response
+						W ! GoWithCorrespondenceStrengthTester2 (follow up, specific)
+		b) W ! W.GoWithCorrespondenceBuilder9 (follow up, specific)
+
+
+

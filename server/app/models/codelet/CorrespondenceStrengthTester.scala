@@ -5,7 +5,7 @@ import akka.actor.ActorRef
 import models.Correspondence.CorrespondenceRep
 import models.Slipnet.{GroupFlippedVersion, GroupFlippedVersionResponse, SlipnetGoWithCorrespondenceStrengthTester}
 import models.Temperature.{TemperatureChanged, TemperatureResponse}
-import models.Workspace.{GoWithCorrespondenceBuilder, GoWithCorrespondenceBuilder2, GoWithCorrespondenceBuilderResponse, GoWithCorrespondenceStrengthTester2, GoWithCorrespondenceStrengthTester3}
+import models.Workspace.{GoWithCorrespondenceBuilder, GoWithCorrespondenceBuilder2, GoWithCorrespondenceBuilder9Response, GoWithCorrespondenceBuilderResponse, GoWithCorrespondenceStrengthTester2, GoWithCorrespondenceStrengthTester3}
 import models.codelet.CorrespondenceStrengthTester.{GoWithCorrespondenceStrengthTesterResponse2, GoWithCorrespondenceStrengthTesterResponse3}
 
 // codelet.java.1438
@@ -67,11 +67,11 @@ class CorrespondenceStrengthTester(urgency: Int,              workspace: ActorRe
         self ! Finished
       } else {
         log.debug("GroupFlippedVersionResponse: continue")
-        workspace ! GoWithCorrespondenceStrengthTester(correspondanceID, fgr.get, runTemperature)
+        workspace ! GoWithCorrespondenceBuilder2(correspondanceID, fgr.get, runTemperature)
       }
 
     // From GroupFlippedVersion
-    case GoWithCorrespondenceStrengthTesterResponse =>
+    case GoWithCorrespondenceBuilder9Response =>
       workspace ! GoWithCorrespondenceStrengthTester2(correspondanceID,runTemperature)
 
     case GoWithCorrespondenceStrengthTesterResponse2(c, workspaceCorrespondences) =>

@@ -26,14 +26,14 @@ import models.Correspondence.CorrespondenceRep
 import models.Group.{FutureGroupRep, GroupRep}
 import models.SlipNode.{GroupSlipnetInfo, SlipNodeRep}
 import models.Slipnet.{CorrespondenceUpdateStrengthData, DescriptionTypeInstanceLinksToNodeInfo}
-import models.Workspace.{DataForStrengthUpdateResponse, GoWithBondStrengthTester2, GoWithBottomUpCorrespondenceScout2Response, GoWithBottomUpCorrespondenceScout3, GoWithBottomUpCorrespondenceScout3Response, GoWithCorrespondenceBuilder, GoWithCorrespondenceBuilder2, GoWithCorrespondenceBuilder3, GoWithCorrespondenceBuilder4, GoWithCorrespondenceBuilder5, GoWithCorrespondenceBuilder6, GoWithCorrespondenceBuilder7, GoWithCorrespondenceBuilder8, GoWithCorrespondenceStrengthTester, GoWithCorrespondenceStrengthTester2, GoWithCorrespondenceStrengthTester3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithImportantObjectCorrespondenceScout, GoWithImportantObjectCorrespondenceScout2, GoWithImportantObjectCorrespondenceScout3, GoWithRuleBuilder, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3, GoWithRuleStrengthTester, GoWithRuleTranslator, GoWithRuleTranslator2, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, PostTopBottomCodeletsGetInfoResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, StepX, UpdateEverything, UpdateEverythingFollowUp, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
+import models.Workspace.{DataForStrengthUpdateResponse, GoWithBondStrengthTester2, GoWithBottomUpCorrespondenceScout2Response, GoWithBottomUpCorrespondenceScout3, GoWithBottomUpCorrespondenceScout3Response, GoWithCorrespondenceBuilder, GoWithCorrespondenceBuilder2, GoWithCorrespondenceBuilder3, GoWithCorrespondenceBuilder4, GoWithCorrespondenceBuilder5, GoWithCorrespondenceBuilder6, GoWithCorrespondenceBuilder7, GoWithCorrespondenceBuilder8, GoWithCorrespondenceBuilder9Response, GoWithCorrespondenceStrengthTester, GoWithCorrespondenceStrengthTester2, GoWithCorrespondenceStrengthTester3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithImportantObjectCorrespondenceScout, GoWithImportantObjectCorrespondenceScout2, GoWithImportantObjectCorrespondenceScout3, GoWithRuleBuilder, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3, GoWithRuleStrengthTester, GoWithRuleTranslator, GoWithRuleTranslator2, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, PostTopBottomCodeletsGetInfoResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, StepX, UpdateEverything, UpdateEverythingFollowUp, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
 import models.codelet.BondStrengthTester.GoWithBondStrengthTesterResponse2
 import models.codelet.BottomUpBondScout.{GoWithBottomUpBondScout2Response, GoWithBottomUpBondScoutResponse}
 import models.codelet.BottomUpDescriptionScout.GoWithBottomUpDescriptionScoutResponse
 import models.codelet.Codelet.{Finished, PrepareDescriptionResponse}
-import models.codelet.CorrespondenceBuilder.{GoWithCorrespondenceBuilder2Response, GoWithCorrespondenceBuilder3Response, GoWithCorrespondenceBuilder4Response1, GoWithCorrespondenceBuilder4Response2, GoWithCorrespondenceBuilder6Response, GoWithCorrespondenceBuilder7Response, GoWithCorrespondenceBuilder8Response, GoWithCorrespondenceBuilder9Response}
+import models.codelet.CorrespondenceBuilder.{GoWithCorrespondenceBuilder2Response, GoWithCorrespondenceBuilder3Response, GoWithCorrespondenceBuilder4Response1, GoWithCorrespondenceBuilder4Response2, GoWithCorrespondenceBuilder6Response, GoWithCorrespondenceBuilder7Response, GoWithCorrespondenceBuilder8Response}
 import models.codelet.CorrespondenceStrengthTester.{GoWithCorrespondenceStrengthTesterResponse, GoWithCorrespondenceStrengthTesterResponse2, GoWithCorrespondenceStrengthTesterResponse3}
 import models.codelet.DescriptionStrengthTester.GoWithDescriptionStrengthTesterResponse
 import models.codelet.GroupBuilder.{GoWithGroupBuilderResponse, GoWithGroupBuilderResponse2, GroupBuilderNoGroupFighting, PrepareGroupFighting}
@@ -222,6 +222,7 @@ object Workspace {
   case class GoWithImportantObjectCorrespondenceScout3(slippage_list_rep: List[ConceptMappingRep], s: SlipNodeRep, t:Double, obj1: WorkspaceObjectRep)
   case class GoWithCorrespondenceBuilder(temperature: Double, correponsdenceID: String)
   case class GoWithCorrespondenceBuilderResponse(obj2: WorkspaceObjectRep)
+  case object GoWithCorrespondenceBuilder9Response
 
   case class GoWithCorrespondenceBuilder2(correponsdenceID: String, futureGroupRep: FutureGroupRep, t:Double)
   case class GoWithCorrespondenceBuilder3(correponsdenceID: String,
@@ -2128,8 +2129,16 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
       val obj1 = c.obj1
       val obj2 = c.obj2
-      log.debug("trying correspondence from "+obj1+" to "+obj2)
-      sender() ! GoWithCorrespondenceBuilderResponse(obj2.workspaceObjectRep())
+      log.debug("evaluating correspondence from "+obj1+" to "+obj2)
+      if (!objects.contains(obj1)) {
+        log.debug("objects no longer exist")
+        sender() ! Finished
+      } else if (objects.contains(obj2) || !c.flip_obj2) {
+        sender() ! GoWithCorrespondenceBuilder9Response
+      } else {
+        sender() ! GoWithCorrespondenceBuilderResponse(obj2.workspaceObjectRep())
+      }
+
 
       // Codelet.java.1482
     case GoWithCorrespondenceBuilder2(correponsdenceID, futureGroupRep,t) =>
@@ -2141,9 +2150,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       val flippedGroup = flippedGroupWithFutureGroup(obj2Group,futureGroupRep,t)
 
 
-      if (( !objects.toList.contains(obj1) || !objects.toList.contains(obj2)) &&
-            !c.flip_obj2 && target.group_present(flippedGroup).isEmpty
-      ) {
+      if (!target.group_present(flippedGroup).isEmpty) {
         println("objects no longer exist");
         sender() ! Finished
       } else {
@@ -2341,23 +2348,6 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       c.addAccessoryConceptMappings(accessory_concept_mapping_list)
       sender()! GoWithCorrespondenceBuilder8Response(c.concept_mapping_list)
 
-    case GoWithCorrespondenceStrengthTester(correponsdenceID: String, futureGroupRep: FutureGroupRep, t:Double) =>
-      val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
-      val obj1 = c.obj1
-      val obj2 = c.obj2
-
-      val obj2Group = obj2.asInstanceOf[Group]
-      val flippedGroup = flippedGroupWithFutureGroup(obj2Group,futureGroupRep,t)
-
-
-      if (( !objects.toList.contains(obj1) || !objects.toList.contains(obj2)) &&
-        !c.flip_obj2 && target.group_present(flippedGroup).isEmpty
-      ) {
-        println("objects no longer exist");
-        sender() ! Finished
-      } else {
-        sender() ! GoWithCorrespondenceStrengthTesterResponse
-      }
 
     case GoWithCorrespondenceStrengthTester2(correponsdenceID: String, t:Double) =>
       log.debug("GoWithCorrespondenceStrengthTester2. start update_strength_value")

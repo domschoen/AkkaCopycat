@@ -5,15 +5,14 @@ import akka.event.LoggingReceive
 import models.Bond.BondRep
 import models.ConceptMapping.{ConceptMappingParameters, ConceptMappingRep}
 import models.Slipnet.{SlipnetGoWithCorrespondenceBuilder, SlipnetGoWithCorrespondenceBuilder2, SlipnetGoWithCorrespondenceBuilder5, SlipnetGoWithCorrespondenceBuilder6}
-import models.Workspace.{GoWithCorrespondenceBuilder3, GoWithCorrespondenceBuilder4, GoWithCorrespondenceBuilder5, GoWithCorrespondenceBuilder8}
+import models.Workspace.{GoWithCorrespondenceBuilder3, GoWithCorrespondenceBuilder4, GoWithCorrespondenceBuilder5, GoWithCorrespondenceBuilder8, GoWithCorrespondenceBuilder9Response}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.Correspondence.CorrespondenceRep
 import models.Group.GroupRep
-import models.codelet.CorrespondenceBuilder.{GoWithCorrespondenceBuilder9Response, SlipnetGoWithCorrespondenceBuilderResponse2}
+import models.codelet.CorrespondenceBuilder.SlipnetGoWithCorrespondenceBuilderResponse2
 
 // Codelet.java.1476
 object CorrespondenceBuilder {
-  case object GoWithCorrespondenceBuilder9Response
 
   case class GoWithCorrespondenceBuilder2Response(conceptMappingReps: List[ConceptMappingRep])
   case class GoWithCorrespondenceBuilder3Response(corrrespondence: CorrespondenceRep, correspondenceReps: List[CorrespondenceRep], wcorrespondenceReps: List[CorrespondenceRep])
