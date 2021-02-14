@@ -246,9 +246,9 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
           // => ask patter is a solution
           // second solution: coderack has a map codelet -> urgency and it is updated by notifications
 
-          if (codelets_run > 345) {
-            log.debug("Stop")
-          } else {
+//          if (codelets_run > 345) {
+//            log.debug("Stop")
+//          } else {
             // TODO
             //temperature ! CheckClamped(codelets_run)
             if (((codelets_run - last_update) >= Slipnet.time_step_length) || (codelets_run == 0)) {
@@ -258,7 +258,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
             } else {
               self ! ChooseAndRun2(temperature)
             }
-          }
+//          }
 
 
 
