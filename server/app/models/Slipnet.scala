@@ -870,8 +870,8 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       val cm_possible = concept_mapping_list.find(cm => {
         val slip_prob = WorkspaceFormulas.temperature_adjusted_probability(cm.slipability() / 100.0, temperature)
         WorkspaceFormulas.flip_coin(slip_prob)
-      })
-      log.debug("End of check the slippability of concept mappings $cm_possible");
+      }).isDefined
+      log.debug(s"End of check the slippability of concept mappings $cm_possible");
 
       if (concept_mapping_list.isEmpty) {
         // no possible mappings
@@ -879,7 +879,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
         sender() ! Finished
 
       } else {
-        if (cm_possible.isEmpty) {
+        if (!cm_possible) {
           //cannot make necessary slippages
           log.debug("cannot make appropriate slippage: fizzle");
           sender() ! Finished
@@ -1070,6 +1070,8 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
     case SlipnetGoWithTopDownGroupScoutCategory(groupID, temperature) =>
       val group_cat = slipNodeRefs(groupID)
+      log.debug("trying to build "+group_cat.id + " group");
+
       val bond_categoryOpt = SlipnetFormulas.get_related_node(group_cat, bond_category, identity)
       bond_categoryOpt match {
         case Some(bond_category) =>

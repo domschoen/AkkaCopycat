@@ -8,6 +8,8 @@ import models.Slipnet.InflatedDescriptionRep
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.Description.DescriptionRep
 
+import java.io.{PrintWriter, StringWriter}
+
 // It is more a object living in Slipnet
 // w1 and w2 are going to be references, just an ID that could be then used in the workspace
 
@@ -143,6 +145,22 @@ class ConceptMapping(val description_type1: SlipNode,
   }
 
   val uuid = generateID()
+
+  if (descriptor1 == null || descriptor2 == null) {
+    try {
+      throw new Exception("toto")
+    } catch {
+      case e: Exception =>
+        val sw = new StringWriter()
+        e.printStackTrace(new PrintWriter(sw))
+        println("ConceptMapping initialization exception " + descriptor1 + descriptor2 + " stack: " + sw.toString)
+    }
+  }
+
+
+
+
+
   def generateID(): String = UUID.randomUUID().toString()
 
   var label: Option[SlipNode] = SlipnetFormulas.get_bond_category(descriptor1,descriptor2, slipnetInfo.slipnetIdentity)  // if the concept_mapping has a linking concept
@@ -165,7 +183,12 @@ class ConceptMapping(val description_type1: SlipNode,
   )
 
 
-  override def toString(): String = descriptor1.name + " -> " + descriptor2.name + " label:"+ label.map(_.id()) + " label activation: " + (if (label.isDefined) label.get.activation else "None")
+  override def toString(): String = {
+    println("descriptor1 " + descriptor1)
+    println("descriptor2 " + descriptor2)
+    println("label " + label)
+    descriptor1.name + " -> " + descriptor2.name + " label:"+ label.map(_.id()) + " label activation: " + (if (label.isDefined) label.get.activation else "None")
+  }
 
 
   def in_vector(cms: List[ConceptMapping]): Boolean = {

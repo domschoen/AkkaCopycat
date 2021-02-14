@@ -7,7 +7,7 @@ object SlipnetFormulas {
       if (fromnode==tonode) {
         Some(identity)
       } else {
-        fromnode.outgoing_links.find(l => l.to_node == tonode).map(_.label)
+        fromnode.outgoing_links.find(l => l.to_node == tonode).map(_.label).flatten
        }
     }
 
@@ -17,16 +17,16 @@ object SlipnetFormulas {
 
     def get_related_node(category: SlipNode, relation: SlipNode, identity: SlipNode): Option[SlipNode] = {
       // return the node that is linked to this node via this relation
-//      System.out.println("get_related_node " + relation + " identity " + identity);
+      System.out.println("get_related_node " + relation + " identity " + identity);
 
       if (relation==identity) {
         Some(category)
       } else {
 
         category.outgoing_links.find(l => {
-//          System.out.println("get_related_node category.outgoing_links l.label " + l.label);
+          System.out.println("get_related_node category.outgoing_links l.label " + l.label);
 
-          l.label == relation
+          l.label.isDefined && l.label.get == relation
         }).map(_.to_node)
       }
     }

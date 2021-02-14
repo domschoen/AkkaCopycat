@@ -1,29 +1,30 @@
 package models
 
-class SlipnetLink(var from_node: SlipNode, var to_node: SlipNode, var label: SlipNode, var fixed_length: Double) {
+class SlipnetLink(var from_node: SlipNode, var to_node: SlipNode, var label: Option[SlipNode], var fixed_length: Double) {
   from_node.outgoing_links += this
 
   var slip_link = false;
   def this(fr: SlipNode, to: SlipNode, lab: SlipNode) = {
-    this(fr, to, lab, 0.0)
+    this(fr, to, Some(lab), 0.0)
   }
   def this(fr: SlipNode, to: SlipNode, len: Double) = {
-    this(fr, to, null, len)
+    this(fr, to, None, len)
   }
 
   def intrinsic_degree_of_association(): Double = {
     if (fixed_length>1.0) {
       100.0-fixed_length
-    } else if (label!=null) {
-      100.0-label.intrinsic_link_length
+    } else if (label.isDefined) {
+      100.0-label.get.intrinsic_link_length
     } else 0.0
   }
 
   def degree_of_association(): Double = {
-    if ((fixed_length>0.0)||(label==null)) {
+    if ((fixed_length>0.0)||(label.isEmpty)) {
       100.0-fixed_length
     } else {
-      label.degree_of_association()
+      // Looks like label could be None ! should we test ?
+      label.get.degree_of_association()
     }
   }
 
