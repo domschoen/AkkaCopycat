@@ -116,7 +116,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
 
   protected def createCodelet(codeletType: CodeletType, urgency: Int, arguments: Option[Any]) = {
     val name = Codelet.stringWithCodeletType(codeletType)
-    println(s"create codelet $name urgency $urgency time_stamp $codelets_run")
+//    log.debug(s"create codelet $name urgency $urgency time_stamp $codelets_run")
     val codelet = context.actorOf(Codelet.props(codeletType, urgency, workspace, slipnet, temperature, arguments))
     CodeletWrapper(codelet, codelets_run, urgency, name)
   }
@@ -398,7 +398,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
               case Right(x) => x
               case Left(x) => get_urgency_bin(x)
             }
-            System.out.println("PostCodelets " + codeletType + " rawUrgency" + rawUrgency + " urgency_bin " + urgency);
+//            System.out.println("PostCodelets " + codeletType + " rawUrgency" + rawUrgency + " urgency_bin " + urgency);
 
             val newCodelet = createCodelet(codeletType, urgency, argOpt)
             self ! Post(newCodelet, rndOpt)

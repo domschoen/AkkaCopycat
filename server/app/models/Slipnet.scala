@@ -1474,7 +1474,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
                 val rnd = if (codeletsCount > 100) {
                   log.debug("Post. codelets.size > 100");
-
+                  codeletsCount = codeletsCount - 1
                   Some(Random.rnd(null))
                 } else None
 
@@ -1482,23 +1482,24 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
                 val tuple = (st, Left(rawUrgency), Some(s.slipNodeRep().id), rnd)
                 codeletToPost += tuple
               }
-              log.debug("<<<<");
-              log.debug("");
+//              log.debug("<<<<");
+//              log.debug("");
             }
           }
         }
       }
       log.debug("------------------------ post_bottom_up_codelets");
       val f = () => { codeletsCount = codeletsCount + 1 }
-      codeletToPost ++= get_bottom_up_codelets(f,codeletsCount,CodeletTypeString.BottomUpDescriptionScout,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
-      codeletToPost ++= get_bottom_up_codelets(f,codeletsCount,CodeletTypeString.BottomUpBondScout,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
-      codeletToPost ++= get_bottom_up_codelets(f,codeletsCount,CodeletTypeString.GroupScoutWholeString,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
-      codeletToPost ++= get_bottom_up_codelets(f,codeletsCount,CodeletTypeString.BottomUpCorrespondenceScout,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
-      codeletToPost ++= get_bottom_up_codelets(f,codeletsCount,CodeletTypeString.ImportantObjectCorrespondenceScout,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
-      codeletToPost ++= get_bottom_up_codelets(f,codeletsCount,CodeletTypeString.ReplacementFinder,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
-      codeletToPost ++= get_bottom_up_codelets(f,codeletsCount,CodeletTypeString.RuleScout,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
-      codeletToPost ++= get_bottom_up_codelets(f,codeletsCount,CodeletTypeString.RuleTranslator,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
-      if (!remove_breaker_codelets) codeletToPost ++= get_bottom_up_codelets(f,codeletsCount,CodeletTypeString.Breaker,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      val f2 = () => { codeletsCount = codeletsCount - 1 }
+      codeletToPost ++= get_bottom_up_codelets(f,f2,codeletsCount,CodeletTypeString.BottomUpDescriptionScout,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      codeletToPost ++= get_bottom_up_codelets(f,f2,codeletsCount,CodeletTypeString.BottomUpBondScout,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      codeletToPost ++= get_bottom_up_codelets(f,f2,codeletsCount,CodeletTypeString.GroupScoutWholeString,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      codeletToPost ++= get_bottom_up_codelets(f,f2,codeletsCount,CodeletTypeString.BottomUpCorrespondenceScout,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      codeletToPost ++= get_bottom_up_codelets(f,f2,codeletsCount,CodeletTypeString.ImportantObjectCorrespondenceScout,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      codeletToPost ++= get_bottom_up_codelets(f,f2,codeletsCount,CodeletTypeString.ReplacementFinder,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      codeletToPost ++= get_bottom_up_codelets(f,f2,codeletsCount,CodeletTypeString.RuleScout,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      codeletToPost ++= get_bottom_up_codelets(f,f2,codeletsCount,CodeletTypeString.RuleTranslator,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
+      if (!remove_breaker_codelets) codeletToPost ++= get_bottom_up_codelets(f,f2,codeletsCount,CodeletTypeString.Breaker,t,intra_string_unhappiness,inter_string_unhappiness, ruleTotalWeaknessOpt, number_of_bonds, unrelated_objects_size, ungrouped_objects_size, unreplaced_objects_size, uncorresponding_objects_size)
       log.debug("post_bottom_up_codelets codeletToPost " + codeletToPost);
 
       workspace ! PostTopBottomCodeletsGetInfoResponse(codeletToPost.toList, t)
@@ -1562,6 +1563,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
   }
 
   def get_bottom_up_codelets(f: () => Unit,
+                             f2: () => Unit,
                              codeletsCount: Int,
                              st: String,
                              temperature: Double,
@@ -1597,7 +1599,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       if (rnd < prob){
 
 
-        log.debug("get_bottom_up_codelets rawUrgency" + urgency + " count " + count);
+        //log.debug("get_bottom_up_codelets rawUrgency" + urgency + " count " + count);
 
         f()
         count = count + 1
@@ -1606,7 +1608,8 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
         val rnd = if (count > 100) {
           log.debug("Post. codelets.size > 100");
-
+          count = count - 1
+          f2()
           Some(Random.rnd(null))
         } else None
 
@@ -1615,8 +1618,8 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
         codeletToPost += tuple
       }
-      log.debug("<<<<");
-      log.debug("");
+//      log.debug("<<<<");
+//      log.debug("");
     }
     //log.debug("get_bottom_up_codelets 2 post_bottom_up_codelets codeletToPost " + codeletToPost);
 
@@ -2024,7 +2027,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       for (sl <- ob.outgoing_links) {
         if (ob.activation == 100.0) {
           val slidegassos = sl.intrinsic_degree_of_association()
-          log.debug(s"sl.to ${sl.to_node.id()} buffer ${sl.to_node.buffer} inc ${slidegassos}")
+//          log.debug(s"sl.to ${sl.to_node.id()} buffer ${sl.to_node.buffer} inc ${slidegassos}")
 
           sl.to_node.setBuffer(sl.to_node.buffer + slidegassos)
         }
@@ -2034,7 +2037,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
     // for all nodes add the activation activation_buffer
     // if activation>100 or clamp=true, activation=100
     for (ob <- slipNodes) {
-      log.debug(s"clamp ${ob.clamp} ob ${ob.id()} ob.buffer ${ob.buffer} activation ${ob.activation}")
+//      log.debug(s"clamp ${ob.clamp} ob ${ob.id()} ob.buffer ${ob.buffer} activation ${ob.activation}")
 
       if (!ob.clamp) {
         ob.setActivation( ob.activation + ob.buffer)
@@ -2055,7 +2058,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       act=ob.activation/100.0
       act=act*act*act
 
-      log.debug("ob " + ob.id + " ob.activation " + ob.activation);
+//      log.debug("ob " + ob.id + " ob.activation " + ob.activation);
 
       if ((ob.activation>55.0) && ( Random.rnd(null) < act) && (!ob.clamp)) {
         ob.setActivation(100.0)

@@ -143,13 +143,13 @@ class SlipNode(x: Int, y: Int, var conceptual_depth: Double, val name: String, v
   }
 
   def setBuffer(value: Double) = {
-    println(s"setBuffer slipnode id ${id()} buffer $value")
+//    println(s"setBuffer slipnode id ${id()} buffer $value")
     buffer = value
   }
   def setActivation(value: Double) = {
     if (!activation.equals(value)) {
       activation = value
-      println(s"setActivation slipnode id ${id()} activation $activation")
+//      println(s"setActivation slipnode id ${id()} activation $activation")
       workspace ! SlipnodeActivationChanged(id(),activation)
     }
   }
