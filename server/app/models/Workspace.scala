@@ -26,7 +26,7 @@ import models.Correspondence.CorrespondenceRep
 import models.Group.{FutureGroupRep, GroupRep}
 import models.SlipNode.{GroupSlipnetInfo, SlipNodeRep}
 import models.Slipnet.{CorrespondenceUpdateStrengthData, DescriptionTypeInstanceLinksToNodeInfo}
-import models.Workspace.{DataForStrengthUpdateResponse, GoWithBondStrengthTester2, GoWithBottomUpCorrespondenceScout2Response, GoWithBottomUpCorrespondenceScout3, GoWithBottomUpCorrespondenceScout3Response, GoWithCorrespondenceBuilder, GoWithCorrespondenceBuilder2, GoWithCorrespondenceBuilder3, GoWithCorrespondenceBuilder4, GoWithCorrespondenceBuilder5, GoWithCorrespondenceBuilder6, GoWithCorrespondenceBuilder7, GoWithCorrespondenceBuilder8, GoWithCorrespondenceBuilder9Response, GoWithCorrespondenceStrengthTester, GoWithCorrespondenceStrengthTester2, GoWithCorrespondenceStrengthTester3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithImportantObjectCorrespondenceScout, GoWithImportantObjectCorrespondenceScout2, GoWithImportantObjectCorrespondenceScout3, GoWithRuleBuilder, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3, GoWithRuleStrengthTester, GoWithRuleTranslator, GoWithRuleTranslator2, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, PostTopBottomCodeletsGetInfoResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, StepX, UpdateEverything, UpdateEverythingFollowUp, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
+import models.Workspace.{DataForStrengthUpdateResponse, GoWithBondStrengthTester2, GoWithBottomUpCorrespondenceScout2Response, GoWithBottomUpCorrespondenceScout3, GoWithBottomUpCorrespondenceScout3Response, GoWithCorrespondenceBuilder, GoWithCorrespondenceBuilder2, GoWithCorrespondenceBuilder3, GoWithCorrespondenceBuilder4, GoWithCorrespondenceBuilder5, GoWithCorrespondenceBuilder6, GoWithCorrespondenceBuilder7, GoWithCorrespondenceBuilder8, GoWithCorrespondenceBuilder9Response, GoWithCorrespondenceStrengthTester, GoWithCorrespondenceStrengthTester2, GoWithCorrespondenceStrengthTester3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithImportantObjectCorrespondenceScout, GoWithImportantObjectCorrespondenceScout2, GoWithImportantObjectCorrespondenceScout3, GoWithRuleBuilder, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3, GoWithRuleStrengthTester, GoWithRuleTranslator, GoWithRuleTranslator2, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, PostTopBottomCodeletsGetInfoResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, StepX, ToBeContinued, UpdateEverything, UpdateEverythingFollowUp, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
 import models.codelet.BondStrengthTester.GoWithBondStrengthTesterResponse2
@@ -64,7 +64,7 @@ object Workspace {
       activationBySlipNodeID(sr.id)
     } else 0.0
   }
-
+  case class ToBeContinued(errorOpt: Either[String, Either[Bond, GoWithTopDownGroupScoutCategory2Response]])
   case class Run(executionRun: ActorRef, initialString: String, modifiedString: String, targetString: String)
   case class Initialize(coderack: ActorRef, initialS: String, modifiedS: String, targetS: String)
   case class InitializeWorkspaceStringsResponse(
@@ -320,7 +320,8 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     AfterFighting,
     GetNumCodeletsResponse,
     GoWithGroupScoutWholeString3,
-    GoWithGroupStrengthTester2
+    GoWithGroupStrengthTester2,
+    ToBeContinued
   }
 
   import Slipnet._
@@ -1479,16 +1480,17 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
       var fromob = objectRefs(fromobrep.uuid)
       val first_bondOpt = if (mydirection == groupSlipnetInfo.left) fromob.left_bond else fromob.right_bond
-      if ((first_bondOpt.isEmpty) || (first_bondOpt.get.bond_category != bond_category)) {
+
+
+      //   case class ToBeContinued(errorOpt: Either[String, Either[Bond, GoWithTopDownGroupScoutCategory2Response]])
+      val toBeContinued: ToBeContinued = if ((first_bondOpt.isEmpty) || (first_bondOpt.get.bond_category != bond_category)) {
         // check the other side of object
         val newFirst_bondOpt = if (mydirection == groupSlipnetInfo.right) fromob.left_bond else fromob.right_bond
         if ((newFirst_bondOpt.isEmpty) || (newFirst_bondOpt.get.bond_category != bond_category)) {
           // this is a single letter group
           if ((bond_category.id != "sm") || (!(fromob.isInstanceOf[Letter]))) {
-            log.debug("no bonds of this type found: fizzle!");
-            sender() ! Finished
-          }
-          else {
+            ToBeContinued(Left("no bonds of this type found: fizzle!"));
+          } else {
             log.debug("thinking about a single letter group");
             val oblist = ListBuffer(fromob)
             val letter_category = "lc"
@@ -1520,22 +1522,33 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
               val object_list = oblist.toList.map(_.workspaceObjectRep())
               val bond_list = List.empty[BondRep]
 
-              sender() ! GoWithTopDownGroupScoutCategory2Response(
+              ToBeContinued(Right(Right(GoWithTopDownGroupScoutCategory2Response(
                 slipnetGroup_cat,
                 direction_category,
                 bond_facet,
                 object_list,
                 bond_list
-              )
+              ))))
             } else {
-              log.debug("failed")
-              sender() ! Finished
+              ToBeContinued(Left("failed"))
             }
           }
-        }
-      } else {
-        self.forward(CommonSubProcessing(group_category, fromob.uuid,first_bondOpt.get.uuid, bond_category))
+        } else ToBeContinued(Right(Left(newFirst_bondOpt.get)))
+      } else ToBeContinued(Right(Left(first_bondOpt.get)))
+
+      toBeContinued.errorOpt match {
+        case Left(error) =>
+          log.debug(error)
+
+          sender() ! Finished
+        case Right(opt) =>
+          opt match {
+            case Left(bond) =>
+              self.forward(CommonSubProcessing(group_category, fromob.uuid,bond.uuid, bond_category))
+            case Right(msg) => sender() ! msg
+          }
       }
+
 
     case CommonSubProcessing(group_category, fromobUUID, firstBondUUID, bond_category: SlipNodeRep) =>
       var fromob = objectRefs(fromobUUID)

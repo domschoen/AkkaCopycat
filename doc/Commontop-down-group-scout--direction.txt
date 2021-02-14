@@ -1,0 +1,131 @@
+      if (name.equals("top-down-group-scout--direction")){
+         slipnode direction = (slipnode) arguments.elementAt(0);
+         print("looking for "+direction.pname+" group");
+         double i_relevance = workspace_formulas.local_direction_category_relevance(
+                                 workspace.initial,direction);
+         double t_relevance = workspace_formulas.local_direction_category_relevance(
+                                 workspace.target,direction);
+         double i_unhappiness = workspace.initial.intra_string_unhappiness;
+         double t_unhappiness = workspace.target.intra_string_unhappiness;
+
+         print("about to choose string:");
+         print("initial string: relevance="+i_relevance+", unhappiness="+i_unhappiness);
+         print("target string: relevance="+t_relevance+", unhappiness="+t_unhappiness);
+       
+         workspace_string string = workspace.initial;
+         if ((random.rnd()*(i_relevance+i_unhappiness+t_relevance+t_unhappiness))>
+             (i_relevance+i_unhappiness)) {
+                  string = workspace.target;
+                  print("target string selected");
+                  }
+             else print("initial string selected");
+         
+         // choose an object on the workspace by intra-string-salience
+         workspace_object fromob = workspace_formulas.choose_object("intra_string_salience",string.objects);
+         print("object chosen = "+fromob.toString());
+         if (fromob.spans_string){
+            print("chosen object spans the string. fizzle"); return false;
+         }
+         
+         slipnode bond_category=null;
+
+
+         print("define direction");
+         slipnode mydirection;
+         if (fromob.leftmost) mydirection=slipnet.right;
+         else if (fromob.rightmost) mydirection=slipnet.left;
+         else {
+            Vector v = new Vector(); 
+            v.addElement(new Double(slipnet.left.activation));
+            v.addElement(new Double(slipnet.right.activation));
+            if (workspace_formulas.select_list_position(v)==0) mydirection = slipnet.left; else mydirection = slipnet.right;                          
+         }
+         print("mydirection " + mydirection);
+
+//         print("check possible group " + fromob);
+         bond first_bond;
+         if (mydirection==slipnet.left) first_bond = fromob.left_bond;
+         else first_bond = fromob.right_bond;
+//          print("check possible group. first_bond " + first_bond);
+
+         if ((first_bond!=null)&&(first_bond.direction_category==null))
+             direction=null;
+//          print("check possible group. direction " + direction);
+
+          if ((first_bond==null)||(first_bond.direction_category!=direction))
+            {  
+              if (mydirection==slipnet.right) first_bond = fromob.left_bond;
+               else first_bond = fromob.right_bond;
+               String nfpdircat = first_bond == null ? "firstbond null" : (first_bond.direction_category == null ? "nfb direction_category null" : first_bond.direction_category.toString());
+//              print("check possible group. new first_bond " + first_bond + " new first_bond direction_category " + nfpdircat);
+
+              if ((first_bond!=null)&&(first_bond.direction_category==null))
+                 direction=null;
+//              print("check possible group. newDirection2 " + direction);
+
+              if ((first_bond==null)||(first_bond.direction_category!=direction))
+               { print("no possible group: fizzle!"); return false; }
+             }
+         bond_category = first_bond.bond_category;
+          
+         if (bond_category==null){
+            print("no bond in the "+direction.pname+" direction was found: fizzle.");
+            return false;
+         }
+         slipnode group_category= slipnet_formulas.get_related_node(bond_category,slipnet.group_category);
+
+         print("trying from "+fromob+" "+bond_category.pname);
+         
+         boolean search = true;
+         slipnode bond_facet = null; 
+         Vector object_list = new Vector();
+         Vector bond_list = new Vector();
+         // find leftmost object in group with these bonds
+         while (search){
+           search = false;
+           if (fromob.left_bond!=null){
+             if (fromob.left_bond.bond_category==bond_category){
+                if ((fromob.left_bond.direction_category==null)||
+                    (fromob.left_bond.direction_category==direction)){
+                   if ((bond_facet==null)||(bond_facet==fromob.left_bond.bond_facet)){
+                   bond_facet = fromob.left_bond.bond_facet;
+                   direction = fromob.left_bond.direction_category;
+                   fromob = fromob.left_bond.left_obj;
+                   search=true;}
+                }
+             }
+           }
+         }
+
+         // find rightmost object in group with these bonds
+         search = true; workspace_object toob = fromob;
+         while (search){
+           search = false;
+           if (toob.right_bond!=null){
+             if (toob.right_bond.bond_category==bond_category){
+                if ((toob.right_bond.direction_category==null)||
+                    (toob.right_bond.direction_category==direction)){
+                   if ((bond_facet==null)||(bond_facet==toob.right_bond.bond_facet)){
+                   bond_facet = toob.right_bond.bond_facet;
+                   direction = fromob.right_bond.direction_category;
+                   toob = toob.right_bond.right_obj;
+                   search=true;}
+                }
+             }
+           }
+         }
+       
+         if (toob == fromob) {
+            print("no possible group - fizzle");
+            return false;
+         }
+         print("proposing group from "+fromob+" to "+toob);
+         object_list.addElement(fromob);
+         while (fromob!=toob){
+           bond_list.addElement(fromob.right_bond);
+           object_list.addElement(fromob.right_bond.right_obj);
+           fromob=fromob.right_bond.right_obj;
+         }
+        
+         coderack.propose_group(object_list,bond_list,group_category,direction,bond_facet,this);
+      }
