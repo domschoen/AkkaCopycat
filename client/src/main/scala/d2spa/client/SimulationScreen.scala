@@ -86,14 +86,14 @@ object SimulationScreen {
                 "Initial: ",
                 <.input.text(^.placeholder := "Initial...", ^.value := initialString,
                   ^.onChange ==> { e: ReactEventFromInput => handleInitialStringChange(e)}),
-                "Target: ",
-                <.input.text(^.placeholder := "Target...", ^.value := modifiedString,
+                "Modified: ",
+                <.input.text(^.placeholder := "Modified...", ^.value := modifiedString,
                   ^.onChange ==> { e: ReactEventFromInput => handleModifiedStringChange(e)}),
               )
             ),
             <.div(
               <.span(
-                "Modified: ",
+                "Target: ",
                 <.input.text(^.placeholder := "Target...", ^.value := targetString,
                   ^.onChange ==> { e: ReactEventFromInput => handleTargetStringChange(e)})
               )
@@ -112,7 +112,7 @@ object SimulationScreen {
 
 
   private val component = ScalaComponent.builder[Props]("SimulationScreen")
-    .initialState(State(Some("abc"),Some("abd"),Some("ijk")))
+    .initialState(State(Some("abc"),Some("abd"),Some("mrrjjj")))
     .renderBackend[Backend]
     .build
 

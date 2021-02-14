@@ -126,7 +126,7 @@ abstract class WorkspaceObject(log: LoggingAdapter, ws: WorkspaceString) extends
   def middle_object(): Boolean = {
     // returns true if this is the middle object in the string
     var leftmost_neighbor = ws.objects.find(ob => ob.leftmost && (ob.right_string_position == left_string_position-1))
-    var rightmost_neighbor = ws.objects.find(ob => ob.rightmost && (ob.left_string_position == right_string_position-1))
+    var rightmost_neighbor = ws.objects.find(ob => ob.rightmost && (ob.left_string_position == right_string_position+1))
 
     leftmost_neighbor.isDefined && rightmost_neighbor.isDefined
   }
