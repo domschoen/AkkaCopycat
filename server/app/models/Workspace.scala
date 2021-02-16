@@ -890,6 +890,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
             } else {
               log.info("building description");
               build_description(d)
+              sender() ! Finished
             }
           case None =>
             log.debug("GoWithDescriptionBuilder descriptor is empty: Fizzle!");
