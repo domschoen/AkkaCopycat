@@ -264,7 +264,7 @@ abstract class WorkspaceObject(log: LoggingAdapter, ws: WorkspaceString) extends
         descriptorActivation / 20.0
       }
     }).sum
-    log.debug("update_object_value " + rawSum + " group.isDefined " + group.isDefined + " changed " +changed);
+    log.debug("update_object_value " + rawSum + " group.isDefined " + group.isDefined + " changed " +changed + " class " + getClass.getName + "  " + uuid + " this " + this);
 
     val groupAdaptedSum = if (group.isDefined) rawSum * 2.0 / 3.0 else rawSum
     val sum = if (changed) groupAdaptedSum * 2.0 else groupAdaptedSum
@@ -276,10 +276,12 @@ abstract class WorkspaceObject(log: LoggingAdapter, ws: WorkspaceString) extends
       100.0
     } else {
       if (group.isDefined) {
+        log.debug("update_object_value : group.get.total_strength " + group.get.total_strength + " uuid " + group.get.uuid);
+
         group.get.total_strength
       } else {
         val bondstrengthRaw = bonds.map(b => b.total_strength).sum
-        //System.out.println("update_object_value : bondstrengthRaw " + bondstrengthRaw);
+        log.debug("update_object_value : bondstrengthRaw " + bondstrengthRaw);
 
         if (spans_string) bondstrengthRaw / 3.0 else bondstrengthRaw / 6.0
       }

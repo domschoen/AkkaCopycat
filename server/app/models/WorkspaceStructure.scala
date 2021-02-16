@@ -43,11 +43,15 @@ abstract class WorkspaceStructure(log: LoggingAdapter) {
   def calculate_total_strength(log: LoggingAdapter) = {
     total_strength = Formulas.weighted_average(internal_strength,
       internal_strength, external_strength, (100.0-internal_strength));
-//    if (log == null) {
-//      println(s"${this.getClass} internal_strength $internal_strength external_strength $external_strength total strength: $total_strength")
-//    } else {
-//      log.debug(s"${this.getClass} internal_strength $internal_strength external_strength $external_strength total strength: $total_strength")
-//    }
+    printStrength(log);
+  }
+
+  def printStrength(log: LoggingAdapter): Unit = {
+    if (log == null) {
+      println(s"$uuid ${this.getClass} internal_strength $internal_strength external_strength $external_strength total strength: $total_strength")
+    } else {
+      log.debug(s"$uuid ${this.getClass} internal_strength $internal_strength external_strength $external_strength total strength: $total_strength")
+    }
   }
   def total_weakness(): Double = {
     100.0-Math.pow(total_strength,0.95)

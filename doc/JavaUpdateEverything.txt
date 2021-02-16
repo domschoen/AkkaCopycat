@@ -57,74 +57,87 @@ update_object_value description(A) of letter (1)1 in initial string d.descriptio
 update_object_value description(leftmost) of letter (1)1 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value 201.25 group.isDefined false changed false
 update_object_value : raw_importance 201.25
+update_object_value : bondstrengthRaw 94.862124085996
 update_object_value : intra_string_happiness 15.810354014332667
 update_object_value description(letter) of letter (2)2 in initial string d.description_type.activation 50.0 d.descriptor.activation 25.0
 update_object_value description(B) of letter (2)2 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(middle) of letter (2)2 in initial string d.description_type.activation 100.0 d.descriptor.activation 3.125
 update_object_value 104.375 group.isDefined false changed false
 update_object_value : raw_importance 104.375
+update_object_value : bondstrengthRaw 189.724248171992
 update_object_value : intra_string_happiness 31.620708028665334
 update_object_value description(letter) of letter (3)3 in initial string d.description_type.activation 50.0 d.descriptor.activation 25.0
 update_object_value description(C) of letter (3)3 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(rightmost) of letter (3)3 in initial string d.description_type.activation 100.0 d.descriptor.activation 80.0
 update_object_value 181.25 group.isDefined false changed true
 update_object_value : raw_importance 362.5
+update_object_value : bondstrengthRaw 94.862124085996
 update_object_value : intra_string_happiness 15.810354014332667
 update_object_value description(letter) of letter (1)1 in modified string d.description_type.activation 50.0 d.descriptor.activation 25.0
 update_object_value description(A) of letter (1)1 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(leftmost) of letter (1)1 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value 201.25 group.isDefined false changed false
 update_object_value : raw_importance 201.25
+update_object_value : bondstrengthRaw 0.0
 update_object_value : intra_string_happiness 0.0
 update_object_value description(letter) of letter (2)2 in modified string d.description_type.activation 50.0 d.descriptor.activation 25.0
 update_object_value description(B) of letter (2)2 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(middle) of letter (2)2 in modified string d.description_type.activation 100.0 d.descriptor.activation 3.125
 update_object_value 104.375 group.isDefined false changed false
 update_object_value : raw_importance 104.375
+update_object_value : bondstrengthRaw 0.0
 update_object_value : intra_string_happiness 0.0
 update_object_value description(letter) of letter (3)3 in modified string d.description_type.activation 50.0 d.descriptor.activation 25.0
 update_object_value description(D) of letter (3)3 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(rightmost) of letter (3)3 in modified string d.description_type.activation 100.0 d.descriptor.activation 80.0
 update_object_value 181.25 group.isDefined false changed false
 update_object_value : raw_importance 181.25
+update_object_value : bondstrengthRaw 0.0
 update_object_value : intra_string_happiness 0.0
 update_object_value description(letter) of letter (1)1 in target string d.description_type.activation 50.0 d.descriptor.activation 25.0
 update_object_value description(M) of letter (1)1 in target string d.description_type.activation 100.0 d.descriptor.activation 53.0
 update_object_value description(leftmost) of letter (1)1 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value 154.25 group.isDefined false changed false
 update_object_value : raw_importance 154.25
+update_object_value : bondstrengthRaw 0.0
 update_object_value : intra_string_happiness 0.0
 update_object_value description(letter) of letter (2)2 in target string d.description_type.activation 50.0 d.descriptor.activation 25.0
 update_object_value description(R) of letter (2)2 in target string d.description_type.activation 100.0 d.descriptor.activation 17.75
 update_object_value 19.0 group.isDefined true changed false
 update_object_value : raw_importance 12.666666666666666
+update_object_value : group.get.total_strength 88.85565535797454
 update_object_value : intra_string_happiness 88.85565535797454
 update_object_value description(letter) of letter (3)3 in target string d.description_type.activation 50.0 d.descriptor.activation 25.0
 update_object_value description(R) of letter (3)3 in target string d.description_type.activation 100.0 d.descriptor.activation 17.75
 update_object_value 19.0 group.isDefined true changed false
 update_object_value : raw_importance 12.666666666666666
+update_object_value : group.get.total_strength 88.85565535797454
 update_object_value : intra_string_happiness 88.85565535797454
 update_object_value description(letter) of letter (4)4 in target string d.description_type.activation 50.0 d.descriptor.activation 25.0
 update_object_value description(J) of letter (4)4 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value 101.25 group.isDefined true changed false
 update_object_value : raw_importance 67.5
+update_object_value : group.get.total_strength 94.30395420073364
 update_object_value : intra_string_happiness 94.30395420073364
 update_object_value description(letter) of letter (5)5 in target string d.description_type.activation 50.0 d.descriptor.activation 25.0
 update_object_value description(J) of letter (5)5 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value 101.25 group.isDefined true changed false
 update_object_value : raw_importance 67.5
+update_object_value : group.get.total_strength 94.30395420073364
 update_object_value : intra_string_happiness 94.30395420073364
 update_object_value description(letter) of letter (6)6 in target string d.description_type.activation 50.0 d.descriptor.activation 25.0
 update_object_value description(J) of letter (6)6 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(rightmost) of letter (6)6 in target string d.description_type.activation 100.0 d.descriptor.activation 80.0
 update_object_value 181.25 group.isDefined true changed false
 update_object_value : raw_importance 120.83333333333333
+update_object_value : group.get.total_strength 94.30395420073364
 update_object_value : intra_string_happiness 94.30395420073364
 update_object_value description(group) of group (2-3) in target string d.description_type.activation 50.0 d.descriptor.activation 20.0
 update_object_value description(sameness group) of group (2-3) in target string d.description_type.activation 12.5 d.descriptor.activation 50.0
 update_object_value description(R) of group (2-3) in target string d.description_type.activation 100.0 d.descriptor.activation 17.75
 update_object_value 21.25 group.isDefined false changed false
 update_object_value : raw_importance 21.25
+update_object_value : bondstrengthRaw 0.0
 update_object_value : intra_string_happiness 0.0
 update_object_value description(group) of group (4-6) in target string d.description_type.activation 50.0 d.descriptor.activation 20.0
 update_object_value description(sameness group) of group (4-6) in target string d.description_type.activation 12.5 d.descriptor.activation 50.0
@@ -132,6 +145,7 @@ update_object_value description(J) of group (4-6) in target string d.description
 update_object_value description(rightmost) of group (4-6) in target string d.description_type.activation 100.0 d.descriptor.activation 80.0
 update_object_value 183.5 group.isDefined false changed false
 update_object_value : raw_importance 183.5
+update_object_value : bondstrengthRaw 0.0
 update_object_value : intra_string_happiness 0.0
 3T: 53.01841442173005
 update the relative importances of initial and target strings

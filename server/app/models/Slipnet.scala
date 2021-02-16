@@ -198,7 +198,7 @@ object Slipnet {
   case class SlipnetGoWithCorrespondenceStrengthTester(c: CorrespondenceRep, workspaceCorrespondences: List[CorrespondenceRep])
   case class SlipnetGoWithCorrespondenceStrengthTester2(c: CorrespondenceRep)
 
-  case class DataForStrengthUpdate(brs: List[BondRep], crs: List[CorrespondenceRep], t: Double)
+  case class DataForStrengthUpdate(brs: List[BondRep], crs: List[CorrespondenceRep], grs: List[GroupRep], t: Double)
   case class CorrespondenceUpdateStrengthData(internal_strength: Double, supporting_correspondences:Map[String, Boolean])
   case class PostTopBottomCodeletsGetInfo(
                                            t: Double,
@@ -1413,7 +1413,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       sender() ! SlipnetGoWithCorrespondenceStrengthTester2Response
 
 
-    case DataForStrengthUpdate(brs, crs, t) =>
+    case DataForStrengthUpdate(brs, crs, grs: List[GroupRep], t) =>
       log.debug("Slipnet. DataForStrengthUpdate")
 
       val bondData = brs.map(br => {
@@ -1432,8 +1432,19 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
         (cr.uuid, CorrespondenceUpdateStrengthData(internal_strength, comap))
       }).toMap
-      //val correspondenceData = Map.empty[String,CorrespondenceUpdateStrengthData]
-      sender() ! DataForStrengthUpdateResponse(bondData, correspondenceData,t)
+
+      val groupData = grs.map(gr => {
+        val grCategory = slipNodeRefs(gr.group_category.id)
+        val bond_categoryOpt = SlipnetFormulas.get_related_node(grCategory,bond_category, identity)
+        bond_categoryOpt match {
+          case Some(bond_category) =>
+            Some((gr.uuid, bond_category.degree_of_association()))
+          case None =>
+            None
+        }
+      }).flatten.toMap
+        //val correspondenceData = Map.empty[String,CorrespondenceUpdateStrengthData]
+      sender() ! DataForStrengthUpdateResponse(bondData, correspondenceData, groupData, t)
 
     case PostTopBottomCodeletsGetInfo(
         t: Double,
@@ -1512,6 +1523,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       }).toMap
       sender() ! PrepareBondFightingResponse(bondReps, defOfAssos)
 
+      // for g.update_strength_value()
     case SlipnetGoWithGroupBuilder(group_category_id) =>
       val grCategory = slipNodeRefs(group_category_id)
       val bond_categoryOpt = SlipnetFormulas.get_related_node(grCategory,bond_category, identity)

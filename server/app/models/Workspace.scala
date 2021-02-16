@@ -267,7 +267,8 @@ object Workspace {
   case class GoWithCorrespondenceStrengthTester2(correponsdenceID: String, t:Double)
   case class GoWithCorrespondenceStrengthTester3(correponsdenceID: String, internalStrength: Double,supporting_correspondences:Map[String, Boolean], t:Double)
 
-  case class DataForStrengthUpdateResponse(bondData: Map[String,Double], correpondenceData: Map[String, CorrespondenceUpdateStrengthData], t: Double)
+  case class DataForStrengthUpdateResponse(bondData: Map[String,Double], correpondenceData: Map[String, CorrespondenceUpdateStrengthData],
+                                           groupData: Map[String, Double],mt: Double)
   case class UpdateEverything(codelets_run: Int, t: Double)
   case object UpdateEverythingFollowUp
   case class PostTopBottomCodeletsGetInfoResponse(codeletToPost: List[(String,Either[Double, Int], Option[String], Option[Double])], t: Double)
@@ -497,16 +498,17 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       log.debug("Workspace. update_Everything")
       val brs = bondReps()
       val crs = correspondenceReps()
-      slipnet ! DataForStrengthUpdate(brs,crs,t)
+      val grs = groupReps()
+      slipnet ! DataForStrengthUpdate(brs,crs,grs,t)
 
-    case DataForStrengthUpdateResponse(bondData, correspondenceData, t) =>
+    case DataForStrengthUpdateResponse(bondData, correspondenceData, groupData, t) =>
       log.debug("update_Everything " + structures.size)
       log.debug("1T: " + t)
 
       for (ws <- structures) {
         //log.debug(s"Workspace structure update_strength_value ${ws.uuid} $ws")
         log.debug(s"Workspace structure update_strength_value $ws")
-        updateStructureStrengthValue(bondData, correspondenceData, ws)
+        updateStructureStrengthValue(bondData, correspondenceData, groupData, ws)
       }
       log.debug("2T: " + t)
 
@@ -544,7 +546,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       val ruleTotal_strengthOpt = rule.map(_.total_strength)
 
       //log.debug("Workspace rule " + rule.map(_.total_strength) + " " + rule)
-      log.debug("Workspace rule " + rule.map(_.uuid) + " rule: " + rule + " total_strength " + ruleTotal_strengthOpt)
+      log.debug("Workspace rule " + rule.map(_.uuid) + " rule: " + rule + " total_strength " + ruleTotal_strengthOpt + " total_weakness " + ruleTotalWeaknessOpt)
       log.debug("Post Top/Bottom Codelets codeletsSize " + codeletsSize)
 
 
@@ -977,22 +979,22 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
         woOpt match {
           case Some(wo) => addDescriptionsToWorkspaceObject(wo, g.descriptions.toList)
           case None =>
-            log.debug("GoWithGroupBuilder stop with no equivalent group")
+            log.debug("stop with no equivalent group")
         }
         sender() ! Finished
       } else {
-        log.debug("GoWithGroupBuilder. check to see if all objects are still there")
+        log.debug("check to see if all objects are still there")
         // check to see if all objects are still there
         val objectNotThere = g.object_list.find(wo => !objects.toList.contains(wo))
         if (objectNotThere.isDefined) {
           log.debug("objects no longer exist! - fizzle");
           sender() ! Finished
         } else {
-          log.debug("GoWithGroupBuilder. check to see if bonds are there of the same direction")
+          log.debug("check to see if bonds are there of the same direction")
 
           // check to see if bonds are there of the same direction
           val gObjectList = g.object_list
-          val incompatibleBondListRaw = for (i <- 1 to gObjectList.size-1) yield {
+          val incb1 = for (i <- 1 to gObjectList.size-1) yield {
             val ol = gObjectList(i)
             val bOpt = ol.left_bond
             if (bOpt.isDefined) {
@@ -1003,7 +1005,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
               } else None
             } else None
           }
-          log.debug("GoWithGroupBuilder. calculate bondCandidate")
+          log.debug("complete incb. part 2")
 
           val bondCandidate = if (gObjectList.size > 1) {
             val bOpt = gObjectList(0).right_bond
@@ -1014,18 +1016,20 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
             } else None
           } else None
 
-          val incompatibleBondList = (bondCandidate :: incompatibleBondListRaw.toList).flatten
+          val incb = (bondCandidate :: incb1.toList).flatten
 
           // if incompatible bonds exist - fight
           log.debug("GoWithGroupBuilder. if incompatible bonds exist - fight")
 
-          sender() ! GoWithGroupBuilderResponse(incompatibleBondList.map(b => b.bondRep()), g.group_category.id)
+          sender() ! GoWithGroupBuilderResponse(incb.map(b => b.bondRep()), g.group_category.id)
         }
       }
 
     case GoWithGroupBuilder2(groupID, degree_of_association, incompatibleBondList) =>
       val g = objectRefs(groupID).asInstanceOf[Group]
       g.update_strength_value(degree_of_association)
+
+      log.debug("if incompatible bonds exist - fight");
 
       val fightNeeded = !incompatibleBondList.isEmpty
       if (fightNeeded) {
@@ -1121,6 +1125,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       } else {
         // destroy incompatible groups
         val incgSet: Set[String] = incg.toSet
+        log.debug("destroy incompatible groups " + incgSet.size )
         for (gr <- incgSet) {
           val grp = objectRefs(gr).asInstanceOf[Group]
           break_group(grp)
@@ -1128,6 +1133,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
         log.debug("building group");
         build_group(g)
+        g.printStrength(log)
 // already done in build_group        g.activate_descriptions();
         s ! Finished
       }
@@ -2395,7 +2401,10 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
   }
 
-  private def updateStructureStrengthValue(bondData: Map[String, Double], correspondenceData: Map[String, CorrespondenceUpdateStrengthData], ws: WorkspaceStructure) = {
+  private def updateStructureStrengthValue(bondData: Map[String, Double],
+                                           correspondenceData: Map[String, CorrespondenceUpdateStrengthData],
+                                           groupData: Map[String, Double],
+                                           ws: WorkspaceStructure) = {
     if (ws.isInstanceOf[Bond]) {
       val b = ws.asInstanceOf[Bond]
       val bond_category_degree_of_association = bondData(b.uuid)
@@ -2408,6 +2417,9 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     } else if (ws.isInstanceOf[Rule]) {
       val r = ws.asInstanceOf[Rule]
       r.update_strength_value(initial.objects.toList, slippage_list())
+    } else if (ws.isInstanceOf[Group]) {
+      val gr = ws.asInstanceOf[Group]
+      gr.update_strength_value(groupData(gr.uuid))
     } else {
       ws.update_strength_value(log, activationBySlipNodeID, objects.toList)
     }
@@ -2504,6 +2516,8 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
   def bondReps() = bonds().map(b => b.bondRep())
   def correspondences(): List[Correspondence] = structures.toList.filter(s => s.isInstanceOf[Correspondence]).asInstanceOf[List[Correspondence]]
   def correspondenceReps() = correspondences().map(c => c.correspondenceRep())
+  def groups(): List[Group] = structures.toList.filter(s => s.isInstanceOf[Group]).asInstanceOf[List[Group]]
+  def groupReps() = groups().map(c => c.groupRep())
 
   val conditionalNeighbor = (from: WorkspaceObject, wo: WorkspaceObject) => (
     (wo.left_string_position == from.right_string_position + 1) ||

@@ -1,0 +1,29 @@
+bond fight
+	1) fight S ! GoWithGroupBuilderResponse2
+		SN ! PrepareBondFighting
+			S ! PrepareBondFightingResponse
+				W ! GoWithGroupBuilder3
+					1) Won self.forward Afterfighting 
+					2) S ! Finished
+	2) no fight self.forward Afterfighting
+		fight incompatible groups
+		
+W.Afterfighting		
+	1) Fight     S ! PrepareGroupFighting
+		SN ! SlipnetPrepareGroupFighting
+			1) error S ! Finished
+			2) error S ! Finished
+			3) S ! SlipnetPrepareGroupFightingResponse
+				W ! GoWithGroupBuilder4
+					1) won self forward GoWithGroupBuilder5
+					2) S ! Finished
+	2) Not Fight S ! GroupBuilderNoGroupFighting
+		W ! GoWithGroupBuilder5
+	
+GoWithGroupBuilder5
+	self ! LookAHeadForNewBondCreation
+		1) SN ! SlipnetLookAHeadForNewBondCreation
+			S ! SlipnetLookAHeadForNewBondCreationResponse
+				1) self ! LookAHeadForNewBondCreation
+				2) s ! Finished
+		2) self ! LookAHeadForNewBondCreation (recursive call)		

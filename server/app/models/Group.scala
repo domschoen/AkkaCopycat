@@ -173,13 +173,13 @@ class Group (
   def update_strength_value(degree_of_association: Double) = {
     calculate_internal_strength(degree_of_association)
     calculate_external_strength()
-    calculate_total_strength(null)
+    calculate_total_strength(log)
   };
 
   //    val bc = (slipnet_formulas.get_related_node(group_category,slipnet.bond_category)).degree_of_association();
   def calculate_internal_strength(degree_of_association: Double) = {
     val bff = if (bond_facet.id == SlipNode.id.letter_category) 1.0 else 0.5
-    //System.out.println("related node:"+(slipnet_formulas.get_related_node(group_category,slipnet.bond_category)).pname);
+//    log.debug(uuid + " related node:"+(slipnet_formulas.get_related_node(group_category,slipnet.bond_category)).pname);
     val len = object_list.size;
     val lc = len match {
       case 1 => 5.0
@@ -191,13 +191,13 @@ class Group (
     val bcw = Math.pow(degree_of_association,0.98);
     val lcw = 100.0-bcw;
     internal_strength = Formulas.weighted_average(degree_of_association,bcw,lc,lcw);
-    //System.out.println(this+" bc:"+bc+" bcw:"+bcw+" lc:"+lc+" lcw:"+" internal strength = "+internal_strength);
+    log.debug(uuid + " " +this+ " bcw:"+bcw+" lc:"+lc+" lcw:"+ lcw + "  internal strength = "+internal_strength);
   }
 
   def calculate_external_strength(){
     if (spans_string) external_strength = 100.0;
     else external_strength = local_support();
-    //System.out.println(this+" external strength = "+external_strength);
+    log.debug(uuid + " " + this+" external strength = "+external_strength);
   }
 
   def local_support(): Double = {
@@ -207,7 +207,7 @@ class Group (
       val ad= 100.0*Math.sqrt(density/100.0);
       val nfr = Math.pow(0.6,1/(num*num*num));
       val nf = if (nfr > 1.0) 1.0 else nfr
-      //System.out.println("local support  density="+density+"num="+num+" ad="+ad+"nf="+nf);
+      log.debug(uuid + " " + "local support  density="+density+"num="+num+" ad="+ad+"nf="+nf);
       ad*nf
     }
   }
@@ -226,7 +226,7 @@ class Group (
   def local_density() = {
     val sg = number_of_local_supporting_groups().toDouble
     val ln = ws.length / 2.0
-    //System.out.println(this+" local density="+ln+"  sg="+sg+" ln="+ln);
+    log.debug(uuid + " " + this+" local density="+ln+"  sg="+sg+" ln="+ln);
     100.0*sg/ln;
   }
 
