@@ -59,7 +59,7 @@ class BottomUpCorrespondenceScout(urgency: Int,
       slipnet ! SlipnetBottomUpCorrespondenceScout(
         obj1,
         obj2,
-        t
+        runTemperature
       )
 
       // flipped case
@@ -85,7 +85,7 @@ class BottomUpCorrespondenceScout(urgency: Int,
         flip_obj2,
         distiguishingConceptMappingSize,
         distiguishingConceptMappingTotalStrength,
-        t
+        runTemperature
       )
 
     case GoWithBottomUpCorrespondenceScout2Response(correspondenceID: String,

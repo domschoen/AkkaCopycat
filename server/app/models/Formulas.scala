@@ -23,6 +23,7 @@ object Formulas {
     // if the temperature is 0, no adjustment is made
     // otherwise, values above .5 are lowered and values below .5 are raised
     //System.out.println("the log of 100,10"+Math.pow(100.0,0.1));
+
     var rval = 0.0
     //var t = 0.0
     rval= value
