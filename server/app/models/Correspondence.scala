@@ -256,6 +256,8 @@ case class Correspondence (log: LoggingAdapter,
     concept_mapping_list ::: accessory_concept_mapping_list.toList
   }
 
+
+
   def support(cs: List[Correspondence], supporting_correspondences:Map[String, Boolean]): Double = {
     // For now there are three levels of compatibility:
     // supporting, not incompatible but not supporting, and incompatible.

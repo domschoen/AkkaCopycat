@@ -1214,7 +1214,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       log.debug("did slippage_list: ");
 
       for(slippage <- slippage_list) {
-        print(s"slippage ${slippage.toString()}")
+        log.debug(s"slippage ${slippage.toString()}")
       }
 
       val slippage_list_rep = slippage_list.map(cm => cm.conceptMappingRep())

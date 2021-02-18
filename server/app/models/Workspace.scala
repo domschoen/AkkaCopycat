@@ -2074,7 +2074,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
         println("Found answer " + found_answerOpt.get)
         found_answer = true
       } else {
-
+        sender() ! Finished
         // How to do that ????
 //        Temperature.clamp_time = coderack.codelets_run+100;
 //        Temperature.clamped = true;
@@ -2981,12 +2981,19 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     val sl = if (changed_object.isDefined && changed_object.get.correspondence.isDefined) {
       val c = changed_object.get.correspondence.get;
 
-      c.concept_mapping_list
+      val cml = c.concept_mapping_list
+      log.debug("slippage_list 1 " +c + " cml " +  cml)
+      cml
     } else List.empty[ConceptMappingRep]
 
     val sl2 = initial.objects.toList.map(wo => {
       if (wo.correspondence.isDefined){
-        Some(wo.correspondence.get.slippageCandidates())
+        val c =  wo.correspondence.get
+        //val cml = c.slippageCandidates()
+        val cml = c.slippageCandidates()
+        log.debug("slippage_list 2 " +wo.correspondence.get + " cml " +  cml)
+
+        Some(cml)
       } else None
     }).flatten.flatten
 

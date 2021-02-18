@@ -82,10 +82,10 @@ case class Rule (log: LoggingAdapter,
     val relationVal = relation.get
     // applies the changes to this string ie. successor
     var stringok = true;
-    if (descriptorFacet == lengthSlipNode.id) {
-      if (relationVal == predecessorSlipNode.id)
+    if (descriptorFacet.isDefined && descriptorFacet.get.id == lengthSlipNode.id) {
+      if (relationVal.id == predecessorSlipNode.id)
         return s.substring(0,s.length()-1);
-      if (relationVal == successorSlipNode.id) {
+      if (relationVal.id == successorSlipNode.id) {
         val addon = s.substring(0,1);
         return s+addon;
       }
@@ -98,8 +98,8 @@ case class Rule (log: LoggingAdapter,
 
 
     val biteTheLine = st.find(c => {
-      val lowerBite = c-1 < 97 && relationVal==predecessorSlipNode.id
-      val higherBite = c+1 > 122 && relationVal==successorSlipNode.id
+      val lowerBite = c-1 < 97 && relationVal.id==predecessorSlipNode.id
+      val higherBite = c+1 > 122 && relationVal.id==successorSlipNode.id
       lowerBite || higherBite
     })
     if (biteTheLine.isDefined) "NULL" else {
@@ -119,13 +119,18 @@ case class Rule (log: LoggingAdapter,
       descriptor = Rule.apply_slippages(descriptor, slippage_list_rep)
       relation = Rule.apply_slippages(relation, slippage_list_rep)
 
+      log.debug("generate the final string " + target_string + " objectCategory " + objectCategory + " descriptorFacet "
+        + descriptorFacet + " descriptor " + descriptor + " relation " + relation)
       // generate the final string
       var final_answer = target_string;
       var changed_obOpt = target_object.find(wo => {
+        log.debug("changed_obOpt " + wo)
         descriptor.isDefined && wo.has_slipnode_description(descriptor.get) &&
         objectCategory.isDefined && wo.has_slipnode_description(objectCategory.get)
       })
       if (changed_obOpt.isDefined) {
+        log.debug("changed_obOpt is defined " + changed_obOpt)
+
         val changed_ob = changed_obOpt.get
         //System.out.println("changed object = "+changed_ob);
         val string_length = final_answer.length();
@@ -140,6 +145,8 @@ case class Rule (log: LoggingAdapter,
         if (end_pos<string_length) end_string =
           final_answer.substring(end_pos);
         final_answer = start_string + middle_string + end_string;
+        log.debug("middle_string " + middle_string)
+
         if (middle_string.equals("NULL")) return None
       }
 
