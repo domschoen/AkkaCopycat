@@ -692,11 +692,12 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     case GoWithBottomUpBondScout2(fromRep, toRep, fromFacets, toFacets) =>
       println("GoWithBottomUpBondScout2 in ws")
       // workspace_formulas.java.207
-      if (fromFacets.isEmpty) {
+      if (toFacets.isEmpty) {
         log.debug(s" no possible bond-facet - fizzle")
         sender() ! Finished
 
       } else {
+
         log.debug(s"fromRep.uuid ${fromRep.uuid} toRep.uuid ${toRep.uuid}")
 
         val from = objectRefs(fromRep.uuid)
@@ -948,6 +949,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       val obj2 = objectRefs(obj2Rep.uuid)
 
       val nc = new Correspondence(log,obj1, obj2, concept_mapping_list, flip_obj2);
+      log.debug("New Correspondence " + nc.uuid + " flip_obj2 " + flip_obj2)
       // TODO if (!remove_terraced_scan) WorkspaceArea.AddObject(nc,1);
       wsRefs += (nc.uuid -> nc)
 
@@ -2157,14 +2159,22 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
       val obj1 = c.obj1
       val obj2 = c.obj2
-      log.debug("evaluating correspondence from "+obj1+" to "+obj2)
+      log.debug("trying correspondence " + c.uuid + " from "+ obj1 + " " + objects.contains(obj1)  + " to "+obj2 + " " + objects.contains(obj2) + " " + c.flip_obj2);
       if (!objects.contains(obj1)) {
         log.debug("objects no longer exist")
         sender() ! Finished
-      } else if (objects.contains(obj2) || !c.flip_obj2) {
-        sender() ! GoWithCorrespondenceBuilder9Response
       } else {
-        sender() ! GoWithCorrespondenceBuilderResponse(obj2.workspaceObjectRep())
+        if (objects.contains(obj2)) {
+          sender() ! GoWithCorrespondenceBuilder9Response
+        } else {
+          if (!c.flip_obj2) {
+            log.debug("objects no longer exist")
+            sender() ! Finished
+          } else {
+            // Flip
+            sender() ! GoWithCorrespondenceBuilderResponse(obj2.workspaceObjectRep())
+          }
+        }
       }
 
 
@@ -2178,7 +2188,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       val flippedGroup = flippedGroupWithFutureGroup(obj2Group,futureGroupRep,t)
 
 
-      if (!target.group_present(flippedGroup).isEmpty) {
+      if (target.group_present(flippedGroup).isEmpty) {
         println("objects no longer exist");
         sender() ! Finished
       } else {

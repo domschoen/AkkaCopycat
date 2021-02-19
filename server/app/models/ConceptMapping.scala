@@ -119,7 +119,7 @@ object ConceptMapping {
 
   def all_opposite_mappings(cms: List[ConceptMapping], opposite : SlipNode): Boolean = {
     // returns true if all mappings are opposite
-    !cms.find(cm => cm.label != opposite).isDefined
+    !cms.find(cm => cm.label.isDefined && cm.label.get != opposite).isDefined
   }
   def addNewConceptMapping(cm: ConceptMapping): ConceptMapping  = {
     conceptMappingRefs += (cm.uuid -> cm)

@@ -915,6 +915,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       }
 
     case  CheckOnBothObjectsSpanningForStringDescriptionFlip(conceptMappingReps,distinguishingMappingReps, obj1, obj2) =>
+      log.debug("CheckOnBothObjectsSpanningForStringDescriptionFlip")
       val concept_mapping_list = ConceptMapping.conceptMappingsWithReps(conceptMappingReps)
       val distinguishing_mappings = ConceptMapping.conceptMappingsWithReps(distinguishingMappingReps)
       // if both objects span the strings, check to see if the
@@ -928,6 +929,8 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       val dt1ContainsCategory = dt1.contains(direction_category)
       val allOppositeMappings = ConceptMapping.all_opposite_mappings(possible_opp_mappings, opposite)
 
+      log.debug("flip_obj2 obj1.spans_string " + obj1.spans_string + " obj2.spans_string " + obj2.spans_string
+        + " dt1ContainsCategory " + dt1ContainsCategory + " allOppositeMappings " + allOppositeMappings + " opposite.activation " + opposite.activation)
 
       val flip_obj2 = obj1.spans_string &&
         obj2.spans_string &&
@@ -935,7 +938,11 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
         allOppositeMappings &&
         opposite.activation != 100.0
 
+      log.debug("flip_obj2 " + flip_obj2);
+
       if (flip_obj2) {
+        log.debug("Will calculate flipped_version");
+
         val futureGroupOpt = groupFlipped_version(obj2.asGroupRep.get)
         if (futureGroupOpt.isEmpty) {
           sender() ! Finished
@@ -961,7 +968,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
           obj1,
           obj2,
           conceptMappingReps,
-          true,
+          flip_obj2,
           dcm.size,
           totalStrength
         )
