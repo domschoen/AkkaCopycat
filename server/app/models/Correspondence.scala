@@ -203,14 +203,15 @@ case class Correspondence (log: LoggingAdapter,
   }
 
 
-  def update_strength_value(internal_strength: Double, cs: List[Correspondence], supporting_correspondences:Map[String, Boolean]) = {
-    calculate_internal_strength(internal_strength)
+  def update_strength_value(is: Double, cs: List[Correspondence], supporting_correspondences:Map[String, Boolean]) = {
+    calculate_internal_strength(is)
     calculate_external_strength(cs, supporting_correspondences)
-    calculate_total_strength(null)
+    log.debug("calculate_total_strength")
+    calculate_total_strength(log)
   };
 
-  def calculate_internal_strength(internalStrength: Double) = {
-    internal_strength = internalStrength
+  def calculate_internal_strength(is: Double) = {
+    internal_strength = is
   }
 
 /* see Slipnet
@@ -251,10 +252,11 @@ case class Correspondence (log: LoggingAdapter,
   }
 */
 
-
+  // We can call slippage_list because we cannot call cm.slippage() here, it must be done in the Slipnet
   def slippageCandidates() = {
     concept_mapping_list ::: accessory_concept_mapping_list.toList
   }
+
 
 
 
@@ -264,7 +266,7 @@ case class Correspondence (log: LoggingAdapter,
     // This returns the sum of the strengths of other correspondences that
     // support this one (or 100, whichever is lower).  If one of the objects is the
     // single letter in its string, then the support is 100.
-    //System.out.println("support obj1 " + obj1);
+    log.debug("support obj1 " + obj1);
     //System.out.println("support obj1.spans_string " + obj1.spans_string);
     //System.out.println("support obj2 " + obj1);
     //System.out.println("support obj2.spans_string " + obj2.spans_string);
@@ -273,8 +275,8 @@ case class Correspondence (log: LoggingAdapter,
     var support_sum = 0.0;
     for (c <- cs) {
       val supCorrs = supporting_correspondences(c.uuid)
-      //System.out.println("support ws!=this " + (c !=this));
-      //System.out.println("support supporting_correspondences(this,(Correspondence)ws)) " + supCorrs);
+      log.debug("support ws!=this " + (c !=this));
+      log.debug("support supporting_correspondences(this,(Correspondence)ws)) " + supCorrs);
 
       if ((c != this) && supCorrs)
           support_sum += c.total_strength;

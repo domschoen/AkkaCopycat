@@ -4,8 +4,8 @@ import akka.actor.ActorRef
 import akka.event.LoggingReceive
 import models.Bond.BondRep
 import models.ConceptMapping.{ConceptMappingParameters, ConceptMappingRep}
-import models.Slipnet.{SlipnetGoWithCorrespondenceBuilder, SlipnetGoWithCorrespondenceBuilder2, SlipnetGoWithCorrespondenceBuilder5, SlipnetGoWithCorrespondenceBuilder6}
-import models.Workspace.{GoWithCorrespondenceBuilder3, GoWithCorrespondenceBuilder4, GoWithCorrespondenceBuilder5, GoWithCorrespondenceBuilder8, GoWithCorrespondenceBuilder9Response}
+import models.Slipnet.{SlipnetCompleteSlippageList, SlipnetCompleteSlippageListResponse, SlipnetGoWithCorrespondenceBuilder, SlipnetGoWithCorrespondenceBuilder2, SlipnetGoWithCorrespondenceBuilder5, SlipnetGoWithCorrespondenceBuilder6}
+import models.Workspace.{GoWithCorrespondenceBuilder10Continue, GoWithCorrespondenceBuilder10Fight, GoWithCorrespondenceBuilder3, GoWithCorrespondenceBuilder4, GoWithCorrespondenceBuilder5, GoWithCorrespondenceBuilder8, GoWithCorrespondenceBuilder9Response, SlippageListShell}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.Correspondence.CorrespondenceRep
 import models.Group.GroupRep
@@ -35,6 +35,8 @@ object CorrespondenceBuilder {
   case class GoWithCorrespondenceBuilder6Response(c: CorrespondenceRep)
   case class SlipnetGoWithCorrespondenceBuilder4Response(accessory_concept_mapping_list: List[ConceptMappingRep])
   case class SlipnetGoWithCorrespondenceBuilder5Response(accessory_concept_mapping_list: List[ConceptMappingRep])
+  case class GoWithCorrespondenceBuilder6ResponseFight(ruleUUID: String, slippageListShell: SlippageListShell)
+  case object GoWithCorrespondenceBuilder16ContinuePostFight
 }
 class CorrespondenceBuilder(urgency: Int,
                             workspace: ActorRef,
@@ -65,7 +67,9 @@ class CorrespondenceBuilder(urgency: Int,
     SlipnetGoWithCorrespondenceBuilder4Response,
     GoWithCorrespondenceBuilder7Response,
     SlipnetGoWithCorrespondenceBuilder5Response,
-    GoWithCorrespondenceBuilder8Response
+    GoWithCorrespondenceBuilder8Response,
+    GoWithCorrespondenceBuilder6ResponseFight,
+    GoWithCorrespondenceBuilder16ContinuePostFight
   }
   import models.Slipnet.{
     GroupFlippedVersion,
@@ -84,6 +88,10 @@ class CorrespondenceBuilder(urgency: Int,
   var incompatible_bond: Option[BondRep] = None
 
   var incompatible_group = Option.empty[GroupRep]
+
+  var ruleUUIDOpt = Option.empty[String]
+  var internal_strength: Double = 0.0
+  var supporting_correspondences:Map[String, Boolean] = null
 
   def receive = LoggingReceive {
     // to the browser
@@ -152,10 +160,12 @@ class CorrespondenceBuilder(urgency: Int,
       )
 
       //2 branches joining here
-    case GoWithCorrespondenceBuilder4Response2(g, internal_strength, supporting_correspondences) =>
+    case GoWithCorrespondenceBuilder4Response2(g, is, sc) =>
+      internal_strength = is
+      supporting_correspondences = sc
       log.debug("CorrespondenceBuilder. GoWithCorrespondenceBuilder4Response2")
       incompatible_group = g
-      workspace ! GoWithCorrespondenceBuilder6(corresponsdenceID, incc, incompatible_bond, incompatible_group, internal_strength, supporting_correspondences)
+      workspace ! GoWithCorrespondenceBuilder6(corresponsdenceID)
 
     case GoWithCorrespondenceBuilder6Response(crep) =>
       log.debug("CorrespondenceBuilder. GoWithCorrespondenceBuilder6Response")
@@ -164,6 +174,17 @@ class CorrespondenceBuilder(urgency: Int,
     case SlipnetGoWithCorrespondenceBuilder4Response(accessory_concept_mapping_list) =>
       log.debug("CorrespondenceBuilder. SlipnetGoWithCorrespondenceBuilder4Response")
       workspace ! GoWithCorrespondenceBuilder7(corresponsdenceID, accessory_concept_mapping_list)
+
+    case GoWithCorrespondenceBuilder6ResponseFight(ruleUUID: String, slippageListShell) =>
+      ruleUUIDOpt = Some(ruleUUID)
+      slipnet ! SlipnetCompleteSlippageList(slippageListShell)
+
+    case SlipnetCompleteSlippageListResponse(slippage_list_rep) =>
+      workspace ! GoWithCorrespondenceBuilder10Fight(corresponsdenceID, internal_strength, supporting_correspondences, slippage_list_rep)
+
+    case GoWithCorrespondenceBuilder16ContinuePostFight =>
+      workspace ! GoWithCorrespondenceBuilder10Continue(corresponsdenceID, incc, incompatible_bond, incompatible_group, ruleUUIDOpt)
+
 
     case   GoWithCorrespondenceBuilder7Response(groupObjs) =>
       slipnet ! SlipnetGoWithCorrespondenceBuilder5(groupObjs)

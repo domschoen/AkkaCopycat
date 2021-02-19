@@ -112,7 +112,7 @@ object SimulationScreen {
 
 
   private val component = ScalaComponent.builder[Props]("SimulationScreen")
-    .initialState(State(Some("abc"),Some("abd"),Some("xcg")))
+    .initialState(State(Some("abc"),Some("abd"),Some("cde")))
     .renderBackend[Backend]
     .build
 

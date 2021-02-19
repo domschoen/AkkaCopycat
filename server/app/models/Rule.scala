@@ -159,7 +159,7 @@ case class Rule (log: LoggingAdapter,
       Some(final_answer)
     }
 
-  def update_strength_value(wInitialObjects: List[WorkspaceObject], slippage_list: SlippageListShell) = {
+  def update_strength_value(wInitialObjects: List[WorkspaceObject], slippage_list: List[ConceptMappingRep]) = {
     //log.debug("update_strength_value: " + this.uuid)
     calculate_internal_strength(wInitialObjects, slippage_list)
     calculate_external_strength()
@@ -167,7 +167,7 @@ case class Rule (log: LoggingAdapter,
   };
 
 
-  def calculate_internal_strength(wInitialObjects: List[WorkspaceObject], slippage_list: SlippageListShell) = {
+  def calculate_internal_strength(wInitialObjects: List[WorkspaceObject], slippage_list: List[ConceptMappingRep]) = {
 //    log.debug("calculate_internal_strength wInitialObjects " + wInitialObjects)
 //    log.debug("calculate_internal_strength slippage_list " + slippage_list)
       val cdd0 = descriptor.get.conceptual_depth - relation.get.conceptual_depth;
@@ -190,7 +190,7 @@ case class Rule (log: LoggingAdapter,
 //        log.debug("calculate_internal_strength correspondence: " +changed.get.correspondence);
 
         val obj2 = changed.get.correspondence.get.obj2
-        val s = Rule.apply_slippages(descriptor, slippage_list.sl);
+        val s = Rule.apply_slippages(descriptor, slippage_list);
 //        log.debug("calculate_internal_strength s: " +s);
         if (s.isDefined && obj2.has_slipnode_description(s.get)) {
 //          log.debug("calculate_internal_strength has_slipnode_description");

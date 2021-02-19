@@ -26,22 +26,23 @@ import models.Correspondence.CorrespondenceRep
 import models.Group.{FutureGroupRep, GroupRep}
 import models.SlipNode.{GroupSlipnetInfo, SlipNodeRep}
 import models.Slipnet.{CorrespondenceUpdateStrengthData, DescriptionTypeInstanceLinksToNodeInfo}
-import models.Workspace.{DataForStrengthUpdateResponse, GoWithBondStrengthTester2, GoWithBottomUpCorrespondenceScout2Response, GoWithBottomUpCorrespondenceScout3, GoWithBottomUpCorrespondenceScout3Response, GoWithCorrespondenceBuilder, GoWithCorrespondenceBuilder2, GoWithCorrespondenceBuilder3, GoWithCorrespondenceBuilder4, GoWithCorrespondenceBuilder5, GoWithCorrespondenceBuilder6, GoWithCorrespondenceBuilder7, GoWithCorrespondenceBuilder8, GoWithCorrespondenceBuilder9Response, GoWithCorrespondenceStrengthTester, GoWithCorrespondenceStrengthTester2, GoWithCorrespondenceStrengthTester3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithImportantObjectCorrespondenceScout, GoWithImportantObjectCorrespondenceScout2, GoWithImportantObjectCorrespondenceScout3, GoWithRuleBuilder, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3, GoWithRuleStrengthTester, GoWithRuleTranslator, GoWithRuleTranslator2, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, PostTopBottomCodeletsGetInfoResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, StepX, ToBeContinued, UpdateEverything, UpdateEverythingFollowUp, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
+import models.Workspace.{DataForStrengthUpdateResponse, GoWithBondStrengthTester2, GoWithBottomUpCorrespondenceScout2Response, GoWithBottomUpCorrespondenceScout3, GoWithBottomUpCorrespondenceScout3Response, GoWithCorrespondenceBuilder, GoWithCorrespondenceBuilder10Continue, GoWithCorrespondenceBuilder10Fight, GoWithCorrespondenceBuilder2, GoWithCorrespondenceBuilder3, GoWithCorrespondenceBuilder4, GoWithCorrespondenceBuilder5, GoWithCorrespondenceBuilder6, GoWithCorrespondenceBuilder7, GoWithCorrespondenceBuilder8, GoWithCorrespondenceBuilder9Response, GoWithCorrespondenceStrengthTester, GoWithCorrespondenceStrengthTester2, GoWithCorrespondenceStrengthTester3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithImportantObjectCorrespondenceScout, GoWithImportantObjectCorrespondenceScout2, GoWithImportantObjectCorrespondenceScout3, GoWithRuleBuilder, GoWithRuleBuilder2, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3, GoWithRuleStrengthTester, GoWithRuleStrengthTester2, GoWithRuleTranslator, GoWithRuleTranslator2, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, PostTopBottomCodeletsGetInfoResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, StepX, ToBeContinued, UpdateEverything, UpdateEverythingFollowUp, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
 import models.codelet.BondStrengthTester.GoWithBondStrengthTesterResponse2
 import models.codelet.BottomUpBondScout.{GoWithBottomUpBondScout2Response, GoWithBottomUpBondScoutResponse}
 import models.codelet.BottomUpDescriptionScout.GoWithBottomUpDescriptionScoutResponse
 import models.codelet.Codelet.{Finished, PrepareDescriptionResponse}
-import models.codelet.CorrespondenceBuilder.{GoWithCorrespondenceBuilder2Response, GoWithCorrespondenceBuilder3Response, GoWithCorrespondenceBuilder4Response1, GoWithCorrespondenceBuilder4Response2, GoWithCorrespondenceBuilder6Response, GoWithCorrespondenceBuilder7Response, GoWithCorrespondenceBuilder8Response}
+import models.codelet.CorrespondenceBuilder.{GoWithCorrespondenceBuilder16ContinuePostFight, GoWithCorrespondenceBuilder2Response, GoWithCorrespondenceBuilder3Response, GoWithCorrespondenceBuilder4Response1, GoWithCorrespondenceBuilder4Response2, GoWithCorrespondenceBuilder6Response, GoWithCorrespondenceBuilder6ResponseFight, GoWithCorrespondenceBuilder7Response, GoWithCorrespondenceBuilder8Response}
 import models.codelet.CorrespondenceStrengthTester.{GoWithCorrespondenceStrengthTesterResponse, GoWithCorrespondenceStrengthTesterResponse2, GoWithCorrespondenceStrengthTesterResponse3}
 import models.codelet.DescriptionStrengthTester.GoWithDescriptionStrengthTesterResponse
 import models.codelet.GroupBuilder.{GoWithGroupBuilderResponse, GoWithGroupBuilderResponse2, GroupBuilderNoGroupFighting, PrepareGroupFighting}
 import models.codelet.GroupScoutWholeString.{GoWithGroupScoutWholeString3Response, GoWithGroupScoutWholeStringResponse, GroupScoutWholeString2Response, GroupScoutWholeString3Response}
 import models.codelet.GroupStrengthTester.{GoWithGroupStrengthTesterResponse, GoWithGroupStrengthTesterResponse2}
 import models.codelet.ImportantObjectCorrespondenceScout.{GoWithImportantObjectCorrespondenceScout2Response, GoWithImportantObjectCorrespondenceScout3Response, GoWithImportantObjectCorrespondenceScoutResponse}
+import models.codelet.RuleBuilder.GoWithRulBuilderResponse
 import models.codelet.RuleScout.{GoWithRuleScout2Response, GoWithRuleScout3Response, GoWithRuleScoutResponse, RuleScoutProposeRule}
-import models.codelet.RuleStrengthTester.GoWithRuleStrengthTesterResponse
+import models.codelet.RuleStrengthTester.{GoWithRuleStrengthTesterResponse, GoWithRuleStrengthTesterResponse2}
 import models.codelet.RuleTranslator.GoWithRuleTranslatorResponse
 import models.codelet.TopDownDescriptionScout.{GoWithTopDownDescriptionScoutResponse, GoWithTopDownDescriptionScoutResponse2}
 import models.codelet.TopDownGroupScoutCategory.{GoWithTopDownGroupScoutCategory2Response, GoWithTopDownGroupScoutCategoryResponse}
@@ -209,11 +210,14 @@ object Workspace {
                              )
 
   case class SlippageListShell(
-                                sl: List[ConceptMappingRep],
-                                slippageCandidates: List[ConceptMappingRep]
+                                slipplage1_candidates: List[ConceptMappingRep],
+                                slipplage2_candidates: List[ConceptMappingRep]
                               )
-  case class GoWithRuleStrengthTester(temperature: Double, ruleID: String)
+  case object GoWithRuleStrengthTester
+  case class GoWithRuleStrengthTester2(temperature: Double, ruleID: String, slippage_list: List[ConceptMappingRep])
   case class GoWithRuleBuilder(ruleID: String)
+  case class GoWithRuleBuilder2(ruleID: String, slippage_list: List[ConceptMappingRep])
+
   case class GoWithRuleTranslator(t: Double)
   case class GoWithRuleTranslator2(slippage_list_rep: List[ConceptMappingRep])
   case class SlipnodeActivationChanged(id: String, activation: Double)
@@ -237,13 +241,23 @@ object Workspace {
                                           bond_category_degree_of_associationOpt: Option[Double]
                                          )
   case class GoWithCorrespondenceBuilder6(
-                                           correponsdenceID: String,
-                                           incc: List[CorrespondenceRep],
-                                           incompatible_bond: Option[BondRep],
-                                           incompatible_group: Option[GroupRep],
-                                           internal_strength: Double,
-                                           supporting_correspondences:Map[String, Boolean]
+                                           correponsdenceID: String
                                          )
+
+  case class GoWithCorrespondenceBuilder10Fight(
+                                                 correponsdenceID: String,
+                                                 internal_strength: Double,
+                                                 supporting_correspondences:Map[String, Boolean],
+                                                 slippage_list: List[ConceptMappingRep]
+                                               )
+  case class GoWithCorrespondenceBuilder10Continue(
+                                                    correponsdenceID: String,
+                                                    incc: List[CorrespondenceRep],
+                                                    incompatible_bond: Option[BondRep],
+                                                    incompatible_group: Option[GroupRep],
+                                                    incompat_ruleOpt: Option[String]
+                                                  )
+
   case class GoWithCorrespondenceBuilder7(
                                            correponsdenceID: String,
                                            accessory_concept_mapping_list: List[ConceptMappingRep]
@@ -267,10 +281,13 @@ object Workspace {
   case class GoWithCorrespondenceStrengthTester2(correponsdenceID: String, t:Double)
   case class GoWithCorrespondenceStrengthTester3(correponsdenceID: String, internalStrength: Double,supporting_correspondences:Map[String, Boolean], t:Double)
 
-  case class DataForStrengthUpdateResponse(bondData: Map[String,Double], correpondenceData: Map[String, CorrespondenceUpdateStrengthData],
-                                           groupData: Map[String, Double],mt: Double)
+  case class DataForStrengthUpdateResponse(bondData: Map[String,Double],
+                                           correpondenceData: Map[String, CorrespondenceUpdateStrengthData],
+                                           groupData: Map[String, Double],
+                                           slippageList: List[ConceptMappingRep],
+                                           t: Double)
   case class UpdateEverything(codelets_run: Int, t: Double)
-  case object UpdateEverythingFollowUp
+  case class UpdateEverythingFollowUp(slippage_list: List[ConceptMappingRep])
   case class PostTopBottomCodeletsGetInfoResponse(codeletToPost: List[(String,Either[Double, Int], Option[String], Option[Double])], t: Double)
   case class GetNumCodeletsResponse(codeletsSize: Int, t:Double)
   case class InitializeWorkspace(slipnet: ActorRef)
@@ -499,16 +516,17 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       val brs = bondReps()
       val crs = correspondenceReps()
       val grs = groupReps()
-      slipnet ! DataForStrengthUpdate(brs,crs,grs,t)
 
-    case DataForStrengthUpdateResponse(bondData, correspondenceData, groupData, t) =>
+      slipnet ! DataForStrengthUpdate(brs,crs,grs, slippageListShell(), t)
+
+    case DataForStrengthUpdateResponse(bondData, correspondenceData, groupData, slippageList, t) =>
       log.debug("update_Everything " + structures.size)
       log.debug("1T: " + t)
 
       for (ws <- structures) {
         //log.debug(s"Workspace structure update_strength_value ${ws.uuid} $ws")
         log.debug(s"Workspace structure update_strength_value $ws")
-        updateStructureStrengthValue(bondData, correspondenceData, groupData, ws)
+        updateStructureStrengthValue(bondData, correspondenceData, groupData, slippageList, ws)
       }
       log.debug("2T: " + t)
 
@@ -538,7 +556,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
         log.debug("post_top_down_codelets")
         coderack ! GetNumCodelets(t)
       } else {
-        slipnet ! models.Slipnet.UpdateEverything(t)
+        slipnet ! models.Slipnet.UpdateEverything(slippageListShell(), t)
       }
 
     case GetNumCodeletsResponse(codeletsSize: Int, t:Double) =>
@@ -566,15 +584,15 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     case PostTopBottomCodeletsGetInfoResponse(codeletToPost, t) =>
       if (codelets_run>0){
         System.out.println("post_top_down_codelets");
-        coderack ! PostCodelets(codeletToPost,t)
+        coderack ! PostCodelets(codeletToPost,slippageListShell(), t)
       } else {
-        slipnet ! models.Slipnet.UpdateEverything(t)
+        slipnet ! models.Slipnet.UpdateEverything(slippageListShell(), t)
       }
 
 
 
-    case UpdateEverythingFollowUp =>
-      val newT = update_temperature()
+    case UpdateEverythingFollowUp(slippage_list) =>
+      val newT = update_temperature(slippage_list)
       println("Finish update_Everything T: " + newT);
 
       coderack ! SlipnetUpdateEverythingResponse(newT)
@@ -1944,11 +1962,10 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
             log.debug("letterCategory " + letterCategory.get)
 
             val obj2 = changed.correspondence.get.obj2
-            val slippagesShell = slippage_list()
 
             sender() ! GoWithRuleScout2Response(
               obj2.workspaceObjectRep(),
-              slippagesShell,
+              slippageListShell,
               object_list.toList,
               replacement.relation,
               letterCategory.get
@@ -1970,11 +1987,14 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       }).flatten
       sender() ! GoWithRuleScout3Response(new_object_list, letterCategory,lcr)
 
-    case GoWithRuleStrengthTester(temperature: Double, ruleID) =>
+    case GoWithRuleStrengthTester =>
+      sender() ! GoWithRuleStrengthTesterResponse(slippageListShell())
+
+    case GoWithRuleStrengthTester2(temperature: Double, ruleID, slippage_list) =>
       val rule = structureRefs(ruleID).asInstanceOf[Rule]
       log.debug("testing: "+rule.toString())
 
-      rule.update_strength_value(initial.objects.toList, slippage_list())
+      rule.update_strength_value(initial.objects.toList, slippage_list)
       val strength = rule.total_strength
       val prob = WorkspaceFormulas.temperature_adjusted_probability(strength / 100.0, temperature)
       log.info(s"strength = $strength, adjusted prob.= $prob")
@@ -1983,7 +2003,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
         sender() ! Finished
       } else {
         // it is strong enough - post builder  & activate nodes
-        sender() ! GoWithRuleStrengthTesterResponse(rule.workspaceStructureRep(), strength)
+        sender() ! GoWithRuleStrengthTesterResponse2(rule.workspaceStructureRep(), strength)
       }
 
     case GoWithRuleBuilder(ruleID) =>
@@ -1997,39 +2017,44 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
         sender() ! Finished
       } else {
         log.debug("GoWithRuleBuilder. does not exists")
-        myrule.update_strength_value(initial.objects.toList, slippage_list())
-        val strength = myrule.total_strength
-        if (strength == 0.0) {
-          log.debug("the rule is incompatible with correspondences: Fizzle");
+        sender() ! GoWithRulBuilderResponse(slippageListShell)
+      }
+
+    case GoWithRuleBuilder2(ruleID, slippage_list: List[ConceptMappingRep]) =>
+      val myrule = structureRefs(ruleID).asInstanceOf[Rule]
+      myrule.update_strength_value(initial.objects.toList, slippage_list)
+      val strength = myrule.total_strength
+      if (strength == 0.0) {
+        log.debug("the rule is incompatible with correspondences: Fizzle");
+        sender() ! Finished
+      } else {
+        // fight against other rules
+        val anyLost = if (rule.isDefined){
+          log.debug("Fighting against existing rule");
+          log.debug("existing rule strength: "+ rule.get.total_strength);
+          log.debug("this rule strength: "+ rule.get.total_strength);
+          if (!rule_vs_rule(
+            myrule,1.0,rule.get,1.0, slippage_list)){
+            // lost the fight
+            true
+          }
+          else {
+            println("won!")
+            false
+          };
+        } else false
+
+        if (anyLost) {
+          println("lost the fight: fizzle!");
           sender() ! Finished
         } else {
-          // fight against other rules
-          val anyLost = if (rule.isDefined){
-            log.debug("Fighting against existing rule");
-            log.debug("existing rule strength: "+ rule.get.total_strength);
-            log.debug("this rule strength: "+ rule.get.total_strength);
-            if (!rule_vs_rule(
-              myrule,1.0,rule.get,1.0)){
-              // lost the fight
-              true
-            }
-            else {
-              println("won!")
-              false
-            };
-          } else false
-
-          if (anyLost) {
-            println("lost the fight: fizzle!");
-            sender() ! Finished
-          } else {
-            build_rule(myrule)
-            log.debug("building rule");
-            sender() ! Finished
-          }
-
+          build_rule(myrule)
+          log.debug("building rule");
+          sender() ! Finished
         }
+
       }
+
     case GoWithRuleTranslator(t) =>
 
       if (rule.isEmpty){
@@ -2064,9 +2089,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
         } else {
           log.debug("building translated rule!");
           log.debug("Slippages used in translation:");
-          val slippagesShell = slippage_list()
-
-          sender() ! GoWithRuleTranslatorResponse(slippagesShell)
+          sender() ! GoWithRuleTranslatorResponse(slippageListShell())
         }
       }
     case GoWithRuleTranslator2(slippage_list_rep) =>
@@ -2103,9 +2126,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     case GoWithImportantObjectCorrespondenceScout2 =>
       log.debug("GoWithImportantObjectCorrespondenceScout2")
       log.debug("will slippage_list:")
-      val sShell = slippage_list()
-      log.debug("did slippage_list: " + sShell)
-      sender() ! GoWithImportantObjectCorrespondenceScout2Response(sShell)
+      sender() ! GoWithImportantObjectCorrespondenceScout2Response(slippageListShell)
 
     // Codelet.java.1334 - 1369
     case GoWithImportantObjectCorrespondenceScout3(slippage_list_rep: List[ConceptMappingRep], s, t, o1) =>
@@ -2312,51 +2333,58 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
         sender() ! GoWithCorrespondenceBuilder4Response2(incompatible_group.map(_.groupRep()),internal_strength, supporting_correspondences)
       }
 
-    case GoWithCorrespondenceBuilder6(correponsdenceID, inccRep, incompatible_bondOpt, incompatible_group, internal_strength: Double,
-    supporting_correspondences:Map[String, Boolean]) =>
+    case GoWithCorrespondenceBuilder6(correponsdenceID) =>
       val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
       // if there is an incompatible rule, fight against it
       val incompat_ruleOpt: Option[Rule] = if (rule.isDefined && incompatible_rule_corr(rule.get,c)) {
         rule
       } else None
 
-      val anyLostFight = incompat_ruleOpt match {
+      incompat_ruleOpt match {
         case Some(r) =>
           log.debug("Fighting against incompatible Rule")
-          if (!(correspondence_vs_rule(
-            c,1.0,rule.get,1.0, internal_strength, supporting_correspondences))){
-            log.debug("lost: fizzle!");
-            true  // fizzle as it has lost
-          } else {
-            log.debug("won");
-            false
-          }
-        case None => false
+          sender() ! GoWithCorrespondenceBuilder6ResponseFight(r.uuid, slippageListShell())
+        case None =>
+          sender() ! GoWithCorrespondenceBuilder16ContinuePostFight
       }
-      if (anyLostFight) {
+
+    case GoWithCorrespondenceBuilder10Fight(correponsdenceID, internal_strength, supporting_correspondences, slippage_list) =>
+      val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
+      if (!(correspondence_vs_rule(
+        c,1.0,rule.get,1.0, internal_strength, supporting_correspondences, slippage_list))){
+        log.debug("lost: fizzle!");
         sender() ! Finished
       } else {
-        val incc = inccRep.map(crep => wsRefs(crep.uuid).asInstanceOf[Correspondence])
-        for (comp <- incc){
-          break_correspondence(comp)
-        }
-        // break incompatible group and bond if they exist
-        if (incompatible_bondOpt.isDefined) {
-          val incompatible_bond = wsRefs(incompatible_bondOpt.get.uuid).asInstanceOf[Bond]
-          break_bond(incompatible_bond)
-        }
-        if (incompatible_group.isDefined) {
-          val g = objectRefs(incompatible_group.get.uuid).asInstanceOf[Group]
-          break_group(g)
-        }
-        if (incompat_ruleOpt.isDefined) {
-          break_rule(incompat_ruleOpt.get);
-        }
-        log.debug("building correspondence");
-        addStructure(c)
-        c.build_correspondenceStep1()
-        sender() ! GoWithCorrespondenceBuilder6Response(c.correspondenceRep())
+        log.debug("won");
+        sender() ! GoWithCorrespondenceBuilder16ContinuePostFight
       }
+
+    case GoWithCorrespondenceBuilder10Continue(correponsdenceID, inccRep, incompatible_bondOpt, incompatible_group, incompat_ruleUUIDOpt) =>
+      val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
+
+      val incc = inccRep.map(crep => wsRefs(crep.uuid).asInstanceOf[Correspondence])
+      for (comp <- incc){
+        break_correspondence(comp)
+      }
+      // break incompatible group and bond if they exist
+      if (incompatible_bondOpt.isDefined) {
+        val incompatible_bond = wsRefs(incompatible_bondOpt.get.uuid).asInstanceOf[Bond]
+        break_bond(incompatible_bond)
+      }
+      if (incompatible_group.isDefined) {
+        val g = objectRefs(incompatible_group.get.uuid).asInstanceOf[Group]
+        break_group(g)
+      }
+      val incompat_ruleOpt = incompat_ruleUUIDOpt.map(ruuid => structureRefs(ruuid).asInstanceOf[Rule])
+
+      if (incompat_ruleOpt.isDefined) {
+        break_rule(incompat_ruleOpt.get);
+      }
+      log.debug("building correspondence");
+      addStructure(c)
+      c.build_correspondenceStep1()
+      sender() ! GoWithCorrespondenceBuilder6Response(c.correspondenceRep())
+
 
     // Second part of buid_correpondence
     case GoWithCorrespondenceBuilder7(correponsdenceID,accessory_concept_mapping_list) =>
@@ -2412,9 +2440,17 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
   }
 
+  private def slippageListShell() = {
+    val slipplage1_candidates = slipplage_list1_candidates();
+    val slipplage2_candidates = slipplage_list2_candidates();
+    val shell = SlippageListShell(slipplage1_candidates, slipplage2_candidates)
+    shell
+  }
+
   private def updateStructureStrengthValue(bondData: Map[String, Double],
                                            correspondenceData: Map[String, CorrespondenceUpdateStrengthData],
                                            groupData: Map[String, Double],
+                                           slippageRepList: List[ConceptMappingRep],
                                            ws: WorkspaceStructure) = {
     if (ws.isInstanceOf[Bond]) {
       val b = ws.asInstanceOf[Bond]
@@ -2427,7 +2463,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       c.update_strength_value(cData.internal_strength, workspaceCorrespondences(), cData.supporting_correspondences)
     } else if (ws.isInstanceOf[Rule]) {
       val r = ws.asInstanceOf[Rule]
-      r.update_strength_value(initial.objects.toList, slippage_list())
+      r.update_strength_value(initial.objects.toList, slippageRepList)
     } else if (ws.isInstanceOf[Group]) {
       val gr = ws.asInstanceOf[Group]
       gr.update_strength_value(groupData(gr.uuid))
@@ -2799,10 +2835,12 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
   def rule_vs_rule(s1: Rule,
                    w1: Double,
                    s2: Rule,
-                   w2: Double): Boolean = {
+                   w2: Double,
+                   slippage_list: List[ConceptMappingRep]
+                  ): Boolean = {
 
-    s1.update_strength_value(initial.objects.toList, slippage_list())
-    s2.update_strength_value(initial.objects.toList, slippage_list())
+    s1.update_strength_value(initial.objects.toList, slippage_list)
+    s2.update_strength_value(initial.objects.toList, slippage_list)
     complete_structure_vs_structure(s1,w1,s2,w2)
   }
 
@@ -2848,10 +2886,11 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
                              s2: Rule,
                              w2: Double,
                              internal_strength: Double,
-                             supporting_correspondences:Map[String, Boolean]
+                             supporting_correspondences:Map[String, Boolean],
+                             slippage_list: List[ConceptMappingRep]
                             ): Boolean = {
     s1.update_strength_value(internal_strength, workspaceCorrespondences(), supporting_correspondences)
-    s2.update_strength_value(initial.objects.toList, slippage_list())
+    s2.update_strength_value(initial.objects.toList, slippage_list)
     complete_structure_vs_structure(s1,w1,s2,w2)
   }
   def group_vs_bond(s1: Group,
@@ -2938,14 +2977,14 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
 
   // From workspace_formulas.java.26
-  def update_temperature(): Double = {
+  def update_temperature(slippage_list: List[ConceptMappingRep]): Double = {
     calculate_intra_string_unhappiness()
     calculate_inter_string_unhappiness()
     calculate_total_unhappiness()
     log.debug("intra_string_unhappiness " + intra_string_unhappiness + " inter_string_unhappiness " + inter_string_unhappiness + " total_unhappiness " + total_unhappiness);
 
     val rule_weakness = if (rule.isDefined){
-      rule.get.update_strength_value(initial.objects.toList, slippage_list());
+      rule.get.update_strength_value(initial.objects.toList, slippage_list)
       100.0-rule.get.total_strength
     } else 100.0
     log.debug("rule_weakness " +rule_weakness);
@@ -2986,28 +3025,28 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
   }
 
 
-  def slippage_list(): SlippageListShell = {
+  def slipplage_list1_candidates(): List[ConceptMappingRep] = {
     //Vector sl = new Vector();
-    val sl = if (changed_object.isDefined && changed_object.get.correspondence.isDefined) {
+
+    if (changed_object.isDefined && changed_object.get.correspondence.isDefined) {
       val c = changed_object.get.correspondence.get;
 
       val cml = c.concept_mapping_list
-      log.debug("slippage_list 1 " +c + " cml " +  cml)
+      log.debug("slippage_list 1 " + c + " cml " + cml)
       cml
     } else List.empty[ConceptMappingRep]
+  }
 
-    val sl2 = initial.objects.toList.map(wo => {
+    def slipplage_list2_candidates(): List[ConceptMappingRep] = {
+    initial.objects.toList.map(wo => {
       if (wo.correspondence.isDefined){
         val c =  wo.correspondence.get
-        //val cml = c.slippageCandidates()
         val cml = c.slippageCandidates()
         log.debug("slippage_list 2 " +wo.correspondence.get + " cml " +  cml)
 
         Some(cml)
       } else None
     }).flatten.flatten
-
-    SlippageListShell(sl,sl2)
   }
 
 

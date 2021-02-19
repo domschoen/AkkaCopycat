@@ -3,10 +3,13 @@ package models.codelet
 import akka.event.LoggingReceive
 import akka.actor.ActorRef
 import models.Coderack.PostRuleBuilder
+import models.Slipnet.SlipnetCompleteSlippageList
+import models.Workspace.SlippageListShell
 import models.WorkspaceStructure.WorkspaceStructureRep
 
 object RuleStrengthTester {
-  case class GoWithRuleStrengthTesterResponse(rule: WorkspaceStructureRep, strength: Double)
+  case class GoWithRuleStrengthTesterResponse(slippageListShell: SlippageListShell)
+  case class GoWithRuleStrengthTesterResponse2(rule: WorkspaceStructureRep, strength: Double)
 }
 class RuleStrengthTester(urgency: Int,
                          workspace: ActorRef,
@@ -17,8 +20,15 @@ class RuleStrengthTester(urgency: Int,
   import models.Coderack.ChooseAndRun
   import models.Coderack.ProposeCorrespondence
   import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
-  import models.Workspace.GoWithRuleStrengthTester
-  import RuleStrengthTester.GoWithRuleStrengthTesterResponse
+  import models.Workspace.{
+    GoWithRuleStrengthTester,
+    GoWithRuleStrengthTester2
+  }
+  import models.Slipnet.SlipnetCompleteSlippageListResponse
+  import RuleStrengthTester.{
+    GoWithRuleStrengthTesterResponse,
+    GoWithRuleStrengthTesterResponse2
+  }
   var runTemperature: Double = 0.0
   var strength : Double = 0.0
 
@@ -31,9 +41,15 @@ class RuleStrengthTester(urgency: Int,
       coderack = sender()
       temperature ! Register(self)
       runTemperature = t
-      workspace ! GoWithRuleStrengthTester(runTemperature, ruleID)
+      workspace ! GoWithRuleStrengthTester
 
-    case GoWithRuleStrengthTesterResponse(rule, strength) =>
+    case GoWithRuleStrengthTesterResponse(slippageListShell) =>
+      slipnet ! SlipnetCompleteSlippageList(slippageListShell)
+
+    case SlipnetCompleteSlippageListResponse(slippage_list_rep) =>
+      workspace ! GoWithRuleStrengthTester2(runTemperature, ruleID, slippage_list_rep)
+
+    case GoWithRuleStrengthTesterResponse2(rule, strength) =>
       coderack ! PostRuleBuilder(ruleID(),strength)
 
 

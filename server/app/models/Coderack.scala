@@ -22,7 +22,7 @@ import play.api.Play.current
 import javax.inject._
 import models.SlipNode.SlipNodeRep
 import models.Temperature.CheckClamped
-import models.Workspace.{GetNumCodeletsResponse, Initialize, UpdateEverythingFollowUp}
+import models.Workspace.{GetNumCodeletsResponse, Initialize, SlippageListShell, UpdateEverythingFollowUp}
 import models.codelet.CodeletType
 import models.codelet.Codelet
 import play.api.Configuration
@@ -63,7 +63,7 @@ object Coderack {
   case class PostGroupBuilder(groupID: String, strength: Double)
   case class PostCorrespondenceBuilder(correspondenceID: String, strength: Double)
   case class PostRuleBuilder(ruleID: String, strength: Double)
-  case class PostCodelets(codeletToPost: List[(String,Either[Double, Int], Option[String], Option[Double])], t: Double)
+  case class PostCodelets(codeletToPost: List[(String,Either[Double, Int], Option[String], Option[Double])], slippageListShell: SlippageListShell, t: Double)
   case class GetNumCodelets(t:Double)
 
   case class CodeletWrapper (
@@ -391,7 +391,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
           self ! Post(newCodelet,None)
           sender() ! Finished
 
-        case PostCodelets(codeletToPost, t) =>
+        case PostCodelets(codeletToPost, slippageListShell, t) =>
           for ((st, rawUrgency, argOpt, rndOpt) <- codeletToPost) {
             val codeletType = Codelet.codeletTypeWithString(st)
             val urgency = rawUrgency match {
@@ -403,7 +403,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
             val newCodelet = createCodelet(codeletType, urgency, argOpt)
             self ! Post(newCodelet, rndOpt)
           }
-          slipnet ! models.Slipnet.UpdateEverything(t)
+          slipnet ! models.Slipnet.UpdateEverything(slippageListShell, t)
 
 
 

@@ -1,651 +1,289 @@
-update_Everything 49
-1T: 53.01841442173005
+update_Everything 33
+1T: 57.78693683509205
 Workspace structure update_strength_value description(letter) of letter (1)1 in initial string
+f69fbb09-b559-433b-b9f2-a3bd49ddd4ef description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(A) of letter (1)1 in initial string
+35413fe5-a579-43ba-a616-ddea490d3cb8 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(leftmost) of letter (1)1 in initial string
+dba61d2a-3fa7-420c-8021-d840ed67956f description(leftmost) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(letter) of letter (2)2 in initial string
+afb3a1fc-aef7-4885-867b-cde3ccb15a93 description(letter) of letter (2)2 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(B) of letter (2)2 in initial string
+d0b8d677-4138-468f-a18f-2ce183fc9f66 description(B) of letter (2)2 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(middle) of letter (2)2 in initial string
+bddd1590-3f76-45da-99e5-44eef2cb70a0 description(middle) of letter (2)2 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(letter) of letter (3)3 in initial string
+20dd67b1-e74f-4943-886e-47caa6c4c24f description(letter) of letter (3)3 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(C) of letter (3)3 in initial string
+5c515f6d-9c75-4f6a-85bc-e851eec3b75b description(C) of letter (3)3 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(rightmost) of letter (3)3 in initial string
+b490c9b3-a2c2-44ea-aa0e-c94d5963641e description(rightmost) of letter (3)3 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(letter) of letter (1)1 in modified string
+4efd8517-059f-469d-9acb-916873bccc17 description(letter) of letter (1)1 in modified string internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(A) of letter (1)1 in modified string
+74b6fb82-90d8-4dd0-8cd8-f0e133ed0911 description(A) of letter (1)1 in modified string internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(leftmost) of letter (1)1 in modified string
+23bf84f7-049b-46c8-bbd4-5524ca57ea21 description(leftmost) of letter (1)1 in modified string internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(letter) of letter (2)2 in modified string
+fe52b7d2-b667-4e1b-a457-55037442356a description(letter) of letter (2)2 in modified string internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(B) of letter (2)2 in modified string
+f741dd7f-38fe-4813-ad8d-2561b2ba7804 description(B) of letter (2)2 in modified string internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(middle) of letter (2)2 in modified string
+21f67bd8-604c-4d27-b134-107e2d761ac1 description(middle) of letter (2)2 in modified string internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(letter) of letter (3)3 in modified string
+46737e16-4349-49e6-a0dc-e785dc8911ee description(letter) of letter (3)3 in modified string internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(D) of letter (3)3 in modified string
+c4f0f531-bde6-4d49-acdf-538251a2370e description(D) of letter (3)3 in modified string internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(rightmost) of letter (3)3 in modified string
+38b7658f-a3c5-4bab-a0a5-b1aee7928637 description(rightmost) of letter (3)3 in modified string internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(letter) of letter (1)1 in target string
-Workspace structure update_strength_value description(M) of letter (1)1 in target string
+be7b123c-9acf-4d88-b7c5-5b831ddc1215 description(letter) of letter (1)1 in target string internal_strength 50.0 external_strength 100.0 total strength:75.0
+Workspace structure update_strength_value description(C) of letter (1)1 in target string
+a5de85fe-178c-407e-a072-e54ee6237db4 description(C) of letter (1)1 in target string internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(leftmost) of letter (1)1 in target string
+93488c9c-8ad7-42f4-9393-abbf8d56c4e1 description(leftmost) of letter (1)1 in target string internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(letter) of letter (2)2 in target string
-Workspace structure update_strength_value description(R) of letter (2)2 in target string
+0757a43e-7a67-4da8-b2df-3b5a41b1a060 description(letter) of letter (2)2 in target string internal_strength 50.0 external_strength 100.0 total strength:75.0
+Workspace structure update_strength_value description(D) of letter (2)2 in target string
+44f1b2aa-33aa-4059-8f53-eac07b378ddb description(D) of letter (2)2 in target string internal_strength 50.0 external_strength 100.0 total strength:75.0
+Workspace structure update_strength_value description(middle) of letter (2)2 in target string
+0e2cce5c-bb3e-41ea-8b22-697656bef562 description(middle) of letter (2)2 in target string internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(letter) of letter (3)3 in target string
-Workspace structure update_strength_value description(R) of letter (3)3 in target string
-Workspace structure update_strength_value description(letter) of letter (4)4 in target string
-Workspace structure update_strength_value description(J) of letter (4)4 in target string
-Workspace structure update_strength_value description(letter) of letter (5)5 in target string
-Workspace structure update_strength_value description(J) of letter (5)5 in target string
-Workspace structure update_strength_value description(letter) of letter (6)6 in target string
-Workspace structure update_strength_value description(J) of letter (6)6 in target string
-Workspace structure update_strength_value description(rightmost) of letter (6)6 in target string
-Workspace structure update_strength_value sm bond between letter (5)5 and letter (6)6
-string.bonds.size() 3
-Workspace structure update_strength_value sm bond between letter (4)4 and letter (5)5
-string.bonds.size() 3
-Workspace structure update_strength_value sm bond between letter (2)2 and letter (3)3
-string.bonds.size() 3
-Workspace structure update_strength_value replace letter category of rightmost letter by D
-Rule calculate_total_strength 1e3a0277-0f4d-4689-9dbb-c7e7d9cd688c rule: replace letter category of rightmost letter by D total_strength 88.12908230365319
-Workspace structure update_strength_value Correspondence between letter (3)3 and letter (6)6
-Workspace structure update_strength_value pd bond between letter (2)2 and letter (3)3
-string.bonds.size() 2
-Workspace structure update_strength_value group (2-3)
-Workspace structure update_strength_value description(group) of group (2-3) in target string
-Workspace structure update_strength_value description(smg) of group (2-3) in target string
-Workspace structure update_strength_value description(R) of group (2-3) in target string
+83c1e5ff-77fe-4379-9e1f-50ae503eb45d description(letter) of letter (3)3 in target string internal_strength 50.0 external_strength 100.0 total strength:75.0
+Workspace structure update_strength_value description(E) of letter (3)3 in target string
+5aba688e-f719-4acf-b94c-502c5d2f50dc description(E) of letter (3)3 in target string internal_strength 50.0 external_strength 100.0 total strength:75.0
+Workspace structure update_strength_value description(rightmost) of letter (3)3 in target string
+b3a53935-a576-4548-80be-51a6bc0eb002 description(rightmost) of letter (3)3 in target string internal_strength 50.0 external_strength 100.0 total strength:75.0
+Workspace structure update_strength_value Correspondence between letter (3)3 and letter (3)3
+d5651014-f3fb-4ef6-b29f-07887e1624d1 Correspondence between letter (3)3 and letter (3)3 internal_strength 80.0 external_strength 79.9997952 total strength:79.99995904
 Workspace structure update_strength_value Correspondence between letter (1)1 and letter (1)1
-Workspace structure update_strength_value pd bond between letter (1)1 and letter (2)2
-string.bonds.size() 2
-Workspace structure update_strength_value group (4-6)
-Workspace structure update_strength_value description(group) of group (4-6) in target string
-Workspace structure update_strength_value description(smg) of group (4-6) in target string
-Workspace structure update_strength_value description(J) of group (4-6) in target string
-Workspace structure update_strength_value description(rightmost) of group (4-6) in target string
-2T: 53.01841442173005
+8b015401-9a90-42d9-801f-1f57e0a76e40 Correspondence between letter (1)1 and letter (1)1 internal_strength 80.0 external_strength 79.99995904 total strength:79.99999180799999
+Workspace structure update_strength_value replace letter category of rightmost letter by D
+slippage_list 1 Correspondence between letter (3)3 and letter (3)3 cml [letter -> letter, rightmost -> rightmost]
+slippage_list 2 Correspondence between letter (1)1 and letter (1)1 cml []
+slippage_list 2 Correspondence between letter (3)3 and letter (3)3 cml []
+50a00347-893f-4c63-a979-6554f6b4ddc9 replace letter category of rightmost letter by D internal_strength 88.12908230365319 external_strength 88.12908230365319 total strength:88.12908230365319
+Rule calculate_total_strength rule: replace letter category of rightmost letter by D total_strength 88.12908230365319
+Workspace structure update_strength_value sc bond between letter (1)1 and letter (2)2
+f380962b-9da6-4f84-a0a7-38e8cca4213a sc bond between letter (1)1 and letter (2)2 internal_strength 95.89577675789482 external_strength 70.71067811865476 total strength:94.862124085996
+Workspace structure update_strength_value sc bond between letter (2)2 and letter (3)3
+f229e0e0-b2a9-497e-b61d-e429415af688 sc bond between letter (2)2 and letter (3)3 internal_strength 95.89577675789482 external_strength 0.0 total strength:91.96
+Workspace structure update_strength_value sc bond between letter (2)2 and letter (3)3
+3005ec0e-cac0-4a0a-96c7-13a1f653d304 sc bond between letter (2)2 and letter (3)3 internal_strength 95.89577675789482 external_strength 70.71067811865476 total strength:94.862124085996
+2T: 57.78693683509205
 update the the object values of all objects in the workspace
-update_object_value description(letter) of letter (1)1 in initial string d.description_type.activation 50.0 d.descriptor.activation 25.0
+update_object_value description(letter) of letter (1)1 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(A) of letter (1)1 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(leftmost) of letter (1)1 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 201.25 group.isDefined false changed false class models.Letter  d5ccbd58-11b1-4e4a-8b36-9800e1187c21 this letter (1)1
-update_object_value : raw_importance 201.25
+update_object_value 300.0 group.isDefined false changed false
+update_object_value : raw_importance 300.0
 update_object_value : bondstrengthRaw 94.862124085996
 update_object_value : intra_string_happiness 15.810354014332667
-update_object_value description(letter) of letter (2)2 in initial string d.description_type.activation 50.0 d.descriptor.activation 25.0
+update_object_value description(letter) of letter (2)2 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(B) of letter (2)2 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(middle) of letter (2)2 in initial string d.description_type.activation 100.0 d.descriptor.activation 3.125
-update_object_value 104.375 group.isDefined false changed false class models.Letter  ae338daf-0cad-413e-999f-beee55ff7186 this letter (2)2
-update_object_value : raw_importance 104.375
+update_object_value description(middle) of letter (2)2 in initial string d.description_type.activation 100.0 d.descriptor.activation 25.0
+update_object_value 225.0 group.isDefined false changed false
+update_object_value : raw_importance 225.0
 update_object_value : bondstrengthRaw 189.724248171992
 update_object_value : intra_string_happiness 31.620708028665334
-update_object_value description(letter) of letter (3)3 in initial string d.description_type.activation 50.0 d.descriptor.activation 25.0
+update_object_value description(letter) of letter (3)3 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(C) of letter (3)3 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(rightmost) of letter (3)3 in initial string d.description_type.activation 100.0 d.descriptor.activation 80.0
-update_object_value 181.25 group.isDefined false changed true class models.Letter  1ff5a5fd-e463-4fd3-8b68-50d7683a5e36 this letter (3)3
-update_object_value : raw_importance 362.5
+update_object_value description(rightmost) of letter (3)3 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value 300.0 group.isDefined false changed true
+update_object_value : raw_importance 600.0
 update_object_value : bondstrengthRaw 94.862124085996
 update_object_value : intra_string_happiness 15.810354014332667
-update_object_value description(letter) of letter (1)1 in modified string d.description_type.activation 50.0 d.descriptor.activation 25.0
+update_object_value description(letter) of letter (1)1 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(A) of letter (1)1 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(leftmost) of letter (1)1 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 201.25 group.isDefined false changed false class models.Letter  100baca8-f2d3-433e-9fc1-38d910e4d76f this letter (1)1
-update_object_value : raw_importance 201.25
+update_object_value 300.0 group.isDefined false changed false
+update_object_value : raw_importance 300.0
 update_object_value : bondstrengthRaw 0.0
 update_object_value : intra_string_happiness 0.0
-update_object_value description(letter) of letter (2)2 in modified string d.description_type.activation 50.0 d.descriptor.activation 25.0
+update_object_value description(letter) of letter (2)2 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(B) of letter (2)2 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(middle) of letter (2)2 in modified string d.description_type.activation 100.0 d.descriptor.activation 3.125
-update_object_value 104.375 group.isDefined false changed false class models.Letter  71bfcd9e-748e-4169-be11-9cce206a523e this letter (2)2
-update_object_value : raw_importance 104.375
+update_object_value description(middle) of letter (2)2 in modified string d.description_type.activation 100.0 d.descriptor.activation 25.0
+update_object_value 225.0 group.isDefined false changed false
+update_object_value : raw_importance 225.0
 update_object_value : bondstrengthRaw 0.0
 update_object_value : intra_string_happiness 0.0
-update_object_value description(letter) of letter (3)3 in modified string d.description_type.activation 50.0 d.descriptor.activation 25.0
+update_object_value description(letter) of letter (3)3 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(D) of letter (3)3 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(rightmost) of letter (3)3 in modified string d.description_type.activation 100.0 d.descriptor.activation 80.0
-update_object_value 181.25 group.isDefined false changed false class models.Letter  d2eb6cdf-5486-43a5-9e02-ff23e5a3c559 this letter (3)3
-update_object_value : raw_importance 181.25
+update_object_value description(rightmost) of letter (3)3 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value 300.0 group.isDefined false changed false
+update_object_value : raw_importance 300.0
 update_object_value : bondstrengthRaw 0.0
 update_object_value : intra_string_happiness 0.0
-update_object_value description(letter) of letter (1)1 in target string d.description_type.activation 50.0 d.descriptor.activation 25.0
-update_object_value description(M) of letter (1)1 in target string d.description_type.activation 100.0 d.descriptor.activation 53.0
+update_object_value description(letter) of letter (1)1 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(C) of letter (1)1 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(leftmost) of letter (1)1 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 154.25 group.isDefined false changed false class models.Letter  71d07d98-927f-44bf-b7bc-910974197a85 this letter (1)1
-update_object_value : raw_importance 154.25
+update_object_value 300.0 group.isDefined false changed false
+update_object_value : raw_importance 300.0
 update_object_value : bondstrengthRaw 0.0
 update_object_value : intra_string_happiness 0.0
-update_object_value description(letter) of letter (2)2 in target string d.description_type.activation 50.0 d.descriptor.activation 25.0
-update_object_value description(R) of letter (2)2 in target string d.description_type.activation 100.0 d.descriptor.activation 17.75
-update_object_value 19.0 group.isDefined true changed false class models.Letter  a9d18945-47cb-4bc8-8abf-cdf17d926eea this letter (2)2
-update_object_value : raw_importance 12.666666666666666
-update_object_value : group.get.total_strength 86.41722820996007 uuid 6b947999-76ab-41ea-9c28-450c99c96298
-update_object_value : intra_string_happiness 86.41722820996007
-update_object_value description(letter) of letter (3)3 in target string d.description_type.activation 50.0 d.descriptor.activation 25.0
-update_object_value description(R) of letter (3)3 in target string d.description_type.activation 100.0 d.descriptor.activation 17.75
-update_object_value 19.0 group.isDefined true changed false class models.Letter  c6df55c0-2d4d-4746-a796-b090f4f9a90e this letter (3)3
-update_object_value : raw_importance 12.666666666666666
-update_object_value : group.get.total_strength 86.41722820996007 uuid 6b947999-76ab-41ea-9c28-450c99c96298
-update_object_value : intra_string_happiness 86.41722820996007
-update_object_value description(letter) of letter (4)4 in target string d.description_type.activation 50.0 d.descriptor.activation 25.0
-update_object_value description(J) of letter (4)4 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 101.25 group.isDefined true changed false class models.Letter  96b0c846-e6ab-4ece-abf9-1e8d46dda0cd this letter (4)4
-update_object_value : raw_importance 67.5
-update_object_value : group.get.total_strength 94.30395420073364 uuid 93fc5c6a-6d89-4f71-b5bd-2497510a3bdb
-update_object_value : intra_string_happiness 94.30395420073364
-update_object_value description(letter) of letter (5)5 in target string d.description_type.activation 50.0 d.descriptor.activation 25.0
-update_object_value description(J) of letter (5)5 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 101.25 group.isDefined true changed false class models.Letter  b835fd08-a8cc-41ac-b366-9b8cbc436f30 this letter (5)5
-update_object_value : raw_importance 67.5
-update_object_value : group.get.total_strength 94.30395420073364 uuid 93fc5c6a-6d89-4f71-b5bd-2497510a3bdb
-update_object_value : intra_string_happiness 94.30395420073364
-update_object_value description(letter) of letter (6)6 in target string d.description_type.activation 50.0 d.descriptor.activation 25.0
-update_object_value description(J) of letter (6)6 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(rightmost) of letter (6)6 in target string d.description_type.activation 100.0 d.descriptor.activation 80.0
-update_object_value 181.25 group.isDefined true changed false class models.Letter  6e1ad0f4-187e-4070-bd6b-8bf2059b2f2f this letter (6)6
-update_object_value : raw_importance 120.83333333333333
-update_object_value : group.get.total_strength 94.30395420073364 uuid 93fc5c6a-6d89-4f71-b5bd-2497510a3bdb
-update_object_value : intra_string_happiness 94.30395420073364
-update_object_value description(group) of group (2-3) in target string d.description_type.activation 50.0 d.descriptor.activation 20.0
-update_object_value description(smg) of group (2-3) in target string d.description_type.activation 12.5 d.descriptor.activation 50.0
-update_object_value description(R) of group (2-3) in target string d.description_type.activation 100.0 d.descriptor.activation 17.75
-update_object_value 21.25 group.isDefined false changed false class models.Group  6b947999-76ab-41ea-9c28-450c99c96298 this group (2-3)
-update_object_value : raw_importance 21.25
-update_object_value : bondstrengthRaw 0.0
-update_object_value : intra_string_happiness 0.0
-update_object_value description(group) of group (4-6) in target string d.description_type.activation 50.0 d.descriptor.activation 20.0
-update_object_value description(smg) of group (4-6) in target string d.description_type.activation 12.5 d.descriptor.activation 50.0
-update_object_value description(J) of group (4-6) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(rightmost) of group (4-6) in target string d.description_type.activation 100.0 d.descriptor.activation 80.0
-update_object_value 183.5 group.isDefined false changed false class models.Group  93fc5c6a-6d89-4f71-b5bd-2497510a3bdb this group (4-6)
-update_object_value : raw_importance 183.5
-update_object_value : bondstrengthRaw 0.0
-update_object_value : intra_string_happiness 0.0
-3T: 53.01841442173005
+update_object_value description(letter) of letter (2)2 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(D) of letter (2)2 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(middle) of letter (2)2 in target string d.description_type.activation 100.0 d.descriptor.activation 25.0
+update_object_value 225.0 group.isDefined false changed false
+update_object_value : raw_importance 225.0
+update_object_value : bondstrengthRaw 91.96
+update_object_value : intra_string_happiness 15.326666666666666
+update_object_value description(letter) of letter (3)3 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(E) of letter (3)3 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(rightmost) of letter (3)3 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value 300.0 group.isDefined false changed false
+update_object_value : raw_importance 300.0
+update_object_value : bondstrengthRaw 91.96
+update_object_value : intra_string_happiness 15.326666666666666
+3T: 57.78693683509205
 update the relative importances of initial and target strings
-update_relative_importance 668.125
+update_relative_importance 1125.0
 ob letter (1)1
-2ob.relative_importance 0.30121608980355474
+2ob.relative_importance 0.26666666666666666
 ob letter (2)2
-2ob.relative_importance 0.15622076707202995
+2ob.relative_importance 0.2
 ob letter (3)3
-2ob.relative_importance 0.5425631431244153
-update_relative_importance 640.1666666666666
+2ob.relative_importance 0.5333333333333333
+update_relative_importance 825.0
 ob letter (1)1
-2ob.relative_importance 0.2409528768549857
+2ob.relative_importance 0.36363636363636365
 ob letter (2)2
-2ob.relative_importance 0.01978651392866441
+2ob.relative_importance 0.2727272727272727
 ob letter (3)3
-2ob.relative_importance 0.01978651392866441
-ob letter (4)4
-2ob.relative_importance 0.10544129133038271
-ob letter (5)5
-2ob.relative_importance 0.10544129133038271
-ob letter (6)6
-2ob.relative_importance 0.18875292892475917
-ob group (2-3)
-2ob.relative_importance 0.033194480604009376
-ob group (4-6)
-2ob.relative_importance 0.2866441030981515
-4T: 53.01841442173005
+2ob.relative_importance 0.36363636363636365
+4T: 57.78693683509205
 update the intra string unhappiness of initial and target strings
-5T: 53.01841442173005
+5T: 57.78693683509205
 post_top_down_codelets
-Workspace rule Some(1e3a0277-0f4d-4689-9dbb-c7e7d9cd688c) rule: Some(replace letter category of rightmost letter by D) total_strength Some(88.12908230365319) total_weakness Some(29.552873137276137)
-Post Top/Bottom Codelets codeletsSize 88
+Workspace rule replace letter category of rightmost letter by D total_weakness 88.12908230365319
+Post Top/Bottom Codelets codeletsSize 49
 >>>> post_top_down_codelets top-down-bond-scout--direction
-rough_num_of_objects. bond 6
-Random rndseed=1904
-Random rndseed=1905
-prob 0.8011131434302416 num 3
-Random rndseed=1906
-post_top_down_codelets rawUrgency 50.0 count 88
+rough_num_of_objects. bond 2
+Random rndseed=355
+Random rndseed=356
+prob 0.9807101449275362 num 2
+Random rndseed=357
+post_top_down_codelets rawUrgency 50.0 count 49
 create codelet top-down-bond-scout--direction
-Post Codelet codelets size 89
-Random rndseed=1907
-post_top_down_codelets rawUrgency 50.0 count 89
+Post Codelet codelets size 50
+Random rndseed=358
+post_top_down_codelets rawUrgency 50.0 count 50
 create codelet top-down-bond-scout--direction
-Post Codelet codelets size 90
-Random rndseed=1908
-post_top_down_codelets rawUrgency 50.0 count 90
-create codelet top-down-bond-scout--direction
-Post Codelet codelets size 91
+Post Codelet codelets size 51
 >>>> post_top_down_codelets top-down-group-scout--direction
-Random rndseed=1909
-Random rndseed=1910
-prob 0.8011131434302416 num 3
-Random rndseed=1911
-post_top_down_codelets rawUrgency 50.0 count 91
+Random rndseed=359
+Random rndseed=360
+prob 0.9807101449275362 num 3
+Random rndseed=361
+post_top_down_codelets rawUrgency 50.0 count 51
 create codelet top-down-group-scout--direction
-Post Codelet codelets size 92
-Random rndseed=1912
-post_top_down_codelets rawUrgency 50.0 count 92
+Post Codelet codelets size 52
+Random rndseed=362
+post_top_down_codelets rawUrgency 50.0 count 52
 create codelet top-down-group-scout--direction
-Post Codelet codelets size 93
-Random rndseed=1913
-post_top_down_codelets rawUrgency 50.0 count 93
+Post Codelet codelets size 53
+Random rndseed=363
+post_top_down_codelets rawUrgency 50.0 count 53
 create codelet top-down-group-scout--direction
-Post Codelet codelets size 94
+Post Codelet codelets size 54
 >>>> post_top_down_codelets top-down-bond-scout--category
-rough_num_of_objects. bond 6
-Random rndseed=1914
-Random rndseed=1915
-prob 0.8011131434302416 num 3
-Random rndseed=1916
-post_top_down_codelets rawUrgency 50.0 count 94
+rough_num_of_objects. bond 2
+Random rndseed=364
+prob 0.9807101449275362 num 1
+Random rndseed=365
+post_top_down_codelets rawUrgency 50.0 count 54
 create codelet top-down-bond-scout--category
-Post Codelet codelets size 95
-Random rndseed=1917
-post_top_down_codelets rawUrgency 50.0 count 95
-create codelet top-down-bond-scout--category
-Post Codelet codelets size 96
-Random rndseed=1918
-post_top_down_codelets rawUrgency 50.0 count 96
-create codelet top-down-bond-scout--category
-Post Codelet codelets size 97
->>>> post_top_down_codelets top-down-bond-scout--category
-rough_num_of_objects. bond 6
-Random rndseed=1919
-Random rndseed=1920
-prob 0.8011131434302416 num 3
-Random rndseed=1921
-Random rndseed=1922
-post_top_down_codelets rawUrgency 50.0 count 97
-create codelet top-down-bond-scout--category
-Post Codelet codelets size 98
-Random rndseed=1923
-post_top_down_codelets rawUrgency 50.0 count 98
-create codelet top-down-bond-scout--category
-Post Codelet codelets size 99
->>>> post_top_down_codelets top-down-group-scout--category
-Random rndseed=1924
-Random rndseed=1925
-prob 0.8011131434302416 num 3
-Random rndseed=1926
-post_top_down_codelets rawUrgency 50.0 count 99
-create codelet top-down-group-scout--category
-Post Codelet codelets size 100
-Random rndseed=1927
-post_top_down_codelets rawUrgency 50.0 count 100
-create codelet top-down-group-scout--category
-Post Codelet codelets size 101
-Post. codelets.size > 100
-Random rndseed=1928
-Random rndseed=1929
->>>> post_top_down_codelets top-down-group-scout--category
-Random rndseed=1930
-Random rndseed=1931
-prob 0.8011131434302416 num 3
-Random rndseed=1932
-Random rndseed=1933
-post_top_down_codelets rawUrgency 50.0 count 100
-create codelet top-down-group-scout--category
-Post Codelet codelets size 101
-Post. codelets.size > 100
-Random rndseed=1934
-Random rndseed=1935
-post_top_down_codelets rawUrgency 50.0 count 100
-create codelet top-down-group-scout--category
-Post Codelet codelets size 101
-Post. codelets.size > 100
-Random rndseed=1936
+Post Codelet codelets size 55
 >>>> post_top_down_codelets top-down-description-scout
-prob 0.28109522677943133 num 1
-Random rndseed=1937
+prob 0.33393300687829186 num 1
+Random rndseed=366
 ------------------------ post_bottom_up_codelets
-get_bottom_up_codelets bottom-up-description-scout
-get_bottom_up_codelets prob 0.28109522677943133 num 1
-Random rndseed=1938
->>>> get_bottom_up_codelets bottom-up-description-scout rnd 0.645 prob 0.28109522677943133 t 53.01841442173005 index -1
-get_bottom_up_codelets bottom-up-bond-scout
-rough_num_of_objects. bond 6
-Random rndseed=1939
-Random rndseed=1940
-get_bottom_up_codelets prob 0.8011131434302416 num 3
-Random rndseed=1941
->>>> get_bottom_up_codelets bottom-up-bond-scout rnd 0.979 prob 0.8011131434302416 t 53.01841442173005 index -1
-Random rndseed=1942
->>>> get_bottom_up_codelets bottom-up-bond-scout rnd 0.663 prob 0.8011131434302416 t 53.01841442173005 index -1
-Post Codelet codelets size 101
-Post. codelets.size > 100
-Random rndseed=1943
-Random rndseed=1944
->>>> get_bottom_up_codelets bottom-up-bond-scout rnd 0.181 prob 0.8011131434302416 t 53.01841442173005 index -1
-Post Codelet codelets size 101
-Post. codelets.size > 100
-Random rndseed=1945
-get_bottom_up_codelets group-scout--whole-string
-Random rndseed=1946
-Random rndseed=1947
-get_bottom_up_codelets prob 0.8011131434302416 num 3
-Random rndseed=1948
->>>> get_bottom_up_codelets group-scout--whole-string rnd 0.305 prob 0.8011131434302416 t 53.01841442173005 index -1
-Post Codelet codelets size 101
-Post. codelets.size > 100
-Random rndseed=1949
-Random rndseed=1950
->>>> get_bottom_up_codelets group-scout--whole-string rnd 0.308 prob 0.8011131434302416 t 53.01841442173005 index -1
-Post Codelet codelets size 101
-Post. codelets.size > 100
-Random rndseed=1951
-Random rndseed=1952
->>>> get_bottom_up_codelets group-scout--whole-string rnd 0.894 prob 0.8011131434302416 t 53.01841442173005 index -1
-get_bottom_up_codelets bottom-up-correspondence-scout
-Random rndseed=1953
-Random rndseed=1954
-get_bottom_up_codelets prob 0.4649926286312754 num 3
-Random rndseed=1955
->>>> get_bottom_up_codelets bottom-up-correspondence-scout rnd 0.105 prob 0.4649926286312754 t 53.01841442173005 index -1
-Post Codelet codelets size 101
-Post. codelets.size > 100
-Random rndseed=1956
-Random rndseed=1957
->>>> get_bottom_up_codelets bottom-up-correspondence-scout rnd 0.462 prob 0.4649926286312754 t 53.01841442173005 index -1
-Post Codelet codelets size 101
-Post. codelets.size > 100
-Random rndseed=1958
-Random rndseed=1959
->>>> get_bottom_up_codelets bottom-up-correspondence-scout rnd 0.392 prob 0.4649926286312754 t 53.01841442173005 index -1
-Post Codelet codelets size 101
-Post. codelets.size > 100
-Random rndseed=1960
-get_bottom_up_codelets important-object-correspondence-scout
-Random rndseed=1961
-Random rndseed=1962
-get_bottom_up_codelets prob 0.4649926286312754 num 3
-Random rndseed=1963
->>>> get_bottom_up_codelets important-object-correspondence-scout rnd 0.413 prob 0.4649926286312754 t 53.01841442173005 index -1
-Post Codelet codelets size 101
-Post. codelets.size > 100
-Random rndseed=1964
-Random rndseed=1965
->>>> get_bottom_up_codelets important-object-correspondence-scout rnd 0.86 prob 0.4649926286312754 t 53.01841442173005 index -1
-Random rndseed=1966
->>>> get_bottom_up_codelets important-object-correspondence-scout rnd 0.178 prob 0.4649926286312754 t 53.01841442173005 index -1
-Post Codelet codelets size 101
-Post. codelets.size > 100
-Random rndseed=1967
-get_bottom_up_codelets replacement-finder
-get_bottom_up_codelets prob 0.0 num 0
-get_bottom_up_codelets rule-scout
+Random rndseed=367
+>>>> get_bottom_up_codelets bottom-up-description-scout rnd 0.065 prob 0.33393300687829186 t 57.78693683509205 index -1
+Post Codelet codelets size 56
+rough_num_of_objects. bond 2
+Random rndseed=368
+Random rndseed=369
+Random rndseed=370
+>>>> get_bottom_up_codelets bottom-up-bond-scout rnd 0.945 prob 0.9807101449275362 t 57.78693683509205 index -1
+Post Codelet codelets size 57
+Random rndseed=371
+>>>> get_bottom_up_codelets bottom-up-bond-scout rnd 0.78 prob 0.9807101449275362 t 57.78693683509205 index -1
+Post Codelet codelets size 58
+Random rndseed=372
+>>>> get_bottom_up_codelets bottom-up-bond-scout rnd 0.105 prob 0.9807101449275362 t 57.78693683509205 index -1
+Post Codelet codelets size 59
+Random rndseed=373
+Random rndseed=374
+Random rndseed=375
+>>>> get_bottom_up_codelets group-scout--whole-string rnd 0.091 prob 0.9807101449275362 t 57.78693683509205 index -1
+Post Codelet codelets size 60
+Random rndseed=376
+>>>> get_bottom_up_codelets group-scout--whole-string rnd 0.162 prob 0.9807101449275362 t 57.78693683509205 index -1
+Post Codelet codelets size 61
+Random rndseed=377
+>>>> get_bottom_up_codelets group-scout--whole-string rnd 0.08 prob 0.9807101449275362 t 57.78693683509205 index -1
+Post Codelet codelets size 62
+Random rndseed=378
+Random rndseed=379
+Random rndseed=380
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout rnd 0.251 prob 0.40460868746803075 t 57.78693683509205 index -1
+Post Codelet codelets size 63
+Random rndseed=381
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout rnd 0.507 prob 0.40460868746803075 t 57.78693683509205 index -1
+Random rndseed=382
+Random rndseed=383
+>>>> get_bottom_up_codelets important-object-correspondence-scout rnd 0.521 prob 0.40460868746803075 t 57.78693683509205 index -1
 get_post_codelet_probability workspace rule total_weakness 29.552873137276137
-get_bottom_up_codelets prob 0.29552873137276137 num 2
-Random rndseed=1968
->>>> get_bottom_up_codelets rule-scout rnd 0.671 prob 0.29552873137276137 t 53.01841442173005 index -1
-Random rndseed=1969
->>>> get_bottom_up_codelets rule-scout rnd 0.645 prob 0.29552873137276137 t 53.01841442173005 index -1
-get_bottom_up_codelets rule-translator
+Random rndseed=384
+>>>> get_bottom_up_codelets rule-scout rnd 0.009 prob 0.29552873137276137 t 57.78693683509205 index -1
+Post Codelet codelets size 64
+Random rndseed=385
+>>>> get_bottom_up_codelets rule-scout rnd 0.283 prob 0.29552873137276137 t 57.78693683509205 index -1
+Post Codelet codelets size 65
 get_post_codelet_probability workspace rule total_weakness 29.552873137276137
-get_bottom_up_codelets prob 0.29552873137276137 num 1
-Random rndseed=1970
->>>> get_bottom_up_codelets rule-translator rnd 0.025 prob 0.29552873137276137 t 53.01841442173005 index 5
-Post Codelet codelets size 101
-Post. codelets.size > 100
-Random rndseed=1971
-get_bottom_up_codelets breaker
-get_bottom_up_codelets prob 1.0 num 1
-Random rndseed=1972
->>>> get_bottom_up_codelets breaker rnd 0.849 prob 1.0 t 53.01841442173005 index -1
-Post Codelet codelets size 101
-Post. codelets.size > 100
-Random rndseed=1973
-post_top_down_codelets
-post_bottom_up_codelets codeletToPost ListBuffer((top-down-bond-scout--direction,Left(50.0),Some(lf),None), (top-down-bond-scout--direction,Left(50.0),Some(lf),None), (top-down-bond-scout--direction,Left(50.0),Some(lf),None), (top-down-group-scout--direction,Left(50.0),Some(lf),None), (top-down-group-scout--direction,Left(50.0),Some(lf),None), (top-down-group-scout--direction,Left(50.0),Some(lf),None), (top-down-bond-scout--category,Left(50.0),Some(pd),None), (top-down-bond-scout--category,Left(50.0),Some(pd),None), (top-down-bond-scout--category,Left(50.0),Some(pd),None), (top-down-bond-scout--category,Left(50.0),Some(sm),None), (top-down-bond-scout--category,Left(50.0),Some(sm),None), (top-down-group-scout--category,Left(50.0),Some(pg),None), (top-down-group-scout--category,Left(50.0),Some(pg),Some(0.379)), (top-down-group-scout--category,Left(50.0),Some(sg),Some(0.234)), (top-down-group-scout--category,Left(50.0),Some(sg),Some(0.143)), (bottom-up-bond-scout,Right(3),None,Some(0.351)), (bottom-up-bond-scout,Right(3),None,Some(0.509)), (group-scout--whole-string,Right(3),None,Some(0.276)), (group-scout--whole-string,Right(3),None,Some(0.935)), (bottom-up-correspondence-scout,Right(3),None,Some(0.088)), (bottom-up-correspondence-scout,Right(3),None,Some(0.398)), (bottom-up-correspondence-scout,Right(3),None,Some(0.864)), (important-object-correspondence-scout,Right(3),None,Some(0.61)), (important-object-correspondence-scout,Right(3),None,Some(0.862)), (rule-translator,Right(3),None,Some(0.301)), (breaker,Right(1),None,Some(0.252)))
-Slipnet. UpdateEverything
-Slipnet.update()
+Random rndseed=386
+>>>> get_bottom_up_codelets rule-translator rnd 0.307 prob 0.29552873137276137 t 57.78693683509205 index 5
+Random rndseed=387
+>>>> get_bottom_up_codelets breaker rnd 0.229 prob 1.0 t 57.78693683509205 index -1
+Post Codelet codelets size 66
+slipnet.Update
 for all nodes set old_activation to activation
-Post Codelet codelets size 89 rndOpt None name top-down-bond-scout--direction
-ob A ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob B ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob C ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob D ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob E ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob F ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob G ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob H ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob I ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob J ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob K ob.buffer 0.0 ob.activation 93.0 ob.conceptual_depth 50.0
-ob L ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob M ob.buffer 0.0 ob.activation 53.0 ob.conceptual_depth 50.0
-ob N ob.buffer 0.0 ob.activation 56.002349853515625 ob.conceptual_depth 50.0
-ob O ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
-ob P ob.buffer 0.0 ob.activation 6.058502197265625 ob.conceptual_depth 50.0
-ob Q ob.buffer 0.0 ob.activation 21.0849609375 ob.conceptual_depth 50.0
-ob R ob.buffer 0.0 ob.activation 17.75 ob.conceptual_depth 50.0
-ob S ob.buffer 0.0 ob.activation 21.070709228515625 ob.conceptual_depth 50.0
-printUrgencies urgencies: ListBuffer(3, 4, 3, 4, 3, 4, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4)
-ob T ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
-Post Codelet codelets size 90 rndOpt None name top-down-bond-scout--direction
-ob U ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
-ob V ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
-ob W ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
-ob X ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
-ob Y ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
-ob Z ob.buffer 0.0 ob.activation 5.999908447265625 ob.conceptual_depth 50.0
-ob 1 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-ob 2 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-ob 3 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-ob 4 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-ob 5 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-printUrgencies urgencies: ListBuffer(3, 4, 3, 4, 3, 4, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4)
-ob lm ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-Post Codelet codelets size 91 rndOpt None name top-down-bond-scout--direction
-ob rm ob.buffer 100.0 ob.activation 80.0 ob.conceptual_depth 50.0
-ob md ob.buffer 0.0 ob.activation 3.125 ob.conceptual_depth 50.0
-ob sl ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-ob wh ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-ob fs ob.buffer 0.0 ob.activation 47.45941162109375 ob.conceptual_depth 50.0
-ob ls ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-ob lf ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob rt ob.buffer 0.0 ob.activation 80.0 ob.conceptual_depth 50.0
-ob pd ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob sc ob.buffer 0.0 ob.activation 70.0 ob.conceptual_depth 50.0
-ob sm ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
-printUrgencies urgencies: ListBuffer(3, 4, 3, 4, 3, 4, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4, 4)
-ob pg ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-Post Codelet codelets size 92 rndOpt None name top-down-group-scout--direction
-ob sg ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob smg ob.buffer 100.0 ob.activation 50.0 ob.conceptual_depth 50.0
-ob id ob.buffer 0.0 ob.activation 50.0 ob.conceptual_depth 50.0
-ob op ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-ob l ob.buffer 0.0 ob.activation 25.0 ob.conceptual_depth 50.0
-ob g ob.buffer 100.0 ob.activation 20.0 ob.conceptual_depth 50.0
-ob lc ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob spc ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob apc ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-ob dc ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob bc ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-printUrgencies urgencies: ListBuffer(3, 4, 3, 4, 3, 4, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4, 4, 4)
-ob gpc ob.buffer 100.0 ob.activation 12.5 ob.conceptual_depth 50.0
-ob len ob.buffer 0.0 ob.activation 19.664154052734375 ob.conceptual_depth 50.0
-Random rndseed=1974
-ob obc ob.buffer 100.0 ob.activation 50.0 ob.conceptual_depth 50.0
-ob bf ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-Post Codelet codelets size 93 rndOpt None name top-down-group-scout--direction
-printUrgencies urgencies: ListBuffer(3, 4, 3, 4, 3, 4, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4, 4, 4, 4)
-Post Codelet codelets size 94 rndOpt None name top-down-group-scout--direction
-printUrgencies urgencies: ListBuffer(3, 4, 3, 4, 3, 4, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4, 4, 4, 4, 4)
 Slipnet. update. slipnodes
-Post Codelet codelets size 95 rndOpt None name top-down-bond-scout--category
-printUrgencies urgencies: ListBuffer(3, 4, 3, 4, 3, 4, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4, 4, 4, 4, 4, 4)
-Post Codelet codelets size 96 rndOpt None name top-down-bond-scout--category
-printUrgencies urgencies: ListBuffer(3, 4, 3, 4, 3, 4, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4)
-Post Codelet codelets size 97 rndOpt None name top-down-bond-scout--category
-printUrgencies urgencies: ListBuffer(3, 4, 3, 4, 3, 4, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4)
-Post Codelet codelets size 98 rndOpt None name top-down-bond-scout--category
-printUrgencies urgencies: ListBuffer(3, 4, 3, 4, 3, 4, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4)
-Post Codelet codelets size 99 rndOpt None name top-down-bond-scout--category
 check for probabablistic jump to 100%
-slipnodes.size()59
-printUrgencies urgencies: ListBuffer(3, 4, 3, 4, 3, 4, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4)
-Post Codelet codelets size 100 rndOpt None name top-down-group-scout--category
-printUrgencies urgencies: ListBuffer(3, 4, 3, 4, 3, 4, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4)
-Post Codelet codelets size 101 rndOpt Some(0.379) name top-down-group-scout--category
-Post. codelets.size > 100
-choose_old_codelet chosen 5294.63 codelets_run 240 rndValue 0.379 urgsum 13970.0
-removeCodelet codelets size 100
-printUrgencies urgencies: ListBuffer(3, 4, 3, 4, 3, 4, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4)
-Post Codelet codelets size 101 rndOpt Some(0.234) name top-down-group-scout--category
-Post. codelets.size > 100
-choose_old_codelet chosen 3205.8 codelets_run 240 rndValue 0.234 urgsum 13700.0
-removeCodelet codelets size 100
-printUrgencies urgencies: ListBuffer(3, 4, 3, 4, 3, 4, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4)
-Post Codelet codelets size 101 rndOpt Some(0.143) name top-down-group-scout--category
-Post. codelets.size > 100
-choose_old_codelet chosen 1910.8374999999999 codelets_run 240 rndValue 0.143 urgsum 13362.5
-removeCodelet codelets size 100
-printUrgencies urgencies: ListBuffer(3, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4)
-Post Codelet codelets size 101 rndOpt Some(0.351) name bottom-up-bond-scout
-Post. codelets.size > 100
-choose_old_codelet chosen 4548.0824999999995 codelets_run 240 rndValue 0.351 urgsum 12957.5
-removeCodelet codelets size 100
-printUrgencies urgencies: ListBuffer(3, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3)
-Post Codelet codelets size 101 rndOpt Some(0.509) name bottom-up-bond-scout
-Post. codelets.size > 100
-choose_old_codelet chosen 6457.9375 codelets_run 240 rndValue 0.509 urgsum 12687.5
-removeCodelet codelets size 100
-printUrgencies urgencies: ListBuffer(3, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3)
-Post Codelet codelets size 101 rndOpt Some(0.276) name group-scout--whole-string
-Post. codelets.size > 100
-choose_old_codelet chosen 3445.86 codelets_run 240 rndValue 0.276 urgsum 12485.0
-removeCodelet codelets size 100
-printUrgencies urgencies: ListBuffer(3, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3)
-Post Codelet codelets size 101 rndOpt Some(0.935) name group-scout--whole-string
-Post. codelets.size > 100
-choose_old_codelet chosen 11477.125 codelets_run 240 rndValue 0.935 urgsum 12275.0
-removeCodelet codelets size 100
-printUrgencies urgencies: ListBuffer(3, 4, 3, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3)
-Post Codelet codelets size 101 rndOpt Some(0.088) name bottom-up-correspondence-scout
-Post. codelets.size > 100
-choose_old_codelet chosen 1075.58 codelets_run 240 rndValue 0.088 urgsum 12222.5
-removeCodelet codelets size 100
-printUrgencies urgencies: ListBuffer(3, 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3)
-Post Codelet codelets size 101 rndOpt Some(0.398) name bottom-up-correspondence-scout
-Post. codelets.size > 100
-choose_old_codelet chosen 4676.5 codelets_run 240 rndValue 0.398 urgsum 11750.0
-removeCodelet codelets size 100
-printUrgencies urgencies: ListBuffer(3, 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3)
-Post Codelet codelets size 101 rndOpt Some(0.864) name bottom-up-correspondence-scout
-Post. codelets.size > 100
-choose_old_codelet chosen 9918.72 codelets_run 240 rndValue 0.864 urgsum 11480.0
-removeCodelet codelets size 100
-printUrgencies urgencies: ListBuffer(3, 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3)
-Post Codelet codelets size 101 rndOpt Some(0.61) name important-object-correspondence-scout
-Post. codelets.size > 100
-choose_old_codelet chosen 6920.45 codelets_run 240 rndValue 0.61 urgsum 11345.0
-removeCodelet codelets size 100
-printUrgencies urgencies: ListBuffer(3, 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3)
-Post Codelet codelets size 101 rndOpt Some(0.862) name important-object-correspondence-scout
-Post. codelets.size > 100
-choose_old_codelet chosen 9604.835 codelets_run 240 rndValue 0.862 urgsum 11142.5
-removeCodelet codelets size 100
-printUrgencies urgencies: ListBuffer(3, 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3)
-Random rndseed=1975
-Post Codelet codelets size 101 rndOpt Some(0.301) name rule-translator
-Post. codelets.size > 100
-choose_old_codelet chosen 3313.2574999999997 codelets_run 240 rndValue 0.301 urgsum 11007.5
-removeCodelet codelets size 100
-printUrgencies urgencies: ListBuffer(3, 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3)
-Post Codelet codelets size 101 rndOpt Some(0.252) name breaker
-Post. codelets.size > 100
-choose_old_codelet chosen 2720.97 codelets_run 240 rndValue 0.252 urgsum 10797.5
-removeCodelet codelets size 100
-printUrgencies urgencies: ListBuffer(3, 4, 4, 4, 3, 3, 3, 4, 4, 4, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1)
-ob A activation 100.0
-ob B activation 100.0
-Random rndseed=1976
-ob C activation 100.0
-Random rndseed=1977
-ob D activation 100.0
-Random rndseed=1978
-ob E activation 100.0
-Random rndseed=1979
-ob F activation 100.0
-Random rndseed=1980
-ob G activation 100.0
-Random rndseed=1981
-ob H activation 100.0
-Random rndseed=1982
-ob I activation 100.0
-Random rndseed=1983
-ob J activation 100.0
-Random rndseed=1984
-ob K activation 100.0
-ob L activation 53.0
-Random rndseed=1985
-ob M activation 69.5
-ob N activation 31.001174926757812
-ob O activation 5.9999542236328125
-ob P activation 6.0292510986328125
-ob Q activation 13.54248046875
-ob R activation 11.875
-ob S activation 13.535354614257812
-ob T activation 5.9999542236328125
-ob U activation 5.9999542236328125
-ob V activation 5.9999542236328125
-ob W activation 5.9999542236328125
-ob X activation 5.9999542236328125
-ob Y activation 5.9999542236328125
-ob Z activation 5.9999542236328125
-ob 1 activation 0.0
-ob 2 activation 0.0
-ob 3 activation 0.0
-ob 4 activation 0.0
-ob 5 activation 0.0
-Random rndseed=1986
-ob lm activation 60.0
-Random rndseed=1987
-ob rm activation 100.0
-ob md activation 1.5625
-ob sl activation 0.0
-ob wh activation 0.0
-ob fs activation 48.729705810546875
-ob ls activation 0.0
-Random rndseed=1988
-ob lf activation 100.0
-Random rndseed=1989
-ob rt activation 60.0
-Random rndseed=1990
-ob pd activation 100.0
-Random rndseed=1991
-ob sc activation 65.0
-Random rndseed=1992
-ob sm activation 100.0
-Random rndseed=1993
-ob pg activation 100.0
-Random rndseed=1994
-ob sg activation 70.0
-Random rndseed=1995
-ob smg activation 100.0
-ob id activation 25.0
-ob op activation 0.0
-ob l activation 12.5
-Random rndseed=1996
-ob g activation 100.0
-Random rndseed=1997
-ob lc activation 100.0
-Random rndseed=1998
-ob spc activation 100.0
-ob apc activation 0.0
-Random rndseed=1999
-ob dc activation 100.0
-Random rndseed=0
-ob bc activation 100.0
-Random rndseed=1
-ob gpc activation 100.0
-ob len activation 24.832077026367188
-Random rndseed=2
-ob obc activation 100.0
-Random rndseed=3
-ob bf activation 100.0
-check for redraw; and reset buffer values to 0
-workspace calculate_string_unhappiness isu 70.30636999650699
-workspace intra string unhappiness = 70.30636999650699
-workspace calculate_string_unhappiness isu 49.06061564976866
-Finish update_Everything T: 50.12097779777963
-workspace inter string unhappiness = 49.06061564976866
-workspace calculate_string_unhappiness isu 59.68349282313783
-workspace total string unhappiness = 59.68349282313783
-intra_string_unhappiness 70.30636999650699 inter_string_unhappiness 49.06061564976866 total_unhappiness 59.68349282313783
-Rule calculate_total_strength 1e3a0277-0f4d-4689-9dbb-c7e7d9cd688c rule: replace letter category of rightmost letter by D total_strength 88.12908230365319
+Random rndseed=388
+Random rndseed=389
+Random rndseed=390
+Random rndseed=391
+Random rndseed=392
+Random rndseed=393
+Random rndseed=394
+Random rndseed=395
+Random rndseed=396
+Random rndseed=397
+Random rndseed=398
+Random rndseed=399
+Random rndseed=400
+Random rndseed=401
+Random rndseed=402
+Random rndseed=403
+Random rndseed=404
+Random rndseed=405
+workspace_formulas.update_temperature
+intra_string_unhappiness 85.63712092473374 inter_string_unhappiness 38.909111860751516 total_unhappiness 62.27311639274264
+slippage_list 1 Correspondence between letter (3)3 and letter (3)3 cml [letter -> letter, rightmost -> rightmost]
+slippage_list 2 Correspondence between letter (1)1 and letter (1)1 cml []
+slippage_list 2 Correspondence between letter (3)3 and letter (3)3 cml []
+50a00347-893f-4c63-a979-6554f6b4ddc9 replace letter category of rightmost letter by D internal_strength 88.12908230365319 external_strength 88.12908230365319 total strength:88.12908230365319
+Rule calculate_total_strength rule: replace letter category of rightmost letter by D total_strength 88.12908230365319
 rule_weakness 11.870917696346808
-formulas.actual_temperature 50.12097779777963
+formulas.actual_temperature 52.19267665346347
+formulas.actual_temperature 52.19267665346347
+formulas.temperature 57.78693683509205
 clamp_temperature false
-formulas.actual_temperature 50.12097779777963
-ChooseAndRun2 100 T: 50.12097779777963
-choose T: 50.12097779777963
-Choose codelet codelets size 100 scale 3.991934813481358
-urgencies: ListBuffer(3, 4, 4, 4, 3, 3, 3, 4, 4, 4, 3, 3, 3, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 1, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 5, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1)
-Random rndseed=4
+formulas.temperature 52.19267665346347
+Coderack_Pressure.Calculate_Pressures
+Finish update_Everything T: 52.19267665346347
+choose T: 52.19267665346347
+scale 3.8538215564357685urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 3, 1, 4, 3, 3, 3, 3, 3, 1, 4, 7, 7, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1] flag 76
+Random rndseed=406

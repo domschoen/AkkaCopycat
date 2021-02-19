@@ -72,7 +72,7 @@ object Slipnet {
 
   case class Run(initialString: String, modifiedString: String, targetString: String)
   case class InitializeSlipnet(coderack: ActorRef, workspace: ActorRef)
-  case class UpdateEverything(t:Double)
+  case class UpdateEverything(slippageListShell: SlippageListShell, t:Double)
   case class InitializeWorkspaceStrings(initialWos: List[LetterSlipnetComplement],
                                         modifiedWos: List[LetterSlipnetComplement],
                                         targetWos: List[LetterSlipnetComplement]
@@ -198,7 +198,11 @@ object Slipnet {
   case class SlipnetGoWithCorrespondenceStrengthTester(c: CorrespondenceRep, workspaceCorrespondences: List[CorrespondenceRep])
   case class SlipnetGoWithCorrespondenceStrengthTester2(c: CorrespondenceRep)
 
-  case class DataForStrengthUpdate(brs: List[BondRep], crs: List[CorrespondenceRep], grs: List[GroupRep], t: Double)
+  case class DataForStrengthUpdate(brs: List[BondRep],
+                                   crs: List[CorrespondenceRep],
+                                   grs: List[GroupRep],
+                                   slippagesShell: SlippageListShell,
+                                   t: Double)
   case class CorrespondenceUpdateStrengthData(internal_strength: Double, supporting_correspondences:Map[String, Boolean])
   case class PostTopBottomCodeletsGetInfo(
                                            t: Double,
@@ -679,6 +683,21 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
   }
 
 
+  def slippageList(slippageListShell: SlippageListShell): List[ConceptMappingRep] = {
+    val sl = ConceptMapping.conceptMappingsWithReps(slippageListShell.slipplage1_candidates)
+    val slippageCandidates = ConceptMapping.conceptMappingsWithReps(slippageListShell.slipplage2_candidates)
+    val filteredSlippageCandidates = slippageCandidates.filter(cm => cm.slippage())
+
+    val slippage_list = slippage_list_accumulation(sl, filteredSlippageCandidates)
+    log.debug("did slippage_list: ");
+
+    for(slippage <- slippage_list) {
+      log.debug(s"slippage ${slippage.toString()}")
+    }
+
+    slippage_list.map(cm => cm.conceptMappingRep())
+  }
+
   def receive = LoggingReceive {
     // to the browser
 
@@ -693,10 +712,10 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       sender() ! InitializeSlipnetResponse
 
 
-    case UpdateEverything(t) =>
+    case UpdateEverything(slippageListShell, t) =>
       log.debug("Slipnet. UpdateEverything")
       update()
-      workspace ! UpdateEverythingFollowUp
+      workspace ! UpdateEverythingFollowUp(slippageList(slippageListShell))
 
     case InitializeWorkspaceStrings(initialWos, modifiedWos, targetWos) =>
       log.debug("Slipnet: InitializeWorkspaceStrings")
@@ -1212,20 +1231,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       sender() ! SlipnetGoWithRuleScoutResponse(string_position_category.slipNodeRep(), letter_category.slipNodeRep())
 
     case SlipnetCompleteSlippageList(slippagesShell: SlippageListShell) =>
-      log.debug("SlipnetCompleteSlippageList")
-      val sl = slippagesShell.sl.map(cm => ConceptMapping.conceptMappingRefs(cm.uuid))
-      val slippageCandidates = ConceptMapping.conceptMappingsWithReps(slippagesShell.slippageCandidates)
-      val filteredSlippageCandidates = slippageCandidates.filter(cm => cm.slippage())
-
-      val slippage_list = slippage_list_accumulation(sl, filteredSlippageCandidates)
-      log.debug("did slippage_list: ");
-
-      for(slippage <- slippage_list) {
-        log.debug(s"slippage ${slippage.toString()}")
-      }
-
-      val slippage_list_rep = slippage_list.map(cm => cm.conceptMappingRep())
-      sender() ! SlipnetCompleteSlippageListResponse(slippage_list_rep)
+      sender() ! SlipnetCompleteSlippageListResponse(slippageList(slippagesShell))
 
     case SlipnetGoWithRuleScout3(ol, changedReplacementRelation, letterCategory, t) =>
       log.debug("SlipnetGoWithRuleScout3 choosing a description based on conceptual depth:" + letterCategory + " with chanded replacement relation " + changedReplacementRelation)
@@ -1423,8 +1429,9 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       }
       sender() ! SlipnetGoWithCorrespondenceStrengthTester2Response
 
+     // slipplage1_candidates: List[ConceptMappingRep],
 
-    case DataForStrengthUpdate(brs, crs, grs: List[GroupRep], t) =>
+    case DataForStrengthUpdate(brs, crs, grs: List[GroupRep],slippagesShell,  t) =>
       log.debug("Slipnet. DataForStrengthUpdate")
 
       val bondData = brs.map(br => {
@@ -1454,8 +1461,9 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
             None
         }
       }).flatten.toMap
+
         //val correspondenceData = Map.empty[String,CorrespondenceUpdateStrengthData]
-      sender() ! DataForStrengthUpdateResponse(bondData, correspondenceData, groupData, t)
+      sender() ! DataForStrengthUpdateResponse(bondData, correspondenceData, groupData, slippageList(slippagesShell), t)
 
     case PostTopBottomCodeletsGetInfo(
         t: Double,
