@@ -362,7 +362,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
   var structures = ListBuffer.empty[WorkspaceStructure]
   var objectRefs = Map.empty[String, WorkspaceObject]
   var objects = ListBuffer.empty[WorkspaceObject]
-  var wsRefs = Map.empty[String, WorkspaceStructure]
+  //var wsRefs = Map.empty[String, WorkspaceStructure]
 
   var rule = Option.empty[Rule]
 
@@ -788,7 +788,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
             }
             val replacement = new Replacement(log, i_letter, m_letter, relationOpt)
             i_letter.replacement = Some(replacement)
-            wsRefs += (replacement.uuid -> replacement)
+            structureRefs += (replacement.uuid -> replacement)
 
             log.debug(s"Workspace | ReplaceLetter | relation " + relationOpt)
 
@@ -964,7 +964,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       val nc = new Correspondence(log,obj1, obj2, concept_mapping_list, flip_obj2);
       log.debug("New Correspondence " + nc.uuid + " flip_obj2 " + flip_obj2)
       // TODO if (!remove_terraced_scan) WorkspaceArea.AddObject(nc,1);
-      wsRefs += (nc.uuid -> nc)
+      structureRefs += (nc.uuid -> nc)
 
       log.debug(s"BottomUpCorrespondenceScout. create new Correspondence ${nc.uuid} ")
       printCorrespondenceCMs(nc)
@@ -2176,7 +2176,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     // Codelet.java.1478
     // Codelet.java.1438
     case GoWithCorrespondenceBuilder(temperature, correponsdenceID) =>
-      val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
+      val c = structureRefs(correponsdenceID).asInstanceOf[Correspondence]
       val obj1 = c.obj1
       val obj2 = c.obj2
       log.debug("trying correspondence " + c.uuid + " from "+ obj1 + " " + objects.contains(obj1)  + " to "+obj2 + " " + objects.contains(obj2) + " " + c.flip_obj2);
@@ -2200,7 +2200,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
       // Codelet.java.1482
     case GoWithCorrespondenceBuilder2(correponsdenceID, futureGroupRep,t) =>
-      val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
+      val c = structureRefs(correponsdenceID).asInstanceOf[Correspondence]
       val obj1 = c.obj1
       val obj2 = c.obj2
 
@@ -2216,7 +2216,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       }
 
     case GoWithCorrespondenceBuilder9(correponsdenceID,t) =>
-      val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
+      val c = structureRefs(correponsdenceID).asInstanceOf[Correspondence]
       // if this correspondence is present, add any new concept mappings
       if (correspondence_present(c)) {
         // if the correspondence exists, activate concept mappings
@@ -2240,7 +2240,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
     case GoWithCorrespondenceBuilder3(correponsdenceID, updatedCorrespondenceCMReps) =>
       log.debug("Workspace. GoWithCorrespondenceBuilder3")
-      val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
+      val c = structureRefs(correponsdenceID).asInstanceOf[Correspondence]
       val obj1 = c.obj1
       val existing = obj1.correspondence.get
       existing.addConceptMappings(updatedCorrespondenceCMReps)
@@ -2251,7 +2251,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
     case GoWithCorrespondenceBuilder4(correponsdenceID, correspondenceReps, cData, inccData) =>
       log.debug("Workspace. GoWithCorrespondenceBuilder4")
-      val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
+      val c = structureRefs(correponsdenceID).asInstanceOf[Correspondence]
       log.debug("Workspace. GoWithCorrespondenceBuilder4 - 2")
 
       val incc = correspondenceReps.map(co => structureRefs(co.uuid).asInstanceOf[Correspondence])
@@ -2296,7 +2296,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       }
 
     case GoWithCorrespondenceBuilder5(correponsdenceID, incompatible_bondOpt, cData, bond_category_degree_of_associationOpt) =>
-      val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
+      val c = structureRefs(correponsdenceID).asInstanceOf[Correspondence]
       var incompatible_group = Option.empty[Group]
       val anyLostFight = if (incompatible_bondOpt.isDefined){
         val incompatible_bond = structureRefs(incompatible_bondOpt.get.uuid).asInstanceOf[Bond]
@@ -2329,7 +2329,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       }
 
     case GoWithCorrespondenceBuilder6(correponsdenceID) =>
-      val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
+      val c = structureRefs(correponsdenceID).asInstanceOf[Correspondence]
       // if there is an incompatible rule, fight against it
       val incompat_ruleOpt: Option[Rule] = if (rule.isDefined && incompatible_rule_corr(rule.get,c)) {
         rule
@@ -2344,7 +2344,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       }
 
     case GoWithCorrespondenceBuilder10Fight(correponsdenceID, cData, slippage_list) =>
-      val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
+      val c = structureRefs(correponsdenceID).asInstanceOf[Correspondence]
       if (!(correspondence_vs_rule(
         c,1.0,rule.get,1.0, cData, slippage_list))){
         log.debug("lost: fizzle!");
@@ -2355,9 +2355,9 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       }
 
     case GoWithCorrespondenceBuilder10Continue(correponsdenceID, inccRep, incompatible_bondOpt, incompatible_group, incompat_ruleUUIDOpt) =>
-      val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
+      val c = structureRefs(correponsdenceID).asInstanceOf[Correspondence]
 
-      val incc = inccRep.map(crep => wsRefs(crep.uuid).asInstanceOf[Correspondence])
+      val incc = inccRep.map(crep => structureRefs(crep.uuid).asInstanceOf[Correspondence])
       for (comp <- incc){
         break_correspondence(comp)
       }
@@ -2384,7 +2384,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     // Second part of buid_correpondence
     case GoWithCorrespondenceBuilder7(correponsdenceID,accessory_concept_mapping_list) =>
       log.debug("Workspace. GoWithCorrespondenceBuilder7")
-      val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
+      val c = structureRefs(correponsdenceID).asInstanceOf[Correspondence]
       c.accessory_concept_mapping_list ++ accessory_concept_mapping_list
       val obj1 = c.obj1
       val obj2 = c.obj2
@@ -2405,21 +2405,21 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
 
     case GoWithCorrespondenceBuilder8(correspondenceID,accessory_concept_mapping_list) =>
-      val c = wsRefs(correspondenceID).asInstanceOf[Correspondence]
+      val c = structureRefs(correspondenceID).asInstanceOf[Correspondence]
       c.addAccessoryConceptMappings(accessory_concept_mapping_list)
       sender()! GoWithCorrespondenceBuilder8Response(c.concept_mapping_list)
 
 
     case GoWithCorrespondenceStrengthTester2(correponsdenceID: String, t:Double) =>
       log.debug("GoWithCorrespondenceStrengthTester2. start update_strength_value")
-      val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
+      val c = structureRefs(correponsdenceID).asInstanceOf[Correspondence]
       val wcreps = workspaceCorrespondences().map(_.correspondenceRep())
 
       sender() ! GoWithCorrespondenceStrengthTesterResponse2(c.correspondenceRep(), wcreps)
 
     case GoWithCorrespondenceStrengthTester3(correponsdenceID: String, cData, t:Double) =>
       log.debug("GoWithCorrespondenceStrengthTester3")
-      val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
+      val c = structureRefs(correponsdenceID).asInstanceOf[Correspondence]
       c.update_strength_value(workspaceCorrespondences(), cData)
 
       val strength = c.total_strength
