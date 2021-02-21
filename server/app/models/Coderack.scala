@@ -141,11 +141,14 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
     // GUI Coderack_Pressure.calculate_Pressures()
   }*/
 
+  //var executionRunActor: ActorRef = null
+
 
   def receive = LoggingReceive {
     // to the browser
     case Run(initialS, modifiedS, targetS) =>
       log.debug(s"${getClass.getName}. Run with initial $initialString, modified: $modifiedString and target: $targetString")
+      //executionRunActor = sender()
       // TODO init
       initialString = initialS
       modifiedString = modifiedS

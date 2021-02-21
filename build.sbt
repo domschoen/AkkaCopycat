@@ -18,7 +18,8 @@ lazy val server = (project in file("server"))
     libraryDependencies ++= Seq(
         ws,
         guice,
-        specs2 % Test
+        specs2 % Test,
+        "com.typesafe.akka" %% "akka-testkit" % "2.5.17" % Test
     ) ++ Settings.jvmDependencies.value,
      EclipseKeys.preTasks := Seq(compile in Compile),
      LessKeys.compress in Assets := true

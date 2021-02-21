@@ -76,7 +76,6 @@ object Workspace {
   case class Step(temperature: Double)
   case class StepX(temperature: Double)
 
-  case object Found
   case class GoWithBreaker(temperature: Double)
   case class BondWithNeighbor(temperatGoWithBottomUpBondScout2Debugure: Double)
   case class GoWithBottomUpBondScout2(from: WorkspaceObjectRep, to:WorkspaceObjectRep, fromFacets: List[SlipNodeRep], toFacets: List [SlipNodeRep])
@@ -299,7 +298,6 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     WorkspaceProposeGroup2,
     WorkspaceProposeGroupResponse,
     Initialize,
-    Found,
     Step,
     GoWithBottomUpCorrespondenceScout,
     GoWithBottomUpCorrespondenceScout2,
@@ -345,6 +343,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
   import models.codelet.BottomUpCorrespondenceScout.{
     GoWithBottomUpCorrespondenceScoutWorkspaceReponse
   }
+  import models.ExecutionRun.Found
 
   var executionRunActor: ActorRef = null
   var coderack: ActorRef = null
@@ -505,6 +504,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       coderack ! FinishInitializingWorkspaceStrings(objects.toList.size)
 
     case InitializeWorkspace(sn) =>
+      executionRunActor = sender()
       slipnet = sn
 
     case models.Workspace.UpdateEverything(cr, t) =>
@@ -595,9 +595,6 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
       coderack ! SlipnetUpdateEverythingResponse(newT)
 
-    case Found =>
-      found_answer = true
-
 
     case Step(temperature) =>
       log.debug("Step...")
@@ -605,7 +602,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       if (found_answer) {
         log.debug("Workspace Found answer")
 
-        //executionRunActor ! ExecutionRun.Found
+        //executionRunActor ! ExecutionRun.Found()
       } else {
         val dd = objects.toList
         log.debug(s"Step2 <$dd>")
@@ -2096,6 +2093,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       if (found_answerOpt.isDefined) {
         println("Found answer " + found_answerOpt.get)
         found_answer = true
+        executionRunActor ! Found(found_answerOpt.get)
       } else {
         sender() ! Finished
         // How to do that ????

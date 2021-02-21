@@ -15,7 +15,7 @@ object ExecutionRun {
   def props(): Props = Props(new ExecutionRun())
 
   case class Run(initialString: String, modifiedString: String, targetString: String)
-  case object Found
+  case class Found(answer:String)
   case object Step
   case object UpdateEverything
   case object InitializeSlipnetResponse
@@ -34,9 +34,12 @@ class ExecutionRun extends Actor with ActorLogging  { //with InjectedActorSuppor
   var modifiedString: String = null
   var targetString: String = null
 
+  var runRequester: ActorRef = null
+
   def receive = LoggingReceive {
     // to the browser
     case Run(is, ms, ts) => {
+      runRequester = sender()
       initialString = is
       modifiedString = ms
       targetString = ts
@@ -54,8 +57,9 @@ class ExecutionRun extends Actor with ActorLogging  { //with InjectedActorSuppor
     case InitializeSlipnetResponse =>
       coderack ! Coderack.Run(initialString, modifiedString, targetString)
 
-    case Found => {
-      log.debug("Solution found")
+    case Found(answer) => {
+      log.debug("Solution found " + answer)
+      runRequester ! WebSocketActor.Found(answer)
     }
 
     case UpdateEverything => {
