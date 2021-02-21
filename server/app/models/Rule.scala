@@ -170,6 +170,7 @@ case class Rule (log: LoggingAdapter,
   def calculate_internal_strength(wInitialObjects: List[WorkspaceObject], slippage_list: List[ConceptMappingRep]) = {
 //    log.debug("calculate_internal_strength wInitialObjects " + wInitialObjects)
 //    log.debug("calculate_internal_strength slippage_list " + slippage_list)
+      log.debug(uuid + " descriptor " + descriptor + " relation " + relation)
       val cdd0 = descriptor.get.conceptual_depth - relation.get.conceptual_depth;
       val cdd1 = if (cdd0 < 0.0) - cdd0 else cdd0
       val cdd= 100.0 - cdd1

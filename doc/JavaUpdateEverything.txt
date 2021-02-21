@@ -1,110 +1,97 @@
-update_Everything 33
-1T: 57.78693683509205
+update_Everything 28
+1T: 20.0
 Workspace structure update_strength_value description(letter) of letter (1)1 in initial string
-6f9e2917-179b-47a6-a762-3351fa797c12 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+d5a8f128-9225-4bf5-9c33-6ba9c56f82d0 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(A) of letter (1)1 in initial string
-3ab554ec-a0b8-4b8d-aec0-50f69075211b class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+8e1968ad-288d-49e4-ae96-9c537607502d class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(leftmost) of letter (1)1 in initial string
-6b1a32bc-3626-4025-b1f8-699a0320c5b3 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+3584610c-bea0-494e-a88f-23df31a04a88 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(letter) of letter (2)2 in initial string
-5948ad6f-d926-41a9-b3c6-2333e39aebeb class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+d8844534-8eb0-411e-8fdd-8942e4eed334 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(B) of letter (2)2 in initial string
-5311e408-2588-4d2c-8363-f4f92565198b class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+da396b8a-7589-49bd-847d-da50e4440742 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(middle) of letter (2)2 in initial string
-7117fec6-a570-401a-801b-212995032351 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+cf80ba76-bc5c-4bfc-9053-8aa42921a49d class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(letter) of letter (3)3 in initial string
-4c0b92db-15f6-4434-b8fa-a8e79269a699 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+4ca8d365-f572-4086-bbc5-2d7d19232955 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(C) of letter (3)3 in initial string
-b69205cb-a9a1-42ef-8ab7-f9a2619c50b9 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+a829872c-ff5a-4d22-be1e-cbd7838687b0 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(rightmost) of letter (3)3 in initial string
-9a6506f7-f485-459d-aaa3-0743879dc17e class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+8f073b6b-4126-4cd8-99df-147c6273ffb3 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(letter) of letter (1)1 in modified string
-94b7632e-29ed-47ef-a0a6-a1d9c7801fd3 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
-Workspace structure update_strength_value description(A) of letter (1)1 in modified string
-0ffbabd9-e8c4-4d4d-a207-3e95f6e59687 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+80916c85-e7b7-4c69-89a2-461c76003883 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+Workspace structure update_strength_value description(Q) of letter (1)1 in modified string
+b52cbd8e-4ac4-4783-b7c3-c975dd1b1b30 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(leftmost) of letter (1)1 in modified string
-9eaf6d1a-d683-404c-bce0-fbfa3d0925eb class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+040f3644-10a4-483b-bd55-9717191d2ff1 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(letter) of letter (2)2 in modified string
-37a19d90-903d-4111-9b69-d995dd3fbd9b class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+38a1d812-f631-4ca9-887a-30b64ea7b1d6 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(B) of letter (2)2 in modified string
-89c72be2-f811-4257-8a49-8682fb20c833 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+3c7d8383-8ade-4a7e-8353-93f0c95335df class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(middle) of letter (2)2 in modified string
-2f5fda73-8ad0-4275-b012-ffbb5b9aa173 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+0501a0d8-7fb1-42f9-a359-9a4b9b72052a class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(letter) of letter (3)3 in modified string
-7fb61cea-09c2-4dcf-8dba-b0bdec780d07 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
-Workspace structure update_strength_value description(D) of letter (3)3 in modified string
-9c49646d-bb46-49dd-beea-010897283990 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+2d14b413-61b1-4bb8-979e-744b075f59a1 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+Workspace structure update_strength_value description(C) of letter (3)3 in modified string
+fd42cdbf-069a-4f48-b48b-03311d9db76d class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(rightmost) of letter (3)3 in modified string
-3fc81545-23a4-41e2-ad68-cb4c5ffeb2b4 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+cbe13fa2-9998-44bf-b295-b0bb2877eb6b class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(letter) of letter (1)1 in target string
-7f92df24-de87-4d47-8a80-9efc44b92da3 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
-Workspace structure update_strength_value description(C) of letter (1)1 in target string
-c3c0264d-8d3c-4691-a380-03f79b5ced6c class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+3f5eeb98-bade-4deb-8308-f58136f8c98a class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+Workspace structure update_strength_value description(I) of letter (1)1 in target string
+1eb23aa2-368b-45bd-9cbc-118f7ba8aaaa class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(leftmost) of letter (1)1 in target string
-b16ecdeb-7ffb-49c9-8881-7604e8390ee1 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+83d55517-1dd6-4a7b-b488-2c65b84fbd9c class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(letter) of letter (2)2 in target string
-13b6217f-76fb-49e4-b214-05bd98a74f6f class description internal_strength 50.0 external_strength 100.0 total strength:75.0
-Workspace structure update_strength_value description(D) of letter (2)2 in target string
-d7dbac73-82de-4747-8b12-63a89adc2bb9 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+6e85c24a-18e2-4ca3-b5ee-0e781040460a class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+Workspace structure update_strength_value description(J) of letter (2)2 in target string
+81806abc-04c2-4cf7-a3e4-d1986374c19f class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(middle) of letter (2)2 in target string
-7b5569b3-5d89-4cbc-8919-a449b53258cd class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+06752c1b-74ef-446f-95c9-e17ccb84c83a class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(letter) of letter (3)3 in target string
-951ac1c6-4774-4760-9f82-a9d43832c689 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
-Workspace structure update_strength_value description(E) of letter (3)3 in target string
-39b2d116-e183-4656-99c9-108a4c72479e class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+44977bb7-b1cb-4a24-9b02-b092286e024a class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+Workspace structure update_strength_value description(K) of letter (3)3 in target string
+593c2bb6-962d-42ce-91d1-2e1a78195460 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(rightmost) of letter (3)3 in target string
-50d3350f-d506-4edf-95ce-5b28a2bf7084 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
-Workspace structure update_strength_value Correspondence between letter (3)3 and letter (3)3
-support obj1 letter (3)3
+aedb062c-0ffd-49d2-89d8-ec3d1c35d9ca class description internal_strength 50.0 external_strength 100.0 total strength:75.0
+Workspace structure update_strength_value Correspondence between letter (2)2 and letter (2)2
+num_of_concept_mappings 1.0 sum_strength 100.0 average_strength 100.0
+num_of_concept_mappings_factor 0.8
+correspondence_internal_strength average_strength 100.0 internal_coherence_factor 1.0 num_of_concept_mappings_factor 0.8
+calculate_internal_strength internal_strength 80.0
+83d94b24-a81b-473f-9331-f4d5ba2e8ba9 support obj1 letter (2)2
+supporting_correspondences c1 Correspondence between letter (2)2 and letter (2)2 c2 Correspondence between letter (2)2 and letter (2)2
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
-support ws!=this true
-support supporting_correspondences(this,(Correspondence)ws)) true
-a10f8669-de97-406f-9ed4-fe1bb4b76d76 class Correspondence internal_strength 80.0 external_strength 79.9997952 total strength:79.99995904
-Workspace structure update_strength_value Correspondence between letter (1)1 and letter (1)1
-support obj1 letter (1)1
-support ws!=this true
-support supporting_correspondences(this,(Correspondence)ws)) true
-support ws!=this false
-support supporting_correspondences(this,(Correspondence)ws)) false
-f9d0ad0a-cd28-47ad-b90f-ae74b2a005ad class Correspondence internal_strength 80.0 external_strength 79.99995904 total strength:79.99999180799999
-Workspace structure update_strength_value replace letter category of rightmost letter by D
-slippage_list 1 Correspondence between letter (3)3 and letter (3)3 cml [letter -> letter, rightmost -> rightmost]
-slippage_list 2 Correspondence between letter (1)1 and letter (1)1 cml []
-slippage_list 2 Correspondence between letter (3)3 and letter (3)3 cml []
-ab862bf2-ea95-4d32-baa3-1ccd3bb89be0 class Rule internal_strength 88.12908230365319 external_strength 88.12908230365319 total strength:88.12908230365319
-Rule calculate_total_strength rule: replace letter category of rightmost letter by D total_strength 88.12908230365319
-Workspace structure update_strength_value sc bond between letter (1)1 and letter (2)2
-e2ff00c0-ec5e-4847-89fc-2034addda9a6 class bond internal_strength 95.89577675789482 external_strength 70.71067811865476 total strength:94.862124085996
-Workspace structure update_strength_value sc bond between letter (2)2 and letter (3)3
-18fbb387-8638-4d18-98c9-fcab3ffee5bb class bond internal_strength 95.89577675789482 external_strength 0.0 total strength:91.96
-Workspace structure update_strength_value sc bond between letter (2)2 and letter (3)3
-bd136497-e08e-4dad-a293-1842b078d8c3 class bond internal_strength 95.89577675789482 external_strength 70.71067811865476 total strength:94.862124085996
-2T: 57.78693683509205
+83d94b24-a81b-473f-9331-f4d5ba2e8ba9 total 64.0
+support support_sum 0.0
+83d94b24-a81b-473f-9331-f4d5ba2e8ba9 class Correspondence internal_strength 80.0 external_strength 0.0 total strength:64.0
+2T: 20.0
 update the the object values of all objects in the workspace
 update_object_value description(letter) of letter (1)1 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(A) of letter (1)1 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(leftmost) of letter (1)1 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 300.0 group.isDefined false changed false
-update_object_value : raw_importance 300.0
-update_object_value : bondstrengthRaw 94.862124085996
-update_object_value : intra_string_happiness 15.810354014332667
+update_object_value 300.0 group.isDefined false changed true
+update_object_value : raw_importance 600.0
+update_object_value : bondstrengthRaw 0.0
+update_object_value : intra_string_happiness 0.0
 update_object_value description(letter) of letter (2)2 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(B) of letter (2)2 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(middle) of letter (2)2 in initial string d.description_type.activation 100.0 d.descriptor.activation 25.0
-update_object_value 225.0 group.isDefined false changed false
-update_object_value : raw_importance 225.0
-update_object_value : bondstrengthRaw 189.724248171992
-update_object_value : intra_string_happiness 31.620708028665334
+update_object_value description(middle) of letter (2)2 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value 300.0 group.isDefined false changed false
+update_object_value : raw_importance 300.0
+update_object_value : bondstrengthRaw 0.0
+update_object_value : intra_string_happiness 0.0
 update_object_value description(letter) of letter (3)3 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(C) of letter (3)3 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(rightmost) of letter (3)3 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 300.0 group.isDefined false changed true
-update_object_value : raw_importance 600.0
-update_object_value : bondstrengthRaw 94.862124085996
-update_object_value : intra_string_happiness 15.810354014332667
+update_object_value 300.0 group.isDefined false changed false
+update_object_value : raw_importance 300.0
+update_object_value : bondstrengthRaw 0.0
+update_object_value : intra_string_happiness 0.0
 update_object_value description(letter) of letter (1)1 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(A) of letter (1)1 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(Q) of letter (1)1 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(leftmost) of letter (1)1 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value 300.0 group.isDefined false changed false
 update_object_value : raw_importance 300.0
@@ -112,188 +99,131 @@ update_object_value : bondstrengthRaw 0.0
 update_object_value : intra_string_happiness 0.0
 update_object_value description(letter) of letter (2)2 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(B) of letter (2)2 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(middle) of letter (2)2 in modified string d.description_type.activation 100.0 d.descriptor.activation 25.0
-update_object_value 225.0 group.isDefined false changed false
-update_object_value : raw_importance 225.0
+update_object_value description(middle) of letter (2)2 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value 300.0 group.isDefined false changed false
+update_object_value : raw_importance 300.0
 update_object_value : bondstrengthRaw 0.0
 update_object_value : intra_string_happiness 0.0
 update_object_value description(letter) of letter (3)3 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(D) of letter (3)3 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(C) of letter (3)3 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(rightmost) of letter (3)3 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value 300.0 group.isDefined false changed false
 update_object_value : raw_importance 300.0
 update_object_value : bondstrengthRaw 0.0
 update_object_value : intra_string_happiness 0.0
 update_object_value description(letter) of letter (1)1 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(C) of letter (1)1 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(I) of letter (1)1 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(leftmost) of letter (1)1 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value 300.0 group.isDefined false changed false
 update_object_value : raw_importance 300.0
 update_object_value : bondstrengthRaw 0.0
 update_object_value : intra_string_happiness 0.0
 update_object_value description(letter) of letter (2)2 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(D) of letter (2)2 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(middle) of letter (2)2 in target string d.description_type.activation 100.0 d.descriptor.activation 25.0
-update_object_value 225.0 group.isDefined false changed false
-update_object_value : raw_importance 225.0
-update_object_value : bondstrengthRaw 91.96
-update_object_value : intra_string_happiness 15.326666666666666
+update_object_value description(J) of letter (2)2 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(middle) of letter (2)2 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value 300.0 group.isDefined false changed false
+update_object_value : raw_importance 300.0
+update_object_value : bondstrengthRaw 0.0
+update_object_value : intra_string_happiness 0.0
 update_object_value description(letter) of letter (3)3 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(E) of letter (3)3 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(K) of letter (3)3 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value description(rightmost) of letter (3)3 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
 update_object_value 300.0 group.isDefined false changed false
 update_object_value : raw_importance 300.0
-update_object_value : bondstrengthRaw 91.96
-update_object_value : intra_string_happiness 15.326666666666666
-3T: 57.78693683509205
+update_object_value : bondstrengthRaw 0.0
+update_object_value : intra_string_happiness 0.0
+3T: 20.0
 update the relative importances of initial and target strings
-update_relative_importance 1125.0
+update_relative_importance 1200.0
 ob letter (1)1
-2ob.relative_importance 0.26666666666666666
+2ob.relative_importance 0.5
 ob letter (2)2
-2ob.relative_importance 0.2
+2ob.relative_importance 0.25
 ob letter (3)3
-2ob.relative_importance 0.5333333333333333
-update_relative_importance 825.0
+2ob.relative_importance 0.25
+update_relative_importance 900.0
 ob letter (1)1
-2ob.relative_importance 0.36363636363636365
+2ob.relative_importance 0.3333333333333333
 ob letter (2)2
-2ob.relative_importance 0.2727272727272727
+2ob.relative_importance 0.3333333333333333
 ob letter (3)3
-2ob.relative_importance 0.36363636363636365
-4T: 57.78693683509205
+2ob.relative_importance 0.3333333333333333
+4T: 20.0
 update the intra string unhappiness of initial and target strings
-5T: 57.78693683509205
+5T: 20.0
 post_top_down_codelets
-Workspace rule replace letter category of rightmost letter by D total_weakness 88.12908230365319
-Post Top/Bottom Codelets codeletsSize 49
->>>> post_top_down_codelets top-down-bond-scout--direction
-rough_num_of_objects. bond 2
-Random rndseed=355
-Random rndseed=356
-prob 0.9807101449275362 num 2
-Random rndseed=357
-post_top_down_codelets rawUrgency 50.0 count 49
-create codelet top-down-bond-scout--direction
-Post Codelet codelets size 50
-Random rndseed=358
-post_top_down_codelets rawUrgency 50.0 count 50
-create codelet top-down-bond-scout--direction
-Post Codelet codelets size 51
->>>> post_top_down_codelets top-down-group-scout--direction
-Random rndseed=359
-Random rndseed=360
-prob 0.9807101449275362 num 3
-Random rndseed=361
-post_top_down_codelets rawUrgency 50.0 count 51
-create codelet top-down-group-scout--direction
-Post Codelet codelets size 52
-Random rndseed=362
-post_top_down_codelets rawUrgency 50.0 count 52
-create codelet top-down-group-scout--direction
-Post Codelet codelets size 53
-Random rndseed=363
-post_top_down_codelets rawUrgency 50.0 count 53
-create codelet top-down-group-scout--direction
-Post Codelet codelets size 54
->>>> post_top_down_codelets top-down-bond-scout--category
-rough_num_of_objects. bond 2
-Random rndseed=364
-prob 0.9807101449275362 num 1
-Random rndseed=365
-post_top_down_codelets rawUrgency 50.0 count 54
-create codelet top-down-bond-scout--category
-Post Codelet codelets size 55
+Workspace rule null total_weakness 0.0
+Post Top/Bottom Codelets codeletsSize 46
 >>>> post_top_down_codelets top-down-description-scout
-prob 0.33393300687829186 num 1
-Random rndseed=366
+prob 0.04000000000000001 num 1
+Random rndseed=55
 ------------------------ post_bottom_up_codelets
-Random rndseed=367
->>>> get_bottom_up_codelets bottom-up-description-scout rnd 0.065 prob 0.33393300687829186 t 57.78693683509205 index -1
-Post Codelet codelets size 56
-rough_num_of_objects. bond 2
-Random rndseed=368
-Random rndseed=369
-Random rndseed=370
->>>> get_bottom_up_codelets bottom-up-bond-scout rnd 0.945 prob 0.9807101449275362 t 57.78693683509205 index -1
-Post Codelet codelets size 57
-Random rndseed=371
->>>> get_bottom_up_codelets bottom-up-bond-scout rnd 0.78 prob 0.9807101449275362 t 57.78693683509205 index -1
-Post Codelet codelets size 58
-Random rndseed=372
->>>> get_bottom_up_codelets bottom-up-bond-scout rnd 0.105 prob 0.9807101449275362 t 57.78693683509205 index -1
-Post Codelet codelets size 59
-Random rndseed=373
-Random rndseed=374
-Random rndseed=375
->>>> get_bottom_up_codelets group-scout--whole-string rnd 0.091 prob 0.9807101449275362 t 57.78693683509205 index -1
-Post Codelet codelets size 60
-Random rndseed=376
->>>> get_bottom_up_codelets group-scout--whole-string rnd 0.162 prob 0.9807101449275362 t 57.78693683509205 index -1
-Post Codelet codelets size 61
-Random rndseed=377
->>>> get_bottom_up_codelets group-scout--whole-string rnd 0.08 prob 0.9807101449275362 t 57.78693683509205 index -1
-Post Codelet codelets size 62
-Random rndseed=378
-Random rndseed=379
-Random rndseed=380
->>>> get_bottom_up_codelets bottom-up-correspondence-scout rnd 0.251 prob 0.40460868746803075 t 57.78693683509205 index -1
-Post Codelet codelets size 63
-Random rndseed=381
->>>> get_bottom_up_codelets bottom-up-correspondence-scout rnd 0.507 prob 0.40460868746803075 t 57.78693683509205 index -1
-Random rndseed=382
-Random rndseed=383
->>>> get_bottom_up_codelets important-object-correspondence-scout rnd 0.521 prob 0.40460868746803075 t 57.78693683509205 index -1
-get_post_codelet_probability workspace rule total_weakness 29.552873137276137
-Random rndseed=384
->>>> get_bottom_up_codelets rule-scout rnd 0.009 prob 0.29552873137276137 t 57.78693683509205 index -1
-Post Codelet codelets size 64
-Random rndseed=385
->>>> get_bottom_up_codelets rule-scout rnd 0.283 prob 0.29552873137276137 t 57.78693683509205 index -1
-Post Codelet codelets size 65
-get_post_codelet_probability workspace rule total_weakness 29.552873137276137
-Random rndseed=386
->>>> get_bottom_up_codelets rule-translator rnd 0.307 prob 0.29552873137276137 t 57.78693683509205 index 5
-Random rndseed=387
->>>> get_bottom_up_codelets breaker rnd 0.229 prob 1.0 t 57.78693683509205 index -1
-Post Codelet codelets size 66
+Random rndseed=56
+>>>> get_bottom_up_codelets bottom-up-description-scout rnd 0.376 prob 0.04000000000000001 t 20.0 index -1
+rough_num_of_objects. bond 6
+Random rndseed=57
+Random rndseed=58
+Random rndseed=59
+>>>> get_bottom_up_codelets bottom-up-bond-scout rnd 0.279 prob 0.0 t 20.0 index -1
+Random rndseed=60
+>>>> get_bottom_up_codelets bottom-up-bond-scout rnd 0.17 prob 0.0 t 20.0 index -1
+Random rndseed=61
+>>>> get_bottom_up_codelets bottom-up-bond-scout rnd 0.805 prob 0.0 t 20.0 index -1
+Random rndseed=62
+Random rndseed=63
+Random rndseed=64
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout rnd 0.408 prob 0.0 t 20.0 index -1
+Random rndseed=65
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout rnd 0.24 prob 0.0 t 20.0 index -1
+Random rndseed=66
+Random rndseed=67
+Random rndseed=68
+>>>> get_bottom_up_codelets important-object-correspondence-scout rnd 0.494 prob 0.0 t 20.0 index -1
+Random rndseed=69
+>>>> get_bottom_up_codelets important-object-correspondence-scout rnd 0.983 prob 0.0 t 20.0 index -1
+Random rndseed=70
+Random rndseed=71
+>>>> get_bottom_up_codelets replacement-finder rnd 0.409 prob 1.0 t 20.0 index -1
+Post Codelet codelets size 47
+get_post_codelet_probability workspace rule total_weakness 
+Random rndseed=72
+>>>> get_bottom_up_codelets rule-scout rnd 0.069 prob 1.0 t 20.0 index -1
+Post Codelet codelets size 48
+Random rndseed=73
+>>>> get_bottom_up_codelets rule-scout rnd 0.073 prob 1.0 t 20.0 index -1
+Post Codelet codelets size 49
+get_post_codelet_probability workspace rule total_weakness 
+Random rndseed=74
+>>>> get_bottom_up_codelets breaker rnd 0.254 prob 1.0 t 20.0 index -1
+Post Codelet codelets size 50
 slipnet.Update
 for all nodes set old_activation to activation
 Slipnet. update. slipnodes
 check for probabablistic jump to 100%
-Random rndseed=388
-Random rndseed=389
-Random rndseed=390
-Random rndseed=391
-Random rndseed=392
-Random rndseed=393
-Random rndseed=394
-Random rndseed=395
-Random rndseed=396
-Random rndseed=397
-Random rndseed=398
-Random rndseed=399
-Random rndseed=400
-Random rndseed=401
-Random rndseed=402
-Random rndseed=403
-Random rndseed=404
-Random rndseed=405
+Random rndseed=75
+Random rndseed=76
+Random rndseed=77
+Random rndseed=78
+Random rndseed=79
+Random rndseed=80
+Random rndseed=81
+Random rndseed=82
+Random rndseed=83
+Random rndseed=84
+Random rndseed=85
+Random rndseed=86
+Random rndseed=87
+Random rndseed=88
 workspace_formulas.update_temperature
-intra_string_unhappiness 85.63712092473374 inter_string_unhappiness 38.909111860751516 total_unhappiness 62.27311639274264
-slippage_list 1 Correspondence between letter (3)3 and letter (3)3 cml [letter -> letter, rightmost -> rightmost]
-slippage_list 2 Correspondence between letter (1)1 and letter (1)1 cml []
-slippage_list 2 Correspondence between letter (3)3 and letter (3)3 cml []
-ab862bf2-ea95-4d32-baa3-1ccd3bb89be0 class Rule internal_strength 88.12908230365319 external_strength 88.12908230365319 total strength:88.12908230365319
-Rule calculate_total_strength rule: replace letter category of rightmost letter by D total_strength 88.12908230365319
-rule_weakness 11.870917696346808
-formulas.actual_temperature 52.19267665346347
-formulas.actual_temperature 52.19267665346347
-formulas.temperature 57.78693683509205
+intra_string_unhappiness 99.99999999999997 inter_string_unhappiness 81.33333333333331 total_unhappiness 90.66666666666666
+rule_weakness 100.0
+formulas.actual_temperature 92.53333333333333
+formulas.actual_temperature 92.53333333333333
+formulas.temperature 20.0
 clamp_temperature false
-formulas.temperature 52.19267665346347
+formulas.temperature 92.53333333333333
 Coderack_Pressure.Calculate_Pressures
-Finish update_Everything T: 52.19267665346347
-choose T: 52.19267665346347
-scale 3.8538215564357685urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 3, 1, 4, 3, 3, 3, 3, 3, 1, 4, 7, 7, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1] flag 76
-Random rndseed=406
+Finish update_Everything T: 92.53333333333333
+choose T: 92.53333333333333
+scale 1.1644444444444446urgencies: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 3, 3, 3, 1] flag 16
+Random rndseed=89

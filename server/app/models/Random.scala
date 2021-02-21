@@ -208,7 +208,7 @@ object Random {
     392,841,266,114,440,428,445,846,621,365)
   var  rndseed: Integer = 1
   def rnd(log: LoggingAdapter): Double = {
-    //Thread.sleep(1)
+    Thread.sleep(1)
     printSeed(log)
     val value = numbers(rndseed) / 1000.0
     rndseed += 1

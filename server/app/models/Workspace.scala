@@ -792,7 +792,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
             log.debug(s"Workspace | ReplaceLetter | relation " + relationOpt)
 
-            if (relationOpt.isDefined && relationOpt.get != SlipNode.id.sameness) {
+            if (relationOpt.isEmpty || relationOpt.get != SlipNode.id.sameness) {
               log.debug(s"Workspace | ReplaceLetter | i_letter " + i_letter + " changed to true")
 
               i_letter.changed = true;
