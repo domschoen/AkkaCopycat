@@ -228,7 +228,7 @@ class Bond (
   def update_strength_value(activationBySlipNodeID: Map[String, Double], bond_category_degree_of_association: Double, wos: List[WorkspaceObject]) = {
     calculate_internal_strength(bond_category_degree_of_association)
     calculate_external_strength(activationBySlipNodeID, wos)
-    calculate_total_strength(null)
+    calculate_total_strength(log)
   };
 
 

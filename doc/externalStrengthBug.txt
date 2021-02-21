@@ -1,0 +1,116 @@
+344
+
+java c c5c5791f-223f-40bb-9407-773641b49bc6
+akka c ca05a9c3-3871-47f9-ac7b-db640814401b
+
+
+
+supporting_correspondences c1 81184f45-906e-4325-8aad-0d350ecf41a3 c2 024bcd11-c55a-45ee-ba55-a02c2deec71d
+cm1 distinguishing false cm letter -> letter label:Some(id) label activation: 12.5
+cm1 distinguishing true cm leftmost -> leftmost label:Some(id) label activation: 12.5
+cm2 distinguishing false cm letter -> letter label:Some(id) label activation: 12.5
+cm2 distinguishing true cm rightmost -> rightmost label:Some(id) label activation: 12.5
+dcm1 List(leftmost -> leftmost label:Some(id) label activation: 12.5)
+dcm2 List(rightmost -> rightmost label:Some(id) label activation: 12.5)
+supporting_concept_mappings
+supporting_concept_mappings4 true
+result true
+
+
+
+support ws!=this true
+support supporting_correspondences(this,(Correspondence)ws)) true
+3168e1b2-7906-4522-9011-d94007a5e09d total 79.9744
+supporting_correspondences c1 Correspondence between letter (1)1 and letter (1)1 c2 Correspondence between letter (1)1 and letter (1)1
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
+support ws!=this false
+support supporting_correspondences(this,(Correspondence)ws)) false
+bd6e332b-5a65-4944-b412-e030e7574830 total 79.872
+support support_sum 79.9744
+bd6e332b-5a65-4944-b412-e030e7574830 class Correspondence internal_strength 80.0 external_strength 79.9744 total strength:79.99488000000001
+
+
+bd6e332b-5a65-4944-b412-e030e7574830 total 79.99488000000001
+3168e1b2-7906-4522-9011-d94007a5e09d class Correspondence internal_strength 80.0 external_strength 79.99488000000001 total strength:79.998976
+
+
+-----
+
+5124
+supporting_correspondences c1 81184f45-906e-4325-8aad-0d350ecf41a3 c2 024bcd11-c55a-45ee-ba55-a02c2deec71d
+cm1 distinguishing false cm letter -> letter label:Some(id) label activation: 12.5
+cm1 distinguishing true cm leftmost -> leftmost label:Some(id) label activation: 12.5
+cm2 distinguishing false cm letter -> letter label:Some(id) label activation: 12.5
+cm2 distinguishing true cm rightmost -> rightmost label:Some(id) label activation: 12.5
+dcm1 List(leftmost -> leftmost label:Some(id) label activation: 12.5)
+dcm2 List(rightmost -> rightmost label:Some(id) label activation: 12.5)
+supporting_concept_mappings
+supporting_concept_mappings4 true
+result true
+
+
+
+
+supporting_correspondences c1 6f0a78d3-a8dd-44ac-b64a-20d0943768c7 c2 113a9e05-6a6f-4b8a-bfc2-1b0799fe68e9
+(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)
+
+
+4722
+09317a25-ac71-4cf4-b9ea-d09124fa86ad support obj1 letter (1)1
+support ws!=this true
+support supporting_correspondences(this,(Correspondence)ws)) false. !!!!!!!
+113a9e05-6a6f-4b8a-bfc2-1b0799fe68e9 total 79.998976
+support ws!=this false
+support supporting_correspondences(this,(Correspondence)ws)) false
+09317a25-ac71-4cf4-b9ea-d09124fa86ad total 79.9997952
+support support_sum 0.0
+09317a25-ac71-4cf4-b9ea-d09124fa86ad class models.Correspondence internal_strength 75.0 external_strength 0.0 total strength: 56.25
+
+
+
+5197
+09317a25-ac71-4cf4-b9ea-d09124fa86ad total 56.25
+support support_sum 56.25
+113a9e05-6a6f-4b8a-bfc2-1b0799fe68e9 class models.Correspondence internal_strength 80.0 external_strength 56.25 total strength: 75.25
+
+
+
+
+
+
+
+
+
+
+
+
+
+Random rndseed=332
+support support_sum 79.99488000000001
+3168e1b2-7906-4522-9011-d94007a5e09d class Correspondence internal_strength 80.0 external_strength 79.99488000000001 total strength:79.998976
+
+support support_sum 0.0
+024bcd11-c55a-45ee-ba55-a02c2deec71d class models.Correspondence internal_strength 80.0 external_strength 56.25 total strength: 75.25
+
+
+
+
+81184f45-906e-4325-8aad-0d350ecf41a3 total 56.25 !!!
+
+
+supporting_correspondences c1 024bcd11-c55a-45ee-ba55-a02c2deec71d c2 81184f45-906e-4325-8aad-0d350ecf41a3
+true
+
+
+3168e1b2-7906-4522-9011-d94007a5e09d class Correspondence internal_strength 80.0 external_strength 79.99488000000001 total strength:79.998976
+
+
+
+
+support support_sum 0.0
+
+81184f45-906e-4325-8aad-0d350ecf41a3 class models.Correspondence internal_strength 75.0 external_strength 0.0 total strength: 56.25
+
+
+
+024bcd11-c55a-45ee-ba55-a02c2deec71d => false !!!

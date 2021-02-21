@@ -1360,21 +1360,28 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
     case SlipnetGoWithCorrespondenceBuilder2(correspondence, correspondenceReps, workspaceCorrespondences) =>
       log.debug("Slipnet. SlipnetGoWithCorrespondenceBuilder2")
       val incc = get_incompatible_correspondences(correspondence, correspondenceReps)
-      val (internal_strength: Double, comap: Map[String, Boolean]) = correpondenceData(correspondence, workspaceCorrespondences)
+      val cData = correpondenceData(correspondence, workspaceCorrespondences)
 
-      sender() ! SlipnetGoWithCorrespondenceBuilderResponse2(incc, internal_strength, comap)
+
+      val inccData = incc.map(cr => {
+        val correspondenceUpdateStrengthData = correpondenceData(cr,workspaceCorrespondences)
+        log.debug("comap for " + cr.uuid + " comap " + correspondenceUpdateStrengthData);
+        (cr.uuid, correspondenceUpdateStrengthData)
+      }).toMap
+
+      sender() ! SlipnetGoWithCorrespondenceBuilderResponse2(incc, cData, inccData)
 
     case SlipnetGoWithCorrespondenceBuilder3(correspondence, incompatible_bond_base, workspaceCorrespondences) =>
       log.debug("Slipnet. SlipnetGoWithCorrespondenceBuilder3")
       val b = get_incompatible_bond(correspondence, incompatible_bond_base)
 
-      val (internal_strength: Double, comap: Map[String, Boolean]) = correpondenceData(correspondence, workspaceCorrespondences)
+      val cData = correpondenceData(correspondence, workspaceCorrespondences)
       val bond_degree_of_association = b.map(br => {
         val bondCategorySlipNode = slipNodeRefs(br.bondCategorySlipNodeID)
         bondCategorySlipNode.bond_degree_of_association()
       })
 
-      sender() ! SlipnetGoWithCorrespondenceBuilderResponse3(b, internal_strength, comap, bond_degree_of_association)
+      sender() ! SlipnetGoWithCorrespondenceBuilderResponse3(b, cData, bond_degree_of_association)
 
     case SlipnetGoWithCorrespondenceBuilder4(c) =>
       log.debug("Slipnet. SlipnetGoWithCorrespondenceBuilder4")
@@ -1416,8 +1423,8 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       sender() ! SlipnetGoWithBondStrengthTesterResponse(bondCategorySlipNode.bond_degree_of_association())
 
     case SlipnetGoWithCorrespondenceStrengthTester(c: CorrespondenceRep, workspaceCorrespondences) =>
-      val (internal_strength: Double, comap: Map[String, Boolean]) = correpondenceData(c, workspaceCorrespondences)
-      sender() ! SlipnetGoWithCorrespondenceStrengthTesterResponse(internal_strength, comap)
+      val cData = correpondenceData(c, workspaceCorrespondences)
+      sender() ! SlipnetGoWithCorrespondenceStrengthTesterResponse(cData)
 
     case SlipnetGoWithCorrespondenceStrengthTester2(c: CorrespondenceRep) =>
       // activate some concepts
@@ -1440,15 +1447,9 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       }).toMap
 
       val correspondenceData = crs.map(cr => {
-        val relevant_dcms = relevant_distinguishing_cms(cr)
-        System.out.println("correspondence_internal_strength relevant_dcms " + relevant_dcms);
-
-        val internal_strength = correspondence_internal_strength(relevant_dcms)
-
-        val cocouples  = for (co <- crs) yield (co.uuid,  supporting_correspondences(cr, co))
-        val comap = cocouples.toMap
-
-        (cr.uuid, CorrespondenceUpdateStrengthData(internal_strength, comap))
+        val cData = correpondenceData(cr,crs)
+        log.debug("comap for " + cr.uuid + " comap " + cData);
+        (cr.uuid, cData)
       }).toMap
 
       val groupData = grs.map(gr => {
@@ -1590,7 +1591,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
     val cocouples = for (co <- workspaceCorrespondences) yield (co.uuid, supporting_correspondences(c, co))
     val comap = cocouples.toMap
-    (internal_strength, comap)
+    CorrespondenceUpdateStrengthData(internal_strength, comap)
   }
 
   def get_bottom_up_codelets(f: () => Unit,
@@ -1762,7 +1763,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
     // Returns t if c1 supports c2, nil otherwise.  For now, c1 is
     // defined to support c2 if c1 is not incompatible with c2, and
     // has a concept-mapping that supports the concept-mappings of c2.
-    log.debug("supporting_correspondences c1 c2")
+    log.debug("supporting_correspondences c1 " + c1.uuid +  " c2 " + c2.uuid)
 
     if ((c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)) {
       log.debug("(c1.obj1==c2.obj1)||(c1.obj2==c2.obj2)")
@@ -1786,7 +1787,10 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
     log.debug("dcm1 " + dcm1);
     log.debug("dcm2 " + dcm2);
 
-    supporting_concept_mappingsWithXY(dcm1,dcm2,true)
+    val result = supporting_concept_mappingsWithXY(dcm1,dcm2,true)
+    log.debug("result " + result);
+
+    result
   }
 
 
@@ -1812,9 +1816,9 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       log.debug("num_of_concept_mappings_factor " + num_of_concept_mappings_factor);
       // should return false
       val internal_coherence_factor = if (internally_coherent(relevant_dcms)) 2.5 else 1.0
-      println(s"correspondence_internal_strength average_strength $average_strength internal_coherence_factor $internal_coherence_factor num_of_concept_mappings_factor $num_of_concept_mappings_factor")
+      log.debug(s"correspondence_internal_strength average_strength $average_strength internal_coherence_factor $internal_coherence_factor num_of_concept_mappings_factor $num_of_concept_mappings_factor")
       val rawI = average_strength * internal_coherence_factor * num_of_concept_mappings_factor
-      System.out.println("calculate_internal_strength internal_strength " +  rawI);
+      log.debug("calculate_internal_strength internal_strength " +  rawI);
 
       if (rawI > 100.0) 100.0 else rawI
     }

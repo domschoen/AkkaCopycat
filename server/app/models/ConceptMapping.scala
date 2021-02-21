@@ -184,9 +184,6 @@ class ConceptMapping(val description_type1: SlipNode,
 
 
   override def toString(): String = {
-    println("descriptor1 " + descriptor1)
-    println("descriptor2 " + descriptor2)
-    println("label " + label)
     descriptor1.name + " -> " + descriptor2.name + " label:"+ label.map(_.id()) + " label activation: " + (if (label.isDefined) label.get.activation else "None")
   }
 

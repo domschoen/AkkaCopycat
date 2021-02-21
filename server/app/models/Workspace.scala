@@ -232,12 +232,11 @@ object Workspace {
   case class GoWithCorrespondenceBuilder3(correponsdenceID: String,
                                           updatedCorrespondenceCMReps: List[ConceptMappingRep])
   case class GoWithCorrespondenceBuilder4(correponsdenceID: String, correspondenceReps: List[CorrespondenceRep],
-                                          internal_strength: Double,
-                                          supporting_correspondences:Map[String, Boolean]
+                                          cData: CorrespondenceUpdateStrengthData,
+                                          inccData:Map[String, CorrespondenceUpdateStrengthData]
                                          )
   case class GoWithCorrespondenceBuilder5(correponsdenceID: String, b: Option[BondRep],
-                                          internal_strength: Double,
-                                          supporting_correspondences:Map[String, Boolean],
+                                          cData: CorrespondenceUpdateStrengthData,
                                           bond_category_degree_of_associationOpt: Option[Double]
                                          )
   case class GoWithCorrespondenceBuilder6(
@@ -246,8 +245,7 @@ object Workspace {
 
   case class GoWithCorrespondenceBuilder10Fight(
                                                  correponsdenceID: String,
-                                                 internal_strength: Double,
-                                                 supporting_correspondences:Map[String, Boolean],
+                                                 correspondenceUpdateStrengthData: CorrespondenceUpdateStrengthData,
                                                  slippage_list: List[ConceptMappingRep]
                                                )
   case class GoWithCorrespondenceBuilder10Continue(
@@ -279,7 +277,7 @@ object Workspace {
                                                        )
   case class GoWithCorrespondenceStrengthTester(correponsdenceID: String, futureGroupRep: FutureGroupRep, t:Double)
   case class GoWithCorrespondenceStrengthTester2(correponsdenceID: String, t:Double)
-  case class GoWithCorrespondenceStrengthTester3(correponsdenceID: String, internalStrength: Double,supporting_correspondences:Map[String, Boolean], t:Double)
+  case class GoWithCorrespondenceStrengthTester3(correponsdenceID: String, cData: CorrespondenceUpdateStrengthData, t:Double)
 
   case class DataForStrengthUpdateResponse(bondData: Map[String,Double],
                                            correpondenceData: Map[String, CorrespondenceUpdateStrengthData],
@@ -2250,8 +2248,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       sender() ! Finished
 
 
-
-    case GoWithCorrespondenceBuilder4(correponsdenceID, correspondenceReps, internal_strength, correpondenceData) =>
+    case GoWithCorrespondenceBuilder4(correponsdenceID, correspondenceReps, cData, inccData) =>
       log.debug("Workspace. GoWithCorrespondenceBuilder4")
       val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
       log.debug("Workspace. GoWithCorrespondenceBuilder4 - 2")
@@ -2265,8 +2262,9 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
         val won = incc.find(comp => {
           val csize = (c.obj1).letter_span() + (c.obj2).letter_span();
           val compsize = (comp.obj1).letter_span() + (comp.obj2).letter_span();
+          val compCData = inccData(comp.uuid)
           !(correspondence_vs_correspondence(
-            c, csize, comp, compsize, internal_strength, correpondenceData))
+            c, csize, cData, comp, compsize, compCData))
         }).isEmpty
         if (won) log.debug("won!")
         !won
@@ -2292,15 +2290,11 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
           sender ! GoWithCorrespondenceBuilder4Response1(c.correspondenceRep(),incompatible_bond_base, wcreps)
         } else {
-          sender ! GoWithCorrespondenceBuilder4Response2(None, internal_strength, correpondenceData)
+          sender ! GoWithCorrespondenceBuilder4Response2(None, cData)
         }
       }
 
-    case GoWithCorrespondenceBuilder5(correponsdenceID: String, incompatible_bondOpt,
-    internal_strength: Double,
-    supporting_correspondences:Map[String, Boolean],
-    bond_category_degree_of_associationOpt
-    ) =>
+    case GoWithCorrespondenceBuilder5(correponsdenceID, incompatible_bondOpt, cData, bond_category_degree_of_associationOpt) =>
       val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
       var incompatible_group = Option.empty[Group]
       val anyLostFight = if (incompatible_bondOpt.isDefined){
@@ -2308,7 +2302,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
         log.debug("fighting incompatible bond");
         // bond found - fight against it
         if (!(correspondence_vs_bond(
-          c,3.0,incompatible_bond,2.0, internal_strength, supporting_correspondences, bond_category_degree_of_associationOpt.get))){
+          c,3.0,incompatible_bond,2.0, cData, bond_category_degree_of_associationOpt.get))){
           log.debug("lost: fizzle!");
           true  // fizzle as it has lost
         } else {
@@ -2318,7 +2312,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
           if (incompatible_group.isDefined){
             log.debug("fighting incompatible group");
             if (!(correspondence_vs_group(
-              c,1.0,incompatible_group.get,1.0, internal_strength, supporting_correspondences))){
+              c,1.0,incompatible_group.get,1.0, cData))){
               log.debug("lost: fizzle!");
               true  // fizzle as it has lost
             }
@@ -2330,7 +2324,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       if (anyLostFight) {
         sender() ! Finished
       } else {
-        sender() ! GoWithCorrespondenceBuilder4Response2(incompatible_group.map(_.groupRep()),internal_strength, supporting_correspondences)
+        sender() ! GoWithCorrespondenceBuilder4Response2(incompatible_group.map(_.groupRep()),cData)
       }
 
     case GoWithCorrespondenceBuilder6(correponsdenceID) =>
@@ -2348,10 +2342,10 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
           sender() ! GoWithCorrespondenceBuilder16ContinuePostFight
       }
 
-    case GoWithCorrespondenceBuilder10Fight(correponsdenceID, internal_strength, supporting_correspondences, slippage_list) =>
+    case GoWithCorrespondenceBuilder10Fight(correponsdenceID, cData, slippage_list) =>
       val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
       if (!(correspondence_vs_rule(
-        c,1.0,rule.get,1.0, internal_strength, supporting_correspondences, slippage_list))){
+        c,1.0,rule.get,1.0, cData, slippage_list))){
         log.debug("lost: fizzle!");
         sender() ! Finished
       } else {
@@ -2422,10 +2416,10 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
       sender() ! GoWithCorrespondenceStrengthTesterResponse2(c.correspondenceRep(), wcreps)
 
-    case GoWithCorrespondenceStrengthTester3(correponsdenceID: String, internalStrength: Double, supporting_correspondences:Map[String, Boolean], t:Double) =>
+    case GoWithCorrespondenceStrengthTester3(correponsdenceID: String, cData, t:Double) =>
       log.debug("GoWithCorrespondenceStrengthTester3")
       val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
-      c.update_strength_value(internalStrength, workspaceCorrespondences(), supporting_correspondences)
+      c.update_strength_value(workspaceCorrespondences(), cData)
 
       val strength = c.total_strength
       val prob = WorkspaceFormulas.temperature_adjusted_probability(strength / 100.0, t)
@@ -2460,7 +2454,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       val c = ws.asInstanceOf[Correspondence]
       val cData = correspondenceData(c.uuid)
       //log.debug("cData.internal_strength " + cData.internal_strength)
-      c.update_strength_value(cData.internal_strength, workspaceCorrespondences(), cData.supporting_correspondences)
+      c.update_strength_value(workspaceCorrespondences(), cData)
     } else if (ws.isInstanceOf[Rule]) {
       val r = ws.asInstanceOf[Rule]
       r.update_strength_value(initial.objects.toList, slippageRepList)
@@ -2846,13 +2840,14 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
   def correspondence_vs_correspondence(s1: Correspondence,
                                        w1: Double,
+                                       cData1: CorrespondenceUpdateStrengthData,
+
                                        s2: Correspondence,
                                        w2: Double,
-                                       internal_strength: Double,
-                                       supporting_correspondences:Map[String, Boolean]
+                                       cData2: CorrespondenceUpdateStrengthData
                                       ): Boolean = {
-    s1.update_strength_value(internal_strength, workspaceCorrespondences(), supporting_correspondences)
-    s2.update_strength_value(internal_strength, workspaceCorrespondences(), supporting_correspondences)
+    s1.update_strength_value(workspaceCorrespondences(), cData1)
+    s2.update_strength_value(workspaceCorrespondences(), cData2)
     complete_structure_vs_structure(s1,w1,s2,w2)
   }
 
@@ -2860,11 +2855,10 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
                                        w1: Double,
                                        s2: Bond,
                                        w2: Double,
-                                       internal_strength: Double,
-                                       supporting_correspondences:Map[String, Boolean],
+                                        cData: CorrespondenceUpdateStrengthData,
                                        bond_category_degree_of_association: Double
                                       ): Boolean = {
-    s1.update_strength_value(internal_strength, workspaceCorrespondences(), supporting_correspondences)
+    s1.update_strength_value(workspaceCorrespondences(), cData)
     s2.update_strength_value(activationBySlipNodeID, bond_category_degree_of_association, objects.toList)
     complete_structure_vs_structure(s1,w1,s2,w2)
   }
@@ -2873,10 +2867,9 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
                                        w1: Double,
                                        s2: Group,
                                        w2: Double,
-                                       internal_strength: Double,
-                                       supporting_correspondences:Map[String, Boolean]
+                                       cData: CorrespondenceUpdateStrengthData
                                       ): Boolean = {
-    s1.update_strength_value(internal_strength, workspaceCorrespondences(), supporting_correspondences)
+    s1.update_strength_value(workspaceCorrespondences(), cData)
     s2.update_strength_value(log, activationBySlipNodeID, objects.toList)
     complete_structure_vs_structure(s1,w1,s2,w2)
   }
@@ -2885,11 +2878,10 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
                              w1: Double,
                              s2: Rule,
                              w2: Double,
-                             internal_strength: Double,
-                             supporting_correspondences:Map[String, Boolean],
+                             cData: CorrespondenceUpdateStrengthData,
                              slippage_list: List[ConceptMappingRep]
                             ): Boolean = {
-    s1.update_strength_value(internal_strength, workspaceCorrespondences(), supporting_correspondences)
+    s1.update_strength_value(workspaceCorrespondences(), cData)
     s2.update_strength_value(initial.objects.toList, slippage_list)
     complete_structure_vs_structure(s1,w1,s2,w2)
   }

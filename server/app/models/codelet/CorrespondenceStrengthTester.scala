@@ -3,7 +3,7 @@ package models.codelet
 import akka.event.LoggingReceive
 import akka.actor.ActorRef
 import models.Correspondence.CorrespondenceRep
-import models.Slipnet.{GroupFlippedVersion, GroupFlippedVersionResponse, SlipnetGoWithCorrespondenceStrengthTester}
+import models.Slipnet.{CorrespondenceUpdateStrengthData, GroupFlippedVersion, GroupFlippedVersionResponse, SlipnetGoWithCorrespondenceStrengthTester}
 import models.Temperature.{TemperatureChanged, TemperatureResponse}
 import models.Workspace.{GoWithCorrespondenceBuilder, GoWithCorrespondenceBuilder2, GoWithCorrespondenceBuilder9Response, GoWithCorrespondenceBuilderResponse, GoWithCorrespondenceStrengthTester2, GoWithCorrespondenceStrengthTester3}
 import models.codelet.CorrespondenceStrengthTester.{GoWithCorrespondenceStrengthTesterResponse2, GoWithCorrespondenceStrengthTesterResponse3}
@@ -13,7 +13,7 @@ object CorrespondenceStrengthTester {
   case object GoWithCorrespondenceStrengthTesterResponse
   case class GoWithCorrespondenceStrengthTesterResponse2(c: CorrespondenceRep, workspaceCorrespondences: List[CorrespondenceRep])
   case class GoWithCorrespondenceStrengthTesterResponse3(c: CorrespondenceRep, strenght: Double)
-  case class SlipnetGoWithCorrespondenceStrengthTesterResponse(internal_strength: Double, supporting_correspondences:Map[String, Boolean])
+  case class SlipnetGoWithCorrespondenceStrengthTesterResponse(cData: CorrespondenceUpdateStrengthData)
   case object SlipnetGoWithCorrespondenceStrengthTester2Response
 }
 class CorrespondenceStrengthTester(urgency: Int,              workspace: ActorRef,
@@ -77,8 +77,8 @@ class CorrespondenceStrengthTester(urgency: Int,              workspace: ActorRe
     case GoWithCorrespondenceStrengthTesterResponse2(c, workspaceCorrespondences) =>
       slipnet ! SlipnetGoWithCorrespondenceStrengthTester(c, workspaceCorrespondences)
 
-    case SlipnetGoWithCorrespondenceStrengthTesterResponse(internal_strength, supporting_correspondences:Map[String, Boolean]) =>
-      workspace ! GoWithCorrespondenceStrengthTester3(correspondanceID,internal_strength, supporting_correspondences, runTemperature)
+    case SlipnetGoWithCorrespondenceStrengthTesterResponse(cData) =>
+      workspace ! GoWithCorrespondenceStrengthTester3(correspondanceID,cData, runTemperature)
 
 
     case GoWithCorrespondenceStrengthTesterResponse3(c, s) =>

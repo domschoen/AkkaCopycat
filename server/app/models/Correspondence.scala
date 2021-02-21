@@ -3,6 +3,7 @@ package models
 import akka.event.LoggingAdapter
 import models.Bond.BondRep
 import models.ConceptMapping.ConceptMappingRep
+import models.Slipnet.CorrespondenceUpdateStrengthData
 import models.WorkspaceObject.WorkspaceObjectRep
 
 import scala.collection.mutable.ListBuffer
@@ -203,10 +204,9 @@ case class Correspondence (log: LoggingAdapter,
   }
 
 
-  def update_strength_value(is: Double, cs: List[Correspondence], supporting_correspondences:Map[String, Boolean]) = {
-    calculate_internal_strength(is)
-    calculate_external_strength(cs, supporting_correspondences)
-    log.debug("calculate_total_strength")
+  def update_strength_value(cs: List[Correspondence], cData: CorrespondenceUpdateStrengthData) = {
+    calculate_internal_strength(cData.internal_strength)
+    calculate_external_strength(cs, cData.supporting_correspondences)
     calculate_total_strength(log)
   };
 
@@ -266,7 +266,7 @@ case class Correspondence (log: LoggingAdapter,
     // This returns the sum of the strengths of other correspondences that
     // support this one (or 100, whichever is lower).  If one of the objects is the
     // single letter in its string, then the support is 100.
-    log.debug("support obj1 " + obj1);
+    log.debug(uuid + " support obj1 " + obj1);
     //System.out.println("support obj1.spans_string " + obj1.spans_string);
     //System.out.println("support obj2 " + obj1);
     //System.out.println("support obj2.spans_string " + obj2.spans_string);
@@ -277,11 +277,12 @@ case class Correspondence (log: LoggingAdapter,
       val supCorrs = supporting_correspondences(c.uuid)
       log.debug("support ws!=this " + (c !=this));
       log.debug("support supporting_correspondences(this,(Correspondence)ws)) " + supCorrs);
+      log.debug(c.uuid + " total " + c.total_strength);
 
       if ((c != this) && supCorrs)
           support_sum += c.total_strength;
     }
-    //System.out.println("support support_sum " + support_sum);
+    log.debug("support support_sum " + support_sum);
 
     if (support_sum>100.0) return 100.0;
     else return support_sum;

@@ -1,75 +1,85 @@
 update_Everything 33
 1T: 57.78693683509205
 Workspace structure update_strength_value description(letter) of letter (1)1 in initial string
-f69fbb09-b559-433b-b9f2-a3bd49ddd4ef description(letter) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
+6f9e2917-179b-47a6-a762-3351fa797c12 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(A) of letter (1)1 in initial string
-35413fe5-a579-43ba-a616-ddea490d3cb8 description(A) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
+3ab554ec-a0b8-4b8d-aec0-50f69075211b class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(leftmost) of letter (1)1 in initial string
-dba61d2a-3fa7-420c-8021-d840ed67956f description(leftmost) of letter (1)1 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
+6b1a32bc-3626-4025-b1f8-699a0320c5b3 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(letter) of letter (2)2 in initial string
-afb3a1fc-aef7-4885-867b-cde3ccb15a93 description(letter) of letter (2)2 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
+5948ad6f-d926-41a9-b3c6-2333e39aebeb class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(B) of letter (2)2 in initial string
-d0b8d677-4138-468f-a18f-2ce183fc9f66 description(B) of letter (2)2 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
+5311e408-2588-4d2c-8363-f4f92565198b class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(middle) of letter (2)2 in initial string
-bddd1590-3f76-45da-99e5-44eef2cb70a0 description(middle) of letter (2)2 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
+7117fec6-a570-401a-801b-212995032351 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(letter) of letter (3)3 in initial string
-20dd67b1-e74f-4943-886e-47caa6c4c24f description(letter) of letter (3)3 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
+4c0b92db-15f6-4434-b8fa-a8e79269a699 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(C) of letter (3)3 in initial string
-5c515f6d-9c75-4f6a-85bc-e851eec3b75b description(C) of letter (3)3 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
+b69205cb-a9a1-42ef-8ab7-f9a2619c50b9 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(rightmost) of letter (3)3 in initial string
-b490c9b3-a2c2-44ea-aa0e-c94d5963641e description(rightmost) of letter (3)3 in initial string internal_strength 50.0 external_strength 100.0 total strength:75.0
+9a6506f7-f485-459d-aaa3-0743879dc17e class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(letter) of letter (1)1 in modified string
-4efd8517-059f-469d-9acb-916873bccc17 description(letter) of letter (1)1 in modified string internal_strength 50.0 external_strength 100.0 total strength:75.0
+94b7632e-29ed-47ef-a0a6-a1d9c7801fd3 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(A) of letter (1)1 in modified string
-74b6fb82-90d8-4dd0-8cd8-f0e133ed0911 description(A) of letter (1)1 in modified string internal_strength 50.0 external_strength 100.0 total strength:75.0
+0ffbabd9-e8c4-4d4d-a207-3e95f6e59687 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(leftmost) of letter (1)1 in modified string
-23bf84f7-049b-46c8-bbd4-5524ca57ea21 description(leftmost) of letter (1)1 in modified string internal_strength 50.0 external_strength 100.0 total strength:75.0
+9eaf6d1a-d683-404c-bce0-fbfa3d0925eb class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(letter) of letter (2)2 in modified string
-fe52b7d2-b667-4e1b-a457-55037442356a description(letter) of letter (2)2 in modified string internal_strength 50.0 external_strength 100.0 total strength:75.0
+37a19d90-903d-4111-9b69-d995dd3fbd9b class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(B) of letter (2)2 in modified string
-f741dd7f-38fe-4813-ad8d-2561b2ba7804 description(B) of letter (2)2 in modified string internal_strength 50.0 external_strength 100.0 total strength:75.0
+89c72be2-f811-4257-8a49-8682fb20c833 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(middle) of letter (2)2 in modified string
-21f67bd8-604c-4d27-b134-107e2d761ac1 description(middle) of letter (2)2 in modified string internal_strength 50.0 external_strength 100.0 total strength:75.0
+2f5fda73-8ad0-4275-b012-ffbb5b9aa173 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(letter) of letter (3)3 in modified string
-46737e16-4349-49e6-a0dc-e785dc8911ee description(letter) of letter (3)3 in modified string internal_strength 50.0 external_strength 100.0 total strength:75.0
+7fb61cea-09c2-4dcf-8dba-b0bdec780d07 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(D) of letter (3)3 in modified string
-c4f0f531-bde6-4d49-acdf-538251a2370e description(D) of letter (3)3 in modified string internal_strength 50.0 external_strength 100.0 total strength:75.0
+9c49646d-bb46-49dd-beea-010897283990 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(rightmost) of letter (3)3 in modified string
-38b7658f-a3c5-4bab-a0a5-b1aee7928637 description(rightmost) of letter (3)3 in modified string internal_strength 50.0 external_strength 100.0 total strength:75.0
+3fc81545-23a4-41e2-ad68-cb4c5ffeb2b4 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(letter) of letter (1)1 in target string
-be7b123c-9acf-4d88-b7c5-5b831ddc1215 description(letter) of letter (1)1 in target string internal_strength 50.0 external_strength 100.0 total strength:75.0
+7f92df24-de87-4d47-8a80-9efc44b92da3 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(C) of letter (1)1 in target string
-a5de85fe-178c-407e-a072-e54ee6237db4 description(C) of letter (1)1 in target string internal_strength 50.0 external_strength 100.0 total strength:75.0
+c3c0264d-8d3c-4691-a380-03f79b5ced6c class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(leftmost) of letter (1)1 in target string
-93488c9c-8ad7-42f4-9393-abbf8d56c4e1 description(leftmost) of letter (1)1 in target string internal_strength 50.0 external_strength 100.0 total strength:75.0
+b16ecdeb-7ffb-49c9-8881-7604e8390ee1 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(letter) of letter (2)2 in target string
-0757a43e-7a67-4da8-b2df-3b5a41b1a060 description(letter) of letter (2)2 in target string internal_strength 50.0 external_strength 100.0 total strength:75.0
+13b6217f-76fb-49e4-b214-05bd98a74f6f class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(D) of letter (2)2 in target string
-44f1b2aa-33aa-4059-8f53-eac07b378ddb description(D) of letter (2)2 in target string internal_strength 50.0 external_strength 100.0 total strength:75.0
+d7dbac73-82de-4747-8b12-63a89adc2bb9 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(middle) of letter (2)2 in target string
-0e2cce5c-bb3e-41ea-8b22-697656bef562 description(middle) of letter (2)2 in target string internal_strength 50.0 external_strength 100.0 total strength:75.0
+7b5569b3-5d89-4cbc-8919-a449b53258cd class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(letter) of letter (3)3 in target string
-83c1e5ff-77fe-4379-9e1f-50ae503eb45d description(letter) of letter (3)3 in target string internal_strength 50.0 external_strength 100.0 total strength:75.0
+951ac1c6-4774-4760-9f82-a9d43832c689 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(E) of letter (3)3 in target string
-5aba688e-f719-4acf-b94c-502c5d2f50dc description(E) of letter (3)3 in target string internal_strength 50.0 external_strength 100.0 total strength:75.0
+39b2d116-e183-4656-99c9-108a4c72479e class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value description(rightmost) of letter (3)3 in target string
-b3a53935-a576-4548-80be-51a6bc0eb002 description(rightmost) of letter (3)3 in target string internal_strength 50.0 external_strength 100.0 total strength:75.0
+50d3350f-d506-4edf-95ce-5b28a2bf7084 class description internal_strength 50.0 external_strength 100.0 total strength:75.0
 Workspace structure update_strength_value Correspondence between letter (3)3 and letter (3)3
-d5651014-f3fb-4ef6-b29f-07887e1624d1 Correspondence between letter (3)3 and letter (3)3 internal_strength 80.0 external_strength 79.9997952 total strength:79.99995904
+support obj1 letter (3)3
+support ws!=this false
+support supporting_correspondences(this,(Correspondence)ws)) false
+support ws!=this true
+support supporting_correspondences(this,(Correspondence)ws)) true
+a10f8669-de97-406f-9ed4-fe1bb4b76d76 class Correspondence internal_strength 80.0 external_strength 79.9997952 total strength:79.99995904
 Workspace structure update_strength_value Correspondence between letter (1)1 and letter (1)1
-8b015401-9a90-42d9-801f-1f57e0a76e40 Correspondence between letter (1)1 and letter (1)1 internal_strength 80.0 external_strength 79.99995904 total strength:79.99999180799999
+support obj1 letter (1)1
+support ws!=this true
+support supporting_correspondences(this,(Correspondence)ws)) true
+support ws!=this false
+support supporting_correspondences(this,(Correspondence)ws)) false
+f9d0ad0a-cd28-47ad-b90f-ae74b2a005ad class Correspondence internal_strength 80.0 external_strength 79.99995904 total strength:79.99999180799999
 Workspace structure update_strength_value replace letter category of rightmost letter by D
 slippage_list 1 Correspondence between letter (3)3 and letter (3)3 cml [letter -> letter, rightmost -> rightmost]
 slippage_list 2 Correspondence between letter (1)1 and letter (1)1 cml []
 slippage_list 2 Correspondence between letter (3)3 and letter (3)3 cml []
-50a00347-893f-4c63-a979-6554f6b4ddc9 replace letter category of rightmost letter by D internal_strength 88.12908230365319 external_strength 88.12908230365319 total strength:88.12908230365319
+ab862bf2-ea95-4d32-baa3-1ccd3bb89be0 class Rule internal_strength 88.12908230365319 external_strength 88.12908230365319 total strength:88.12908230365319
 Rule calculate_total_strength rule: replace letter category of rightmost letter by D total_strength 88.12908230365319
 Workspace structure update_strength_value sc bond between letter (1)1 and letter (2)2
-f380962b-9da6-4f84-a0a7-38e8cca4213a sc bond between letter (1)1 and letter (2)2 internal_strength 95.89577675789482 external_strength 70.71067811865476 total strength:94.862124085996
+e2ff00c0-ec5e-4847-89fc-2034addda9a6 class bond internal_strength 95.89577675789482 external_strength 70.71067811865476 total strength:94.862124085996
 Workspace structure update_strength_value sc bond between letter (2)2 and letter (3)3
-f229e0e0-b2a9-497e-b61d-e429415af688 sc bond between letter (2)2 and letter (3)3 internal_strength 95.89577675789482 external_strength 0.0 total strength:91.96
+18fbb387-8638-4d18-98c9-fcab3ffee5bb class bond internal_strength 95.89577675789482 external_strength 0.0 total strength:91.96
 Workspace structure update_strength_value sc bond between letter (2)2 and letter (3)3
-3005ec0e-cac0-4a0a-96c7-13a1f653d304 sc bond between letter (2)2 and letter (3)3 internal_strength 95.89577675789482 external_strength 70.71067811865476 total strength:94.862124085996
+bd136497-e08e-4dad-a293-1842b078d8c3 class bond internal_strength 95.89577675789482 external_strength 70.71067811865476 total strength:94.862124085996
 2T: 57.78693683509205
 update the the object values of all objects in the workspace
 update_object_value description(letter) of letter (1)1 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
@@ -274,7 +284,7 @@ intra_string_unhappiness 85.63712092473374 inter_string_unhappiness 38.909111860
 slippage_list 1 Correspondence between letter (3)3 and letter (3)3 cml [letter -> letter, rightmost -> rightmost]
 slippage_list 2 Correspondence between letter (1)1 and letter (1)1 cml []
 slippage_list 2 Correspondence between letter (3)3 and letter (3)3 cml []
-50a00347-893f-4c63-a979-6554f6b4ddc9 replace letter category of rightmost letter by D internal_strength 88.12908230365319 external_strength 88.12908230365319 total strength:88.12908230365319
+ab862bf2-ea95-4d32-baa3-1ccd3bb89be0 class Rule internal_strength 88.12908230365319 external_strength 88.12908230365319 total strength:88.12908230365319
 Rule calculate_total_strength rule: replace letter category of rightmost letter by D total_strength 88.12908230365319
 rule_weakness 11.870917696346808
 formulas.actual_temperature 52.19267665346347
