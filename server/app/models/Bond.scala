@@ -51,6 +51,8 @@ class Bond (
     s"${bond_category.id} bond between ${left_obj} and ${right_obj}"
   }
 
+  println("Create Bond " + uuid)
+
   def bondRep(): BondRep = BondRep(
     uuid,
     from_obj.uuid,

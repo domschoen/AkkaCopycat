@@ -744,7 +744,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       log.debug("WorkspaceProposeBond bondFacet " + bondFacet + " bondCategory " + bondCategory)
       val nb = new Bond(log,bondFrom, bondTo, bondCategory, bondFacet, fromDescriptor, toDescriptor, slipnetLeft, slipnetRight, slipnet)
       // if (!remove_terraced_scan) workspace.WorkspaceArea.AddObject(nb,1);
-      wsRefs += (nb.uuid -> nb)
+      structureRefs += (nb.uuid -> nb)
 
       sender ! WorkspaceProposeBondResponse(nb.uuid)
 
@@ -1060,7 +1060,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     case GoWithGroupBuilder3(groupID, bondReps, degOfAssos: Map[String, Double]) =>
       log.debug("GoWithGroupBuilder3")
       val g = objectRefs(groupID).asInstanceOf[Group]
-      val incompatibleBondList = bondReps.map(br => wsRefs(br.uuid).asInstanceOf[Bond])
+      val incompatibleBondList = bondReps.map(br => structureRefs(br.uuid).asInstanceOf[Bond])
 
       if (fight_it_out_group_bonds(g,1.0, incompatibleBondList,1.0, degOfAssos)){
         // beat all competing groups
@@ -1075,7 +1075,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
     case AfterFighting(groupID, bondReps) =>
       val g = objectRefs(groupID).asInstanceOf[Group]
-      val incompatibleBondList = bondReps.map(br => wsRefs(br.uuid).asInstanceOf[Bond])
+      val incompatibleBondList = bondReps.map(br => structureRefs(br.uuid).asInstanceOf[Bond])
 
       // fight incompatible groups
       log.debug("fight incompatible groups");
@@ -1109,7 +1109,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
     case GoWithGroupBuilder5(groupID, incompatibleBondList, incgroup) =>
       val g = objectRefs(groupID).asInstanceOf[Group]
-      val incb = incompatibleBondList.map(br => wsRefs(br.uuid).asInstanceOf[Bond])
+      val incb = incompatibleBondList.map(br => structureRefs(br.uuid).asInstanceOf[Bond])
       val incg = incgroup.map(gid => objectRefs(gid).asInstanceOf[Group])
 
       log.debug("destroy incompatible bonds " + incb.size)
@@ -1176,7 +1176,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
     // Codelet.java.425
     case GoWithBondBuilder(temperature, bondID, bond_category_degree_of_association) =>
-      val b = wsRefs(bondID).asInstanceOf[Bond]
+      val b = structureRefs(bondID).asInstanceOf[Bond]
       logTrying(b, b.left_obj)
 
       b.update_strength_value(activationBySlipNodeID, bond_category_degree_of_association, objects.toList);
@@ -1332,12 +1332,12 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
     // codelet.java.395
     case GoWithBondStrengthTester(temperature, bondID) =>
-      val b = wsRefs(bondID).asInstanceOf[Bond]
+      val b = structureRefs(bondID).asInstanceOf[Bond]
       log.debug("GoWithBondStrengthTester " + b)
       sender() ! GoWithBondStrengthTesterResponse(b.bondRep())
 
     case GoWithBondStrengthTester2(temperature, bondID, bond_category_degree_of_association) =>
-      val b = wsRefs(bondID).asInstanceOf[Bond]
+      val b = structureRefs(bondID).asInstanceOf[Bond]
       b.update_strength_value(activationBySlipNodeID, bond_category_degree_of_association, objects.toList)
       val strength = b.total_strength;
       val leftStringOpt = b.left_obj.wString
@@ -1684,7 +1684,10 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       val wStringFromWo = object_rep_list.head
       val wString = objectRefs(wStringFromWo.uuid).wString.get
       val object_list = object_rep_list.map(ol => objectRefs(ol.uuid)).to[ListBuffer]
-      val bond_list = bls.map(ol => wsRefs(ol.uuid).asInstanceOf[Bond]).to[ListBuffer]
+      val bond_list = bls.map(ol => {
+        log.debug("Create Bond List " + ol)
+        structureRefs(ol.uuid).asInstanceOf[Bond]
+      }).to[ListBuffer]
 
 
       val ng = new Group(log,
@@ -2296,7 +2299,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       val c = wsRefs(correponsdenceID).asInstanceOf[Correspondence]
       var incompatible_group = Option.empty[Group]
       val anyLostFight = if (incompatible_bondOpt.isDefined){
-        val incompatible_bond = wsRefs(incompatible_bondOpt.get.uuid).asInstanceOf[Bond]
+        val incompatible_bond = structureRefs(incompatible_bondOpt.get.uuid).asInstanceOf[Bond]
         log.debug("fighting incompatible bond");
         // bond found - fight against it
         if (!(correspondence_vs_bond(
@@ -2360,7 +2363,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       }
       // break incompatible group and bond if they exist
       if (incompatible_bondOpt.isDefined) {
-        val incompatible_bond = wsRefs(incompatible_bondOpt.get.uuid).asInstanceOf[Bond]
+        val incompatible_bond = structureRefs(incompatible_bondOpt.get.uuid).asInstanceOf[Bond]
         break_bond(incompatible_bond)
       }
       if (incompatible_group.isDefined) {
