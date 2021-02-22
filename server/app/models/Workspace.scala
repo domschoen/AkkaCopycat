@@ -2168,14 +2168,14 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
       obj1Opt match {
         case Some(obj1) =>
-          println("object chosen from initial string: "+obj1);
+          log.debug("object chosen from initial string: "+obj1);
           val v = obj1.relevant_distinguishing_descriptors(activationBySlipNodeID)
-          println("relevant_distinguishing_descriptors: "+v);
+          log.debug("relevant_distinguishing_descriptors: "+v);
 
           sender() ! GoWithImportantObjectCorrespondenceScoutResponse(obj1.workspaceObjectRep(), v)
 
         case None =>
-          println("Popopo obj1 is null: Fizzle")
+          log.debug("Popopo obj1 is null: Fizzle")
           sender() ! Finished
       }
 

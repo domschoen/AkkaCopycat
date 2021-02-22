@@ -205,6 +205,8 @@ abstract class WorkspaceObject(log: LoggingAdapter, ws: WorkspaceString) extends
 
   def relevant_distinguishing_descriptors(activationBySlipNodeID: Map[String, Double]) = {
     relevant_descriptions(activationBySlipNodeID).map(d => {
+      log.debug("relevant_distinguishing_descriptors " + d.uuid + " " + d);
+
       if (d.descriptor.isDefined && distinguishing_descriptor(d.descriptor.get.id)) {
         Some(d.descriptor.get)
       } else None
@@ -224,21 +226,16 @@ abstract class WorkspaceObject(log: LoggingAdapter, ws: WorkspaceString) extends
     } else {
 
       ws.objects.find(wo => {
-        if (wo == this) {
-          true
-        } else {
+        (wo != this) &&
           // check to see if they are of the same type
-          if (
+          (
               (this.isInstanceOf[Letter] && wo.isInstanceOf[Letter]) ||
               (this.isInstanceOf[Group] && wo.isInstanceOf[Group])
-          ) {
+          ) &&
             // check all descriptions for the descriptor
-            wo.descriptions.find(d => d.descriptor.isDefined && d.descriptor.get.id == descriptor_id).isEmpty
+            wo.descriptions.find(d => d.descriptor.isDefined && d.descriptor.get.id == descriptor_id).isDefined
 
-          } else true
-        }
-
-      }).isDefined
+      }).isEmpty
     }
   }
 
