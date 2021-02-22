@@ -160,7 +160,7 @@ class Bond (
     // letter category bonds are stronger
     val bff = if (bond_facet.id == SlipNode.id.letter_category) 1.0 else 0.7
     val intstr = member_compatibility * bff * bond_degree_of_association;
-    //System.out.println(bond_category.pname+" bdoa:"+bond_category.bond_degree_of_association());
+    log.debug(bond_category.id + " bdoa: " + bond_degree_of_association);
     internal_strength = if (intstr > 100.0 ) 100.0 else intstr
     //System.out.println(this+" internal strength:"+internal_strength);
     internal_strength

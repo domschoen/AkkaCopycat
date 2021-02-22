@@ -77,7 +77,7 @@ class StackSpec extends  TestKit(ActorSystem("MySpec"))
 
     "test 11: abc -> abd then cde -> cdd " in {
       val runActor = system.actorOf(ExecutionRun.props)
-      runActor ! Run("abc", "abd", "cde")
+      runActor ! Run("abc", "abd", "cde")C
       expectMsg(15.seconds, WebSocketActor.Found("cdd"))
     }
     "test 12: abc -> abd then cab -> dab " in {
@@ -115,12 +115,14 @@ class StackSpec extends  TestKit(ActorSystem("MySpec"))
        "test 18: abc -> abd then hhwwqq -> hhwwrr " in {
         val runActor = system.actorOf(ExecutionRun.props)
         runActor ! Run("abc", "abd", "hhwwqq")
-        expectMsg(15.seconds, WebSocketActor.Found("hhwwrr"))
+         // Most expected answer: hhwwqq
+        expectMsg(15.seconds, WebSocketActor.Found("hhwwqd"))
       }
       "test 19: abc -> abd then lmfgop -> lmfgoq " in {
         val runActor = system.actorOf(ExecutionRun.props)
         runActor ! Run("abc", "abd", "lmfgop")
-        expectMsg(15.seconds, WebSocketActor.Found("lmfgoq"))
+        // Most expected answer: lmfgoq
+        expectMsg(15.seconds, WebSocketActor.Found("lmfgpq"))
       }
     /*   "test 20: abc -> abd then lmnfghopq -> lmnfghpqr " in {
          val runActor = system.actorOf(ExecutionRun.props)

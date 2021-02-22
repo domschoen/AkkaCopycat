@@ -33,11 +33,12 @@ import models.Letter.LetterSlipnetComplement
 import models.SlipNode.{GroupSlipnetInfo, SlipNodeRep, SlipnetInfo}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
+import models.codelet.BondBuilder.{PrepareCorrespondenceFightingResponse, SlipnetBondBuilderPrepareGroupFightingResponse}
 import models.codelet.BottomUpDescriptionScout.SlipnetGoWithBottomUpDescriptionScoutResponse
-import models.codelet.{CodeletType, CodeletTypeString}
+import models.codelet.{BondBuilder, CodeletType, CodeletTypeString}
 import models.codelet.CorrespondenceBuilder.{SlipnetGoWithCorrespondenceBuilder4Response, SlipnetGoWithCorrespondenceBuilder5Response, SlipnetGoWithCorrespondenceBuilderResponse, SlipnetGoWithCorrespondenceBuilderResponse2, SlipnetGoWithCorrespondenceBuilderResponse3}
 import models.codelet.CorrespondenceStrengthTester.{SlipnetGoWithCorrespondenceStrengthTester2Response, SlipnetGoWithCorrespondenceStrengthTesterResponse}
-import models.codelet.GroupBuilder.{PrepareBondFightingResponse, SlipnetGoWithGroupBuilderResponse, SlipnetPrepareGroupFightingResponse}
+import models.codelet.GroupBuilder.{PrepareFightingGroupDataResponse, SlipnetGoWithGroupBuilderResponse, SlipnetPrepareGroupFightingResponse}
 import models.codelet.GroupScoutWholeString.{GetLeftAndRightResponse, SlipnetGoWithGroupScoutWholeStringResponse}
 import models.codelet.GroupStrengthTester.{SlipnetGoWithGroupStrengthTesterResponse, SlipnetGoWithGroupStrengthTesterResponse2}
 import models.codelet.ImportantObjectCorrespondenceScout.SlipnetGoWithImportantObjectCorrespondenceScoutResponse
@@ -132,7 +133,7 @@ object Slipnet {
 
   case class SlipnetGoWithGroupScoutWholeString(bc: SlipNodeRep)
   case class SlipnetGoWithGroupBuilder(group_category_id: String)
-  case class SlipnetPrepareGroupFighting(group_category_id: String, incg: List[String], group_category_id_by_group_id: Map[String, String])
+  case class SlipnetPrepareGroupFighting(g: GroupRep, incg: List[GroupRep])
   case class InflatedDescriptionRep(
                                      uuid :String,
                                      descriptionTypeSlipNode: SlipNode,
@@ -144,6 +145,9 @@ object Slipnet {
   case class GetRelatedNodeOfResponse(related: Option[SlipNodeRep])
   case object GetLeftAndRight
   case class SlipnetGoWithGroupStrengthTester(group_category_id: String)
+  case class PrepareGroupFighting(g: GroupRep, groupReps: List[GroupRep])
+  case class BondBuilderPrepareGroupFighting(groupReps: List[GroupRep])
+
   case class SlipnetGoWithGroupStrengthTester2(g: GroupRep, strength: Double)
   case class SlipnetLookAHeadForNewBondCreation(s: ActorRef, group: GroupRep, index: Int, incg: List[String], newBondList: List[BondRep],                                                          from_obj_id: String,
                                                 to_obj_id: String
@@ -217,7 +221,10 @@ object Slipnet {
                                              codeletsSize:Int
   )
   case class SlipnetGoWithBondStrengthTesterResponse(bond_category_degree_of_association: Double)
-  case class PrepareBondFighting(groupID: String, bondReps: List[BondRep])
+  case class PrepareBondFighting(bondReps: List[BondRep])
+  case class PrepareBondFightingResponse(degOfAssos: Map[String, Double])
+  case class PrepareCorrespondenceFighting(correspondenceReps: List[CorrespondenceRep], workspaceCorrespondences: List[CorrespondenceRep])
+  case class PrepareFightingGroupData(groupID: String)
 
 
   /*object RelationType {
@@ -1186,9 +1193,24 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
 
     case SlipnetGoWithGroupStrengthTester(group_category_id: String) =>
-      val group_cat = slipNodeRefs(group_category_id)
-      val related = SlipnetFormulas.get_related_node(group_cat,bond_category, identity)
-      sender() ! SlipnetGoWithGroupStrengthTesterResponse(related.get.degree_of_association())
+      val gdoa = group_degree_of_association(group_category_id)
+      sender() ! SlipnetGoWithGroupStrengthTesterResponse(gdoa)
+
+    case PrepareGroupFighting(g, groupReps) =>
+      val gdoa = group_degree_of_association(g.group_category.id)
+
+      val response = groupReps.map(groupRep => {
+        (groupRep.uuid, group_degree_of_association(groupRep.group_category.id))
+      }).toMap
+      sender() ! SlipnetPrepareGroupFightingResponse(gdoa, response)
+
+    case BondBuilderPrepareGroupFighting(groupReps: List[GroupRep]) =>
+      val response = groupReps.map(groupRep => {
+        (groupRep.uuid, group_degree_of_association(groupRep.group_category.id))
+      }).toMap
+      sender() ! SlipnetBondBuilderPrepareGroupFightingResponse(response)
+
+
 
     case SlipnetGoWithGroupStrengthTester2(g: GroupRep, strength: Double) =>
       log.debug("SlipnetGoWithGroupStrengthTester2")
@@ -1372,8 +1394,9 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       sender() ! SlipnetGoWithCorrespondenceBuilderResponse2(incc, cData, inccData)
 
     case SlipnetGoWithCorrespondenceBuilder3(correspondence, incompatible_bond_base, workspaceCorrespondences) =>
-      log.debug("Slipnet. SlipnetGoWithCorrespondenceBuilder3")
+      log.debug("Slipnet. SlipnetGoWithCorrespondenceBuilder3 " + incompatible_bond_base)
       val b = get_incompatible_bond(correspondence, incompatible_bond_base)
+      log.debug("get_incompatible_bond " + b)
 
       val cData = correpondenceData(correspondence, workspaceCorrespondences)
       val bond_degree_of_association = b.map(br => {
@@ -1535,13 +1558,13 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
       workspace ! PostTopBottomCodeletsGetInfoResponse(codeletToPost.toList, t)
 
-    case PrepareBondFighting(groupID, bondReps) =>
+    case PrepareBondFighting(bondReps) =>
       log.debug("PrepareBondFighting")
       val defOfAssos = bondReps.map(bondRep => {
         val bondCategorySlipNode = slipNodeRefs(bondRep.bondCategorySlipNodeID)
         (bondRep.uuid, bondCategorySlipNode.bond_degree_of_association())
       }).toMap
-      sender() ! PrepareBondFightingResponse(bondReps, defOfAssos)
+      sender() ! PrepareBondFightingResponse(defOfAssos)
 
       // for g.update_strength_value()
     case SlipnetGoWithGroupBuilder(group_category_id) =>
@@ -1555,33 +1578,27 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
           sender() ! Finished
       }
 
-    case SlipnetPrepareGroupFighting(group_category_id, incg: List[String], group_category_id_by_group_id) =>
-      val grCategory = slipNodeRefs(group_category_id)
-      val bond_categoryOpt = SlipnetFormulas.get_related_node(grCategory,bond_category, identity)
-      bond_categoryOpt match {
-        case Some(bc) =>
-          val degree_of_association1 = bc.degree_of_association()
-          val degree_of_association2Tuples = incg.map(groupID => {
-            val grCategory2 = slipNodeRefs(group_category_id_by_group_id(groupID))
-            val bond_categoryOpt2 = SlipnetFormulas.get_related_node(grCategory2,bond_category, identity)
-            bond_categoryOpt2 match {
-              case Some(bond_category2) => Some((groupID, bond_category2.degree_of_association()))
-              case None => None
-            }
-          })
-          val degree_of_association2TuplesFlatten = degree_of_association2Tuples.flatten
-          if (degree_of_association2Tuples.size != degree_of_association2TuplesFlatten.size) {
-            log.debug("SlipnetPrepareGroupFighting. SlipnetFormulas.get_related_node null")
-            sender() ! Finished
-          } else {
-            sender() ! SlipnetPrepareGroupFightingResponse(bc.degree_of_association(), degree_of_association2TuplesFlatten.toMap)
-          }
-        case None =>
-          log.debug("SlipnetPrepareGroupFighting. SlipnetFormulas.get_related_node null")
-          sender() ! Finished
-      }
 
 
+    case PrepareCorrespondenceFighting(incc, workspaceCorrespondences) =>
+      val inccData = incc.map(cr => {
+        val correspondenceUpdateStrengthData = correpondenceData(cr,workspaceCorrespondences)
+        //log.debug("comap for " + cr.uuid + " comap " + correspondenceUpdateStrengthData);
+        (cr.uuid, correspondenceUpdateStrengthData)
+      }).toMap
+
+      sender() ! BondBuilder.PrepareCorrespondenceFightingResponse(inccData)
+
+
+    case PrepareFightingGroupData(groupID) =>
+      sender() ! PrepareFightingGroupDataResponse(0.0)
+
+  }
+
+  private def group_degree_of_association(group_category_id: String): Double = {
+    val group_cat = slipNodeRefs(group_category_id)
+    val related = SlipnetFormulas.get_related_node(group_cat, bond_category, identity)
+    related.get.degree_of_association()
   }
 
   private def correpondenceData(c: CorrespondenceRep, workspaceCorrespondences: List[CorrespondenceRep]) = {
@@ -1911,7 +1928,10 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
           )
           val found = correspondence.concept_mapping_list.find(c => {
             val conceptMapping = ConceptMapping.conceptMappingRefs(c.uuid)
-            incompatible_concept_mappings(conceptMapping.conceptMappingRep2(),cm)
+
+            val icm = incompatible_concept_mappings(conceptMapping.conceptMappingRep2(),cm)
+            log.debug("icm " + icm + " for " + conceptMapping);
+            icm
           }).isDefined
 
           if (found) Some(bond2) else None

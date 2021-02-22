@@ -3,17 +3,22 @@ package models.codelet
 import akka.actor.ActorRef
 import akka.event.LoggingReceive
 import models.Bond.BondRep
+import models.Group.GroupRep
+import models.Slipnet.SlipnetGoWithGroupStrengthTester
+import models.codelet.GroupStrengthTester.SlipnetGoWithGroupStrengthTesterResponse
 
 
 // codelet.java.880
 object GroupBuilder {
   case class GoWithGroupBuilderResponse(incompatibleBondList: List[BondRep], group_category_id: String)
   case object GoWithGroupBuilderResponse2
-  case class PrepareBondFightingResponse(bondReps: List[BondRep], degOfAssos: Map[String, Double])
   case class SlipnetGoWithGroupBuilderResponse(degree_of_association: Double)
-  case class PrepareGroupFighting(incg: List[String], group_category_id_by_group_id: Map[String, String])
+  case class GroupBuilderPrepareGroupFighting(g: GroupRep, incg: List[GroupRep])
   case class SlipnetPrepareGroupFightingResponse(degree_of_association1: Double, degree_of_association2: Map[String, Double])
-  case class GroupBuilderNoGroupFighting(incg: List[String])
+  case class GroupBuilderNoGroupFighting(incg: List[GroupRep])
+
+  case class PrepareFightingGroupDataResponse(group_degree_of_association: Double)
+
 }
 
 class GroupBuilder(urgency: Int,
@@ -33,23 +38,27 @@ class GroupBuilder(urgency: Int,
   import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
   import GroupBuilder.{
     GoWithGroupBuilderResponse,
-    PrepareBondFightingResponse,
+
     GoWithGroupBuilderResponse2,
     SlipnetGoWithGroupBuilderResponse,
-    PrepareGroupFighting,
+    GroupBuilderPrepareGroupFighting,
     SlipnetPrepareGroupFightingResponse,
-    GroupBuilderNoGroupFighting
+    GroupBuilderNoGroupFighting,
+    PrepareFightingGroupDataResponse
   }
   import models.Slipnet.{
     PrepareBondFighting,
     SlipnetGoWithGroupBuilder,
-    SlipnetPrepareGroupFighting
+    SlipnetPrepareGroupFighting,
+    PrepareBondFightingResponse,
+    PrepareGroupFighting
   }
 
   var runTemperature = 0.0
   var incompatibleBondList: List[BondRep] = null
   var group_category_id: String = null
-  var incg: List[String] = null
+  var incg: List[GroupRep] = null
+  var bonds_degree_of_association: Map[String, Double] = null
 
   def groupID() = arguments.get.asInstanceOf[String]
 
@@ -75,22 +84,24 @@ class GroupBuilder(urgency: Int,
 
     case GoWithGroupBuilderResponse2 =>
       log.debug("GoWithGroupBuilderResponse")
-      slipnet ! PrepareBondFighting(groupID, incompatibleBondList)
+      slipnet ! PrepareBondFighting(incompatibleBondList)
 
-    case PrepareBondFightingResponse(bondReps: List[BondRep], degOfAssos: Map[String, Double]) =>
+    case PrepareBondFightingResponse(degOfAssos: Map[String, Double]) =>
       log.debug("PrepareBondFightingResponse")
-      workspace ! GoWithGroupBuilder3(groupID(), bondReps, degOfAssos)
+      bonds_degree_of_association = degOfAssos
+      slipnet ! SlipnetGoWithGroupStrengthTester(group_category_id)
 
-    case GroupBuilderNoGroupFighting(incgIds) =>
-      incg = incgIds
+    case SlipnetGoWithGroupStrengthTesterResponse(group_degree_of_association) =>
+      workspace ! GoWithGroupBuilder3(groupID(), incompatibleBondList, group_degree_of_association, bonds_degree_of_association)
+
+    case GroupBuilderNoGroupFighting(incgReps) =>
+      incg = incgReps
       workspace ! GoWithGroupBuilder5(groupID(), incompatibleBondList, incg)
 
 
-    case PrepareGroupFighting(incgIds: List[String], group_category_id_by_group_id: Map[String, String]) =>
-      log.debug("group_category_id_by_group_id " + group_category_id_by_group_id)
+    case GroupBuilderPrepareGroupFighting(g, incgIds: List[GroupRep]) =>
       incg = incgIds
-
-      slipnet ! SlipnetPrepareGroupFighting(group_category_id, incg, group_category_id_by_group_id)
+      slipnet ! PrepareGroupFighting(g, incg)
 
     case SlipnetPrepareGroupFightingResponse(degree_of_association1: Double, degree_of_association2: Map[String, Double]) =>
       workspace ! GoWithGroupBuilder4(groupID(), incg, degree_of_association1, degree_of_association2, incompatibleBondList)

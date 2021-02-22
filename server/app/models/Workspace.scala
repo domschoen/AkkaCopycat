@@ -26,17 +26,18 @@ import models.Correspondence.CorrespondenceRep
 import models.Group.{FutureGroupRep, GroupRep}
 import models.SlipNode.{GroupSlipnetInfo, SlipNodeRep}
 import models.Slipnet.{CorrespondenceUpdateStrengthData, DescriptionTypeInstanceLinksToNodeInfo}
-import models.Workspace.{DataForStrengthUpdateResponse, GoWithBondStrengthTester2, GoWithBottomUpCorrespondenceScout2Response, GoWithBottomUpCorrespondenceScout3, GoWithBottomUpCorrespondenceScout3Response, GoWithCorrespondenceBuilder, GoWithCorrespondenceBuilder10Continue, GoWithCorrespondenceBuilder10Fight, GoWithCorrespondenceBuilder2, GoWithCorrespondenceBuilder3, GoWithCorrespondenceBuilder4, GoWithCorrespondenceBuilder5, GoWithCorrespondenceBuilder6, GoWithCorrespondenceBuilder7, GoWithCorrespondenceBuilder8, GoWithCorrespondenceBuilder9Response, GoWithCorrespondenceStrengthTester, GoWithCorrespondenceStrengthTester2, GoWithCorrespondenceStrengthTester3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithImportantObjectCorrespondenceScout, GoWithImportantObjectCorrespondenceScout2, GoWithImportantObjectCorrespondenceScout3, GoWithRuleBuilder, GoWithRuleBuilder2, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3, GoWithRuleStrengthTester, GoWithRuleStrengthTester2, GoWithRuleTranslator, GoWithRuleTranslator2, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, PostTopBottomCodeletsGetInfoResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, StepX, ToBeContinued, UpdateEverything, UpdateEverythingFollowUp, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
+import models.Workspace.{BondBuilderPostCorrrespondencesBreaking, DataForStrengthUpdateResponse, GoWithBondStrengthTester2, GoWithBottomUpCorrespondenceScout2Response, GoWithBottomUpCorrespondenceScout3, GoWithBottomUpCorrespondenceScout3Response, GoWithCorrespondenceBuilder, GoWithCorrespondenceBuilder10Continue, GoWithCorrespondenceBuilder10Fight, GoWithCorrespondenceBuilder2, GoWithCorrespondenceBuilder3, GoWithCorrespondenceBuilder4, GoWithCorrespondenceBuilder5, GoWithCorrespondenceBuilder6, GoWithCorrespondenceBuilder7, GoWithCorrespondenceBuilder8, GoWithCorrespondenceBuilder9Response, GoWithCorrespondenceStrengthTester, GoWithCorrespondenceStrengthTester2, GoWithCorrespondenceStrengthTester3, GoWithDescriptionBuilder, GoWithGroupScoutWholeString, GoWithGroupStrengthTester, GoWithImportantObjectCorrespondenceScout, GoWithImportantObjectCorrespondenceScout2, GoWithImportantObjectCorrespondenceScout3, GoWithRuleBuilder, GoWithRuleBuilder2, GoWithRuleScout, GoWithRuleScout2, GoWithRuleScout3, GoWithRuleStrengthTester, GoWithRuleStrengthTester2, GoWithRuleTranslator, GoWithRuleTranslator2, GoWithTopDownBondScout2, GoWithTopDownBondScoutWithResponse, GoWithTopDownDescriptionScout2, GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutDirection2, InitializeWorkspaceStringsResponse, PostTopBottomCodeletsGetInfoResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, StepX, ToBeContinued, UpdateEverything, UpdateEverythingFollowUp, WorkspaceProposeBondResponse, WorkspaceProposeRule, WorkspaceProposeRuleResponse}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.WorkspaceStructure.WorkspaceStructureRep
+import models.codelet.BondBuilder.{BondBuilderNoIncompatibleBonds, BondBuilderNoIncompatibleCorrespondences, BondBuilderNoIncompatibleGroups, BondBuilderTryingToBreakIncompatibleBonds, BondBuilderTryingToBreakIncompatibleCorrespondences, BondBuilderTryingToBreakIncompatibleGroups, BondBuilderWonBondsFight, BondBuilderWonCorrespondencesFight, BondBuilderWonGroupsFight}
 import models.codelet.BondStrengthTester.GoWithBondStrengthTesterResponse2
 import models.codelet.BottomUpBondScout.{GoWithBottomUpBondScout2Response, GoWithBottomUpBondScoutResponse}
 import models.codelet.BottomUpDescriptionScout.GoWithBottomUpDescriptionScoutResponse
 import models.codelet.Codelet.{Finished, PrepareDescriptionResponse}
-import models.codelet.CorrespondenceBuilder.{GoWithCorrespondenceBuilder16ContinuePostFight, GoWithCorrespondenceBuilder2Response, GoWithCorrespondenceBuilder3Response, GoWithCorrespondenceBuilder4Response1, GoWithCorrespondenceBuilder4Response2, GoWithCorrespondenceBuilder6Response, GoWithCorrespondenceBuilder6ResponseFight, GoWithCorrespondenceBuilder7Response, GoWithCorrespondenceBuilder8Response}
+import models.codelet.CorrespondenceBuilder.{CorrespondenceBuilderTryingToFightIncompatibleGroups, CorrespondenceBuilderWonGroupsFight, GoWithCorrespondenceBuilder16ContinuePostFight, GoWithCorrespondenceBuilder2Response, GoWithCorrespondenceBuilder3Response, GoWithCorrespondenceBuilder4Response1, GoWithCorrespondenceBuilder4Response2, GoWithCorrespondenceBuilder6Response, GoWithCorrespondenceBuilder6ResponseFight, GoWithCorrespondenceBuilder7Response, GoWithCorrespondenceBuilder8Response}
 import models.codelet.CorrespondenceStrengthTester.{GoWithCorrespondenceStrengthTesterResponse, GoWithCorrespondenceStrengthTesterResponse2, GoWithCorrespondenceStrengthTesterResponse3}
 import models.codelet.DescriptionStrengthTester.GoWithDescriptionStrengthTesterResponse
-import models.codelet.GroupBuilder.{GoWithGroupBuilderResponse, GoWithGroupBuilderResponse2, GroupBuilderNoGroupFighting, PrepareGroupFighting}
+import models.codelet.GroupBuilder.{GoWithGroupBuilderResponse, GoWithGroupBuilderResponse2, GroupBuilderNoGroupFighting, GroupBuilderPrepareGroupFighting}
 import models.codelet.GroupScoutWholeString.{GoWithGroupScoutWholeString3Response, GoWithGroupScoutWholeStringResponse, GroupScoutWholeString2Response, GroupScoutWholeString3Response}
 import models.codelet.GroupStrengthTester.{GoWithGroupStrengthTesterResponse, GoWithGroupStrengthTesterResponse2}
 import models.codelet.ImportantObjectCorrespondenceScout.{GoWithImportantObjectCorrespondenceScout2Response, GoWithImportantObjectCorrespondenceScout3Response, GoWithImportantObjectCorrespondenceScoutResponse}
@@ -154,9 +155,9 @@ object Workspace {
 
   case class GoWithGroupBuilder(temperature: Double, groupID: String)
   case class GoWithGroupBuilder2(groupID: String, degree_of_association: Double, incompatibleBondList: List[BondRep])
-  case class GoWithGroupBuilder3(groupID: String, bondReps: List[BondRep], degOfAssos: Map[String, Double])
-  case class GoWithGroupBuilder4(groupID: String, incg: List[String],degree_of_association1: Double, degree_of_association2: Map[String, Double], incompatibleBondList: List[BondRep])
-  case class GoWithGroupBuilder5(groupID: String, incompatibleBondList: List[BondRep], incg: List[String])
+  case class GoWithGroupBuilder3(groupID: String, bondReps: List[BondRep], group_degree_of_association: Double, degOfAssos: Map[String, Double])
+  case class GoWithGroupBuilder4(groupID: String, incg: List[GroupRep],degree_of_association1: Double, degree_of_association2: Map[String, Double], incompatibleBondList: List[BondRep])
+  case class GoWithGroupBuilder5(groupID: String, incompatibleBondList: List[BondRep], incg: List[GroupRep])
 
   case class GoWithDescriptionStrengthTester(temperature: Double, descriptionID: String)
   case class GoWithBondStrengthTester(temperature: Double, bondID: String)
@@ -164,7 +165,23 @@ object Workspace {
 
 
   case class GoWithBondBuilder(temperature: Double, bondID: String, bond_category_degree_of_association: Double)
+  case class BondBuilderPostBondBreaking(bondID: String, bond_degree_of_association: Double)
+  case class BondBuilderPostCorrrespondencesBreaking(bondID: String,
+                                                     incbRep: List[BondRep],
+                                                     incgRep: List[GroupRep],
+                                                     inccRep: List[CorrespondenceRep]
+                                                     )
+  case class BondBuilderTryToBreakIncompatibleCorrespondences(
+                                                               bondID:String,
+                                                               inccRep: List[CorrespondenceRep],
+                                                               degOfAssos: Double,
+                                                               cDatas: Map[String, CorrespondenceUpdateStrengthData]
+                                                             )
+  case class BondBuilderTryToBreakIncompatibleGroups(bondID:String,incgRep: List[GroupRep], bond_degOf: Double, degOfs: Map[String, Double])
 
+  case class BondBuilderPostGroupBreaking(bondID: String, incgRep: List[GroupRep])
+
+  case class BondBuilderTryToBreakIncompatibleBonds(bondID: String, incb: List[BondRep], degOfAssos: Map[String, Double])
   case class GoWithTopDownGroupScoutDirection(slipNodeRep: SlipNodeRep, mydirection: SlipNodeRep, fromobrep: WorkspaceObjectRep, t:Double, groupSlipnetInfo: GroupSlipnetInfo)
   case class GoWithTopDownGroupScoutDirection2(group_category: Option[SlipNodeRep], fromob: WorkspaceObjectRep, firstBondUUID: String, bond_category: SlipNodeRep)
   case class CommonSubProcessing(group_category: SlipNodeRep, fromobUUID: String, firstBondUUID: String, bond_category: SlipNodeRep)
@@ -288,6 +305,10 @@ object Workspace {
   case class PostTopBottomCodeletsGetInfoResponse(codeletToPost: List[(String,Either[Double, Int], Option[String], Option[Double])], t: Double)
   case class GetNumCodeletsResponse(codeletsSize: Int, t:Double)
   case class InitializeWorkspace(slipnet: ActorRef)
+  case class CorrespondenceBuilderTryToBreakIncompatibleGroups(correspondenceID:String,
+                                                               ig: GroupRep,
+                                                               cData: CorrespondenceUpdateStrengthData,
+                                                               degree_of_a: Double)
 
   case class GoWithBondStrengthTesterResponse(bond: BondRep)
   case class AfterFighting(groupID: String, bondReps: List[BondRep])
@@ -335,7 +356,13 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     GetNumCodeletsResponse,
     GoWithGroupScoutWholeString3,
     GoWithGroupStrengthTester2,
-    ToBeContinued
+    ToBeContinued,
+    BondBuilderPostBondBreaking,
+    BondBuilderTryToBreakIncompatibleBonds,
+    BondBuilderTryToBreakIncompatibleCorrespondences,
+    BondBuilderPostGroupBreaking,
+    CorrespondenceBuilderTryToBreakIncompatibleGroups,
+    BondBuilderTryToBreakIncompatibleGroups
   }
 
   import Slipnet._
@@ -1057,12 +1084,12 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
         self.forward(AfterFighting(groupID, incompatibleBondList))
       }
 
-    case GoWithGroupBuilder3(groupID, bondReps, degOfAssos: Map[String, Double]) =>
+    case GoWithGroupBuilder3(groupID, bondReps, group_degree_of_association, degOfAssos: Map[String, Double]) =>
       log.debug("GoWithGroupBuilder3")
       val g = objectRefs(groupID).asInstanceOf[Group]
       val incompatibleBondList = bondReps.map(br => structureRefs(br.uuid).asInstanceOf[Bond])
 
-      if (fight_it_out_group_bonds(g,1.0, incompatibleBondList,1.0, degOfAssos)){
+      if (fight_it_out_group_bonds(g,1.0, incompatibleBondList,1.0, group_degree_of_association, degOfAssos)){
         // beat all competing groups
         log.debug("won!")
         self.forward(AfterFighting(groupID, bondReps))
@@ -1082,26 +1109,28 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
       // fight all groups containing these objects
       val incg = WorkspaceFormulas.get_incompatible_groups(g);
-      val incgIds = incg.map(gr => gr.uuid)
+      val incgReps = incg.map(gr => gr.groupRep)
+
       if (!incg.isEmpty) {
         log.debug("fighting incompatible groups: " + incg);
-        sender() ! PrepareGroupFighting(incgIds, incg.map(gr => (gr.uuid, gr.group_category.id)).toMap)
+
+        sender() ! GroupBuilderPrepareGroupFighting(g.groupRep(), incgReps) // incg.map(gr => (gr.uuid, gr.group_category.id)).toMap
       } else {
         log.debug("Continue not group fighting");
-        sender() ! GroupBuilderNoGroupFighting(incgIds)
+        sender() ! GroupBuilderNoGroupFighting(incgReps)
       }
 
       // Group Fighting
-    case GoWithGroupBuilder4(groupID, incgIds, degree_of_association1, degree_of_association2, incompatibleBondList) =>
+    case GoWithGroupBuilder4(groupID, incgReps, degree_of_association1, degree_of_association2, incompatibleBondList) =>
       val g = objectRefs(groupID).asInstanceOf[Group]
-      val incg = incgIds.map(gid => objectRefs(gid).asInstanceOf[Group])
+      val incg = incgReps.map(rep => objectRefs(rep.uuid).asInstanceOf[Group])
 
       log.debug("fighting incompatible groups");
       // try to break all incompatible groups
       if (fight_it_out_group_groups(g,1.0, incg,1.0, degree_of_association1, degree_of_association2)){
           // beat all competing groups
           log.debug("won");
-          self.forward(GoWithGroupBuilder5(groupID, incompatibleBondList, incgIds))
+          self.forward(GoWithGroupBuilder5(groupID, incompatibleBondList, incgReps))
       } else {
         log.debug("couldn't break incompatible groups: fizzle");
         sender() ! Finished
@@ -1110,7 +1139,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     case GoWithGroupBuilder5(groupID, incompatibleBondList, incgroup) =>
       val g = objectRefs(groupID).asInstanceOf[Group]
       val incb = incompatibleBondList.map(br => structureRefs(br.uuid).asInstanceOf[Bond])
-      val incg = incgroup.map(gid => objectRefs(gid).asInstanceOf[Group])
+      val incg = incgroup.map(rep => objectRefs(rep.uuid).asInstanceOf[Group])
 
       log.debug("destroy incompatible bonds " + incb.size)
       // destroy incompatible bonds
@@ -1147,7 +1176,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
           break_group(grp)
         }
 
-        log.debug("building group");
+        log.debug(g.uuid + " building group " + g);
         build_group(g)
         g.printStrength(log)
 // already done in build_group        g.activate_descriptions();
@@ -1176,6 +1205,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
     // Codelet.java.425
     case GoWithBondBuilder(temperature, bondID, bond_category_degree_of_association) =>
+      log.debug("GoWithBondBuilder")
       val b = structureRefs(bondID).asInstanceOf[Bond]
       logTrying(b, b.left_obj)
 
@@ -1185,123 +1215,151 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
       if ((objects.toList.contains(b.from_obj)) &&
         (objects.toList.contains(b.to_obj))) {
-        val existingBonds: List[Bond] = b.workspaceString() match {
-          case Some(wstring) =>
-            wstring.bonds().filter(b2 =>
-              (
-                (b.left_obj == b2.left_obj) && (b.right_obj == b2.right_obj)
-                ) &&
-                // check to see if this is the same bond
-                (b.direction_category == b2.direction_category) &&
-                (b.bond_category == b2.bond_category)
-            )
-          case None => List.empty[Bond]
-        }
-
-        if (!existingBonds.isEmpty) {
-          // bond already exists
-          b.activateDescriptor()
-          log.debug("already exists: activate descriptors & Fizzle!");
-          sender() ! Finished
-        } else {
-          // check for incompatible structures
-          log.debug("check for incompatible structures")
-          val incb = b.get_incompatible_bonds();
-          val brokeIncb = if (!incb.isEmpty) {
-            log.debug("trying to break incompatible bonds");
-            // try to break all incompatible bonds
-            // Side-effect !
-            if (fight_it_out(b, 1.0, incb, 1.0)) {
-              // beat all competing bonds
-              log.debug("won, beat all competing bonds");
-              true
-            } else {
-              log.debug("failed: Fizzle!");
-              false;
-            }
-          } else {
-            log.debug("no incompatible bonds!")
-            true
+          val existingBonds: List[Bond] = b.workspaceString() match {
+            case Some(wstring) =>
+              wstring.bonds().filter(b2 =>
+                (
+                  (b.left_obj == b2.left_obj) && (b.right_obj == b2.right_obj)
+                  ) &&
+                  // check to see if this is the same bond
+                  (b.direction_category == b2.direction_category) &&
+                  (b.bond_category == b2.bond_category)
+              )
+            case None => List.empty[Bond]
           }
-          if (!brokeIncb) {
-            log.debug("not  brokeIncb")
+
+          if (!existingBonds.isEmpty) {
+            // bond already exists
+            b.activateDescriptor()
+            log.debug("already exists: activate descriptors & Fizzle!");
             sender() ! Finished
           } else {
-            // fight all groups containing these objects
-            log.debug("fight all groups containing these objects")
-            val incg = WorkspaceFormulas.get_common_groups(b.from_obj, b.to_obj);
-            val failedFight = if (incg.isEmpty) {
-              log.debug("no incompatible groups!")
-              false
+            // check for incompatible structures
+            log.debug("check for incompatible structures")
+            val incb = b.get_incompatible_bonds();
+            if (!incb.isEmpty) {
+              log.debug("trying to break incompatible bonds");
+              // try to break all incompatible bonds
+              sender() ! BondBuilderTryingToBreakIncompatibleBonds(incb.map(_.bondRep()))
             } else {
-              log.debug("trying to break incompatible groups")
-              // try to break all incompatible groups
-              if (fight_it_out(b, 1.0, incg, 1.0)) {
-                // beat all competing groups
-                log.debug("won");
-                false
-              }
-              else {
-                log.debug("failed: Fizzle!");
-                true
-              }
-            }
-            if (failedFight) {
-              sender() ! Finished
-            } else {
-
-            // inverted groups and correspondences fighting
-            log.debug("fight all incompatible correspondences")
-            // fight all incompatible correspondences
-            var incc: List[Correspondence] = List.empty[Correspondence]
-            val wonOrContinue = if (b.left_obj.leftmost || b.right_obj.rightmost) {
-              log.debug("fight all incompatible correspondences 1")
-
-              if (b.direction_category.isDefined) {
-                log.debug("fight all incompatible correspondences 2")
-                incc = b.get_incompatible_correspondences(initial)
-                log.debug("fight all incompatible correspondences incc " + incc)
-
-                if (!incc.isEmpty) {
-                  log.debug("trying to break incompatible correspondences")
-                  if (!fight_it_out(b, 2.0, incc, 3.0)) {
-                    false
-                  } else {
-                    log.debug("won")
-                    true
-                  }
-                } else true
-                //System.out.println("looking for incompatible correspondences")
-              } else true
-            } else true
-
-
-            if (!wonOrContinue) {
-              log.debug("lost the fight: Fizzle!")
-              sender() ! Finished
-            } else {
-
-                for (br <- incb) {
-                  break_bond(br)
-                }
-                for (gr <- incg) {
-                  break_group(gr)
-                }
-                for (c <- incc) {
-                  break_correspondence(c)
-                }
-                log.debug("building bond");
-                addBond(b)
-                sender() ! Finished
-              }
+              sender() ! BondBuilderNoIncompatibleBonds
             }
           }
-        }
-
       } else {
         log.debug("objects do no longer exists: Fizzle!");
         sender() ! Finished
       }
+
+    case BondBuilderTryToBreakIncompatibleBonds(bondID, incbRep, degOfAssos) =>
+      val b = structureRefs(bondID).asInstanceOf[Bond]
+      val incb = incbRep.map(rep => structureRefs(rep.uuid).asInstanceOf[Bond])
+
+      if (fight_it_out_bond_bonds(b, 1.0, incb, 1.0, degOfAssos)) {
+        // beat all competing bonds
+        log.debug("won, beat all competing bonds");
+        sender() ! BondBuilderWonBondsFight
+      } else {
+        log.debug("failed: Fizzle!");
+        sender() ! Finished
+      }
+
+
+    case BondBuilderPostBondBreaking(bondID, bond_degree_of_association) =>
+      val b = structureRefs(bondID).asInstanceOf[Bond]
+
+      // fight all groups containing these objects
+      log.debug("fight all groups containing these objects")
+      val incg = WorkspaceFormulas.get_common_groups(b.from_obj, b.to_obj);
+      if (incg.isEmpty) {
+        log.debug("no incompatible groups!")
+        sender() ! BondBuilderNoIncompatibleGroups
+      } else {
+        sender() ! BondBuilderTryingToBreakIncompatibleGroups(incg.map(_.groupRep()))
+      }
+
+
+
+    case BondBuilderPostGroupBreaking(bondID, incgRep) =>
+      val b = structureRefs(bondID).asInstanceOf[Bond]
+      val incg = incgRep.map(rep => structureRefs(rep.uuid).asInstanceOf[Group])
+
+
+      // inverted groups and correspondences fighting
+        log.debug("fight all incompatible correspondences")
+        // fight all incompatible correspondences
+        var incc: List[Correspondence] = List.empty[Correspondence]
+        if (b.left_obj.leftmost || b.right_obj.rightmost) {
+          log.debug("fight all incompatible correspondences 1")
+
+          if (b.direction_category.isDefined) {
+            log.debug("fight all incompatible correspondences 2")
+            incc = b.get_incompatible_correspondences(initial)
+            log.debug("fight all incompatible correspondences incc " + incc)
+            val inccReps = incc.map(_.correspondenceRep())
+
+            if (!incc.isEmpty) {
+              sender() ! BondBuilderTryingToBreakIncompatibleCorrespondences(inccReps, incgRep, workspaceCorrespondences().map(_.correspondenceRep()))
+            } else {
+              sender() ! BondBuilderNoIncompatibleCorrespondences(inccReps, incgRep)
+            }
+            //System.out.println("looking for incompatible correspondences")
+          } else {
+            sender() ! BondBuilderNoIncompatibleCorrespondences(List.empty[CorrespondenceRep], incgRep)
+          }
+        } else {
+          sender() ! BondBuilderNoIncompatibleCorrespondences(List.empty[CorrespondenceRep], incgRep)
+        }
+
+
+    case  BondBuilderTryToBreakIncompatibleGroups(bondID:String, incgRep: List[GroupRep], bond_degOf: Double, degOfs) =>
+      val b = structureRefs(bondID).asInstanceOf[Bond]
+      val incg = incgRep.map(rep => structureRefs(rep.uuid).asInstanceOf[Group])
+
+      if (fight_it_out_bond_groups(b, 1.0, incg, 1.0, bond_degOf, degOfs)) {
+        // beat all competing bonds
+        log.debug("won, beat all competing correspondences");
+        sender() ! BondBuilderWonGroupsFight
+      } else {
+        log.debug("lost the fight: Fizzle!");
+        sender() ! Finished
+      }
+
+    case BondBuilderTryToBreakIncompatibleCorrespondences(bondID, inccRep, degOfAssos, cDatas) =>
+      val b = structureRefs(bondID).asInstanceOf[Bond]
+      val incc = inccRep.map(rep => structureRefs(rep.uuid).asInstanceOf[Correspondence])
+
+      if (fight_it_out_bond_correspondences(b, 2.0, incc, 3.0, degOfAssos, cDatas)) {
+        // beat all competing bonds
+        log.debug("won, beat all competing correspondences");
+        sender() ! BondBuilderWonCorrespondencesFight
+      } else {
+        log.debug("lost the fight: Fizzle!");
+        sender() ! Finished
+      }
+
+
+    case BondBuilderPostCorrrespondencesBreaking(bondID, incbRep, incgRep,  inccRep) =>
+      val b = structureRefs(bondID).asInstanceOf[Bond]
+      val incb = incbRep.map(rep => structureRefs(rep.uuid).asInstanceOf[Bond])
+      val incg = incgRep.map(rep => structureRefs(rep.uuid).asInstanceOf[Group])
+      val incc = inccRep.map(rep => structureRefs(rep.uuid).asInstanceOf[Correspondence])
+
+      for (br <- incb) {
+        break_bond(br)
+      }
+      for (gr <- incg) {
+        break_group(gr)
+      }
+      for (c <- incc) {
+        break_correspondence(c)
+      }
+      log.debug("building bond");
+      addBond(b)
+      sender() ! Finished
+
+
+
+
 
     case GoWithDescriptionStrengthTester(temperature, descriptionID) =>
       val d = structureRefs(descriptionID).asInstanceOf[Description]
@@ -2284,7 +2342,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
         if (((c.obj1).leftmost) || ((c.obj1).rightmost) &&
           ((c.obj2).leftmost) || ((c.obj2).rightmost)) {
           // search for the incompatible bond
-          log.debug("Workspace. GoWithCorrespondenceBuilder4: search for the incompatible bond");
+          log.debug("search for the incompatible bond");
 
           val incompatible_bond_base = c.get_incompatible_bond();
           val wcreps = workspaceCorrespondences().map(_.correspondenceRep())
@@ -2296,39 +2354,57 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       }
 
     case GoWithCorrespondenceBuilder5(correponsdenceID, incompatible_bondOpt, cData, bond_category_degree_of_associationOpt) =>
+      log.debug("GoWithCorrespondenceBuilder5")
       val c = structureRefs(correponsdenceID).asInstanceOf[Correspondence]
       var incompatible_group = Option.empty[Group]
-      val anyLostFight = if (incompatible_bondOpt.isDefined){
+      val anyLostFightOpt: Option[Boolean] = if (incompatible_bondOpt.isDefined){
         val incompatible_bond = structureRefs(incompatible_bondOpt.get.uuid).asInstanceOf[Bond]
         log.debug("fighting incompatible bond");
         // bond found - fight against it
         if (!(correspondence_vs_bond(
           c,3.0,incompatible_bond,2.0, cData, bond_category_degree_of_associationOpt.get))){
           log.debug("lost: fizzle!");
-          true  // fizzle as it has lost
+          Some(true)  // fizzle as it has lost
         } else {
           log.debug("won");
           // won against incompatible bond
           incompatible_group = (c.obj2).group;
           if (incompatible_group.isDefined){
             log.debug("fighting incompatible group");
-            if (!(correspondence_vs_group(
-              c,1.0,incompatible_group.get,1.0, cData))){
-              log.debug("lost: fizzle!");
-              true  // fizzle as it has lost
-            }
-            log.debug("won");
-            false
-          } else false
+            None
+          } else Some(false)
         }
-      } else false
-      if (anyLostFight) {
-        sender() ! Finished
-      } else {
-        sender() ! GoWithCorrespondenceBuilder4Response2(incompatible_group.map(_.groupRep()),cData)
+      } else Some(false)
+
+      anyLostFightOpt match {
+        case Some(anyLostFight) =>
+          if (anyLostFight) {
+            sender() ! Finished
+          } else {
+            sender() ! GoWithCorrespondenceBuilder4Response2(incompatible_group.map(_.groupRep()),cData)
+          }
+
+        case None =>
+          sender() ! CorrespondenceBuilderTryingToFightIncompatibleGroups(incompatible_group.get.groupRep())
       }
 
+    case CorrespondenceBuilderTryToBreakIncompatibleGroups(correspondenceID, incompatible_group_rep, cData: CorrespondenceUpdateStrengthData, degree_of_a) =>
+      val c = structureRefs(correspondenceID).asInstanceOf[Correspondence]
+      val incompatible_group = structureRefs(incompatible_group_rep.uuid).asInstanceOf[Group]
+
+      if (!(correspondence_vs_group(
+        c,1.0,incompatible_group,1.0, cData, degree_of_a))){
+        log.debug("lost: fizzle!");
+        sender() ! Finished
+      } else {
+        log.debug("won");
+        sender() ! CorrespondenceBuilderWonGroupsFight
+      }
+
+
+
     case GoWithCorrespondenceBuilder6(correponsdenceID) =>
+      log.debug("GoWithCorrespondenceBuilder6")
       val c = structureRefs(correponsdenceID).asInstanceOf[Correspondence]
       // if there is an incompatible rule, fight against it
       val incompat_ruleOpt: Option[Rule] = if (rule.isDefined && incompatible_rule_corr(rule.get,c)) {
@@ -2344,6 +2420,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       }
 
     case GoWithCorrespondenceBuilder10Fight(correponsdenceID, cData, slippage_list) =>
+      log.debug("GoWithCorrespondenceBuilder10Fight")
       val c = structureRefs(correponsdenceID).asInstanceOf[Correspondence]
       if (!(correspondence_vs_rule(
         c,1.0,rule.get,1.0, cData, slippage_list))){
@@ -2782,13 +2859,13 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
   //def objects.toList: List[WorkspaceObject] = structures.toList.filter(s => s.isInstanceOf[WorkspaceObject]).asInstanceOf[List[WorkspaceObject]]
 
   def chooseObject(wos: List[WorkspaceObject], variable: String, temperature: Double) : Option[WorkspaceObject] = {
-    //log.debug("objects.toList " + objects.toList)
+    log.debug("objects.toList " + objects.toList)
     val nonModifieds = wos.filter(wo =>
       {
-        //log.debug("chooseObject " + wo.workspaceString + " modified " + modified)
+        log.debug("chooseObject " + wo.workspaceString + " modified " + modified)
         wo.wString.isDefined && wo.wString.get != modified
       })
-    //log.debug("nonModifieds " + nonModifieds + " variable " + variable)
+    log.debug("nonModifieds " + nonModifieds + " variable " + variable)
 
     chooseObjectFromList(nonModifieds, variable, temperature)
   }
@@ -2864,14 +2941,29 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     complete_structure_vs_structure(s1,w1,s2,w2)
   }
 
+  def bond_vs_correspondence(s1: Bond,
+                             w1: Double,
+                             s2: Correspondence,
+                             w2: Double,
+                             bond_category_degree_of_association: Double,
+                               cData: CorrespondenceUpdateStrengthData
+                            ): Boolean = {
+    s1.update_strength_value(activationBySlipNodeID, bond_category_degree_of_association, objects.toList)
+    s2.update_strength_value(workspaceCorrespondences(), cData)
+    complete_structure_vs_structure(s1,w1,s2,w2)
+  }
+
+
+
   def correspondence_vs_group(s1: Correspondence,
                                        w1: Double,
                                        s2: Group,
                                        w2: Double,
-                                       cData: CorrespondenceUpdateStrengthData
-                                      ): Boolean = {
+                                       cData: CorrespondenceUpdateStrengthData,
+                                       group_degree_of_association: Double
+                             ): Boolean = {
     s1.update_strength_value(workspaceCorrespondences(), cData)
-    s2.update_strength_value(log, activationBySlipNodeID, objects.toList)
+    s2.update_strength_value(group_degree_of_association)
     complete_structure_vs_structure(s1,w1,s2,w2)
   }
 
@@ -2890,12 +2982,37 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
                              w1: Double,
                              s2: Bond,
                              w2: Double,
+                             group_degree_of_association: Double,
                              bond_category_degree_of_association: Double
                             ): Boolean = {
-    s1.update_strength_value(log, activationBySlipNodeID, objects.toList)
+    s1.update_strength_value(group_degree_of_association)
     s2.update_strength_value(activationBySlipNodeID, bond_category_degree_of_association, objects.toList)
     complete_structure_vs_structure(s1,w1,s2,w2)
   }
+  def bond_vs_group(s1: Bond,
+                    w1: Double,
+                    s2: Group,
+                    w2: Double,
+                    bond_category_degree_of_association: Double,
+                    group_degree_of_association: Double
+                   ): Boolean = {
+    s1.update_strength_value(activationBySlipNodeID, bond_category_degree_of_association, objects.toList)
+    s2.update_strength_value(group_degree_of_association)
+    complete_structure_vs_structure(s1,w1,s2,w2)
+  }
+
+  def bond_vs_bond(s1: Bond,
+                    w1: Double,
+                    s2: Bond,
+                    w2: Double,
+                   bond_category_degree_of_association1: Double,
+                     bond_category_degree_of_association2: Double
+                   ): Boolean = {
+    s1.update_strength_value(activationBySlipNodeID, bond_category_degree_of_association1, objects.toList)
+    s2.update_strength_value(activationBySlipNodeID, bond_category_degree_of_association2, objects.toList)
+    complete_structure_vs_structure(s1,w1,s2,w2)
+  }
+
 
 
   def structure_vs_structure(s1: WorkspaceStructure,
@@ -2917,7 +3034,9 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     val vs2 = s2.total_strength*w2;
     val v1 = Formulas.temperatureAdjustedValue(vs1, chaleur)
     val v2 = Formulas.temperatureAdjustedValue(vs2, chaleur)
-    !(((v1+v2) * Random.rnd(null))>v1)
+    val rnd = Random.rnd(log)
+    log.debug(s"v1 $v1 v2 $v2 rnd $rnd first ${((v1+v2) * rnd)}")
+    !(((v1+v2) * rnd)>v1)
   }
 
   def group_vs_group(s1: Group,
@@ -2933,25 +3052,68 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
     complete_structure_vs_structure(s1,w1,s2,w2)
   }
 
-  def fight_it_out_group_bonds(wo: Group, v1: Double, structs: List[Bond], v2: Double, degOfAssos: Map[String, Double]): Boolean = {
+
+  def fight_it_out_bond_groups(wo: Bond, v1: Double, structs: List[Group], v2: Double,
+                               bond_category_degree_of_association: Double,
+                               groups_degree_of_association: Map[String, Double]): Boolean = {
     if (structs.isEmpty) {
       true
     } else {
       !structs.find(ws => {
-        val bond_category_degree_of_association = degOfAssos(ws.uuid)
-        !group_vs_bond(wo,v1,ws,v2,bond_category_degree_of_association)
+        val group_degree_of_association = groups_degree_of_association(ws.uuid)
+        !bond_vs_group(wo,v1,ws,v2,bond_category_degree_of_association, group_degree_of_association)
       }).isDefined
     }
   }
 
 
-  def fight_it_out_group_groups(wo: Group, v1: Double, structs: List[Group], v2: Double, degree_of_association1: Double, degOfAssos: Map[String, Double]): Boolean = {
+  def fight_it_out_group_bonds(wo: Group, v1: Double, structs: List[Bond], v2: Double,
+                               group_degree_of_association: Double,
+                                 degOfAssos: Map[String, Double]): Boolean = {
+    if (structs.isEmpty) {
+      true
+    } else {
+      !structs.find(ws => {
+        val bond_category_degree_of_association = degOfAssos(ws.uuid)
+        !group_vs_bond(wo,v1,ws,v2,group_degree_of_association, bond_category_degree_of_association)
+      }).isDefined
+    }
+  }
+
+
+  def fight_it_out_group_groups(wo: Group, v1: Double, structs: List[Group], v2: Double,
+                                degree_of_association1: Double, degOfAssos: Map[String, Double]): Boolean = {
     if (structs.isEmpty) {
       true
     } else {
       !structs.find(ws => {
         val degree_of_association2 = degOfAssos(ws.uuid)
         !group_vs_group(wo,v1,ws,v2,degree_of_association1, degree_of_association2)
+      }).isDefined
+    }
+  }
+
+  def fight_it_out_bond_bonds(wo: Bond, v1: Double, structs: List[Bond], v2: Double, degOfAssos: Map[String, Double]): Boolean = {
+    if (structs.isEmpty) {
+      true
+    } else {
+      !structs.find(ws => {
+        val bond_category_degree_of_association1 = degOfAssos(wo.uuid)
+        val bond_category_degree_of_association2 = degOfAssos(ws.uuid)
+        !bond_vs_bond(wo,v1,ws,v2,bond_category_degree_of_association1, bond_category_degree_of_association2)
+      }).isDefined
+    }
+  }
+
+
+  def fight_it_out_bond_correspondences(wo: Bond, v1: Double, structs: List[Correspondence], v2: Double,
+                                        bond_category_degree_of_association: Double, cDatas: Map[String, CorrespondenceUpdateStrengthData]): Boolean = {
+    if (structs.isEmpty) {
+      true
+    } else {
+      !structs.find(ws => {
+        val cData = cDatas(ws.uuid)
+        !bond_vs_correspondence(wo,v1,ws,v2,bond_category_degree_of_association, cData)
       }).isDefined
     }
   }

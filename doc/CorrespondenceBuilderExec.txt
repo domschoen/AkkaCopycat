@@ -1,0 +1,20 @@
+W.GoWithCorrespondenceBuilder9
+	GoWithCorrespondenceBuilder9. not present
+		S ! GoWithCorrespondenceBuilder3Response
+			SN ! SlipnetGoWithCorrespondenceBuilder2
+				S ! SlipnetGoWithCorrespondenceBuilderResponse2
+					W ! GoWithCorrespondenceBuilder4
+					search for the incompatible bond
+		--				S ! GoWithCorrespondenceBuilder4Response1
+							SN ! SlipnetGoWithCorrespondenceBuilder3
+								S ! SlipnetGoWithCorrespondenceBuilderResponse3
+									W ! GoWithCorrespondenceBuilder5
+										S ! GoWithCorrespondenceBuilder4Response2
+											W ! GoWithCorrespondenceBuilder6
+												S ! GoWithCorrespondenceBuilder6ResponseFight
+													SN ! SlipnetCompleteSlippageList
+														S ! SlipnetCompleteSlippageListResponse
+															W ! GoWithCorrespondenceBuilder10Fight
+								
+					
+				

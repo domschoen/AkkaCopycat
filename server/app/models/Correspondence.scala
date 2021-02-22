@@ -188,16 +188,22 @@ case class Correspondence (log: LoggingAdapter,
   }
 */
   def get_incompatible_bond(): Option[(BondRep,BondRep)] = {
-    var bond1 = Option.empty[Bond]
-    if (obj1.leftmost) bond1=obj1.right_bond
-    if (obj1.rightmost) bond1=obj1.left_bond
-    var bond2 = Option.empty[Bond]
-    if (obj2.leftmost) bond2=obj2.right_bond;
-    if (obj2.rightmost) bond2=obj2.left_bond;
-    if ((bond1.isDefined)&&(bond2.isDefined)){
-      if ((bond1.get.direction_category!=null)&&
-        (bond2.get.direction_category!=null)) {
-        Some((bond1.get.bondRep(),bond2.get.bondRep()))
+    var bondOpt1 = Option.empty[Bond]
+    if (obj1.leftmost) bondOpt1=obj1.right_bond
+    if (obj1.rightmost) bondOpt1=obj1.left_bond
+    var bondOpt2 = Option.empty[Bond]
+    if (obj2.leftmost) bondOpt2=obj2.right_bond;
+    if (obj2.rightmost) bondOpt2=obj2.left_bond;
+
+    log.debug(s"bondOpt1 $bondOpt1 bondOpt2 $bondOpt2")
+    if ((bondOpt1.isDefined)&&(bondOpt2.isDefined)){
+      val bond1 = bondOpt1.get
+      val bond2 = bondOpt2.get
+      log.debug(s"bond1.direction_category ${bond1.direction_category} bond2.direction_category ${bond2.direction_category}")
+
+      if ((bond1.direction_category.isDefined)&&
+        (bond2.direction_category.isDefined)) {
+        return Some((bond1.bondRep(),bond2.bondRep()))
       }
     }
     return None

@@ -4,12 +4,14 @@ import akka.actor.ActorRef
 import akka.event.LoggingReceive
 import models.Bond.BondRep
 import models.ConceptMapping.{ConceptMappingParameters, ConceptMappingRep}
-import models.Slipnet.{CorrespondenceUpdateStrengthData, SlipnetCompleteSlippageList, SlipnetCompleteSlippageListResponse, SlipnetGoWithCorrespondenceBuilder, SlipnetGoWithCorrespondenceBuilder2, SlipnetGoWithCorrespondenceBuilder5, SlipnetGoWithCorrespondenceBuilder6}
+import models.Slipnet.{CorrespondenceUpdateStrengthData, SlipnetCompleteSlippageList, SlipnetCompleteSlippageListResponse, SlipnetGoWithCorrespondenceBuilder, SlipnetGoWithCorrespondenceBuilder2, SlipnetGoWithCorrespondenceBuilder5, SlipnetGoWithCorrespondenceBuilder6, SlipnetGoWithGroupStrengthTester}
 import models.Workspace.{GoWithCorrespondenceBuilder10Continue, GoWithCorrespondenceBuilder10Fight, GoWithCorrespondenceBuilder3, GoWithCorrespondenceBuilder4, GoWithCorrespondenceBuilder5, GoWithCorrespondenceBuilder8, GoWithCorrespondenceBuilder9Response, SlippageListShell}
 import models.WorkspaceObject.WorkspaceObjectRep
 import models.Correspondence.CorrespondenceRep
 import models.Group.GroupRep
+import models.SlipNode.SlipNodeRep
 import models.codelet.CorrespondenceBuilder.SlipnetGoWithCorrespondenceBuilderResponse2
+import models.codelet.GroupStrengthTester.SlipnetGoWithGroupStrengthTesterResponse
 
 // Codelet.java.1476
 object CorrespondenceBuilder {
@@ -35,6 +37,11 @@ object CorrespondenceBuilder {
   case class SlipnetGoWithCorrespondenceBuilder5Response(accessory_concept_mapping_list: List[ConceptMappingRep])
   case class GoWithCorrespondenceBuilder6ResponseFight(ruleUUID: String, slippageListShell: SlippageListShell)
   case object GoWithCorrespondenceBuilder16ContinuePostFight
+
+  case class CorrespondenceBuilderTryingToFightIncompatibleGroups(incGroup: GroupRep)
+  case object CorrespondenceBuilderWonGroupsFight
+
+
 }
 class CorrespondenceBuilder(urgency: Int,
                             workspace: ActorRef,
@@ -52,7 +59,8 @@ class CorrespondenceBuilder(urgency: Int,
     GoWithCorrespondenceBuilder2,
     GoWithCorrespondenceBuilder6,
     GoWithCorrespondenceBuilder7,
-    GoWithCorrespondenceBuilder9
+    GoWithCorrespondenceBuilder9,
+    CorrespondenceBuilderTryToBreakIncompatibleGroups
   }
   import CorrespondenceBuilder.{
     GoWithCorrespondenceBuilder2Response,
@@ -67,7 +75,9 @@ class CorrespondenceBuilder(urgency: Int,
     SlipnetGoWithCorrespondenceBuilder5Response,
     GoWithCorrespondenceBuilder8Response,
     GoWithCorrespondenceBuilder6ResponseFight,
-    GoWithCorrespondenceBuilder16ContinuePostFight
+    GoWithCorrespondenceBuilder16ContinuePostFight,
+    CorrespondenceBuilderTryingToFightIncompatibleGroups,
+    CorrespondenceBuilderWonGroupsFight
   }
   import models.Slipnet.{
     GroupFlippedVersion,
@@ -99,7 +109,6 @@ class CorrespondenceBuilder(urgency: Int,
       temperature ! Register(self)
       runTemperature = t
       workspace ! GoWithCorrespondenceBuilder(runTemperature, corresponsdenceID)
-
 
 
     // Codelet.java.1478
@@ -155,6 +164,8 @@ class CorrespondenceBuilder(urgency: Int,
         bond_category_degree_of_associationOpt
       )
 
+
+
       //2 branches joining here
     case GoWithCorrespondenceBuilder4Response2(g, cData) =>
       correspondenceUpdateStrengthData = cData
@@ -171,23 +182,45 @@ class CorrespondenceBuilder(urgency: Int,
       workspace ! GoWithCorrespondenceBuilder7(corresponsdenceID, accessory_concept_mapping_list)
 
     case GoWithCorrespondenceBuilder6ResponseFight(ruleUUID: String, slippageListShell) =>
+      log.debug("GoWithCorrespondenceBuilder6ResponseFight")
       ruleUUIDOpt = Some(ruleUUID)
       slipnet ! SlipnetCompleteSlippageList(slippageListShell)
 
     case SlipnetCompleteSlippageListResponse(slippage_list_rep) =>
+      log.debug("SlipnetCompleteSlippageListResponse")
       workspace ! GoWithCorrespondenceBuilder10Fight(corresponsdenceID, correspondenceUpdateStrengthData, slippage_list_rep)
 
+    case CorrespondenceBuilderTryingToFightIncompatibleGroups(incGroup) =>
+      log.debug("CorrespondenceBuilderTryingToFightIncompatibleGroups")
+      incompatible_group = Some(incGroup)
+      slipnet ! SlipnetGoWithGroupStrengthTester(incGroup.group_category.id)
+
+    case SlipnetGoWithGroupStrengthTesterResponse(degree_of_association) =>
+      workspace ! CorrespondenceBuilderTryToBreakIncompatibleGroups(
+        corresponsdenceID,
+        incompatible_group.get,
+        correspondenceUpdateStrengthData,
+        degree_of_association)
+
+    case CorrespondenceBuilderWonGroupsFight =>
+      workspace ! GoWithCorrespondenceBuilder6(corresponsdenceID)
+
+
     case GoWithCorrespondenceBuilder16ContinuePostFight =>
+      log.debug("GoWithCorrespondenceBuilder16ContinuePostFight")
       workspace ! GoWithCorrespondenceBuilder10Continue(corresponsdenceID, incc, incompatible_bond, incompatible_group, ruleUUIDOpt)
 
 
     case   GoWithCorrespondenceBuilder7Response(groupObjs) =>
+      log.debug("GoWithCorrespondenceBuilder7Response")
       slipnet ! SlipnetGoWithCorrespondenceBuilder5(groupObjs)
 
     case SlipnetGoWithCorrespondenceBuilder5Response(accessory_concept_mapping_list) =>
+      log.debug("SlipnetGoWithCorrespondenceBuilder5Response")
       workspace ! GoWithCorrespondenceBuilder8(corresponsdenceID, accessory_concept_mapping_list)
 
     case GoWithCorrespondenceBuilder8Response(cms) =>
+      log.debug("GoWithCorrespondenceBuilder8Response")
       slipnet ! SlipnetGoWithCorrespondenceBuilder6(cms)
 
 
