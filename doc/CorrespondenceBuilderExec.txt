@@ -17,4 +17,45 @@ W.GoWithCorrespondenceBuilder9
 															W ! GoWithCorrespondenceBuilder10Fight
 								
 					
+W.GoWithCorrespondenceBuilder9
+	S ! GoWithCorrespondenceBuilder9
+		W ! GoWithCorrespondenceBuilder9
+			S ! GoWithCorrespondenceBuilder3Response
+				SN ! SlipnetGoWithCorrespondenceBuilder2
+					S ! SlipnetGoWithCorrespondenceBuilderResponse2
+						W ! GoWithCorrespondenceBuilder4
+						
+							search for the incompatible bond
+			--				S ! GoWithCorrespondenceBuilder4Response1
+								SN ! SlipnetGoWithCorrespondenceBuilder3
+								
+									S ! SlipnetGoWithCorrespondenceBuilderResponse3
+										W ! GoWithCorrespondenceBuilder5
+											fighting incompatible group
+										    if (!(workspace_formulas.structure_vs_structure(c,1.0,incompatible_group,1.0))){
+										    1 correspondence and 1 group
+
+										
+											S ! CorrespondenceBuilderTryingToFightIncompatibleGroups (incompatible_group)
+												SN ! SlipnetGoWithGroupStrengthTester			group_degree_of_association
+													S ! SlipnetGoWithGroupStrengthTesterResponse
+														W ! CorrespondenceBuilderTryToBreakIncompatibleGroups
+	S ! GoWithCorrespondenceBuilderResponse
+		SN ! GroupFlippedVersion
+			S ! GroupFlippedVersionResponse
+				W ! GoWithCorrespondenceBuilder2
+					S ! GoWithCorrespondenceBuilder9Response
+						W ! GoWithCorrespondenceBuilder9
+							(see above)
+		W ! GoWithCorrespondenceBuilder9
+			S ! GoWithCorrespondenceBuilder3Response (see above)
+			S ! GoWithCorrespondenceBuilder2Response
+				SN ! SlipnetGoWithCorrespondenceBuilder(conceptMappingReps)
+					S ! SlipnetGoWithCorrespondenceBuilderResponse
+						W ! GoWithCorrespondenceBuilder3
+							S ! Finished
 				
+				
+				
+												
+					

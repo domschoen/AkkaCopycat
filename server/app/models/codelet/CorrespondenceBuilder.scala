@@ -38,7 +38,7 @@ object CorrespondenceBuilder {
   case class GoWithCorrespondenceBuilder6ResponseFight(ruleUUID: String, slippageListShell: SlippageListShell)
   case object GoWithCorrespondenceBuilder16ContinuePostFight
 
-  case class CorrespondenceBuilderTryingToFightIncompatibleGroups(incGroup: GroupRep)
+  case class CorrespondenceBuilderTryingToFightIncompatibleGroups(incGroup: GroupRep, cData: CorrespondenceUpdateStrengthData)
   case object CorrespondenceBuilderWonGroupsFight
 
 
@@ -132,6 +132,7 @@ class CorrespondenceBuilder(urgency: Int,
 
     // From FlipppedGroup
     case GoWithCorrespondenceBuilder9Response =>
+      log.debug("GoWithCorrespondenceBuilder9Response")
       workspace ! GoWithCorrespondenceBuilder9(corresponsdenceID,runTemperature)
 
 
@@ -190,12 +191,14 @@ class CorrespondenceBuilder(urgency: Int,
       log.debug("SlipnetCompleteSlippageListResponse")
       workspace ! GoWithCorrespondenceBuilder10Fight(corresponsdenceID, correspondenceUpdateStrengthData, slippage_list_rep)
 
-    case CorrespondenceBuilderTryingToFightIncompatibleGroups(incGroup) =>
+    case CorrespondenceBuilderTryingToFightIncompatibleGroups(incGroup, cData) =>
       log.debug("CorrespondenceBuilderTryingToFightIncompatibleGroups")
       incompatible_group = Some(incGroup)
+      correspondenceUpdateStrengthData = cData
       slipnet ! SlipnetGoWithGroupStrengthTester(incGroup.group_category.id)
 
     case SlipnetGoWithGroupStrengthTesterResponse(degree_of_association) =>
+      log.debug("SlipnetGoWithGroupStrengthTesterResponse " + corresponsdenceID + " " + incompatible_group.get + " " + correspondenceUpdateStrengthData + " " +degree_of_association)
       workspace ! CorrespondenceBuilderTryToBreakIncompatibleGroups(
         corresponsdenceID,
         incompatible_group.get,

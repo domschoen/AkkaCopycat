@@ -2274,6 +2274,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
       }
 
     case GoWithCorrespondenceBuilder9(correponsdenceID,t) =>
+      log.debug("GoWithCorrespondenceBuilder9")
       val c = structureRefs(correponsdenceID).asInstanceOf[Correspondence]
       // if this correspondence is present, add any new concept mappings
       if (correspondence_present(c)) {
@@ -2385,10 +2386,11 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
           }
 
         case None =>
-          sender() ! CorrespondenceBuilderTryingToFightIncompatibleGroups(incompatible_group.get.groupRep())
+          sender() ! CorrespondenceBuilderTryingToFightIncompatibleGroups(incompatible_group.get.groupRep(), cData)
       }
 
     case CorrespondenceBuilderTryToBreakIncompatibleGroups(correspondenceID, incompatible_group_rep, cData: CorrespondenceUpdateStrengthData, degree_of_a) =>
+      log.debug("CorrespondenceBuilderTryToBreakIncompatibleGroups")
       val c = structureRefs(correspondenceID).asInstanceOf[Correspondence]
       val incompatible_group = structureRefs(incompatible_group_rep.uuid).asInstanceOf[Group]
 

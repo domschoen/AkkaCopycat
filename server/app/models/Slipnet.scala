@@ -1193,6 +1193,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
 
     case SlipnetGoWithGroupStrengthTester(group_category_id: String) =>
+      log.debug("SlipnetGoWithGroupStrengthTester")
       val gdoa = group_degree_of_association(group_category_id)
       sender() ! SlipnetGoWithGroupStrengthTesterResponse(gdoa)
 
