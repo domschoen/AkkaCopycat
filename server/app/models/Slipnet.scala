@@ -880,6 +880,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
     // codelet.java.1233
     case SlipnetBottomUpCorrespondenceScout(obj1, obj2, temperature) =>
+      log.debug("SlipnetBottomUpCorrespondenceScout")
       printDescription(obj1)
       val obj1Descriptions = obj1.descriptions.map(inflatedDescriptionRep)
       val obj2Descriptions = obj2.descriptions.map(inflatedDescriptionRep)
@@ -916,6 +917,8 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
         } else {
           //find out if any are distinguishing
+          log.debug("find out if any are distinguishing");
+
           val distinguishing_mappings = concept_mapping_list.filter(cm => {
             val distinguishing = cm.distinguishing(log)
             log.debug("concept_mapping " + cm + " distinguishing " + distinguishing)

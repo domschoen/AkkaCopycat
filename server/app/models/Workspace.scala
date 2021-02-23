@@ -941,6 +941,7 @@ class Workspace(temperature: ActorRef) extends Actor with ActorLogging with Inje
 
     // codelet.java.1233
     case GoWithBottomUpCorrespondenceScout(t) =>
+      log.debug("GoWithBottomUpCorrespondenceScout")
       val obj1Opt: Option[WorkspaceObject] = chooseObjectFromList(initial.objects.toList, TemperatureAjustmentVariable.Inter_string_salience,t)
       obj1Opt match {
         case None =>

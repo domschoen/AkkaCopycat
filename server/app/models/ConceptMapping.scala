@@ -247,12 +247,12 @@ class ConceptMapping(val description_type1: SlipNode,
 
   def distinguishing(log: LoggingAdapter): Boolean = {
     if ((descriptor1== slipnetInfo.slipnetWhole)&&(descriptor2== slipnetInfo.slipnetWhole)) {
-//      log.debug("distinguishing whole " + this)
+      log.debug("distinguishing whole " + this)
       false
     } else {
       val distinguishing_descriptor1 = distinguishing_descriptor(log, obj1, descriptor1)
       val distinguishing_descriptor2 = distinguishing_descriptor(log, obj2, descriptor2)
-//      log.debug("distinguishing else distinguishing_descriptor1 " + distinguishing_descriptor1 + " distinguishing_descriptor2 "+  distinguishing_descriptor2 + " " + this)
+      log.debug("distinguishing else distinguishing_descriptor1 " + distinguishing_descriptor1 + " distinguishing_descriptor2 "+  distinguishing_descriptor2 + " " + this)
 
       distinguishing_descriptor1 && distinguishing_descriptor2
     }

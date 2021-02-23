@@ -54,6 +54,7 @@ class BottomUpCorrespondenceScout(urgency: Int,
 
 
     case GoWithBottomUpCorrespondenceScoutWorkspaceReponse(o1 :WorkspaceObjectRep, o2: WorkspaceObjectRep) =>
+      log.debug("GoWithBottomUpCorrespondenceScoutWorkspaceReponse")
       obj1 = o1
       obj2 = o2
       slipnet ! SlipnetBottomUpCorrespondenceScout(
