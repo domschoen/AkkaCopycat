@@ -7,7 +7,6 @@ import models.Coderack.Step
 import models.Correspondence.CorrespondenceRep
 import models.Group.GroupRep
 import models.Slipnet.{CorrespondenceUpdateStrengthData, PrepareBondFighting, PrepareBondFightingResponse, SlipnetGoWithBondStrengthTester}
-import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
 import models.Workspace.{BondBuilderPostBondBreaking, BondBuilderPostCorrrespondencesBreaking, BondBuilderTryToBreakIncompatibleCorrespondences, GoWithBondBuilder, GoWithBondStrengthTester}
 import models.codelet.BondBuilder.BondBuilderNoIncompatibleGroups
 
@@ -33,8 +32,7 @@ object BondBuilder {
 }
 class BondBuilder(urgency: Int, workspace: ActorRef,
                   slipnet: ActorRef,
-                  temperature: ActorRef,
-                  arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet, temperature)  {
+                  arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet)  {
   import Codelet.{ Run, Finished }
   import models.Coderack.ChooseAndRun
   import models.Workspace.{
@@ -63,7 +61,7 @@ class BondBuilder(urgency: Int, workspace: ActorRef,
     BondBuilderWonGroupsFight
   }
 
-  var runTemperature = 0.0
+  var runTemperature: models.Coderack.Temperatures  = null
   def bondID() = arguments.get.asInstanceOf[String]
   var bondRep: BondRep = null
   var incb: List[BondRep] = null
@@ -76,7 +74,6 @@ class BondBuilder(urgency: Int, workspace: ActorRef,
     case Run(initialString, modifiedString, targetString, t) =>
       log.debug(s"BondBuilder. Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
-      temperature ! Register(self)
       runTemperature = t
 
       workspace ! GoWithBondStrengthTester(runTemperature, bondID)
@@ -103,7 +100,7 @@ class BondBuilder(urgency: Int, workspace: ActorRef,
 
     case PrepareBondFightingResponse(degOfAssos: Map[String, Double]) =>
       log.debug("PrepareBondFightingResponse")
-      workspace ! BondBuilderTryToBreakIncompatibleBonds(bondID(),incb, degOfAssos)
+      workspace ! BondBuilderTryToBreakIncompatibleBonds(bondID(),incb, degOfAssos,runTemperature)
 
     case BondBuilderNoIncompatibleGroups =>
       log.debug("BondBuilderNoIncompatibleGroups")
@@ -129,7 +126,7 @@ class BondBuilder(urgency: Int, workspace: ActorRef,
       slipnet ! BondBuilderPrepareGroupFighting(incg)
 
     case SlipnetBondBuilderPrepareGroupFightingResponse(degOfs) =>
-      workspace ! BondBuilderTryToBreakIncompatibleGroups(bondID(),incg,bond_category_degree_of_association, degOfs)
+      workspace ! BondBuilderTryToBreakIncompatibleGroups(bondID(),incg,bond_category_degree_of_association, degOfs, runTemperature)
 
     case BondBuilderWonGroupsFight =>
       workspace ! BondBuilderPostGroupBreaking(bondID(), incg)
@@ -142,7 +139,7 @@ class BondBuilder(urgency: Int, workspace: ActorRef,
 
     case PrepareCorrespondenceFightingResponse(cDatas) =>
       log.debug("PrepareCorrespondenceFightingResponse")
-      workspace ! BondBuilderTryToBreakIncompatibleCorrespondences(bondID, incc, bond_category_degree_of_association, cDatas)
+      workspace ! BondBuilderTryToBreakIncompatibleCorrespondences(bondID, incc, bond_category_degree_of_association, cDatas, runTemperature)
 
     case BondBuilderWonCorrespondencesFight =>
       log.debug("BondBuilderWonCorrespondencesFight")
@@ -155,13 +152,6 @@ class BondBuilder(urgency: Int, workspace: ActorRef,
       incg = incgReps
       workspace ! BondBuilderPostCorrrespondencesBreaking(bondID(), incb, incg, incc)
 
-
-
-    case TemperatureResponse(value) =>
-      t = value
-
-    case TemperatureChanged(value) =>
-      t = value
 
     case Finished =>
       workspace ! models.Workspace.Step(runTemperature)

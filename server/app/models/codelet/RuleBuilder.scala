@@ -2,6 +2,7 @@ package models.codelet
 
 import akka.event.LoggingReceive
 import akka.actor.ActorRef
+import models.Coderack.Temperatures
 import models.Workspace.SlippageListShell
 import models.codelet.ImportantObjectCorrespondenceScout.GoWithImportantObjectCorrespondenceScout2Response
 
@@ -12,12 +13,10 @@ object RuleBuilder {
 class RuleBuilder(urgency: Int,
                   workspace: ActorRef,
                   slipnet: ActorRef,
-                  temperature: ActorRef,
-                  arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet, temperature)  {
+                  arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet)  {
   import Codelet.{ Run, Finished }
   import models.Coderack.ChooseAndRun
   import models.Coderack.ProposeCorrespondence
-  import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
   import RuleBuilder.GoWithRulBuilderResponse
   import models.Slipnet.{
     SlipnetCompleteSlippageList,
@@ -28,7 +27,7 @@ class RuleBuilder(urgency: Int,
     GoWithRuleBuilder2
   }
 
-  var runTemperature: Double = 0.0
+  var runTemperature: Temperatures = null
   def ruleID() = arguments.get.asInstanceOf[String]
 
   def receive = LoggingReceive {
@@ -36,7 +35,6 @@ class RuleBuilder(urgency: Int,
     case Run(initialString, modifiedString, targetString,t) =>
       log.debug(s"${getClass.getName}. Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
-      temperature ! Register(self)
       runTemperature = t
       workspace ! GoWithRuleBuilder(ruleID)
 
@@ -44,13 +42,7 @@ class RuleBuilder(urgency: Int,
       slipnet ! SlipnetCompleteSlippageList(shell)
 
     case SlipnetCompleteSlippageListResponse(slippage_list_rep) =>
-      workspace ! GoWithRuleBuilder2(ruleID, slippage_list_rep)
-
-    case TemperatureResponse(value) =>
-      t = value
-
-    case TemperatureChanged(value) =>
-      t = value
+      workspace ! GoWithRuleBuilder2(ruleID, slippage_list_rep, runTemperature)
 
     case Finished =>
       workspace ! models.Workspace.Step(runTemperature)

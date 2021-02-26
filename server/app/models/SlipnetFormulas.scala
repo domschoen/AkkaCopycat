@@ -1,5 +1,7 @@
 package models
 
+import akka.event.LoggingAdapter
+
 object SlipnetFormulas {
 
     def get_bond_category(fromnode: SlipNode, tonode: SlipNode, identity: SlipNode): Option[SlipNode] = {
@@ -15,16 +17,16 @@ object SlipnetFormulas {
       s1.lateral_slip_links.find(sl => sl.to_node==s2).isDefined
     }
 
-    def get_related_node(category: SlipNode, relation: SlipNode, identity: SlipNode): Option[SlipNode] = {
+    def get_related_node(log: LoggingAdapter, category: SlipNode, relation: SlipNode, identity: SlipNode): Option[SlipNode] = {
       // return the node that is linked to this node via this relation
-      System.out.println("get_related_node " + relation + " identity " + identity);
+      log.debug("get_related_node " + relation + " identity " + identity);
 
       if (relation==identity) {
         Some(category)
       } else {
 
         category.outgoing_links.find(l => {
-          System.out.println("get_related_node category.outgoing_links l.label " + l.label);
+          log.debug("get_related_node category.outgoing_links l.label " + l.label);
 
           l.label.isDefined && l.label.get == relation
         }).map(_.to_node)

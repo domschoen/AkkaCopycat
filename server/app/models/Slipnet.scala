@@ -5,26 +5,11 @@ import akka.actor.ActorLogging
 import akka.event.LoggingReceive
 import akka.actor.ActorRef
 import akka.actor.Props
-import com.typesafe.config.ConfigFactory
-
-import scala.xml.Utility
-import play.api.Logger
-import play.api.libs.ws._
-import play.api.libs.json._
-import play.api.libs.json.Reads._
-import play.api.libs.functional.syntax._
-
-import scala.concurrent.Future
-import scala.concurrent.duration._
-import play.api.Play.current
-
-import javax.inject._
-import models.Workspace.{CommonSubProcessing, DataForStrengthUpdateResponse, GoWithBottomUpCorrespondenceScout2, InitializeWorkspaceStringsResponse, PostTopBottomCodeletsGetInfoResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, UpdateEverythingFollowUp}
-import play.api.Configuration
+import models.Workspace.{CommonSubProcessing, DataForStrengthUpdateResponse, InitializeWorkspaceStringsResponse, PostTopBottomCodeletsGetInfoResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, UpdateEverythingFollowUp}
 import play.api.libs.concurrent.InjectedActorSupport
 import Description.DescriptionRep
 import models.Bond.BondRep
-import models.Coderack.{Post, SlipnetUpdateEverythingResponse}
+import models.Coderack.Temperatures
 import models.ConceptMapping.{ConceptMappingParameters, ConceptMappingRep, ConceptMappingRep2}
 import models.Correspondence.CorrespondenceRep
 import models.ExecutionRun.InitializeSlipnetResponse
@@ -32,10 +17,9 @@ import models.Group.{FutureGroupRep, GroupRep}
 import models.Letter.LetterSlipnetComplement
 import models.SlipNode.{GroupSlipnetInfo, SlipNodeRep, SlipnetInfo}
 import models.WorkspaceObject.WorkspaceObjectRep
-import models.WorkspaceStructure.WorkspaceStructureRep
-import models.codelet.BondBuilder.{PrepareCorrespondenceFightingResponse, SlipnetBondBuilderPrepareGroupFightingResponse}
+import models.codelet.BondBuilder.SlipnetBondBuilderPrepareGroupFightingResponse
 import models.codelet.BottomUpDescriptionScout.SlipnetGoWithBottomUpDescriptionScoutResponse
-import models.codelet.{BondBuilder, CodeletType, CodeletTypeString}
+import models.codelet.{BondBuilder, CodeletTypeString}
 import models.codelet.CorrespondenceBuilder.{SlipnetGoWithCorrespondenceBuilder4Response, SlipnetGoWithCorrespondenceBuilder5Response, SlipnetGoWithCorrespondenceBuilderResponse, SlipnetGoWithCorrespondenceBuilderResponse2, SlipnetGoWithCorrespondenceBuilderResponse3}
 import models.codelet.CorrespondenceStrengthTester.{SlipnetGoWithCorrespondenceStrengthTester2Response, SlipnetGoWithCorrespondenceStrengthTesterResponse}
 import models.codelet.GroupBuilder.{PrepareFightingGroupDataResponse, SlipnetGoWithGroupBuilderResponse, SlipnetPrepareGroupFightingResponse}
@@ -48,9 +32,7 @@ import models.codelet.TopDownBondScoutDirection.SlipnetTopDownBondScoutDirection
 import models.codelet.TopDownDescriptionScout.{SlipnetGoWithTopDownDescriptionScoutResponse, SlipnetGoWithTopDownDescriptionScoutResponse2}
 import models.codelet.TopDownGroupScoutCategory.{SlipnetGoWithTopDownGroupScoutCategory2Response, SlipnetGoWithTopDownGroupScoutCategoryResponse}
 import models.codelet.TopDownGroupScoutDirection.SlipnetGoWithTopDownGroupScoutDirection0Response
-//import models.codelet.TopDownGroupScoutDirection.SlipnetGoWithTopDownGroupScoutDirectionResponse
 
-import scala.annotation.tailrec
 import scala.collection.mutable.ListBuffer
 
 
@@ -73,7 +55,7 @@ object Slipnet {
 
   case class Run(initialString: String, modifiedString: String, targetString: String)
   case class InitializeSlipnet(coderack: ActorRef, workspace: ActorRef)
-  case class UpdateEverything(slippageListShell: SlippageListShell, t:Double)
+  case class UpdateEverything(slippageListShell: SlippageListShell, t: Temperatures)
   case class InitializeWorkspaceStrings(initialWos: List[LetterSlipnetComplement],
                                         modifiedWos: List[LetterSlipnetComplement],
                                         targetWos: List[LetterSlipnetComplement]
@@ -81,8 +63,14 @@ object Slipnet {
 
   case class BondFromTo(from: WorkspaceObjectRep, to: WorkspaceObjectRep)
   case class SlipnetTopDownBondScout(fromdtypes: List[SlipNodeRep], todtypes: List[SlipNodeRep])
-  case class SlipnetTopDownBondScoutCategory2(bondCategory: String, from_descriptor: Option[SlipNodeRep], to_descriptor: Option[SlipNodeRep], bondFacet: SlipNodeRep)
-  case class SlipnetTopDownBondScoutDirection2(bondCategory: String, from_descriptor: Option[SlipNodeRep], to_descriptor: Option[SlipNodeRep], bondFacet: SlipNodeRep)
+  case class SlipnetTopDownBondScoutCategory2(bondCategory: String,
+                                              from_descriptor: Option[SlipNodeRep],
+                                              to_descriptor: Option[SlipNodeRep],
+                                              bondFacet: SlipNodeRep)
+  case class SlipnetTopDownBondScoutDirection2(bondCategory: String,
+                                               from_descriptor: Option[SlipNodeRep],
+                                               to_descriptor: Option[SlipNodeRep],
+                                               bondFacet: SlipNodeRep)
 
   case class BondFromTo2(
                           from: WorkspaceObjectRep,
@@ -95,7 +83,7 @@ object Slipnet {
   case class SlipnetBottomUpCorrespondenceScout(
                                        obj1 :WorkspaceObjectRep,
                                        obj2 :WorkspaceObjectRep,
-                                       temperature: Double
+                                       temperature: Temperatures
                                      )
   case class SlipnetBottomUpCorrespondenceScout2(obj1: WorkspaceObjectRep, obj2: WorkspaceObjectRep)
   /*case class ProposeAnyCorrespondence2(
@@ -111,10 +99,12 @@ object Slipnet {
   case class SlipnetGoWithTopDownDescriptionScout2(chosen_property: SlipNodeRep)
 
 
-  case class GoWithTopDownBondScout2Response(bond_facet: SlipNodeRep, from_descriptor: Option[SlipNodeRep], to_descriptor: Option[SlipNodeRep])
+  case class GoWithTopDownBondScout2Response(bond_facet: SlipNodeRep,
+                                             from_descriptor: Option[SlipNodeRep],
+                                             to_descriptor: Option[SlipNodeRep])
 
   case class SetSlipNodeBufferValue(slipNodeID: String, bufferValue: Double)
-  case class SlipnetGoWithBottomUpDescriptionScout(slipNodeRep: SlipNodeRep, temperature: Double)
+  case class SlipnetGoWithBottomUpDescriptionScout(slipNodeRep: SlipNodeRep, temperature: Temperatures)
 
   case class SlipnetTopDownBondScoutResponse(bondfacets: List[SlipNodeRep])
 
@@ -125,11 +115,12 @@ object Slipnet {
                                                      numbersTos: Map[Int, TosInfo],
                                                      middleTos: List[SlipNodeRep]
                                                    )
-  case class SlipnetGoWithTopDownGroupScoutCategory(groupID: String, temperature: Double)
+  case class SlipnetGoWithTopDownGroupScoutCategory(groupID: String, temperature: Temperatures)
   case class SlipnetGoWithTopDownGroupScoutCategory2(group_cat_id:String, dir: Option[SlipNodeRep])
   case class SlipnetGoWithTopDownGroupScoutCategory3(bond_category: SlipNodeRep, fromOBRep: WorkspaceObjectRep)
   case object SlipnetGoWithTopDownGroupScoutDirection0
-  case class SlipnetGoWithTopDownGroupScoutDirection(bond_category: SlipNodeRep, first_bond: String, fromob: String)
+  case class SlipnetGoWithTopDownGroupScoutDirection(bond_category: SlipNodeRep,
+                                                     first_bond: String, fromob: String)
 
   case class SlipnetGoWithGroupScoutWholeString(bc: SlipNodeRep)
   case class SlipnetGoWithGroupBuilder(group_category_id: String)
@@ -149,7 +140,10 @@ object Slipnet {
   case class BondBuilderPrepareGroupFighting(groupReps: List[GroupRep])
 
   case class SlipnetGoWithGroupStrengthTester2(g: GroupRep, strength: Double)
-  case class SlipnetLookAHeadForNewBondCreation(s: ActorRef, group: GroupRep, index: Int, incg: List[String], newBondList: List[BondRep],                                                          from_obj_id: String,
+  case class SlipnetLookAHeadForNewBondCreation(s: ActorRef,
+                                                group: GroupRep, index: Int,
+                                                incg: List[String],
+                                                newBondList: List[BondRep],                                                          from_obj_id: String,
                                                 to_obj_id: String
                                                )
   case class SlipnetProposeRule(description: Option[SlipNodeRep], relation: Option[SlipNodeRep])
@@ -167,13 +161,16 @@ object Slipnet {
                                       object_list: List[SlipNodeRep],
                                       changedReplacementRelation: Option[String],
                                       letterCategory: SlipNodeRep,
-                                      temperature: Double)
+                                      temperature: Temperatures)
 
-  case class SlipnetGoWithImportantObjectCorrespondenceScout(relevantDescriptors: List[SlipNodeRep], t: Double)
-  case class SlipnetGoWithImportantObjectCorrespondenceScout2(obj1: WorkspaceObjectRep,  obj2: WorkspaceObjectRep, obj2GroupRep: WorkspaceObjectRep, t: Double)
+  case class SlipnetGoWithImportantObjectCorrespondenceScout(relevantDescriptors: List[SlipNodeRep], t: Temperatures)
+  case class SlipnetGoWithImportantObjectCorrespondenceScout2(obj1: WorkspaceObjectRep,
+                                                              obj2: WorkspaceObjectRep,
+                                                              obj2GroupRep: WorkspaceObjectRep,
+                                                              t: Temperatures)
   case class GroupFlippedVersion(obj: GroupRep)
   case class GroupFlippedVersionResponse(fgr: Option[FutureGroupRep])
-  case class SlipnetGoWithCorrespondenceBuilder(conceptMappingReps: List[ConceptMappingRep])
+  case class SlipnetGoWithCorrespondenceBuilder(conceptMappingReps: List[ConceptMappingRep], existingConceptMappingReps: List[ConceptMappingRep])
   case class SlipnetGoWithCorrespondenceBuilder2(
                                                   correspondence: CorrespondenceRep,
                                                   correspondenceReps: List[CorrespondenceRep],
@@ -206,10 +203,10 @@ object Slipnet {
                                    crs: List[CorrespondenceRep],
                                    grs: List[GroupRep],
                                    slippagesShell: SlippageListShell,
-                                   t: Double)
+                                   t: Temperatures)
   case class CorrespondenceUpdateStrengthData(internal_strength: Double, supporting_correspondences:Map[String, Boolean])
   case class PostTopBottomCodeletsGetInfo(
-                                           t: Double,
+                                           t: Temperatures,
                                            intra_string_unhappiness: Double,
                                            inter_string_unhappiness: Double,
                                            ruleTotalWeaknessOpt: Option[Double],
@@ -218,7 +215,7 @@ object Slipnet {
                                            ungrouped_objects_size: Int,
                                            unreplaced_objects_size: Int,
                                            uncorresponding_objects_size: Int,
-                                             codeletsSize:Int
+                                           codeletsSize:Int
   )
   case class SlipnetGoWithBondStrengthTesterResponse(bond_category_degree_of_association: Double)
   case class PrepareBondFighting(bondReps: List[BondRep])
@@ -235,7 +232,7 @@ object Slipnet {
   val time_step_length = 15
 
 
-  def choose_slipnode_by_conceptual_depth(slist: List[SlipNode], t: Double): Option[SlipNode] = {
+  def choose_slipnode_by_conceptual_depth(slist: List[SlipNode], t: Temperatures): Option[SlipNode] = {
     if (slist.size == 0) {
       None
     } else {
@@ -252,7 +249,7 @@ object Slipnet {
 
 class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with InjectedActorSupport {
 
-  import Coderack.{ Run, ProposeCorrespondence}
+  import Coderack.{ Run}
   import Slipnet._
   import models.codelet.Codelet.Finished
   import models.codelet.BottomUpBondScout.{ BondFromToSlipnetResponse, BondFromTo2Response }
@@ -630,9 +627,9 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
     val group_category = slipNodeRefs(groupRep.group_category.id)
     if (groupRep.direction_category.isDefined) {
       val direction_category = slipNodeRefs(groupRep.direction_category.get.id)
-      val relatedGroup_category = SlipnetFormulas.get_related_node(group_category, opposite, identity).get
-      val relatedDirection_categoryOpt = SlipnetFormulas.get_related_node(direction_category, opposite, identity)
-      val relatedBond_category = SlipnetFormulas.get_related_node(group_category, bond_category, identity).get
+      val relatedGroup_category = SlipnetFormulas.get_related_node(log,group_category, opposite, identity).get
+      val relatedDirection_categoryOpt = SlipnetFormulas.get_related_node(log,direction_category, opposite, identity)
+      val relatedBond_category = SlipnetFormulas.get_related_node(log,group_category, bond_category, identity).get
 
       val flippedGroup = FutureGroupRep(
         relatedGroup_category.slipNodeRep(),
@@ -654,7 +651,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
   def bondFlipped_version(bond: BondRep): BondRep = {
     val bond_category = slipNodeRefs(bond.bondCategorySlipNodeID)
-    val related = SlipnetFormulas.get_related_node(bond_category,opposite, identity).get
+    val related = SlipnetFormulas.get_related_node(log,bond_category,opposite, identity).get
     //returns the flipped version of this bond
     BondRep(
       "uuid",
@@ -722,7 +719,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
     case UpdateEverything(slippageListShell, t) =>
       log.debug("Slipnet. UpdateEverything")
       update()
-      workspace ! UpdateEverythingFollowUp(slippageList(slippageListShell))
+      workspace ! UpdateEverythingFollowUp(slippageList(slippageListShell),t)
 
     case InitializeWorkspaceStrings(initialWos, modifiedWos, targetWos) =>
       log.debug("Slipnet: InitializeWorkspaceStrings")
@@ -1109,10 +1106,11 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       }
 
     case SlipnetGoWithTopDownGroupScoutCategory(groupID, temperature) =>
+      log.debug("SlipnetGoWithTopDownGroupScoutCategory")
       val group_cat = slipNodeRefs(groupID)
       log.debug("trying to build "+group_cat.id + " group");
 
-      val bond_categoryOpt = SlipnetFormulas.get_related_node(group_cat, bond_category, identity)
+      val bond_categoryOpt = SlipnetFormulas.get_related_node(log,group_cat, bond_category, identity)
       bond_categoryOpt match {
         case Some(bond_category) =>
           log.debug("top-down-group-scout--category bond_category " + bond_category)
@@ -1141,7 +1139,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
     case SlipnetGoWithTopDownGroupScoutDirection(bond_category_rep, first_bond, fromob) =>
       val bondCategory = slipNodeRefs(bond_category_rep.id)
-      val groupCategoryOpt = SlipnetFormulas.get_related_node(bondCategory,group_category, identity)
+      val groupCategoryOpt = SlipnetFormulas.get_related_node(log,bondCategory,group_category, identity)
       groupCategoryOpt match {
         case Some(groupCategory) =>
           log.debug("trying from "+fromob+" "+bondCategory);
@@ -1158,7 +1156,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
     case CompleteProposeGroup(grCategoryRep, dirCategoryRepOpt) =>
       log.debug("CompleteProposeGroup")
       val grCategory = slipNodeRefs(grCategoryRep.id)
-      val bond_categoryOpt = SlipnetFormulas.get_related_node(grCategory,bond_category, identity)
+      val bond_categoryOpt = SlipnetFormulas.get_related_node(log,grCategory,bond_category, identity)
       // match added compare to JavaCopycat
       bond_categoryOpt match {
         case Some(bond_category) =>
@@ -1181,13 +1179,13 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       log.debug("GetRelatedNodeOf")
       val fromSlipNode = slipNodeRefs(slipnodeID)
       val slipNode = slipNodeRefs(lookingAtSlipNodeID)
-      val related = SlipnetFormulas.get_related_node(fromSlipNode,slipNode,identity);
+      val related = SlipnetFormulas.get_related_node(log,fromSlipNode,slipNode,identity);
       sender() ! GetRelatedNodeOfResponse(related.map(_.slipNodeRep()))
 
     case SlipnetGoWithGroupScoutWholeString(bc) =>
       val bond_cat = slipNodeRefs(bc.id)
 
-      val related = SlipnetFormulas.get_related_node(bond_cat,group_category, identity)
+      val related = SlipnetFormulas.get_related_node(log,bond_cat,group_category, identity)
       log.debug("SlipnetGoWithGroupScoutWholeString " + related)
       sender() ! SlipnetGoWithGroupScoutWholeStringResponse(related.map(_.slipNodeRep()),groupSlipnetInfo())
 
@@ -1220,7 +1218,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       log.debug("SlipnetGoWithGroupStrengthTester2")
       // TODO same code as above
       val group_cat = slipNodeRefs(g.group_category.id)
-      val related = SlipnetFormulas.get_related_node(group_cat,bond_category, identity)
+      val related = SlipnetFormulas.get_related_node(log,group_cat,bond_category, identity)
       if (related.isDefined)
         related.get.setBuffer(100.0)
       if (g.direction_category.isDefined) {
@@ -1232,8 +1230,9 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       sender() ! SlipnetGoWithGroupStrengthTesterResponse2
 
     case SlipnetLookAHeadForNewBondCreation(s: ActorRef, g, index: Int, incg, newBondList, from_obj_id, to_obj_id) =>
+      log.debug("SlipnetLookAHeadForNewBondCreation")
       val group_cat = slipNodeRefs(g.group_category.id)
-      val related = SlipnetFormulas.get_related_node(group_cat,bond_category, identity)
+      val related = SlipnetFormulas.get_related_node(log,group_cat,bond_category, identity)
       val bond_facet = slipNodeRefs(g.bond_facet.id)
       sender() ! SlipnetLookAHeadForNewBondCreationResponse(s, g.uuid, index, incg, newBondList, related.map(_.slipNodeRep()),
         from_obj_id, to_obj_id, bond_facet.slipNodeRep(), left.slipNodeRep(), right.slipNodeRep())
@@ -1371,16 +1370,19 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       sender() ! GroupFlippedVersionResponse(flipped)
 
 // Codelet.java.1495
-    case SlipnetGoWithCorrespondenceBuilder(conceptMappingReps) =>
+    case SlipnetGoWithCorrespondenceBuilder(conceptMappingReps, existingConceptMappingReps) =>
       log.debug("Slipnet. SlipnetGoWithCorrespondenceBuilder")
-      val existingConceptMappingList = ConceptMapping.conceptMappingsWithReps(conceptMappingReps)
-      for (cm <- existingConceptMappingList) {
+      val conceptMappingList = ConceptMapping.conceptMappingsWithReps(conceptMappingReps)
+      val existingConceptMappingList = ConceptMapping.conceptMappingsWithReps(existingConceptMappingReps)
+      for (cm <- conceptMappingList) {
         if (cm.label.isDefined) cm.label.get.setBuffer(100.0)
       }
-      val updatedCorrespondenceCMs = existingConceptMappingList.filter(cm => {
+      val updatedCorrespondenceCMs = conceptMappingList.filter(cm => {
+        log.debug("Trying to add cm " + cm)
         !(cm.concept_mapping_present(existingConceptMappingList))
       })
       val updatedCorrespondenceCMReps = updatedCorrespondenceCMs.map(_.conceptMappingRep())
+
       sender() ! SlipnetGoWithCorrespondenceBuilderResponse(updatedCorrespondenceCMReps)
 
     case SlipnetGoWithCorrespondenceBuilder2(correspondence, correspondenceReps, workspaceCorrespondences) =>
@@ -1481,7 +1483,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
       val groupData = grs.map(gr => {
         val grCategory = slipNodeRefs(gr.group_category.id)
-        val bond_categoryOpt = SlipnetFormulas.get_related_node(grCategory,bond_category, identity)
+        val bond_categoryOpt = SlipnetFormulas.get_related_node(log,grCategory,bond_category, identity)
         bond_categoryOpt match {
           case Some(bond_category) =>
             Some((gr.uuid, bond_category.degree_of_association()))
@@ -1494,7 +1496,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       sender() ! DataForStrengthUpdateResponse(bondData, correspondenceData, groupData, slippageList(slippagesShell), t)
 
     case PostTopBottomCodeletsGetInfo(
-        t: Double,
+        t,
         intra_string_unhappiness: Double,
         inter_string_unhappiness: Double,
         ruleTotalWeaknessOpt: Option[Double],
@@ -1572,8 +1574,9 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
       // for g.update_strength_value()
     case SlipnetGoWithGroupBuilder(group_category_id) =>
+      log.debug("SlipnetGoWithGroupBuilder")
       val grCategory = slipNodeRefs(group_category_id)
-      val bond_categoryOpt = SlipnetFormulas.get_related_node(grCategory,bond_category, identity)
+      val bond_categoryOpt = SlipnetFormulas.get_related_node(log,grCategory,bond_category, identity)
       bond_categoryOpt match {
         case Some(bond_category) =>
           sender() ! SlipnetGoWithGroupBuilderResponse(bond_category.degree_of_association())
@@ -1601,7 +1604,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
   private def group_degree_of_association(group_category_id: String): Double = {
     val group_cat = slipNodeRefs(group_category_id)
-    val related = SlipnetFormulas.get_related_node(group_cat, bond_category, identity)
+    val related = SlipnetFormulas.get_related_node(log,group_cat, bond_category, identity)
     related.get.degree_of_association()
   }
 
@@ -1619,7 +1622,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
                              f2: () => Unit,
                              codeletsCount: Int,
                              st: String,
-                             temperature: Double,
+                             temperature: Temperatures,
                              intra_string_unhappiness: Double,
                              inter_string_unhappiness: Double,
                              ruleTotalWeaknessOpt: Option[Double],
@@ -1645,7 +1648,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
     for (t <- 1 to num){
       var urgency = 3;
       if (st.equals("breaker")) urgency = 1;
-      if ((temperature < 25.0) && (st.indexOf("translator")> -1)) urgency=5;
+      if ((temperature.formulaT < 25.0) && (st.indexOf("translator")> -1)) urgency=5;
       val rnd = Random.rnd(null)
       log.debug(">>>> get_bottom_up_codelets " + st + " rnd " + rnd + " prob " + prob + " t " + temperature + " index " + st.indexOf("translator"));
 
@@ -1731,7 +1734,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
   }
 
   def get_post_codelet_probability(structure_category: String,
-                                   t: Double,
+                                   t: Temperatures,
                                    intra_string_unhappiness: Double,
                                    inter_string_unhappiness: Double,
                                    unreplaced_objects_size: Double,
@@ -1742,7 +1745,9 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       1.0
     } else if (structure_category.indexOf("description") > -1) {
 //      log.debug("description")
-      (t/100.0)*(t/100.0)
+      val d = t.formulaT
+
+      (d/100.0)*(d/100.0)
     } else if (structure_category.indexOf("correspondence") > -1) {
 //      log.debug("correspondence " + inter_string_unhappiness)
       inter_string_unhappiness / 100.0
@@ -1996,9 +2001,9 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
   }
 
 
-  def chooseSlipNodeWithTemperature(object_list: List[SlipNode], temperature: Double) = {
+  def chooseSlipNodeWithTemperature(object_list: List[SlipNode], temperature: Temperatures) = {
     val value_list = object_list.map(sn => {
-      Formulas.temperatureAdjustedValue(sn.conceptual_depth, temperature)
+      Formulas.temperature_adjusted_value(sn.conceptual_depth, temperature)
     })
     val index = Utilities.valueProportionalRandomIndexInValueList(value_list)
     object_list(index)
@@ -2037,7 +2042,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
 
   def reset() = {
-    System.out.println("Slipnet.Reset");
+    log.debug("Slipnet.Reset");
 
     number_of_updates=0;
     for (ob <- slipNodes){
@@ -2160,7 +2165,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
   }
 
 
-  def similar_has_property_links(s: SlipNode, t: Double) = s.has_property_links.toList.filter(sl => WorkspaceFormulas.flip_coin(
+  def similar_has_property_links(s: SlipNode, t: Temperatures) = s.has_property_links.toList.filter(sl => WorkspaceFormulas.flip_coin(
       Formulas.temperature_adjusted_probability(sl.degree_of_association()/100.0,t)
     )
   )

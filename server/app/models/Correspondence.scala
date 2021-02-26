@@ -29,29 +29,22 @@ case class Correspondence (log: LoggingAdapter,
                             val flip_obj2: Boolean
                           ) extends WorkspaceStructure(log) {
   def addConceptMappings(cCMReps: List[ConceptMappingRep]) = {
-    System.out.println("Correspondence. addConceptMapping concept_mapping_list " + concept_mapping_list);
-    System.out.println("Correspondence. addConceptMapping " + cCMReps);
+    log.debug(uuid + " Correspondence. addConceptMapping concept_mapping_list " + concept_mapping_list);
+    log.debug(uuid + " Correspondence. addConceptMapping " + cCMReps);
     concept_mapping_list = cCMReps ::: concept_mapping_list
   }
   def addAccessoryConceptMappings(cCMReps: List[ConceptMappingRep]) = {
-    System.out.println("Correspondence. addAccessoryConceptMappings " + cCMReps);
+    log.debug(uuid + "Correspondence. addAccessoryConceptMappings " + cCMReps);
     accessory_concept_mapping_list =  accessory_concept_mapping_list ++ cCMReps
   }
 
 
-  import Correspondence.CorrespondenceRep
   var accessory_concept_mapping_list = ListBuffer.empty[ConceptMappingRep]
 
 
   override def toString(): String = {
     s"Correspondence between ${obj1} and ${obj2}"
   }
-  def correspondenceRep() = CorrespondenceRep(
-    uuid,
-    obj1.workspaceObjectRep(),
-    obj2.workspaceObjectRep(),
-    concept_mapping_list
-  )
 
   // This is cumbersome ! a list of concept mapping which is not just references ...
   // Vector concept_mapping_list = new Vector();

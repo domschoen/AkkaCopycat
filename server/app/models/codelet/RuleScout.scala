@@ -2,7 +2,7 @@ package models.codelet
 
 import akka.event.LoggingReceive
 import akka.actor.ActorRef
-import models.Coderack.ProposeRule
+import models.Coderack.{ProposeRule, Temperatures}
 import models.ConceptMapping.ConceptMappingRep
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.{SlipnetCompleteSlippageList, SlipnetCompleteSlippageListResponse, SlipnetProposeRuleResponse}
@@ -35,12 +35,10 @@ object RuleScout {
 class RuleScout(urgency: Int,
                 workspace: ActorRef,
                 slipnet: ActorRef,
-                temperature: ActorRef,
-                arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet, temperature)  {
+                arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet)  {
   import Codelet.{ Run, Finished }
   import models.Coderack.ChooseAndRun
   import models.Coderack.ProposeCorrespondence
-  import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
   import RuleScout.{
     RuleScoutProposeRule,
     GoWithRuleScoutResponse,
@@ -60,7 +58,7 @@ class RuleScout(urgency: Int,
     GoWithRuleScout2
   }
 
-  var runTemperature: Double = 0.0
+  var runTemperature: Temperatures = null
   var descriptorFacet: Option[SlipNodeRep] = None
   var descriptor: Option[SlipNodeRep] = None
   var objectCategory: Option[SlipNodeRep] = None
@@ -77,7 +75,6 @@ class RuleScout(urgency: Int,
     case Run(initialString, modifiedString, targetString,t) =>
       log.debug(s"RuleScout. Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
-      temperature ! Register(self)
       runTemperature = t
 
       workspace ! GoWithRuleScout
@@ -128,12 +125,6 @@ class RuleScout(urgency: Int,
       } else {
         slipnet ! SlipnetGoWithRuleScout3(object_list, changedReplacementRelation, letter_category, runTemperature)
       }
-
-    case TemperatureResponse(value) =>
-      t = value
-
-    case TemperatureChanged(value) =>
-      t = value
 
     case Finished =>
       workspace ! models.Workspace.Step(runTemperature)

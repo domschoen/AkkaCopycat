@@ -4,14 +4,18 @@ import scala.collection.mutable.ListBuffer
 import Letter.LetterSlipnetComplement
 import akka.event.LoggingAdapter
 
+import java.util.UUID
+
 class WorkspaceString (log: LoggingAdapter, val s: String, x1: Int, y1: Int, x2: Int, y2: Int, val description: String) {
   val length = s.length
   var intra_string_unhappiness = 0.0
 
   var bondRefs = Map.empty[String, Bond]
+  val uuid = generateID()
+  def generateID(): String = UUID.randomUUID().toString()
 
   // Graphics var ratio = 100.0;  // every letter is 100 long unless >(x2-x1)/len
-  println("WorkspaceString " + s)
+  println("WorkspaceString " + s + " uuid " + uuid)
 
   var objects: ListBuffer[WorkspaceObject] = (for (i <- 0 to s.length -1) yield {
     new Letter(log,this, i+1, i+1).asInstanceOf[WorkspaceObject]
@@ -85,5 +89,6 @@ class WorkspaceString (log: LoggingAdapter, val s: String, x1: Int, y1: Int, x2:
 
   def break_group(gr: Group): Unit = {
     objects -= gr
+    log.debug(gr.uuid + " ws " + uuid + " updated to " + objects)
   }
 }

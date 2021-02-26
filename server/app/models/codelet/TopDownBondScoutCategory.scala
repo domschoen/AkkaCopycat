@@ -20,12 +20,10 @@ object TopDownBondScoutCategory {
 class TopDownBondScoutCategory(urgency: Int,
                                workspace: ActorRef,
                                slipnet: ActorRef,
-                               temperature: ActorRef,
-                               arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet, temperature)  {
+                               arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet)  {
   import Codelet.{ Run, Finished }
   import models.Coderack.ChooseAndRun
   import models.Coderack.ProposeCorrespondence
-  import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
   import TopDownBondScoutCategory.{
     SlipnetTopDownBondScoutCategory2Response
   }
@@ -37,7 +35,7 @@ class TopDownBondScoutCategory(urgency: Int,
   var to_descriptor: Option[SlipNodeRep] = None
   var bond_facet: SlipNodeRep = null
   var bond_urgency: Double = 0.0
-  var runTemperature = 0.0
+  var runTemperature: models.Coderack.Temperatures  = null
 
   def bondCategoryID() = arguments.get.asInstanceOf[String]
 
@@ -46,7 +44,6 @@ class TopDownBondScoutCategory(urgency: Int,
     case Run(initialString, modifiedString, targetString,t) =>
       log.debug(s"${getClass.getName}. Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
-      temperature ! Register(self)
       runTemperature = t
       workspace ! GoWithTopDownBondScoutCategory(bondCategoryID, t)
 
@@ -67,6 +64,7 @@ class TopDownBondScoutCategory(urgency: Int,
       slipnet ! SlipnetTopDownBondScoutCategory2(bondCategoryID, from_descriptor, to_descriptor, bond_facet)
 
     case SlipnetTopDownBondScoutCategory2Response(isFromTo, urgency, bond_category, slipnetLeft, slipnetRight) =>
+      log.debug("SlipnetTopDownBondScoutCategory2Response isFromTo " + isFromTo)
       bond_urgency = urgency
       val bond1 = if (isFromTo)  bondFrom else bondTo
       val bond2 = if (isFromTo)  bondTo else bondFrom
@@ -87,12 +85,6 @@ class TopDownBondScoutCategory(urgency: Int,
     case WorkspaceProposeBondResponse(bondID: String) =>
       coderack ! ProposeBond(bondID, bond_urgency)
 
-
-    case TemperatureResponse(value) =>
-      t = value
-
-    case TemperatureChanged(value) =>
-      t = value
 
     case Finished =>
       workspace ! models.Workspace.Step(runTemperature)

@@ -1,22 +1,13 @@
 package models
 
-import akka.actor.{Actor, ActorLogging, ActorRef, ActorSystem, PoisonPill, Props}
+import akka.actor.{Actor, ActorLogging, ActorRef, PoisonPill, Props}
 import com.typesafe.config.ConfigFactory
-import d2spa.shared._
 import d2spa.shared.WebSocketMessages._
-import javax.inject.Inject
-import play.api.{Configuration, Logger}
-import play.api.libs.concurrent.InjectedActorSupport
-import play.api.libs.ws.WSClient
-
-import scala.concurrent.duration._
-import scala.concurrent._
-import ExecutionContext.Implicits.global
 
 
 
 object WebSocketActor {
-  case class Found(answer: String)
+  case class Found(answer: String, codelets_run: Int)
   def props(out: ActorRef): Props = Props(new WebSocketActor(out))
 
 }
@@ -32,8 +23,8 @@ class WebSocketActor (out: ActorRef) extends Actor with ActorLogging {
       log.debug("Receive InstancesResponse ---> sending InstancesResponse")
       out ! InstancesResponseMsg(app, instances)*/
 
-    case Found(answer) =>
-      log.debug(s"WebSocketActor received answer $answer")
+    case Found(answer, codelets_run) =>
+      log.debug(s"WebSocketActor received answer $answer after running $codelets_run codelets")
 
 
     case msg: WebSocketMsgIn => msg match {

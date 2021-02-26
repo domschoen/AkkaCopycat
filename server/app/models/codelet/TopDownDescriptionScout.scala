@@ -2,7 +2,7 @@ package models.codelet
 
 import akka.event.LoggingReceive
 import akka.actor.ActorRef
-import models.Coderack.ProposeDescription
+import models.Coderack.{ProposeDescription, Temperatures}
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.{DescriptionTypeInstanceLinksToNodeInfo, SlipnetGoWithTopDownDescriptionScout}
 import models.Workspace.{GoWithTopDownDescriptionScout, GoWithTopDownDescriptionScout2, PrepareDescription}
@@ -19,12 +19,10 @@ object TopDownDescriptionScout {
 class TopDownDescriptionScout(urgency: Int,
                               workspace: ActorRef,
                               slipnet: ActorRef,
-                              temperature: ActorRef,
-                              arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet, temperature)  {
+                              arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet)  {
   import Codelet.{ Run, Finished }
   import models.Coderack.ChooseAndRun
   import models.Coderack.ProposeCorrespondence
-  import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
   import TopDownDescriptionScout.{
     GoWithTopDownDescriptionScoutResponse,
     GoWithTopDownDescriptionScoutResponse2,
@@ -34,7 +32,7 @@ class TopDownDescriptionScout(urgency: Int,
   import models.Slipnet.SlipnetGoWithTopDownDescriptionScout2
 
   var chosen_object: WorkspaceObjectRep = null
-  var runTemperature : Double = 0.0
+  var runTemperature : Temperatures = null
   var chosen_property : SlipNodeRep = null
 
   def descriptionTypeID() = arguments.get.asInstanceOf[String]
@@ -45,7 +43,6 @@ class TopDownDescriptionScout(urgency: Int,
       log.debug(s"${getClass.getName}. Run with initial $initialString, modified: $modifiedString and target: $targetString")
       runTemperature = t
       coderack = sender()
-      temperature ! Register(self)
       workspace ! GoWithTopDownDescriptionScout(descriptionTypeID, t)
 
     case GoWithTopDownDescriptionScoutResponse(co) =>
@@ -72,11 +69,6 @@ class TopDownDescriptionScout(urgency: Int,
       log.debug("proposing description " + chosen_property.id)
       coderack ! ProposeDescription(descriptionID, urgency)
 
-    case TemperatureResponse(value) =>
-      t = value
-
-    case TemperatureChanged(value) =>
-      t = value
 
     case Finished =>
       workspace ! models.Workspace.Step(runTemperature)

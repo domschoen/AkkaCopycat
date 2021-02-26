@@ -1,886 +1,602 @@
-update_Everything 113
-1T: 38.06421183191371
+update_Everything 58
+1T: 41.59613548332579
+gr 1e1443aa-21b3-4d07-a3a6-7b68df9b40bd group (2-3) ws ac840ec1-b28c-41b8-b0ee-869a408dd009 string.objects ListBuffer(letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (2-3), group (4-6))
+gr 139287ef-aac2-476c-bad2-dbbee74052ce group (4-6) ws ac840ec1-b28c-41b8-b0ee-869a408dd009 string.objects ListBuffer(letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (2-3), group (4-6))
+gr 059fdfa5-c88d-47e6-ae8b-fdbac8bd7b7b group (1-3) ws 27b078d6-1c59-445d-baea-932d62a61cdb string.objects ListBuffer(letter (1)1, letter (2)2, letter (3)3, group (1-3))
+c f754b29f-ee8a-4e9f-9268-7d900243444a Correspondence between letter (1)1 and letter (1)1
+c 184f8f09-12bd-4069-86e9-e1279ae8092d Correspondence between letter (3)3 and group (4-6)
 Workspace structure update_strength_value description(letter) of letter (1)1 in initial string
-8e9b15c5-34a0-481d-a2d5-6e2172c2ee6c class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+31ce9ccb-32eb-4601-a475-c39193860762 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
 Workspace structure update_strength_value description(A) of letter (1)1 in initial string
-793f5e68-3d6d-4b02-be21-d8fb0c75e7cb class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+d3a49a8d-2767-45de-b116-143b775083e0 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
 Workspace structure update_strength_value description(leftmost) of letter (1)1 in initial string
-528319e0-a385-4d14-b397-678ffa6d0c24 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+c836d545-16e2-4199-adc8-7cb5882bd3a6 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
 Workspace structure update_strength_value description(letter) of letter (2)2 in initial string
-f5ae83fd-f650-4dbe-91f9-5d0fb3a4cfa3 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(A) of letter (2)2 in initial string
-5c7ad469-a444-4bd3-8181-e04adcf78c08 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+71969695-4942-4b31-950c-7d612d2de8a7 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+Workspace structure update_strength_value description(B) of letter (2)2 in initial string
+4ead4bec-194f-43f3-945e-23363776db36 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+Workspace structure update_strength_value description(middle) of letter (2)2 in initial string
+8e6f4c98-d9ad-4128-9946-48c980c40e3a class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
 Workspace structure update_strength_value description(letter) of letter (3)3 in initial string
-826cd294-033f-48ba-b25e-304fb59517ec class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(B) of letter (3)3 in initial string
-de60e893-bbe7-4e69-bc09-20048aeaffb3 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(letter) of letter (4)4 in initial string
-f2ccaf64-4b17-4c4d-8cc9-63334516f81b class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(B) of letter (4)4 in initial string
-ff0267f5-e60a-426b-89d4-573b08b4d11d class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(letter) of letter (5)5 in initial string
-4935096d-12da-4e1a-8766-7cf1f54fdfda class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(C) of letter (5)5 in initial string
-537bf94b-802a-40a9-8b63-b4188c0605f2 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(letter) of letter (6)6 in initial string
-40f7ea86-50db-4f1a-b6a1-94f77fa2dcd3 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(C) of letter (6)6 in initial string
-798eb045-25f9-4a9b-b67a-c4fa6b600923 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(rightmost) of letter (6)6 in initial string
-67e893de-f594-414c-b4ba-5b1d8399c8f6 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+8fc00065-4859-459b-81fe-1a956382f04c class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+Workspace structure update_strength_value description(C) of letter (3)3 in initial string
+79d916cd-bec8-4c85-aef2-8ba9fef1903e class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+Workspace structure update_strength_value description(rightmost) of letter (3)3 in initial string
+abddc7b3-f076-4d1a-a5e7-d06724b57148 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
 Workspace structure update_strength_value description(letter) of letter (1)1 in modified string
-d83e8b3b-7565-4f4e-93f5-f01369dd456b class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+da63e56e-3284-47a4-8111-5744e46aa63f class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
 Workspace structure update_strength_value description(A) of letter (1)1 in modified string
-c86ba2f9-7655-4f93-aa32-ad1437d4b4ec class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+7593bbb5-97bf-47c7-8c13-80dd71ad8d68 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
 Workspace structure update_strength_value description(leftmost) of letter (1)1 in modified string
-1e903568-9b61-4110-b7da-ef926976dfe6 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+6353b557-8b0a-4e0c-9831-6ccf8d0cc31d class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
 Workspace structure update_strength_value description(letter) of letter (2)2 in modified string
-e8d28268-7df9-44b7-8318-8766dca82604 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(A) of letter (2)2 in modified string
-f5a54acd-a630-440f-b5b7-e0548e8f04a8 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+85fc5e40-e268-4914-82ca-1d3ad5ebcefe class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+Workspace structure update_strength_value description(B) of letter (2)2 in modified string
+f574e1ed-99ec-46a4-b996-57307e9a951f class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+Workspace structure update_strength_value description(middle) of letter (2)2 in modified string
+03046928-aa81-4b28-a5bc-64fe0d6b0dd7 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
 Workspace structure update_strength_value description(letter) of letter (3)3 in modified string
-dee55c3a-26e4-4426-b9fa-5acc9ceb05a2 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(B) of letter (3)3 in modified string
-42dcaa45-857f-40dd-a235-ef2fb686ee54 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(letter) of letter (4)4 in modified string
-59aace91-73df-42fe-a9df-b088958830f7 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(B) of letter (4)4 in modified string
-3b90bda5-83d5-4a60-97e8-391ba4b8d0cc class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(letter) of letter (5)5 in modified string
-0dfb172b-4f29-4333-b790-93b0de01ba90 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(C) of letter (5)5 in modified string
-350ff5b6-8495-4d45-9d34-167dd2ed7eb1 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(letter) of letter (6)6 in modified string
-b817cc0d-1511-4d19-a684-91738ea82c99 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(D) of letter (6)6 in modified string
-ce3be595-0137-4ef9-a03d-285f045fe27e class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(rightmost) of letter (6)6 in modified string
-e2c9412b-6be0-4f2f-980e-5e9db10c0a39 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+76ee1f88-f285-4f99-a424-24b617b1c8bb class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+Workspace structure update_strength_value description(D) of letter (3)3 in modified string
+2ad9c6cf-4b51-45d7-b358-0cc035859851 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+Workspace structure update_strength_value description(rightmost) of letter (3)3 in modified string
+3132dc14-f552-420d-96f0-021cb5cc4265 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
 Workspace structure update_strength_value description(letter) of letter (1)1 in target string
-1af7e7cb-497b-48a7-9095-01378d60e600 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(I) of letter (1)1 in target string
-7f78805d-0606-45da-85ff-cae490887e6b class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+b021911c-1fb4-498c-9eaf-0dde3aab90eb class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+Workspace structure update_strength_value description(R) of letter (1)1 in target string
+aa058c7d-e7da-4deb-853e-04494e0fb83a class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
 Workspace structure update_strength_value description(leftmost) of letter (1)1 in target string
-7dad1160-ecdd-46df-aeee-abb45d6a49d2 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+140119c9-97d3-4953-86d9-1af062109a0b class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
 Workspace structure update_strength_value description(letter) of letter (2)2 in target string
-07b6b706-5aa6-4f4a-a7c4-f0c9150a4467 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(I) of letter (2)2 in target string
-3d13aeea-eb6c-4444-ad9f-321390a3ff4d class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+dc5ee2f3-88c2-456a-b194-22f3b1c79d71 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+Workspace structure update_strength_value description(S) of letter (2)2 in target string
+90d77519-5e5f-4e99-aa37-778b1303f114 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
 Workspace structure update_strength_value description(letter) of letter (3)3 in target string
-032cd90d-808c-4e96-bdd5-0f0a7d2fa56d class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(J) of letter (3)3 in target string
-e64a9a8a-447e-4fd8-810a-5d926ed56cf0 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+e5beb4e2-99e3-43a1-9029-9d0c091478e8 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+Workspace structure update_strength_value description(S) of letter (3)3 in target string
+049f1cd5-7df5-40b7-b16d-8b80e2bf49d0 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
 Workspace structure update_strength_value description(letter) of letter (4)4 in target string
-178efb87-f3f6-405d-b269-d9c1a0023ab2 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(J) of letter (4)4 in target string
-b8c5f745-c157-401d-a3dd-8892bc96f9a8 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+edaf4109-dd5b-4b74-b03b-5c42f71bce35 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+Workspace structure update_strength_value description(T) of letter (4)4 in target string
+7450e352-c21f-4db6-bb3e-5292846ebdeb class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
 Workspace structure update_strength_value description(letter) of letter (5)5 in target string
-37b2b9db-37c9-4678-ba90-df7dfd47e0ba class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(K) of letter (5)5 in target string
-11ac15e6-b480-46a4-a8ce-c6e9e4efdafd class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+182ce6dd-a4e5-45e5-8f7f-910403d411c4 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+Workspace structure update_strength_value description(T) of letter (5)5 in target string
+4f8b5ea2-60d7-4444-813f-a6cd1170aa84 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
 Workspace structure update_strength_value description(letter) of letter (6)6 in target string
-db170f32-24a3-46ac-beca-69fb0d8238b6 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(K) of letter (6)6 in target string
-5fabffb7-508f-4a82-a919-90f7bd679a44 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+2324e9fc-c116-4683-860e-477059cf1f21 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+Workspace structure update_strength_value description(T) of letter (6)6 in target string
+c12fcc91-d08c-4c88-a3e5-8a9110a8bc8e class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
 Workspace structure update_strength_value description(rightmost) of letter (6)6 in target string
-38850998-99e9-402e-9803-9aa74f454e9a class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value sm bond between letter (3)3 and letter (4)4
-sm bdoa: 100.0
-string.bonds.size() 7
-061a8700-80d4-4d67-b3bd-30fc1e1402f2 class models.Bond internal_strength 100.0 external_strength 48.03844614152614 total strength: 100.0
-Workspace structure update_strength_value sc bond between letter (2)2 and letter (3)3
-sc bdoa: 95.89577675789482
-string.bonds.size() 7
-2b95b2ea-9b96-4935-898c-2c04f5796109 class models.Bond internal_strength 95.89577675789482 external_strength 39.22322702763681 total strength: 93.56980879997194
-Workspace structure update_strength_value sc bond between letter (4)4 and letter (5)5
-sc bdoa: 95.89577675789482
-string.bonds.size() 7
-3f58689f-c2ac-41a0-890c-c13ed79494db class models.Bond internal_strength 95.89577675789482 external_strength 27.735009811261456 total strength: 93.09830671887394
+472e214d-f935-42fe-88c5-ddc26bb24789 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
 Workspace structure update_strength_value sm bond between letter (5)5 and letter (6)6
 sm bdoa: 100.0
-string.bonds.size() 7
-2556d41e-e00f-4a71-b404-35f99d6aa9d9 class models.Bond internal_strength 100.0 external_strength 55.47001962252291 total strength: 100.0
-Workspace structure update_strength_value sm bond between letter (1)1 and letter (2)2
+string.bonds.size() 5
+b49fb33e-09ad-4242-a120-ef7b1848c121 class models.Bond internal_strength 100.0 external_strength 47.14045207910317 total strength: 100.0
+Workspace structure update_strength_value sm bond between letter (4)4 and letter (5)5
 sm bdoa: 100.0
-string.bonds.size() 7
-ac569b33-1b54-428b-9e00-a44a7391b8c7 class models.Bond internal_strength 100.0 external_strength 55.47001962252291 total strength: 100.0
-Workspace structure update_strength_value sm bond between letter (1)1 and letter (2)2
+string.bonds.size() 5
+342fbc1c-a213-4513-8569-ff4f3ddbbae7 class models.Bond internal_strength 100.0 external_strength 47.14045207910317 total strength: 100.0
+Workspace structure update_strength_value replace letter category of C letter by successor
+8735acec-ccf0-4d2c-8f24-7a1da5765b58 descriptor Some(SlipNodeRep(C,50.0)) relation Some(SlipNodeRep(sc,50.0))
+8735acec-ccf0-4d2c-8f24-7a1da5765b58 class models.Rule internal_strength 0.0 external_strength 0.0 total strength: 0.0
+Rule calculate_total_strength 8735acec-ccf0-4d2c-8f24-7a1da5765b58 rule: replace letter category of C letter by successor total_strength 0.0
+Workspace structure update_strength_value sm bond between letter (2)2 and letter (3)3
 sm bdoa: 100.0
-string.bonds.size() 7
-922962a3-0b41-4455-a63c-526377686f57 class models.Bond internal_strength 100.0 external_strength 48.03844614152614 total strength: 100.0
-Workspace structure update_strength_value sc bond between letter (4)4 and letter (5)5
-sc bdoa: 95.89577675789482
-string.bonds.size() 7
-f5b29e55-8663-471f-bb1a-450063c71ed3 class models.Bond internal_strength 95.89577675789482 external_strength 39.22322702763681 total strength: 93.56980879997194
-Workspace structure update_strength_value sm bond between letter (5)5 and letter (6)6
-sm bdoa: 100.0
-string.bonds.size() 7
-5e3a8d22-9a57-4b90-9533-118c7460a634 class models.Bond internal_strength 100.0 external_strength 48.03844614152614 total strength: 100.0
+string.bonds.size() 5
+9cb66924-9c98-46ed-82ad-bd5e322c154a class models.Bond internal_strength 100.0 external_strength 47.14045207910317 total strength: 100.0
+Workspace structure update_strength_value pd bond between letter (1)1 and letter (2)2
+pd bdoa: 95.89577675789482
+string.bonds.size() 5
+c6be0a73-c772-4603-b5e2-42e092cf1c76 class models.Bond internal_strength 95.89577675789482 external_strength 33.33333333333333 total strength: 93.32807441403506
+Workspace structure update_strength_value pd bond between letter (1)1 and letter (2)2
+pd bdoa: 95.89577675789482
+string.bonds.size() 2
+ea0dd69d-e7fa-4abd-b70c-be634007e05c class models.Bond internal_strength 95.89577675789482 external_strength 70.71067811865476 total strength: 94.862124085996
+Workspace structure update_strength_value group (2-3)
+1e1443aa-21b3-4d07-a3a6-7b68df9b40bd group (2-3) bcw:91.20108393559097 lc:20.0 lcw:8.798916064409028  internal strength = 92.96086714847279
+1e1443aa-21b3-4d07-a3a6-7b68df9b40bd group (2-3) local density=3.0  sg=1.0 ln=3.0
+1e1443aa-21b3-4d07-a3a6-7b68df9b40bd local support  density=33.333333333333336num=1.0 ad=57.73502691896258nf=0.6
+1e1443aa-21b3-4d07-a3a6-7b68df9b40bd group (2-3) external strength = 34.64101615137755
+1e1443aa-21b3-4d07-a3a6-7b68df9b40bd class models.Group internal_strength 92.96086714847279 external_strength 34.64101615137755 total strength: 88.85565535797454
+Workspace structure update_strength_value description(group) of group (2-3) in target string
+0da4315e-5b09-4c2b-9cb7-2513252d8baa class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+Workspace structure update_strength_value description(smg) of group (2-3) in target string
+7bdeb6cc-4447-4a9e-bb6c-2dfe7b48872d class models.Description internal_strength 50.0 external_strength 60.0 total strength: 55.0
+Workspace structure update_strength_value description(S) of group (2-3) in target string
+92a1d1d2-c941-4667-b9e9-f62676cc3a9d class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+Workspace structure update_strength_value group (4-6)
+139287ef-aac2-476c-bad2-dbbee74052ce group (4-6) bcw:91.20108393559097 lc:60.0 lcw:8.798916064409028  internal strength = 96.4804335742364
+139287ef-aac2-476c-bad2-dbbee74052ce group (4-6) local density=3.0  sg=1.0 ln=3.0
+139287ef-aac2-476c-bad2-dbbee74052ce local support  density=33.333333333333336num=1.0 ad=57.73502691896258nf=0.6
+139287ef-aac2-476c-bad2-dbbee74052ce group (4-6) external strength = 34.64101615137755
+139287ef-aac2-476c-bad2-dbbee74052ce class models.Group internal_strength 96.4804335742364 external_strength 34.64101615137755 total strength: 94.30395420073364
+Workspace structure update_strength_value description(group) of group (4-6) in target string
+dcc71276-1ce5-46b8-8694-a337afa6d2e2 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+Workspace structure update_strength_value description(smg) of group (4-6) in target string
+11297993-09fc-4867-91e5-a046369e562e class models.Description internal_strength 50.0 external_strength 80.0 total strength: 65.0
+Workspace structure update_strength_value description(T) of group (4-6) in target string
+caf9b2d8-de15-498d-8ac5-462fdb519e91 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+Workspace structure update_strength_value description(rightmost) of group (4-6) in target string
+eceaceb4-08bb-4862-99b5-ab0db67a22ab class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
 Workspace structure update_strength_value Correspondence between letter (1)1 and letter (1)1
-69d5906e-3700-4fac-8d73-ff1f8ff420b3 support obj1 letter (1)1
+f754b29f-ee8a-4e9f-9268-7d900243444a support obj1 letter (1)1
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
-69d5906e-3700-4fac-8d73-ff1f8ff420b3 total 84.0
-support ws!=this true
-support supporting_correspondences(this,(Correspondence)ws)) false
-bc0b5282-1cf2-499b-af9f-92ba5651bfdf total 64.0
+f754b29f-ee8a-4e9f-9268-7d900243444a total 80.0
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
-42949a3b-79ff-47e3-81b7-2ea55d4cf5d6 total 84.0
+184f8f09-12bd-4069-86e9-e1279ae8092d total 80.0
+support support_sum 80.0
+f754b29f-ee8a-4e9f-9268-7d900243444a class models.Correspondence internal_strength 80.0 external_strength 80.0 total strength: 80.0
+Workspace structure update_strength_value replace letter category of rightmost letter by successor
+2bbebcd1-e000-44a9-b261-1bb52119dabe descriptor Some(SlipNodeRep(rm,50.0)) relation Some(SlipNodeRep(sc,50.0))
+2bbebcd1-e000-44a9-b261-1bb52119dabe class models.Rule internal_strength 88.12908230365319 external_strength 88.12908230365319 total strength: 88.12908230365319
+Rule calculate_total_strength 2bbebcd1-e000-44a9-b261-1bb52119dabe rule: replace letter category of rightmost letter by successor total_strength 88.12908230365319
+Workspace structure update_strength_value pd bond between letter (2)2 and letter (3)3
+pd bdoa: 95.89577675789482
+string.bonds.size() 2
+45051ec6-5e7a-4e78-aae8-976a040e911d class models.Bond internal_strength 95.89577675789482 external_strength 70.71067811865476 total strength: 94.862124085996
+Workspace structure update_strength_value group (1-3)
+059fdfa5-c88d-47e6-ae8b-fdbac8bd7b7b group (1-3) bcw:69.69430962557104 lc:60.0 lcw:30.305690374428963  internal strength = 71.15108954009136
+059fdfa5-c88d-47e6-ae8b-fdbac8bd7b7b group (1-3) external strength = 100.0
+059fdfa5-c88d-47e6-ae8b-fdbac8bd7b7b class models.Group internal_strength 71.15108954009136 external_strength 100.0 total strength: 79.47368588732962
+Workspace structure update_strength_value description(group) of group (1-3) in initial string
+720f7f08-f3a7-430b-bf45-6ca794c5b0da class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+Workspace structure update_strength_value description(pg) of group (1-3) in initial string
+383cf028-eb65-4a00-8e4a-3fdf2aee2153 class models.Description internal_strength 50.0 external_strength 60.0 total strength: 55.0
+Workspace structure update_strength_value description(left) of group (1-3) in initial string
+5d2c5a5f-e1d0-4fb0-a681-499f6409286a class models.Description internal_strength 50.0 external_strength 50.0 total strength: 50.0
+Workspace structure update_strength_value description(whole) of group (1-3) in initial string
+33986d79-8d88-4227-9d4f-96bd06728d48 class models.Description internal_strength 50.0 external_strength 80.0 total strength: 65.0
+Workspace structure update_strength_value Correspondence between letter (3)3 and group (4-6)
+184f8f09-12bd-4069-86e9-e1279ae8092d support obj1 letter (3)3
 support ws!=this true
 support supporting_correspondences(this,(Correspondence)ws)) true
-736781d9-7b22-4bb0-bd60-bb481792f7d2 total 84.0
-support support_sum 168.0
-69d5906e-3700-4fac-8d73-ff1f8ff420b3 class models.Correspondence internal_strength 80.0 external_strength 100.0 total strength: 84.0
-Workspace structure update_strength_value sc bond between letter (2)2 and letter (3)3
-sc bdoa: 95.89577675789482
-string.bonds.size() 7
-bead2387-1f36-4b4c-b1e0-8d8b796559f4 class models.Bond internal_strength 95.89577675789482 external_strength 27.735009811261456 total strength: 93.09830671887394
-Workspace structure update_strength_value group (3-4)
-aa94691c-2076-43be-81b9-13099a908c05 group (3-4) bcw:91.20108393559097 lc:20.0 lcw:8.798916064409028  internal strength = 92.96086714847279
-aa94691c-2076-43be-81b9-13099a908c05 group (3-4) local density=3.0  sg=2.0 ln=3.0
-aa94691c-2076-43be-81b9-13099a908c05 local support  density=66.66666666666667num=2.0 ad=81.6496580927726nf=0.9381427059852853
-aa94691c-2076-43be-81b9-13099a908c05 group (3-4) external strength = 76.59903118592703
-aa94691c-2076-43be-81b9-13099a908c05 class models.Group internal_strength 92.96086714847279 external_strength 76.59903118592703 total strength: 91.80913577812024
-Workspace structure update_strength_value description(group) of group (3-4) in target string
-63be7339-18d2-42f6-8fbc-552b99954deb class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(smg) of group (3-4) in target string
-37448cf9-401a-498b-9156-6c473fd525f0 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(J) of group (3-4) in target string
-e4e82b9a-29c8-4bf0-95d0-eb40ffaee631 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value group (5-6)
-9e8804f2-f057-434d-bdfd-e5bcb25d4aad group (5-6) bcw:91.20108393559097 lc:20.0 lcw:8.798916064409028  internal strength = 92.96086714847279
-9e8804f2-f057-434d-bdfd-e5bcb25d4aad group (5-6) local density=3.0  sg=2.0 ln=3.0
-9e8804f2-f057-434d-bdfd-e5bcb25d4aad local support  density=66.66666666666667num=2.0 ad=81.6496580927726nf=0.9381427059852853
-9e8804f2-f057-434d-bdfd-e5bcb25d4aad group (5-6) external strength = 76.59903118592703
-9e8804f2-f057-434d-bdfd-e5bcb25d4aad class models.Group internal_strength 92.96086714847279 external_strength 76.59903118592703 total strength: 91.80913577812024
-Workspace structure update_strength_value description(group) of group (5-6) in initial string
-264beed8-0112-430f-8927-baf6b9671b27 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(smg) of group (5-6) in initial string
-5bda2862-9978-453e-a47a-d80d91316d20 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(C) of group (5-6) in initial string
-3c0c48cd-3f80-4c1c-86ed-a9456d575522 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(rightmost) of group (5-6) in initial string
-1217d1ff-8baf-4945-9291-44513590b922 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(2) of group (5-6) in initial string
-00dfd4cc-e5da-4215-9ff9-c2177fe5bd1a class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value group (1-2)
-47b61ecb-8112-42da-855b-a3b513f39966 group (1-2) bcw:91.20108393559097 lc:20.0 lcw:8.798916064409028  internal strength = 92.96086714847279
-47b61ecb-8112-42da-855b-a3b513f39966 group (1-2) local density=3.0  sg=3.0 ln=3.0
-47b61ecb-8112-42da-855b-a3b513f39966 local support  density=100.0num=3.0 ad=100.0nf=0.9812583822055828
-47b61ecb-8112-42da-855b-a3b513f39966 group (1-2) external strength = 98.12583822055828
-47b61ecb-8112-42da-855b-a3b513f39966 class models.Group internal_strength 92.96086714847279 external_strength 98.12583822055828 total strength: 93.32443632397982
-Workspace structure update_strength_value description(group) of group (1-2) in initial string
-7218b36e-4615-4a00-a1ae-0a37a592dd4e class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(smg) of group (1-2) in initial string
-080ba2bd-b653-4681-a687-87987aec6c33 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(A) of group (1-2) in initial string
-59ce5ae2-b9de-4a7a-9fba-41db9abe6438 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(leftmost) of group (1-2) in initial string
-2ae9e21b-e8ab-438c-b445-023922464aec class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value group (1-2)
-68ef4c41-ee3f-451c-a0e2-122a84c2e2ad group (1-2) bcw:91.20108393559097 lc:20.0 lcw:8.798916064409028  internal strength = 92.96086714847279
-68ef4c41-ee3f-451c-a0e2-122a84c2e2ad group (1-2) local density=3.0  sg=2.0 ln=3.0
-68ef4c41-ee3f-451c-a0e2-122a84c2e2ad local support  density=66.66666666666667num=2.0 ad=81.6496580927726nf=0.9381427059852853
-68ef4c41-ee3f-451c-a0e2-122a84c2e2ad group (1-2) external strength = 76.59903118592703
-68ef4c41-ee3f-451c-a0e2-122a84c2e2ad class models.Group internal_strength 92.96086714847279 external_strength 76.59903118592703 total strength: 91.80913577812024
-Workspace structure update_strength_value description(group) of group (1-2) in target string
-2c9d401a-ed91-471b-a08b-6aa5de603cd0 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(smg) of group (1-2) in target string
-4b20bcba-21f7-4845-9493-7193dff33ebb class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(I) of group (1-2) in target string
-7a91a8d2-ba2f-4b2f-80a0-fbe4caee945b class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(leftmost) of group (1-2) in target string
-55c43493-086b-4a8b-8baa-0f020061ad3c class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(2) of group (1-2) in target string
-cb75d5bf-087e-4c69-8983-f9e4abb058f3 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value sm bond between letter (3)3 and letter (4)4
-sm bdoa: 100.0
-string.bonds.size() 7
-50da70d1-aa83-4327-9918-2ba8888c0377 class models.Bond internal_strength 100.0 external_strength 55.47001962252291 total strength: 100.0
-Workspace structure update_strength_value description(2) of group (1-2) in initial string
-e25e9efe-ec44-4c33-9b51-af254a52a05b class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value sc bond between group (1-2) and group (3-4)
-sc bdoa: 95.89577675789482
-string.bonds.size() 7
-1ac9f5fa-93be-460d-ace0-cccebdcc102b class models.Bond internal_strength 95.89577675789482 external_strength 39.22322702763681 total strength: 93.56980879997194
-Workspace structure update_strength_value group (5-6)
-829c4de3-00c5-4530-a9ca-53a6516ec962 group (5-6) bcw:91.20108393559097 lc:20.0 lcw:8.798916064409028  internal strength = 92.96086714847279
-829c4de3-00c5-4530-a9ca-53a6516ec962 group (5-6) local density=3.0  sg=2.0 ln=3.0
-829c4de3-00c5-4530-a9ca-53a6516ec962 local support  density=66.66666666666667num=2.0 ad=81.6496580927726nf=0.9381427059852853
-829c4de3-00c5-4530-a9ca-53a6516ec962 group (5-6) external strength = 76.59903118592703
-829c4de3-00c5-4530-a9ca-53a6516ec962 class models.Group internal_strength 92.96086714847279 external_strength 76.59903118592703 total strength: 91.80913577812024
-Workspace structure update_strength_value description(group) of group (5-6) in target string
-72c05a81-05e4-4faa-abfd-d95074605bc5 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(smg) of group (5-6) in target string
-a283e145-7089-433e-b144-b7b70749ed49 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(K) of group (5-6) in target string
-b84ca295-8294-4703-b30e-199d31fe2cd9 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(rightmost) of group (5-6) in target string
-be5ebdb6-e121-49f4-9078-20e666d994a4 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(2) of group (5-6) in target string
-e97b30a9-3430-4e1d-b541-c0d9c2a790b1 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value group (3-4)
-5746cf34-b777-49a9-80b3-124f05323cb8 group (3-4) bcw:91.20108393559097 lc:20.0 lcw:8.798916064409028  internal strength = 92.96086714847279
-5746cf34-b777-49a9-80b3-124f05323cb8 group (3-4) local density=3.0  sg=2.0 ln=3.0
-5746cf34-b777-49a9-80b3-124f05323cb8 local support  density=66.66666666666667num=2.0 ad=81.6496580927726nf=0.9381427059852853
-5746cf34-b777-49a9-80b3-124f05323cb8 group (3-4) external strength = 76.59903118592703
-5746cf34-b777-49a9-80b3-124f05323cb8 class models.Group internal_strength 92.96086714847279 external_strength 76.59903118592703 total strength: 91.80913577812024
-Workspace structure update_strength_value description(group) of group (3-4) in initial string
-576b0eb7-bf57-4a40-8d11-41d5625168cf class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(smg) of group (3-4) in initial string
-59c643e7-cdd4-4191-a204-40bcdc14cace class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(B) of group (3-4) in initial string
-2e825c9f-2112-4661-b058-f596145631a1 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(middle) of group (3-4) in initial string
-2eb923c3-c886-43d8-a227-66189e9716d9 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(2) of group (3-4) in initial string
-c7a9fc33-e0ef-4cb9-b3e9-35ff19ffc754 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(middle) of group (3-4) in target string
-3f3420f1-2732-4b74-9067-3530a87305ac class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(2) of group (3-4) in target string
-195202d0-2f80-4e5c-92d7-07d74870f55c class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value sm bond between group (3-4) and group (5-6)
-sm bdoa: 100.0
-string.bonds.size() 7
-c0cb7f3f-63f4-46c8-b4f0-d24d0e735274 class models.Bond internal_strength 70.0 external_strength 55.47001962252291 total strength: 65.64100588675687
-Workspace structure update_strength_value group (3-6)
-b1c8c18d-bfae-41d5-902f-9886abc55903 group (3-6) bcw:91.20108393559097 lc:20.0 lcw:8.798916064409028  internal strength = 92.96086714847279
-b1c8c18d-bfae-41d5-902f-9886abc55903 group (3-6) local density=3.0  sg=1.0 ln=3.0
-b1c8c18d-bfae-41d5-902f-9886abc55903 local support  density=33.333333333333336num=1.0 ad=57.73502691896258nf=0.6
-b1c8c18d-bfae-41d5-902f-9886abc55903 group (3-6) external strength = 34.64101615137755
-b1c8c18d-bfae-41d5-902f-9886abc55903 class models.Group internal_strength 92.96086714847279 external_strength 34.64101615137755 total strength: 88.85565535797454
-Workspace structure update_strength_value description(group) of group (3-6) in initial string
-047f31f0-3e05-4adf-af30-c5a943fb57e6 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(smg) of group (3-6) in initial string
-b2c25038-9ae7-43c3-a390-10dd72752678 class models.Description internal_strength 50.0 external_strength 95.0 total strength: 72.5
-Workspace structure update_strength_value description(2) of group (3-6) in initial string
-582e7447-2b4d-4941-ab35-2bd2f2a95333 class models.Description internal_strength 50.0 external_strength 95.0 total strength: 72.5
-Workspace structure update_strength_value description(rightmost) of group (3-6) in initial string
-c197d90b-e5b4-4038-9dbd-6b320dd8f574 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value Correspondence between group (3-4) and group (3-4)
-bc0b5282-1cf2-499b-af9f-92ba5651bfdf support obj1 group (3-4)
-support ws!=this true
-support supporting_correspondences(this,(Correspondence)ws)) false
-69d5906e-3700-4fac-8d73-ff1f8ff420b3 total 84.0
+f754b29f-ee8a-4e9f-9268-7d900243444a total 80.0
 support ws!=this false
 support supporting_correspondences(this,(Correspondence)ws)) false
-bc0b5282-1cf2-499b-af9f-92ba5651bfdf total 64.0
-support ws!=this true
-support supporting_correspondences(this,(Correspondence)ws)) false
-42949a3b-79ff-47e3-81b7-2ea55d4cf5d6 total 84.0
-support ws!=this true
-support supporting_correspondences(this,(Correspondence)ws)) false
-736781d9-7b22-4bb0-bd60-bb481792f7d2 total 84.0
-support support_sum 0.0
-bc0b5282-1cf2-499b-af9f-92ba5651bfdf class models.Correspondence internal_strength 80.0 external_strength 0.0 total strength: 64.0
-Workspace structure update_strength_value Correspondence between group (1-2) and group (1-2)
-42949a3b-79ff-47e3-81b7-2ea55d4cf5d6 support obj1 group (1-2)
-support ws!=this true
-support supporting_correspondences(this,(Correspondence)ws)) true
-69d5906e-3700-4fac-8d73-ff1f8ff420b3 total 84.0
-support ws!=this true
-support supporting_correspondences(this,(Correspondence)ws)) false
-bc0b5282-1cf2-499b-af9f-92ba5651bfdf total 64.0
-support ws!=this false
-support supporting_correspondences(this,(Correspondence)ws)) false
-42949a3b-79ff-47e3-81b7-2ea55d4cf5d6 total 84.0
-support ws!=this true
-support supporting_correspondences(this,(Correspondence)ws)) true
-736781d9-7b22-4bb0-bd60-bb481792f7d2 total 84.0
-support support_sum 168.0
-42949a3b-79ff-47e3-81b7-2ea55d4cf5d6 class models.Correspondence internal_strength 80.0 external_strength 100.0 total strength: 84.0
-Workspace structure update_strength_value sm bond between group (1-2) and group (3-6)
-sm bdoa: 100.0
-string.bonds.size() 7
-d51e53c6-a7df-41f3-822a-e29d31f76aec class models.Bond internal_strength 70.0 external_strength 0.0 total strength: 49.0
-Workspace structure update_strength_value group (1-6)
-98b2d23c-19a2-4f53-8640-d4ebaa43ba38 group (1-6) bcw:91.20108393559097 lc:20.0 lcw:8.798916064409028  internal strength = 92.96086714847279
-98b2d23c-19a2-4f53-8640-d4ebaa43ba38 group (1-6) external strength = 100.0
-98b2d23c-19a2-4f53-8640-d4ebaa43ba38 class models.Group internal_strength 92.96086714847279 external_strength 100.0 total strength: 93.45636106148727
-Workspace structure update_strength_value description(group) of group (1-6) in initial string
-023ef60e-b1ff-4c6b-a9c5-8be5f64679cc class models.Description internal_strength 50.0 external_strength 50.0 total strength: 50.0
-Workspace structure update_strength_value description(smg) of group (1-6) in initial string
-564be192-ab56-4eb4-8e88-e509901955a3 class models.Description internal_strength 50.0 external_strength 50.0 total strength: 50.0
-Workspace structure update_strength_value description(2) of group (1-6) in initial string
-0d7db04a-a37c-4490-a669-e131bc585dae class models.Description internal_strength 50.0 external_strength 50.0 total strength: 50.0
-Workspace structure update_strength_value description(whole) of group (1-6) in initial string
-ffdb2179-35ec-4d9c-b39b-cc7c481bd9d2 class models.Description internal_strength 50.0 external_strength 50.0 total strength: 50.0
-Workspace structure update_strength_value replace letter category of rightmost letter by D
-d576d8ec-45a2-41e4-9e01-9100335b7e59 descriptor Some(SlipNodeRep(rm,50.0)) relation Some(SlipNodeRep(D,50.0))
-d576d8ec-45a2-41e4-9e01-9100335b7e59 class models.Rule internal_strength 88.12908230365319 external_strength 88.12908230365319 total strength: 88.12908230365319
-Rule calculate_total_strength d576d8ec-45a2-41e4-9e01-9100335b7e59 rule: replace letter category of rightmost letter by D total_strength 88.12908230365319
-Workspace structure update_strength_value Correspondence between letter (6)6 and letter (6)6
-736781d9-7b22-4bb0-bd60-bb481792f7d2 support obj1 letter (6)6
-support ws!=this true
-support supporting_correspondences(this,(Correspondence)ws)) true
-69d5906e-3700-4fac-8d73-ff1f8ff420b3 total 84.0
-support ws!=this true
-support supporting_correspondences(this,(Correspondence)ws)) false
-bc0b5282-1cf2-499b-af9f-92ba5651bfdf total 64.0
-support ws!=this true
-support supporting_correspondences(this,(Correspondence)ws)) true
-42949a3b-79ff-47e3-81b7-2ea55d4cf5d6 total 84.0
-support ws!=this false
-support supporting_correspondences(this,(Correspondence)ws)) false
-736781d9-7b22-4bb0-bd60-bb481792f7d2 total 84.0
-support support_sum 168.0
-736781d9-7b22-4bb0-bd60-bb481792f7d2 class models.Correspondence internal_strength 80.0 external_strength 100.0 total strength: 84.0
-Workspace structure update_strength_value sm bond between group (3-4) and group (5-6)
-sm bdoa: 100.0
-string.bonds.size() 7
-bf01e889-afdb-448c-9ad9-b15cb97d930d class models.Bond internal_strength 70.0 external_strength 48.03844614152614 total strength: 63.411533842457835
-Workspace structure update_strength_value group (1-4)
-6bacf9cb-bde5-495b-bea3-d432f68823e7 group (1-4) bcw:69.69430962557104 lc:20.0 lcw:30.305690374428963  internal strength = 59.02881339031978
-6bacf9cb-bde5-495b-bea3-d432f68823e7 group (1-4) external strength = 0.0
-6bacf9cb-bde5-495b-bea3-d432f68823e7 class models.Group internal_strength 59.02881339031978 external_strength 0.0 total strength: 34.84400810269196
-Workspace structure update_strength_value description(group) of group (1-4) in target string
-f07c027b-4898-4e02-9c43-053ed1866a45 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(successor group) of group (1-4) in target string
-5b7d6633-eb5a-4160-8dbf-d3e8a7feb276 class models.Description internal_strength 50.0 external_strength 95.0 total strength: 72.5
-Workspace structure update_strength_value description(right) of group (1-4) in target string
-bb33722c-1e01-41a7-b04a-1b5aa4eb9086 class models.Description internal_strength 50.0 external_strength 6.25 total strength: 28.125
-Workspace structure update_strength_value description(leftmost) of group (1-4) in target string
-bf86404e-9eed-45d7-b68c-97b682e68e05 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-Workspace structure update_strength_value description(2) of group (1-4) in target string
-6d780587-3432-4fe8-b65a-127418ae4964 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
-2T: 38.06421183191371
+184f8f09-12bd-4069-86e9-e1279ae8092d total 80.0
+support support_sum 80.0
+184f8f09-12bd-4069-86e9-e1279ae8092d class models.Correspondence internal_strength 80.0 external_strength 80.0 total strength: 80.0
+Workspace structure update_strength_value pd bond between group (2-3) and group (4-6)
+pd bdoa: 95.89577675789482
+string.bonds.size() 5
+e218457b-dd27-4e61-bf06-03f58d5f1ad2 class models.Bond internal_strength 95.89577675789482 external_strength 33.33333333333333 total strength: 93.32807441403506
+Workspace structure update_strength_value description(middle) of group (2-3) in target string
+9d9425a3-feca-4f15-8857-473528d5bdb6 class models.Description internal_strength 50.0 external_strength 100.0 total strength: 75.0
+2T: 41.59613548332579
 update the the object values of all objects in the workspace
-update_object_value description(letter) of letter (1)1 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(letter) of letter (1)1 in initial string d.description_type.activation 100.0 d.descriptor.activation 3.271484375
 update_object_value description(A) of letter (1)1 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(leftmost) of letter (1)1 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 300.0 group.isDefined true changed false class models.Letter  dea6d039-dec0-4a5e-8d67-29cd6ee37559 this letter (1)1
-update_object_value : raw_importance 200.0
-update_object_value : group.get.total_strength 93.32443632397982 uuid 47b61ecb-8112-42da-855b-a3b513f39966
-update_object_value : intra_string_happiness 93.32443632397982
-update_object_value description(letter) of letter (2)2 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(A) of letter (2)2 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 200.0 group.isDefined true changed false class models.Letter  48a7b806-2de4-4ea1-8ab3-c14ec4ebce48 this letter (2)2
-update_object_value : raw_importance 133.33333333333334
-update_object_value : group.get.total_strength 93.32443632397982 uuid 47b61ecb-8112-42da-855b-a3b513f39966
-update_object_value : intra_string_happiness 93.32443632397982
-update_object_value description(letter) of letter (3)3 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(B) of letter (3)3 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 200.0 group.isDefined true changed false class models.Letter  5425a6f7-6db7-471d-b431-e4bc81979823 this letter (3)3
-update_object_value : raw_importance 133.33333333333334
-update_object_value : group.get.total_strength 91.80913577812024 uuid 5746cf34-b777-49a9-80b3-124f05323cb8
-update_object_value : intra_string_happiness 91.80913577812024
-update_object_value description(letter) of letter (4)4 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(B) of letter (4)4 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 200.0 group.isDefined true changed false class models.Letter  eaf20a50-867c-4870-a6b6-a17319a06fd9 this letter (4)4
-update_object_value : raw_importance 133.33333333333334
-update_object_value : group.get.total_strength 91.80913577812024 uuid 5746cf34-b777-49a9-80b3-124f05323cb8
-update_object_value : intra_string_happiness 91.80913577812024
-update_object_value description(letter) of letter (5)5 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(C) of letter (5)5 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 200.0 group.isDefined true changed false class models.Letter  7847ca71-7255-4878-9b5a-c20b878f727a this letter (5)5
-update_object_value : raw_importance 133.33333333333334
-update_object_value : group.get.total_strength 91.80913577812024 uuid 9e8804f2-f057-434d-bdfd-e5bcb25d4aad
-update_object_value : intra_string_happiness 91.80913577812024
-update_object_value description(letter) of letter (6)6 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(C) of letter (6)6 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(rightmost) of letter (6)6 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 300.0 group.isDefined true changed true class models.Letter  17b24a51-89f2-4c62-bd9c-8abdd3a73fa2 this letter (6)6
-update_object_value : raw_importance 400.0
-update_object_value : group.get.total_strength 91.80913577812024 uuid 9e8804f2-f057-434d-bdfd-e5bcb25d4aad
-update_object_value : intra_string_happiness 91.80913577812024
-update_object_value description(letter) of letter (1)1 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(leftmost) of letter (1)1 in initial string d.description_type.activation 100.0 d.descriptor.activation 20.05859375
+update_object_value 123.330078125 group.isDefined true changed false class models.Letter  2d072689-7bcc-4c22-ba27-7a21fbfedf83 this letter (1)1
+update_object_value : raw_importance 82.22005208333333
+update_object_value : group.get.total_strength 79.47368588732962 uuid 059fdfa5-c88d-47e6-ae8b-fdbac8bd7b7b
+update_object_value : intra_string_happiness 79.47368588732962
+update_object_value description(letter) of letter (2)2 in initial string d.description_type.activation 100.0 d.descriptor.activation 3.271484375
+update_object_value description(B) of letter (2)2 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(middle) of letter (2)2 in initial string d.description_type.activation 100.0 d.descriptor.activation 0.09765625
+update_object_value 103.369140625 group.isDefined true changed false class models.Letter  be96afb1-ed45-4ec1-bf3f-fb817bc2f09c this letter (2)2
+update_object_value : raw_importance 68.91276041666667
+update_object_value : group.get.total_strength 79.47368588732962 uuid 059fdfa5-c88d-47e6-ae8b-fdbac8bd7b7b
+update_object_value : intra_string_happiness 79.47368588732962
+update_object_value description(letter) of letter (3)3 in initial string d.description_type.activation 100.0 d.descriptor.activation 3.271484375
+update_object_value description(C) of letter (3)3 in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(rightmost) of letter (3)3 in initial string d.description_type.activation 100.0 d.descriptor.activation 0.1171875
+update_object_value 103.388671875 group.isDefined true changed true class models.Letter  bfce867f-6893-4a5b-846d-e0a221f4e5ba this letter (3)3
+update_object_value : raw_importance 137.8515625
+update_object_value : group.get.total_strength 79.47368588732962 uuid 059fdfa5-c88d-47e6-ae8b-fdbac8bd7b7b
+update_object_value : intra_string_happiness 79.47368588732962
+update_object_value description(letter) of letter (1)1 in modified string d.description_type.activation 100.0 d.descriptor.activation 3.271484375
 update_object_value description(A) of letter (1)1 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(leftmost) of letter (1)1 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 300.0 group.isDefined false changed false class models.Letter  62bbab72-9c52-4766-829f-7356fe576cbf this letter (1)1
-update_object_value : raw_importance 300.0
+update_object_value description(leftmost) of letter (1)1 in modified string d.description_type.activation 100.0 d.descriptor.activation 20.05859375
+update_object_value 123.330078125 group.isDefined false changed false class models.Letter  e544ac01-45eb-4073-a9a0-dc2eb1b2aa1d this letter (1)1
+update_object_value : raw_importance 123.330078125
 update_object_value : bondstrengthRaw 0.0
 update_object_value : intra_string_happiness 0.0
-update_object_value description(letter) of letter (2)2 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(A) of letter (2)2 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 200.0 group.isDefined false changed false class models.Letter  d491e2a2-4c32-4be0-b95f-159c80ff8e33 this letter (2)2
-update_object_value : raw_importance 200.0
+update_object_value description(letter) of letter (2)2 in modified string d.description_type.activation 100.0 d.descriptor.activation 3.271484375
+update_object_value description(B) of letter (2)2 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(middle) of letter (2)2 in modified string d.description_type.activation 100.0 d.descriptor.activation 0.09765625
+update_object_value 103.369140625 group.isDefined false changed false class models.Letter  9c57a601-69c6-4336-b023-31877264dc7c this letter (2)2
+update_object_value : raw_importance 103.369140625
 update_object_value : bondstrengthRaw 0.0
 update_object_value : intra_string_happiness 0.0
-update_object_value description(letter) of letter (3)3 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(B) of letter (3)3 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 200.0 group.isDefined false changed false class models.Letter  9ebfbd30-a423-440b-8355-6065d8f1b6ee this letter (3)3
-update_object_value : raw_importance 200.0
+update_object_value description(letter) of letter (3)3 in modified string d.description_type.activation 100.0 d.descriptor.activation 3.271484375
+update_object_value description(D) of letter (3)3 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(rightmost) of letter (3)3 in modified string d.description_type.activation 100.0 d.descriptor.activation 0.1171875
+update_object_value 103.388671875 group.isDefined false changed false class models.Letter  d4cd4772-380f-4154-8b3a-9b7a4c3e4438 this letter (3)3
+update_object_value : raw_importance 103.388671875
 update_object_value : bondstrengthRaw 0.0
 update_object_value : intra_string_happiness 0.0
-update_object_value description(letter) of letter (4)4 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(B) of letter (4)4 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 200.0 group.isDefined false changed false class models.Letter  eaade994-2380-4249-8233-7c23cb452f1e this letter (4)4
-update_object_value : raw_importance 200.0
-update_object_value : bondstrengthRaw 0.0
-update_object_value : intra_string_happiness 0.0
-update_object_value description(letter) of letter (5)5 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(C) of letter (5)5 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 200.0 group.isDefined false changed false class models.Letter  7e43f825-fdc7-416b-bf69-35dad4864eb1 this letter (5)5
-update_object_value : raw_importance 200.0
-update_object_value : bondstrengthRaw 0.0
-update_object_value : intra_string_happiness 0.0
-update_object_value description(letter) of letter (6)6 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(D) of letter (6)6 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(rightmost) of letter (6)6 in modified string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 300.0 group.isDefined false changed false class models.Letter  cfadee1d-faa2-428e-9fc2-53a9eb861354 this letter (6)6
-update_object_value : raw_importance 300.0
-update_object_value : bondstrengthRaw 0.0
-update_object_value : intra_string_happiness 0.0
-update_object_value description(letter) of letter (1)1 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(I) of letter (1)1 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(leftmost) of letter (1)1 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 300.0 group.isDefined true changed false class models.Letter  8ee98af3-128d-4d9b-acc0-385a8bb492f0 this letter (1)1
-update_object_value : raw_importance 200.0
-update_object_value : group.get.total_strength 91.80913577812024 uuid 68ef4c41-ee3f-451c-a0e2-122a84c2e2ad
-update_object_value : intra_string_happiness 91.80913577812024
-update_object_value description(letter) of letter (2)2 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(I) of letter (2)2 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 200.0 group.isDefined true changed false class models.Letter  9dd87cdd-5f7d-4afe-a456-3faccee9f66b this letter (2)2
-update_object_value : raw_importance 133.33333333333334
-update_object_value : group.get.total_strength 91.80913577812024 uuid 68ef4c41-ee3f-451c-a0e2-122a84c2e2ad
-update_object_value : intra_string_happiness 91.80913577812024
-update_object_value description(letter) of letter (3)3 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(J) of letter (3)3 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 200.0 group.isDefined true changed false class models.Letter  3179f763-15f9-43a1-b92c-9920c5aeb7a5 this letter (3)3
-update_object_value : raw_importance 133.33333333333334
-update_object_value : group.get.total_strength 91.80913577812024 uuid aa94691c-2076-43be-81b9-13099a908c05
-update_object_value : intra_string_happiness 91.80913577812024
-update_object_value description(letter) of letter (4)4 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(J) of letter (4)4 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 200.0 group.isDefined true changed false class models.Letter  3f734304-7d78-4ea2-b99b-62cc9217b00d this letter (4)4
-update_object_value : raw_importance 133.33333333333334
-update_object_value : group.get.total_strength 91.80913577812024 uuid aa94691c-2076-43be-81b9-13099a908c05
-update_object_value : intra_string_happiness 91.80913577812024
-update_object_value description(letter) of letter (5)5 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(K) of letter (5)5 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 200.0 group.isDefined true changed false class models.Letter  95d72beb-705a-49dd-ae32-78193aeb0e2b this letter (5)5
-update_object_value : raw_importance 133.33333333333334
-update_object_value : group.get.total_strength 91.80913577812024 uuid 829c4de3-00c5-4530-a9ca-53a6516ec962
-update_object_value : intra_string_happiness 91.80913577812024
-update_object_value description(letter) of letter (6)6 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(K) of letter (6)6 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(rightmost) of letter (6)6 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 300.0 group.isDefined true changed false class models.Letter  5a91563e-b2f7-4971-8636-7b47a30605d9 this letter (6)6
-update_object_value : raw_importance 200.0
-update_object_value : group.get.total_strength 91.80913577812024 uuid 829c4de3-00c5-4530-a9ca-53a6516ec962
-update_object_value : intra_string_happiness 91.80913577812024
-update_object_value description(group) of group (3-4) in target string d.description_type.activation 100.0 d.descriptor.activation 60.0
-update_object_value description(smg) of group (3-4) in target string d.description_type.activation 100.0 d.descriptor.activation 6.25
-update_object_value description(J) of group (3-4) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(middle) of group (3-4) in target string d.description_type.activation 100.0 d.descriptor.activation 50.0
-update_object_value description(2) of group (3-4) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 316.25 group.isDefined true changed false class models.Group  aa94691c-2076-43be-81b9-13099a908c05 this group (3-4)
-update_object_value : raw_importance 210.83333333333334
-update_object_value : group.get.total_strength 34.84400810269196 uuid 6bacf9cb-bde5-495b-bea3-d432f68823e7
-update_object_value : intra_string_happiness 34.84400810269196
-update_object_value description(group) of group (5-6) in initial string d.description_type.activation 100.0 d.descriptor.activation 60.0
-update_object_value description(smg) of group (5-6) in initial string d.description_type.activation 100.0 d.descriptor.activation 6.25
-update_object_value description(C) of group (5-6) in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(rightmost) of group (5-6) in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(2) of group (5-6) in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-Random rndseed=1647
-update_object_value 366.25 group.isDefined true changed false class models.Group  9e8804f2-f057-434d-bdfd-e5bcb25d4aad this group (5-6)
-update_object_value : raw_importance 244.16666666666666
-update_object_value : group.get.total_strength 88.85565535797454 uuid b1c8c18d-bfae-41d5-902f-9886abc55903
+update_object_value description(letter) of letter (1)1 in target string d.description_type.activation 100.0 d.descriptor.activation 3.271484375
+update_object_value description(R) of letter (1)1 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(leftmost) of letter (1)1 in target string d.description_type.activation 100.0 d.descriptor.activation 20.05859375
+update_object_value 123.330078125 group.isDefined false changed false class models.Letter  16d2b1c5-743e-4da8-9161-188365a89237 this letter (1)1
+update_object_value : raw_importance 123.330078125
+update_object_value : bondstrengthRaw 93.32807441403506
+update_object_value : intra_string_happiness 15.554679069005843
+update_object_value description(letter) of letter (2)2 in target string d.description_type.activation 100.0 d.descriptor.activation 3.271484375
+update_object_value description(S) of letter (2)2 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value 103.271484375 group.isDefined true changed false class models.Letter  6ca15795-1788-4dd2-b242-cc63baa66601 this letter (2)2
+update_object_value : raw_importance 68.84765625
+update_object_value : group.get.total_strength 88.85565535797454 uuid 1e1443aa-21b3-4d07-a3a6-7b68df9b40bd
 update_object_value : intra_string_happiness 88.85565535797454
-update_object_value description(group) of group (1-2) in initial string d.description_type.activation 100.0 d.descriptor.activation 60.0
-update_object_value description(smg) of group (1-2) in initial string d.description_type.activation 100.0 d.descriptor.activation 6.25
-update_object_value description(A) of group (1-2) in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(leftmost) of group (1-2) in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(2) of group (1-2) in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 366.25 group.isDefined true changed false class models.Group  47b61ecb-8112-42da-855b-a3b513f39966 this group (1-2)
-update_object_value : raw_importance 244.16666666666666
-update_object_value : group.get.total_strength 93.45636106148727 uuid 98b2d23c-19a2-4f53-8640-d4ebaa43ba38
-update_object_value : intra_string_happiness 93.45636106148727
-update_object_value description(group) of group (1-2) in target string d.description_type.activation 100.0 d.descriptor.activation 60.0
-update_object_value description(smg) of group (1-2) in target string d.description_type.activation 100.0 d.descriptor.activation 6.25
-update_object_value description(I) of group (1-2) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(leftmost) of group (1-2) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(2) of group (1-2) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 366.25 group.isDefined true changed false class models.Group  68ef4c41-ee3f-451c-a0e2-122a84c2e2ad this group (1-2)
-update_object_value : raw_importance 244.16666666666666
-update_object_value : group.get.total_strength 34.84400810269196 uuid 6bacf9cb-bde5-495b-bea3-d432f68823e7
-update_object_value : intra_string_happiness 34.84400810269196
-update_object_value description(group) of group (5-6) in target string d.description_type.activation 100.0 d.descriptor.activation 60.0
-update_object_value description(smg) of group (5-6) in target string d.description_type.activation 100.0 d.descriptor.activation 6.25
-update_object_value description(K) of group (5-6) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(rightmost) of group (5-6) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(2) of group (5-6) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 366.25 group.isDefined false changed false class models.Group  829c4de3-00c5-4530-a9ca-53a6516ec962 this group (5-6)
-update_object_value : raw_importance 366.25
-update_object_value : bondstrengthRaw 63.411533842457835
-update_object_value : intra_string_happiness 10.568588973742973
-update_object_value description(group) of group (3-4) in initial string d.description_type.activation 100.0 d.descriptor.activation 60.0
-update_object_value description(smg) of group (3-4) in initial string d.description_type.activation 100.0 d.descriptor.activation 6.25
-update_object_value description(B) of group (3-4) in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(middle) of group (3-4) in initial string d.description_type.activation 100.0 d.descriptor.activation 50.0
-update_object_value description(2) of group (3-4) in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 316.25 group.isDefined true changed false class models.Group  5746cf34-b777-49a9-80b3-124f05323cb8 this group (3-4)
-update_object_value : raw_importance 210.83333333333334
-update_object_value : group.get.total_strength 88.85565535797454 uuid b1c8c18d-bfae-41d5-902f-9886abc55903
+update_object_value description(letter) of letter (3)3 in target string d.description_type.activation 100.0 d.descriptor.activation 3.271484375
+update_object_value description(S) of letter (3)3 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value 103.271484375 group.isDefined true changed false class models.Letter  b52acf4e-6260-43fc-b3db-1e378b774393 this letter (3)3
+update_object_value : raw_importance 68.84765625
+update_object_value : group.get.total_strength 88.85565535797454 uuid 1e1443aa-21b3-4d07-a3a6-7b68df9b40bd
 update_object_value : intra_string_happiness 88.85565535797454
-update_object_value description(group) of group (3-6) in initial string d.description_type.activation 100.0 d.descriptor.activation 60.0
-update_object_value description(smg) of group (3-6) in initial string d.description_type.activation 100.0 d.descriptor.activation 6.25
-update_object_value description(2) of group (3-6) in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(rightmost) of group (3-6) in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(2) of group (3-6) in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 366.25 group.isDefined true changed false class models.Group  b1c8c18d-bfae-41d5-902f-9886abc55903 this group (3-6)
-update_object_value : raw_importance 244.16666666666666
-update_object_value : group.get.total_strength 93.45636106148727 uuid 98b2d23c-19a2-4f53-8640-d4ebaa43ba38
-update_object_value : intra_string_happiness 93.45636106148727
-update_object_value description(group) of group (1-6) in initial string d.description_type.activation 100.0 d.descriptor.activation 60.0
-update_object_value description(smg) of group (1-6) in initial string d.description_type.activation 100.0 d.descriptor.activation 6.25
-update_object_value description(2) of group (1-6) in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(whole) of group (1-6) in initial string d.description_type.activation 100.0 d.descriptor.activation 3.125
-update_object_value description(2) of group (1-6) in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 269.375 group.isDefined false changed false class models.Group  98b2d23c-19a2-4f53-8640-d4ebaa43ba38 this group (1-6)
-update_object_value : raw_importance 269.375
+update_object_value description(letter) of letter (4)4 in target string d.description_type.activation 100.0 d.descriptor.activation 3.271484375
+update_object_value description(T) of letter (4)4 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value 103.271484375 group.isDefined true changed false class models.Letter  500c5e6d-eb5e-49f6-ac62-1c809aba18ea this letter (4)4
+update_object_value : raw_importance 68.84765625
+update_object_value : group.get.total_strength 94.30395420073364 uuid 139287ef-aac2-476c-bad2-dbbee74052ce
+update_object_value : intra_string_happiness 94.30395420073364
+update_object_value description(letter) of letter (5)5 in target string d.description_type.activation 100.0 d.descriptor.activation 3.271484375
+update_object_value description(T) of letter (5)5 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value 103.271484375 group.isDefined true changed false class models.Letter  2b34e6d2-5fe3-4c55-8253-1f01169e0ea8 this letter (5)5
+update_object_value : raw_importance 68.84765625
+update_object_value : group.get.total_strength 94.30395420073364 uuid 139287ef-aac2-476c-bad2-dbbee74052ce
+update_object_value : intra_string_happiness 94.30395420073364
+update_object_value description(letter) of letter (6)6 in target string d.description_type.activation 100.0 d.descriptor.activation 3.271484375
+update_object_value description(T) of letter (6)6 in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(rightmost) of letter (6)6 in target string d.description_type.activation 100.0 d.descriptor.activation 0.1171875
+update_object_value 103.388671875 group.isDefined true changed false class models.Letter  d1497d5f-4439-4488-9f8f-4973930cc73a this letter (6)6
+update_object_value : raw_importance 68.92578125
+update_object_value : group.get.total_strength 94.30395420073364 uuid 139287ef-aac2-476c-bad2-dbbee74052ce
+update_object_value : intra_string_happiness 94.30395420073364
+
+DEBUG
+update_object_value description(group) of group (2-3) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(smg) of group (2-3) in target string d.description_type.activation 100.0 d.descriptor.activation 0.074462890625
+update_object_value description(S) of group (2-3) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value 200.074462890625 group.isDefined false changed false class models.Group  1e1443aa-21b3-4d07-a3a6-7b68df9b40bd this group (2-3)
+update_object_value : raw_importance 200.074462890625
+update_object_value : bondstrengthRaw 93.32807441403506
+update_object_value : intra_string_happiness 15.554679069005843
+
+
+
+update_object_value description(group) of group (4-6) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(smg) of group (4-6) in target string d.description_type.activation 100.0 d.descriptor.activation 0.074462890625
+update_object_value description(T) of group (4-6) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(rightmost) of group (4-6) in target string d.description_type.activation 100.0 d.descriptor.activation 0.1171875
+update_object_value 200.191650390625 group.isDefined false changed false class models.Group  139287ef-aac2-476c-bad2-dbbee74052ce this group (4-6)
+update_object_value : raw_importance 200.191650390625
+update_object_value : bondstrengthRaw 93.32807441403506
+update_object_value : intra_string_happiness 15.554679069005843
+update_object_value description(group) of group (1-3) in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(pg) of group (1-3) in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(left) of group (1-3) in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value description(whole) of group (1-3) in initial string d.description_type.activation 100.0 d.descriptor.activation 100.0
+update_object_value 400.0 group.isDefined false changed false class models.Group  059fdfa5-c88d-47e6-ae8b-fdbac8bd7b7b this group (1-3)
+update_object_value : raw_importance 400.0
 update_object_value : intra_string_happiness 100.0
-update_object_value description(group) of group (1-4) in target string d.description_type.activation 100.0 d.descriptor.activation 60.0
-update_object_value description(successor group) of group (1-4) in target string d.description_type.activation 100.0 d.descriptor.activation 90.0
-update_object_value description(right) of group (1-4) in target string d.description_type.activation 12.5 d.descriptor.activation 25.0
-update_object_value description(leftmost) of group (1-4) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value description(2) of group (1-4) in target string d.description_type.activation 100.0 d.descriptor.activation 100.0
-update_object_value 351.25 group.isDefined false changed false class models.Group  6bacf9cb-bde5-495b-bea3-d432f68823e7 this group (1-4)
-update_object_value : raw_importance 351.25
-update_object_value : bondstrengthRaw 0.0
-update_object_value : intra_string_happiness 0.0
-3T: 38.06421183191371
+3T: 41.59613548332579
 update the relative importances of initial and target strings
-update_relative_importance 2346.041666666667
+update_relative_importance 688.984375
 ob letter (1)1
-2ob.relative_importance 0.08524997779948494
+2ob.relative_importance 0.11933514759798919
 ob letter (2)2
-2ob.relative_importance 0.056833318532989965
+2ob.relative_importance 0.10002078844918169
 ob letter (3)3
-2ob.relative_importance 0.056833318532989965
-ob letter (4)4
-2ob.relative_importance 0.056833318532989965
-ob letter (5)5
-2ob.relative_importance 0.056833318532989965
-ob letter (6)6
-2ob.relative_importance 0.17049995559896988
-ob group (5-6)
-2ob.relative_importance 0.10407601456353785
-ob group (1-2)
-2ob.relative_importance 0.10407601456353785
-ob group (3-4)
-2ob.relative_importance 0.08986768493029038
-ob group (3-6)
-2ob.relative_importance 0.10407601456353785
-ob group (1-6)
-2ob.relative_importance 0.11482106384868128
-update_relative_importance 2105.8333333333335
+2ob.relative_importance 0.20007937407869372
+ob group (1-3)
+2ob.relative_importance 0.5805646898741353
+update_relative_importance 867.91259765625
 ob letter (1)1
-2ob.relative_importance 0.09497427779976256
+2ob.relative_importance 0.14209965203644476
 ob letter (2)2
-2ob.relative_importance 0.06331618519984171
+2ob.relative_importance 0.07932556392880953
 ob letter (3)3
-2ob.relative_importance 0.06331618519984171
+2ob.relative_importance 0.07932556392880953
 ob letter (4)4
-2ob.relative_importance 0.06331618519984171
+2ob.relative_importance 0.07932556392880953
 ob letter (5)5
-2ob.relative_importance 0.06331618519984171
+2ob.relative_importance 0.07932556392880953
 ob letter (6)6
-2ob.relative_importance 0.09497427779976256
-ob group (3-4)
-2ob.relative_importance 0.1001187178472497
-ob group (1-2)
-2ob.relative_importance 0.11594776414721011
-ob group (5-6)
-2ob.relative_importance 0.17392164622081518
-ob group (1-4)
-2ob.relative_importance 0.16679857538583298
-4T: 38.06421183191371
+2ob.relative_importance 0.07941557875312591
+ob group (2-3)
+2ob.relative_importance 0.23052374562935835
+ob group (4-6)
+2ob.relative_importance 0.2306587678658329
+4T: 41.59613548332579
 update the intra string unhappiness of initial and target strings
-5T: 38.06421183191371
+5T: 41.59613548332579
 post_top_down_codelets
-Workspace rule Some(d576d8ec-45a2-41e4-9e01-9100335b7e59) rule: Some(replace letter category of rightmost letter by D) total_strength Some(88.12908230365319) total_weakness Some(29.552873137276137)
-Post Top/Bottom Codelets codeletsSize 68
+Workspace rule Some(2bbebcd1-e000-44a9-b261-1bb52119dabe) rule: Some(replace letter category of rightmost letter by successor) total_strength Some(88.12908230365319) total_weakness Some(29.552873137276137)
+Post Top/Bottom Codelets codeletsSize 90
+>>>> post_top_down_codelets top-down-bond-scout--direction
+rough_num_of_objects. bond 3
+Random rndseed=1718
+prob 0.2844591909025229 num 1
+Random rndseed=1719
+>>>> post_top_down_codelets top-down-group-scout--direction
+Random rndseed=1720
+prob 0.2844591909025229 num 1
+Random rndseed=1721
 >>>> post_top_down_codelets top-down-bond-scout--category
-rough_num_of_objects. bond 2
-Random rndseed=1642
-prob 0.2887361787407631 num 1
-Random rndseed=1643
->>>> post_top_down_codelets top-down-bond-scout--category
-rough_num_of_objects. bond 2
-Random rndseed=1644
-prob 0.2887361787407631 num 1
-Random rndseed=1645
+rough_num_of_objects. bond 3
+Random rndseed=1722
+prob 0.2844591909025229 num 1
+Random rndseed=1723
+>>>> post_top_down_codelets top-down-group-scout--category
+Random rndseed=1724
+prob 0.2844591909025229 num 1
+Random rndseed=1725
 >>>> post_top_down_codelets top-down-description-scout
-prob 0.14488842223847995 num 1
-Random rndseed=1646
+prob 0.17302384871471949 num 1
+Random rndseed=1726
 ------------------------ post_bottom_up_codelets
 get_bottom_up_codelets bottom-up-description-scout
-get_bottom_up_codelets prob 0.14488842223847995 num 1
->>>> get_bottom_up_codelets bottom-up-description-scout rnd 0.267 prob 0.14488842223847995 t 38.06421183191371 index -1
+get_bottom_up_codelets prob 0.17302384871471949 num 1
+Random rndseed=1727
+>>>> get_bottom_up_codelets bottom-up-description-scout rnd 0.616 prob 0.17302384871471949 t 41.59613548332579 index -1
 get_bottom_up_codelets bottom-up-bond-scout
-rough_num_of_objects. bond 2
-Random rndseed=1648
-get_bottom_up_codelets prob 0.2887361787407631 num 1
-Random rndseed=1649
->>>> get_bottom_up_codelets bottom-up-bond-scout rnd 0.117 prob 0.2887361787407631 t 38.06421183191371 index -1
-Post Codelet codelets size 69
+rough_num_of_objects. bond 3
+Random rndseed=1728
+Random rndseed=1729
+get_bottom_up_codelets prob 0.2844591909025229 num 2
+Random rndseed=1730
+>>>> get_bottom_up_codelets bottom-up-bond-scout rnd 0.459 prob 0.2844591909025229 t 41.59613548332579 index -1
+Random rndseed=1731
+>>>> get_bottom_up_codelets bottom-up-bond-scout rnd 0.408 prob 0.2844591909025229 t 41.59613548332579 index -1
 get_bottom_up_codelets group-scout--whole-string
-Random rndseed=1650
-get_bottom_up_codelets prob 0.2887361787407631 num 1
-Random rndseed=1651
->>>> get_bottom_up_codelets group-scout--whole-string rnd 0.026 prob 0.2887361787407631 t 38.06421183191371 index -1
-Post Codelet codelets size 70
+Random rndseed=1732
+Random rndseed=1733
+get_bottom_up_codelets prob 0.2844591909025229 num 2
+Random rndseed=1734
+>>>> get_bottom_up_codelets group-scout--whole-string rnd 0.312 prob 0.2844591909025229 t 41.59613548332579 index -1
+Random rndseed=1735
+>>>> get_bottom_up_codelets group-scout--whole-string rnd 0.096 prob 0.2844591909025229 t 41.59613548332579 index -1
+Post Codelet codelets size 91
 get_bottom_up_codelets bottom-up-correspondence-scout
-Random rndseed=1652
-Random rndseed=1653
-get_bottom_up_codelets prob 0.6035145285753457 num 3
-Random rndseed=1654
->>>> get_bottom_up_codelets bottom-up-correspondence-scout rnd 0.1 prob 0.6035145285753457 t 38.06421183191371 index -1
-Post Codelet codelets size 71
-Random rndseed=1655
->>>> get_bottom_up_codelets bottom-up-correspondence-scout rnd 0.863 prob 0.6035145285753457 t 38.06421183191371 index -1
-Random rndseed=1656
->>>> get_bottom_up_codelets bottom-up-correspondence-scout rnd 0.905 prob 0.6035145285753457 t 38.06421183191371 index -1
+Random rndseed=1736
+Random rndseed=1737
+get_bottom_up_codelets prob 0.6960896076988877 num 3
+Random rndseed=1738
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout rnd 0.831 prob 0.6960896076988877 t 41.59613548332579 index -1
+Random rndseed=1739
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout rnd 0.463 prob 0.6960896076988877 t 41.59613548332579 index -1
+Post Codelet codelets size 92
+Random rndseed=1740
+>>>> get_bottom_up_codelets bottom-up-correspondence-scout rnd 0.216 prob 0.6960896076988877 t 41.59613548332579 index -1
+Post Codelet codelets size 93
 get_bottom_up_codelets important-object-correspondence-scout
-Random rndseed=1657
-Random rndseed=1658
-get_bottom_up_codelets prob 0.6035145285753457 num 3
-Random rndseed=1659
->>>> get_bottom_up_codelets important-object-correspondence-scout rnd 0.87 prob 0.6035145285753457 t 38.06421183191371 index -1
-Random rndseed=1660
->>>> get_bottom_up_codelets important-object-correspondence-scout rnd 0.425 prob 0.6035145285753457 t 38.06421183191371 index -1
-Post Codelet codelets size 72
-Random rndseed=1661
->>>> get_bottom_up_codelets important-object-correspondence-scout rnd 0.538 prob 0.6035145285753457 t 38.06421183191371 index -1
-Post Codelet codelets size 73
+Random rndseed=1741
+Random rndseed=1742
+get_bottom_up_codelets prob 0.6960896076988877 num 3
+Random rndseed=1743
+>>>> get_bottom_up_codelets important-object-correspondence-scout rnd 0.438 prob 0.6960896076988877 t 41.59613548332579 index -1
+Post Codelet codelets size 94
+Random rndseed=1744
+>>>> get_bottom_up_codelets important-object-correspondence-scout rnd 0.947 prob 0.6960896076988877 t 41.59613548332579 index -1
+Random rndseed=1745
+>>>> get_bottom_up_codelets important-object-correspondence-scout rnd 0.599 prob 0.6960896076988877 t 41.59613548332579 index -1
+Post Codelet codelets size 95
 get_bottom_up_codelets replacement-finder
 get_bottom_up_codelets prob 0.0 num 0
 get_bottom_up_codelets rule-scout
 get_post_codelet_probability workspace rule total_weakness 29.552873137276137
 get_bottom_up_codelets prob 0.29552873137276137 num 2
-Random rndseed=1662
->>>> get_bottom_up_codelets rule-scout rnd 0.778 prob 0.29552873137276137 t 38.06421183191371 index -1
-Random rndseed=1663
->>>> get_bottom_up_codelets rule-scout rnd 0.411 prob 0.29552873137276137 t 38.06421183191371 index -1
+Random rndseed=1746
+>>>> get_bottom_up_codelets rule-scout rnd 0.08 prob 0.29552873137276137 t 41.59613548332579 index -1
+Post Codelet codelets size 96
+Random rndseed=1747
+>>>> get_bottom_up_codelets rule-scout rnd 0.909 prob 0.29552873137276137 t 41.59613548332579 index -1
 get_bottom_up_codelets rule-translator
 get_post_codelet_probability workspace rule total_weakness 29.552873137276137
 get_bottom_up_codelets prob 0.29552873137276137 num 1
-Random rndseed=1664
->>>> get_bottom_up_codelets rule-translator rnd 0.175 prob 0.29552873137276137 t 38.06421183191371 index 5
-Post Codelet codelets size 74
+Random rndseed=1748
+>>>> get_bottom_up_codelets rule-translator rnd 0.555 prob 0.29552873137276137 t 41.59613548332579 index 5
 get_bottom_up_codelets breaker
 get_bottom_up_codelets prob 1.0 num 1
-Random rndseed=1665
->>>> get_bottom_up_codelets breaker rnd 0.58 prob 1.0 t 38.06421183191371 index -1
+Random rndseed=1749
+>>>> get_bottom_up_codelets breaker rnd 0.827 prob 1.0 t 41.59613548332579 index -1
+Post Codelet codelets size 97
+post_bottom_up_codelets codeletToPost ListBuffer((group-scout--whole-string,Right(3),None,None), (bottom-up-correspondence-scout,Right(3),None,None), (bottom-up-correspondence-scout,Right(3),None,None), (important-object-correspondence-scout,Right(3),None,None), (important-object-correspondence-scout,Right(3),None,None), (rule-scout,Right(3),None,None), (breaker,Right(1),None,None))
 post_top_down_codelets
-Post Codelet codelets size 75
-post_bottom_up_codelets codeletToPost ListBuffer((bottom-up-bond-scout,Right(3),None,None), (group-scout--whole-string,Right(3),None,None), (bottom-up-correspondence-scout,Right(3),None,None), (important-object-correspondence-scout,Right(3),None,None), (important-object-correspondence-scout,Right(3),None,None), (rule-translator,Right(3),None,None), (breaker,Right(1),None,None))
-slippage_list 1 Correspondence between letter (6)6 and letter (6)6 cml List(l -> l, rm -> rm)
-slippage_list 2 Correspondence between letter (1)1 and letter (1)1 cml List(lm -> lm)
-slippage_list 2 Correspondence between letter (6)6 and letter (6)6 cml List(l -> l, rm -> rm)
-slippage_list 2 Correspondence between group (1-2) and group (1-2) cml List(g -> g, smg -> smg, lm -> lm, 2 -> 2, lc -> lc, sm -> sm, lc -> lc, sm -> sm)
-slippage_list 2 Correspondence between group (3-4) and group (3-4) cml List(g -> g, smg -> smg, md -> md, 2 -> 2, lc -> lc, sm -> sm, lc -> lc, sm -> sm)
-Post Codelet codelets size 69 rndOpt None name bottom-up-bond-scout
+slippage_list 1 Correspondence between letter (3)3 and group (4-6) cml List(l -> g, rm -> rm)
+slippage_list 2 Correspondence between letter (1)1 and letter (1)1 cml List(l -> l, lm -> lm)
+slippage_list 2 Correspondence between letter (3)3 and group (4-6) cml List(l -> g, rm -> rm)
+Post Codelet codelets size 91 rndOpt None name group-scout--whole-string
+printUrgencies urgencies: ListBuffer(3, 3, 3, 4, 3, 3, 3, 3, 1, 4, 3, 1, 3, 1, 4, 3, 3, 4, 1, 3, 3, 3, 3, 4, 3, 1, 4, 3, 3, 3, 3, 1, 4, 3, 3, 3, 3, 3, 2, 4, 3, 3, 1, 4, 4, 3, 3, 3, 3, 1, 4, 3, 3, 3, 3, 1, 4, 4, 3, 3, 3, 1, 3, 3, 3, 3, 3, 1, 3, 4, 4, 4, 3, 3, 3, 3, 3, 1, 6, 4, 3, 3, 3, 3, 3, 3, 3, 1, 6, 7, 3)
+Post Codelet codelets size 92 rndOpt None name bottom-up-correspondence-scout
 Slipnet. UpdateEverything
 Slipnet.update()
 for all nodes set old_activation to activation
+printUrgencies urgencies: ListBuffer(3, 3, 3, 4, 3, 3, 3, 3, 1, 4, 3, 1, 3, 1, 4, 3, 3, 4, 1, 3, 3, 3, 3, 4, 3, 1, 4, 3, 3, 3, 3, 1, 4, 3, 3, 3, 3, 3, 2, 4, 3, 3, 1, 4, 4, 3, 3, 3, 3, 1, 4, 3, 3, 3, 3, 1, 4, 4, 3, 3, 3, 1, 3, 3, 3, 3, 3, 1, 3, 4, 4, 4, 3, 3, 3, 3, 3, 1, 6, 4, 3, 3, 3, 3, 3, 3, 3, 1, 6, 7, 3, 3)
+Post Codelet codelets size 93 rndOpt None name bottom-up-correspondence-scout
 ob A ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
+printUrgencies urgencies: ListBuffer(3, 3, 3, 4, 3, 3, 3, 3, 1, 4, 3, 1, 3, 1, 4, 3, 3, 4, 1, 3, 3, 3, 3, 4, 3, 1, 4, 3, 3, 3, 3, 1, 4, 3, 3, 3, 3, 3, 2, 4, 3, 3, 1, 4, 4, 3, 3, 3, 3, 1, 4, 3, 3, 3, 3, 1, 4, 4, 3, 3, 3, 1, 3, 3, 3, 3, 3, 1, 3, 4, 4, 4, 3, 3, 3, 3, 3, 1, 6, 4, 3, 3, 3, 3, 3, 3, 3, 1, 6, 7, 3, 3, 3)
 ob B ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
+Post Codelet codelets size 94 rndOpt None name important-object-correspondence-scout
 ob C ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob D ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
+ob D ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob E ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob F ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob G ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob H ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob I ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob J ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob K ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
+ob I ob.buffer 0.0 ob.activation 57.953124998603016 ob.conceptual_depth 50.0
+ob J ob.buffer 0.0 ob.activation 5.999999998603016 ob.conceptual_depth 50.0
+printUrgencies urgencies: ListBuffer(3, 3, 3, 4, 3, 3, 3, 3, 1, 4, 3, 1, 3, 1, 4, 3, 3, 4, 1, 3, 3, 3, 3, 4, 3, 1, 4, 3, 3, 3, 3, 1, 4, 3, 3, 3, 3, 3, 2, 4, 3, 3, 1, 4, 4, 3, 3, 3, 3, 1, 4, 3, 3, 3, 3, 1, 4, 4, 3, 3, 3, 1, 3, 3, 3, 3, 3, 1, 3, 4, 4, 4, 3, 3, 3, 3, 3, 1, 6, 4, 3, 3, 3, 3, 3, 3, 3, 1, 6, 7, 3, 3, 3, 3)
+ob K ob.buffer 0.0 ob.activation 5.999999998603016 ob.conceptual_depth 50.0
 ob L ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob M ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob N ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob O ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
+Post Codelet codelets size 95 rndOpt None name important-object-correspondence-scout
 ob P ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob Q ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob R ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob S ob.buffer 0.0 ob.activation 37.75 ob.conceptual_depth 50.0
-ob T ob.buffer 0.0 ob.activation 19.96875 ob.conceptual_depth 50.0
-ob U ob.buffer 0.0 ob.activation 7.328125 ob.conceptual_depth 50.0
-ob V ob.buffer 0.0 ob.activation 6.0 ob.conceptual_depth 50.0
-ob W ob.buffer 0.0 ob.activation 6.0 ob.conceptual_depth 50.0
-ob X ob.buffer 0.0 ob.activation 6.0 ob.conceptual_depth 50.0
-ob Y ob.buffer 0.0 ob.activation 6.0 ob.conceptual_depth 50.0
-ob Z ob.buffer 0.0 ob.activation 6.0 ob.conceptual_depth 50.0
-ob 1 ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob 2 ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob 3 ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob 4 ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob 5 ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob lm ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob rm ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob md ob.buffer 0.0 ob.activation 50.0 ob.conceptual_depth 50.0
-ob sl ob.buffer 0.0 ob.activation 1.0187197771665524 ob.conceptual_depth 50.0
-ob wh ob.buffer 100.0 ob.activation 3.125 ob.conceptual_depth 50.0
-ob fs ob.buffer 0.0 ob.activation 49.778890609741154 ob.conceptual_depth 50.0
-ob ls ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-ob lf ob.buffer 0.0 ob.activation 22.577457427978516 ob.conceptual_depth 50.0
-ob rt ob.buffer 100.0 ob.activation 25.0 ob.conceptual_depth 50.0
-ob pd ob.buffer 0.0 ob.activation 39.99755853787008 ob.conceptual_depth 50.0
-ob sc ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob sm ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob pg ob.buffer 0.0 ob.activation 37.440736205276714 ob.conceptual_depth 50.0
-ob sg ob.buffer 100.0 ob.activation 90.0 ob.conceptual_depth 50.0
-ob smg ob.buffer 100.0 ob.activation 6.25 ob.conceptual_depth 50.0
-ob id ob.buffer 0.0 ob.activation 50.0 ob.conceptual_depth 50.0
-Random rndseed=1666
+ob S ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
+ob T ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
+ob U ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
+ob V ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
+ob W ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
+ob X ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
+printUrgencies urgencies: ListBuffer(3, 3, 3, 4, 3, 3, 3, 3, 1, 4, 3, 1, 3, 1, 4, 3, 3, 4, 1, 3, 3, 3, 3, 4, 3, 1, 4, 3, 3, 3, 3, 1, 4, 3, 3, 3, 3, 3, 2, 4, 3, 3, 1, 4, 4, 3, 3, 3, 3, 1, 4, 3, 3, 3, 3, 1, 4, 4, 3, 3, 3, 1, 3, 3, 3, 3, 3, 1, 3, 4, 4, 4, 3, 3, 3, 3, 3, 1, 6, 4, 3, 3, 3, 3, 3, 3, 3, 1, 6, 7, 3, 3, 3, 3, 3)
+ob Y ob.buffer 0.0 ob.activation 53.0 ob.conceptual_depth 50.0
+Post Codelet codelets size 96 rndOpt None name rule-scout
+ob Z ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
+ob 1 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
+ob 2 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
+ob 3 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
+ob 4 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
+ob 5 ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
+printUrgencies urgencies: ListBuffer(3, 3, 3, 4, 3, 3, 3, 3, 1, 4, 3, 1, 3, 1, 4, 3, 3, 4, 1, 3, 3, 3, 3, 4, 3, 1, 4, 3, 3, 3, 3, 1, 4, 3, 3, 3, 3, 3, 2, 4, 3, 3, 1, 4, 4, 3, 3, 3, 3, 1, 4, 3, 3, 3, 3, 1, 4, 4, 3, 3, 3, 1, 3, 3, 3, 3, 3, 1, 3, 4, 4, 4, 3, 3, 3, 3, 3, 1, 6, 4, 3, 3, 3, 3, 3, 3, 3, 1, 6, 7, 3, 3, 3, 3, 3, 3)
+Post Codelet codelets size 97 rndOpt None name breaker
+ob lm ob.buffer 0.0 ob.activation 20.05859375 ob.conceptual_depth 50.0
+ob rm ob.buffer 0.0 ob.activation 0.1171875 ob.conceptual_depth 50.0
+ob md ob.buffer 100.0 ob.activation 0.09765625 ob.conceptual_depth 50.0
+printUrgencies urgencies: ListBuffer(3, 3, 3, 4, 3, 3, 3, 3, 1, 4, 3, 1, 3, 1, 4, 3, 3, 4, 1, 3, 3, 3, 3, 4, 3, 1, 4, 3, 3, 3, 3, 1, 4, 3, 3, 3, 3, 3, 2, 4, 3, 3, 1, 4, 4, 3, 3, 3, 3, 1, 4, 3, 3, 3, 3, 1, 4, 4, 3, 3, 3, 1, 3, 3, 3, 3, 3, 1, 3, 4, 4, 4, 3, 3, 3, 3, 3, 1, 6, 4, 3, 3, 3, 3, 3, 3, 3, 1, 6, 7, 3, 3, 3, 3, 3, 3, 1)
+ob sl ob.buffer 0.0 ob.activation 3.2470703125 ob.conceptual_depth 50.0
+ob wh ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
+ob fs ob.buffer 0.0 ob.activation 49.99933203216642 ob.conceptual_depth 50.0
+ob ls ob.buffer 0.0 ob.activation 0.29296875 ob.conceptual_depth 50.0
+ob lf ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
+ob rt ob.buffer 0.0 ob.activation 40.1171875 ob.conceptual_depth 50.0
+ob pd ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
+ob sc ob.buffer 0.0 ob.activation 40.0341796875 ob.conceptual_depth 50.0
+ob sm ob.buffer 0.0 ob.activation 0.048828125 ob.conceptual_depth 50.0
+ob pg ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
+Random rndseed=1750
+ob sg ob.buffer 0.0 ob.activation 39.74609375 ob.conceptual_depth 50.0
+ob smg ob.buffer 0.0 ob.activation 0.074462890625 ob.conceptual_depth 50.0
+ob id ob.buffer 0.0 ob.activation 0.048828125 ob.conceptual_depth 50.0
 ob op ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-ob l ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob g ob.buffer 100.0 ob.activation 60.0 ob.conceptual_depth 50.0
+ob l ob.buffer 0.0 ob.activation 3.271484375 ob.conceptual_depth 50.0
+ob g ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob lc ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob spc ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob apc ob.buffer 0.0 ob.activation 0.0 ob.conceptual_depth 50.0
-ob dc ob.buffer 100.0 ob.activation 12.5 ob.conceptual_depth 50.0
+ob dc ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob bc ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob gpc ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
-ob len ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
+ob len ob.buffer 0.0 ob.activation 19.93163533275947 ob.conceptual_depth 50.0
 ob obc ob.buffer 100.0 ob.activation 100.0 ob.conceptual_depth 50.0
 ob bf ob.buffer 0.0 ob.activation 100.0 ob.conceptual_depth 50.0
 Slipnet. update. slipnodes
 check for probabablistic jump to 100%
 slipnodes.size()59
-printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 3, 1, 3, 1, 3, 1, 1, 1, 1, 1, 1, 3, 3, 1, 3, 1, 3, 1, 3, 3, 3, 1, 3, 3, 1, 3, 1, 3, 3, 3, 3, 3, 1, 3, 1, 3, 3, 3, 3, 3, 1, 5, 3)
-Post Codelet codelets size 70 rndOpt None name group-scout--whole-string
-printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 3, 1, 3, 1, 3, 1, 1, 1, 1, 1, 1, 3, 3, 1, 3, 1, 3, 1, 3, 3, 3, 1, 3, 3, 1, 3, 1, 3, 3, 3, 3, 3, 1, 3, 1, 3, 3, 3, 3, 3, 1, 5, 3, 3)
-Post Codelet codelets size 71 rndOpt None name bottom-up-correspondence-scout
-printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 3, 1, 3, 1, 3, 1, 1, 1, 1, 1, 1, 3, 3, 1, 3, 1, 3, 1, 3, 3, 3, 1, 3, 3, 1, 3, 1, 3, 3, 3, 3, 3, 1, 3, 1, 3, 3, 3, 3, 3, 1, 5, 3, 3, 3)
-Post Codelet codelets size 72 rndOpt None name important-object-correspondence-scout
-printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 3, 1, 3, 1, 3, 1, 1, 1, 1, 1, 1, 3, 3, 1, 3, 1, 3, 1, 3, 3, 3, 1, 3, 3, 1, 3, 1, 3, 3, 3, 3, 3, 1, 3, 1, 3, 3, 3, 3, 3, 1, 5, 3, 3, 3, 3)
-Post Codelet codelets size 73 rndOpt None name important-object-correspondence-scout
-printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 3, 1, 3, 1, 3, 1, 1, 1, 1, 1, 1, 3, 3, 1, 3, 1, 3, 1, 3, 3, 3, 1, 3, 3, 1, 3, 1, 3, 3, 3, 3, 3, 1, 3, 1, 3, 3, 3, 3, 3, 1, 5, 3, 3, 3, 3, 3)
-Post Codelet codelets size 74 rndOpt None name rule-translator
-printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 3, 1, 3, 1, 3, 1, 1, 1, 1, 1, 1, 3, 3, 1, 3, 1, 3, 1, 3, 3, 3, 1, 3, 3, 1, 3, 1, 3, 3, 3, 3, 3, 1, 3, 1, 3, 3, 3, 3, 3, 1, 5, 3, 3, 3, 3, 3, 3)
-Post Codelet codelets size 75 rndOpt None name breaker
-printUrgencies urgencies: ListBuffer(1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 3, 1, 3, 1, 3, 1, 1, 1, 1, 1, 1, 3, 3, 1, 3, 1, 3, 1, 3, 3, 3, 1, 3, 3, 1, 3, 1, 3, 3, 3, 3, 3, 1, 3, 1, 3, 3, 3, 3, 3, 1, 5, 3, 3, 3, 3, 3, 3, 1)
 ob A activation 100.0
-Random rndseed=1667
+Random rndseed=1751
 ob B activation 100.0
-Random rndseed=1668
+Random rndseed=1752
 ob C activation 100.0
-Random rndseed=1669
+Random rndseed=1753
 ob D activation 100.0
-Random rndseed=1670
+Random rndseed=1754
 ob E activation 100.0
-Random rndseed=1671
+Random rndseed=1755
 ob F activation 100.0
-Random rndseed=1672
+Random rndseed=1756
 ob G activation 100.0
-Random rndseed=1673
+Random rndseed=1757
 ob H activation 100.0
-Random rndseed=1674
-ob I activation 100.0
-Random rndseed=1675
-ob J activation 100.0
-Random rndseed=1676
-ob K activation 100.0
-Random rndseed=1677
+Random rndseed=1758
+ob I activation 71.97656249930151
+ob J activation 5.999999999301508
+ob K activation 45.99999999930151
+Random rndseed=1759
 ob L activation 100.0
-Random rndseed=1678
+Random rndseed=1760
 ob M activation 100.0
-Random rndseed=1679
+Random rndseed=1761
 ob N activation 100.0
-Random rndseed=1680
+Random rndseed=1762
 ob O activation 100.0
-Random rndseed=1681
+Random rndseed=1763
 ob P activation 100.0
-Random rndseed=1682
+Random rndseed=1764
 ob Q activation 100.0
-Random rndseed=1683
+Random rndseed=1765
 ob R activation 100.0
-Random rndseed=1684
-ob S activation 61.875
-ob T activation 12.984375
-ob U activation 6.6640625
-ob V activation 6.0
-ob W activation 6.0
-ob X activation 6.0
-ob Y activation 6.0
-ob Z activation 6.0
-Random rndseed=1685
-ob 1 activation 100.0
-Random rndseed=1686
-ob 2 activation 100.0
-Random rndseed=1687
-ob 3 activation 100.0
-Random rndseed=1688
-ob 4 activation 100.0
-Random rndseed=1689
-ob 5 activation 100.0
-Random rndseed=1690
-ob lm activation 100.0
-Random rndseed=1691
-ob rm activation 100.0
-ob md activation 25.0
-ob sl activation 0.5093598885832762
-Random rndseed=1692
+Random rndseed=1766
+ob S activation 100.0
+Random rndseed=1767
+ob T activation 100.0
+Random rndseed=1768
+ob U activation 100.0
+Random rndseed=1769
+ob V activation 100.0
+Random rndseed=1770
+ob W activation 100.0
+Random rndseed=1771
+ob X activation 100.0
+Random rndseed=1772
+ob Y activation 100.0
+ob Z activation 53.0
+ob 1 activation 0.0
+ob 2 activation 0.0
+ob 3 activation 0.0
+ob 4 activation 0.0
+ob 5 activation 0.0
+ob lm activation 20.029296875
+ob rm activation 0.05859375
+Random rndseed=1773
+ob md activation 100.0
+ob sl activation 11.62353515625
+Random rndseed=1774
 ob wh activation 100.0
-ob fs activation 49.88944530487058
-ob ls activation 0.0
-ob lf activation 21.288728713989258
-Random rndseed=1693
-ob rt activation 100.0
-ob pd activation 39.99877926893504
-Random rndseed=1694
-ob sc activation 100.0
-Random rndseed=1695
-ob sm activation 100.0
-ob pg activation 18.720368102638357
-Random rndseed=1696
-ob sg activation 100.0
-Random rndseed=1697
-ob smg activation 100.0
-ob id activation 25.0
+ob fs activation 49.99966601608321
+ob ls activation 25.146484375
+Random rndseed=1775
+ob lf activation 100.0
+ob rt activation 40.05859375
+Random rndseed=1776
+ob pd activation 100.0
+ob sc activation 40.01708984375
+ob sm activation 0.0244140625
+Random rndseed=1777
+ob pg activation 100.0
+ob sg activation 39.873046875
+ob smg activation 0.0372314453125
+ob id activation 0.0244140625
 ob op activation 0.0
-Random rndseed=1698
-ob l activation 100.0
-Random rndseed=1699
+ob l activation 11.6357421875
+Random rndseed=1778
 ob g activation 100.0
-Random rndseed=1700
+Random rndseed=1779
 ob lc activation 100.0
-Random rndseed=1701
+Random rndseed=1780
 ob spc activation 100.0
 ob apc activation 0.0
-Random rndseed=1702
+Random rndseed=1781
 ob dc activation 100.0
-Random rndseed=1703
+Random rndseed=1782
 ob bc activation 100.0
-Random rndseed=1704
+Random rndseed=1783
 ob gpc activation 100.0
-Random rndseed=1705
-ob len activation 100.0
-Random rndseed=1706
+ob len activation 19.965817666379735
+Random rndseed=1784
 ob obc activation 100.0
-Random rndseed=1707
-ob bf activation 100.0
+Random rndseed=1785
+ob bf activation 90.0
 check for redraw; and reset buffer values to 0
 did slippage_list: 
-slippage middle -> middle label:Some(id) label activation: 25.0
-slippage sameness -> sameness label:Some(id) label activation: 25.0
-slippage letter category -> letter category label:Some(id) label activation: 25.0
-slippage 2 -> 2 label:Some(id) label activation: 25.0
-Finish update_Everything T: 40.1996752593828
-slippage sameness group -> sameness group label:Some(id) label activation: 25.0
-slippage group -> group label:Some(id) label activation: 25.0
-slippage leftmost -> leftmost label:Some(id) label activation: 25.0
-slippage letter -> letter label:Some(id) label activation: 25.0
-slippage rightmost -> rightmost label:Some(id) label activation: 25.0
-workspace calculate_string_unhappiness isu 28.603629432931456
-workspace intra string unhappiness = 28.603629432931456
-workspace calculate_string_unhappiness isu 65.96009986735214
-workspace inter string unhappiness = 65.96009986735214
-workspace calculate_string_unhappiness isu 47.2818646501418
-workspace total string unhappiness = 47.2818646501418
-intra_string_unhappiness 28.603629432931456 inter_string_unhappiness 65.96009986735214 total_unhappiness 47.2818646501418
-d576d8ec-45a2-41e4-9e01-9100335b7e59 descriptor Some(SlipNodeRep(rm,50.0)) relation Some(SlipNodeRep(D,50.0))
-d576d8ec-45a2-41e4-9e01-9100335b7e59 class models.Rule internal_strength 88.12908230365319 external_strength 88.12908230365319 total strength: 88.12908230365319
-Rule calculate_total_strength d576d8ec-45a2-41e4-9e01-9100335b7e59 rule: replace letter category of rightmost letter by D total_strength 88.12908230365319
+slippage leftmost -> leftmost label:Some(id) label activation: 0.0244140625
+slippage letter -> group label:None label activation: None
+slippage rightmost -> rightmost label:Some(id) label activation: 0.0244140625
+Finish update_Everything T: 43.835000217341914
+workspace calculate_string_unhappiness isu 31.338959358339807
+workspace intra string unhappiness = 31.338959358339807
+workspace calculate_string_unhappiness isu 72.31308233684157
+workspace inter string unhappiness = 72.31308233684157
+workspace calculate_string_unhappiness isu 51.82602084759069
+workspace total string unhappiness = 51.82602084759069
+intra_string_unhappiness 31.338959358339807 inter_string_unhappiness 72.31308233684157 total_unhappiness 51.82602084759069
+2bbebcd1-e000-44a9-b261-1bb52119dabe descriptor Some(SlipNodeRep(rm,50.0)) relation Some(SlipNodeRep(sc,50.0))
+2bbebcd1-e000-44a9-b261-1bb52119dabe class models.Rule internal_strength 88.12908230365319 external_strength 88.12908230365319 total strength: 88.12908230365319
+Rule calculate_total_strength 2bbebcd1-e000-44a9-b261-1bb52119dabe rule: replace letter category of rightmost letter by successor total_strength 88.12908230365319
 rule_weakness 11.870917696346808
-formulas.actual_temperature 40.1996752593828
+formulas.actual_temperature 43.835000217341914
 clamp_temperature false
-formulas.actual_temperature 40.1996752593828
-ChooseAndRun2 75 T: 40.1996752593828
-choose T: 40.1996752593828
-Choose codelet codelets size 75 scale 4.653354982707813
-urgencies: ListBuffer(1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 3, 1, 3, 1, 3, 1, 1, 1, 1, 1, 1, 3, 3, 1, 3, 1, 3, 1, 3, 3, 3, 1, 3, 3, 1, 3, 1, 3, 3, 3, 3, 3, 1, 3, 1, 3, 3, 3, 3, 3, 1, 5, 3, 3, 3, 3, 3, 3, 1)
-Random rndseed=1708
+formulas.actual_temperature 43.835000217341914
+ChooseAndRun2 97 T: 43.835000217341914
+choose T: 43.835000217341914
+Choose codelet codelets size 97 scale 4.410999985510539
+urgencies: ListBuffer(3, 3, 3, 4, 3, 3, 3, 3, 1, 4, 3, 1, 3, 1, 4, 3, 3, 4, 1, 3, 3, 3, 3, 4, 3, 1, 4, 3, 3, 3, 3, 1, 4, 3, 3, 3, 3, 3, 2, 4, 3, 3, 1, 4, 4, 3, 3, 3, 3, 1, 4, 3, 3, 3, 3, 1, 4, 4, 3, 3, 3, 1, 3, 3, 3, 3, 3, 1, 3, 4, 4, 4, 3, 3, 3, 3, 3, 1, 6, 4, 3, 3, 3, 3, 3, 3, 3, 1, 6, 7, 3, 3, 3, 3, 3, 3, 1)
+Random rndseed=1786

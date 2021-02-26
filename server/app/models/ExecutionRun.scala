@@ -5,7 +5,6 @@ import akka.actor.ActorLogging
 import akka.event.LoggingReceive
 import akka.actor.ActorRef
 import akka.actor.Props
-import models.Slipnet.isNumber
 import models.Workspace.InitializeWorkspace
 
 
@@ -15,7 +14,7 @@ object ExecutionRun {
   def props(): Props = Props(new ExecutionRun())
 
   case class Run(initialString: String, modifiedString: String, targetString: String)
-  case class Found(answer:String)
+  case class Found(answer:String, codelets_run: Int)
   case object Step
   case object UpdateEverything
   case object InitializeSlipnetResponse
@@ -25,11 +24,9 @@ object ExecutionRun {
 class ExecutionRun extends Actor with ActorLogging  { //with InjectedActorSupport
   import ExecutionRun._
   import Slipnet.InitializeSlipnet
-  import Workspace.Initialize
   var workspace: ActorRef = null
   var slipnet: ActorRef = null
   var coderack: ActorRef = null
-  var temperature: ActorRef = null
   var initialString: String = null
   var modifiedString: String = null
   var targetString: String = null
@@ -45,21 +42,20 @@ class ExecutionRun extends Actor with ActorLogging  { //with InjectedActorSuppor
       targetString = ts
 
       log.debug(s"ExecutionRun: Run with initial $initialString, modified: $modifiedString and target: $targetString")
-      workspace = context.actorOf(Workspace.props(temperature),"Workspace")
+      workspace = context.actorOf(Workspace.props(),"Workspace")
 
       slipnet = context.actorOf(Slipnet.props(workspace),"Slipnet")
       workspace ! InitializeWorkspace(slipnet)
-      temperature = context.actorOf(Temperature.props(),"Temperature")
-      coderack = context.actorOf(Coderack.props(workspace, slipnet, temperature, self),"Coderack")
+      coderack = context.actorOf(Coderack.props(workspace, slipnet, self),"Coderack")
       slipnet ! InitializeSlipnet(coderack, workspace)
     }
 
     case InitializeSlipnetResponse =>
       coderack ! Coderack.Run(initialString, modifiedString, targetString)
 
-    case Found(answer) => {
-      log.debug("Solution found " + answer)
-      runRequester ! WebSocketActor.Found(answer)
+    case Found(answer, codelets_run) => {
+      log.debug("Solution found " + answer + " after running " +codelets_run + " codelets")
+      runRequester ! WebSocketActor.Found(answer, codelets_run)
     }
 
     case UpdateEverything => {

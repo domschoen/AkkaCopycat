@@ -3,7 +3,7 @@ package models.codelet
 import akka.event.LoggingReceive
 import akka.actor.ActorRef
 import models.Bond.BondRep
-import models.Coderack.ProposeGroup
+import models.Coderack.{ProposeGroup, Temperatures}
 import models.Group.GroupRep
 import models.Random
 import models.SlipNode.{GroupSlipnetInfo, SlipNodeRep}
@@ -43,13 +43,11 @@ object GroupScoutWholeString {
 class GroupScoutWholeString(urgency: Int,
                             workspace: ActorRef,
                             slipnet: ActorRef,
-                            temperature: ActorRef,
-                            arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet, temperature)  {
+                            arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet)  {
   import Codelet.{ Run, Finished }
   import models.Coderack.ChooseAndRun
   import models.Coderack.ProposeCorrespondence
 
-  import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
   import models.codelet.GroupScoutWholeString.{
     GoWithGroupScoutWholeStringResponse,
     SlipnetGoWithGroupScoutWholeStringResponse,
@@ -67,7 +65,7 @@ class GroupScoutWholeString(urgency: Int,
   }
   import models.Slipnet.GetLeftAndRight
 
-  var runTemperature: Double = 0.0
+  var runTemperature: Temperatures = null
   var left_most: WorkspaceObjectRep = null
   var direction_category: Option[SlipNodeRep] = None
   var bond_facet: SlipNodeRep = null
@@ -83,7 +81,6 @@ class GroupScoutWholeString(urgency: Int,
     case Run(initialString, modifiedString, targetString,t) =>
       log.debug(s"${getClass.getName}. Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
-      temperature ! Register(self)
       runTemperature = t
 
       slipnet ! GetLeftAndRight
@@ -180,11 +177,6 @@ class GroupScoutWholeString(urgency: Int,
       log.debug("WorkspaceProposeGroupResponse")
       coderack ! ProposeGroup(groupUUID, groupUrgency)
 
-    case TemperatureResponse(value) =>
-      t = value
-
-    case TemperatureChanged(value) =>
-      t = value
 
     case Finished =>
         log.debug("GoWithGroupScoutWholeString.Finished")

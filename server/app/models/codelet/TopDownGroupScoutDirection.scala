@@ -3,7 +3,7 @@ package models.codelet
 import akka.event.LoggingReceive
 import akka.actor.ActorRef
 import models.Bond.BondRep
-import models.Coderack.ProposeGroup
+import models.Coderack.{ProposeGroup, Temperatures}
 import models.SlipNode.{GroupSlipnetInfo, SlipNodeRep}
 import models.Slipnet.{CompleteProposeGroup, CompleteProposeGroupResponse, SlipnetGoWithTopDownGroupScoutCategory2, SlipnetGoWithTopDownGroupScoutDirection, SlipnetGoWithTopDownGroupScoutDirection0}
 import models.Workspace.{GoWithTopDownGroupScoutCategory, GoWithTopDownGroupScoutCategory2, GoWithTopDownGroupScoutDirection, GoWithTopDownGroupScoutDirection2, WorkspaceProposeGroup}
@@ -21,19 +21,17 @@ object TopDownGroupScoutDirection {
 class TopDownGroupScoutDirection(urgency: Int,
                                  workspace: ActorRef,
                                  slipnet: ActorRef,
-                                 temperature: ActorRef,
-                                 arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet, temperature)  {
+                                 arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet)  {
   import Codelet.{ Run, Finished }
   import models.Coderack.ChooseAndRun
   import models.Coderack.ProposeCorrespondence
-  import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
   import models.codelet.TopDownGroupScoutDirection.{
     SlipnetGoWithTopDownGroupScoutDirection0Response,
     GoWithTopDownGroupScoutDirectionResponse
   }
   import models.Workspace.WorkspaceProposeGroupResponse
 
-  var runTemperature: Double = 0.0
+  var runTemperature: Temperatures = null
   var fromob: WorkspaceObjectRep = null
   var first_bond: String = null
   var bond_category: SlipNodeRep = null
@@ -51,7 +49,6 @@ class TopDownGroupScoutDirection(urgency: Int,
     case Run(initialString, modifiedString, targetString,t) =>
       log.debug(s"${getClass.getName}. Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
-      temperature ! Register(self)
       runTemperature = t
       log.debug("looking for "+directionID+" group")
 
@@ -94,12 +91,6 @@ class TopDownGroupScoutDirection(urgency: Int,
     case WorkspaceProposeGroupResponse(groupID) =>
       coderack ! ProposeGroup(groupID, groupUrgency)
 
-
-    case TemperatureResponse(value) =>
-      t = value
-
-    case TemperatureChanged(value) =>
-      t = value
 
     case Finished =>
       workspace ! models.Workspace.Step(runTemperature)

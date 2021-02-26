@@ -3,10 +3,9 @@ package models
 import akka.actor.ActorRef
 import akka.event.LoggingAdapter
 import models.Bond.BondRep
+import models.Coderack.Temperatures
 import models.Group.GroupRep
 import models.SlipNode.{GroupSlipnetInfo, SlipNodeRep}
-import models.WorkspaceObject.WorkspaceObjectRep
-import models.WorkspaceStructure.WorkspaceStructureRep
 
 import scala.collection.mutable.ListBuffer
 
@@ -42,7 +41,7 @@ class Group (
               var bond_list: ListBuffer[Bond],
               var bond_category: SlipNodeRep,
               groupSlipnetInfo: GroupSlipnetInfo,
-              temperature: Double,
+              temperature: Temperatures,
               slipnet: ActorRef,
               activationBySlipNodeID: Map[String, Double]
             ) extends WorkspaceObject(log, ws) {
@@ -57,6 +56,9 @@ class Group (
   rightmost = (right_string_position==(ws.length));
 
   spans_string = (leftmost&rightmost);
+
+  println("Create Group " + uuid)
+
 
   if (!bond_list.isEmpty){
     val bbf = bond_list(0).bond_facet;
@@ -81,7 +83,7 @@ class Group (
     this.add_description(groupSlipnetInfo.string_position_category, Some(groupSlipnetInfo.middle))
 
   // check whether or not to add length description category
-  val prob = length_description_probability(activationBySlipNodeID,temperature);
+  val prob = length_description_probability(activationBySlipNodeID, temperature);
   if (Random.rnd(null) < prob){
     val length = object_list.size
     if (length<6) add_description(groupSlipnetInfo.length, Some(groupSlipnetInfo.slipnet_numbers(length-1)))
@@ -106,7 +108,7 @@ class Group (
   }
 
 
-  def single_letter_group_probability(lengthActivation: Double, temperature: Double): Double = {
+  def single_letter_group_probability(lengthActivation: Double, temperature: Temperatures): Double = {
     val loc = number_of_local_supporting_groups()
     if (loc==0) {
       //System.out.println("single letter prob = 0.0");
@@ -126,6 +128,7 @@ class Group (
   }
 
   def build_group() = {
+    log.debug("Add to ws " + ws.uuid + " of group " + uuid + " string.objects " + ws.objects)
     ws.objects += this
     for (wo <- object_list) {
       wo.group = Some(this)
@@ -144,7 +147,7 @@ class Group (
     }
   }
 
-  def length_description_probability(activationBySlipNodeID: Map[String, Double], temperature: Double): Double = {
+  def length_description_probability(activationBySlipNodeID: Map[String, Double], temperature: Temperatures): Double = {
     val length = object_list.size
     if (length>5) return 0.0;
     val cube = (length*length*length).toDouble
@@ -162,7 +165,7 @@ class Group (
 
 
   def break_group() = {
-    System.out.println("breaking group "+this);
+    log.debug(uuid + " breaking group " + this);
 
     for (wo <- object_list) {
       wo.group = None

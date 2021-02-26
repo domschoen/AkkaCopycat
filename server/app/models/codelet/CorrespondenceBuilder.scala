@@ -3,6 +3,7 @@ package models.codelet
 import akka.actor.ActorRef
 import akka.event.LoggingReceive
 import models.Bond.BondRep
+import models.Coderack.Temperatures
 import models.ConceptMapping.{ConceptMappingParameters, ConceptMappingRep}
 import models.Slipnet.{CorrespondenceUpdateStrengthData, SlipnetCompleteSlippageList, SlipnetCompleteSlippageListResponse, SlipnetGoWithCorrespondenceBuilder, SlipnetGoWithCorrespondenceBuilder2, SlipnetGoWithCorrespondenceBuilder5, SlipnetGoWithCorrespondenceBuilder6, SlipnetGoWithGroupStrengthTester}
 import models.Workspace.{GoWithCorrespondenceBuilder10Continue, GoWithCorrespondenceBuilder10Fight, GoWithCorrespondenceBuilder3, GoWithCorrespondenceBuilder4, GoWithCorrespondenceBuilder5, GoWithCorrespondenceBuilder8, GoWithCorrespondenceBuilder9Response, SlippageListShell}
@@ -16,7 +17,7 @@ import models.codelet.GroupStrengthTester.SlipnetGoWithGroupStrengthTesterRespon
 // Codelet.java.1476
 object CorrespondenceBuilder {
 
-  case class GoWithCorrespondenceBuilder2Response(conceptMappingReps: List[ConceptMappingRep])
+  case class GoWithCorrespondenceBuilder2Response(conceptMappingReps: List[ConceptMappingRep], existingConceptMappingReps: List[ConceptMappingRep])
   case class GoWithCorrespondenceBuilder3Response(corrrespondence: CorrespondenceRep, correspondenceReps: List[CorrespondenceRep], wcorrespondenceReps: List[CorrespondenceRep])
   case class GoWithCorrespondenceBuilder7Response(groupObjs: Option[ConceptMappingParameters])
   case class GoWithCorrespondenceBuilder8Response(cms: List[ConceptMappingRep])
@@ -46,12 +47,10 @@ object CorrespondenceBuilder {
 class CorrespondenceBuilder(urgency: Int,
                             workspace: ActorRef,
                             slipnet: ActorRef,
-                            temperature: ActorRef,
-                            arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet, temperature)  {
+                            arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet)  {
   import Codelet.{ Run, Finished }
   import models.Coderack.ChooseAndRun
   import models.Coderack.ProposeCorrespondence
-  import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
   import models.Workspace.{
     GoWithCorrespondenceBuilder,
     GoWithCorrespondenceBuilderResponse,
@@ -87,7 +86,7 @@ class CorrespondenceBuilder(urgency: Int,
 
   }
 
-  var runTemperature: Double = 0.0
+  var runTemperature: Temperatures = null
 
   def corresponsdenceID() = arguments.get.asInstanceOf[String]
 
@@ -106,7 +105,6 @@ class CorrespondenceBuilder(urgency: Int,
       log.debug(s"CorrespondenceBuilder. Run with initial $initialString, modified: $modifiedString and target: $targetString")
 
       coderack = sender()
-      temperature ! Register(self)
       runTemperature = t
       workspace ! GoWithCorrespondenceBuilder(runTemperature, corresponsdenceID)
 
@@ -137,8 +135,8 @@ class CorrespondenceBuilder(urgency: Int,
 
 
     //Codelet.java.1495
-    case GoWithCorrespondenceBuilder2Response(conceptMappingReps: List[ConceptMappingRep]) =>
-      slipnet ! SlipnetGoWithCorrespondenceBuilder(conceptMappingReps)
+    case GoWithCorrespondenceBuilder2Response(conceptMappingReps: List[ConceptMappingRep], existingConceptMappingReps) =>
+      slipnet ! SlipnetGoWithCorrespondenceBuilder(conceptMappingReps, existingConceptMappingReps)
 
     case SlipnetGoWithCorrespondenceBuilderResponse(updatedCorrespondenceCMReps) =>
       workspace ! GoWithCorrespondenceBuilder3(corresponsdenceID, updatedCorrespondenceCMReps)
@@ -150,7 +148,7 @@ class CorrespondenceBuilder(urgency: Int,
     case SlipnetGoWithCorrespondenceBuilderResponse2(correspondenceReps, cData, inccData) =>
       log.debug("CorrespondenceBuilder. SlipnetGoWithCorrespondenceBuilderResponse2")
       incc = correspondenceReps
-      workspace ! GoWithCorrespondenceBuilder4(corresponsdenceID, incc, cData, inccData)
+      workspace ! GoWithCorrespondenceBuilder4(corresponsdenceID, incc, cData, inccData,runTemperature)
 
     case GoWithCorrespondenceBuilder4Response1(correspondence, incompatible_bond_base, wCReps) =>
       log.debug("CorrespondenceBuilder. GoWithCorrespondenceBuilder4Response1")
@@ -162,7 +160,8 @@ class CorrespondenceBuilder(urgency: Int,
       incompatible_bond = bOpt
       workspace ! GoWithCorrespondenceBuilder5(corresponsdenceID, bOpt,
         cData,
-        bond_category_degree_of_associationOpt
+        bond_category_degree_of_associationOpt,
+        runTemperature
       )
 
 
@@ -189,7 +188,7 @@ class CorrespondenceBuilder(urgency: Int,
 
     case SlipnetCompleteSlippageListResponse(slippage_list_rep) =>
       log.debug("SlipnetCompleteSlippageListResponse")
-      workspace ! GoWithCorrespondenceBuilder10Fight(corresponsdenceID, correspondenceUpdateStrengthData, slippage_list_rep)
+      workspace ! GoWithCorrespondenceBuilder10Fight(corresponsdenceID, correspondenceUpdateStrengthData, slippage_list_rep, runTemperature)
 
     case CorrespondenceBuilderTryingToFightIncompatibleGroups(incGroup, cData) =>
       log.debug("CorrespondenceBuilderTryingToFightIncompatibleGroups")
@@ -203,7 +202,7 @@ class CorrespondenceBuilder(urgency: Int,
         corresponsdenceID,
         incompatible_group.get,
         correspondenceUpdateStrengthData,
-        degree_of_association)
+        degree_of_association, runTemperature)
 
     case CorrespondenceBuilderWonGroupsFight =>
       workspace ! GoWithCorrespondenceBuilder6(corresponsdenceID)
@@ -226,12 +225,6 @@ class CorrespondenceBuilder(urgency: Int,
       log.debug("GoWithCorrespondenceBuilder8Response")
       slipnet ! SlipnetGoWithCorrespondenceBuilder6(cms)
 
-
-    case TemperatureResponse(value) =>
-      t = value
-
-    case TemperatureChanged(value) =>
-      t = value
 
     case Finished =>
       workspace ! models.Workspace.Step(runTemperature)

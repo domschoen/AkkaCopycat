@@ -24,8 +24,7 @@ object GroupBuilder {
 class GroupBuilder(urgency: Int,
                    workspace: ActorRef,
                    slipnet: ActorRef,
-                   temperature: ActorRef,
-                   arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet, temperature)  {
+                   arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet)  {
   import Codelet.{ Run, Finished }
   import models.Workspace.{
     GoWithGroupBuilder,
@@ -35,7 +34,6 @@ class GroupBuilder(urgency: Int,
     GoWithGroupBuilder5
   }
   import models.Coderack.ChooseAndRun
-  import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
   import GroupBuilder.{
     GoWithGroupBuilderResponse,
 
@@ -54,7 +52,7 @@ class GroupBuilder(urgency: Int,
     PrepareGroupFighting
   }
 
-  var runTemperature = 0.0
+  var runTemperature: models.Coderack.Temperatures  = null
   var incompatibleBondList: List[BondRep] = null
   var group_category_id: String = null
   var incg: List[GroupRep] = null
@@ -68,17 +66,19 @@ class GroupBuilder(urgency: Int,
       log.debug(s"GroupBuilder. Run with initial $initialString, modified: $modifiedString and target: $targetString")
 
       coderack = sender()
-      temperature ! Register(self)
       runTemperature = t
 
       workspace ! GoWithGroupBuilder(runTemperature, groupID)
 
     case GoWithGroupBuilderResponse(incBondList, group_cat_id) =>
+      log.debug("GoWithGroupBuilderResponse")
+
       incompatibleBondList = incBondList
       group_category_id = group_cat_id
       slipnet ! SlipnetGoWithGroupBuilder(group_category_id)
 
     case SlipnetGoWithGroupBuilderResponse(degree_of_association) =>
+      log.debug("SlipnetGoWithGroupBuilderResponse")
       workspace ! GoWithGroupBuilder2(groupID, degree_of_association, incompatibleBondList)
 
 
@@ -92,7 +92,7 @@ class GroupBuilder(urgency: Int,
       slipnet ! SlipnetGoWithGroupStrengthTester(group_category_id)
 
     case SlipnetGoWithGroupStrengthTesterResponse(group_degree_of_association) =>
-      workspace ! GoWithGroupBuilder3(groupID(), incompatibleBondList, group_degree_of_association, bonds_degree_of_association)
+      workspace ! GoWithGroupBuilder3(groupID(), incompatibleBondList, group_degree_of_association, bonds_degree_of_association, runTemperature)
 
     case GroupBuilderNoGroupFighting(incgReps) =>
       incg = incgReps
@@ -104,14 +104,8 @@ class GroupBuilder(urgency: Int,
       slipnet ! PrepareGroupFighting(g, incg)
 
     case SlipnetPrepareGroupFightingResponse(degree_of_association1: Double, degree_of_association2: Map[String, Double]) =>
-      workspace ! GoWithGroupBuilder4(groupID(), incg, degree_of_association1, degree_of_association2, incompatibleBondList)
+      workspace ! GoWithGroupBuilder4(groupID(), incg, degree_of_association1, degree_of_association2, incompatibleBondList, runTemperature)
 
-
-    case TemperatureResponse(value) =>
-      t = value
-
-    case TemperatureChanged(value) =>
-      t = value
 
     case Finished =>
       workspace ! models.Workspace.Step(runTemperature)

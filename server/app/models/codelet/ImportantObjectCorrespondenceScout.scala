@@ -2,6 +2,7 @@ package models.codelet
 
 import akka.event.LoggingReceive
 import akka.actor.ActorRef
+import models.Coderack.Temperatures
 import models.ConceptMapping.ConceptMappingRep
 import models.Group.GroupRep
 import models.SlipNode.SlipNodeRep
@@ -20,12 +21,10 @@ object ImportantObjectCorrespondenceScout {
 class ImportantObjectCorrespondenceScout(urgency: Int,
                                          workspace: ActorRef,
                                          slipnet: ActorRef,
-                                         temperature: ActorRef,
-                                         arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet, temperature)  {
+                                         arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet)  {
   import Codelet.{ Run, Finished }
   import models.Coderack.ChooseAndRun
   import models.Coderack.ProposeCorrespondence
-  import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
   import models.Workspace.{
     GoWithImportantObjectCorrespondenceScout,
     GoWithImportantObjectCorrespondenceScout2,
@@ -45,7 +44,7 @@ class ImportantObjectCorrespondenceScout(urgency: Int,
   }
 
 
-  var runTemperature: Double = 0.0
+  var runTemperature: Temperatures = null
   var slipNode : SlipNodeRep = null
   var obj1: WorkspaceObjectRep = null
   var obj2: WorkspaceObjectRep = null
@@ -58,7 +57,6 @@ class ImportantObjectCorrespondenceScout(urgency: Int,
     case Run(initialString, modifiedString, targetString,t) =>
       log.debug(s"${getClass.getName}. Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
-      temperature ! Register(self)
       runTemperature = t
       workspace ! GoWithImportantObjectCorrespondenceScout(t)
 
@@ -120,19 +118,13 @@ class ImportantObjectCorrespondenceScout(urgency: Int,
         flip_obj2,
         distiguishingConceptMappingSize,
         distiguishingConceptMappingTotalStrength,
-        t
+        runTemperature
       )
 
     case GoWithBottomUpCorrespondenceScout2Response(correspondenceID: String,
     distiguishingConceptMappingSize: Int,
     distiguishingConceptMappingTotalStrength) =>
       coderack ! ProposeCorrespondence(correspondenceID,distiguishingConceptMappingSize,distiguishingConceptMappingTotalStrength)
-
-    case TemperatureResponse(value) =>
-      t = value
-
-    case TemperatureChanged(value) =>
-      t = value
 
     case Finished =>
       workspace ! models.Workspace.Step(runTemperature)

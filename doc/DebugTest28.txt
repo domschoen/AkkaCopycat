@@ -1,0 +1,7 @@
+temperatures
+
+
+in important-object-correspondence-scout.1499
+
+workspace_formulas.temperature_adjusted_probability 
+Temperature.value

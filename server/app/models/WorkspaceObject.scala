@@ -152,9 +152,13 @@ abstract class WorkspaceObject(log: LoggingAdapter, ws: WorkspaceString) extends
 
   def add_description(descriptionType: SlipNodeRep, descriptor: Option[SlipNodeRep]) = {
     val description = new Description(log, this, ws, descriptionType, descriptor)
-    descriptions += description
+    addToDescriptions(description)
   }
 
+  def addToDescriptions(d: Description) = {
+    System.out.println("Add to workspace object " + this.uuid + " description " + d.uuid);
+    descriptions += d
+  }
 
 
   // move partially to slipnet
@@ -249,11 +253,12 @@ abstract class WorkspaceObject(log: LoggingAdapter, ws: WorkspaceString) extends
   def update_object_value(activationBySlipNodeID: Map[String, Double]) = {
     // calculate the raw importance of the object
     // = sum of all relevant descriptions
+    log.debug("update_object_value of " + uuid + " " + this)
     val rawSum = descriptions.filter(d => d.descriptor.isDefined).map(d => {
       val descriptorActivation = Workspace.activationWithSlipNodeRep(activationBySlipNodeID, d.descriptor.get)
       val description_typeActivation = Workspace.activationWithSlipNodeRep(activationBySlipNodeID, d.description_type)
 
-      log.debug("update_object_value " + d + " d.description_type.activation " + description_typeActivation + " d.descriptor.activation " + descriptorActivation);
+      log.debug("update_object_value " + d.uuid + " " + d + " d.description_type.activation " + description_typeActivation + " d.descriptor.activation " + descriptorActivation);
 
       if (description_typeActivation == 100.0) {
         descriptorActivation
@@ -347,11 +352,15 @@ abstract class WorkspaceObject(log: LoggingAdapter, ws: WorkspaceString) extends
   }
 
   def letterOrGroupCompanions(): List[WorkspaceObject] = {
-      ws.objects.filter(wo =>
-        (wo != this) &&
-          ((isInstanceOf[Letter] && wo.isInstanceOf[Letter]) ||
+    log.debug("letterOrGroupCompanions " + uuid + " ws " + ws.uuid)
+    ws.objects.filter(wo => {
+      val taken = (wo != this) &&
+        ((isInstanceOf[Letter] && wo.isInstanceOf[Letter]) ||
           (isInstanceOf[Group] && wo.isInstanceOf[Group]))
-      ).toList
+      log.debug("wo " + taken + " " + wo.uuid + " " + wo)
+      taken
+    }
+    ).toList
   }
   def letterOrGroupCompanionReps(): List[WorkspaceObjectRep2] = letterOrGroupCompanions().map(_.workspaceObjectRep2())
 
@@ -362,6 +371,8 @@ abstract class WorkspaceObject(log: LoggingAdapter, ws: WorkspaceString) extends
     bonds -= b
   }
   def break_description(d: Description): Unit = {
+    log.debug("Remove from workspace object " + this.uuid + " description "  + d.uuid)
+
     descriptions -= d
   }
 }

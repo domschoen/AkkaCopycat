@@ -2,9 +2,9 @@ package models.codelet
 
 import akka.event.LoggingReceive
 import akka.actor.ActorRef
+import models.Coderack.Temperatures
 import models.Correspondence.CorrespondenceRep
 import models.Slipnet.{CorrespondenceUpdateStrengthData, GroupFlippedVersion, GroupFlippedVersionResponse, SlipnetGoWithCorrespondenceStrengthTester}
-import models.Temperature.{TemperatureChanged, TemperatureResponse}
 import models.Workspace.{GoWithCorrespondenceBuilder, GoWithCorrespondenceBuilder2, GoWithCorrespondenceBuilder9Response, GoWithCorrespondenceBuilderResponse, GoWithCorrespondenceStrengthTester2, GoWithCorrespondenceStrengthTester3}
 import models.codelet.CorrespondenceStrengthTester.{GoWithCorrespondenceStrengthTesterResponse2, GoWithCorrespondenceStrengthTesterResponse3}
 
@@ -16,13 +16,12 @@ object CorrespondenceStrengthTester {
   case class SlipnetGoWithCorrespondenceStrengthTesterResponse(cData: CorrespondenceUpdateStrengthData)
   case object SlipnetGoWithCorrespondenceStrengthTester2Response
 }
-class CorrespondenceStrengthTester(urgency: Int,              workspace: ActorRef,
+class CorrespondenceStrengthTester(urgency: Int,
+                                   workspace: ActorRef,
                                    slipnet: ActorRef,
-                                   temperature: ActorRef,
-                                   arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet, temperature)  {
+                                   arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet)  {
   import Codelet.{ Run, Finished }
   import models.Coderack.ChooseAndRun
-  import models.Temperature.Register
   import CorrespondenceStrengthTester.{
     GoWithCorrespondenceStrengthTesterResponse,
     SlipnetGoWithCorrespondenceStrengthTesterResponse,
@@ -34,7 +33,7 @@ class CorrespondenceStrengthTester(urgency: Int,              workspace: ActorRe
     SlipnetGoWithCorrespondenceStrengthTester2
   }
 
-  var runTemperature: Double = 0.0
+  var runTemperature: Temperatures = null
   var strength = 0.0
 
   def correspondanceID() = arguments.get.asInstanceOf[String]
@@ -44,7 +43,6 @@ class CorrespondenceStrengthTester(urgency: Int,              workspace: ActorRe
     case Run(initialString, modifiedString, targetString,t) =>
       log.debug(s"CorrespondenceStrengthTester. Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
-      temperature ! Register(self)
       runTemperature = t
 
       workspace ! GoWithCorrespondenceBuilder(runTemperature, correspondanceID)
@@ -88,11 +86,6 @@ class CorrespondenceStrengthTester(urgency: Int,              workspace: ActorRe
     case SlipnetGoWithCorrespondenceStrengthTester2Response =>
       coderack ! PostCorrespondenceBuilder(correspondanceID, strength)
 
-    case TemperatureResponse(value) =>
-      t = value
-
-    case TemperatureChanged(value) =>
-      t = value
 
     case Finished =>
       log.debug("CorrespondenceStrengthTester. Finished")

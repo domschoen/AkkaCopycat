@@ -72,7 +72,7 @@ class Bond (
 
   // partially moved to Workspace.addBond
   def build_bond() = {
-    System.out.println("bond.build_bond | string.bonds.add this " + workspaceString().get.s + " this " + this);
+    log.debug("bond.build_bond | string.bonds.add this " + workspaceString().get.s + " this " + this);
 
     workspaceString().get.addBond(this);
 
@@ -85,8 +85,7 @@ class Bond (
 
   // partially moved to Workspace.break_bond
   def break_bond() = {
-    System.out.println("bond.break_bond " + this);
-
+    log.debug("bond.break_bond " + this);
     if (workspaceString().isDefined) workspaceString().get.break_bond(this)
     left_obj.setRightBond(None);
     right_obj.left_bond = None;

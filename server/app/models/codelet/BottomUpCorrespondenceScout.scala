@@ -25,14 +25,12 @@ object BottomUpCorrespondenceScout{
 class BottomUpCorrespondenceScout(urgency: Int,
                                   workspace: ActorRef,
                                   slipnet: ActorRef,
-                                  temperature: ActorRef,
-                                  arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet, temperature)  {
+                                  arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet)  {
   import Codelet.{ Run, Finished }
   import models.Workspace.GoWithBottomUpCorrespondenceScout
   import models.Coderack.ChooseAndRun
   import models.Coderack.ProposeCorrespondence
   import BottomUpCorrespondenceScout.GoWithBottomUpCorrespondenceScoutWorkspaceReponse
-  import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
   import models.Slipnet.{
     SlipnetBottomUpCorrespondenceScout,
     SlipnetBottomUpCorrespondenceScout2,
@@ -41,14 +39,13 @@ class BottomUpCorrespondenceScout(urgency: Int,
   var obj1 :WorkspaceObjectRep = null
   var obj2: WorkspaceObjectRep = null
   var flip_obj2: Boolean = false
-  var runTemperature = 0.0
+  var runTemperature: models.Coderack.Temperatures  = null
 
   def receive = LoggingReceive {
     // to the browser
     case Run(initialString, modifiedString, targetString, t) =>
       log.debug(s"BottomUpCorrespondenceScout. Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
-      temperature ! Register(self)
       runTemperature = t
       workspace ! GoWithBottomUpCorrespondenceScout(runTemperature)
 
@@ -94,12 +91,6 @@ class BottomUpCorrespondenceScout(urgency: Int,
       distiguishingConceptMappingTotalStrength) =>
       coderack ! ProposeCorrespondence(correspondenceID,distiguishingConceptMappingSize,distiguishingConceptMappingTotalStrength)
 
-
-    case TemperatureResponse(value) =>
-      t = value
-
-    case TemperatureChanged(value) =>
-      t = value
 
     case Finished =>
       workspace ! models.Workspace.Step(runTemperature)

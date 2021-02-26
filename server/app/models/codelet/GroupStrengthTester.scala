@@ -2,7 +2,7 @@ package models.codelet
 
 import akka.event.LoggingReceive
 import akka.actor.ActorRef
-import models.Coderack.{PostBondBuilder, PostGroupBuilder}
+import models.Coderack.{PostBondBuilder, PostGroupBuilder, Temperatures}
 import models.Group.GroupRep
 
 object GroupStrengthTester  {
@@ -17,12 +17,10 @@ object GroupStrengthTester  {
 class GroupStrengthTester(urgency: Int,
                           workspace: ActorRef,
                           slipnet: ActorRef,
-                          temperature: ActorRef,
-                          arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet, temperature)  {
+                          arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet)  {
   import Codelet.{ Run, Finished }
   import models.Coderack.ChooseAndRun
   import models.Coderack.ProposeCorrespondence
-  import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
   import GroupStrengthTester.{
     GoWithGroupStrengthTesterResponse,
     GoWithGroupStrengthTesterResponse2,
@@ -38,7 +36,7 @@ class GroupStrengthTester(urgency: Int,
     SlipnetGoWithGroupStrengthTester2
   }
 
-  var runTemperature: Double = 0.0
+  var runTemperature: Temperatures = null
   var strength : Double = 0.0
 
   def groupID() = arguments.get.asInstanceOf[String]
@@ -48,7 +46,6 @@ class GroupStrengthTester(urgency: Int,
     case Run(initialString, modifiedString, targetString,t) =>
       log.debug(s"${getClass.getName}. Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
-      temperature ! Register(self)
       runTemperature = t
       workspace ! GoWithGroupStrengthTester(runTemperature, groupID)
 
@@ -65,13 +62,6 @@ class GroupStrengthTester(urgency: Int,
 
     case SlipnetGoWithGroupStrengthTesterResponse2 =>
       coderack ! PostGroupBuilder(groupID(),strength)
-
-
-    case TemperatureResponse(value) =>
-      t = value
-
-    case TemperatureChanged(value) =>
-      t = value
 
     case Finished =>
       workspace ! models.Workspace.Step(runTemperature)

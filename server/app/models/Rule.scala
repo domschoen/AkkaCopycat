@@ -5,7 +5,6 @@ import akka.event.LoggingAdapter
 import models.ConceptMapping.ConceptMappingRep
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.SetSlipNodeBufferValue
-import models.Workspace.SlippageListShell
 
 object Rule {
 
@@ -81,7 +80,6 @@ case class Rule (log: LoggingAdapter,
     }
     val relationVal = relation.get
     // applies the changes to this string ie. successor
-    var stringok = true;
     if (descriptorFacet.isDefined && descriptorFacet.get.id == lengthSlipNode.id) {
       if (relationVal.id == predecessorSlipNode.id)
         return s.substring(0,s.length()-1);
@@ -93,8 +91,6 @@ case class Rule (log: LoggingAdapter,
     }
     // apply character changes
     val st = s.toList
-    val ch = 36.toChar
-    val charname = relationVal.id.toList
 
 
     val biteTheLine = st.find(c => {
@@ -153,7 +149,7 @@ case class Rule (log: LoggingAdapter,
       // HARD Coded
       val codelets_run = 0
       val formulas_actual_temperature = 100.0
-      System.out.println(final_answer+" "+codelets_run + " " + formulas_actual_temperature)
+      log.debug(final_answer+" "+codelets_run + " " + formulas_actual_temperature)
 //   GUI   workspace.Workspace_Answer.Change_Caption(final_answer);
 //   GUI   workspace.Workspace_Comments.Change_Caption("translated rule : "+this.toString());
       Some(final_answer)

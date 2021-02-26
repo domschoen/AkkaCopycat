@@ -13,12 +13,10 @@ object BondStrengthTester {
 class BondStrengthTester(urgency: Int,
                          workspace: ActorRef,
                          slipnet: ActorRef,
-                         temperature: ActorRef,
-                         arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet, temperature)  {
+                         arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet)  {
   import Codelet.{ Run, Finished }
   import models.Coderack.{ ChooseAndRun, PostBondBuilder }
   import models.Coderack.ProposeCorrespondence
-  import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
   import models.Workspace.{
     GoWithBondStrengthTester,
     GoWithBondStrengthTester2,
@@ -33,7 +31,7 @@ class BondStrengthTester(urgency: Int,
 
   }
 
-  var runTemperature = 0.0
+  var runTemperature: models.Coderack.Temperatures  = null
   def bondID() = arguments.get.asInstanceOf[String]
 
   def receive = LoggingReceive {
@@ -41,7 +39,6 @@ class BondStrengthTester(urgency: Int,
     case Run(initialString, modifiedString, targetString,t) =>
       log.debug(s"${getClass.getName}. Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
-      temperature ! Register(self)
       runTemperature = t
       workspace ! GoWithBondStrengthTester(runTemperature, bondID)
 
@@ -54,12 +51,6 @@ class BondStrengthTester(urgency: Int,
     case GoWithBondStrengthTesterResponse2(s) =>
       coderack ! PostBondBuilder(bondID,s)
 
-
-    case TemperatureResponse(value) =>
-    t = value
-
-    case TemperatureChanged(value) =>
-    t = value
 
     case Finished =>
       log.debug("BondStrengthTester. Finished")

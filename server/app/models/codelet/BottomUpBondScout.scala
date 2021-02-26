@@ -5,7 +5,6 @@ import akka.event.LoggingReceive
 import com.sun.org.apache.xerces.internal.impl.xpath.XPath.Step
 import models.SlipNode.SlipNodeRep
 import models.Slipnet.{BondFromTo, BondFromTo2}
-import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
 import models.Workspace
 import models.Workspace.{WorkspaceProposeBond, WorkspaceProposeBondResponse}
 import models.WorkspaceObject.{WorkspaceObjectRep}
@@ -33,8 +32,7 @@ object BottomUpBondScout {
 // codelet.java.240
 class BottomUpBondScout(urgency: Int,              workspace: ActorRef,
                         slipnet: ActorRef,
-                        temperature: ActorRef,
-                        arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet, temperature)  {
+                        arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet)  {
   import Codelet.Run
   import Workspace.BondWithNeighbor
   import models.Coderack.{ChooseAndRun, ProposeBond}
@@ -52,14 +50,13 @@ class BottomUpBondScout(urgency: Int,              workspace: ActorRef,
   var from_descriptor: Option[SlipNodeRep] = None
   var to_descriptor: Option[SlipNodeRep] = None
   var bondCategoryDegreeOfAssociation = 0.0
-  var runTemperature = 0.0
+  var runTemperature: models.Coderack.Temperatures  = null
 
   def receive = LoggingReceive {
     // to the browser
     case Run(initialString, modifiedString, targetString, t) =>
       log.debug(s"BottomUpBondScout. Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
-      temperature ! Register(self)
       runTemperature = t
 
       workspace ! BondWithNeighbor(runTemperature)
@@ -96,13 +93,6 @@ class BottomUpBondScout(urgency: Int,              workspace: ActorRef,
 
     case WorkspaceProposeBondResponse(bondID: String) =>
       coderack ! ProposeBond(bondID, bondCategoryDegreeOfAssociation)
-
-
-    case TemperatureResponse(value) =>
-      t = value
-
-    case TemperatureChanged(value) =>
-      t = value
 
     case Finished =>
       log.debug(s"BottomUpBondScout. Finished $runTemperature")

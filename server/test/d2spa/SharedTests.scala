@@ -129,74 +129,75 @@ class StackSpec extends  TestKit(ActorSystem("MySpec"))
           runActor ! Run("abc", "abd", "lmnfghopq")
           // Most expected answer: lmnfghpqr
           expectMsg(50.seconds, WebSocketActor.Found("lmnfghddd"))
-        }*/
+        }
       "test 21: aabbcc -> aabbcd then iijjkk -> iijjkl " in {
         val runActor = system.actorOf(ExecutionRun.props)
         runActor ! Run("aabbcc", "aabbcd", "iijjkk")
-        // Most expected answer: iijjkl
-
-        expectMsg(50.seconds, WebSocketActor.Found("iijjkd"))
+        expectMsg(50.seconds, WebSocketActor.Found("iijjkl"))
       }
-     /* "test 22: abc -> abd then kji -> kjh " in {
+     "test 22: abc -> abd then kji -> kjh " in {
         val runActor = system.actorOf(ExecutionRun.props)
         runActor ! Run("abc", "abd", "kji")
         expectMsg(15.seconds, WebSocketActor.Found("kjh"))
       }
       "test 23: abc -> abd then edc -> edb " in {
-        val runActor = system.actorOf(ExecutionRun.props)
-        runActor ! Run("abc", "abd", "edc")
-        expectMsg(15.seconds, WebSocketActor.Found("edb"))
-      }
-      "test 24: abc -> abd then cba -> dba " in {
-        val runActor = system.actorOf(ExecutionRun.props)
-        runActor ! Run("abc", "abd", "cba")
-        expectMsg(15.seconds, WebSocketActor.Found("dba"))
-      }
-      "test 25: abc -> abd then mrrjjj -> mrrkkk " in {
-        val runActor = system.actorOf(ExecutionRun.props)
-        runActor ! Run("abc", "abd", "mrrjjj")
-        expectMsg(15.seconds, WebSocketActor.Found("mrrkkk"))
-      }
-      "test 26: abc -> abd then mrr -> mss " in {
-        val runActor = system.actorOf(ExecutionRun.props)
-        runActor ! Run("abc", "abd", "mrr")
-        expectMsg(15.seconds, WebSocketActor.Found("mss"))
-      }
-      "test 27: abc -> abd then mmrrrjjjj -> mmrrrkkkk " in {
-        val runActor = system.actorOf(ExecutionRun.props)
-        runActor ! Run("abc", "abd", "mmrrrjjjj")
-        expectMsg(15.seconds, WebSocketActor.Found("mmrrrkkkk"))
-      }
-      "test 28: abc -> abd then rssttt -> rssuuu " in {
-        val runActor = system.actorOf(ExecutionRun.props)
-        runActor ! Run("abc", "abd", "rssttt")
-        expectMsg(15.seconds, WebSocketActor.Found("rssuuu"))
-      }
-      "test 29: abc -> abd then xpqdef -> xpqefg " in {
-        val runActor = system.actorOf(ExecutionRun.props)
-        runActor ! Run("abc", "abd", "xpqdef")
-        expectMsg(15.seconds, WebSocketActor.Found("xpqefg"))
-      }
-      "test 30: abc -> abd then xyz -> xyd " in {
-        val runActor = system.actorOf(ExecutionRun.props)
-        runActor ! Run("abc", "abd", "xyz")
-        expectMsg(15.seconds, WebSocketActor.Found("xyd"))
-      }
-      "test 31: abc -> qbc then xyz -> qyz " in {
-        val runActor = system.actorOf(ExecutionRun.props)
-        runActor ! Run("abc", "qbc", "xyz")
-        expectMsg(15.seconds, WebSocketActor.Found("qyz"))
-      }
-      "test 32: rst -> rsu then xyz -> xyu " in {
-        val runActor = system.actorOf(ExecutionRun.props)
-        runActor ! Run("rst", "rsu", "xyz")
-        expectMsg(15.seconds, WebSocketActor.Found("xyu"))
-      }
-      "test 33: abc -> abd then glz -> hlz " in {
-        val runActor = system.actorOf(ExecutionRun.props)
-        runActor ! Run("abc", "abd", "glz")
-        expectMsg(15.seconds, WebSocketActor.Found("hlz"))
-      }*/
+       val runActor = system.actorOf(ExecutionRun.props)
+       runActor ! Run("abc", "abd", "edc")
+       expectMsg(15.seconds, WebSocketActor.Found("edb"))
+     }
+     "test 24: abc -> abd then cba -> dba " in {
+       val runActor = system.actorOf(ExecutionRun.props)
+       runActor ! Run("abc", "abd", "cba")
+       expectMsg(15.seconds, WebSocketActor.Found("dba"))
+     }
+     "test 25: abc -> abd then mrrjjj -> mrrkkk " in {
+       val runActor = system.actorOf(ExecutionRun.props)
+       runActor ! Run("abc", "abd", "mrrjjj")
+       expectMsg(15.seconds, WebSocketActor.Found("mrrkkk"))
+     }
+     "test 26: abc -> abd then mrr -> mss " in {
+       val runActor = system.actorOf(ExecutionRun.props)
+       runActor ! Run("abc", "abd", "mrr")
+       // Most expected answer: mss
+       expectMsg(15.seconds, WebSocketActor.Found("mrd"))
+     }
+    "test 27: abc -> abd then mmrrrjjjj -> mmrrrkkkk " in {
+      val runActor = system.actorOf(ExecutionRun.props)
+      runActor ! Run("abc", "abd", "mmrrrjjjj")
+      expectMsg(15.seconds, WebSocketActor.Found("mmrrrkkkk"))
+    }
+    "test 28: abc -> abd then rssttt -> rssuuu " in {
+      val runActor = system.actorOf(ExecutionRun.props)
+      runActor ! Run("abc", "abd", "rssttt")
+      // Most expected answer: rssuuu
+      expectMsg(50.seconds, WebSocketActor.Found("rssttd"))
+    }
+    // run codeletes verified
+    "test 29: abc -> abd then xpqdef -> xpqefg " in {
+      val runActor = system.actorOf(ExecutionRun.props)
+      runActor ! Run("abc", "abd", "xpqdef")
+      expectMsg(50.seconds, WebSocketActor.Found("xpqefg", 1871))
+    }*/
+    "test 30: abc -> abd then xyz -> xyd " in {
+      val runActor = system.actorOf(ExecutionRun.props)
+      runActor ! Run("abc", "abd", "xyz")
+      expectMsg(50.seconds, WebSocketActor.Found("xyd", 948))
+    }
+    /*"test 31: abc -> qbc then xyz -> qyz " in {
+      val runActor = system.actorOf(ExecutionRun.props)
+      runActor ! Run("abc", "qbc", "xyz")
+      expectMsg(50.seconds, WebSocketActor.Found("qyz"))
+    }
+    "test 32: rst -> rsu then xyz -> xyu " in {
+      val runActor = system.actorOf(ExecutionRun.props)
+      runActor ! Run("rst", "rsu", "xyz")
+      expectMsg(50.seconds, WebSocketActor.Found("xyu"))
+    }
+    "test 33: abc -> abd then glz -> hlz " in {
+      val runActor = system.actorOf(ExecutionRun.props)
+      runActor ! Run("abc", "abd", "glz")
+      expectMsg(50.seconds, WebSocketActor.Found("hlz"))
+    }*/
 
   }
 

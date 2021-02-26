@@ -1,22 +1,18 @@
 package controllers
 
-import java.nio.ByteBuffer
-
 import models._
 import akka.stream.ActorMaterializer
-import akka.actor.{ActorRef, ActorSystem, Props}
+import akka.actor.{ActorSystem}
 import akka.stream.scaladsl.Flow
 import akka.util.ByteString
 import boopickle.Default._
 import d2spa.shared.WebSocketMessages.{WebSocketMsgIn, WebSocketMsgOut}
 import com.google.inject.Inject
-import com.google.inject.name.Named
 import play.api._
 import play.api.http.websocket.{BinaryMessage, CloseCodes, CloseMessage, Message}
 import play.api.libs.streams.{ActorFlow, AkkaStreams}
 import play.api.mvc.WebSocket.MessageFlowTransformer
 import play.api.mvc._
-import play.api.libs.ws._
 import play.api.Logger
 
 import scala.util.{Failure, Success}

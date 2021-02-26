@@ -72,8 +72,14 @@ object ConceptMapping {
   }
   var conceptMappingRefs = Map.empty[String, ConceptMapping]
 
-  def conceptMappingsWithReps(conceptMappingReps: List[ConceptMappingRep]) =
-    conceptMappingReps.map(cm => ConceptMapping.conceptMappingRefs(cm.uuid))
+  def conceptMappingsWithReps(conceptMappingReps: List[ConceptMappingRep]) = {
+    conceptMappingReps.map(cmrep  => {
+      val cm = ConceptMapping.conceptMappingRefs(cmrep.uuid)
+      cm.obj1 = cmrep.obj1
+      cm.obj2 = cmrep.obj2
+      cm
+    })
+  }
 
 
   def get_concept_mapping_list(
@@ -135,8 +141,8 @@ class ConceptMapping(val description_type1: SlipNode,
                      val description_type2: SlipNode,
                      val descriptor1: SlipNode,
                      val descriptor2: SlipNode,
-                     val obj1: WorkspaceObjectRep,
-                     val obj2: WorkspaceObjectRep,
+                     var obj1: WorkspaceObjectRep,
+                     var obj2: WorkspaceObjectRep,
                      slipnetInfo: SlipnetInfo
                     ) {
   import ConceptMapping.{
@@ -259,7 +265,7 @@ class ConceptMapping(val description_type1: SlipNode,
   }
 
   def distinguishing_descriptor(log: LoggingAdapter, obj: WorkspaceObjectRep, descriptor: SlipNode): Boolean = {
-//    log.debug("distinguishing_descriptor " + descriptor);
+    log.debug(obj.uuid + " distinguishing_descriptor " + descriptor);
 
     if (descriptor== slipnetInfo.slipnetLetter) return false;
     if (descriptor== slipnetInfo.slipnetGroup) return false;
@@ -267,13 +273,13 @@ class ConceptMapping(val description_type1: SlipNode,
     if (slipnetInfo.slipnet_numbers.find(sn => sn == descriptor).isDefined) {
       false
     } else {
-//      log.debug("distinguishing_descriptor obs size " + obj.letterOrGroupCompanionReps.size);
+      log.debug("distinguishing_descriptor obs size " + obj.letterOrGroupCompanionReps.size);
 
       !obj.letterOrGroupCompanionReps.find(lgc => {
-//        log.debug("distinguishing_descriptor wo: " + lgc);
+        log.debug("distinguishing_descriptor wo: " + lgc);
 
         lgc.descriptions.find(d => {
-//          log.debug("distinguishing_descriptor d descriptor: " + d.descriptor);
+          log.debug("distinguishing_descriptor d descriptor: " + d.descriptor);
           d.descriptor.isDefined &&
             d.descriptor.get.id.equals(descriptor.id)
         }).isDefined

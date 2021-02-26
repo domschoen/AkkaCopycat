@@ -22,12 +22,10 @@ object TopDownBondScoutDirection {
 class TopDownBondScoutDirection(urgency: Int,
                                 workspace: ActorRef,
                                 slipnet: ActorRef,
-                                temperature: ActorRef,
-                                arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet, temperature)  {
+                                arguments: Option[Any]) extends Codelet(urgency, workspace, slipnet)  {
   import Codelet.{ Run, Finished }
   import models.Coderack.ChooseAndRun
   import models.Coderack.ProposeCorrespondence
-  import models.Temperature.{Register, TemperatureChanged, TemperatureResponse}
   import TopDownBondScoutDirection.SlipnetTopDownBondScoutDirection2Response
 
   def directionID() = arguments.get.asInstanceOf[String]
@@ -37,14 +35,13 @@ class TopDownBondScoutDirection(urgency: Int,
   var to_descriptor: Option[SlipNodeRep] = null
   var bond_facet: SlipNodeRep = null
   var bond_urgency: Double = 0.0
-  var runTemperature = 0.0
+  var runTemperature: models.Coderack.Temperatures  = null
 
   def receive = LoggingReceive {
     // to the browser
     case Run(initialString, modifiedString, targetString,t) =>
       log.debug(s"${getClass.getName}. Run with initial $initialString, modified: $modifiedString and target: $targetString")
       coderack = sender()
-      temperature ! Register(self)
       runTemperature = t
       workspace ! GoWithTopDownBondScoutDirection(directionID, t)
 
@@ -78,12 +75,6 @@ class TopDownBondScoutDirection(urgency: Int,
     case WorkspaceProposeBondResponse(bondID: String) =>
       coderack ! ProposeBond(bondID, bond_urgency)
 
-
-    case TemperatureResponse(value) =>
-      t = value
-
-    case TemperatureChanged(value) =>
-      t = value
 
     case Finished =>
       workspace ! models.Workspace.Step(runTemperature)

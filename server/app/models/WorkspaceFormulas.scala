@@ -2,6 +2,7 @@ package models
 
 import akka.actor.ActorRef
 import akka.event.LoggingAdapter
+import models.Coderack.Temperatures
 import models.SlipNode.SlipNodeRep
 
 object WorkspaceFormulas {
@@ -40,7 +41,7 @@ object WorkspaceFormulas {
   }
 */
 
-  def temperature_adjusted_probability(value: Double, temperature: Double): Double = {
+  def temperature_adjusted_probability(value: Double, temperature: Temperatures): Double = {
     Formulas.temperature_adjusted_probability(value, temperature)
   }
 
@@ -265,22 +266,22 @@ object WorkspaceFormulas {
  */
 
 
-  def local_relevance(wString: WorkspaceString, categoryID: Option[String], bondFlavor: Bond => Option[SlipNodeRep]): Double =
+  def local_relevance(log: LoggingAdapter, wString: WorkspaceString, categoryID: Option[String], bondFlavor: Bond => Option[SlipNodeRep]): Double =
     // is a function of how many bonds in the string have this bond category
 
     if (wString.objects.size == 1) 0.0 else {
       val oll = wString.objects.filter(wo => !wo.spans_string).size
       val bc = wString.objects.filter(wo => {
-        System.out.println("local_bond_category_relevance wo " + wo);
+        log.debug("local_bond_category_relevance wo " + wo);
         val bcs = if (wo.right_bond.isDefined) bondFlavor(wo.right_bond.get) else "null"
-        System.out.println("local_bond_category_relevance wo.spans_string " + wo.spans_string
+        log.debug("local_bond_category_relevance wo.spans_string " + wo.spans_string
           + " wo.right_bond.isDefined " + wo.right_bond.isDefined + " bondFlavor(wo.right_bond.get) " + bcs);
 
         !wo.spans_string &&
           wo.right_bond.isDefined &&
           bondFlavor(wo.right_bond.get).map(_.id) == categoryID
       }).size
-      System.out.println("local_bond_category_relevance bc " + bc + " oll " + oll);
+      log.debug("local_bond_category_relevance bc " + bc + " oll " + oll);
 
       100.0 * bc / (oll-1.0)
     }

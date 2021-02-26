@@ -6,26 +6,9 @@ import akka.actor.ActorLogging
 import akka.event.LoggingReceive
 import akka.actor.ActorRef
 import akka.actor.Props
-import com.typesafe.config.ConfigFactory
-
-import scala.xml.Utility
-import play.api.Logger
-import play.api.libs.ws._
-import play.api.libs.json._
-import play.api.libs.json.Reads._
-import play.api.libs.functional.syntax._
-
-import scala.concurrent.Future
-import scala.concurrent.duration._
-import play.api.Play.current
-
-import javax.inject._
-import models.SlipNode.SlipNodeRep
-import models.Temperature.CheckClamped
-import models.Workspace.{GetNumCodeletsResponse, Initialize, SlippageListShell, UpdateEverythingFollowUp}
+import models.Workspace.{GetNumCodeletsResponse, Initialize, SlippageListShell}
 import models.codelet.CodeletType
 import models.codelet.Codelet
-import play.api.Configuration
 import play.api.libs.concurrent.InjectedActorSupport
 
 import scala.collection.mutable.ListBuffer
@@ -34,17 +17,17 @@ import scala.collection.mutable.ListBuffer
 
 
 object Coderack {
-  def props(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, executionRun: ActorRef): Props = Props(new Coderack(workspace, slipnet, temperature, executionRun))
+  def props(workspace: ActorRef, slipnet: ActorRef, executionRun: ActorRef): Props =
+    Props(new Coderack(workspace, slipnet, executionRun))
 
   case class Run(initialString: String, modifiedString: String, targetString: String)
   case class FinishInitializingWorkspaceStrings(number_of_objects: Int)
   case class PostInitialCodelets(number_of_objects: Int)
-  case class SlipnetUpdateEverythingResponse(t: Double)
-  case class ProcessChooseAndRun(number_of_objects: Int, temperature: Double)
-  case class ChooseAndRun(number_of_objects: Int, temperature: Double)
-  case class ChooseAndRun2(temperature: Double)
+  case class SlipnetUpdateEverythingResponse(t: Temperatures)
+  case class ProcessChooseAndRun(number_of_objects: Int, temperature: Temperatures)
+  case class ChooseAndRun(number_of_objects: Int, temperature: Temperatures)
+  case class ChooseAndRun2(temperature: Temperatures)
   case object ChooseAndRun3
-  case object Finish
   case object Step
   case object Initializing
   case class Post(codelet: CodeletWrapper, rndOpt: Option[Double]) // , name: String)
@@ -63,8 +46,13 @@ object Coderack {
   case class PostGroupBuilder(groupID: String, strength: Double)
   case class PostCorrespondenceBuilder(correspondenceID: String, strength: Double)
   case class PostRuleBuilder(ruleID: String, strength: Double)
-  case class PostCodelets(codeletToPost: List[(String,Either[Double, Int], Option[String], Option[Double])], slippageListShell: SlippageListShell, t: Double)
-  case class GetNumCodelets(t:Double)
+  case class PostCodelets(codeletToPost: List[(String,Either[Double, Int], Option[String], Option[Double])], slippageListShell: SlippageListShell, t: Temperatures)
+  case class GetNumCodelets(t:Temperatures)
+  case class Found(answer: String)
+  case class RuleTranslatorTemperatureUpdate(t: Temperatures)
+
+  case class Temperatures(value: Temperature, formulaT: Double = 100.0, actualT: Double = 100.0, clamp_temperature: Boolean)
+  case class Temperature(value: Double = 100.0, clamped: Boolean = false, clamp_time: Int = 30)
 
   case class CodeletWrapper (
                               codelet: ActorRef,
@@ -75,7 +63,7 @@ object Coderack {
 }
 
 
-class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, executionRun: ActorRef) extends Actor with ActorLogging with InjectedActorSupport {
+class Coderack(workspace: ActorRef, slipnet: ActorRef, executionRun: ActorRef) extends Actor with ActorLogging with InjectedActorSupport {
   import Coderack._
   import Codelet.Finished
   var woAppActor: Option[ActorRef] = None
@@ -100,7 +88,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
     CodeletType.ReplacementFinder,
     CodeletType.BottomUpCorrespondenceScout)
   var number_of_objects = 0
-  var runTemperature: Double = 100.0
+  var runTemperature: Temperatures = null
   var initialString = ""
   var modifiedString =""
   var targetString = ""
@@ -117,7 +105,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
   protected def createCodelet(codeletType: CodeletType, urgency: Int, arguments: Option[Any]) = {
     val name = Codelet.stringWithCodeletType(codeletType)
 //    log.debug(s"create codelet $name urgency $urgency time_stamp $codelets_run")
-    val codelet = context.actorOf(Codelet.props(codeletType, urgency, workspace, slipnet, temperature, arguments))
+    val codelet = context.actorOf(Codelet.props(codeletType, urgency, workspace, slipnet, arguments))
     CodeletWrapper(codelet, codelets_run, urgency, name)
   }
 
@@ -165,29 +153,21 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
 
 
   private def initializing: Receive = {
-    case Initializing => {
+    case Initializing =>
       log.debug("Initializing")
       reset()
-      temperature ! Temperature.GetTemperature
-    }
-
-    case Temperature.TemperatureResponse(t) =>
-      log.debug("TemperatureResponse " + t)
-      runTemperature = t
+      runTemperature = Temperatures(Temperature(100.0),100.0,100.0,false)
 
       Random.setseed(0)
 
       // At beginning we post initial codelets because anyway codelets is empty
       context.become(startingRun)
-      self ! ProcessChooseAndRun(number_of_objects,t)
+      self ! ProcessChooseAndRun(number_of_objects,runTemperature)
 
 
   }
 
   private def startingRun: Receive = {
-        case Finish =>
-          temperature ! Temperature.GetClampTime
-          context.become(finishRun)
 
         case PostInitialCodelets(number_of_objects) =>
           log.debug("PostInitialCodelets " + number_of_objects)
@@ -231,7 +211,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
 
 
         case ChooseAndRun(nbobjs, temperature) =>
-          log.debug(s"mainloop | codelets_run ${codelets_run} clamp_time ${Temperature.clamp_time} " +
+          log.debug(s"mainloop | codelets_run ${codelets_run} clamp_time ${temperature.value.clamp_time}" +
             s" last_update ${last_update} time_step_length ${Slipnet.time_step_length}")
 
           //if(Random.rndseed > 1998) {
@@ -243,6 +223,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
 
 
         case ProcessChooseAndRun(nbobjs, temperature) =>
+          log.debug("ProcessChooseAndRun")
           number_of_objects = nbobjs
           // How to ask all codelets for the urgency for having the sum of all codeleets urgencies
           // https://medium.com/kenshoos-engineering-blog/assembling-requests-from-multiple-actors-44434c18e69d
@@ -252,16 +233,18 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
 //          if (codelets_run > 345) {
 //            log.debug("Stop")
 //          } else {
-            // TODO
-            //temperature ! CheckClamped(codelets_run)
-            if (((codelets_run - last_update) >= Slipnet.time_step_length) || (codelets_run == 0)) {
-              log.debug("update_Everything")
-              workspace ! models.Workspace.UpdateEverything(codelets_run, temperature)
-              //update_Everything();
-            } else {
-              self ! ChooseAndRun2(temperature)
-            }
-//          }
+          val newT = if (codelets_run >= temperature.value.clamp_time) {
+            temperature.copy(value = temperature.value.copy(clamped = false))
+          } else temperature
+
+          if (((codelets_run - last_update) >= Slipnet.time_step_length) || (codelets_run == 0)) {
+            log.debug("update_Everything")
+            workspace ! models.Workspace.UpdateEverything(codelets_run, newT)
+            //update_Everything();
+          } else {
+            self ! ChooseAndRun2(newT)
+          }
+
 
 
 
@@ -286,7 +269,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
           // let's change the view point: The urgency of a codelet is only in the context of a coderack => not a property of the codelet
           log.debug("choose T: " + runTemperature);
 
-          val scale: Double = (100.0 - runTemperature + 10.0) / 15.0
+          val scale: Double = (100.0 - runTemperature.formulaT + 10.0) / 15.0
           log.debug("Choose codelet codelets size " + codelets.size + " scale " + scale)
 
           val urgues = codelets.map(c => c.urgency)
@@ -412,6 +395,14 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
 
         case GetNumCodelets(t) =>
           sender() ! GetNumCodeletsResponse(codelets.size, t)
+
+        case Coderack.Found(answer) =>
+          executionRun ! ExecutionRun.Found(answer, codelets_run)
+
+        case RuleTranslatorTemperatureUpdate(t: Temperatures) =>
+          val newT = t.copy(value = t.value.copy(clamped = true, clamp_time = codelets_run + 100), formulaT = 100.0)
+          workspace ! models.Workspace.Step(newT)
+
   }
 
   def total_num_of_codelets() = {
@@ -422,22 +413,6 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
   }
 
 
-
-  private  def finishRun: Receive = {
-    case Temperature.ClampTime(clampTime) =>
-      if (codelets_run >= clampTime) {
-        temperature ! Temperature.SetClamped(false)
-      }
-      if ((codelets_run-last_update)>= Slipnet.time_step_length) {
-        executionRun ! ExecutionRun.UpdateEverything
-        last_update = codelets_run
-      }
-      if (codelets.size == 0) {
-        self ! PostInitialCodelets
-        context.become(receive)
-      }
-  }
-
   private def chooseOldCodelet(rndOpt: Option[Double]): Option[CodeletWrapper] = {
     // selects an old codelet to remove from the coderack
     // more likely to select lower urgency codelets
@@ -445,7 +420,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, temperature: ActorRef, ex
     if (codelets.isEmpty) {
       None
     } else {
-      var urgency_values = codelets.map( c =>  {
+      val urgency_values = codelets.map( c =>  {
         if (codelets_run == 225) {
           log.debug("choose_old_codelet c.time_stamp " + c.time_stamp + " c.urgency " + c.urgency + " name " + c.name);
         }

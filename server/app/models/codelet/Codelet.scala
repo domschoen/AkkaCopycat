@@ -1,6 +1,7 @@
 package models.codelet
 
 import akka.actor.{Actor, ActorLogging, ActorRef, Props}
+import models.Coderack.Temperatures
 import models.Random
 import play.api.libs.concurrent.InjectedActorSupport
 
@@ -71,13 +72,13 @@ object CodeletTypeString {
 }
 
 object Codelet {
-  case class Run(initialString: String, modifiedString: String, targetString: String, runTemperature: Double)
+  case class Run(initialString: String, modifiedString: String, targetString: String, runTemperature: Temperatures)
   case class PrepareDescriptionResponse(descriptionID: String, urgency: Double)
 
   case object Finished
 
-  def props(codeletType: CodeletType, urgency: Int, workspace: ActorRef,  slipnet: ActorRef,  temperature: ActorRef, arguments: Option[Any]): Props =
-    Props(Codelet(codeletType, urgency, workspace, slipnet, temperature, arguments))
+  def props(codeletType: CodeletType, urgency: Int, workspace: ActorRef,  slipnet: ActorRef,  arguments: Option[Any]): Props =
+    Props(Codelet(codeletType, urgency, workspace, slipnet, arguments))
 
 
   def flipCoin(value: Double): Boolean = {
@@ -139,34 +140,33 @@ object Codelet {
              urgency: Int,
              workspace: ActorRef,
              slipnet: ActorRef,
-             temperature: ActorRef,
              arguments: Option[Any]
            ): Codelet =
     codeletType match {
-      case CodeletType.BondBuilder => new BondBuilder(urgency, workspace, slipnet, temperature, arguments)
-      case CodeletType.DescriptionBuilder => new DescriptionBuilder(urgency, workspace, slipnet, temperature, arguments)
-      case CodeletType.BottomUpBondScout => new BottomUpBondScout(urgency,  workspace, slipnet, temperature, arguments)
-      case CodeletType.ReplacementFinder => new ReplacementFinder(urgency,  workspace, slipnet, temperature, arguments)
-      case CodeletType.BottomUpCorrespondenceScout => new BottomUpCorrespondenceScout(urgency,  workspace, slipnet, temperature, arguments)
-      case CodeletType.CorrespondenceStrengthTester => new CorrespondenceStrengthTester(urgency,  workspace, slipnet, temperature, arguments)
-      case CodeletType.DescriptionStrengthTester => new DescriptionStrengthTester(urgency,  workspace, slipnet, temperature, arguments)
-      case CodeletType.BondStrengthTester => new BondStrengthTester(urgency,  workspace, slipnet, temperature, arguments)
-      case CodeletType.GroupStrengthTester => new GroupStrengthTester(urgency,  workspace, slipnet, temperature, arguments)
-      case CodeletType.GroupBuilder => new GroupBuilder(urgency,  workspace, slipnet, temperature, arguments)
-      case CodeletType.CorrespondenceBuilder => new CorrespondenceBuilder(urgency,  workspace, slipnet, temperature, arguments)
-      case CodeletType.RuleStrengthTester => new RuleStrengthTester(urgency,  workspace, slipnet, temperature, arguments)
-      case CodeletType.RuleBuilder => new RuleBuilder(urgency,  workspace, slipnet, temperature, arguments)
-      case CodeletType.TopDownBondScoutDirection => new TopDownBondScoutDirection(urgency,  workspace, slipnet, temperature, arguments)
-      case CodeletType.TopDownGroupScoutDirection => new TopDownGroupScoutDirection(urgency,  workspace, slipnet, temperature, arguments)
-      case CodeletType.TopDownBondScoutCategory => new TopDownBondScoutCategory(urgency,  workspace, slipnet, temperature, arguments)
-      case CodeletType.TopDownGroupScoutCategory => new TopDownGroupScoutCategory(urgency,  workspace, slipnet, temperature, arguments)
-      case CodeletType.TopDownDescriptionScout => new TopDownDescriptionScout(urgency,  workspace, slipnet, temperature, arguments)
-      case CodeletType.Breaker => new Breaker(urgency,  workspace, slipnet, temperature, arguments)
-      case CodeletType.RuleTranslator => new RuleTranslator(urgency,  workspace, slipnet, temperature, arguments)
-      case CodeletType.RuleScout => new RuleScout(urgency,  workspace, slipnet, temperature, arguments)
-      case CodeletType.ImportantObjectCorrespondenceScout => new ImportantObjectCorrespondenceScout(urgency,  workspace, slipnet, temperature, arguments)
-      case CodeletType.GroupScoutWholeString => new GroupScoutWholeString(urgency,  workspace, slipnet, temperature, arguments)
-      case CodeletType.BottomUpDescriptionScout => new BottomUpDescriptionScout(urgency,  workspace, slipnet, temperature, arguments)
+      case CodeletType.BondBuilder => new BondBuilder(urgency, workspace, slipnet,  arguments)
+      case CodeletType.DescriptionBuilder => new DescriptionBuilder(urgency, workspace, slipnet,  arguments)
+      case CodeletType.BottomUpBondScout => new BottomUpBondScout(urgency,  workspace, slipnet,  arguments)
+      case CodeletType.ReplacementFinder => new ReplacementFinder(urgency,  workspace, slipnet,  arguments)
+      case CodeletType.BottomUpCorrespondenceScout => new BottomUpCorrespondenceScout(urgency,  workspace, slipnet,  arguments)
+      case CodeletType.CorrespondenceStrengthTester => new CorrespondenceStrengthTester(urgency,  workspace, slipnet,  arguments)
+      case CodeletType.DescriptionStrengthTester => new DescriptionStrengthTester(urgency,  workspace, slipnet,  arguments)
+      case CodeletType.BondStrengthTester => new BondStrengthTester(urgency,  workspace, slipnet,  arguments)
+      case CodeletType.GroupStrengthTester => new GroupStrengthTester(urgency,  workspace, slipnet,  arguments)
+      case CodeletType.GroupBuilder => new GroupBuilder(urgency,  workspace, slipnet,  arguments)
+      case CodeletType.CorrespondenceBuilder => new CorrespondenceBuilder(urgency,  workspace, slipnet,  arguments)
+      case CodeletType.RuleStrengthTester => new RuleStrengthTester(urgency,  workspace, slipnet,  arguments)
+      case CodeletType.RuleBuilder => new RuleBuilder(urgency,  workspace, slipnet,  arguments)
+      case CodeletType.TopDownBondScoutDirection => new TopDownBondScoutDirection(urgency,  workspace, slipnet,  arguments)
+      case CodeletType.TopDownGroupScoutDirection => new TopDownGroupScoutDirection(urgency,  workspace, slipnet,  arguments)
+      case CodeletType.TopDownBondScoutCategory => new TopDownBondScoutCategory(urgency,  workspace, slipnet,  arguments)
+      case CodeletType.TopDownGroupScoutCategory => new TopDownGroupScoutCategory(urgency,  workspace, slipnet,  arguments)
+      case CodeletType.TopDownDescriptionScout => new TopDownDescriptionScout(urgency,  workspace, slipnet,  arguments)
+      case CodeletType.Breaker => new Breaker(urgency,  workspace, slipnet,  arguments)
+      case CodeletType.RuleTranslator => new RuleTranslator(urgency,  workspace, slipnet,  arguments)
+      case CodeletType.RuleScout => new RuleScout(urgency,  workspace, slipnet,  arguments)
+      case CodeletType.ImportantObjectCorrespondenceScout => new ImportantObjectCorrespondenceScout(urgency,  workspace, slipnet,  arguments)
+      case CodeletType.GroupScoutWholeString => new GroupScoutWholeString(urgency,  workspace, slipnet,  arguments)
+      case CodeletType.BottomUpDescriptionScout => new BottomUpDescriptionScout(urgency,  workspace, slipnet,  arguments)
 
 
     }
@@ -177,13 +177,11 @@ object Codelet {
 
 abstract class Codelet(u: Int,
                        workspace: ActorRef,
-                       slipnet: ActorRef,
-                       temperature: ActorRef
+                       slipnet: ActorRef
                       ) extends Actor with ActorLogging with InjectedActorSupport {
   var woAppActor: Option[ActorRef] = None
   var urgency = u
   var coderack: ActorRef = null
-  var t = 100.0
 
 
   override def toString: String = getClass.getName

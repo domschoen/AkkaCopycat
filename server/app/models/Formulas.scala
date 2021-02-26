@@ -1,6 +1,7 @@
 package models
 
 import akka.event.LoggingAdapter
+import models.Coderack.Temperatures
 
 object Formulas {
 
@@ -16,10 +17,10 @@ object Formulas {
 
   def min(x: Double, y: Double): Double = if (x<y) x else y
 
-  def temperatureAdjustedValue(value: Double, temperature: Double) = Math.pow(value,((100.0-temperature)/30.0)+0.5)
+  def temperature_adjusted_value(value: Double, temperature: Temperatures) = Math.pow(value,((100.0-temperature.formulaT)/30.0)+0.5)
 
 
-  def temperature_adjusted_probability(value: Double, temperature: Double): Double ={
+  def temperature_adjusted_probability(value: Double, temperature: Temperatures): Double ={
     // if the temperature is 0, no adjustment is made
     // otherwise, values above .5 are lowered and values below .5 are raised
     //System.out.println("the log of 100,10"+Math.pow(100.0,0.1));
@@ -36,7 +37,7 @@ object Formulas {
     }
     else if (value>0.5){
       //gets raised the lower the temperature
-      rval = max(1.0-((1.0-value)+((10-Math.sqrt(100.0-temperature))/
+      rval = max(1.0-((1.0-value)+((10-Math.sqrt(100.0-temperature.value.value))/
         100.0)*(1.0 - (1.0 - value))),0.5);
 
     }

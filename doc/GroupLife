@@ -1,0 +1,148 @@
+----- java
+gr 928adb20-84eb-4ca9-adf6-b7d5dee24be2 group (3-4) ws b2f34693-9f25-4ec1-b435-e58e629bd80c string.objects [letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (3-4), group (1-2), group (5-6), group (1-4)]
+gr 7a96a751-932b-40c2-835b-cb8bbfe20253 group (5-6) ws 6623718d-6b64-4d72-bd81-62b5a5e59769 string.objects [letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (5-6), group (1-2), group (3-4), group (3-6), group (1-6)]
+gr 1363d14d-11c2-43d2-9105-25e316731df9 group (1-2) ws 6623718d-6b64-4d72-bd81-62b5a5e59769 string.objects [letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (5-6), group (1-2), group (3-4), group (3-6), group (1-6)]
+gr 6fc136c2-e3c9-4a8c-9640-0a8900affd3e group (1-2) ws b2f34693-9f25-4ec1-b435-e58e629bd80c string.objects [letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (3-4), group (1-2), group (5-6), group (1-4)]
+gr e6334c3f-cc6a-4d9b-8820-fc07066263ca group (5-6) ws b2f34693-9f25-4ec1-b435-e58e629bd80c string.objects [letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (3-4), group (1-2), group (5-6), group (1-4)]
+gr e0fd40f1-df8f-4a94-a973-ea27e39f1a6f group (3-4) ws 6623718d-6b64-4d72-bd81-62b5a5e59769 string.objects [letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (5-6), group (1-2), group (3-4), group (3-6), group (1-6)]
+gr d2aeade2-12f6-4a05-b483-cf7c0fe68dd1 group (3-6) ws 6623718d-6b64-4d72-bd81-62b5a5e59769 string.objects [letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (5-6), group (1-2), group (3-4), group (3-6), group (1-6)]
+gr e8ed60fb-80c3-4e13-9fc7-2dd11d0a41d4 group (1-6) ws 6623718d-6b64-4d72-bd81-62b5a5e59769 string.objects [letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (5-6), group (1-2), group (3-4), group (3-6), group (1-6)]
+gr 39886db8-4c7f-4618-b076-568f2c319138 group (1-4) ws b2f34693-9f25-4ec1-b435-e58e629bd80c string.objects [letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (3-4), group (1-2), group (5-6), group (1-4)]
+c a0e1e15d-e9e9-4b03-9cc7-94f2cdd47116 Correspondence between letter (1)1 and letter (1)1
+c fc6897b1-ab4e-4994-9749-0da0aa602b0f Correspondence between group (3-4) and group (3-4)
+c 39a82249-7544-49ec-8ac1-fe55d6f2fcd5 Correspondence between group (1-2) and group (1-2)
+c 080f6f12-bbc0-4c64-98d1-beefd5471f84 Correspondence between letter (6)6 and letter (6)6
+
+
+213194
+gr4 9afff49f-b693-4a58-875c-4b062e648bfd group (1-2)
+gr9 group (1-4) 708ad400-86af-4ab0-933f-39d95d8fe71f
+
+
+Create Group 79dcc021-c2b8-4935-ab8f-3c412f173ead
+created at codelets_run 316
+
+
+codelets_run 936
+79dcc021-c2b8-4935-ab8f-3c412f173ead breaking group
+
+
+codelets_run 950
+Add to ws gr9 9173b139-aa81-44bf-afb2-c03b2dcb5a82 of group gr9 708ad400-86af-4ab0-933f-39d95d8fe71f string.objects [letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (3-4), group (1-2), group (5-6)]
+
+
+----- aka
+
+gr 5cc04d2d-cbe3-4062-ab96-86664a866894 group (3-4) ws 51b80b08-f94f-4b80-b222-a515282bb556 string.objects ListBuffer(letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (3-4), group (1-2), group (5-6), group (1-4))
+gr 1e77b111-115c-4fbb-ad35-9393ccacfff8 group (5-6) ws 80b560bb-e053-422e-800e-4b5fb62e14b9 string.objects ListBuffer(letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (5-6), group (1-2), group (3-4), group (3-6), group (1-6))
+gr 06d83e87-cff3-4a12-afe0-5781b3a63041 group (1-2) ws 80b560bb-e053-422e-800e-4b5fb62e14b9 string.objects ListBuffer(letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (5-6), group (1-2), group (3-4), group (3-6), group (1-6))
+gr 14c2ca7c-c8c6-4020-94d6-48559b85cb63 group (1-2) ws 51b80b08-f94f-4b80-b222-a515282bb556 string.objects ListBuffer(letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (3-4), group (1-2), group (5-6), group (1-4))
+gr ca51d88a-1083-471a-8f41-a30966f0b408 group (5-6) ws 51b80b08-f94f-4b80-b222-a515282bb556 string.objects ListBuffer(letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (3-4), group (1-2), group (5-6), group (1-4))
+gr a73ae0f3-2409-4ac1-8b8a-2158d8babf03 group (3-4) ws 80b560bb-e053-422e-800e-4b5fb62e14b9 string.objects ListBuffer(letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (5-6), group (1-2), group (3-4), group (3-6), group (1-6))
+gr aaa2ad98-9f53-4c1c-8b7c-eee4dd950584 group (3-6) ws 80b560bb-e053-422e-800e-4b5fb62e14b9 string.objects ListBuffer(letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (5-6), group (1-2), group (3-4), group (3-6), group (1-6))
+gr b58c49f4-d0fb-448f-b4ee-4c707e11a2f1 group (1-6) ws 80b560bb-e053-422e-800e-4b5fb62e14b9 string.objects ListBuffer(letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (5-6), group (1-2), group (3-4), group (3-6), group (1-6))
+gr a892aef2-f2e5-4084-a119-d4ffb51dc152 group (1-4) ws 51b80b08-f94f-4b80-b222-a515282bb556 string.objects ListBuffer(letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (3-4), group (1-2), group (5-6), group (1-4))
+c a0eb091d-4367-42b7-b258-937be7c5a4c6 Correspondence between letter (1)1 and letter (1)1
+c ade22a01-232c-4946-9b08-779890af65d4 Correspondence between group (3-4) and group (3-4)
+c a239cc34-0b50-4b8d-8e14-2de70726687f Correspondence between group (1-2) and group (1-2)
+c f9e41912-d0a9-45af-b64a-f58bd063783a Correspondence between letter (6)6 and letter (6)6
+
+Update everything. 124480
+c1 a0eb091d-4367-42b7-b258-937be7c5a4c6 c2 a239cc34-0b50-4b8d-8e14-2de70726687f
+
+
+build_group:
+=> group added to group.string.objects
+
+
+275789
+gr4 14c2ca7c-c8c6-4020-94d6-48559b85cb63 (group (1-2)) as letterOrGroupCompanions = ws.object filtered
+
+ws: 51b80b08-f94f-4b80-b222-a515282bb556
+has 
+group (3-4)
+group (5-6)
+group (1-6) but should be group (1-4)
+3ff795f9-9c39-463d-9c5c-5860bea0d281
+
+
+275303 OK
+letterOrGroupCompanions 14c2ca7c-c8c6-4020-94d6-48559b85cb63 ws 51b80b08-f94f-4b80-b222-a515282bb556
+wo false 0d1f5307-7c54-41d1-a57e-440cad3bbcd2 letter (1)1
+wo false b2512c3f-96b2-46ac-abf5-eaa49523ff7d letter (2)2
+wo false 1feed43d-6c04-4e99-a010-7c89dd056a4f letter (3)3
+wo false cb4f6bdf-b104-4274-89df-9ce4c4f61dec letter (4)4
+wo false 8dc58c27-f641-4cc8-a796-baafc3df92fa letter (5)5
+wo false cd79a163-e168-44d0-97d2-54127c2f449b letter (6)6
+wo true 5cc04d2d-cbe3-4062-ab96-86664a866894 group (3-4)
+wo false 14c2ca7c-c8c6-4020-94d6-48559b85cb63 group (1-2)
+wo true ca51d88a-1083-471a-8f41-a30966f0b408 group (5-6)
+wo true a892aef2-f2e5-4084-a119-d4ffb51dc152 group (1-4)
+
+
+Where is the objects modified
+
+1) 
+  def build_group() = {
+    log.debug("Add to ws " + ws.uuid + " of group " + uuid + " string.objects " + ws.objects)
+    ws.objects += this
+    
+2)
+  def break_group(gr: Group): Unit = {
+    objects -= gr
+    log.debug(gr.uuid + " ws " + uuid + " updated to " + objects)
+
+
+
+
+
+/// not interesting because same group (add to itself
+Add to ws cfb8d342-142a-4b53-91ad-31d94fae47b4 of group 3b2b98ae-f6f4-424c-a0ed-46a9861c2a82 string.objects ListBuffer(letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (3-4))
+mainloop | codelets_run 226
+
+
+created at codelets_run 316
+Create Group d794bc37-9243-4446-b12c-8f18b3293ead
+
+
+/// When added to ws.objects
+codelets_run 351
+Add to ws c2912dc8-c03b-493a-ba2b-841cb60d3fe0 of group ef01095e-2629-4432-8b2b-9038615497ec string.objects ListBuffer(letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (3-4), group (1-2), group (5-6))
+
+
+codelets_run 936
+// break group
+// when removed ?
+0171d6e1-538c-418b-b751-0cbce94207af breaking group
+0171d6e1-538c-418b-b751-0cbce94207af ws c2912dc8-c03b-493a-ba2b-841cb60d3fe0 updated to ListBuffer(
+letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (3-4), group (1-2), group (5-6))
+
+
+
+codelets_run 946
+TopDownGroupScoutCategory
+
+
+
+codelets_run 175
+Add to ws c2912dc8-c03b-493a-ba2b-841cb60d3fe0 of group1 73bca31e-f001-4ae1-9620-6339abc12895 string.objects ListBuffer(letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6)
+
+mainloop | codelets_run 225
+Add to ws c2912dc8-c03b-493a-ba2b-841cb60d3fe0 of group4 f0bc2a90-53e0-4a61-9159-e5c6a0b6a403 string.objects ListBuffer(letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (3-4))
+
+
+
+codelets_run 295
+Add to ws c2912dc8-c03b-493a-ba2b-841cb60d3fe0 of group5 460d33ee-9396-47b6-87d3-cff22426ebe3 string.objects ListBuffer(letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (3-4), group (1-2))
+
+
+/// oups
+codelets_run 350
+Add to ws c2912dc8-c03b-493a-ba2b-841cb60d3fe0 of group 0171d6e1-538c-418b-b751-0cbce94207af string.objects ListBuffer(letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (3-4), group (1-2), group (5-6))
+
+codelets_run 950
+Add to ws c2912dc8-c03b-493a-ba2b-841cb60d3fe0 of group9 dc8f2cb2-d115-4b5d-bd47-b64b98da52b2 string.objects ListBuffer(letter (1)1, letter (2)2, letter (3)3, letter (4)4, letter (5)5, letter (6)6, group (3-4), group (1-2), group (5-6))
+
+
+mainloop | codelets_run 1768 
+
