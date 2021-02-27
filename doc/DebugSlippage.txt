@@ -42,11 +42,28 @@ correspondence-builder
 
 
 java
+
+relevant_distinguishing_cms letter -> letter relevant true distinguishing false
+relevant_distinguishing_cms C -> C relevant true distinguishing true
+relevant_distinguishing_cms rightmost -> leftmost relevant true distinguishing true
+
+build_correspondence()
 4f04c621-63ce-4ede-bbff-1e4fd1474543
 Correspondence accessory_concept_mapping_list 4f04c621-63ce-4ede-bbff-1e4fd1474543[leftmost -> rightmost]
 
 akka
 
+relevant_distinguishing_cms 5d44d37a-d827-423e-b19d-a2cf1b5254ee letter -> letter label:Some(id) label activation: 0.09765625 relevant true distinguishing false
+relevant_distinguishing_cms 5d44d37a-d827-423e-b19d-a2cf1b5254ee C -> C label:Some(id) label activation: 0.09765625 relevant true distinguishing true
+relevant_distinguishing_cms 5d44d37a-d827-423e-b19d-a2cf1b5254ee rightmost -> leftmost label:Some(op) label activation: 0.0 relevant true distinguishing true
+
+
+build_correspondence 2: add mappings to accessory-concept-mapping-list 5d44d37a-d827-423e-b19d-a2cf1b5254ee
+build_correspondence 2: accessory_concept_mapping_list List(leftmost -> rightmost label:Some(op) label activation: 0.0)
+
+SlipnetGoWithCorrespondenceBuilder4Response
+GoWithCorrespondenceBuilder7
+GoWithCorrespondenceBuilder7Response
 
 
 
