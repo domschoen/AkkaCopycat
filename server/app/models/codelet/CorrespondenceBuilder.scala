@@ -219,6 +219,8 @@ class CorrespondenceBuilder(urgency: Int,
 
     case SlipnetGoWithCorrespondenceBuilder5Response(accessory_concept_mapping_list) =>
       log.debug("SlipnetGoWithCorrespondenceBuilder5Response")
+      log.debug("Correspondence accessory_concept_mapping_list " + corresponsdenceID +  accessory_concept_mapping_list);
+
       workspace ! GoWithCorrespondenceBuilder8(corresponsdenceID, accessory_concept_mapping_list)
 
     case GoWithCorrespondenceBuilder8Response(cms) =>

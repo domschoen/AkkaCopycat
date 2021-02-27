@@ -2,7 +2,7 @@ package models
 
 import akka.actor.Actor
 import akka.actor.ActorLogging
-import akka.event.LoggingReceive
+import akka.event.{LoggingAdapter, LoggingReceive}
 import akka.actor.ActorRef
 import akka.actor.Props
 import models.Workspace.{CommonSubProcessing, DataForStrengthUpdateResponse, InitializeWorkspaceStringsResponse, PostTopBottomCodeletsGetInfoResponse, SlipnetLookAHeadForNewBondCreationResponse, SlippageListShell, UpdateEverythingFollowUp}
@@ -232,14 +232,14 @@ object Slipnet {
   val time_step_length = 15
 
 
-  def choose_slipnode_by_conceptual_depth(slist: List[SlipNode], t: Temperatures): Option[SlipNode] = {
+  def choose_slipnode_by_conceptual_depth(log: LoggingAdapter , slist: List[SlipNode], t: Temperatures): Option[SlipNode] = {
     if (slist.size == 0) {
       None
     } else {
       val object_probs = slist.map(s => {
         Formulas.temperature_adjusted_probability(s.conceptual_depth, t)
       })
-      val index = Utilities.valueProportionalRandomIndexInValueList(object_probs)
+      val index = Utilities.valueProportionalRandomIndexInValueList(log,object_probs)
       Some(slist(index))
     }
   }
@@ -1074,7 +1074,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
 
       } else {
         val v = hpl.map(sl => sl.degree_of_association() * sl.to_node.activation )
-        val chosen: SlipnetLink = hpl(Utilities.valueProportionalRandomIndexInValueList(v))
+        val chosen: SlipnetLink = hpl(Utilities.valueProportionalRandomIndexInValueList(log, v))
         val chosen_property = chosen.to_node
 
         val chosen_propertyRep = chosen_property.slipNodeRep()
@@ -1125,7 +1125,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
       val mydirection: SlipNodeRep = dir match {
         case None =>
           val v = List(left.activation, right.activation)
-          if (Utilities.valueProportionalRandomIndexInValueList(v) == 0) left.slipNodeRep() else right.slipNodeRep()
+          if (Utilities.valueProportionalRandomIndexInValueList(log, v) == 0) left.slipNodeRep() else right.slipNodeRep()
         case Some(value) => value
       }
       log.debug("mydirection " + mydirection);
@@ -1297,7 +1297,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
     case SlipnetGoWithImportantObjectCorrespondenceScout(rds, t) =>
       log.debug("SlipnetGoWithImportantObjectCorrespondenceScout")
       val relevantDescriptors = rds.map(rd => slipNodeRefs(rd.id))
-      val sOpt = choose_slipnode_by_conceptual_depth(relevantDescriptors,t)
+      val sOpt = choose_slipnode_by_conceptual_depth(log,relevantDescriptors,t)
       log.debug("choose_slipnode_by_conceptual_depth " + sOpt)
       sender() ! SlipnetGoWithImportantObjectCorrespondenceScoutResponse(sOpt.map(_.slipNodeRep()))
 
@@ -1415,12 +1415,17 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
     case SlipnetGoWithCorrespondenceBuilder4(c) =>
       log.debug("Slipnet. SlipnetGoWithCorrespondenceBuilder4")
       // add mappings to accessory-concept-mapping-list
+      log.debug("build_correspondence 2: add mappings to accessory-concept-mapping-list " + c.uuid)
       val v = relevant_distinguishing_cms(c)
       val accessory_concept_mapping_list = v.filter(cm => cm.slippage()).map(_.symmetric_version())
+      log.debug("build_correspondence 2: accessory_concept_mapping_list " + accessory_concept_mapping_list)
 
       sender() ! SlipnetGoWithCorrespondenceBuilder4Response(accessory_concept_mapping_list.map(_.conceptMappingRep()))
 
     case SlipnetGoWithCorrespondenceBuilder5(groupObjs) =>
+//      Vector cmv = concept_mapping.get_concept_mapping_list(obj1,obj2,
+//        obj1.bond_descriptions,obj2.bond_descriptions);
+
       val accessory_concept_mapping_list = groupObjs match {
         case Some(params) =>
           val ds1 = params.ds1.map(d => convertDescriptionRepToInflatedDescriptionRep(d))
@@ -2005,7 +2010,7 @@ class Slipnet(workspace: ActorRef) extends Actor with ActorLogging with Injected
     val value_list = object_list.map(sn => {
       Formulas.temperature_adjusted_value(sn.conceptual_depth, temperature)
     })
-    val index = Utilities.valueProportionalRandomIndexInValueList(value_list)
+    val index = Utilities.valueProportionalRandomIndexInValueList(log, value_list)
     object_list(index)
   }
 

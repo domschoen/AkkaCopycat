@@ -15,8 +15,8 @@ object WorkspaceFormulas {
 
 
 
-  def choose(vals: List[Double]): Int = {
-    Utilities.valueProportionalRandomIndexInValueList(vals) + 1
+  def choose(log: LoggingAdapter, vals: List[Double]): Int = {
+    Utilities.valueProportionalRandomIndexInValueList(log, vals) + 1
   }
 
 /* See Workspace
@@ -114,13 +114,13 @@ object WorkspaceFormulas {
 
   }*/
 
-  def choose_relevant_description_by_activation(activationBySlipNodeID: Map[String, Double],wo: WorkspaceObject): Option[Description] = {
+  def choose_relevant_description_by_activation(log: LoggingAdapter, activationBySlipNodeID: Map[String, Double],wo: WorkspaceObject): Option[Description] = {
     val v = wo.relevant_descriptions(activationBySlipNodeID);
     if (v.isEmpty) {
       None
     } else {
       val vals = v.map(d => if (d.descriptor.isEmpty) 0.0 else Workspace.activationWithSlipNodeRep(activationBySlipNodeID, d.descriptor.get))
-      Some(v(Utilities.valueProportionalRandomIndexInValueList(vals)))
+      Some(v(Utilities.valueProportionalRandomIndexInValueList(log, vals)))
     }
   }
 

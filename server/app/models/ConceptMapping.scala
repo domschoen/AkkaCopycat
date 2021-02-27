@@ -224,8 +224,8 @@ class ConceptMapping(val description_type1: SlipNode,
   def slippage(): Boolean = {
     //if (label==null) return false;
     label match {
-      case x if x == slipnetInfo.slipnetSameness => false
-      case x if x == slipnetInfo.slipnetIdentity => false
+      case Some(x) if x == slipnetInfo.slipnetSameness => false
+      case Some(x) if x == slipnetInfo.slipnetIdentity => false
       case _ => true
     }
   }
@@ -289,7 +289,7 @@ class ConceptMapping(val description_type1: SlipNode,
 
 
   def symmetric_version(): ConceptMapping ={
-    if ((label == slipnetInfo.slipnetIdentity) || (label == slipnetInfo.slipnetSameness))
+    if ((label.isDefined && label.get == slipnetInfo.slipnetIdentity) || (label.isDefined && label.get == slipnetInfo.slipnetSameness))
       return this;
     if (!(SlipnetFormulas.get_bond_category(descriptor2,descriptor1,slipnetInfo.slipnetIdentity) == label))
       return this;

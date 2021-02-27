@@ -1,0 +1,64 @@
+Workspace. 3306
+
+
+GoWithImportantObjectCorrespondenceScout2.2238
+	slippageListShell
+
+Not good candidates !	
+Nope should be
+ rm -> lm 
+ lm -> rm
+	
+	
+SlippageListShell(slipplage1_candidates, slipplage2_candidates
+candidate because no slippage called yed
+
+
+SlipnetCompleteSlippageList
+
+GoWithImportantObjectCorrespondenceScout2Response.87
+
+
+Java
+slippage_list: Workspace.154 
+
+
+
+codelets_run 964
+
+New correspondence 7399cb4f-70aa-4540-aa8d-be200172e55f Correspondence between letter (3)3 and letter (1)1
+New correspondence concept mapping cm 5ebf844c-428b-433d-a044-6d408029b2f8 l -> l
+New correspondence concept mapping cm 6cd2ed57-8961-4fa0-a0be-3962dc6fe82d C -> C
+New correspondence concept mapping cm 05d42c51-4d52-4698-a050-68cf9c0e4e81 rm -> lm
+New Correspondence 7399cb4f-70aa-4540-aa8d-be200172e55f flip_obj2 false
+
+codelets_run 990
+Random rndseed=725
+relevant_distinguishing_cms 7399cb4f-70aa-4540-aa8d-be200172e55f rightmost -> leftmost label:Some(op) label activation: 0.0 relevant true distinguishing true
+
+
+codelets_run 1008
+correspondence-builder
+
+
+java
+4f04c621-63ce-4ede-bbff-1e4fd1474543
+Correspondence accessory_concept_mapping_list 4f04c621-63ce-4ede-bbff-1e4fd1474543[leftmost -> rightmost]
+
+akka
+
+
+
+
+codelets_run 1011
+rule-strength-tester
+
+
+
+codelets_run 1019
+
+slippage_list 2 of correspondence 7399cb4f-70aa-4540-aa8d-be200172e55f Correspondence between letter (3)3 and letter (1)1
+slippage_list 2 cm 5ebf844c-428b-433d-a044-6d408029b2f8 l -> l
+slippage_list 2 cm 6cd2ed57-8961-4fa0-a0be-3962dc6fe82d C -> C
+slippage_list 2 cm 05d42c51-4d52-4698-a050-68cf9c0e4e81 rm -> lm
+

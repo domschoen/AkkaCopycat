@@ -1,13 +1,14 @@
 package models
+import akka.event.LoggingAdapter
 
 object Utilities {
 
   // Same as WorkspaceFormulas.select_list_position
-  def valueProportionalRandomIndexInValueList(values: List[Double]): Int = {
+  def valueProportionalRandomIndexInValueList(log: LoggingAdapter, values: List[Double]): Int = {
     val sum = values.sum
     val chosen = Random.rnd(null) * sum
 
-    println(s"sum $sum chosen $chosen")
+    log.debug(s"sum $sum chosen $chosen")
 
     valueProportionalIndexInValueListAtValue(0.0, 0, values, chosen)
   }

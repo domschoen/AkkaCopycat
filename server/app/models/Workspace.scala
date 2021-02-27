@@ -770,7 +770,7 @@ class Workspace() extends Actor with ActorLogging with InjectedActorSupport {
         val probs = toFacets.map(sn => {
           total_description_type_support(sn, from.workspaceString().get)
         })
-        val index = Utilities.valueProportionalRandomIndexInValueList(probs)
+        val index = Utilities.valueProportionalRandomIndexInValueList(log, probs)
         val bondFacet = toFacets(index)
 
         // bottom-up-bond-scout in codelet.java.258
@@ -869,7 +869,7 @@ class Workspace() extends Actor with ActorLogging with InjectedActorSupport {
         case Some(chosen_object) =>
           log.debug(s"chosen object: ${chosen_object} from ${initialOrTargetText(chosen_object)} string")
 
-          val dOpt = WorkspaceFormulas.choose_relevant_description_by_activation(activationBySlipNodeID, chosen_object)
+          val dOpt = WorkspaceFormulas.choose_relevant_description_by_activation(log, activationBySlipNodeID, chosen_object)
           dOpt match {
             case Some(d) =>
               val chosen_descriptorOpt = d.descriptor
@@ -934,7 +934,7 @@ class Workspace() extends Actor with ActorLogging with InjectedActorSupport {
 
         val act = v.map(sn => Workspace.activationWithSlipNodeRep(activationBySlipNodeID, sn))
         log.debug("GoWithTopDownDescriptionScout2 act " + act)
-        val chosen_property = v(Utilities.valueProportionalRandomIndexInValueList(act))
+        val chosen_property = v(Utilities.valueProportionalRandomIndexInValueList(log, act))
         log.debug("GoWithTopDownDescriptionScout2 chosen_property " + chosen_property)
         sender() ! GoWithTopDownDescriptionScoutResponse2(chosen_property)
       }
@@ -1523,7 +1523,7 @@ class Workspace() extends Actor with ActorLogging with InjectedActorSupport {
             log.debug("object_probs " + ob.id + " t " + t);
             t
           })
-          val bond_facet = bond_facets(Utilities.valueProportionalRandomIndexInValueList(object_probs))
+          val bond_facet = bond_facets(Utilities.valueProportionalRandomIndexInValueList(log, object_probs))
           log.debug("chosen bond facet :" + bond_facet.id)
           val toob = objectRefs(toobrep.uuid)
 
@@ -2191,7 +2191,7 @@ class Workspace() extends Actor with ActorLogging with InjectedActorSupport {
           WorkspaceFormulas.high_distribution;
         else WorkspaceFormulas.very_high_distribution
 
-        val cutoff = WorkspaceFormulas.choose(distribution) * 10.0
+        val cutoff = WorkspaceFormulas.choose(log, distribution) * 10.0
         log.debug("temperature cutoff = "+cutoff)
         if (cutoff < t.actualT) { // formulas.actual_temperature = t ???
           // not high enough
@@ -2523,12 +2523,16 @@ class Workspace() extends Actor with ActorLogging with InjectedActorSupport {
     case GoWithCorrespondenceBuilder7(correponsdenceID,accessory_concept_mapping_list) =>
       log.debug("Workspace. GoWithCorrespondenceBuilder7")
       val c = structureRefs(correponsdenceID).asInstanceOf[Correspondence]
-      c.accessory_concept_mapping_list ++ accessory_concept_mapping_list
+      c.accessory_concept_mapping_list ++= accessory_concept_mapping_list
       val obj1 = c.obj1
       val obj2 = c.obj2
 
+      log.debug("build_correspondence 2: part 2 of accessory-concept-mapping-list " + c.uuid)
+
       // we need to use the slipnet again so let's create a structure for it
       val groupObjs = if (obj1.isInstanceOf[Group] && obj2.isInstanceOf[Group]) {
+        log.debug("build_correspondence 2: obj1 and obj2 are group " + c.uuid)
+
         val group1 = obj1.asInstanceOf[Group]
         val group2 = obj2.asInstanceOf[Group]
 
@@ -2985,7 +2989,7 @@ class Workspace() extends Actor with ActorLogging with InjectedActorSupport {
         case TemperatureAjustmentVariable.Relative_importance => wo: WorkspaceObject => wo.relative_importance
       }
       val oProbs = list.map(wo => Formulas.temperature_adjusted_value(adjustment(wo), t))
-      val index = Utilities.valueProportionalRandomIndexInValueList(oProbs)
+      val index = Utilities.valueProportionalRandomIndexInValueList(log, oProbs)
       Option(list(index))
     }
   }
@@ -3302,9 +3306,11 @@ class Workspace() extends Actor with ActorLogging with InjectedActorSupport {
 
     if (changed_object.isDefined && changed_object.get.correspondence.isDefined) {
       val c = changed_object.get.correspondence.get;
-
+      log.debug("slippage_list 1 of correspondence " + c.uuid)
       val cml = c.concept_mapping_list
-      log.debug("slippage_list 1 " + c + " cml " + cml)
+      for (cm <- cml) {
+        log.debug("slippage_list 1 cm " + cm.uuid + " " + cm)
+      }
       cml
     } else List.empty[ConceptMappingRep]
   }
@@ -3314,7 +3320,10 @@ class Workspace() extends Actor with ActorLogging with InjectedActorSupport {
       if (wo.correspondence.isDefined){
         val c =  wo.correspondence.get
         val cml = c.slippageCandidates()
-        log.debug("slippage_list 2 " +wo.correspondence.get + " cml " +  cml)
+        log.debug("slippage_list 2 of correspondence " + c.uuid + " " + c)
+        for (cm <- cml) {
+          log.debug("slippage_list 2 cm " + cm.uuid + " " + cm)
+        }
 
         Some(cml)
       } else None

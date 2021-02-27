@@ -277,7 +277,7 @@ class Coderack(workspace: ActorRef, slipnet: ActorRef, executionRun: ActorRef) e
           log.debug(s"urgencies: $urgues")
           // then we choose a random number in the urgency sum and we choose the codelet at this random number looking
           // from first codelet up to this random number in terms of urgency
-          val index = Utilities.valueProportionalRandomIndexInValueList(urgencies.toList)
+          val index = Utilities.valueProportionalRandomIndexInValueList(log, urgencies.toList)
           log.debug("Choose codelet at index " + index)
           val chosenCodelet = codelets(index)
 

@@ -29,15 +29,24 @@ case class Correspondence (log: LoggingAdapter,
                             val flip_obj2: Boolean
                           ) extends WorkspaceStructure(log) {
   def addConceptMappings(cCMReps: List[ConceptMappingRep]) = {
-    log.debug(uuid + " Correspondence. addConceptMapping concept_mapping_list " + concept_mapping_list);
-    log.debug(uuid + " Correspondence. addConceptMapping " + cCMReps);
+    log.debug("Add to concept mappings of correspondence " + uuid + " " + this)
+    for (cm <- cCMReps) {
+      log.debug("Add concept mapping cm " + cm.uuid + " " + cm);
+    }
     concept_mapping_list = cCMReps ::: concept_mapping_list
   }
   def addAccessoryConceptMappings(cCMReps: List[ConceptMappingRep]) = {
-    log.debug(uuid + "Correspondence. addAccessoryConceptMappings " + cCMReps);
+    log.debug("Add to accessory concept mappings of correspondence " + uuid + " " + this)
+    for (cm <- cCMReps) {
+      log.debug("Add accessory concept mapping cm " + cm.uuid + " " + cm);
+    }
     accessory_concept_mapping_list =  accessory_concept_mapping_list ++ cCMReps
   }
 
+  log.debug("New correspondence " + uuid + " " + this)
+  for (cm <- concept_mapping_list) {
+    log.debug("New correspondence concept mapping cm " + cm.uuid + " " + cm);
+  }
 
   var accessory_concept_mapping_list = ListBuffer.empty[ConceptMappingRep]
 
@@ -125,6 +134,7 @@ case class Correspondence (log: LoggingAdapter,
 
   // To be completed see below remark
   def build_correspondenceStep1() = {
+    log.debug("build_correspondenceStep1 " + uuid + " " + this)
     if (obj1.correspondence.isDefined) obj1.correspondence.get.break_correspondence()
     if (obj2.correspondence.isDefined) obj2.correspondence.get.break_correspondence()
     obj1.correspondence = Some(this)
