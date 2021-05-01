@@ -25,6 +25,8 @@ class WebSocketActor (out: ActorRef) extends Actor with ActorLogging {
 
     case Found(answer, codelets_run) =>
       log.debug(s"WebSocketActor received answer $answer after running $codelets_run codelets")
+      out ! AnswerMsg(answer)
+
 
 
     case msg: WebSocketMsgIn => msg match {

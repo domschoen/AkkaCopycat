@@ -97,6 +97,7 @@ object WebSocketClient {
           case buf: ArrayBuffer =>
             Unpickle[WebSocketMsgOut].fromBytes(TypedArrayBuffer.wrap(buf)) match {
               case TemperatureMsg(temperature) => MyCircuit.dispatch(SetTemperature(temperature))
+              case AnswerMsg(answer) => MyCircuit.dispatch(SetAnswer(answer))
             }
           case _ => // ignored
         }

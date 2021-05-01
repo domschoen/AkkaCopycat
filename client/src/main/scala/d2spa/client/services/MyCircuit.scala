@@ -29,9 +29,16 @@ object MyCircuit extends Circuit[AppModel] with ReactConnector[AppModel] {
   override protected def initialModel = AppModel.bootingModel
 
   override val actionHandler = composeHandlers(
-    new InstancesHandler(zoomTo(_.content.temperature))
+    new InstancesHandler(zoomTo(_.content.temperature)),
+    new AnswerHandler(zoomTo(_.content.answer))
   )
 
+}
+class AnswerHandler[M](modelRW: ModelRW[M, Option[String]]) extends ActionHandler(modelRW) {
+  override def handle = {
+    case SetAnswer(answer) =>
+      updated(Some(answer))
+  }
 }
 
 class InstancesHandler[M](modelRW: ModelRW[M, Int]) extends ActionHandler(modelRW) {
@@ -41,6 +48,7 @@ class InstancesHandler[M](modelRW: ModelRW[M, Int]) extends ActionHandler(modelR
     case SetTemperature(temperature) =>
       println("new temperature " + temperature)
       updated(temperature)
+
 
     case Run(initialString, modifiedString, targetString) =>
       WebSocketClient.send(WebSocketMessages.Run(initialString, modifiedString, targetString))

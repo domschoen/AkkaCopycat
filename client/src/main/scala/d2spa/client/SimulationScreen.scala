@@ -14,7 +14,12 @@ import diode.Action
 import diode.data.Ready
 
 import scala.scalajs.js
-
+import scalajs.js
+import js.UndefOr
+import org.scalajs.jquery.jQuery
+import com.highcharts.HighchartsUtils._
+import com.highcharts.HighchartsAliases._
+import com.highcharts.config._
 
 // https://reqres.in/
 // https://github.com/andreaferretti/paths-scala-js-demo
@@ -95,14 +100,45 @@ object SimulationScreen {
               <.span(
                 "Target: ",
                 <.input.text(^.placeholder := "Target...", ^.value := targetString,
-                  ^.onChange ==> { e: ReactEventFromInput => handleTargetStringChange(e)})
+                  ^.onChange ==> { e: ReactEventFromInput => handleTargetStringChange(e)}),
+                "Answer: ",{
+                  val answerOpt = p.proxy.value.answer
+                  val answerText = if (answerOpt.isEmpty) "Processing..." else answerOpt.get
+                  <.span(answerText)
+                }
               )
             ),
             <.input.submit(^.value := "Run")
           ),
           <.div(^.className := "svgCont",
             d2spa.client.components.Thermometer(p.proxy.value.temperature)
-          )
+          ),
+          {
+            //val container = js.Dynamic.literal(dom.document.getElementById("#container"))
+            //val container = dom.document.getElementById("#container")
+
+
+            jQuery("#container").highcharts(new HighchartsConfig {
+              // Chart config
+              override val chart: Cfg[Chart] = Chart(`type` = "bar")
+
+              // Chart title
+              override val title: Cfg[Title] = Title(text = "Demo bar chart")
+
+              // X Axis settings
+              override val xAxis: CfgArray[XAxis] = js.Array(XAxis(categories = js.Array("Apples", "Bananas", "Oranges")))
+
+              // Y Axis settings
+              override val yAxis: CfgArray[YAxis] = js.Array(YAxis(title = YAxisTitle(text = "Fruit eaten")))
+
+              // Series
+              override val series: SeriesCfg = js.Array[AnySeries](
+                SeriesBar(name = "Jane", data = js.Array[Double](1, 0, 4)),
+                SeriesBar(name = "John", data = js.Array[Double](5, 7, 3))
+              )
+            })
+            <.div(^.id:="container")
+          }
         )
       )
     }

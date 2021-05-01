@@ -61,16 +61,15 @@ lazy val client = (project in file("client")).settings(commonSettings)
         "io.suzaku" %%% "boopickle" % Settings.versions.booPickle,
         "com.lihaoyi" %%% "upickle" % "0.7.1",
         "org.scala-js" %%% "scalajs-java-logging" % "0.1.5",
-        "eu.unicredit" %%% "paths-scala-js" % "0.4.5"
+        "eu.unicredit" %%% "paths-scala-js" % "0.4.5",
+        "com.github.karasiq" %%% "scalajs-highcharts" % "1.2.1",
+        "be.doeraene" %%% "scalajs-jquery" % "0.9.1"
     ),
     dependencyOverrides += "org.webjars.npm" % "js-tokens" % "3.0.2",
     jsDependencies ++= Seq(
         "org.webjars.npm" % "react" % "16.5.1" / "umd/react.development.js" minified "umd/react.production.min.js" commonJSName "React",
         "org.webjars.npm" % "react-dom" % "16.5.1" / "umd/react-dom.development.js" minified "umd/react-dom.production.min.js" dependsOn "umd/react.development.js" commonJSName "ReactDOM",
-        "org.webjars.npm" % "react-dom" % "16.5.1" / "umd/react-dom-server.browser.development.js" minified  "umd/react-dom-server.browser.production.min.js" dependsOn "umd/react-dom.development.js" commonJSName "ReactDOMServer",
-        "org.webjars" % "jquery" % "1.11.1" / "jquery.js" minified "jquery.min.js",
-        "org.webjars" % "bootstrap" % "3.3.6" / "bootstrap.js" minified "bootstrap.min.js" dependsOn "jquery.js" //,
-        //"org.webjars.npm" % "js-joda" % "1.1.8" / "dist/js-joda.js" minified "dist/js-joda.min.js"
+        "org.webjars.npm" % "react-dom" % "16.5.1" / "umd/react-dom-server.browser.development.js" minified  "umd/react-dom-server.browser.production.min.js" dependsOn "umd/react-dom.development.js" commonJSName "ReactDOMServer"
     ),
     jsEnv := new org.scalajs.jsenv.jsdomnodejs.JSDOMNodeJSEnv,
     // by default we do development build, no eliding

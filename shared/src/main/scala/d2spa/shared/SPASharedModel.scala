@@ -18,6 +18,7 @@ object WebSocketMessages {
   sealed trait WebSocketMsgOut
 
   final case class TemperatureMsg(temperature: Int) extends WebSocketMsgOut
+  final case class AnswerMsg(value: String) extends WebSocketMsgOut
 }
 
 
